@@ -6,7 +6,7 @@ format:
     toc-location: left
 ---
 
-[**Download PDF Version**](files/Erlich_CV_Version_Control)
+[**Download PDF Version**](files/Erlich_CV_Version_Control.pdf)
 
 [Google Scholar](https://scholar.google.ca/citations?user=h8n98PQAAAAJ) | 
 

@@ -4,7 +4,7 @@ title: "Curriculum Vitae"
 
 ## Download CV
 
-[**Download my CV (PDF)**](files/Erlich_CV.pdf){.btn .btn-primary}
+[**Download my CV (PDF)**](files/Erlich_CV_Version_Control.pdf){.btn .btn-primary}
 
 *Last updated: January 2026*
 
