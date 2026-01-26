@@ -1,0 +1,140 @@
+---
+title: "Research"
+---
+
+You can find my Google Scholar Profile [here](https://scholar.google.ca/citations?user=h8n98PQAAAAJ&hl=en&oi=ao).
+
+## Selected Published Manuscripts
+
+**Erlich, Aaron**, Jordan Gans-Morse, and Simeon Nichter. *Online First*. "[Selective Bribery: When Do Citizens Engage in Corruption?](https://doi.org/10.1177/00104140241259444)" *Comparative Political Studies*: 00104140241259444.
+
+ungated wp version: [[here](https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf)]  
+[Replication Data](https://doi.org/10.7910/DVN/EVEOQN)
+
+---
+
+**Erlich, Aaron**, Danielle F. Jung, and James D. Long. *Online First.* "[Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage With Application to an Emerging Democracy](https://doi.org/10.1177/08944393241247420)." *Social Science Computer Review*: 08944393241247420.
+
+[Replication Data](https://doi.org/10.7910/DVN/VX945J)
+
+---
+
+Soehl, Thomas, **Aaron Erlich**, and Zhenxiang Chen. *Online First*. "[Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad](https://doi.org/10.1177/00491241241266634)." *Sociological Methods & Research*.
+
+[Online Appendix](https://journals-sagepub-com.proxy3.library.mcgill.ca/doi/suppl/10.1177/00491241241266634/suppl_file/sj-docx-1-smr-10.1177_00491241241266634.docx)  
+[Replication Data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/GGOINZ)
+
+---
+
+**Erlich, Aaron**, Karen E. Ferree, Clark C. Gibson, Danielle F. Jung, James D. Long, and Craig McIntosh. 2024. "[Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa](https://doi.org/10.1086/724010)." *Economic Development and Cultural Change* 72(3): 1425–63.
+
+[Replication Data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/OX14OX)
+
+---
+
+**Erlich, Aaron**, and Edana Beauvais. 2023. "[Explaining Women's Political Underrepresentation in Democracies with High Levels of Corruption](https://osf.io/4ts53)." *Political Science Research & Methods.*
+
+[Online Appendix](https://static.cambridge.org/content/id/urn:cambridge.org:id:article:S2049847022000462/resource/name/S2049847022000462sup001.pdf)  
+[Replication Data](https://doi.org/10.7910/DVN/V8NM9T)
+
+---
+
+**Erlich, Aaron**, Calvin Garner, Gordon Pennycook, and David G. Rand. 2023. "[Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation: Evidence from Ukraine](https://psyarxiv.com/4yrdj)." *Political Psychology* 11(4) 804-22.
+
+[Replication Data](https://doi.org/10.7910/DVN/IY6AXM)
+
+---
+
+**Erlich, Aaron**, and Calvin Garner. 2023. "[Is Pro-Kremlin Disinformation Effective: Evidence from Ukraine](https://journals.sagepub.com/doi/pdf/10.1177/19401612211045221)." *International Journal of Press/Politics* 28(1) 5-28.
+
+[Online Appendix](https://journals.sagepub.com/doi/suppl/10.1177/19401612211045221/suppl_file/sj-pdf-1-ijpp-10.1177_19401612211045221.pdf)  
+[Replication Data](https://doi.org/10.7910/DVN/V8NM9T)
+
+---
+
+**Erlich, Aaron**, Thomas Soehl, and Annie Y. Chen. 2023. "[Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates](http://www.aaronerlich.com/wp-content/uploads/2021/09/Nigerian_Ban.pdf)." *Journal of Experimental Political Science.*
+
+[Online Appendix](https://static.cambridge.org/content/id/urn:cambridge.org:id:article:S2052263021000269/resource/name/S2052263021000269sup001.pdf)  
+[Replication Data](https://doi.org/10.7910/DVN/V8NM9T)
+
+---
+
+**Erlich, Aaron**, Stefano Dantas, Benjamin Bagozzi, Daniel Berliner, and Brian Palmer-Rubin. 2022. "[Multi-label Prediction for Political Text-as-Data](https://doi.org/10.1017/pan.2021.15)." *Political Analysis* 30(4) 463-480.
+
+[Online Appendix](https://static.cambridge.org/content/id/urn:cambridge.org:id:article:S1047198721000152/resource/name/S1047198721000152sup001.pdf)  
+[Replication Data](https://doi.org/10.7910/DVN/SOVPA4)
+
+---
+
+**Erlich, Aaron**, Daniel Berliner, Brian Palmer-Rubin, and Benjamin Bagozzi. 2021. "[Media Attention and Bureaucratic Responsiveness](http://www.aaronerlich.com/manuscript_media-attention-and-bureaucratic-responsiveness)." *Journal of Public Administration Research & Theory* 31(4): 687-703.
+
+[Online Appendix](http://www.aaronerlich.com/appendix_media-attention-and-bureaucratic-responsiveness)  
+[Replication Data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/O9GXL4)
+
+---
+
+**Erlich, Aaron**, and Calvin Garner. 2021. "[Implicit Associations, Explicit Attitudes, and Sub-group Differences during Wartime](http://www.aaronerlich.com/erlich_garner_2021_subgroup-differences-in-implicit-associations-and-explicit-attitudes-during2)." *International Studies Quarterly* 65(2): 528-541.
+
+[Replication Data](https://doi.org/10.7910/DVN/ZQEHNV)
+
+---
+
+Bridgman, Aengus, Costin Ciobanu, **Aaron Erlich**, Danielle Bohonos, and Christopher Ross. 2021. "[Unveiling: An Unexpected Mid-campaign Court Ruling's Consequences and the Limits of Following the Leader](https://escholarship.mcgill.ca/downloads/zw12z9587)." *Journal of Politics* 83(3) 1024-1029.
+
+[Replication Data](https://doi.org/10.7910/DVN/Q20FB7)
+
+---
+
+Berliner, Daniel, Benjamin Bagozzi, Brian Palmer-Rubin, and **Aaron Erlich**. 2021. "[The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico](http://www.aaronerlich.com/wp-content/uploads/2020/05/Political-Logic-of-Government-Disclosure_MAIN.pdf)." *Journal of Politics* 83(1) 231-245.
+
+[Replication Data](https://doi.org/10.7910/DVN/HGBOKF)
+
+---
+
+**Erlich, Aaron**. 2020. "[Can information campaigns impact preferences toward vote selling? Theory and evidence from Kenya](https://doi.org/10.1177/0192512119836283)." *International Political Science Review* 41(3) 419-435.
+
+[Online Appendix](https://journals.sagepub.com/doi/suppl/10.1177/0192512119836283)  
+[Replication Data](https://doi.org/10.7910/DVN/VRQFEP)
+
+---
+
+**Erlich, Aaron**, and Calvin Garner. 2020. "[Interpersonal Incomparability in Citizens' Views of Democracy: Survey Evidence from Ukraine](https://www.tandfonline.com/doi/abs/10.1080/17457289.2018.1554664)." *Journal of Elections, Public Opinion and Parties* 30(02) 139-160.
+
+[Online Appendix](https://www.tandfonline.com/doi/suppl/10.1080/17457289.2018.1554664?scroll=top)  
+[Replication Data](https://doi.org/10.7910/DVN/ZQEHNV)
+
+---
+
+**Erlich, Aaron**. 2018. "[Pre-Acceptance as a Method to Combat Publication Bias in Area Studies: A Pilot in the Caucasus](https://www.tandfonline.com/doi/full/10.1080/23761199.2018.1522796)." *Caucasus Survey* 6(3): 224–29.
+
+---
+
+**Erlich, Aaron**, Danielle F. Jung, James D. Long, and Craig McIntosh. 2018. "[The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries](https://www.sciencedirect.com/science/article/pii/S2352728517300362)." *Development Engineering* 3: 34–46.
+
+---
+
+**Erlich, Aaron**, and Nicholas Kerr. 2016. "['The Local Mwananchi Has Lost Trust': Design, Transition and Legitimacy in Kenyan Election Management](https://doi.org/10.1017/S0022278X16000604)." *The Journal of Modern African Studies* 54(04): 671–702.
+
+[Replication Data](https://dataverse.harvard.edu/dataverse/kenya_mwananchi)
+
+---
+
+Bush, Sarah Sunn, **Aaron Erlich**, Lauren Prather, and Yael Zeira. 2016. "[The Effects of Authoritarian Iconography: An Experimental Test](https://journals.sagepub.com/doi/abs/10.1177/0010414016633228)." *Comparative Political Studies* 49(13): 1704–1738.
+
+Publication version (ungated) available [here](https://cloudfront.escholarship.org/dist/prd/content/qt7492b1tt/qt7492b1tt.pdf)
+
+[Replication Data](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/MITC3W)  
+[Pre-registration](https://www.dropbox.com/s/6gvdn975deh3sqc/Effects_of_Authoritarian_Iconography.pdf?dl=0)
+
+---
+
+Berliner, Daniel, and **Aaron Erlich**. 2015. "[Competing for Transparency: Political Competition and Institutional Reform in Mexican States](https://doi.org/10.1017/S0003055414000616)." *American Political Science Review* 109(01): 110–28.
+
+Publication version (ungated) available [here](http://www.aaronerlich.com/wp-content/uploads/2019/02/berliner_and_erlich_2015_apsr.pdf)
+
+[Online Appendix](http://www.danielberliner.com/uploads/2/1/9/0/21908308/berliner_and_erlich_2015_apsr_-_online_appendix.pdf)  
+[Replication Data](http://dx.doi.org/10.7910/DVN/29347)
+
+---
+
+Levi, Margaret et al. 2012. "[Aligning Rights and Interests: Why, When and How to Uphold Labor Standards](http://siteresources.worldbank.org/EXTNWDR2013/Resources/8258024-1320950747192/8260293-1320956712276/8261091-1348683883703/WDR2013_bp_Aligning_Rights_and_Incentives.pdf)." *World Bank Development Report Background Paper*.

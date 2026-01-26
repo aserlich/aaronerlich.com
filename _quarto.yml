@@ -1,0 +1,38 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Aaron Erlich"
+  navbar:
+    left:
+      - text: "About"
+        href: index.qmd
+      # - text: "Lab"
+      #   href: lab.qmd
+      - text: "C.V."
+        href: cv-embedded-example.qmd
+      # - text: "Research"
+      #   href: research.qmd
+      # - text: "Resources"
+      #   menu:
+      #     - text: "Georgia Bibliography"
+      #       href: resources/georgia-bib.qmd
+      #     - text: "Letter of Recommendation"
+      #       href: resources/letters.qmd
+      #     - text: "Undergraduate Thesis and Internships"
+      #       href: resources/thesis-internships.qmd
+      #     - text: "Political Science Writing"
+      #       href: resources/writing.qmd
+      # - text: "Teaching"
+      #   menu:
+      #     - text: "Teaching"
+      #       href: teaching.qmd
+      #     - text: "R Tutorials"
+      #       href: r-tutorials.qmd
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: false

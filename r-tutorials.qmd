@@ -1,0 +1,7 @@
+---
+title: "R Tutorials"
+---
+
+*[Content for your R tutorials will go here]*
+
+*Note: You'll need to fetch the content from your current R Tutorials page at https://www.aaronerlich.com/teaching/r-tutorials*

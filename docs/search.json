@@ -1,0 +1,492 @@
+[
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html",
+    "href": "INTERACTIVE-TABLES-GUIDE.html",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "Your WordPress site has a dynamically sortable alumni table. Quarto supports this! I’ve created multiple versions for you.\n\n\nFile: lab-full-featured.qmd\nThis version has BOTH: ✅ Interactive sortable alumni table (R DT) ✅ Image placeholders for all lab members ✅ All features from both options\nHow to use: 1. Rename lab-full-featured.qmd to lab.qmd 2. Install R package: install.packages(\"DT\") 3. Add your images to images/ folder 4. Uncomment the image references 5. Run quarto render\nThis is probably what you want!\n\n\n\n\n\nFile: lab-interactive-table.qmd\nPros: - Clean, professional look - Easy to maintain (data in R code) - Powerful filtering and search - Exports to CSV/Excel built-in - You’re already comfortable with R!\nCons: - Requires R to be installed - Slightly slower build time\nHow to use: 1. Rename lab-interactive-table.qmd to lab.qmd (replacing the current one) 2. Make sure you have R installed 3. Install the DT package:\ninstall.packages(\"DT\")\n\nRun quarto render\n\nTo update the table: Just edit the R data frame in the code chunk - very straightforward for someone who knows R!\n\n\n\nFile: lab-javascript-table.qmd\nPros: - No R dependency - Works on any system - Fast rendering - Same features (sorting, search, pagination)\nCons: - Table data is in HTML (more verbose to edit) - Requires CDN connection (internet) to work\nHow to use: 1. Rename lab-javascript-table.qmd to lab.qmd (replacing the current one) 2. Run quarto render\nTo update the table: Edit the HTML &lt;tr&gt; rows directly - more tedious than R but still straightforward.\n\n\n\nFile: lab-with-images.qmd\nStatic markdown table with image placeholders.\n\n\n\n\n✅ Click column headers to sort (ascending/descending) ✅ Search box to filter results ✅ Pagination (20 entries per page by default) ✅ Default sort by Graduation Year (most recent first) ✅ All your links preserved (theses, publications, employment)\n\n\n\nUse lab-full-featured.qmd - it has everything: - Interactive sortable table (easy to update via R) - Image placeholders ready to go - All the features of your WordPress site\nSince you’re comfortable with R and already use it for your work, the R DT approach is perfect.\nThe data is stored like this:\nalumni &lt;- data.frame(\n  Researcher = c(\"Mathieu Lavigne\", \"Pratik Mahajan\", ...),\n  Degree = c(\"Ph.D.\", \"M.A.\", ...),\n  Year = c(2024, 2024, ...),\n  ...\n)\nMuch easier to update than editing HTML tables!\n\n\n\nTry the full-featured version:\nmv lab.qmd lab-original.qmd\nmv lab-full-featured.qmd lab.qmd\nquarto preview\n\n\n\nWhen rendered, users can: - Click “Graduation Year” to sort newest→oldest or oldest→newest - Click “Researcher” to sort alphabetically - Type “Ph.D.” in search box to see only PhD students - Type “2020” to see all 2020 graduates - Click “Degree” to group by degree type\nJust like your WordPress table!\n\n\n\n\nlab.qmd - Current basic version (static table, no images)\nlab-full-featured.qmd - ⭐ Interactive table + images (recommended)\nlab-interactive-table.qmd - Interactive table only\nlab-javascript-table.qmd - Interactive table (JavaScript, no R)\nlab-with-images.qmd - Images only, static table\n\n\n\n\nAll versions are fully working - just pick one and rename it to lab.qmd!\nFor most users: use lab-full-featured.qmd"
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#best-option-combined-interactive-table-images",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#best-option-combined-interactive-table-images",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "File: lab-full-featured.qmd\nThis version has BOTH: ✅ Interactive sortable alumni table (R DT) ✅ Image placeholders for all lab members ✅ All features from both options\nHow to use: 1. Rename lab-full-featured.qmd to lab.qmd 2. Install R package: install.packages(\"DT\") 3. Add your images to images/ folder 4. Uncomment the image references 5. Run quarto render\nThis is probably what you want!"
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#other-options",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#other-options",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "File: lab-interactive-table.qmd\nPros: - Clean, professional look - Easy to maintain (data in R code) - Powerful filtering and search - Exports to CSV/Excel built-in - You’re already comfortable with R!\nCons: - Requires R to be installed - Slightly slower build time\nHow to use: 1. Rename lab-interactive-table.qmd to lab.qmd (replacing the current one) 2. Make sure you have R installed 3. Install the DT package:\ninstall.packages(\"DT\")\n\nRun quarto render\n\nTo update the table: Just edit the R data frame in the code chunk - very straightforward for someone who knows R!\n\n\n\nFile: lab-javascript-table.qmd\nPros: - No R dependency - Works on any system - Fast rendering - Same features (sorting, search, pagination)\nCons: - Table data is in HTML (more verbose to edit) - Requires CDN connection (internet) to work\nHow to use: 1. Rename lab-javascript-table.qmd to lab.qmd (replacing the current one) 2. Run quarto render\nTo update the table: Edit the HTML &lt;tr&gt; rows directly - more tedious than R but still straightforward.\n\n\n\nFile: lab-with-images.qmd\nStatic markdown table with image placeholders."
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#features-interactive-options-provide",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#features-interactive-options-provide",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "✅ Click column headers to sort (ascending/descending) ✅ Search box to filter results ✅ Pagination (20 entries per page by default) ✅ Default sort by Graduation Year (most recent first) ✅ All your links preserved (theses, publications, employment)"
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#my-recommendation",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#my-recommendation",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "Use lab-full-featured.qmd - it has everything: - Interactive sortable table (easy to update via R) - Image placeholders ready to go - All the features of your WordPress site\nSince you’re comfortable with R and already use it for your work, the R DT approach is perfect.\nThe data is stored like this:\nalumni &lt;- data.frame(\n  Researcher = c(\"Mathieu Lavigne\", \"Pratik Mahajan\", ...),\n  Degree = c(\"Ph.D.\", \"M.A.\", ...),\n  Year = c(2024, 2024, ...),\n  ...\n)\nMuch easier to update than editing HTML tables!"
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#preview-before-deciding",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#preview-before-deciding",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "Try the full-featured version:\nmv lab.qmd lab-original.qmd\nmv lab-full-featured.qmd lab.qmd\nquarto preview"
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#example-features-you-get",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#example-features-you-get",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "When rendered, users can: - Click “Graduation Year” to sort newest→oldest or oldest→newest - Click “Researcher” to sort alphabetically - Type “Ph.D.” in search box to see only PhD students - Type “2020” to see all 2020 graduates - Click “Degree” to group by degree type\nJust like your WordPress table!"
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#file-summary",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#file-summary",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "lab.qmd - Current basic version (static table, no images)\nlab-full-featured.qmd - ⭐ Interactive table + images (recommended)\nlab-interactive-table.qmd - Interactive table only\nlab-javascript-table.qmd - Interactive table (JavaScript, no R)\nlab-with-images.qmd - Images only, static table"
+  },
+  {
+    "objectID": "INTERACTIVE-TABLES-GUIDE.html#need-help",
+    "href": "INTERACTIVE-TABLES-GUIDE.html#need-help",
+    "title": "Interactive Sortable Tables in Quarto",
+    "section": "",
+    "text": "All versions are fully working - just pick one and rename it to lab.qmd!\nFor most users: use lab-full-featured.qmd"
+  },
+  {
+    "objectID": "lab-javascript-table.html",
+    "href": "lab-javascript-table.html",
+    "title": "DemoTIP Laboratory",
+    "section": "",
+    "text": "Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!"
+  },
+  {
+    "objectID": "lab-javascript-table.html#principal-investigator",
+    "href": "lab-javascript-table.html#principal-investigator",
+    "title": "DemoTIP Laboratory",
+    "section": "Principal Investigator",
+    "text": "Principal Investigator\n\n\n\n\n\nAaron Erlich is Associate Professor of Political Science at McGill University. He received his Ph.D. from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the American Political Science Review, Journal of Politics, Comparative Political Studies, and many others."
+  },
+  {
+    "objectID": "lab-javascript-table.html#mcgill-graduate-post-doc-researchers",
+    "href": "lab-javascript-table.html#mcgill-graduate-post-doc-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Graduate & Post-Doc Researchers",
+    "text": "McGill Graduate & Post-Doc Researchers\n\n\n\n\n\nDavid Dubé is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data analysis.\n\n\n\n\n\n\n\nRafael Campos-Gottardo is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on levels of affective polarization in the United Kingdom. He is also interested in using casual inference techniques to study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich on several Ukrainian survey-data-related project.\n\n\n\n\n\n\n\nKaterina McMullen is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project."
+  },
+  {
+    "objectID": "lab-javascript-table.html#mcgill-undergraduate-researchers",
+    "href": "lab-javascript-table.html#mcgill-undergraduate-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Undergraduate Researchers",
+    "text": "McGill Undergraduate Researchers\n\n\n\n\n\nLawrence Plastina is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients of McGill’s 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported firearm ownership under Prof. Erlich’s supervision."
+  },
+  {
+    "objectID": "lab-javascript-table.html#demotip-alumni",
+    "href": "lab-javascript-table.html#demotip-alumni",
+    "title": "DemoTIP Laboratory",
+    "section": "DemoTIP Alumni",
+    "text": "DemoTIP Alumni\nThese students worked with me closely. The research and publications are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.\n\n\n\n\nResearcher\n\n\nDegree\n\n\nGraduation Year\n\n\nPublications & Research\n\n\nPost-McGill Employment/Education\n\n\n\n\n\n\nMathieu Lavigne\n\n\nPh.D.\n\n\n2024\n\n\nThesis - Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment\n\n\nPost-Doc Dartmouth College\n\n\n\n\nPratik Mahajan\n\n\nM.A.\n\n\n2024\n\n\nThesis - Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India\n\n\n\n\n\n\nChristoper Ross\n\n\nM.A.\n\n\n2023\n\n\nThesis - Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\n\n\nThe Media Ecosystem Observatory\n\n\n\n\nAlice Brocheux\n\n\nB.A.\n\n\n2022\n\n\n\n\nPh.D. Student University of Rochester\n\n\n\n\nCostin Ciobanu\n\n\nPh.D.\n\n\n2022\n\n\nThesis - The political and electoral consequences of economic shocks; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\n\n\nPost-Doc Royal Holloway University; Post-doc University of Aarhus\n\n\n\n\nDilse Kaygisiz\n\n\nM.A.\n\n\n2022\n\n\nThesis - Do laws affect attitudes? A study on domestic violence laws in Turkey\n\n\nData Sciences\n\n\n\n\nHenry Atkins\n\n\nM.A.\n\n\n2021\n\n\nThesis - Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack\n\n\n\n\n\n\nStefano Dantas\n\n\nM.A.\n\n\n2021\n\n\nMulti-Label Prediction for Political Text-as-Data\n\n\n\n\n\n\nÉtienne Gagnon\n\n\nM.A.\n\n\n2020\n\n\nThesis - Multiview Representation Learning for Political Science Research\n\n\nMEXT Fellowship Japan; Ph.D. Student, Princeton University\n\n\n\n\nSaewon Park\n\n\nM.A.\n\n\n2020\n\n\nWeaponizing Election Petitions; Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation\n\n\nTrackTik; The Media Ecosystem Observatory\n\n\n\n\nTanner Ducharme\n\n\nB.A.\n\n\n2020\n\n\n\n\n\n\n\n\nAlex Xin Tong Wang\n\n\nM.A.\n\n\n2020\n\n\n\n\n\n\n\n\nHair Parra Barrera\n\n\nB.A.\n\n\n2020\n\n\n\n\nM.A. - HEC-Montréal\n\n\n\n\nSu Goh\n\n\nB.A.\n\n\n2020\n\n\n\n\n\n\n\n\nAnnie Chen\n\n\nB.A.\n\n\n2020\n\n\nThesis - Incumbency Advantage in Australia; Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates\n\n\nBright Line Watch\n\n\n\n\nAndrew McCormack\n\n\nM.A.\n\n\n2019\n\n\nmapcan R package; Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US\n\n\nData Sciences\n\n\n\n\nAengus Bridgman\n\n\nPh.D.\n\n\n\n\nUnveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\n\n\nAssistant Prof (Research) McGill University\n\n\n\n\nTim Roy\n\n\nB.A."
+  },
+  {
+    "objectID": "index-with-images.html",
+    "href": "index-with-images.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University of Washington in Seattle.\nBroadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as the American Political Science Review, Comparative Political Studies, the Journal of Politics, the Journal of Public Administration Research & Theory, and Political Analysis, among others. You can see more about my academic work on my CV.\nBefore returning to academia, I worked for the National Democratic Institute covering Kenya and the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.\nI am an avid bicycle tourer."
+  },
+  {
+    "objectID": "index-with-images.html#contact-me",
+    "href": "index-with-images.html#contact-me",
+    "title": "About",
+    "section": "Contact me",
+    "text": "Contact me\nAaron Erlich, Associate Professor\nDepartment of Political Science\nMcGill University\n3610 McTavish, Room 26-4\nMontreal, Quebec, Canada H3A 1Y2\nT: 514-398-4756\nF: 514-398-4938\naaron.erlich [at] mcgill.ca"
+  },
+  {
+    "objectID": "index-with-images.html#affiliations",
+    "href": "index-with-images.html#affiliations",
+    "title": "About",
+    "section": "Affiliations",
+    "text": "Affiliations\nCentre for the Study of Democratic Citizenship\nCentre on Population Dynamics\nCenter for Social Media and Politics"
+  },
+  {
+    "objectID": "lab.html",
+    "href": "lab.html",
+    "title": "DemoTIP Laboratory",
+    "section": "",
+    "text": "Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!"
+  },
+  {
+    "objectID": "lab.html#principal-investigator",
+    "href": "lab.html#principal-investigator",
+    "title": "DemoTIP Laboratory",
+    "section": "Principal Investigator",
+    "text": "Principal Investigator\nAaron Erlich is Associate Professor of Political Science at McGill University. He received his Ph.D. from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the American Political Science Review, Journal of Politics, Comparative Political Studies, and many others."
+  },
+  {
+    "objectID": "lab.html#mcgill-graduate-post-doc-researchers",
+    "href": "lab.html#mcgill-graduate-post-doc-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Graduate & Post-Doc Researchers",
+    "text": "McGill Graduate & Post-Doc Researchers\nDavid Dubé is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data analysis.\nRafael Campos-Gottardo is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on levels of affective polarization in the United Kingdom. He is also interested in using casual inference techniques to study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich on several Ukrainian survey-data-related project.\nKaterina McMullen is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project."
+  },
+  {
+    "objectID": "lab.html#mcgill-undergraduate-researchers",
+    "href": "lab.html#mcgill-undergraduate-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Undergraduate Researchers",
+    "text": "McGill Undergraduate Researchers\nLawrence Plastina is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients of McGill’s 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported firearm ownership under Prof. Erlich’s supervision."
+  },
+  {
+    "objectID": "lab.html#demotip-alumni",
+    "href": "lab.html#demotip-alumni",
+    "title": "DemoTIP Laboratory",
+    "section": "DemoTIP Alumni",
+    "text": "DemoTIP Alumni\nThese students are students who worked with me closely. The research and publications are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.\n\n\n\nResearcher\nDegree\nGraduation Year\nPublications & Research\nPost-McGill Employment/Education\n\n\n\n\nMathieu Lavigne\nPh.D.\n2024\nThesis - Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment\nPost-Doc Dartmouth College\n\n\nPratik Mahajan\nM.A.\n2024\nThesis - Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India\n\n\n\nChristoper Ross\nM.A.\n2023\nThesis - Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\nThe Media Ecosystem Observatory\n\n\nAlice Brocheux\nB.A.\n2022\n\nPh.D. Student University of Rochester\n\n\nCostin Ciobanu\nPh.D.\n2022\nThesis - The political and electoral consequences of economic shocks; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\nPost-Doc Royal Holloway University; Post-doc University of Aarhus\n\n\nDilse Kaygisiz\nM.A.\n2022\nThesis - Do laws affect attitudes? A study on domestic violence laws in Turkey\nData Sciences\n\n\nHenry Atkins\nM.A.\n2021\nThesis - Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack\n\n\n\nStefano Dantas\nM.A.\n2021\nMulti-Label Prediction for Political Text-as-Data\n\n\n\nÉtienne Gagnon\nM.A.\n2020\nThesis - Multiview Representation Learning for Political Science Research\nMEXT Fellowship Japan; Ph.D. Student, Princeton University\n\n\nSaewon Park\nM.A.\n2020\nWeaponizing Election Petitions; Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation\nTrackTik; The Media Ecosystem Observatory\n\n\nTanner Ducharme\nB.A.\n2020\n\n\n\n\nAlex Xin Tong Wang\nM.A.\n2020\n\n\n\n\nHair Parra Barrera\nB.A.\n2020\n\nM.A. - HEC-Montréal\n\n\nSu Goh\nB.A.\n2020\n\n\n\n\nAnnie Chen\nB.A.\n2020\nThesis - Incumbency Advantage in Australia; Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates\nBright Line Watch\n\n\nAndrew McCormack\nM.A.\n2019\nmapcan R package; Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US\nData Sciences\n\n\nAengus Bridgman\nPh.D.\n\nUnveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\nAssistant Prof (Research) McGill University\n\n\nTim Roy\nB.A."
+  },
+  {
+    "objectID": "FILE-STRUCTURE-GUIDE.html",
+    "href": "FILE-STRUCTURE-GUIDE.html",
+    "title": "File Structure and Best Practices",
+    "section": "",
+    "text": "aaronerlich-quarto/\n├── _quarto.yml              # Site configuration\n├── index.qmd                # Home page\n├── lab.qmd                  # Lab page\n├── cv.qmd                   # CV page (links to PDF)\n├── cv-embedded-example.qmd  # Alternative: embedded CV\n├── research.qmd             # Publications\n├── teaching.qmd             # Teaching\n├── r-tutorials.qmd          # R tutorials\n├── styles.css               # Custom styling\n├── CNAME                    # For custom domain\n├── files/                   # PUT YOUR PDFs HERE\n│   ├── Erlich_CV.pdf       # Your CV (you need to add this)\n│   ├── paper_advice.pdf    # Your writing advice (download from WordPress)\n│   └── README.md\n├── images/                  # PUT YOUR IMAGES HERE (optional)\n│   ├── profile.jpg\n│   ├── slider01.jpg\n│   └── ...\n└── resources/               # Resource subpages\n    ├── georgia-bib.qmd\n    ├── letters.qmd\n    ├── thesis-internships.qmd\n    └── writing.qmd\n\n\n\n\n\n[Link text](other-page.qmd)\n[Research](research.qmd)\n\n\n\n[Link text](resources/writing.qmd)\n\n\n\n[Link text](../cv.qmd)\n[PDF](../files/paper.pdf)\n\n\n\n[Download CV](files/Erlich_CV.pdf)\n\n\n\n![Alt text](images/photo.jpg)\n\n\n\n\n\n\n\nEasier to maintain\nUpdate once, use everywhere\nProfessional standard\nCurrent implementation in cv.qmd\n\nTo use: 1. Put Erlich_CV.pdf in the files/ directory 2. Keep cv.qmd as is\n\n\n\n\nAll content visible on website\nBetter for SEO\nMore work to maintain\nSee cv-embedded-example.qmd for template\n\nTo use: 1. Rename cv-embedded-example.qmd to cv.qmd 2. Fill in all your CV sections\n\n\n\n\n\n\n\nYour CV: Upload to files/Erlich_CV.pdf\nWriting advice PDF:\n\nVisit: http://aaronerlich.com/wp-content/uploads/2011/02/paper_advice.pdf\nDownload it\nSave as files/paper_advice.pdf\n\nImages (optional but nice):\n\nSlider images: /wp-content/uploads/2016/12/slider*.jpg\nLab member photos: /wp-content/uploads/2024/10/*.jpg or .png\nYour bike photo: /wp-content/uploads/2010/12/biketour.jpg\nSave all to images/ directory\n\n\n\n\n\n\ncd aaronerlich-quarto\nquarto preview\nCheck that all links work, especially: - Navigation menu - CV PDF link - Writing advice PDF link - Internal page links\n\n\n\nAfter adding PDFs/images:\ngit add files/\ngit add images/\ngit commit -m \"Add CV and supporting files\"\ngit push\nWithout this step, files won’t appear on your live site!"
+  },
+  {
+    "objectID": "FILE-STRUCTURE-GUIDE.html#directory-structure",
+    "href": "FILE-STRUCTURE-GUIDE.html#directory-structure",
+    "title": "File Structure and Best Practices",
+    "section": "",
+    "text": "aaronerlich-quarto/\n├── _quarto.yml              # Site configuration\n├── index.qmd                # Home page\n├── lab.qmd                  # Lab page\n├── cv.qmd                   # CV page (links to PDF)\n├── cv-embedded-example.qmd  # Alternative: embedded CV\n├── research.qmd             # Publications\n├── teaching.qmd             # Teaching\n├── r-tutorials.qmd          # R tutorials\n├── styles.css               # Custom styling\n├── CNAME                    # For custom domain\n├── files/                   # PUT YOUR PDFs HERE\n│   ├── Erlich_CV.pdf       # Your CV (you need to add this)\n│   ├── paper_advice.pdf    # Your writing advice (download from WordPress)\n│   └── README.md\n├── images/                  # PUT YOUR IMAGES HERE (optional)\n│   ├── profile.jpg\n│   ├── slider01.jpg\n│   └── ...\n└── resources/               # Resource subpages\n    ├── georgia-bib.qmd\n    ├── letters.qmd\n    ├── thesis-internships.qmd\n    └── writing.qmd"
+  },
+  {
+    "objectID": "FILE-STRUCTURE-GUIDE.html#relative-link-best-practices",
+    "href": "FILE-STRUCTURE-GUIDE.html#relative-link-best-practices",
+    "title": "File Structure and Best Practices",
+    "section": "",
+    "text": "[Link text](other-page.qmd)\n[Research](research.qmd)\n\n\n\n[Link text](resources/writing.qmd)\n\n\n\n[Link text](../cv.qmd)\n[PDF](../files/paper.pdf)\n\n\n\n[Download CV](files/Erlich_CV.pdf)\n\n\n\n![Alt text](images/photo.jpg)"
+  },
+  {
+    "objectID": "FILE-STRUCTURE-GUIDE.html#cv-two-options",
+    "href": "FILE-STRUCTURE-GUIDE.html#cv-two-options",
+    "title": "File Structure and Best Practices",
+    "section": "",
+    "text": "Easier to maintain\nUpdate once, use everywhere\nProfessional standard\nCurrent implementation in cv.qmd\n\nTo use: 1. Put Erlich_CV.pdf in the files/ directory 2. Keep cv.qmd as is\n\n\n\n\nAll content visible on website\nBetter for SEO\nMore work to maintain\nSee cv-embedded-example.qmd for template\n\nTo use: 1. Rename cv-embedded-example.qmd to cv.qmd 2. Fill in all your CV sections"
+  },
+  {
+    "objectID": "FILE-STRUCTURE-GUIDE.html#adding-your-files",
+    "href": "FILE-STRUCTURE-GUIDE.html#adding-your-files",
+    "title": "File Structure and Best Practices",
+    "section": "",
+    "text": "Your CV: Upload to files/Erlich_CV.pdf\nWriting advice PDF:\n\nVisit: http://aaronerlich.com/wp-content/uploads/2011/02/paper_advice.pdf\nDownload it\nSave as files/paper_advice.pdf\n\nImages (optional but nice):\n\nSlider images: /wp-content/uploads/2016/12/slider*.jpg\nLab member photos: /wp-content/uploads/2024/10/*.jpg or .png\nYour bike photo: /wp-content/uploads/2010/12/biketour.jpg\nSave all to images/ directory"
+  },
+  {
+    "objectID": "FILE-STRUCTURE-GUIDE.html#testing-locally",
+    "href": "FILE-STRUCTURE-GUIDE.html#testing-locally",
+    "title": "File Structure and Best Practices",
+    "section": "",
+    "text": "cd aaronerlich-quarto\nquarto preview\nCheck that all links work, especially: - Navigation menu - CV PDF link - Writing advice PDF link - Internal page links"
+  },
+  {
+    "objectID": "FILE-STRUCTURE-GUIDE.html#important-git-commit-files",
+    "href": "FILE-STRUCTURE-GUIDE.html#important-git-commit-files",
+    "title": "File Structure and Best Practices",
+    "section": "",
+    "text": "After adding PDFs/images:\ngit add files/\ngit add images/\ngit commit -m \"Add CV and supporting files\"\ngit push\nWithout this step, files won’t appear on your live site!"
+  },
+  {
+    "objectID": "IMAGE-MIGRATION-GUIDE.html",
+    "href": "IMAGE-MIGRATION-GUIDE.html",
+    "title": "Image Migration Guide",
+    "section": "",
+    "text": "https://www.aaronerlich.com/wp-content/uploads/2016/12/slider01-1200x350.jpg\nhttps://www.aaronerlich.com/wp-content/uploads/2016/12/slider05-1200x350.jpg\nhttps://www.aaronerlich.com/wp-content/uploads/2016/12/slider02-1200x350.jpg\nhttps://www.aaronerlich.com/wp-content/uploads/2016/12/slider03-1200x350.jpg\n\n\n\n\n\nDavid Dubé: /wp-content/uploads/2024/10/dube_david_headshot.png\nRafael Campos-Gottardo: /wp-content/uploads/2024/10/campos_gottardo_rafael_headshot.jpg\nKaterina McMullen: /wp-content/uploads/2024/10/mcmullen_katerina_MA.jpeg\nLawrence Plastina: /wp-content/uploads/2024/10/plastina_lawrnce_headshot.jpg\nAaron Erlich (you): /wp-content/uploads/2018/11/Erlich.jpg\n\n\n\n\n\n/wp-content/uploads/2018/11/IMG_4706-2000x800.jpg\n/wp-content/uploads/2018/11/01084D82-62A0-41DC-87E4-A54AA0D571FD-1-2000x800.jpeg\n/wp-content/uploads/2019/02/spsa_lab-1499x599.jpg\n\n\n\n\n\nBike tour photo: /wp-content/uploads/2010/12/biketour.jpg\n\n\n\n\n\n\nRight-click each image URL above and “Save Image As…”\nSave to your aaronerlich-quarto/images/ folder\nUse simple names like:\n\nslider01.jpg, slider02.jpg, etc.\nheadshot-dube.png, headshot-campos.jpg, etc.\nprofile.jpg (for your headshot)\nlab-lunch.jpg, lab-presentation.jpg, lab-spsa.jpg\nbike-tour.jpg\n\n\n\n\n\n\nLog into Bluehost → cPanel → File Manager\nNavigate to public_html/wp-content/uploads/\nDownload these folders:\n\n2016/12/ (slider images)\n2024/10/ (current member headshots)\n2018/11/ (lab photos, your headshot)\n2019/02/ (SPSA lab photo)\n2010/12/ (bike tour)\n\nExtract and move relevant images to aaronerlich-quarto/images/\n\n\n\n\n\n\nCurrently the slider is commented out. If you want a photo on homepage:\n![Your descriptive caption](images/slider01.jpg)\nOr create a simple image gallery:\n::: {layout-ncol=2}\n![Caption 1](images/slider01.jpg)\n\n![Caption 2](images/slider02.jpg)\n:::\n\n\n\nReplace the current placeholder with:\n![Aaron Erlich](images/profile.jpg){width=150px}\n\n**Aaron Erlich** is Associate Professor...\n\n![David Dubé](images/headshot-dube.png){width=150px}\n\n**David Dubé** is a PhD candidate...\nOr for a cleaner layout:\n::: {.grid}\n::: {.g-col-2}\n![](images/headshot-dube.png){width=150px}\n:::\n::: {.g-col-10}\n**David Dubé** is a PhD candidate in Political Science...\n:::\n:::\n\n\n\n\ncd aaronerlich-quarto\nmkdir -p images\n\n# Then download images as described above\n\n# Commit them\ngit add images/\ngit commit -m \"Add site images\"\ngit push\n\n\n\nImages need to be committed to git or they won’t appear on your live site!"
+  },
+  {
+    "objectID": "IMAGE-MIGRATION-GUIDE.html#images-currently-on-your-wordpress-site",
+    "href": "IMAGE-MIGRATION-GUIDE.html#images-currently-on-your-wordpress-site",
+    "title": "Image Migration Guide",
+    "section": "",
+    "text": "https://www.aaronerlich.com/wp-content/uploads/2016/12/slider01-1200x350.jpg\nhttps://www.aaronerlich.com/wp-content/uploads/2016/12/slider05-1200x350.jpg\nhttps://www.aaronerlich.com/wp-content/uploads/2016/12/slider02-1200x350.jpg\nhttps://www.aaronerlich.com/wp-content/uploads/2016/12/slider03-1200x350.jpg\n\n\n\n\n\nDavid Dubé: /wp-content/uploads/2024/10/dube_david_headshot.png\nRafael Campos-Gottardo: /wp-content/uploads/2024/10/campos_gottardo_rafael_headshot.jpg\nKaterina McMullen: /wp-content/uploads/2024/10/mcmullen_katerina_MA.jpeg\nLawrence Plastina: /wp-content/uploads/2024/10/plastina_lawrnce_headshot.jpg\nAaron Erlich (you): /wp-content/uploads/2018/11/Erlich.jpg\n\n\n\n\n\n/wp-content/uploads/2018/11/IMG_4706-2000x800.jpg\n/wp-content/uploads/2018/11/01084D82-62A0-41DC-87E4-A54AA0D571FD-1-2000x800.jpeg\n/wp-content/uploads/2019/02/spsa_lab-1499x599.jpg\n\n\n\n\n\nBike tour photo: /wp-content/uploads/2010/12/biketour.jpg"
+  },
+  {
+    "objectID": "IMAGE-MIGRATION-GUIDE.html#option-1-download-images-via-browser-easiest",
+    "href": "IMAGE-MIGRATION-GUIDE.html#option-1-download-images-via-browser-easiest",
+    "title": "Image Migration Guide",
+    "section": "",
+    "text": "Right-click each image URL above and “Save Image As…”\nSave to your aaronerlich-quarto/images/ folder\nUse simple names like:\n\nslider01.jpg, slider02.jpg, etc.\nheadshot-dube.png, headshot-campos.jpg, etc.\nprofile.jpg (for your headshot)\nlab-lunch.jpg, lab-presentation.jpg, lab-spsa.jpg\nbike-tour.jpg"
+  },
+  {
+    "objectID": "IMAGE-MIGRATION-GUIDE.html#option-2-download-from-bluehost-all-at-once",
+    "href": "IMAGE-MIGRATION-GUIDE.html#option-2-download-from-bluehost-all-at-once",
+    "title": "Image Migration Guide",
+    "section": "",
+    "text": "Log into Bluehost → cPanel → File Manager\nNavigate to public_html/wp-content/uploads/\nDownload these folders:\n\n2016/12/ (slider images)\n2024/10/ (current member headshots)\n2018/11/ (lab photos, your headshot)\n2019/02/ (SPSA lab photo)\n2010/12/ (bike tour)\n\nExtract and move relevant images to aaronerlich-quarto/images/"
+  },
+  {
+    "objectID": "IMAGE-MIGRATION-GUIDE.html#after-downloading-images",
+    "href": "IMAGE-MIGRATION-GUIDE.html#after-downloading-images",
+    "title": "Image Migration Guide",
+    "section": "",
+    "text": "Currently the slider is commented out. If you want a photo on homepage:\n![Your descriptive caption](images/slider01.jpg)\nOr create a simple image gallery:\n::: {layout-ncol=2}\n![Caption 1](images/slider01.jpg)\n\n![Caption 2](images/slider02.jpg)\n:::\n\n\n\nReplace the current placeholder with:\n![Aaron Erlich](images/profile.jpg){width=150px}\n\n**Aaron Erlich** is Associate Professor...\n\n![David Dubé](images/headshot-dube.png){width=150px}\n\n**David Dubé** is a PhD candidate...\nOr for a cleaner layout:\n::: {.grid}\n::: {.g-col-2}\n![](images/headshot-dube.png){width=150px}\n:::\n::: {.g-col-10}\n**David Dubé** is a PhD candidate in Political Science...\n:::\n:::"
+  },
+  {
+    "objectID": "IMAGE-MIGRATION-GUIDE.html#quick-command-to-set-up",
+    "href": "IMAGE-MIGRATION-GUIDE.html#quick-command-to-set-up",
+    "title": "Image Migration Guide",
+    "section": "",
+    "text": "cd aaronerlich-quarto\nmkdir -p images\n\n# Then download images as described above\n\n# Commit them\ngit add images/\ngit commit -m \"Add site images\"\ngit push"
+  },
+  {
+    "objectID": "IMAGE-MIGRATION-GUIDE.html#dont-forget",
+    "href": "IMAGE-MIGRATION-GUIDE.html#dont-forget",
+    "title": "Image Migration Guide",
+    "section": "",
+    "text": "Images need to be committed to git or they won’t appear on your live site!"
+  },
+  {
+    "objectID": "resources/georgia-bib.html",
+    "href": "resources/georgia-bib.html",
+    "title": "Georgia Bibliography",
+    "section": "",
+    "text": "[Content for your Georgia Bibliography will go here]\nNote: You’ll need to fetch the content from your current page at https://www.aaronerlich.com/resources/georgia-bibliography"
+  },
+  {
+    "objectID": "resources/letters.html",
+    "href": "resources/letters.html",
+    "title": "Letter of Recommendation",
+    "section": "",
+    "text": "If you are an undergraduate looking for a letter of recommendation, I recommend you ask me if you feel like I could write you a strong letter. Usually, a strong letter comes from a letter writer who knows you well and thinks highly of your work.\nIf you are interested in a letter from me, first send an inquiry."
+  },
+  {
+    "objectID": "resources/letters.html#materials-needed",
+    "href": "resources/letters.html#materials-needed",
+    "title": "Letter of Recommendation",
+    "section": "Materials Needed",
+    "text": "Materials Needed\nPlease provide the following:\n\nStatement of purpose\nUnofficial transcript\nA spreadsheet with all programs to which you are applying\nA document with anything else you would like me to know or to include in the letter\n\n\nExample Spreadsheet Format\nThe spreadsheet should include details about each program (two programs shown as examples):\n\n\n\nProgram\nInstitution\nDeadline\nStatus\n\n\n\n\nMA Political Science\nMcGill University\nJan 15\nPending\n\n\nPhD Political Science\nUniversity of Toronto\nDec 1\nPending"
+  },
+  {
+    "objectID": "lab-with-images.html",
+    "href": "lab-with-images.html",
+    "title": "DemoTIP Laboratory",
+    "section": "",
+    "text": "Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!"
+  },
+  {
+    "objectID": "lab-with-images.html#principal-investigator",
+    "href": "lab-with-images.html#principal-investigator",
+    "title": "DemoTIP Laboratory",
+    "section": "Principal Investigator",
+    "text": "Principal Investigator\n\n\n\n\n\nAaron Erlich is Associate Professor of Political Science at McGill University. He received his Ph.D. from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the American Political Science Review, Journal of Politics, Comparative Political Studies, and many others."
+  },
+  {
+    "objectID": "lab-with-images.html#mcgill-graduate-post-doc-researchers",
+    "href": "lab-with-images.html#mcgill-graduate-post-doc-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Graduate & Post-Doc Researchers",
+    "text": "McGill Graduate & Post-Doc Researchers\n\n\n\n\n\nDavid Dubé is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data analysis.\n\n\n\n\n\n\n\nRafael Campos-Gottardo is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on levels of affective polarization in the United Kingdom. He is also interested in using casual inference techniques to study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich on several Ukrainian survey-data-related project.\n\n\n\n\n\n\n\nKaterina McMullen is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project."
+  },
+  {
+    "objectID": "lab-with-images.html#mcgill-undergraduate-researchers",
+    "href": "lab-with-images.html#mcgill-undergraduate-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Undergraduate Researchers",
+    "text": "McGill Undergraduate Researchers\n\n\n\n\n\nLawrence Plastina is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients of McGill’s 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported firearm ownership under Prof. Erlich’s supervision."
+  },
+  {
+    "objectID": "lab-with-images.html#demotip-alumni",
+    "href": "lab-with-images.html#demotip-alumni",
+    "title": "DemoTIP Laboratory",
+    "section": "DemoTIP Alumni",
+    "text": "DemoTIP Alumni\nThese students are students who worked with me closely. The research and publications are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.\n\n\n\nResearcher\nDegree\nGraduation Year\nPublications & Research\nPost-McGill Employment/Education\n\n\n\n\nMathieu Lavigne\nPh.D.\n2024\nThesis - Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment\nPost-Doc Dartmouth College\n\n\nPratik Mahajan\nM.A.\n2024\nThesis - Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India\n\n\n\nChristoper Ross\nM.A.\n2023\nThesis - Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\nThe Media Ecosystem Observatory\n\n\nAlice Brocheux\nB.A.\n2022\n\nPh.D. Student University of Rochester\n\n\nCostin Ciobanu\nPh.D.\n2022\nThesis - The political and electoral consequences of economic shocks; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\nPost-Doc Royal Holloway University; Post-doc University of Aarhus\n\n\nDilse Kaygisiz\nM.A.\n2022\nThesis - Do laws affect attitudes? A study on domestic violence laws in Turkey\nData Sciences\n\n\nHenry Atkins\nM.A.\n2021\nThesis - Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack\n\n\n\nStefano Dantas\nM.A.\n2021\nMulti-Label Prediction for Political Text-as-Data\n\n\n\nÉtienne Gagnon\nM.A.\n2020\nThesis - Multiview Representation Learning for Political Science Research\nMEXT Fellowship Japan; Ph.D. Student, Princeton University\n\n\nSaewon Park\nM.A.\n2020\nWeaponizing Election Petitions; Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation\nTrackTik; The Media Ecosystem Observatory\n\n\nTanner Ducharme\nB.A.\n2020\n\n\n\n\nAlex Xin Tong Wang\nM.A.\n2020\n\n\n\n\nHair Parra Barrera\nB.A.\n2020\n\nM.A. - HEC-Montréal\n\n\nSu Goh\nB.A.\n2020\n\n\n\n\nAnnie Chen\nB.A.\n2020\nThesis - Incumbency Advantage in Australia; Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates\nBright Line Watch\n\n\nAndrew McCormack\nM.A.\n2019\nmapcan R package; Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US\nData Sciences\n\n\nAengus Bridgman\nPh.D.\n\nUnveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\nAssistant Prof (Research) McGill University\n\n\nTim Roy\nB.A."
+  },
+  {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "If you are taking one of my classes, please book office hours using the scheduling system below.\n[Office hours booking system - you can embed your simplybook.me widget here, or just link to your booking page directly]\nBook office hours: aaronerlich.simplybook.me"
+  },
+  {
+    "objectID": "teaching.html#office-hours",
+    "href": "teaching.html#office-hours",
+    "title": "Teaching",
+    "section": "",
+    "text": "If you are taking one of my classes, please book office hours using the scheduling system below.\n[Office hours booking system - you can embed your simplybook.me widget here, or just link to your booking page directly]\nBook office hours: aaronerlich.simplybook.me"
+  },
+  {
+    "objectID": "teaching.html#writing-advice",
+    "href": "teaching.html#writing-advice",
+    "title": "Teaching",
+    "section": "Writing Advice",
+    "text": "Writing Advice\nHere, I give some general advice about writing papers. Many folks have written good advice: I highly recommend Barry Weingast’s, which can be found here. Also see Chris Blattman and Henry Farrell.\nDownload my writing advice (PDF)"
+  },
+  {
+    "objectID": "research.html",
+    "href": "research.html",
+    "title": "Research",
+    "section": "",
+    "text": "You can find my Google Scholar Profile here."
+  },
+  {
+    "objectID": "research.html#selected-published-manuscripts",
+    "href": "research.html#selected-published-manuscripts",
+    "title": "Research",
+    "section": "Selected Published Manuscripts",
+    "text": "Selected Published Manuscripts\nErlich, Aaron, Jordan Gans-Morse, and Simeon Nichter. Online First. “Selective Bribery: When Do Citizens Engage in Corruption?” Comparative Political Studies: 00104140241259444.\nungated wp version: [here]\nReplication Data\n\nErlich, Aaron, Danielle F. Jung, and James D. Long. Online First. “Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage With Application to an Emerging Democracy.” Social Science Computer Review: 08944393241247420.\nReplication Data\n\nSoehl, Thomas, Aaron Erlich, and Zhenxiang Chen. Online First. “Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.” Sociological Methods & Research.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Karen E. Ferree, Clark C. Gibson, Danielle F. Jung, James D. Long, and Craig McIntosh. 2024. “Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa.” Economic Development and Cultural Change 72(3): 1425–63.\nReplication Data\n\nErlich, Aaron, and Edana Beauvais. 2023. “Explaining Women’s Political Underrepresentation in Democracies with High Levels of Corruption.” Political Science Research & Methods.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Calvin Garner, Gordon Pennycook, and David G. Rand. 2023. “Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation: Evidence from Ukraine.” Political Psychology 11(4) 804-22.\nReplication Data\n\nErlich, Aaron, and Calvin Garner. 2023. “Is Pro-Kremlin Disinformation Effective: Evidence from Ukraine.” International Journal of Press/Politics 28(1) 5-28.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Thomas Soehl, and Annie Y. Chen. 2023. “Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates.” Journal of Experimental Political Science.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Stefano Dantas, Benjamin Bagozzi, Daniel Berliner, and Brian Palmer-Rubin. 2022. “Multi-label Prediction for Political Text-as-Data.” Political Analysis 30(4) 463-480.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Daniel Berliner, Brian Palmer-Rubin, and Benjamin Bagozzi. 2021. “Media Attention and Bureaucratic Responsiveness.” Journal of Public Administration Research & Theory 31(4): 687-703.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, and Calvin Garner. 2021. “Implicit Associations, Explicit Attitudes, and Sub-group Differences during Wartime.” International Studies Quarterly 65(2): 528-541.\nReplication Data\n\nBridgman, Aengus, Costin Ciobanu, Aaron Erlich, Danielle Bohonos, and Christopher Ross. 2021. “Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader.” Journal of Politics 83(3) 1024-1029.\nReplication Data\n\nBerliner, Daniel, Benjamin Bagozzi, Brian Palmer-Rubin, and Aaron Erlich. 2021. “The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico.” Journal of Politics 83(1) 231-245.\nReplication Data\n\nErlich, Aaron. 2020. “Can information campaigns impact preferences toward vote selling? Theory and evidence from Kenya.” International Political Science Review 41(3) 419-435.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, and Calvin Garner. 2020. “Interpersonal Incomparability in Citizens’ Views of Democracy: Survey Evidence from Ukraine.” Journal of Elections, Public Opinion and Parties 30(02) 139-160.\nOnline Appendix\nReplication Data\n\nErlich, Aaron. 2018. “Pre-Acceptance as a Method to Combat Publication Bias in Area Studies: A Pilot in the Caucasus.” Caucasus Survey 6(3): 224–29.\n\nErlich, Aaron, Danielle F. Jung, James D. Long, and Craig McIntosh. 2018. “The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries.” Development Engineering 3: 34–46.\n\nErlich, Aaron, and Nicholas Kerr. 2016. “‘The Local Mwananchi Has Lost Trust’: Design, Transition and Legitimacy in Kenyan Election Management.” The Journal of Modern African Studies 54(04): 671–702.\nReplication Data\n\nBush, Sarah Sunn, Aaron Erlich, Lauren Prather, and Yael Zeira. 2016. “The Effects of Authoritarian Iconography: An Experimental Test.” Comparative Political Studies 49(13): 1704–1738.\nPublication version (ungated) available here\nReplication Data\nPre-registration\n\nBerliner, Daniel, and Aaron Erlich. 2015. “Competing for Transparency: Political Competition and Institutional Reform in Mexican States.” American Political Science Review 109(01): 110–28.\nPublication version (ungated) available here\nOnline Appendix\nReplication Data\n\nLevi, Margaret et al. 2012. “Aligning Rights and Interests: Why, When and How to Uphold Labor Standards.” World Bank Development Report Background Paper."
+  },
+  {
+    "objectID": "resources/thesis-internships.html",
+    "href": "resources/thesis-internships.html",
+    "title": "Undergraduate Thesis and Internships",
+    "section": "",
+    "text": "Please see instructions here.\n[Note: You’ll need to add the specific instructions from your current page at https://www.aaronerlich.com/resources/undergraduate-thesis-and-internships]"
+  },
+  {
+    "objectID": "resources/writing.html",
+    "href": "resources/writing.html",
+    "title": "Political Science Writing",
+    "section": "",
+    "text": "Download my writing advice (PDF)\nMany folks have written good advice: I highly recommend Barry Weingast’s, which can be found here. Also see Chris Blattman and Henry Farrell."
+  },
+  {
+    "objectID": "r-tutorials.html",
+    "href": "r-tutorials.html",
+    "title": "R Tutorials",
+    "section": "",
+    "text": "[Content for your R tutorials will go here]\nNote: You’ll need to fetch the content from your current R Tutorials page at https://www.aaronerlich.com/teaching/r-tutorials"
+  },
+  {
+    "objectID": "lab-interactive-table.html",
+    "href": "lab-interactive-table.html",
+    "title": "DemoTIP Laboratory",
+    "section": "",
+    "text": "Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!"
+  },
+  {
+    "objectID": "lab-interactive-table.html#principal-investigator",
+    "href": "lab-interactive-table.html#principal-investigator",
+    "title": "DemoTIP Laboratory",
+    "section": "Principal Investigator",
+    "text": "Principal Investigator\n\n\n\n\n\nAaron Erlich is Associate Professor of Political Science at McGill University. He received his Ph.D. from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the American Political Science Review, Journal of Politics, Comparative Political Studies, and many others."
+  },
+  {
+    "objectID": "lab-interactive-table.html#mcgill-graduate-post-doc-researchers",
+    "href": "lab-interactive-table.html#mcgill-graduate-post-doc-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Graduate & Post-Doc Researchers",
+    "text": "McGill Graduate & Post-Doc Researchers\n\n\n\n\n\nDavid Dubé is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data analysis.\n\n\n\n\n\n\n\nRafael Campos-Gottardo is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on levels of affective polarization in the United Kingdom. He is also interested in using casual inference techniques to study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich on several Ukrainian survey-data-related project.\n\n\n\n\n\n\n\nKaterina McMullen is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project."
+  },
+  {
+    "objectID": "lab-interactive-table.html#mcgill-undergraduate-researchers",
+    "href": "lab-interactive-table.html#mcgill-undergraduate-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Undergraduate Researchers",
+    "text": "McGill Undergraduate Researchers\n\n\n\n\n\nLawrence Plastina is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients of McGill’s 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported firearm ownership under Prof. Erlich’s supervision."
+  },
+  {
+    "objectID": "lab-interactive-table.html#demotip-alumni",
+    "href": "lab-interactive-table.html#demotip-alumni",
+    "title": "DemoTIP Laboratory",
+    "section": "DemoTIP Alumni",
+    "text": "DemoTIP Alumni\nThese students worked with me closely. The research and publications are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me."
+  },
+  {
+    "objectID": "lab-full-featured.html",
+    "href": "lab-full-featured.html",
+    "title": "DemoTIP Laboratory",
+    "section": "",
+    "text": "Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!"
+  },
+  {
+    "objectID": "lab-full-featured.html#principal-investigator",
+    "href": "lab-full-featured.html#principal-investigator",
+    "title": "DemoTIP Laboratory",
+    "section": "Principal Investigator",
+    "text": "Principal Investigator\n\n\n\n\n\nAaron Erlich is Associate Professor of Political Science at McGill University. He received his Ph.D. from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the American Political Science Review, Journal of Politics, Comparative Political Studies, and many others."
+  },
+  {
+    "objectID": "lab-full-featured.html#mcgill-graduate-post-doc-researchers",
+    "href": "lab-full-featured.html#mcgill-graduate-post-doc-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Graduate & Post-Doc Researchers",
+    "text": "McGill Graduate & Post-Doc Researchers\n\n\n\n\n\nDavid Dubé is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data analysis.\n\n\n\n\n\n\n\nRafael Campos-Gottardo is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on levels of affective polarization in the United Kingdom. He is also interested in using casual inference techniques to study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich on several Ukrainian survey-data-related project.\n\n\n\n\n\n\n\nKaterina McMullen is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project."
+  },
+  {
+    "objectID": "lab-full-featured.html#mcgill-undergraduate-researchers",
+    "href": "lab-full-featured.html#mcgill-undergraduate-researchers",
+    "title": "DemoTIP Laboratory",
+    "section": "McGill Undergraduate Researchers",
+    "text": "McGill Undergraduate Researchers\n\n\n\n\n\nLawrence Plastina is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients of McGill’s 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported firearm ownership under Prof. Erlich’s supervision."
+  },
+  {
+    "objectID": "lab-full-featured.html#demotip-alumni",
+    "href": "lab-full-featured.html#demotip-alumni",
+    "title": "DemoTIP Laboratory",
+    "section": "DemoTIP Alumni",
+    "text": "DemoTIP Alumni\nThese students worked with me closely. The research and publications are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University of Washington in Seattle.\nBroadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as the American Political Science Review, Comparative Political Studies, the Journal of Politics, the Journal of Public Administration Research & Theory, and Political Analysis, among others. You can see more about my academic work on my CV.\nBefore returning to academia, I worked for the National Democratic Institute covering Kenya and the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.\nI am an avid bicycle tourer."
+  },
+  {
+    "objectID": "index.html#contact-me",
+    "href": "index.html#contact-me",
+    "title": "About",
+    "section": "Contact me",
+    "text": "Contact me\nAaron Erlich, Associate Professor\nDepartment of Political Science\nMcGill University\n3610 McTavish, Room 26-4\nMontreal, Quebec, Canada H3A 1Y2\nT: 514-398-4756\nF: 514-398-4938\naaron.erlich [at] mcgill.ca"
+  },
+  {
+    "objectID": "index.html#affiliations",
+    "href": "index.html#affiliations",
+    "title": "About",
+    "section": "Affiliations",
+    "text": "Affiliations\nCentre for the Study of Democratic Citizenship\nCentre on Population Dynamics\nCenter for Social Media and Politics"
+  },
+  {
+    "objectID": "cv.html",
+    "href": "cv.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Download my CV (PDF)\nLast updated: January 2026\n\nFor my publication list, see my Google Scholar profile or the Research page."
+  },
+  {
+    "objectID": "cv.html#download-cv",
+    "href": "cv.html#download-cv",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Download my CV (PDF)\nLast updated: January 2026\n\nFor my publication list, see my Google Scholar profile or the Research page."
+  },
+  {
+    "objectID": "cv.html#contact-information",
+    "href": "cv.html#contact-information",
+    "title": "Curriculum Vitae",
+    "section": "Contact Information",
+    "text": "Contact Information\nAaron Erlich, Associate Professor\nDepartment of Political Science\nMcGill University\n3610 McTavish, Room 26-4\nMontreal, Quebec, Canada H3A 1Y2\nT: 514-398-4756\nF: 514-398-4938\naaron.erlich [at] mcgill.ca"
+  },
+  {
+    "objectID": "cv-embedded-example.html",
+    "href": "cv-embedded-example.html",
+    "title": "Curriculum Vitae",
+    "section": "",
+    "text": "Download PDF Version\nGoogle Scholar |\nORCID"
+  },
+  {
+    "objectID": "cv-embedded-example.html#aaron-erlich",
+    "href": "cv-embedded-example.html#aaron-erlich",
+    "title": "Curriculum Vitae",
+    "section": "Aaron Erlich",
+    "text": "Aaron Erlich\nAssociate Professor\nDepartment of Political Science\nMcGill University\n3610 McTavish, Room 26-4\nMontreal, Quebec, Canada H3A 1Y2\nT: 514-398-4756 | aaron.erlich [at] mcgill.ca"
+  }
+]

@@ -1,0 +1,25 @@
+---
+title: "Letter of Recommendation"
+---
+
+If you are an undergraduate looking for a letter of recommendation, I recommend you ask me if you feel like I could write you a strong letter. Usually, a strong letter comes from a letter writer who knows you well and thinks highly of your work.
+
+If you are interested in a letter from me, first send an inquiry.
+
+## Materials Needed
+
+Please provide the following:
+
+- Statement of purpose
+- Unofficial transcript
+- A spreadsheet with all programs to which you are applying
+- A document with anything else you would like me to know or to include in the letter
+
+### Example Spreadsheet Format
+
+The spreadsheet should include details about each program (two programs shown as examples):
+
+| Program | Institution | Deadline | Status |
+|---------|-------------|----------|--------|
+| MA Political Science | McGill University | Jan 15 | Pending |
+| PhD Political Science | University of Toronto | Dec 1 | Pending |

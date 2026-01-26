@@ -1,0 +1,17 @@
+---
+title: "Teaching"
+---
+
+## Office Hours
+
+If you are taking one of my classes, please book office hours using the scheduling system below.
+
+*[Office hours booking system - you can embed your simplybook.me widget here, or just link to your booking page directly]*
+
+**Book office hours:** [aaronerlich.simplybook.me](https://aaronerlich.simplybook.me)
+
+## Writing Advice
+
+Here, I give some general advice about writing papers. Many folks have written good advice: I highly recommend Barry Weingast's, which can be found [here](http://www.stanford.edu/~weingast/caltech_rules.html). Also see [Chris Blattman](http://chrisblattman.com/2010/02/17/how-to-write-an-essay/) and [Henry Farrell](http://themonkeycage.org/blog/2010/02/16/good_writing_in_political_scie/).
+
+**[Download my writing advice (PDF)](files/paper_advice.pdf)**

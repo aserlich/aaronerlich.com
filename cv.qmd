@@ -1,0 +1,24 @@
+---
+title: "Curriculum Vitae"
+---
+
+## Download CV
+
+[**Download my CV (PDF)**](files/Erlich_CV.pdf){.btn .btn-primary}
+
+*Last updated: January 2026*
+
+---
+
+For my publication list, see my [Google Scholar profile](https://scholar.google.ca/citations?user=h8n98PQAAAAJ&hl=en&oi=ao) or the [Research](research.qmd) page.
+
+## Contact Information
+
+Aaron Erlich, Associate Professor  
+Department of Political Science  
+McGill University  
+3610 McTavish, Room 26-4  
+Montreal, Quebec, Canada H3A 1Y2  
+T: 514-398-4756  
+F: 514-398-4938  
+aaron.erlich [at] mcgill.ca
