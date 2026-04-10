@@ -1,68 +1,452 @@
 /* Custom styles for Aaron Erlich's website */
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+/* ===========================================================
+   Typography — Space Mono (typewriter-style) site-wide,
+   with Noto Sans Georgian fallback for Mkhedruli (ka).
+   =========================================================== */
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+:root {
+  --body-font: "Space Mono", ui-monospace, "SFMono-Regular", "Menlo", monospace;
+  --body-size: 0.95rem;
+  --maroon: #6b1b1b;
 }
 
-/* Make tables look better */
+body {
+  font-family: var(--body-font);
+  font-size: var(--body-size);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6,
+.navbar-brand, .navbar .nav-link {
+  font-family: var(--body-font);
+  letter-spacing: -0.01em;
+}
+
+/* Space Mono is heavy in bold — pull it back a touch for headings */
+h1, h2, h3, h4 { font-weight: 700; }
+
+/* ===========================================================
+   Tables
+   =========================================================== */
 table {
   margin: 2em 0;
   border-collapse: collapse;
   width: 100%;
+  font-size: 0.92em;
 }
 
 table th {
   background-color: #f8f9fa;
   border-bottom: 2px solid #dee2e6;
-  padding: 0.75rem;
+  padding: 0.6rem 0.75rem;
   text-align: left;
 }
 
 table td {
   border-bottom: 1px solid #dee2e6;
-  padding: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  vertical-align: top;
 }
 
-/* Style for horizontal rules between publications */
+/* Sortable table — header cells get a pointer + arrow indicator */
+table.sortable th[role="columnheader"],
+table.sortable th {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+  padding-right: 1.5em;
+}
+table.sortable th::after {
+  content: " ⇅";
+  opacity: 0.35;
+  font-size: 0.85em;
+  position: absolute;
+  right: 0.5em;
+}
+table.sortable th.sort-asc::after  { content: " ↑"; opacity: 1; }
+table.sortable th.sort-desc::after { content: " ↓"; opacity: 1; }
+
 hr {
   margin: 2em 0;
   border: 0;
   border-top: 1px solid #dee2e6;
 }
 
-/* Contact info styling */
-.contact {
-  background-color: #f8f9fa;
-  padding: 1.5em;
-  border-radius: 5px;
-  margin-top: 2em;
-}
-
-/* Image styling */
+/* ===========================================================
+   Images — default is NOT rounded. Specific classes round.
+   =========================================================== */
 img {
   max-width: 100%;
   height: auto;
-  border-radius: 4px;
 }
 
-/* Hero banner for homepage */
-#hero-banner img {
-  width: 100%;
-  max-height: 400px;
+.profile-photo {
+  width: 240px;
+  height: 240px;
+  max-width: 100%;
   object-fit: cover;
-  margin-bottom: 2em;
-}
-
-/* Profile images in grid layouts */
-.grid img {
   border-radius: 50%;
-  object-fit: cover;
-  margin-bottom: 1em;
+  display: block;
+  margin: 0 auto 1em;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
 }
 
-/* Headshot sizing */
-img[width="150px"] {
-  width: 150px;
-  height: 150px;
+.headshot {
+  width: 140px;
+  height: 140px;
   object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 0.75em;
 }
+
+/* On narrow screens the bio grid stacks — shrink the profile photo */
+@media (max-width: 767px) {
+  .profile-photo { width: 180px; height: 180px; }
+}
+
+/* ===========================================================
+   Collapsible sections (<details>)
+   =========================================================== */
+details.cv-details,
+details.lab-details {
+  margin: 1.5em 0;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 0;
+  overflow: hidden;
+}
+details.cv-details > summary,
+details.lab-details > summary {
+  cursor: pointer;
+  padding: 0.75em 1em;
+  background: #f7f7f7;
+  font-weight: 700;
+  list-style: none;
+}
+details.cv-details > summary::-webkit-details-marker,
+details.lab-details > summary::-webkit-details-marker { display: none; }
+details.cv-details > summary::before,
+details.lab-details > summary::before {
+  content: "▶ ";
+  display: inline-block;
+  transition: transform 0.15s;
+  margin-right: 0.3em;
+}
+details[open].cv-details > summary::before,
+details[open].lab-details > summary::before {
+  transform: rotate(90deg);
+}
+details.cv-details > *:not(summary),
+details.lab-details > *:not(summary) {
+  padding: 0 1em;
+}
+
+/* ===========================================================
+   CV — bespoke publication rendering
+   Mirrors the LaTeX layout: linked title in quotes, italic
+   venue + vol(issue) pages, (with co-authors), then —prefixed
+   indented annotation lines beneath (awards, media coverage,
+   press releases). Rendered by scripts/build-cv.py from
+   _data/cv.yml + _data/cv-tag-proposal.yml + Zotero JSON.
+   =========================================================== */
+
+.cv-page {
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+/* Constrain CV content width on full-page layout to keep readable line length */
+body.cv-page #quarto-document-content,
+body.cv-page main.content {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About page: left-justify content (not centered) */
+body.about-page #quarto-document-content,
+body.about-page main.content,
+body.about-page #title-block-header {
+  max-width: 900px;
+  margin-left: 3em;
+  margin-right: auto;
+}
+@media (max-width: 768px) {
+  body.about-page #quarto-document-content,
+  body.about-page main.content,
+  body.about-page #title-block-header {
+    margin-left: 1em;
+  }
+}
+
+/* Tighten up the auto-generated <ul> bullets in presentations etc. */
+.cv-page ul {
+  padding-left: 1.4em;
+  margin: 0.5em 0;
+}
+.cv-page ul > li {
+  margin-bottom: 0.4em;
+  padding-left: 0.2em;
+}
+
+.cv-page h2 {
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid #c8c8c8;
+  padding-bottom: 0.1em;
+  margin-top: 0.8em;
+  margin-bottom: 0.25em;
+  color: #6b1b1b; /* maroon, matching the LaTeX */
+}
+.cv-page h3 {
+  margin-top: 0.5em;
+  margin-bottom: 0.15em;
+  font-size: 1.1em;
+}
+.cv-page p {
+  margin: 0.2em 0;
+}
+.cv-page .cv-block {
+  margin-bottom: 0.35em;
+}
+.cv-page ul, .cv-page ol {
+  margin-top: 0.2em;
+  margin-bottom: 0.4em;
+}
+.cv-page .cv-pub-list {
+  margin: 0.2em 0 0.4em 0;
+}
+.cv-page .cv-pub {
+  margin-bottom: 0.35em;
+}
+
+.cv-pub-list {
+  list-style-position: outside;
+  padding-left: 2.2em;
+  margin: 0;
+}
+
+.cv-pub-list--reverse {
+  /* etaremune-style reverse numbering, set via JS or counter-reset */
+  list-style: none;
+  counter-reset: cv-pub var(--cv-pub-start, 0);
+}
+.cv-pub-list--reverse > .cv-pub::before {
+  counter-increment: cv-pub -1;
+  content: counter(cv-pub) ". ";
+  display: inline-block;
+  margin-left: -2em;
+  width: 2em;
+  text-align: right;
+  padding-right: 0.4em;
+  color: #555;
+}
+
+/* Dash bullet variant for non-numbered sections (book reviews, blogs, etc.) */
+.cv-pub-list--dash {
+  list-style: none;
+  padding-left: 1.5em;
+}
+.cv-pub-list--dash > .cv-pub::before {
+  content: "—";
+  display: inline-block;
+  margin-left: -1.5em;
+  width: 1.5em;
+  color: #777;
+}
+
+/* Collapsible sections (after Testimony) — closed by default. The PDF
+   render still shows everything since <details> is browser-only. */
+details.cv-section-collapse {
+  margin: 0.4em 0;
+  border: none;
+}
+details.cv-section-collapse > summary {
+  cursor: pointer;
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+  font-size: 1.4em;
+  font-weight: 700;
+  color: #6b1b1b;
+  border-bottom: 1px solid #c8c8c8;
+  padding: 0.15em 0;
+  margin-top: 0.9em;
+  list-style: none;
+}
+details.cv-section-collapse > summary::-webkit-details-marker { display: none; }
+details.cv-section-collapse > summary::before {
+  content: "▶ ";
+  display: inline-block;
+  font-size: 0.7em;
+  vertical-align: middle;
+  margin-right: 0.4em;
+  transition: transform 0.15s;
+  color: #999;
+}
+details[open].cv-section-collapse > summary::before {
+  transform: rotate(90deg);
+}
+details.cv-section-collapse > h2:first-of-type {
+  /* Hide the inner h2 since the summary already shows the heading */
+  display: none;
+}
+@media print {
+  details.cv-section-collapse { display: block; }
+  details.cv-section-collapse > summary { list-style: none; }
+  details.cv-section-collapse[open] > * { display: block; }
+  /* Force open in print/PDF */
+  details.cv-section-collapse:not([open]) > *:not(summary) { display: block !important; }
+}
+
+.cv-pub {
+  margin-bottom: 0.55em;
+  break-inside: avoid;
+}
+
+/* Maroon coloring ONLY for actual link titles (a tag), not plain spans */
+a.cv-pub-title {
+  color: #6b1b1b;
+  text-decoration: none;
+  font-weight: 500;
+}
+a.cv-pub-title:hover {
+  text-decoration: underline;
+}
+/* Plain title — no link, no maroon, regular body color */
+.cv-pub-title-plain {
+  color: #222;
+  font-weight: 500;
+}
+.cv-pub-status {
+  color: #666;
+  margin-left: 0.4em;
+  font-size: 0.92em;
+}
+
+.cv-pub-year {
+  margin-left: 0.25em;
+}
+
+.cv-pub-venue {
+  font-style: italic;
+}
+
+.cv-pub-vol,
+.cv-pub-pages {
+  /* keep inline, no special styling */
+}
+
+.cv-pub-coauthors {
+  /* parenthesized; styled inline */
+}
+
+.cv-pub-notes {
+  list-style: none;
+  padding-left: 1.6em;
+  margin: 0.18em 0 0.35em 0;
+}
+
+.cv-pub-notes > li {
+  font-size: 0.92em;
+  color: #444;
+  position: relative;
+  padding-left: 1em;
+}
+
+.cv-pub-notes > li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: #999;
+}
+
+.cv-pub-award {
+  color: #6b4423;
+}
+.cv-pub-award strong {
+  color: #6b4423;
+}
+
+.cv-pub-media a {
+  color: #6b1b1b;
+}
+
+.cv-pub-pressrelease a {
+  color: #6b1b1b;
+}
+
+/* ===========================================================
+   CV — non-publication structured blocks
+   =========================================================== */
+
+.cv-contact-table {
+  width: 100%;
+  margin-top: 0.4em;
+  margin-bottom: 1em;
+  border: 0;
+}
+.cv-contact-table td {
+  border: 0;
+  padding: 0.15em 0.5em;
+  vertical-align: top;
+}
+
+.cv-block {
+  margin-bottom: 0.85em;
+}
+.cv-block-institution {
+  font-weight: 600;
+}
+.cv-block-positions {
+  list-style: none;
+  padding-left: 1em;
+  margin: 0.2em 0 0;
+}
+
+.cv-grant {
+  display: grid;
+  grid-template-columns: 4em 1fr auto;
+  gap: 0 0.8em;
+  padding: 0.2em 0;
+  border-bottom: 1px dotted #e0e0e0;
+}
+.cv-grant-year {
+  font-variant-numeric: tabular-nums;
+}
+.cv-grant-amount {
+  white-space: nowrap;
+  color: #555;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===========================================================
+   i18n — language toggle and font support
+   =========================================================== */
+
+/* Hide elements until JS marks them ready, prevents flicker */
+html.cv-i18n-pending [data-i18n] {
+  visibility: hidden;
+}
+html.cv-i18n-ready [data-i18n] {
+  visibility: visible;
+}
+
+/* Georgian (Mkhedruli) needs a font that covers the script */
+@font-face {
+  font-family: "Noto Sans Georgian";
+  font-display: swap;
+  src: local("Noto Sans Georgian"),
+       url("https://fonts.gstatic.com/s/notosansgeorgian/v44/PlIaFke5O6RzLfvNNVSitxkr76PRHBC4Ytyq-Gof7PUs.woff2") format("woff2");
+  unicode-range: U+10A0-10FF, U+2D00-2D2F;
+}
+
+html[lang="ka"] body,
+html[lang="ka"] .cv-page {
+  font-family: "Noto Sans Georgian", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* Cyrillic-using languages get the system fallback (Helvetica/Segoe both
+   ship Cyrillic on macOS/Windows). No special @font-face needed. */

@@ -1,0 +1,312 @@
+# _data/site-i18n.yml — Translatable strings for non-CV pages.
+#
+# Same convention as cv.yml: each leaf has {en, fr, es, ru, uk, ka, de}.
+# English is canonical; other languages filled by translate-cv.py --file.
+#
+# Researcher bios and alumni table data stay in English (proper nouns,
+# institution-specific content). Only headers, generic text, and
+# Aaron's own bio paragraph get translated.
+
+navbar:
+  about:
+    en: About
+    fr: À propos
+    es: Acerca de
+    ru: Обо мне
+    uk: Про мене
+    ka: შესახებ
+    de: Über mich
+  lab:
+    en: Lab
+    fr: Laboratoire
+    es: Laboratorio
+    ru: Лаборатория
+    uk: Лабораторія
+    ka: ლაბორატორია
+    de: Labor
+  cv:
+    en: C.V.
+    fr: C.V.
+    es: C.V.
+    ru: Резюме
+    uk: Резюме
+    ka: C.V.
+    de: Lebenslauf
+index:
+  welcome:
+    en: Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill
+      University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and
+      an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University
+      of Washington in Seattle.
+    fr: Bienvenue sur mon site ! Je suis Professeur agrégé au Département de science politique de l'Université
+      McGill, où je suis membre du Centre for the Study of Democratic Citizenship (CSDC) et membre
+      associé du Centre on Population Dynamics (CPD). J'ai obtenu mon doctorat à l'Université de Washington
+      à Seattle.
+    es: ¡Bienvenido a mi sitio! Soy Profesor Asociado en el Departamento de Ciencia Política de McGill
+      University, donde soy miembro del Centre for the Study of Democratic Citizenship (CSDC) y Miembro
+      Asociado del Centre on Population Dynamics (CPD). Completé mi Doctorado en la Universidad de Washington
+      en Seattle.
+    ru: Добро пожаловать на мой сайт! Я — доцент кафедры политической науки в McGill University, где являюсь
+      членом Centre for the Study of Democratic Citizenship (CSDC) и ассоциированным членом Centre on
+      Population Dynamics (CPD). Степень доктора философии (Ph.D.) я получил в Университете Вашингтона
+      в Сиэтле.
+    uk: Ласкаво просимо на мій сайт! Я — доцент кафедри політичної науки в McGill University, де є членом
+      Centre for the Study of Democratic Citizenship (CSDC) та асоційованим членом Centre on Population
+      Dynamics (CPD). Я здобув ступінь доктора філософії (Ph.D.) в Університеті Вашингтона у Сіетлі.
+    ka: კეთილი იყოს თქვენი მობრძანება ჩემს საიტზე! მე ვარ პოლიტიკის მეცნიერების დეპარტამენტის ასოცირებული
+      პროფესორი McGill University-ში, სადაც ვარ დემოკრატიული მოქალაქეობის კვლევის ცენტრის (CSDC) წევრი
+      და მოსახლეობის დინამიკის ცენტრის (CPD) ასოცირებული წევრი. დოქტორანტურა დავამთავრე ვაშინგტონის
+      უნივერსიტეტში, სიეტლში.
+    de: Willkommen auf meiner Website! Ich bin Außerordentlicher Professor im Department of Political Science
+      an der McGill University, wo ich Mitglied des Centre for the Study of Democratic Citizenship (CSDC)
+      und assoziiertes Mitglied des Centre on Population Dynamics (CPD) bin. Ich habe meinen Ph.D. an
+      der Universität Washington in Seattle abgeschlossen.
+  research_interests:
+    en: Broadly speaking, I am interested in democratization and democratic development. Much of my research
+      addresses the role that information plays in developing democratic polities. I am also interested
+      in advancing quantitative methods to measure the effect of information. I maintain active research
+      projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has
+      appeared in a broad range of journals in political science and adjacent fields, such as the American
+      Political Science Review, Comparative Political Studies, the Journal of Politics, the Journal of
+      Public Administration Research & Theory, and Political Analysis, among others.
+    fr: De manière générale, je m'intéresse à la démocratisation et au développement démocratique. Une
+      grande partie de mes recherches porte sur le rôle que joue l'information dans le développement des
+      régimes démocratiques. Je m'intéresse également à l'avancement des méthodes quantitatives permettant
+      de mesurer l'effet de l'information. Je mène des projets de recherche actifs dans l'ex-Union soviétique,
+      en Afrique orientale et australe, ainsi qu'en Amérique du Nord. Mes travaux ont paru dans un large
+      éventail de revues en science politique et dans des domaines connexes, notamment American Political
+      Science Review, Comparative Political Studies, Journal of Politics, Journal of Public Administration
+      Research & Theory et Political Analysis, entre autres.
+    es: En términos generales, me interesa la democratización y el desarrollo democrático. Gran parte
+      de mi investigación aborda el papel que desempeña la información en el desarrollo de sistemas políticos
+      democráticos. También me interesa el avance de los métodos cuantitativos para medir el efecto de
+      la información. Mantengo proyectos de investigación activos en la antigua Unión Soviética, África
+      Oriental y Meridional, y América del Norte. Mi trabajo ha aparecido en una amplia variedad de revistas
+      de ciencia política y campos afines, tales como American Political Science Review, Comparative
+      Political Studies, Journal of Politics, Journal of Public Administration Research & Theory
+      y Political Analysis, entre otras.
+    ru: В широком смысле меня интересуют вопросы демократизации и демократического развития. Значительная
+      часть моих исследований посвящена роли информации в формировании демократических политий. Я также
+      занимаюсь разработкой количественных методов для измерения эффекта информации. В настоящее время
+      я веду активные исследовательские проекты на постсоветском пространстве, в Восточной и Южной Африке,
+      а также в Северной Америке. Мои работы опубликованы в широком круге журналов по политической науке
+      и смежным дисциплинам, в том числе в American Political Science Review, Comparative Political Studies,
+      Journal of Politics, Journal of Public Administration Research & Theory и Political Analysis.
+    uk: У широкому сенсі мої наукові інтереси зосереджені на демократизації та демократичному розвитку.
+      Значна частина моїх досліджень присвячена ролі інформації у становленні демократичних полій. Я також
+      займаюся розробкою кількісних методів для вимірювання ефекту інформації. Я веду активні дослідницькі
+      проєкти на пострадянському просторі, у Східній і Південній Африці та в Північній Америці. Мої праці
+      опубліковані в широкому колі журналів із політичної науки та суміжних дисциплін, зокрема в American
+      Political Science Review, Comparative Political Studies, Journal of Politics, Journal of Public
+      Administration Research & Theory та Political Analysis.
+    ka: ზოგადად, მე მაინტერესებს დემოკრატიზაცია და დემოკრატიული განვითარება. ჩემი კვლევის დიდი ნაწილი
+      ეხება იმ როლს, რომელსაც ინფორმაცია ასრულებს დემოკრატიული პოლიტიკური სისტემების ჩამოყალიბებაში. ასევე
+      მაინტერესებს რაოდენობრივი მეთოდების სრულყოფა ინფორმაციის ეფექტის გასაზომად. აქტიური სამეცნიერო პროექტები
+      მაქვს ყოფილ საბჭოთა კავშირში, აღმოსავლეთ და სამხრეთ აფრიკაში, და ჩრდილოეთ ამერიკაში. ჩემი ნაშრომები
+      გამოქვეყნებულია პოლიტიკის მეცნიერებისა და მომიჯნავე დარგების ჟურნალების ფართო სპექტრში, მათ შორის
+      American Political Science Review, Comparative Political Studies, Journal of Politics, Journal of
+      Public Administration Research & Theory და Political Analysis.
+    de: Im Allgemeinen interessiere ich mich für Demokratisierung und demokratische Entwicklung. Ein Großteil
+      meiner Forschung befasst sich mit der Rolle, die Information in der Entwicklung demokratischer Gemeinwesen
+      spielt. Darüber hinaus interessiere ich mich für die Weiterentwicklung quantitativer Methoden zur
+      Messung von Informationseffekten. Ich führe aktive Forschungsprojekte in der ehemaligen Sowjetunion,
+      im östlichen und südlichen Afrika sowie in Nordamerika durch. Meine Arbeiten sind in einer breiten
+      Auswahl von Fachzeitschriften der Politikwissenschaft und angrenzender Disziplinen erschienen, darunter
+      unter anderem American Political Science Review, Comparative Political Studies, Journal
+      of Politics, Journal of Public Administration Research & Theory sowie Political Analysis.
+  pre_academia:
+    en: Before returning to academia, I worked for the National Democratic Institute covering Kenya and
+      the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.
+    fr: Avant de retourner au milieu universitaire, j'ai travaillé pour le National Democratic Institute,
+      où je couvrais le Kenya, ainsi que pour les Caucasus Research Resource Centers, où je couvrais l'Arménie,
+      l'Azerbaïdjan et la Géorgie.
+    es: Antes de regresar a la academia, trabajé para el National Democratic Institute cubriendo Kenia
+      y los Caucasus Research Resource Centers cubriendo Armenia, Azerbaiyán y Georgia.
+    ru: До возвращения в академическую среду я работал в National Democratic Institute, курируя Кению,
+      а также в Caucasus Research Resource Centers, занимаясь Арменией, Азербайджаном и Грузией.
+    uk: До повернення в академію я працював у National Democratic Institute, займаючись Кенією, а також
+      у Caucasus Research Resource Centers, де відповідав за Вірменію, Азербайджан і Грузію.
+    ka: აკადემიურ საქმიანობაზე დაბრუნებამდე ვმუშაობდი National Democratic Institute-ში, სადაც კენიის მიმართულებით
+      ვიყავი პასუხისმგებელი, ასევე კავკასიის კვლევითი რესურსების ცენტრში, სომხეთის, აზერბაიჯანისა და საქართველოს
+      მიმართულებით.
+    de: Bevor ich zur Wissenschaft zurückkehrte, arbeitete ich für das National Democratic Institute mit
+      Zuständigkeit für Kenia sowie für die Caucasus Research Resource Centers mit Zuständigkeit für Armenien,
+      Aserbaidschan und Georgien.
+  bicycle:
+    en: I am an avid bicycle tourer.
+    fr: Je suis un adepte passionné du cyclotourisme.
+    es: Soy un ávido ciclista de turismo.
+    ru: Я увлечённый велотурист.
+    uk: Я — захоплений велотурист.
+    ka: მე ვარ მგზნებარე ველოსიპედ-ტურისტი.
+    de: Ich bin ein begeisterter Fahrradtourist.
+  see_cv:
+    en: "You can see more about my academic work on my"
+    fr: "Vous pouvez en savoir plus sur mon travail académique dans mon"
+    es: "Puede obtener más información sobre mi trabajo académico en mi"
+    ru: "Подробнее о моей научной деятельности можно узнать в моём"
+    uk: "Більше про мою наукову діяльність можна дізнатися у моєму"
+    ka: "ჩემი აკადემიური საქმიანობის შესახებ მეტი ინფორმაცია შეგიძლიათ იხილოთ ჩემს"
+    de: "Mehr über meine akademische Arbeit finden Sie in meinem"
+  contact_me:
+    en: Contact me
+    fr: Me contacter
+    es: Contácteme
+    ru: Связаться со мной
+    uk: Зв'язатися зі мною
+    ka: დაგვიკავშირდით
+    de: Kontakt
+  affiliations:
+    en: Affiliations
+    fr: Affiliations
+    es: Afiliaciones
+    ru: Аффилиации
+    uk: Афіліації
+    ka: აფილიაციები
+    de: Zugehörigkeiten
+lab:
+  intro:
+    en: Bringing together researchers interested in transparency, information provision, and participation
+      (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical
+      problems in political science. Lab members test and challenge conventional theories regarding political
+      transparency and accountability, the provision of political information, and citizen participation
+      in democratic processes. Email if you are interested in getting involved!
+    fr: Réunissant des chercheurs et chercheuses intéressés par la transparence, la fourniture d'information
+      et la participation (TIP), le laboratoire DemoTIP applique des méthodes de recherche de pointe pour
+      apporter des réponses à des problèmes empiriques en science politique. Les membres du laboratoire
+      mettent à l'épreuve et remettent en question les théories conventionnelles relatives à la transparence
+      et à la reddition de comptes politiques, à la fourniture d'information politique, ainsi qu'à la
+      participation citoyenne dans les processus démocratiques. Écrivez-nous si vous souhaitez vous impliquer
+      !
+    es: El laboratorio DemoTIP reúne a investigadores interesados en transparencia, provisión de información
+      y participación (TIP), y aplica métodos de investigación de vanguardia para dar respuesta a problemas
+      empíricos en ciencia política. Los miembros del laboratorio ponen a prueba y cuestionan las teorías
+      convencionales sobre la transparencia y la rendición de cuentas políticas, la provisión de información
+      política y la participación ciudadana en los procesos democráticos. ¡Escríbanos si le interesa participar!
+    ru: Объединяя исследователей, занимающихся вопросами прозрачности, предоставления информации и участия
+      (TIP), лаборатория DemoTIP применяет передовые методы исследования для решения эмпирических проблем
+      политической науки. Члены лаборатории проверяют и оспаривают устоявшиеся теории, касающиеся политической
+      прозрачности и подотчётности, распространения политической информации и участия граждан в демократических
+      процессах. Если вас интересует сотрудничество, напишите нам!
+    uk: Об'єднуючи дослідників, зацікавлених у прозорості, наданні інформації та участі (TIP), лабораторія
+      DemoTIP застосовує найсучасніші дослідницькі методи для пошуку відповідей на емпіричні питання політичної
+      науки. Члени лабораторії перевіряють і переосмислюють загальноприйняті теорії щодо політичної прозорості
+      та підзвітності, поширення політичної інформації та участі громадян у демократичних процесах. Якщо
+      вас цікавить участь у нашій роботі — напишіть нам!
+    ka: DemoTIP ლაბორატორია აერთიანებს მკვლევარებს, რომლებიც დაინტერესებულნი არიან გამჭვირვალობით, ინფორმაციის
+      მიწოდებით და მონაწილეობით (TIP), და იყენებს უახლეს სამეცნიერო მეთოდებს პოლიტიკის მეცნიერებაში არსებული
+      ემპირიული პრობლემების გადასაჭრელად. ლაბორატორიის წევრები ამოწმებენ და სადავოდ ხდიან კონვენციურ თეორიებს
+      პოლიტიკური გამჭვირვალობისა და ანგარიშვალდებულების, პოლიტიკური ინფორმაციის მიწოდებისა და დემოკრატიულ
+      პროცესებში მოქალაქეთა მონაწილეობის შესახებ. მოგვწერეთ ელ. ფოსტაზე, თუ გაინტერესებთ მონაწილეობა!
+    de: Das DemoTIP-Labor vereint Forschende, die sich für Transparenz, Informationsbereitstellung und
+      Partizipation (TIP) interessieren, und wendet modernste Forschungsmethoden an, um empirische Fragestellungen
+      der Politikwissenschaft zu beantworten. Die Labormitglieder überprüfen und hinterfragen gängige
+      Theorien zu politischer Transparenz und Rechenschaftspflicht, zur Bereitstellung politischer Informationen
+      sowie zur Bürgerbeteiligung an demokratischen Prozessen. Bei Interesse an einer Mitwirkung bitte
+      per E-Mail melden!
+  section_pi:
+    en: Principal Investigator
+    fr: Chercheur principal
+    es: Investigador Principal
+    ru: Главный исследователь
+    uk: Головний дослідник
+    ka: მთავარი მკვლევარი
+    de: Hauptforschungsleitung
+  section_grad:
+    en: McGill Graduate & Post-Doc Researchers
+    fr: Chercheurs aux cycles supérieurs et postdoctorants de McGill University
+    es: Investigadores de Posgrado y Postdoctorales de McGill
+    ru: Аспиранты и постдокторанты McGill University
+    uk: Аспіранти та постдокторанти McGill University
+    ka: McGill-ის სამაგისტრო/სადოქტორო და პოსტდოქტორანტი მკვლევარები
+    de: Graduierte Forschende und Postdoktoranden der McGill University
+  section_undergrad:
+    en: McGill Undergraduate Researchers
+    fr: Chercheurs au premier cycle de McGill University
+    es: Investigadores de Pregrado de McGill
+    ru: Студенты-исследователи McGill University
+    uk: Студенти-бакалаври McGill University
+    ka: McGill-ის სამაგისტრო საფეხურამდელი მკვლევარები
+    de: Undergraduate-Forschende der McGill University
+  section_alumni:
+    en: DemoTIP Alumni
+    fr: Anciens membres du laboratoire DemoTIP
+    es: Exmiembros de DemoTIP
+    ru: Выпускники DemoTIP
+    uk: Випускники DemoTIP
+    ka: DemoTIP-ის კურსდამთავრებულები
+    de: DemoTIP-Alumni
+  alumni_intro:
+    en: These students worked with me closely. The research and publications listed are just those completed
+      with me during their time affiliated with the lab. For prospective students, this table gives you
+      a good sense of the types of students who work with me.
+    fr: Ces étudiantes et étudiants ont travaillé en étroite collaboration avec moi. Les recherches et
+      publications répertoriées sont uniquement celles réalisées avec moi durant leur affiliation au laboratoire.
+      Pour les candidats potentiels, ce tableau donne un bon aperçu des profils d'étudiants qui travaillent
+      avec moi.
+    es: Estos estudiantes trabajaron estrechamente conmigo. Las investigaciones y publicaciones enumeradas
+      son únicamente aquellas completadas conmigo durante el período en que estuvieron afiliados al laboratorio.
+      Para los estudiantes prospectivos, esta tabla ofrece una buena idea del tipo de estudiantes que
+      trabajan conmigo.
+    ru: Эти студенты тесно сотрудничали со мной. Перечисленные исследования и публикации — лишь те, что
+      были выполнены совместно со мной в период их работы в лаборатории. Для потенциальных студентов данная
+      таблица даёт наглядное представление о том, с какими исследователями я работаю.
+    uk: Ці студенти тісно співпрацювали зі мною. Зазначені дослідження та публікації стосуються лише тих
+      робіт, що були виконані спільно зі мною в період їхньої приналежності до лабораторії. Для майбутніх
+      студентів ця таблиця дає уявлення про типовий профіль тих, хто працює зі мною.
+    ka: ეს სტუდენტები მჭიდროდ თანამშრომლობდნენ ჩემთან. ჩამოთვლილი კვლევები და პუბლიკაციები მხოლოდ ის ნამუშევრებია,
+      რომლებიც ლაბორატორიასთან აფილიაციის პერიოდში ჩემთანთ ერთად შეასრულეს. პოტენციური სტუდენტებისთვის
+      ეს ცხრილი კარგ წარმოდგენას გაძლევთ იმ სტუდენტების ტიპებზე, ვინც ჩემთან მუშაობს.
+    de: Diese Studierenden haben eng mit mir zusammengearbeitet. Die aufgeführten Forschungsarbeiten und
+      Publikationen sind ausschließlich jene, die gemeinsam mit mir während ihrer Zeit im Labor entstanden
+      sind. Für Studieninteressierte vermittelt diese Tabelle einen guten Eindruck von den Studierenden,
+      die mit mir zusammenarbeiten.
+  alumni_toggle:
+    en: Show / hide alumni table (click any column to sort)
+    fr: Afficher / masquer le tableau des anciens membres (cliquer sur une colonne pour trier)
+    es: Mostrar / ocultar tabla de exmiembros (haga clic en cualquier columna para ordenar)
+    ru: Показать / скрыть таблицу выпускников (нажмите на любой столбец для сортировки)
+    uk: Показати / приховати таблицю випускників (натисніть будь-який стовпець для сортування)
+    ka: კურსდამთავრებულთა ცხრილის ჩვენება / დამალვა (დახარისხებისთვის დააწკაპუნეთ ნებისმიერ სვეტზე)
+    de: Alumni-Tabelle ein-/ausblenden (zum Sortieren auf eine beliebige Spalte klicken)
+  aaron_bio:
+    en: Aaron Erlich is Associate Professor of Political Science at McGill University. He received his
+      Ph.D. from the University of Washington in 2016. His wide-ranging research interests touch upon
+      various themes such as democracy, political participation, the effect of information, and the development
+      and use of advanced quantitative methods. His research has been published in journals such as the
+      American Political Science Review, Journal of Politics, Comparative Political Studies, and many
+      others.
+    fr: Aaron Erlich est Professeur agrégé de science politique à McGill University. Il a obtenu son doctorat
+      de l'Université de Washington en 2016. Ses intérêts de recherche, qui couvrent un large spectre,
+      portent sur diverses thématiques telles que la démocratie, la participation politique, l'effet de
+      l'information, ainsi que le développement et l'utilisation de méthodes quantitatives avancées. Ses
+      recherches ont été publiées dans des revues telles que l'American Political Science Review, le Journal
+      of Politics, Comparative Political Studies, et bien d'autres.
+    es: Aaron Erlich es Profesor Asociado de Ciencia Política en McGill University. Obtuvo su Doctorado
+      en la Universidad de Washington en 2016. Sus amplios intereses de investigación abarcan diversas
+      temáticas, tales como la democracia, la participación política, el efecto de la información, y el
+      desarrollo y uso de métodos cuantitativos avanzados. Su investigación ha sido publicada en revistas
+      como la American Political Science Review, Journal of Politics, Comparative Political Studies, y
+      muchas otras.
+    ru: Aaron Erlich — доцент кафедры политической науки в McGill University. Степень доктора философии
+      (Ph.D.) он получил в Университете Вашингтона в 2016 году. Его широкий круг научных интересов охватывает
+      такие темы, как демократия, политическое участие, эффект информации, а также разработка и применение
+      передовых количественных методов. Его исследования опубликованы в таких журналах, как American Political
+      Science Review, Journal of Politics, Comparative Political Studies и многих других.
+    uk: Aaron Erlich — доцент кафедри політичної науки в McGill University. Він здобув ступінь доктора
+      філософії (Ph.D.) в Університеті Вашингтона у 2016 році. Його різноманітні наукові інтереси охоплюють
+      такі теми, як демократія, політична участь, вплив інформації, а також розробка та застосування сучасних
+      кількісних методів. Його дослідження опубліковані в таких журналах, як American Political Science
+      Review, Journal of Politics, Comparative Political Studies та багатьох інших.
+    ka: Aaron Erlich არის McGill University-ის პოლიტიკის მეცნიერების ასოცირებული პროფესორი. მან დოქტორის
+      ხარისხი მიიღო ვაშინგტონის უნივერსიტეტში 2016 წელს. მისი მრავალმხრივი სამეცნიერო ინტერესები მოიცავს
+      სხვადასხვა თემას, როგორებიცაა დემოკრატია, პოლიტიკური მონაწილეობა, ინფორმაციის ეფექტი, და მოწინავე
+      რაოდენობრივი მეთოდების შემუშავება და გამოყენება. მისი კვლევები გამოქვეყნებულია ისეთ ჟურნალებში,
+      როგორებიცაა American Political Science Review, Journal of Politics, Comparative Political Studies
+      და სხვა მრავალი.
+    de: Aaron Erlich ist Außerordentlicher Professor für Politikwissenschaft an der McGill University.
+      Er promovierte 2016 an der Universität Washington. Seine vielfältigen Forschungsinteressen berühren
+      verschiedene Themen wie Demokratie, politische Partizipation, Informationseffekte sowie die Entwicklung
+      und Anwendung fortgeschrittener quantitativer Methoden. Seine Forschungsergebnisse wurden in Fachzeitschriften
+      wie dem American Political Science Review, dem Journal of Politics, Comparative Political Studies
+      und vielen anderen veröffentlicht.

@@ -1,0 +1,171 @@
+#!/usr/bin/env python3
+"""
+build-i18n.py — Merge all i18n YAML sources into a single HTML partial.
+
+Reads:
+  _data/cv.yml          (CV-specific i18n keys)
+  _data/site-i18n.yml   (navbar, index, lab page i18n keys)
+
+Writes:
+  _generated/i18n-toggle.html   (JSON blob + toggle JS, included site-wide)
+
+The partial is referenced from _quarto.yml's include-after-body.
+Every page gets the toggle dropdown and all 7 languages for every key.
+Individual .qmd pages just use <span data-i18n="key">English</span>.
+"""
+from __future__ import annotations
+import json, sys
+from pathlib import Path
+
+try:
+    import yaml
+except ImportError:
+    sys.exit("pip install pyyaml")
+
+REPO = Path(__file__).resolve().parents[1]
+SOURCES = [
+    REPO / "_data" / "cv.yml",
+    REPO / "_data" / "site-i18n.yml",
+]
+OUTPUT = REPO / "_generated" / "i18n-toggle.html"
+SUPPORTED = ("en", "fr", "es", "ru", "uk", "ka", "de")
+
+
+def is_lang_node(node) -> bool:
+    if not isinstance(node, dict) or not node:
+        return False
+    return set(node.keys()).issubset(set(SUPPORTED))
+
+
+def collect(node, prefix="") -> dict:
+    result = {}
+    if is_lang_node(node):
+        result[prefix] = {k: node[k] for k in node if k in SUPPORTED}
+        return result
+    if isinstance(node, dict):
+        for k, v in node.items():
+            child = f"{prefix}.{k}" if prefix else k
+            result.update(collect(v, child))
+    elif isinstance(node, list):
+        for i, v in enumerate(node):
+            result.update(collect(v, f"{prefix}.{i}"))
+    return result
+
+
+JS_TOGGLE = r"""
+(function () {
+  var STORAGE_KEY = "site_lang";
+  var DEFAULT_LANG = "en";
+  var SUPPORTED = ["en", "fr", "es", "ru", "uk", "ka", "de"];
+  var LANG_NAMES = {
+    en: "English", fr: "Français", es: "Español",
+    ru: "Русский", uk: "Українська", ka: "ქართული", de: "Deutsch"
+  };
+
+  document.documentElement.classList.add("cv-i18n-pending");
+
+  function getLang() {
+    try {
+      var url = new URL(window.location.href);
+      var fromUrl = url.searchParams.get("lang");
+      if (fromUrl && SUPPORTED.indexOf(fromUrl) !== -1) return fromUrl;
+      var stored = localStorage.getItem(STORAGE_KEY);
+      if (stored && SUPPORTED.indexOf(stored) !== -1) return stored;
+    } catch (e) {}
+    return DEFAULT_LANG;
+  }
+
+  function applyTranslations(lang) {
+    var blob = document.getElementById("site-i18n");
+    if (!blob) return;
+    var i18n;
+    try { i18n = JSON.parse(blob.textContent); }
+    catch (e) { return; }
+    var nodes = document.querySelectorAll("[data-i18n]");
+    for (var i = 0; i < nodes.length; i++) {
+      var el = nodes[i];
+      var key = el.getAttribute("data-i18n");
+      var entry = i18n[key];
+      if (!entry) continue;
+      var text = entry[lang] || entry.en || "";
+      if (text) el.textContent = text;
+    }
+    document.documentElement.lang = lang;
+    document.documentElement.classList.remove("cv-i18n-pending");
+    document.documentElement.classList.add("cv-i18n-ready");
+  }
+
+  function setLang(lang) {
+    if (SUPPORTED.indexOf(lang) === -1) return;
+    try { localStorage.setItem(STORAGE_KEY, lang); } catch (e) {}
+    applyTranslations(lang);
+    try {
+      var url = new URL(window.location.href);
+      url.searchParams.set("lang", lang);
+      history.replaceState(null, "", url.toString());
+    } catch (e) {}
+    var sel = document.getElementById("site-lang-select");
+    if (sel) sel.value = lang;
+  }
+
+  function buildToggle() {
+    if (document.getElementById("site-lang-toggle")) return;
+    if (document.querySelectorAll("[data-i18n]").length === 0) return;
+    var wrapper = document.createElement("div");
+    wrapper.id = "site-lang-toggle";
+    wrapper.style.cssText = "position:fixed;top:0.6em;right:0.8em;z-index:1100;background:#fff;border:1px solid #ccc;border-radius:4px;padding:0.25em 0.5em;font-size:0.82em;box-shadow:0 1px 4px rgba(0,0,0,0.08);font-family:var(--body-font,monospace)";
+    var label = document.createElement("label");
+    label.setAttribute("for", "site-lang-select");
+    label.textContent = "\uD83C\uDF10 ";
+    var sel = document.createElement("select");
+    sel.id = "site-lang-select";
+    sel.style.cssText = "border:0;background:transparent;font-size:inherit;cursor:pointer;font-family:inherit";
+    for (var i = 0; i < SUPPORTED.length; i++) {
+      var opt = document.createElement("option");
+      opt.value = SUPPORTED[i];
+      opt.textContent = LANG_NAMES[SUPPORTED[i]];
+      sel.appendChild(opt);
+    }
+    sel.addEventListener("change", function () { setLang(sel.value); });
+    wrapper.appendChild(label);
+    wrapper.appendChild(sel);
+    document.body.appendChild(wrapper);
+  }
+
+  function init() {
+    buildToggle();
+    setLang(getLang());
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init);
+  } else {
+    init();
+  }
+})();
+"""
+
+
+def main():
+    all_i18n = {}
+    for src in SOURCES:
+        if not src.exists():
+            print(f"  skip (not found): {src}", file=sys.stderr)
+            continue
+        data = yaml.safe_load(src.read_text(encoding="utf-8"))
+        keys = collect(data)
+        print(f"  {src.name}: {len(keys)} keys", file=sys.stderr)
+        all_i18n.update(keys)
+
+    blob = json.dumps(all_i18n, ensure_ascii=False, separators=(",", ":"))
+
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    with open(OUTPUT, "w", encoding="utf-8") as f:
+        f.write(f'<script id="site-i18n" type="application/json">{blob}</script>\n')
+        f.write(f"<script>{JS_TOGGLE}</script>\n")
+
+    print(f"  Wrote {OUTPUT} ({len(all_i18n)} keys, {len(blob)} bytes)", file=sys.stderr)
+
+
+if __name__ == "__main__":
+    main()

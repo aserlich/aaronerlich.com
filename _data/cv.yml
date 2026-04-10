@@ -1,0 +1,1478 @@
+meta:
+  name: Aaron S. Erlich
+  last_updated:
+    en: Last updated April 10, 2026
+    fr: Dernière mise à jour le 10 février 2026
+    es: 'Última actualización: 10 de febrero de 2026'
+    ru: 'Последнее обновление: 10 февраля 2026 г.'
+    uk: 'Останнє оновлення: 10 лютого 2026 року'
+    ka: ბოლოს განახლდა 2026 წლის 10 თებერვალს
+    de: Zuletzt aktualisiert am 10. Februar 2026
+  pdf_url:
+    en: files/Erlich_CV_en.pdf
+    fr: files/Erlich_CV_fr.pdf
+    es: files/Erlich_CV_es.pdf
+    ru: files/Erlich_CV_ru.pdf
+    uk: files/Erlich_CV_uk.pdf
+    ka: files/Erlich_CV_ka.pdf
+    de: files/Erlich_CV_de.pdf
+contact:
+  title:
+    en: Associate Professor
+    fr: Professeur agrégé
+    es: Profesor agregado
+    ru: Доцент
+    uk: Доцент
+    ka: ასოცირებული პროფესორი
+    de: Außerordentlicher Professor
+  department:
+    en: Department of Political Science
+    fr: Département de science politique
+    es: Departamento de Ciencia Política
+    ru: Кафедра политических наук
+    uk: Кафедра політичних наук
+    ka: პოლიტიკური მეცნიერების დეპარტამენტი
+    de: Department of Political Science
+  institution: McGill University
+  address_line1: 855 Sherbrooke Street West
+  address_line2: Montréal, QC, H3A 2T7
+  country:
+    en: Canada
+    fr: Canada
+    es: Canadá
+    ru: Канада
+    uk: Канада
+    ka: კანადა
+    de: Kanada
+  office: McTavish 24-3
+  phone: +1 (514)-398-4756
+  email: aaron.erlich@mcgill.ca
+  web: www.aaronerlich.com
+academic_appointments:
+- institution: McGill University
+  department:
+    en: Department of Political Science
+    fr: Département de science politique
+    es: Departamento de Ciencia Política
+    ru: Кафедра политических наук
+    uk: Кафедра політичних наук
+    ka: პოლიტიკური მეცნიერების დეპარტამენტი
+    de: Department of Political Science
+  location: Montréal, QC
+  positions:
+  - role:
+      en: Associate Professor
+      fr: Professeur agrégé
+      es: Profesor agregado
+      ru: Доцент
+      uk: Доцент
+      ka: ასოცირებული პროფესორი
+      de: Außerordentlicher Professor
+    dates: 2023–
+  - role:
+      en: Assistant Professor
+      fr: Professeur adjoint
+      es: Profesor asistente
+      ru: Ассистент профессора
+      uk: Асистент професора
+      ka: ასისტენტ-პროფესორი
+      de: Assistenzprofessor
+    dates: 2016–2023
+    notes:
+      en: '(Paternity Leave: Autumn 2020, Autumn 2022)'
+      fr: '(Congé de paternité : automne 2020, automne 2022)'
+      es: '(Licencia de paternidad: otoño de 2020, otoño de 2022)'
+      ru: '(Отпуск по уходу за ребёнком: осень 2020, осень 2022)'
+      uk: '(Відпустка у зв''язку з батьківством: осінь 2020 р., осінь 2022 р.)'
+      ka: '(მამობის შვებულება: შემოდგომა 2020, შემოდგომა 2022)'
+      de: '(Vaterschaftsurlaub: Herbst 2020, Herbst 2022)'
+affiliations:
+- role:
+    en: Member
+    fr: Membre
+    es: Miembro
+    ru: Член
+    uk: Член
+    ka: წევრი
+    de: Mitglied
+  org: Centre for the Study of Democratic Citizenship (CSDC)
+  url: https://csdc-cecd.ca/
+  dates: 2017–
+- role:
+    en: Member
+    fr: Membre
+    es: Miembro
+    ru: Член
+    uk: Член
+    ka: წევრი
+    de: Mitglied
+  org: Centre on Population Dynamics — McGill
+  url: https://www.mcgill.ca/popcentre/
+  dates: 2019–
+- role:
+    en: Faculty Research Affiliate
+    fr: Chercheur affilié
+    es: Investigador afiliado de la facultad
+    ru: Научный сотрудник (аффилированный)
+    uk: Науковий співробітник факультету
+    ka: ფაკულტეტის კვლევითი აფილირებული
+    de: Forschungsbeauftragter der Fakultät
+  org: Center for Social Media and Politics (CsMaP), NYU
+  url: https://csmapnyu.org/
+  dates: 2023–
+- role:
+    en: Member
+    fr: Membre
+    es: Miembro
+    ru: Член
+    uk: Член
+    ka: წევრი
+    de: Mitglied
+  org: Centre for Social and Cultural Data Science (CSCDS)
+  dates: 2016–2020
+- role:
+    en: Visiting Professor
+    fr: Professeur invité
+    es: Profesor visitante
+    ru: Приглашённый профессор
+    uk: Запрошений професор
+    ka: ვიზიტინგ-პროფესორი
+    de: Gastprofessor
+  org: Université de Montréal
+  dates: 2024–25
+education:
+- institution: University of Washington
+  location: Seattle, WA
+  degrees:
+  - degree:
+      en: Ph.D., Political Science
+      fr: Doctorat, science politique
+      es: Doctorado en Ciencia Política
+      ru: Доктор философии (Ph.D.), политические науки
+      uk: Доктор філософії, політичні науки
+      ka: დოქტორი (Ph.D.), პოლიტიკური მეცნიერება
+      de: Ph.D., Politikwissenschaft
+    year: 2016
+  - degree:
+      en: Political Methodology Certificate, Center for Statistics and the Social Sciences
+      fr: Certificat en méthodologie politique, Center for Statistics and the Social Sciences
+      es: Certificado en Metodología Política, Center for Statistics and the Social Sciences
+      ru: Сертификат по политической методологии, Center for Statistics and the Social Sciences
+      uk: Сертифікат з політичної методології, Center for Statistics and the Social Sciences
+      ka: პოლიტიკური მეთოდოლოგიის სერტიფიკატი, Center for Statistics and the Social Sciences
+      de: Zertifikat in Politischer Methodenlehre, Center for Statistics and the Social Sciences
+    year: 2012
+  - degree:
+      en: M.A., Political Science
+      fr: Maîtrise, science politique
+      es: Maestría en Ciencia Política
+      ru: Магистр (M.A.), политические науки
+      uk: Магістр, політичні науки
+      ka: მაგისტრი (M.A.), პოლიტიკური მეცნიერება
+      de: M.A., Politikwissenschaft
+    year: 2012
+- institution: Georgetown University, School of Foreign Service
+  location: Washington, DC
+  degrees:
+  - degree:
+      en: M.A., European Studies, with distinction
+      fr: Maîtrise, études européennes, avec distinction
+      es: Maestría en Estudios Europeos, con distinción
+      ru: Магистр (M.A.), европейские исследования, с отличием
+      uk: Магістр, європейські студії, з відзнакою
+      ka: მაგისტრი (M.A.), ევროპული კვლევები, პატივით
+      de: M.A., Europäische Studien, mit Auszeichnung
+    year: 2006
+  - degree:
+      en: Certificate in Refugee and Humanitarian Emergencies
+      fr: Certificat en réfugiés et urgences humanitaires
+      es: Certificado en Refugiados y Emergencias Humanitarias
+      ru: Сертификат по вопросам беженцев и гуманитарных кризисов
+      uk: Сертифікат з питань біженців та гуманітарних надзвичайних ситуацій
+      ka: სერტიფიკატი ლტოლვილთა და ჰუმანიტარული საგანგებო სიტუაციების დარგში
+      de: Zertifikat in Flüchtlings- und humanitären Notlagen
+    year: 2006
+- institution: Dartmouth College
+  location: Hanover, NH
+  degrees:
+  - degree:
+      en: B.A., cum laude, Government
+      fr: Baccalauréat, cum laude, science du gouvernement
+      es: Licenciatura cum laude en Ciencias de Gobierno
+      ru: Бакалавр (B.A.), cum laude, государственное управление
+      uk: Бакалавр, cum laude, державне управління
+      ka: ბაკალავრი (B.A.), cum laude, სახელმწიფო მართვა
+      de: B.A., cum laude, Staatswissenschaften
+    year: 2002
+grants:
+- year: 2020
+  title:
+    en: 'Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora'
+    fr: 'Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora'
+    es: 'Nigerianos en el exterior y en casa: política e identidad nacional en una diáspora global'
+    ru: 'Нигерийцы за рубежом и на родине: политика и национальная идентичность в условиях глобальной диаспоры'
+    uk: 'Нігерійці за кордоном і вдома: політика та національна ідентичність у глобальній діаспорі'
+    ka: 'საზღვარგარეთ და სამშობლოში მცხოვრები ნიგერიელები: პოლიტიკა და ეროვნული იდენტობა გლობალურ დიასპორაში'
+    de: 'Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora'
+  agency: SSHRC Insight Development Grant
+  role:
+    en: Co-Investigator
+    fr: Co-chercheur
+    es: Co-investigador
+    ru: Со-исследователь
+    uk: Співдослідник
+    ka: თანათანადგინვლი
+    de: Co-Leiterin
+  amount: CAD 70,413
+- year: 2020
+  title:
+    en: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+    fr: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+    es: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+    ru: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+    uk: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+    ka: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+    de: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+  agency: SSHRC Partnership Grant
+  role:
+    en: Co-Applicant
+    fr: Co-demandeur
+    es: Co-solicitante
+    ru: Со-заявитель
+    uk: Співзаявник
+    ka: თანაამომქმედი
+    de: Co-Antragstellerin
+  amount: CAD 2,500,000
+- year: 2018
+  title:
+    en: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014'
+    fr: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014'
+    es: 'Expertos internacionales e iniciativas anticorrupción en una democracia en transición: la reforma policial en Ucrania
+      desde 2014'
+    ru: 'Международные эксперты и антикоррупционные инициативы в условиях переходной демократии: реформа полиции Украины с
+      2014 года'
+    uk: 'Міжнародні експерти та антикорупційні ініціативи в транзитивній демократії: реформа поліції України після 2014 року'
+    ka: 'საერთაშორისო ექსპერტები და კორუფციასთან ბრძოლის ინიციატივები გარდამავალ დემოკრატიაში: უკრაინის პოლიციის რეფორმა 2014
+      წლიდან'
+    de: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014'
+  agency: SSHRC Insight Grant
+  role:
+    en: Co-Investigator
+    fr: Co-chercheur
+    es: Co-investigador
+    ru: Со-исследователь
+    uk: Співдослідник
+    ka: თანათანადგინვლი
+    de: Co-Leiterin
+  amount: CAD 218,310
+- year: 2018
+  title:
+    en: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+    fr: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+    es: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+    ru: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+    uk: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+    ka: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+    de: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+  agency: FRQSC Soutien à la recherche pour la relève professorale
+  role:
+    en: PI
+    fr: Chercheur principal
+    es: Investigador principal
+    ru: Руководитель проекта
+    uk: Головний дослідник
+    ka: მთავარი მკვლევარი
+    de: Hauptantragstellerin
+  amount: CAD 56,816
+- year: 2018
+  title:
+    en: Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions
+    fr: Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions
+    es: Estudio de la rendición de cuentas y la capacidad de respuesta gubernamental mediante macrodatos sobre las interacciones
+      entre ciudadanos y gobierno
+    ru: Изучение подотчётности и отзывчивости органов государственного управления с применением больших данных о взаимодействии
+      граждан с государством
+    uk: Вивчення підзвітності та відповідальності уряду за допомогою великих даних про взаємодію громадян з державою
+    ka: მთავრობის ანგარიშვალდებულებისა და რეაგირებაუნარიანობის შესწავლა მოქალაქე-მთავრობის ურთიერთქმედების დიდი მონაცემების
+      საშუალებით
+    de: Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions
+  agency: SSHRC Insight Development Grant
+  role:
+    en: PI
+    fr: Chercheur principal
+    es: Investigador principal
+    ru: Руководитель проекта
+    uk: Головний дослідник
+    ka: მთავარი მკვლევარი
+    de: Hauptantragstellerin
+  amount: CAD 62,089
+- year: 2018
+  title:
+    en: Democracy in disruption? Engaging Canadians to face emerging threats
+    fr: Democracy in disruption? Engaging Canadians to face emerging threats
+    es: ¿Democracia en crisis? Comprometiendo a los canadienses para enfrentar amenazas emergentes
+    ru: Демократия под угрозой? Вовлечение канадцев в противодействие возникающим вызовам
+    uk: Демократія в умовах потрясінь? Залучення канадців до протидії новим загрозам
+    ka: დემოკრატია დარღვევის პირობებში? კანადელების ჩართვა განვითარებადი საფრთხეების წინაშე
+    de: Democracy in disruption? Engaging Canadians to face emerging threats
+  agency: SSHRC Connection Grant
+  role:
+    en: Co-applicant (Fenwick McKelvey, Lead-PI)
+    fr: Co-demandeur (Fenwick McKelvey, chercheur principal)
+    es: Co-solicitante (Fenwick McKelvey, investigador principal)
+    ru: Со-заявитель (Fenwick McKelvey, ведущий руководитель проекта)
+    uk: Співзаявник (Fenwick McKelvey, головний дослідник)
+    ka: თანაამომქმედი (Fenwick McKelvey, წამყვანი მთავარი მკვლევარი)
+    de: Co-Antragstellerin (Fenwick McKelvey, federführende Hauptantragstellerin)
+  amount: CAD 49,853
+- year: 2017
+  title:
+    en: What's in a Tally
+    fr: What's in a Tally
+    es: What's in a Tally
+    ru: What's in a Tally
+    uk: Що приховує підрахунок
+    ka: What's in a Tally
+    de: What's in a Tally
+  agency: SSHRC Internal Grant
+  amount: CAD 5,000
+- year: 2015
+  title:
+    en: Power of the Panopticon
+    fr: Power of the Panopticon
+    es: Power of the Panopticon
+    ru: Power of the Panopticon
+    uk: Сила паноптикуму
+    ka: Power of the Panopticon
+    de: Power of the Panopticon
+  agency: 'Comparative Political Studies: Transparency Special Issue'
+  notes:
+    en: with S. Bush, L. Prather, Y. Zeira
+    fr: avec S. Bush, L. Prather, Y. Zeira
+    es: con S. Bush, L. Prather, Y. Zeira
+    ru: с S. Bush, L. Prather, Y. Zeira
+    uk: з S. Bush, L. Prather, Y. Zeira
+    ka: S. Bush-თან ერთად, L. Prather-თან ერთად, Y. Zeira-სთან ერთად
+    de: mit S. Bush, L. Prather, Y. Zeira
+  amount: USD 11,000
+- year: 2015
+  title:
+    en: Power of the Panopticon
+    fr: Power of the Panopticon
+    es: Power of the Panopticon
+    ru: Power of the Panopticon
+    uk: Сила паноптикуму
+    ka: Power of the Panopticon
+    de: Power of the Panopticon
+  agency: Program on Middle East Political Science
+  notes:
+    en: with L. Prather
+    fr: avec L. Prather
+    es: con L. Prather
+    ru: с L. Prather
+    uk: з L. Prather
+    ka: L. Prather-თან ერთად
+    de: mit L. Prather
+  amount: USD 3,000
+- year: 2015
+  title:
+    en: Center for Statistics & Social Sciences Travel Grant
+    fr: Center for Statistics & Social Sciences Travel Grant
+    es: Center for Statistics & Social Sciences Travel Grant
+    ru: Center for Statistics & Social Sciences Travel Grant
+    uk: Дорожній грант Center for Statistics & Social Sciences
+    ka: Center for Statistics & Social Sciences-ის სამგზავრო გრანტი
+    de: Center for Statistics & Social Sciences Travel Grant
+  amount: USD 1,000
+- year: 2015
+  title:
+    en: Levi-Kaplan Comparative Political Economy Research Award
+    fr: Levi-Kaplan Comparative Political Economy Research Award
+    es: Levi-Kaplan Comparative Political Economy Research Award
+    ru: Levi-Kaplan Comparative Political Economy Research Award
+    uk: Дослідницька премія Levi-Kaplan з порівняльної політичної економії
+    ka: Levi-Kaplan შედარებითი პოლიტიკური ეკონომიის სამეცნიერო ჯილდო
+    de: Levi-Kaplan Comparative Political Economy Research Award
+  amount: USD 2,000
+- year: 2014–2015
+  title:
+    en: Chester A. Fritz Fellowship
+    fr: Chester A. Fritz Fellowship
+    es: Chester A. Fritz Fellowship
+    ru: Chester A. Fritz Fellowship
+    uk: Стипендія Chester A. Fritz
+    ka: Chester A. Fritz სტიპენდია
+    de: Chester A. Fritz Fellowship
+  amount: USD 6,400
+- year: 2014
+  title:
+    en: International Research & Exchanges Board (IREX)
+    fr: International Research & Exchanges Board (IREX)
+    es: International Research & Exchanges Board (IREX)
+    ru: International Research & Exchanges Board (IREX)
+    uk: International Research & Exchanges Board (IREX)
+    ka: International Research & Exchanges Board (IREX)
+    de: International Research & Exchanges Board (IREX)
+  amount: USD 9,000
+- year: 2013
+  title:
+    en: Full scholarship from NYU to attend Inaugural Winter Experimental Social Sciences Institute at NYU Abu Dhabi
+    fr: Bourse complète de NYU pour participer à l'Inaugural Winter Experimental Social Sciences Institute à NYU Abu Dhabi
+    es: Beca completa de NYU para asistir al Inaugural Winter Experimental Social Sciences Institute en NYU Abu Dhabi
+    ru: Полная стипендия NYU для участия в Инаугурационном зимнем институте экспериментальных социальных наук при NYU Abu
+      Dhabi
+    uk: Повна стипендія від NYU для участі в Інавгураційному зимовому інституті експериментальних суспільних наук у NYU Abu
+      Dhabi
+    ka: NYU-ს სრული სტიპენდია NYU Abu Dhabi-ში საინაუგურაციო ზამთრის ექსპერიმენტული სოციალური მეცნიერებების ინსტიტუტში დასასწრებად
+    de: Vollstipendium der NYU zur Teilnahme am Inaugural Winter Experimental Social Sciences Institute an der NYU Abu Dhabi
+- year: 2013
+  title:
+    en: EITM Scholarship to attend ICPSR
+    fr: Bourse EITM pour participer à l'ICPSR
+    es: Beca EITM para asistir al ICPSR
+    ru: Стипендия EITM для участия в ICPSR
+    uk: Стипендія EITM для участі в ICPSR
+    ka: EITM სტიპენდია ICPSR-ში დასასწრებად
+    de: EITM-Stipendium zur Teilnahme am ICPSR
+- year: 2013
+  title:
+    en: Durden Family Fellowship, University of Washington, Department of Political Science
+    fr: Bourse Durden Family Fellowship, University of Washington, Department of Political Science
+    es: Beca Durden Family Fellowship, University of Washington, Departamento de Ciencia Política
+    ru: Стипендия Durden Family Fellowship, University of Washington, кафедра политических наук
+    uk: Стипендія родини Durden, University of Washington, кафедра політичної науки
+    ka: Durden Family Fellowship, University of Washington, პოლიტიკური მეცნიერების დეპარტამენტი
+    de: Durden Family Fellowship, University of Washington, Department of Political Science
+  amount: USD 2,300
+- year: 2007
+  title:
+    en: U.S. Fulbright Program, Georgia Recipient (declined)
+    fr: Programme Fulbright américain, récipiendaire pour la Géorgie (refusée)
+    es: Programa U.S. Fulbright, Beneficiario en Georgia (rechazada)
+    ru: Программа Fulbright США, грант для Грузии (отклонено)
+    uk: Програма U.S. Fulbright, отримувач від Грузії (відхилено)
+    ka: აშშ-ს Fulbright პროგრამა, Georgia-ს რეციპიენტი (უარყოფილია)
+    de: U.S. Fulbright Program, Stipendium für Georgien (abgelehnt)
+- year: 2004–2006
+  title:
+    en: Merit-based tuition scholarship, Georgetown University
+    fr: Bourse d'études au mérite, Georgetown University
+    es: Beca de matrícula por mérito académico, Georgetown University
+    ru: Стипендия на оплату обучения на конкурсной основе, Georgetown University
+    uk: Стипендія за успішність на оплату навчання, Georgetown University
+    ka: დამსახურებაზე დაფუძნებული სწავლების სტიპენდია, Georgetown University
+    de: Leistungsbasiertes Stipendium, Georgetown University
+software:
+- name: mapcan
+  url: https://CRAN.R-project.org/package=mapcan
+  description:
+    en: A variety of functions that make it easy to plot standard choropleth Canadian maps as well as choropleth alternatives
+      in ggplot2.
+    fr: Un ensemble de fonctions facilitant la création de cartes choroplèthes standard du Canada ainsi que d'alternatives
+      aux cartes choroplèthes dans ggplot2.
+    es: Una variedad de funciones que facilitan la elaboración de mapas coropléticos estándar de Canadá, así como alternativas
+      a los mapas coropléticos en ggplot2.
+    ru: Набор функций, упрощающих построение стандартных хороплетных карт Канады, а также альтернативных хороплетных визуализаций
+      в ggplot2.
+    uk: Набір функцій, що спрощують побудову стандартних хороплетних карт Канади, а також альтернатив хороплетним картам у
+      ggplot2.
+    ka: მრავალფეროვანი ფუნქციების ნაკრები, რომელიც ggplot2-ში კანადის სტანდარტული ქოროპლეთური რუქების, აგრეთვე ქოროპლეთური
+      ალტერნატივების დახაზვას ამარტივებს.
+    de: Eine Reihe von Funktionen, die es erleichtern, standardmäßige Choroplethenkarten Kanadas sowie Alternativen zur Choroplethendarstellung
+      in ggplot2 zu erstellen.
+  coauthors:
+  - Andrew McCormack
+professional_evaluations:
+- title:
+    en: 'Corruption Perceptions in Armenia: Implications for Anti-Corruption Messaging'
+    fr: 'Perceptions de la corruption en Arménie : implications pour les messages de lutte contre la corruption'
+    es: 'Percepciones de corrupción en Armenia: implicaciones para la comunicación anticorrupción'
+    ru: 'Восприятие коррупции в Армении: последствия для антикоррупционных информационных кампаний'
+    uk: 'Сприйняття корупції у Вірменії: наслідки для антикорупційних повідомлень'
+    ka: 'კორუფციის აღქმა სომხეთში: შედეგები კორუფციასთან საბრძოლო შეტყობინებისათვის'
+    de: 'Korruptionswahrnehmungen in Armenien: Implikationen für Anti-Korruptions-Kommunikation'
+  coauthors:
+  - Jordan Gans-Morse
+  - Arne Holverscheid
+  - Simeon Nichter
+  submitted_to:
+    en: USAID Armenia Integrity Project
+    fr: USAID Armenia Integrity Project
+    es: USAID Armenia Integrity Project
+    ru: USAID Armenia Integrity Project
+    uk: USAID Armenia Integrity Project
+    ka: USAID Armenia Integrity Project
+    de: USAID Armenia Integrity Project
+- title:
+    en: Workplace, Labor Rights and Outcomes
+    fr: Milieu de travail, droits des travailleurs et résultats
+    es: Lugar de trabajo, derechos laborales y resultados
+    ru: Условия труда, трудовые права и их результаты
+    uk: Умови праці, трудові права та результати
+    ka: სამუშაო გარემო, შრომის უფლებები და შედეგები
+    de: Arbeitsplatz, Arbeitnehmerrechte und -ergebnisse
+  coauthors:
+  - Margaret Levi
+  - Dan Berliner
+  - Jennifer Noveck
+  submitted_to:
+    en: World Bank
+    fr: World Bank
+    es: World Bank
+    ru: World Bank
+    uk: World Bank
+    ka: World Bank
+    de: World Bank
+  year: 2012
+- title:
+    en: Final Evaluation of OSI's Central Eurasia Project's Labor Migration Program
+    fr: Évaluation finale du programme de migration de travail du Central Eurasia Project de l'OSI
+    es: Evaluación final del Programa de Migración Laboral del Central Eurasia Project de OSI
+    ru: Итоговая оценка программы трудовой миграции в рамках проекта OSI по Центральной Евразии
+    uk: Підсумкова оцінка програми трудової міграції Центральноєвразійського проєкту OSI
+    ka: OSI-ის ცენტრალური ევრაზიის პროექტის შრომითი მიგრაციის პროგრამის საბოლოო შეფასება
+    de: Abschlussevaluierung des Arbeitsmigrationsprogramms des Central Eurasia Project der OSI
+  submitted_to:
+    en: 'OSI: New York'
+    fr: 'OSI : New York'
+    es: 'OSI: Nueva York'
+    ru: 'OSI: New York'
+    uk: 'OSI: New York'
+    ka: 'OSI: New York'
+    de: 'OSI: New York'
+  year: 2011
+- title:
+    en: Challenges Facing Effective Governance in Georgia
+    fr: Les défis d'une gouvernance efficace en Géorgie
+    es: Desafíos para la gobernanza efectiva en Georgia
+    ru: Проблемы эффективного государственного управления в Грузии
+    uk: Виклики ефективного врядування в Грузії
+    ka: ეფექტური მმართველობის წინაშე მდგარი გამოწვევები საქართველოში
+    de: Herausforderungen für eine effektive Regierungsführung in Georgien
+  notes:
+    en: Co-edited with Mzia Mikeladze; USAID-sponsored edited volume
+    fr: Codirigé avec Mzia Mikeladze ; volume collectif commandité par l'USAID
+    es: Coeditado con Mzia Mikeladze; volumen colectivo financiado por USAID
+    ru: Под совместной редакцией с Mzia Mikeladze; сборник под эгидой USAID
+    uk: Співредактор — Mzia Mikeladze; збірник за підтримки USAID
+    ka: თანარედაქტირებულია Mzia Mikeladze-სთან ერთად; USAID-ის მხარდაჭერით გამოცემული კრებული
+    de: Mitherausgegeben mit Mzia Mikeladze; von USAID geförderter Sammelband
+  year: 2010
+- title:
+    en: Voices of Migrants from Georgia
+    fr: Voix des migrants de Géorgie
+    es: Voces de migrantes de Georgia
+    ru: Голоса мигрантов из Грузии
+    uk: Голоси мігрантів з Грузії
+    ka: საქართველოდან მიგრანტების ხმები
+    de: Stimmen der Migranten aus Georgien
+  coauthors:
+  - Kristina Vacharadze
+  - Giorgi Babunashvili
+  submitted_to:
+    en: Danish Refugee Council, Tbilisi, Georgia
+    fr: Danish Refugee Council, Tbilisi, Géorgie
+    es: Danish Refugee Council, Tbilisi, Georgia
+    ru: Danish Refugee Council, Tbilisi, Грузия
+    uk: Danish Refugee Council, Tbilisi, Georgia
+    ka: Danish Refugee Council, Tbilisi, საქართველო
+    de: Danish Refugee Council, Tbilisi, Georgien
+  year: 2009
+- title:
+    en: 'Labor Migration in Armenia: A Sociological Survey of Six Communities'
+    fr: 'La migration de travail en Arménie : une enquête sociologique dans six communautés'
+    es: 'Migración laboral en Armenia: una encuesta sociológica de seis comunidades'
+    ru: 'Трудовая миграция в Армении: социологическое обследование шести общин'
+    uk: 'Трудова міграція у Вірменії: соціологічне опитування шести громад'
+    ka: 'შრომითი მიგრაცია სომხეთში: ექვსი თემის სოციოლოგიური კვლევა'
+    de: 'Arbeitsmigration in Armenien: Eine soziologische Untersuchung in sechs Gemeinden'
+  coauthors:
+  - Anush Dulgaryan
+  - Andrew Golda
+  submitted_to:
+    en: USAID, Yerevan, Armenia
+    fr: USAID, Erevan, Arménie
+    es: USAID, Ereván, Armenia
+    ru: USAID, Ереван, Армения
+    uk: USAID, Yerevan, Armenia
+    ka: USAID, Yerevan, სომხეთი
+    de: USAID, Yerevan, Armenien
+  year: 2009
+testimony:
+- title:
+    en: Disinformation and cyber operations in the context of Russia's war against Ukraine
+    fr: La désinformation et les cyberopérations dans le contexte de la guerre de la Russie contre l'Ukraine
+    es: Desinformación y operaciones cibernéticas en el contexto de la guerra de Rusia contra Ucrania
+    ru: Дезинформация и кибероперации в контексте войны России против Украины
+    uk: Дезінформація та кібероперації в контексті війни Росії проти України
+    ka: დეზინფორმაცია და კიბეროპერაციები რუსეთის უკრაინის წინააღმდეგ ომის კონტექსტში
+    de: Desinformation und Cyberoperationen im Kontext des russischen Krieges gegen die Ukraine
+  venue:
+    en: Standing Senate Committee on National Security, Defence, and Veterans Affairs, Senate of Canada
+    fr: Comité sénatorial permanent de la sécurité nationale, de la défense et des anciens combattants, Sénat du Canada
+    es: Comité Permanente del Senado sobre Seguridad Nacional, Defensa y Asuntos de Veteranos, Senado de Canadá
+    ru: Постоянный комитет Сената по вопросам национальной безопасности, обороны и делам ветеранов, Сенат Канады
+    uk: Постійний комітет Сенату з питань національної безпеки, оборони та у справах ветеранів, Сенат Канади
+    ka: ეროვნული უსაფრთხოების, თავდაცვისა და ვეტერანთა საქმეების მუდმივმოქმედი სენატის კომიტეტი, Canada-ს სენატი
+    de: Ständiger Senatsausschuss für nationale Sicherheit, Verteidigung und Veteranenangelegenheiten, Senat von Kanada
+  date: '2024-04-15'
+  url: https://senparlvu.parl.gc.ca/Harmony/en/PowerBrowser/PowerBrowserV2?fk=635443&globalStreamId=3
+field_research:
+- place: Armenia
+  years: 2006–2010
+- place: Azerbaijan
+  years: 2006–2010
+- place: Georgia
+  years: 2006–2010, 2014–15
+- place: Kenya
+  years: 2010–2015
+- place: Montenegro
+  years: '2025'
+- place: South Africa
+  years: '2014'
+- place: Ukraine
+  years: 2014, 2015, 2018, 2019
+- place: United Arab Emirates
+  years: '2015'
+skills:
+  statistical_packages:
+    en: Stata, SPSS
+    fr: Stata, SPSS
+    es: Stata, SPSS
+    ru: Stata, SPSS
+    uk: Stata, SPSS
+    ka: Stata, SPSS
+    de: Stata, SPSS
+  computer_languages:
+    en: R, Python, bash and Unix shell scripts
+    fr: R, Python, scripts bash et Unix
+    es: R, Python, bash y scripts de shell Unix
+    ru: R, Python, bash и сценарии командной оболочки Unix
+    uk: R, Python, bash та сценарії командної оболонки Unix
+    ka: R, Python, bash და Unix shell scripts
+    de: R, Python, bash und Unix-Shell-Skripte
+  computer_applications:
+    en: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
+    fr: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
+    es: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
+    ru: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
+    uk: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
+    ka: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
+    de: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
+  languages:
+    en: Proficient in Spanish; Research skills in French, Georgian, German, Russian; Rusty in Slovak; Elementary Turkish,
+      Swahili
+    fr: Maîtrise de l'espagnol ; compétences en recherche en français, géorgien, allemand et russe ; notions rouillées de
+      slovaque ; turc et swahili élémentaires
+    es: Dominio del español; competencia investigadora en francés, georgiano, alemán y ruso; nivel oxidado en eslovaco; turco
+      y suajili elemental
+    ru: Свободное владение испанским; исследовательские навыки на французском, грузинском, немецком, русском языках; утраченные
+      навыки словацкого; начальный уровень турецкого и суахили
+    uk: Вільно іспанська; дослідницькі навички французькою, грузинською, німецькою, російською; певною мірою словацька; базовий
+      рівень турецької, суахілі
+    ka: თავისუფლად ფლობს ესპანურს; სამეცნიერო კვლევის უნარები ფრანგულ, ქართულ, გერმანულ და რუსულ ენებში; გამოსულია პრაქტიკიდან
+      სლოვაკურში; დამწყები დონე თურქულსა და სუაჰილიში
+    de: Fließend in Spanisch; Forschungskenntnisse in Französisch, Georgisch, Deutsch, Russisch; Eingerostet in Slowakisch;
+      Grundkenntnisse in Türkisch und Suaheli
+section_headers:
+  contact_information:
+    en: Contact Information
+    fr: Coordonnées
+    es: Información de contacto
+    ru: Контактная информация
+    uk: Контактна інформація
+    ka: საკონტაქტო ინფორმაცია
+    de: Kontaktinformationen
+  academic_appointments:
+    en: Academic Appointments
+    fr: Postes universitaires
+    es: Cargos académicos
+    ru: Академические должности
+    uk: Академічні посади
+    ka: აკადემიური თანამდებობები
+    de: Akademische Stellen
+  affiliations:
+    en: Affiliations
+    fr: Affiliations
+    es: Afiliaciones
+    ru: Аффилиации
+    uk: Афіліації
+    ka: აფილიაციები
+    de: Zugehörigkeiten
+  education:
+    en: Education
+    fr: Formation
+    es: Formación académica
+    ru: Образование
+    uk: Освіта
+    ka: განათლება
+    de: Ausbildung
+  peer_reviewed:
+    en: Peer-Reviewed Publications
+    fr: Publications évaluées par les pairs
+    es: Publicaciones arbitradas por pares
+    ru: Рецензируемые публикации
+    uk: Публікації з рецензуванням
+    ka: რეცენზირებული პუბლიკაციები
+    de: Begutachtete Veröffentlichungen
+  under_review:
+    en: Under Review / To Resubmit
+    fr: En évaluation / À resoumettre
+    es: En revisión / Para reenvío
+    ru: На рецензировании / Ожидает повторной подачи
+    uk: На рецензуванні / До повторного подання
+    ka: განხილვის პროცესში / გადასაგზავნად
+    de: Eingereicht / Zur Wiedereinreichung
+  editor_reviewed:
+    en: Editor-Reviewed Publications
+    fr: Publications évaluées par la direction éditoriale
+    es: Publicaciones arbitradas por editor
+    ru: Публикации, рецензированные редактором
+    uk: Публікації, відібрані редактором
+    ka: რედაქტორის მიერ განხილული პუბლიკაციები
+    de: Redaktionell geprüfte Veröffentlichungen
+  book_reviews:
+    en: Book Reviews
+    fr: Comptes rendus d'ouvrages
+    es: Reseñas de libros
+    ru: Рецензии на книги
+    uk: Рецензії на книги
+    ka: წიგნების რეცენზიები
+    de: Buchbesprechungen
+  blogs:
+    en: Blogs and Popular Press
+    fr: Blogues et presse grand public
+    es: Blogs y prensa de divulgación
+    ru: Блоги и публикации в популярной прессе
+    uk: Блоги та публікації у популярній пресі
+    ka: ბლოგები და პოპულარული პრესა
+    de: Blogs und populäre Presse
+  working_papers:
+    en: Published Working Papers
+    fr: Documents de travail publiés
+    es: Documentos de trabajo publicados
+    ru: Опубликованные рабочие материалы
+    uk: Опубліковані робочі матеріали
+    ka: გამოქვეყნებული სამუშაო ნაშრომები
+    de: Veröffentlichte Arbeitspapiere
+  in_prep:
+    en: Manuscripts in Preparation
+    fr: Manuscrits en préparation
+    es: Manuscritos en preparación
+    ru: Рукописи в стадии подготовки
+    uk: Рукописи у підготовці
+    ka: მომზადების პროცესში მყოფი ხელნაწერები
+    de: Manuskripte in Vorbereitung
+  on_hold:
+    en: On Hold
+    fr: En suspens
+    es: En suspenso
+    ru: Приостановленные проекты
+    uk: Призупинені
+    ka: შეჩერებული
+    de: Zurückgestellt
+  grants:
+    en: Grants & Scholarships
+    fr: Subventions et bourses
+    es: Subvenciones y becas
+    ru: Гранты и стипендии
+    uk: Гранти та стипендії
+    ka: გრანტები და სტიპენდიები
+    de: Förderungen & Stipendien
+  software:
+    en: Software
+    fr: Logiciels
+    es: Software
+    ru: Программное обеспечение
+    uk: Програмне забезпечення
+    ka: პროგრამული უზრუნველყოფა
+    de: Software
+  professional_evaluations:
+    en: Professional Evaluations and Reports
+    fr: Évaluations et rapports professionnels
+    es: Evaluaciones e informes profesionales
+    ru: Профессиональные оценки и отчёты
+    uk: Професійні оцінки та звіти
+    ka: პროფესიული შეფასებები და ანგარიშები
+    de: Professionelle Evaluierungen und Berichte
+  testimony:
+    en: Testimony
+    fr: Témoignages
+    es: Testimonio
+    ru: Экспертные свидетельства
+    uk: Свідчення
+    ka: ჩვენება
+    de: Zeugenaussagen
+  presentations:
+    en: Recent Presentations
+    fr: Présentations récentes
+    es: Presentaciones Recientes
+    ru: Недавние выступления
+    uk: Нещодавні виступи
+    ka: ბოლოდროინდელი პრეზენტაციები
+    de: Aktuelle Vorträge
+  teaching:
+    en: Teaching & Mentorship
+    fr: Enseignement et encadrement
+    es: Docencia y Mentoría
+    ru: Преподавание и наставничество
+    uk: Викладання та наставництво
+    ka: სწავლება და მენტორობა
+    de: Lehre & Betreuung
+  relevant_experience:
+    en: Relevant Professional Experience
+    fr: Expérience professionnelle pertinente
+    es: Experiencia Profesional Relevante
+    ru: Соответствующий профессиональный опыт
+    uk: Відповідний професійний досвід
+    ka: შესაბამისი პროფესიული გამოცდილება
+    de: Einschlägige Berufserfahrung
+  skills:
+    en: Skills
+    fr: Compétences
+    es: Competencias
+    ru: Навыки
+    uk: Навички
+    ka: უნარები
+    de: Kenntnisse
+  field_research:
+    en: Field Research
+    fr: Recherche de terrain
+    es: Investigación de Campo
+    ru: Полевые исследования
+    uk: Польові дослідження
+    ka: საველე კვლევა
+    de: Feldforschung
+  professional_service:
+    en: Professional Service
+    fr: Service professionnel
+    es: Servicio Profesional
+    ru: Профессиональная деятельность
+    uk: Професійна діяльність
+    ka: პროფესიული სამსახური
+    de: Fachlicher Dienst
+  other_service:
+    en: Other Service
+    fr: Autres services
+    es: Otros Servicios
+    ru: Иная деятельность
+    uk: Інша діяльність
+    ka: სხვა სამსახური
+    de: Sonstiger Dienst
+  courses_taught:
+    en: Courses Taught
+  graduate_student_instructor:
+    en: Graduate Student Instructor
+  mentorship_header:
+    en: Mentorship
+  journal_review:
+    en: Journal & Press Peer Review
+  grant_review_header:
+    en: Grant Review
+  government_review:
+    en: Government Agency Review
+  volunteer:
+    en: Volunteer
+  election_observer:
+    en: International Election Observer
+labels:
+  download_pdf:
+    en: Download PDF
+    fr: Télécharger le PDF
+    es: Descargar PDF
+    ru: Скачать PDF
+    uk: Завантажити PDF
+    ka: PDF-ის გადმოწერა
+    de: PDF herunterladen
+  google_scholar:
+    en: Google Scholar
+    fr: Google Scholar
+    es: Google Scholar
+    ru: Google Scholar
+    uk: Google Scholar
+    ka: Google Scholar
+    de: Google Scholar
+  contact:
+    en: Contact
+    fr: Contact
+    es: Contacto
+    ru: Контакт
+    uk: Контакт
+    ka: კონტაქტი
+    de: Kontakt
+  with:
+    en: with
+    fr: avec
+    es: con
+    ru: с
+    uk: з
+    ka: -თან ერთად
+    de: mit
+  award_winner:
+    en: Winner
+    fr: Lauréat
+    es: Ganador
+    ru: Лауреат
+    uk: Лауреат
+    ka: გამარჯვებული
+    de: Preisträger
+  award_honorable_mention:
+    en: Honourable Mention
+    fr: Mention honorable
+    es: Mención Honorífica
+    ru: Почётная грамота
+    uk: Почесна відзнака
+    ka: საპატიო მოხსენება
+    de: Belobigung
+  media_coverage:
+    en: Media coverage
+    fr: Couverture médiatique
+    es: Cobertura mediática
+    ru: Освещение в СМИ
+    uk: Висвітлення в медіа
+    ka: მედიის გაშუქება
+    de: Medienberichterstattung
+  press_release:
+    en: Press release
+    fr: Communiqué de presse
+    es: Comunicado de prensa
+    ru: Пресс-релиз
+    uk: Прес-реліз
+    ka: პრეს-რელიზი
+    de: Pressemitteilung
+  top_cited:
+    en: Top 10 Most Cited
+    fr: Top 10 des articles les plus cités
+    es: 10 más citados
+    ru: Топ-10 наиболее цитируемых
+    uk: Топ-10 найцитованіших
+    ka: ყველაზე ხშირად ციტირებული 10
+    de: Top 10 der meistzitierten Artikel
+  online_first:
+    en: Online First
+    fr: En ligne en avant-première
+    es: Online First
+    ru: Online First
+    uk: Online First
+    ka: Online First
+    de: Online First
+  forthcoming:
+    en: Forthcoming
+    fr: À paraître
+    es: En prensa
+    ru: В печати
+    uk: Готується до друку
+    ka: მომავალი გამოცემა
+    de: Im Erscheinen
+  revise_resubmit:
+    en: Revise & Resubmit
+    fr: Révision et resoumission
+    es: Revisar y Reenviar
+    ru: Доработка и повторная подача
+    uk: На доопрацювання
+    ka: გადასინჯვა და ხელახალი წარდგენა
+    de: Überarbeitung & Wiedereinreichung
+  under_review:
+    en: Under Review
+    fr: En cours d'évaluation
+    es: En evaluación
+    ru: На рецензировании
+    uk: На рецензуванні
+    ka: განხილვის პროცესში
+    de: Unter Begutachtung
+  pre_print_note:
+    en: Many pre-print versions are on my website. Contact me if you need something that is not available!
+    fr: De nombreuses versions préliminaires sont disponibles sur mon site Web. Contactez-moi si vous ne trouvez pas ce dont
+      vous avez besoin !
+    es: Muchas versiones de preimpresión están disponibles en mi sitio web. ¡Contácteme si necesita algo que no esté disponible!
+    ru: Многие препринты размещены на моём сайте. Свяжитесь со мной, если вам нужна работа, которая недоступна на сайте!
+    uk: Чимало препринтів розміщено на моєму веб-сайті. Зв'яжіться зі мною, якщо вам потрібен матеріал, якого там немає!
+    ka: პრეპრინტების უმეტესობა განთავსებულია ჩემს ვებსაიტზე. დამიკავშირდით, თუ გჭირდებათ რაიმე, რაც ხელმისაწვდომი არ არის!
+    de: Viele Vorabdruckversionen sind auf meiner Website verfügbar. Kontaktieren Sie mich, falls Sie etwas benötigen, das
+      nicht verfügbar ist!
+teaching:
+  instructor:
+    undergraduate:
+    - course: Introduction to Quantitative Social Science
+      code: POLI 311
+      institution: McGill
+    - course: The Politics of Misinformation
+      code: POLI 421
+      institution: McGill
+    - course: The Politics of Information and Transparency in the Developing World
+      code: POLI 422
+      institution: McGill
+    - course: Misinformation and Disinformation in the Developing World (honours seminar)
+      code: POLI 522
+      institution: McGill
+    graduate:
+    - course: Introduction to R
+      code: CS&SS 508
+      institution: UW
+    - course: Quantitative Research I
+      code: POLI 618
+      institution: McGill
+    - course: Causal Inference - Quantitative Research II
+      code: POLI 666
+      institution: McGill
+  gsi:
+    undergraduate:
+    - course: Introduction to Comparative Politics (×3)
+      code: POL S 204
+      institution: UW
+    - course: Case-Based Social Statistics
+      code: STAT 321
+      institution: UW
+    - course: Religion and World Politics
+      code: POL S 307
+      institution: UW
+    - course: American Politics
+      code: POL S 202
+      institution: UW
+    graduate:
+    - course: Advances in Content Analysis Methods
+      code: POL S 559
+      institution: UW
+    - course: Maximum Likelihood Estimation (×2)
+      code: CS&SS/POL S 510
+      institution: UW
+mentorship:
+  phd:
+  - year: 2022
+    name: Costin Ciobanu
+    roles: Co-author, Lab Member, Dissertation Committee
+    placement: Post-Doc, Royal Holloway University; Post-doc, University of Aarhus
+  - year: 2023
+    name: Mathieu Lavigne
+    roles: Co-author, Dissertation Committee
+    placement: Post-Doc, Dartmouth College
+  - year: 2024
+    name: Aengus Bridgman
+    roles: Co-author, Lab Member, Dissertation Committee
+    placement: Assistant Prof (Research), McGill University
+  - year: 2025
+    name: Maxime Blanchard
+    roles: Dissertation Committee
+    placement: IRCC Canada
+  - year: TBD
+    name: Qinggang Li
+    roles: Co-Supervisor
+  ma:
+  - year: 2019
+    name: Andrew McCormack
+    roles: Co-Author, Research Assistant, Lab Member
+    placement: '[Data Sciences](https://datasciences.ca/)'
+  - year: 2019
+    name: Saewon Park
+    roles: Supervisor, Research Assistant, Lab Manager, Co-author
+    placement: '[TrackTik](https://www.tracktik.com/); [The Media Ecosystem Observatory](https://meo.ca/)'
+  - year: 2020
+    name: Annie Chen
+    roles: Supervisor, Lab Member, Co-author
+    placement: '[Bright Line Watch](http://brightlinewatch.org/)'
+  - year: 2020
+    name: Etienne Gagnon
+    roles: Supervisor, Lab Manager
+  - year: 2021
+    name: Henry Atkins
+    roles: Supervisor, Lab Member
+  - year: 2022
+    name: Dilse Kaygisiz
+    roles: Supervisor, Lab Member
+    placement: '[Data Sciences](https://datasciences.ca/)'
+  - year: 2023
+    name: Christopher Ross
+    roles: Supervisor
+    placement: '[The Media Ecosystem Observatory](https://meo.ca/)'
+  - year: 2024
+    name: Pratik Mahajan
+    roles: Co-Supervisor
+  - year: 2025
+    name: Rafael Campos-Gottardo
+    roles: Supervisor, Lab member, Co-author
+  - year: TBD
+    name: Luis Alvarez
+    roles: Supervisor
+  - year: TBD
+    name: Katerina McMullen
+    roles: Supervisor, Lab member
+  - year: TBD
+    name: Aung (Koye) Myat
+    roles: Supervisor
+  - year: TBD
+    name: Aiden McIlvaney
+    roles: Supervisor
+  undergraduate:
+  - year: 2017
+    name: Aidan McLaughlin
+    roles: Internship Independent Study Supervisor (POLI 599)
+  - year: 2017
+    name: Marie Lemieux
+    roles: Internship Independent Study Supervisor (POLI 599)
+  - year: 2018
+    name: Henry McKenzie
+    roles: Honour's Thesis Supervisor (POLI 499)
+  - year: 2019
+    name: Lucie Goulard
+    roles: Independent Study Supervisor (POLI 599)
+  - year: 2019
+    name: Tim Roy
+    roles: Research Assistant, Lab Member, Independent Research Supervisor (POLI 490)
+presentations:
+- title: 'How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine'
+  venue: Disinformation, Propaganda, and Russia's War on Ukraine, Institute of European, Russian, and Eurasian Studies, Carleton
+    University
+  date: October 10, 2025
+  invited: true
+- title: Debates over Civilian Handgun Ownership in Wartime Ukraine
+  venue: Danlyiw Seminar, University of Ottawa
+  date: September 25, 2025
+- title: How do citizens view ESG?
+  venue: Annual Meetings of the American Political Science Association, Vancouver
+  date: September 11, 2025
+- title: War Fatigue?
+  venue: Association for the Study of Nationalities, New York
+  date: May 22, 2025
+- title: 'Citizen Perspectives of Corruption Harms: Evidence from Armenia'
+  venue: Association for the Study of Nationalities, New York
+  date: May 16, 2024
+- title: Georgia's Euromaidan? Making Sense of Mass Protests in Georgia
+  venue: Roundtable talk, Association for the Study of Nationalities, New York
+  date: May 16, 2024
+  invited: true
+- title: Police Decentralization in Ukraine since 2014 and Collaborative Democracy
+  venue: Danlyiw Seminar, University of Ottawa
+  date: September 29, 2023
+- title: Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations
+  venue: 'Democracy under Threat: How Education can Save it (DEMED), University of Glasgow'
+  date: April 19, 2023
+  invited: true
+- title: 'Volunteering Under Invasion: Descriptive and Experimental Evidence on Civilian Mobilization'
+  venue: U.S. Dept of State
+  date: January 20, 2023
+  invited: true
+- title: 'Pro-Kremlin Propaganda''s Failure in Ukraine: Evidence and Lessons Learned'
+  venue: PONARS, George Washington University; follow-up CEPA Roundtable
+  date: January 19, 2023
+  invited: true
+- title: Ukrainians' Attitudes towards Pro-Kremlin Disinformation
+  venue: DRUMS, S. Rajaratnam School of International Studies, Nanyang Technological University
+  date: March 23, 2022
+  invited: true
+- title: 'Russia''s Attack on Ukraine: An Expert Roundtable'
+  venue: Jean Monnet Network 'Between the EU and Russia' (BEAR), Montreal
+  date: March 9, 2022
+  invited: true
+- title: Weaponizing Election Petitions
+  venue: Annual Meeting of the Southern Political Science Association, San Juan PR
+  date: January 9-11, 2022
+- title: Russian Disinformation in Ukraine
+  venue: Annual Meeting of the Southern Political Science Association, San Juan PR
+  date: January 9-11, 2022
+- title: Media Attention and Bureaucratic Responsiveness
+  venue: MPSA Chicago; TextXD Berkeley; SPSA San Juan PR
+  date: '2019'
+- title: What Can we Learn From Election Petitions? An Analysis of Kenya's 2013 Election-related Court Cases
+  venue: APSA Annual Convention, Boston
+  date: August 30 - September 2, 2018
+- title: Ethnic Rivalry or Citizen Solidarity?
+  venue: Temple University Comparative Politics Colloquium; University of Toronto CERES
+  date: 2018-2019
+  invited: true
+- title: 'Covering the Campaign: The 2014 South African Presidential Election'
+  venue: APSA Annual Convention, San Francisco
+  date: September 1-4, 2017
+- title: Evaluating Women Candidates in a Corrupt Environment with Low Levels of Women's Representation
+  venue: MPSA Annual Convention, Chicago; CRRC 5th Annual Methodological Conference, Tbilisi
+  date: '2017'
+- title: 'The future of transparency and experimentation: new ideas and initiatives'
+  venue: 'Trends behind the numbers: bridging policies and needs, Tbilisi, Georgia'
+  date: January 2017
+  invited: true
+- title: Do Pre-Election Polls Changes Citizens' Beliefs or Behavior? Evidence from a Laboratory Experiment in the Country
+    of Georgia
+  venue: MPSA Annual Convention, Chicago
+  date: April 16-19, 2015
+- title: Power of the Panopticon? How Leaders' Images Affect Compliance
+  venue: MPSA Annual Convention, Chicago
+  date: April 16-19, 2015
+professional_experience:
+- employer: National Democratic Institute of International Affairs (NDI)
+  locations: Kenya, Nepal, Ukraine, Montenegro
+  role: Consultant
+  dates: 2010-2024
+  bullets:
+  - Provided strategic design and implementation consultancy for over one million dollars of applied political public opinion
+    and focus group work. Wrote analytic reports.
+- employer: National Democratic Institute of International Affairs (NDI)
+  role: Senior Program Officer, Research and Data Analysis
+  dates: '2010'
+  bullets:
+  - Ran NDI's USAID program to implement the first polling station level digitalized maps in Africa.
+  - Initiated and oversaw NDI's Norwegian-funded qualitative and quantitative research program to investigate Kenyan citizens'
+    attitudes towards the electoral process.
+- employer: Caucasus Research Resource Centers (CRRC), Eurasia Foundation
+  role: CRRC Deputy Director for Projects
+  dates: 2006-2010
+  bullets:
+  - Directed and helped implement CRRC assessments and evaluations, including supervision of USAID funded migration assessment
+    in Armenia and a multiyear assessment of Millennium Challenge Corporation's (MCC) efficacy in economic development in
+    Georgia.
+  - Coordinated CRRC Data Initiative (the largest cross-border survey in the Caucasus) and other survey and focus group activities,
+    including questionnaire development, focus group guide development, questionnaire translation, expert meetings and report
+    write-ups.
+  - Ran a 600,000 dollar election-related research program in cooperation with NDI.
+professional_service:
+  departmental:
+  - year: 2025-26
+    roles:
+    - CERC Chair Search Committee
+    - Graduate Program/Admissions Committee
+  - year: 2023-24
+    roles:
+    - Placement Director
+  - year: 2022-23
+    roles:
+    - Equity Committee
+    - Dean's Rep - Economics Department Job Search
+  - year: 2021-22
+    roles:
+    - Methods Stream Coordinator
+    - Graduate Program/Admissions Committee
+  - year: 2020-21
+    roles:
+    - Methods Stream Coordinator
+  - year: 2019-20
+    roles:
+    - Honours and Joint Honours Undergraduate Advisor
+    - Cyclical Review Undergraduate Committee
+    - Quantitative Methods Coordinator
+  - year: 2018-19
+    roles:
+    - Undergraduate Advisor
+    - Comparative Behaviour Search Committee
+    - Quantitative Methods Coordinator
+  - year: 2017-18
+    roles:
+    - Comparative Behaviour Search Committee
+    - Quantitative Methods Coordinator
+  university:
+    founder_note: Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems
+      Initiative (CDSI)
+    entries:
+    - year: 2025-26
+      roles:
+      - Arts Curriculum Committee
+      - Geographic Information Centre (GIC) Oversight Committee
+    - year: 2023-24
+      roles:
+      - Pro-dean Psychology
+      - Geographic Information Centre (GIC) Oversight Committee
+    - year: 2022-23
+      roles:
+      - Geographic Information Centre (GIC) Oversight Committee
+      - Tomlinson Doctoral Fellowship Review Committee
+      - Co-director R, Math and Replicable Summer Workshops
+    - year: 2021-22
+      roles:
+      - B.A.& Sc. Program Administration Committee
+      - Geographic Information Centre (GIC) Oversight Committee
+      - Co-director R, Math and Replicable Summer Workshops
+    - year: 2020-21
+      roles:
+      - B.A.& Sc. Program Administration Committee
+      - Geographic Information Centre (GIC) Oversight Committee
+      - Co-director R, Math and Replicable Summer Workshops
+      - Speaker for SSHRC IDG Panel for McGill Faculty
+    - year: 2019-20
+      roles:
+      - B.A.&Sc. Program Administration Committee
+      - Geographic Information Centre (GIC) Oversight Committee
+      - Co-director R, Math and Replicable Summer Workshops
+      - Vanier Canada Doctoral Scholarship Review Committee
+    - year: 2018-19
+      roles:
+      - Co-director R, Math and Replicable Summer Workshops
+    - year: 2017-18
+      roles:
+      - Co-director R, Math and Replicable Summer Workshops
+  profession:
+  - year: 2025-26
+    roles:
+    - APSA Chair, Discussant
+  - year: 2024-25
+    roles:
+    - ASN Discussant
+    - MPSA Chair, Discussant
+  - year: 2023-24
+    roles:
+    - ASN Discussant
+    - MPSA Discussant
+  - year: 2022-23
+    roles:
+    - SSHRC Insight Development Grant (IDG) Review
+    - APSA Discussant
+  - year: 2021-22
+    roles:
+    - SSHRC IDG Review Committee
+    - Co-organizer Montreal Methods Talk Series
+    - International Advisory Board Member ESRC (UK) Grant 'Shadows of The Gulag'
+    - MPSA Discussant
+  - year: 2020-21
+    roles:
+    - CRRC NFRF Review Committee
+    - CSDC Conference Committee
+    - International Advisory Board Member ESRC (UK) Grant 'Shadows of The Gulag'
+  - year: 2019-20
+    roles:
+    - SPSA Discussant, Chair
+    - SSHRC IDG Review Committee
+    - CSDC Conference Committee
+    - International Advisory Board Member ESRC (UK) Grant 'Shadows of The Gulag'
+  - year: 2018-19
+    roles:
+    - SPSA Discussant, Chair
+    - MPSA Discussant
+    - ASN Chair
+    - External Jury Member David Wutchiett (Sociology UdeM)
+    - CIPPS Works in Progress Discussant
+    - International Advisory Board Member ESRC (UK) Grant 'Shadows of The Gulag'
+  - year: 2017-18
+    roles:
+    - APSA Discussant, Chair
+    - International Advisory Board Member ESRC (UK) Grant 'Shadows of The Gulag'
+  - year: 2016-17
+    roles:
+    - MPSA Discussant, Chair
+  journal_review:
+  - African Affairs
+  - American Journal of Political Science
+  - American Political Science Review
+  - Big Data & Society
+  - British Journal of Political Science
+  - Canadian Journal of Political Science
+  - Cambridge University Press
+  - Comparative Political Studies
+  - Contemporary Politics
+  - Cooperation & Conflict
+  - Democratization
+  - East European Politics
+  - 'East/West: Journal of Ukrainian Studies'
+  - Electoral Studies
+  - Europe-Asia Studies
+  - European Journal of Political Research
+  - European Political Science
+  - European Political Science Review
+  - European Union Politics
+  - Foreign Policy Analysis
+  - Government & Opposition
+  - International Journal of Communication
+  - International Journal of Health Policy and Management
+  - International Journal of Press/Politics
+  - International Journal of Public Opinion Research
+  - International Political Science Review
+  - Journal of East Asian Studies
+  - Journal of Economic Behavior and Organization
+  - Journal of Ethnic and Migration Studies
+  - Journal of Experimental Political Science
+  - Journal of Institutional Economics
+  - Journal of International Relations and Development
+  - Journal of Law and Courts
+  - Journal of Modern African Studies
+  - Journal of Politics
+  - Journal of Public Administration Research & Theory
+  - Journal of Slavic Military Studies
+  - Media, War & Conflict
+  - Oñati Socio-Legal Series
+  - Perspectives on Politics
+  - PNAS Nexus
+  - Policy Studies
+  - Post-Soviet Affairs
+  - Political Analysis
+  - Public Management Review
+  - Mass Communication & Society
+  - Political Communication
+  - Political Science Research & Methods
+  - Political Psychology
+  - Political Research Quarterly
+  - Public Administration Review
+  - Public Opinion Quarterly
+  - Regulation & Governance
+  - Research & Politics
+  - SAGE Open
+  - Sociological Methods & Research
+  - Telematics & Informatics
+  - World Development
+  grant_review:
+  - Agencia Nacional de Investigación e Innovación (Uruguay)
+  - Austrian Academy of Sciences (OeAW)
+  - European Research Council (ERC)
+  - Mitacs
+  - Social Science and Humanities Research Council (SSHRC)
+  - New Frontiers in Research Fund (NFRF)
+  government_review:
+  - Japanese International Cooperation Agency Research Institute (JICA-RI)
+other_service:
+  volunteer:
+  - org: Open North
+    dates: 2017-2021
+    role: Advisor to applied research lab scientists
+  - org: Software Carpentry
+    dates: 2013-
+    role: Teach computational skills to scientists
+  - org: Transparify
+    dates: 2013-2016
+    role: Perform statistical analysis for NGO that promotes financial transparency amongst NGOs
+  election_observer:
+  - Ukrainian 2019 Parliamentary Elections
+  - South African 2014 General Elections
+  - Georgian 2008 Presidential Elections
+  - 2008 Ach'aran Supreme Council Elections
+in_prep:
+- title: 'Face-to-face: Average Dosage Response Functions for Measuring Survey Response Pattern Variation'
+  year: null
+- title: 'Civic Engagement in Rebuilding Ukraine: Observational and Experimental Evidence'
+  year: null
+on_hold:
+- title: Machine Learning Kenyan Elections
+  year: null
+- title: Eliciting a Risk Aversion Distribution
+  year: null
+- title: How do politicians think about their competitiveness?
+  year: null
+- title: Petitioning Elections
+  year: null
+under_review:
+- title: 'Studying Global Diasporas via Social Media Recruitment: Practical Considerations'
+  coauthors:
+  - Zeke Chen
+  - Thomas Soehl
+  status: Revise & Resubmit at International Journal of Social Research Methodology
+- title: Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora
+  coauthors:
+  - Thomas Soehl
+  status: Revise & Resubmit
+- title: A 'mega study' of approaches for sharing accurate news in the face of government repression
+  coauthors:
+  - Julia Minson
+  - Jordan Gans-Morse
+  - Christopher Higgins
+  status: Under Review
+- title: War Fatigue?
+  coauthors:
+  - Rafael Campos-Gottardo
+  status: Under Review
+- title: Border proximity and preferences for conflict resolution in Eastern Ukraine
+  coauthors:
+  - Calvin Garner
+  - Matej Jungwirth
+  status: Under Review
+- title: 'The underpinnings of demand for EU integration: Evidence from Montenegro'
+  coauthors:
+  - David Dubé
+  status: Under Review
+- title: 'Misclassified: Security Concerns and Misleading Bureaucratic Responsiveness'
+  coauthors:
+  - Daniel Berliner
+  - James Korman
+  - Brian Palmer-Rubin

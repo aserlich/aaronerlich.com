@@ -1,28 +1,34 @@
 ---
 title: "About"
+page-layout: full
+body-classes: about-page
 ---
 
-Welcome to my site! I am an Associate Professor in the [Department of Political Science](https://www.mcgill.ca/politicalscience/political-science) at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship ([CSDC](http://csdc-cecd.ca/)) and an Associate Member of the Centre on Population Dynamics ([CPD](https://www.mcgill.ca/popcentre/)). I completed my Ph.D. at the University of Washington in Seattle.
+<img src="images/profile.jpg" class="profile-photo" style="float: right; margin: 0 0 1em 1.5em;" alt="Aaron Erlich">
 
-Broadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as the *American Political Science Review*, *Comparative Political Studies*, the *Journal of Politics*, the *Journal of Public Administration Research & Theory*, and *Political Analysis*, among others. You can see more about my academic work on my [CV](cv.qmd).
+<span data-i18n="index.welcome">Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University of Washington in Seattle.</span>
 
-Before returning to academia, I worked for the [National Democratic Institute](http://www.ndi.org) covering Kenya and the [Caucasus Research Resource Centers](http://www.crrccenters.org) covering Armenia, Azerbaijan and Georgia.
+<span data-i18n="index.research_interests">Broadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as the American Political Science Review, Comparative Political Studies, the Journal of Politics, the Journal of Public Administration Research & Theory, and Political Analysis, among others.</span> <span data-i18n="index.see_cv">You can see more about my academic work on my</span> [C.V.](cv.qmd).
 
-I am an avid bicycle tourer.
+<span data-i18n="index.pre_academia">Before returning to academia, I worked for the National Democratic Institute covering Kenya and the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.</span>
 
-## Contact me
+<span data-i18n="index.bicycle">I am an avid bicycle tourer.</span>
 
-Aaron Erlich, Associate Professor  
-Department of Political Science  
-McGill University  
-3610 McTavish, Room 26-4  
-Montreal, Quebec, Canada H3A 1Y2  
-T: 514-398-4756  
-F: 514-398-4938  
+<div style="clear: both;"></div>
+
+## <span data-i18n="index.contact_me">Contact me</span>
+
+Aaron Erlich, Associate Professor<br/>
+Department of Political Science<br/>
+McGill University<br/>
+3610 McTavish, Room 26-4<br/>
+Montreal, Quebec, Canada H3A 1Y2<br/>
+T: 514-398-4756<br/>
+F: 514-398-4938<br/>
 aaron.erlich [at] mcgill.ca
 
-## Affiliations
+## <span data-i18n="index.affiliations">Affiliations</span>
 
-[Centre for the Study of Democratic Citizenship](http://csdc-cecd.ca/)  
-[Centre on Population Dynamics](https://www.mcgill.ca/popcentre/)  
+[Centre for the Study of Democratic Citizenship](http://csdc-cecd.ca/)<br/>
+[Centre on Population Dynamics](https://www.mcgill.ca/popcentre/)<br/>
 [Center for Social Media and Politics](https://csmapnyu.org/)

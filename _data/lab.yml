@@ -1,0 +1,136 @@
+pi:
+  name: Aaron Erlich
+  headshot: images/profile.jpg
+  bio: is Associate Professor of Political Science at McGill University. He received his Ph.D. from the University of Washington
+    in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the
+    effect of information, and the development and use of advanced quantitative methods. His research has been published in
+    journals such as the *American Political Science Review*, *Journal of Politics*, *Comparative Political Studies*, and
+    many others.
+current_grad:
+- name: David Dubé
+  headshot: images/headshot-dube.png
+  degree: PhD candidate
+  bio: is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist
+    Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid
+    and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for
+    causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data
+    analysis.
+- name: Rafael Campos-Gottardo
+  headshot: images/headshot-campos.jpg
+  degree: MA student
+  bio: is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on
+    levels of affective polarization in the United Kingdom. He is also interested in using causal inference techniques to
+    study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich
+    on several Ukrainian survey-data-related projects.
+- name: Katerina McMullen
+  headshot: images/headshot-mcmullen.jpeg
+  degree: MA student
+  bio: is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis
+    of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted
+    with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council
+    (SSHRC) for that project.
+current_undergrad:
+- name: Lawrence Plastina
+  headshot: ''
+  degree: Undergraduate (3rd year)
+  bio: is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients
+    of McGill's 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported
+    firearm ownership under Prof. Erlich's supervision.
+alumni:
+- name: Mathieu Lavigne
+  degree: Ph.D.
+  graduation_year: 2024
+  publications: Thesis - [Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment](https://escholarship.mcgill.ca/concern/theses/z603r346t)
+  post_mcgill: Post-Doc, Dartmouth College
+- name: Pratik Mahajan
+  degree: M.A.
+  graduation_year: 2024
+  publications: Thesis - [Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid
+    Hindu Nationalism in a Scheduled Tribe Constituency in India](https://escholarship.mcgill.ca/concern/theses/h415ph28t)
+  post_mcgill: ''
+- name: Christopher Ross
+  degree: M.A.
+  graduation_year: 2023
+  publications: 'Thesis - [Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus](https://escholarship.mcgill.ca/concern/theses/w6634906j);
+    [Unveiling: An Unexpected Mid-campaign Court Ruling''s Consequences and the Limits of Following the Leader](https://doi.org/10.1086/711177)'
+  post_mcgill: '[The Media Ecosystem Observatory](https://meo.ca/)'
+- name: Alice Brocheux
+  degree: B.A.
+  graduation_year: 2022
+  publications: ''
+  post_mcgill: Ph.D. Student, University of Rochester
+- name: Costin Ciobanu
+  degree: Ph.D.
+  graduation_year: 2022
+  publications: Thesis - [The political and electoral consequences of economic shocks](https://escholarship.mcgill.ca/concern/theses/5d86p5382?locale=en);
+    [Unveiling](https://doi.org/10.1086/711177)
+  post_mcgill: Post-Doc, Royal Holloway University; Post-doc, University of Aarhus
+- name: Dilse Kaygisiz
+  degree: M.A.
+  graduation_year: 2022
+  publications: Thesis - Do laws affect attitudes? A study on domestic violence laws in Turkey
+  post_mcgill: '[Data Sciences](https://datasciences.ca/)'
+- name: Henry Atkins
+  degree: M.A.
+  graduation_year: 2021
+  publications: Thesis - [Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack](https://escholarship.mcgill.ca/concern/theses/z603r346t)
+  post_mcgill: ''
+- name: Stefano Dantas
+  degree: M.A.
+  graduation_year: 2021
+  publications: '[Multi-Label Prediction for Political Text-as-Data](https://doi.org/10.1017/pan.2021.15)'
+  post_mcgill: ''
+- name: Étienne Gagnon
+  degree: M.A.
+  graduation_year: 2020
+  publications: Thesis - Multiview Representation Learning for Political Science Research
+  post_mcgill: '[MEXT Fellowship, Japan](https://www.ca.emb-japan.go.jp/itpr_en/education.html); Ph.D. Student, Princeton
+    University'
+- name: Saewon Park
+  degree: M.A.
+  graduation_year: 2020
+  publications: '[Weaponizing Election Petitions](https://files.osf.io/v1/resources/tsmvz/providers/osfstorage/5ca5384824df750019c52f55?action=download&version=2&direct&format=pdf);
+    Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation'
+  post_mcgill: '[TrackTik](https://www.tracktik.com/); [The Media Ecosystem Observatory](https://meo.ca/)'
+- name: Tanner Ducharme
+  degree: B.A.
+  graduation_year: 2020
+  publications: ''
+  post_mcgill: ''
+- name: Alex Xin Tong Wang
+  degree: M.A.
+  graduation_year: 2020
+  publications: ''
+  post_mcgill: ''
+- name: Hair Parra Barrera
+  degree: B.A.
+  graduation_year: 2020
+  publications: ''
+  post_mcgill: M.A., HEC-Montréal
+- name: Su Goh
+  degree: B.A.
+  graduation_year: 2020
+  publications: ''
+  post_mcgill: ''
+- name: Annie Chen
+  degree: B.A.
+  graduation_year: 2020
+  publications: 'Thesis - Incumbency Advantage in Australia; [Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted
+    Communities: Evidence from Nigerian Expatriates](https://doi.org/10.1017/XPS.2021.26)'
+  post_mcgill: '[Bright Line Watch](http://brightlinewatch.org/)'
+- name: Andrew McCormack
+  degree: M.A.
+  graduation_year: 2019
+  publications: '[mapcan R package](https://www.rdocumentation.org/packages/mapcan/versions/0.0.1); Thesis - Contextual Determinants
+    of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US'
+  post_mcgill: '[Data Sciences](https://datasciences.ca/)'
+- name: Aengus Bridgman
+  degree: Ph.D.
+  graduation_year: 2022
+  publications: '[Unveiling](https://doi.org/10.1086/711177)'
+  post_mcgill: Assistant Prof (Research), McGill University
+- name: Tim Roy
+  degree: B.A.
+  graduation_year: ''
+  publications: ''
+  post_mcgill: ''

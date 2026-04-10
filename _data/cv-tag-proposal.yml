@@ -1,0 +1,709 @@
+summary:
+  total: 70
+  matched_high: 29
+  matched_low: 1
+  no_match: 40
+sections:
+  peer-reviewed:
+  - latex_title: Can Norm-Based Information Campaigns Reduce Corruption?
+    latex_year: null
+    match_citekey: erlich_CanNormBased_2023
+    match_zotero_title: Can Norm-Based Information Campaigns Reduce Corruption?
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: http://doi.org/10.1111/ajps.12940
+  - latex_title: 'How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine.'
+    latex_year: 2025
+    match_citekey: erlich_HowLanguage_2025
+    match_zotero_title: 'How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1017/XPS.2025.10011
+  - latex_title: 'Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.'
+    latex_year: 2026
+    match_citekey: soehl_PromisesLimits_2024
+    match_zotero_title: 'Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations:
+      Nigerians at Home and Abroad'
+    match_score: 90
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1177/00491241241266634
+  - latex_title: 'Two Implications of Survey Research Mode during War: Evidence from Russia''s Full-Scale Invasion of Ukraine'
+    latex_year: 2025
+    match_citekey: erlich_TwoImplications_2025
+    match_zotero_title: 'Two implications of survey research mode during war: evidence from Russia’s full-scale invasion of
+      Ukraine'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1080/1060586X.2025.2529114
+  - latex_title: 'Accountability in Time: Gradual Change in Access-to-Information Institutions.'
+    latex_year: 2025
+    match_citekey: palmer-rubin_AccountabilityTime_2025
+    match_zotero_title: 'Accountability in Time: Evolution and Expertise in Participatory Institutions'
+    match_score: 0
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_annotations:
+    - 'Winner: Best Paper on Political Institutions from the 2021 LASA Congress'
+    - 'Honourable Mention: Best Paper in the social sciences, LASA Mexico section'
+    latex_url: https://dx.doi.org/10.1353/wp.2025.a964463
+  - latex_title: Elder, am I right? Age-group differences in social and political interactions in Africa.
+    latex_year: 2025
+    match_citekey: erlich_ElderAm_2025
+    match_zotero_title: Elder, Am I Right? Age-Group Differences in Social and Political Interactions in Africa
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1093/ijpor/edaf003
+  - latex_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions.
+    latex_year: 2025
+    match_citekey: erlich_WhatCorruption_2025
+    match_zotero_title: What corruption is most harmful? Unbundling citizen perceptions
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1016/j.worlddev.2025.107001
+  - latex_title: 'Urban Disorder in Democratic Transitions: Ukraine''s Municipal Policing Debates in Comparative Perspective.'
+    latex_year: 2025
+    match_citekey: light_UrbanDisorder_2025
+    match_zotero_title: 'Urban disorder in democratic transitions: Ukraine’s municipal policing debates in comparative perspective'
+    match_score: 0
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1080/10439463.2024.2411538
+  - latex_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
+    latex_year: 2025
+    match_citekey: erlich_SelectiveBribery_2024
+    match_zotero_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_annotations:
+    - 'Media coverage: \href{https://www.mcgill.ca/channels/channels/news/understanding-when-and-why-people-give-bribes-361998}{Press
+      release}'
+    latex_url: https://doi.org/10.1177/0010414024125944
+  - latex_title: 'Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage
+      with Application to an Emerging Democracy'
+    latex_year: 2024
+    match_citekey: erlich_CoveringCampaign_2024
+    match_zotero_title: 'Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News
+      Coverage With Application to an Emerging Democracy'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://journals.sagepub.com/doi/10.1177/08944393241247420
+  - latex_title: 'Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa'
+    latex_year: 2024
+    match_citekey: erlich_UsingCommunications_2024
+    match_zotero_title: 'Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South
+      Africa'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://www.journals.uchicago.edu/doi/10.1086/724010
+  - latex_title: 'Weaponizing Post-Election Court Challenges: Assessing Losers'' Motivations'
+    latex_year: 2023
+    match_citekey: erlich_WeaponizingPostelection_2023
+    match_zotero_title: 'Weaponizing post-election court challenges: Assessing losers’ motivations'
+    match_score: 0
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_annotations:
+    - 'Media coverage: \href{https://web.archive.org/web/20220516083222/https://www.independent.co.ug/court-cant-reverse-museveni-election-win/}{\textit{Independent}
+      (Uganda)}'
+    latex_url: https://doi.org/10.1016/j.electstud.2023.102676
+  - latex_title: Explaining women's political underrepresentation in democracies with high levels of corruption
+    latex_year: 2023
+    match_citekey: erlich_ExplainingWomen_2023
+    match_zotero_title: Explaining women's political underrepresentation in democracies with high levels of corruption
+    match_score: 0
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+  - latex_title: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence from Ukraine.
+    latex_year: 2023
+    match_citekey: erlichDoesAnalyticThinking
+    match_zotero_title: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_annotations:
+    - 'Media coverage: \href{https://www.prnewswire.com/news-releases/ukrainians-who-engage-in-more-analytic-thinking-are-less-susceptible-to-russias-disinformation-campaign-301488184.html}{Press
+      Release}, \href{https://web.archive.org/web/20240624183718/https://demtech.oii.ox.ac.uk/war-in-ukraine-and-disinformation-newsletter-29-march-2022/}{Oxford
+      Demtech}'
+    - Top 10 Most cited article award International Society of Political Psychology (ISPP)
+    latex_url: https://psyarxiv.com/4yrdj
+  - latex_title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian
+      Expatriates.'
+    latex_year: 2021
+    match_citekey: erlich_DiscriminatoryImmigration_2023
+    match_zotero_title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian
+      Expatriates'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1017/XPS.2021.26
+  - latex_title: Is Pro-Kremlin Disinformation Effective? Evidence from Ukraine.
+    latex_year: 2023
+    match_citekey: erlich_ProKremlinDisinformationEffective_2023
+    match_zotero_title: Is pro-Kremlin Disinformation Effective? Evidence from Ukraine
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_annotations:
+    - 'Media coverage: \href{https://web.archive.org/web/20240110204946/https://themessenger.com/grid/autopsied-bodies-and-false-flags-how-pro-russian-disinformation-spreads-chaos-in-ukraine}{\textit{Grid/TheMessenger}},
+      \href{https://www.canadaland.com/podcast/760-russias-weapons-of-mass-deception/}{Canadaland}'
+    latex_url: https://doi.org/10.1177/19401612211045221
+  - latex_title: Multi-label Prediction for Political Text-as-Data.
+    latex_year: 2021
+    match_citekey: erlich_MultiLabelPrediction_2022
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://www.doi.org/10.1017/pan.2021.15
+  - latex_title: Measuring Human Rights Abuses from Access to Information Requests.
+    latex_year: 2022
+    match_citekey: ellingtonMeasuringHumanRights2022
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://journals.sagepub.com/doi/10.1177/00220027211035553
+  - latex_title: Media Attention and Bureaucratic Responsiveness.
+    latex_year: 2021
+    match_citekey: erlichMediaAttentionBureaucratic2021
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1093/jopart/muab001
+  - latex_title: Implicit Associations, Explicit Attitudes, and Sub-group Differences during Wartime.
+    latex_year: 2021
+    match_citekey: erlichSubgroupDifferencesImplicit2021
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1093/isq/sqab005
+  - latex_title: 'Unveiling: An Unexpected Mid-campaign Court Ruling''s Consequences and the Limits of Following the Leader.'
+    latex_year: 2021
+    match_citekey: bridgman_UnveilingUnexpected_2021
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_annotations:
+    - 'Media coverage: \href{https://www.macleans.ca/opinion/jagmeet-singh-calls-mp-racist-but-has-he-forgotten-about-bill-21/}{\textit{Maclean''s}},
+      \href{https://www.journaldemontreal.com/2021/06/25/prudence-avec-les-meteorites-pre-electoraux}{\textit{Journal de Montréal}}
+      }'
+    latex_url: https://www.journals.uchicago.edu/doi/full/10.1086/711177
+  - latex_title: 'The Distributive Politics of Government Information: Political Targeting and Information Disclosure in Mexico.'
+    latex_year: 2021
+    match_citekey: berlinerPoliticalLogicGovernment2021
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1086/709148
+  - latex_title: 'Interpersonal Incomparability in Citizens'' Views of Democracy: Survey Evidence from Ukraine.'
+    latex_year: 2018
+    match_citekey: erlich_InterpersonalIncomparability_2020
+    match_zotero_title: 'Interpersonal Incomparability in Citizens'' Views of Democracy: Survey Evidence from Ukraine'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1080/17457289.2018.1554664
+  - latex_title: Can Information Campaigns Impact Preferences toward Vote Selling? Theory and Evidence from Kenya.
+    latex_year: 2020
+    match_citekey: erlich_CanInformation_2020
+    match_zotero_title: Can information campaigns impact preferences toward vote selling? Theory and evidence from Kenya
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1177/0192512119836283
+  - latex_title: The Double-edged Sword of Mobilizing Citizens via Mobile Phone in Developing Countries.
+    latex_year: 2017
+    match_citekey: erlichDoubleEdgedSwordMobilizing2018
+    match_zotero_title: The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1016/j.deveng.2017.11.001
+  - latex_title: '`The Local Mwananchi Has Lost Trust'': Design, Transition, and Legitimacy in Kenyan Election Management.'
+    latex_year: 2016
+    match_citekey: erlichLocalMwananchiHas2016
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://doi.org/10.1017/S0022278X16000604
+  - latex_title: The Effects of Authoritarian Iconography An Experimental Test.
+    latex_year: 2016
+    match_citekey: bushEffectsAuthoritarianIconography2016
+    match_zotero_title: The Effects of Authoritarian Iconography An Experimental Test
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_annotations:
+    - 'Media coverage: \href{https://marginalrevolution.com/marginalrevolution/2016/07/results-free-review.html}{\textit{Marginal
+      Revolution}}, \href{https://www.washingtonpost.com/news/monkey-cage/wp/2016/08/25/heres-what-happens-when-scientists-evaluate-research-without-knowing-the-results/}{\textit{Washington
+      Post: The Monkey Cage}}, \href{https://www.psypost.org/2016/12/scientists-investigate-subliminal-authoritarian-imagery-encourages-citizens-obey-46570}{\textit{PsyPost}}'
+    latex_url: https://doi.org/10.1177/0010414016633228
+  - latex_title: 'Competing for Transparency: Political Competition and Institutional Reform in Mexican States.'
+    latex_year: 2015
+    match_citekey: berlinerCompetingTransparencyPolitical2015
+    match_zotero_title: 'Competing for Transparency: Political Competition and Institutional Reform in Mexican States'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: http://journals.cambridge.org/article_S0003055414000616
+  - latex_title: Aligning Rights and Interests
+    latex_year: 2012
+    match_citekey: leviAligningRightsInterests2012
+    match_zotero_title: 'Aligning Rights and Interests: Why, When and How to Uphold Labor Standards'
+    match_score: 57
+    proposed_tags: []
+    latex_url: http://siteresources.worldbank.org/EXTNWDR2013/Resources/8258024-1320950747192/8260293-1320956712276/8261091-1348683883703/WDR2013_bp_Aligning_Rights_and_Incentives.pdf
+  editor-reviewed:
+  - latex_title: 'Pre-acceptance as a method to combat publication bias in area studies: a pilot in the Caucasus.'
+    latex_year: 2018
+    match_citekey: erlichPreacceptanceMethodCombat2018
+    match_zotero_title: 'Pre-acceptance as a method to combat publication bias in area studies: a pilot in the Caucasus'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+    latex_url: https://doi.org/10.1080/23761199.2018.1522796
+  - latex_title: Lessons from Results-Blind Review.
+    latex_year: 2018
+    match_citekey: bushLessonsResultsBlindReview2018
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+    latex_url: https://docs.google.com/viewer?a=v&pid=sites&srcid=dW1pY2guZWR1fHBvbGl0aWNhbC1lY29ub21pc3QtbmV3c2xldHRlcnxneDoxZjU3NWI4ZjgyMjNmN2M4
+  - latex_title: 'Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?'
+    latex_year: 2016
+    match_citekey: erlichDevelopmentTrapsEscaping2016
+    match_zotero_title: 'Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+  - latex_title: Implausible Incarceration Data Need to Be Addressed
+    latex_year: 2013
+    match_citekey: gutbrodImplausibleIncarcerationData2013
+    match_zotero_title: Implausible incarceration data need to be addressed
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+  - latex_title: Opinion Survey Opportunities and Exit Poll Limitations
+    latex_year: 2009
+    match_citekey: gutbrod_OpinionSurvey_2009
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+  - latex_title: 'Tajikistan: from refugee sender to labor exporter.'
+    latex_year: 2006
+    match_citekey: erlich_TajikistanRefugee_2006
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+  book-review:
+  - latex_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
+    latex_year: 2012
+    match_citekey: erlichBookReviewSay2012
+    match_zotero_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/book-review
+  blog:
+  - latex_title: Big data y acceso a la información en México
+    latex_year: null
+    match_citekey: berlinerBigDataAcceso2022
+    match_zotero_title: Big data y acceso a la información en México
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: //osf.io/nbqus/.
+  - latex_title: Surveys show Ukrainians don't want 'Kalashnikov society'
+    latex_year: null
+    match_citekey: light_SurveysShowUkrainians_2022
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://kyivindependent.com/group-of-authors-surveys-show-ukrainians-dont-want-kalashnikov-society/
+  - latex_title: Critical Thinking Protects Ukrainians from the Kremlin's Disinformation War
+    latex_year: null
+    match_citekey: erlichCriticalThinkingProtects2022
+    match_zotero_title: Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality
+      and Social Psychology
+    match_score: 76
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation
+  - latex_title: Is Russia's wartime propaganda more powerful than family bonds?
+    latex_year: 2022
+    match_citekey: brikRussiaWartimePropaganda2020
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://www.washingtonpost.com/politics/2022/06/20/russia-ukraine-relatives-conversations-propaganda/
+  - latex_title: 'Root of Resistance: Understanding National Identiy in Ukraine.'
+    latex_year: 2022
+    match_citekey: erlichaaronRootsResistanceUnderstanding2022
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://warontherocks.com/2022/04/roots-of-the-resistance-understanding-national-identity-in-ukraine/
+  - latex_title: Vote buying is a big problem in Kenya. How to curb it before the 2022 elections.
+    latex_year: 2022
+    match_citekey: erlichVoteBuyingBig2021
+    match_zotero_title: Vote buying is a big problem in Kenya. How to curb it before the 2022 elections
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://theconversation.com/vote-buying-is-a-big-problem-in-kenya-how-to-curb-it-before-the-2022-elections-171630
+  - latex_title: Conservative Party slowly learning real cost of promoting culturally divisive policies.
+    latex_year: 2021
+    match_citekey: bridgmanConservativePartySlowly2021
+    match_zotero_title: Conservative Party slowly learning real cost of promoting culturally divisive policies
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://www.hilltimes.com/2021/06/30/conservative-party-slowly-learning-real-cost-of-promoting-culturally-divisive-policies/303970
+  - latex_title: ¿A quién le sirve la transparencia en México?
+    latex_year: null
+    match_citekey: tapiaQuienSirveTransparencia2021
+    match_zotero_title: ¿A quién le sirve la transparencia en México?
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://redaccion.nexos.com.mx/a-quien-le-sirve-la-transparencia-en-mexico/
+  - latex_title: Trump's impeachment isn't over for Ukraine's citizens
+    latex_year: 2020
+    match_citekey: brikTrumpImpeachmentIsn
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://www.washingtonpost.com/politics/2020/02/19/trumps-impeachment-isnt-over-ukraines-citizens/
+  - latex_title: Get credible! …Or a modest proposal to implement pre-registration in think tank research.
+    latex_year: null
+    match_citekey: erlichGetCredibleModest2017
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://onthinktanks.org/articles/get-credible-or-a-modest-proposal-to-implement-pre-registration-in-think-tank-research/
+  working-paper:
+  - latex_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
+    latex_year: 2025
+    match_citekey: erlich_WhatCorruption_2025
+    match_zotero_title: What corruption is most harmful? Unbundling citizen perceptions
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    latex_url: https://www.ipr.northwestern.edu/documents/working-papers/2025/wp-25-2.pdf
+  - latex_title: Can Norm-Based Information Campaigns Reduce Corruption?
+    latex_year: null
+    match_citekey: erlich_CanNormBased_2023
+    match_zotero_title: Can Norm-Based Information Campaigns Reduce Corruption?
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    latex_url: https://www.econstor.eu/bitstream/10419/280691/1/I4R-DP094.pdf
+  - latex_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
+    latex_year: 2022
+    match_citekey: erlichSelectiveBriberyWhen2022
+    match_zotero_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    latex_url: https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf
+  - latex_title: Elder, you're Right! Age-Group Differences in social and political interactions in Africa
+    latex_year: null
+    match_citekey: erlichElderYouRe2021
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    latex_url: http://afrobarometer.org/publications/wp185-age-group-differences-social-and-political-interactions-africa
+  - latex_title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence
+      from the Country of Georgia.'
+    latex_year: null
+    match_citekey: erlich_MeasuringHow_2023
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    latex_url: https://osf.io/mwg7u/
+  software:
+  - latex_title: \textttmapcan
+    latex_year: null
+    match_citekey: mccormackMapcanToolsPlotting2019
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/software
+    latex_url: https://CRAN.R-project.org/package=mapcan
+  professional-eval:
+  - latex_title: 'Corruption Perceptions in Armenia: Implications for Anti-Corruption Messaging'
+    latex_year: null
+    match_citekey: SKIP
+    match_zotero_title: null
+    match_score: 0
+    proposed_tags: []
+  - latex_title: Workplace, Labor Rights and Outcomes
+    latex_year: 2012
+    match_citekey: SKIP
+    match_zotero_title: null
+    match_score: 0
+    proposed_tags: []
+  - latex_title: Final Evaluation of OSI's Central Eurasia Project's Labor Migration Program.
+    latex_year: 2011
+    match_citekey: SKIP
+    match_zotero_title: null
+    match_score: 0
+    proposed_tags: []
+  - latex_title: Voices of Migrants from Georgia
+    latex_year: 2009
+    match_citekey: SKIP
+    match_zotero_title: null
+    match_score: 0
+    proposed_tags: []
+  - latex_title: 'Labor Migration in Armenia: A Sociological Survey of Six Communities'
+    latex_year: 2009
+    match_citekey: SKIP
+    match_zotero_title: null
+    match_score: 0
+    proposed_tags: []
+  testimony:
+  - latex_title: Disinformation and cyber operations in the context of Russia's war against Ukraine
+    latex_year: 2024
+    match_citekey: erlichaaron_DisinformationCyber_2024
+    match_zotero_title: Disinformation and cyber operations in the context of Russia’s war against Ukraine
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/testimony
+    latex_url: https://senparlvu.parl.gc.ca/Harmony/en/PowerBrowser/PowerBrowserV2?fk=635443&globalStreamId=3
+unmatched:
+- section: peer-reviewed
+  title: 'Accountability in Time: Gradual Change in Access-to-Information Institutions.'
+  year: 2025
+  score: 0
+- section: peer-reviewed
+  title: 'Urban Disorder in Democratic Transitions: Ukraine''s Municipal Policing Debates in Comparative Perspective.'
+  year: 2024
+  score: 0
+- section: peer-reviewed
+  title: 'Weaponizing Post-Election Court Challenges: Assessing Losers'' Motivations'
+  year: 2023
+  score: 0
+- section: peer-reviewed
+  title: '`Explaining Women'
+  year: 2023
+  score: 0
+- section: peer-reviewed
+  title: Multi-label Prediction for Political Text-as-Data.
+  year: 2021
+  score: 0
+- section: peer-reviewed
+  title: Measuring Human Rights Abuses from Access to Information Requests.
+  year: 2022
+  score: 0
+- section: peer-reviewed
+  title: Media Attention and Bureaucratic Responsiveness.
+  year: 2021
+  score: 0
+- section: peer-reviewed
+  title: Implicit Associations, Explicit Attitudes, and Sub-group Differences during Wartime.
+  year: 2021
+  score: 0
+- section: peer-reviewed
+  title: 'Unveiling: An Unexpected Mid-campaign Court Ruling''s Consequences and the Limits of Following the Leader.'
+  year: 2021
+  score: 0
+- section: peer-reviewed
+  title: 'The Distributive Politics of Government Information: Political Targeting and Information Disclosure in Mexico.'
+  year: 2021
+  score: 0
+- section: peer-reviewed
+  title: '`The Local Mwananchi Has Lost Trust'': Design, Transition, and Legitimacy in Kenyan Election Management.'
+  year: 2016
+  score: 0
+- section: peer-reviewed
+  title: Aligning Rights and Interests
+  year: 2012
+  score: 57
+- section: under-review
+  title: 'Studying Global Diasporas via Social Media Recruitment: Practical Considerations.'
+  year: null
+  score: 0
+- section: under-review
+  title: Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora
+  year: null
+  score: 0
+- section: under-review
+  title: A `mega study' of approaches for sharing accurate news in the face of government repression.
+  year: null
+  score: 0
+- section: under-review
+  title: War Fatigue?
+  year: null
+  score: 0
+- section: under-review
+  title: Border proximity and preferences for conflict resolution in Eastern Ukraine
+  year: null
+  score: 0
+- section: under-review
+  title: 'Misclassified: Security Concerns and Misleading Bureaucratic Responsiveness'
+  year: null
+  score: 0
+- section: editor-reviewed
+  title: Lessons from Results-Blind Review.
+  year: 2018
+  score: 0
+- section: editor-reviewed
+  title: Opinion Survey Opportunities and Exit Poll Limitations
+  year: 2009
+  score: 0
+- section: editor-reviewed
+  title: 'Tajikistan: from refugee sender to labor exporter.'
+  year: 2006
+  score: 0
+- section: blog
+  title: Surveys show Ukrainians don't want 'Kalashnikov society'
+  year: null
+  score: 0
+- section: blog
+  title: Is Russia's wartime propaganda more powerful than family bonds?
+  year: 2022
+  score: 0
+- section: blog
+  title: 'Root of Resistance: Understanding National Identiy in Ukraine.'
+  year: 2022
+  score: 0
+- section: blog
+  title: Trump's impeachment isn't over for Ukraine's citizens
+  year: 2020
+  score: 0
+- section: blog
+  title: Get credible! …Or a modest proposal to implement pre-registration in think tank research.
+  year: null
+  score: 0
+- section: working-paper
+  title: Elder, you're Right! Age-Group Differences in social and political interactions in Africa
+  year: null
+  score: 0
+- section: working-paper
+  title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the
+    Country of Georgia.'
+  year: null
+  score: 0
+- section: in-prep
+  title: 'Face-to-face: Average Dosage Response Functions for Measuring Survey Response Pattern Variation'
+  year: null
+  score: 0
+- section: in-prep
+  title: 'Civic Engagement in Rebuilding Ukraine: Observational and Experimental Evidence'
+  year: null
+  score: 0
+- section: on-hold
+  title: Machine Learning Kenyan Elections
+  year: null
+  score: 0
+- section: on-hold
+  title: Eliciting a Risk Aversion Distribution
+  year: null
+  score: 0
+- section: on-hold
+  title: How do politicians think about their competitiveness?
+  year: null
+  score: 0
+- section: on-hold
+  title: Petitioning Elections
+  year: null
+  score: 0
+- section: software
+  title: \textttmapcan
+  year: null
+  score: 0
+- section: professional-eval
+  title: 'Corruption Perceptions in Armenia: Implications for Anti-Corruption Messaging'
+  year: null
+  score: 0
+- section: professional-eval
+  title: Workplace, Labor Rights and Outcomes
+  year: 2012
+  score: 0
+- section: professional-eval
+  title: Final Evaluation of OSI's Central Eurasia Project's Labor Migration Program.
+  year: 2011
+  score: 0
+- section: professional-eval
+  title: Voices of Migrants from Georgia
+  year: 2009
+  score: 0
+- section: professional-eval
+  title: 'Labor Migration in Armenia: A Sociological Survey of Six Communities'
+  year: 2009
+  score: 0
