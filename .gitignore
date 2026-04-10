@@ -7,3 +7,15 @@
 *.Rproj
 
 **/*.quarto_ipynb
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# OS
+.DS_Store
+
+# Local secrets (defensive — keys live in ~/.config/)
+*.api_key
+secret*
