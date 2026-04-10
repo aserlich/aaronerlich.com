@@ -81,6 +81,7 @@ JS_TOGGLE = r"""
     var i18n;
     try { i18n = JSON.parse(blob.textContent); }
     catch (e) { return; }
+    // Text-only (textContent — safe, strips HTML)
     var nodes = document.querySelectorAll("[data-i18n]");
     for (var i = 0; i < nodes.length; i++) {
       var el = nodes[i];
@@ -89,6 +90,16 @@ JS_TOGGLE = r"""
       if (!entry) continue;
       var text = entry[lang] || entry.en || "";
       if (text) el.textContent = text;
+    }
+    // HTML variant (innerHTML — allows <em>, <strong>, etc. from trusted YAML)
+    var htmlNodes = document.querySelectorAll("[data-i18n-html]");
+    for (var j = 0; j < htmlNodes.length; j++) {
+      var hEl = htmlNodes[j];
+      var hKey = hEl.getAttribute("data-i18n-html");
+      var hEntry = i18n[hKey];
+      if (!hEntry) continue;
+      var hHtml = hEntry[lang] || hEntry.en || "";
+      if (hHtml) hEl.innerHTML = hHtml;
     }
     document.documentElement.lang = lang;
     document.documentElement.classList.remove("cv-i18n-pending");

@@ -1,0 +1,60 @@
+# _data/institution-names.yml
+#
+# Registry of institutions that have OFFICIAL multilingual names.
+# When the translation pipeline generates a new language, it should use
+# the local-language form of these names (overriding the generic
+# "keep proper nouns in English" rule).
+#
+# Used by:
+#   - scripts/translate-cv.py (passes this file's contents as a glossary
+#     to Claude when translating)
+#   - Manual review reference — grep for any english name here and
+#     make sure other-language translations use the corresponding form.
+#
+# Add entries over time. Each entry has `en` (canonical) and any
+# language codes where a local-official form exists. Add `abbr_en` and
+# `abbr_<lang>` if the institution also has a different abbreviation.
+#
+# To apply these overrides to existing translations, re-run:
+#   python3 scripts/translate-cv.py --file _data/site-i18n.yml --force
+
+institutions:
+  - en: "Centre for the Study of Democratic Citizenship"
+    fr: "Centre pour l'étude de la citoyenneté démocratique"
+    abbr_en: "CSDC"
+    abbr_fr: "CÉCD"
+    note: "Bilingual McGill-affiliated centre; use CÉCD in French text"
+
+  - en: "McGill University"
+    fr: "Université McGill"
+    es: "Universidad McGill"   # informal; "McGill University" also acceptable
+    de: "McGill University"     # kept in English per German academic convention
+    ru: "Университет Макгилла"
+    uk: "Університет Макгілла"
+    ka: "მაკგილის უნივერსიტეტი"
+    note: "Officially bilingual; always 'Université McGill' in French"
+
+  - en: "University of Washington"
+    fr: "Université de Washington"
+    es: "Universidad de Washington"
+    ru: "Университет Вашингтона"
+    uk: "Університет Вашингтона"
+    ka: "ვაშინგტონის უნივერსიტეტი"
+    de: "Universität Washington"
+
+  - en: "Université de Montréal"
+    # French-language institution — keep its French form in all languages
+    all: "Université de Montréal"
+
+  - en: "National Democratic Institute"
+    abbr_en: "NDI"
+    note: "US-based, no official French name; keep in English"
+
+  - en: "Caucasus Research Resource Centers"
+    abbr_en: "CRRC"
+    ka: "კავკასიის კვლევითი რესურსების ცენტრი"
+    note: "Georgia-based; use Georgian form in KA, English elsewhere"
+
+  # Add more as you discover them. When Aaron flags "this should be in
+  # French" or similar, add an entry here and re-run translate-cv.py --force
+  # to regenerate.

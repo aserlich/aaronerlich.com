@@ -39,7 +39,7 @@ index:
       an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University
       of Washington in Seattle.
     fr: Bienvenue sur mon site ! Je suis Professeur agrégé au Département de science politique de l'Université
-      McGill, où je suis membre du Centre for the Study of Democratic Citizenship (CSDC) et membre
+      McGill, où je suis membre du Centre pour l'étude de la citoyenneté démocratique (CÉCD) et membre
       associé du Centre on Population Dynamics (CPD). J'ai obtenu mon doctorat à l'Université de Washington
       à Seattle.
     es: ¡Bienvenido a mi sitio! Soy Profesor Asociado en el Departamento de Ciencia Política de McGill
@@ -62,58 +62,76 @@ index:
       und assoziiertes Mitglied des Centre on Population Dynamics (CPD) bin. Ich habe meinen Ph.D. an
       der Universität Washington in Seattle abgeschlossen.
   research_interests:
-    en: Broadly speaking, I am interested in democratization and democratic development. Much of my research
-      addresses the role that information plays in developing democratic polities. I am also interested
-      in advancing quantitative methods to measure the effect of information. I maintain active research
-      projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has
-      appeared in a broad range of journals in political science and adjacent fields, such as the American
-      Political Science Review, Comparative Political Studies, the Journal of Politics, the Journal of
-      Public Administration Research & Theory, and Political Analysis, among others.
-    fr: De manière générale, je m'intéresse à la démocratisation et au développement démocratique. Une
-      grande partie de mes recherches porte sur le rôle que joue l'information dans le développement des
-      régimes démocratiques. Je m'intéresse également à l'avancement des méthodes quantitatives permettant
-      de mesurer l'effet de l'information. Je mène des projets de recherche actifs dans l'ex-Union soviétique,
-      en Afrique orientale et australe, ainsi qu'en Amérique du Nord. Mes travaux ont paru dans un large
-      éventail de revues en science politique et dans des domaines connexes, notamment American Political
-      Science Review, Comparative Political Studies, Journal of Politics, Journal of Public Administration
-      Research & Theory et Political Analysis, entre autres.
-    es: En términos generales, me interesa la democratización y el desarrollo democrático. Gran parte
-      de mi investigación aborda el papel que desempeña la información en el desarrollo de sistemas políticos
-      democráticos. También me interesa el avance de los métodos cuantitativos para medir el efecto de
-      la información. Mantengo proyectos de investigación activos en la antigua Unión Soviética, África
-      Oriental y Meridional, y América del Norte. Mi trabajo ha aparecido en una amplia variedad de revistas
-      de ciencia política y campos afines, tales como American Political Science Review, Comparative
-      Political Studies, Journal of Politics, Journal of Public Administration Research & Theory
-      y Political Analysis, entre otras.
-    ru: В широком смысле меня интересуют вопросы демократизации и демократического развития. Значительная
-      часть моих исследований посвящена роли информации в формировании демократических политий. Я также
-      занимаюсь разработкой количественных методов для измерения эффекта информации. В настоящее время
-      я веду активные исследовательские проекты на постсоветском пространстве, в Восточной и Южной Африке,
-      а также в Северной Америке. Мои работы опубликованы в широком круге журналов по политической науке
-      и смежным дисциплинам, в том числе в American Political Science Review, Comparative Political Studies,
-      Journal of Politics, Journal of Public Administration Research & Theory и Political Analysis.
-    uk: У широкому сенсі мої наукові інтереси зосереджені на демократизації та демократичному розвитку.
-      Значна частина моїх досліджень присвячена ролі інформації у становленні демократичних полій. Я також
-      займаюся розробкою кількісних методів для вимірювання ефекту інформації. Я веду активні дослідницькі
-      проєкти на пострадянському просторі, у Східній і Південній Африці та в Північній Америці. Мої праці
-      опубліковані в широкому колі журналів із політичної науки та суміжних дисциплін, зокрема в American
-      Political Science Review, Comparative Political Studies, Journal of Politics, Journal of Public
-      Administration Research & Theory та Political Analysis.
-    ka: ზოგადად, მე მაინტერესებს დემოკრატიზაცია და დემოკრატიული განვითარება. ჩემი კვლევის დიდი ნაწილი
-      ეხება იმ როლს, რომელსაც ინფორმაცია ასრულებს დემოკრატიული პოლიტიკური სისტემების ჩამოყალიბებაში. ასევე
-      მაინტერესებს რაოდენობრივი მეთოდების სრულყოფა ინფორმაციის ეფექტის გასაზომად. აქტიური სამეცნიერო პროექტები
-      მაქვს ყოფილ საბჭოთა კავშირში, აღმოსავლეთ და სამხრეთ აფრიკაში, და ჩრდილოეთ ამერიკაში. ჩემი ნაშრომები
-      გამოქვეყნებულია პოლიტიკის მეცნიერებისა და მომიჯნავე დარგების ჟურნალების ფართო სპექტრში, მათ შორის
-      American Political Science Review, Comparative Political Studies, Journal of Politics, Journal of
-      Public Administration Research & Theory და Political Analysis.
-    de: Im Allgemeinen interessiere ich mich für Demokratisierung und demokratische Entwicklung. Ein Großteil
-      meiner Forschung befasst sich mit der Rolle, die Information in der Entwicklung demokratischer Gemeinwesen
-      spielt. Darüber hinaus interessiere ich mich für die Weiterentwicklung quantitativer Methoden zur
-      Messung von Informationseffekten. Ich führe aktive Forschungsprojekte in der ehemaligen Sowjetunion,
-      im östlichen und südlichen Afrika sowie in Nordamerika durch. Meine Arbeiten sind in einer breiten
-      Auswahl von Fachzeitschriften der Politikwissenschaft und angrenzender Disziplinen erschienen, darunter
-      unter anderem American Political Science Review, Comparative Political Studies, Journal
-      of Politics, Journal of Public Administration Research & Theory sowie Political Analysis.
+    en: >
+      Broadly speaking, I am interested in democratization and democratic development. Much of my
+      research addresses the role that information plays in developing democratic polities. I am
+      also interested in advancing quantitative methods to measure the effect of information. I
+      maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and
+      North America. My work has appeared in a broad range of journals in political science and
+      adjacent fields, such as <em>American Political Science Review</em>, <em>American Journal of
+      Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>,
+      <em>Journal of Public Administration Research &amp; Theory</em>, and <em>Political
+      Analysis</em>, among others.
+    fr: >
+      De manière générale, je m'intéresse à la démocratisation et au développement démocratique.
+      Une grande partie de mes recherches porte sur le rôle que joue l'information dans le développement
+      des régimes démocratiques. Je m'intéresse également à l'avancement des méthodes quantitatives
+      permettant de mesurer l'effet de l'information. Je mène des projets de recherche actifs dans
+      l'ex-Union soviétique, en Afrique orientale et australe, ainsi qu'en Amérique du Nord. Mes
+      travaux ont paru dans un large éventail de revues en science politique et dans des domaines
+      connexes, notamment <em>American Political Science Review</em>, <em>American Journal of
+      Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>,
+      <em>Journal of Public Administration Research &amp; Theory</em> et <em>Political Analysis</em>,
+      entre autres.
+    es: >
+      En términos generales, me interesa la democratización y el desarrollo democrático. Gran parte
+      de mi investigación aborda el papel que desempeña la información en el desarrollo de sistemas
+      políticos democráticos. También me interesa el avance de los métodos cuantitativos para medir
+      el efecto de la información. Mantengo proyectos de investigación activos en la antigua Unión
+      Soviética, África Oriental y Meridional, y América del Norte. Mi trabajo ha aparecido en una
+      amplia variedad de revistas de ciencia política y campos afines, tales como <em>American
+      Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative
+      Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration
+      Research &amp; Theory</em> y <em>Political Analysis</em>, entre otras.
+    ru: >
+      В широком смысле меня интересуют вопросы демократизации и демократического развития.
+      Значительная часть моих исследований посвящена роли информации в формировании демократических
+      политий. Я также занимаюсь разработкой количественных методов для измерения эффекта информации.
+      В настоящее время я веду активные исследовательские проекты на постсоветском пространстве,
+      в Восточной и Южной Африке, а также в Северной Америке. Мои работы опубликованы в широком
+      круге журналов по политической науке и смежным дисциплинам, в том числе в <em>American
+      Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative
+      Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration
+      Research &amp; Theory</em> и <em>Political Analysis</em>.
+    uk: >
+      У широкому сенсі мої наукові інтереси зосереджені на демократизації та демократичному розвитку.
+      Значна частина моїх досліджень присвячена ролі інформації у становленні демократичних полій.
+      Я також займаюся розробкою кількісних методів для вимірювання ефекту інформації. Я веду активні
+      дослідницькі проєкти на пострадянському просторі, у Східній і Південній Африці та в Північній
+      Америці. Мої праці опубліковані в широкому колі журналів із політичної науки та суміжних
+      дисциплін, зокрема в <em>American Political Science Review</em>, <em>American Journal of
+      Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>,
+      <em>Journal of Public Administration Research &amp; Theory</em> та <em>Political Analysis</em>.
+    ka: >
+      ზოგადად, მე მაინტერესებს დემოკრატიზაცია და დემოკრატიული განვითარება. ჩემი კვლევის დიდი ნაწილი
+      ეხება იმ როლს, რომელსაც ინფორმაცია ასრულებს დემოკრატიული პოლიტიკური სისტემების ჩამოყალიბებაში.
+      ასევე მაინტერესებს რაოდენობრივი მეთოდების სრულყოფა ინფორმაციის ეფექტის გასაზომად. აქტიური
+      სამეცნიერო პროექტები მაქვს ყოფილ საბჭოთა კავშირში, აღმოსავლეთ და სამხრეთ აფრიკაში, და ჩრდილოეთ
+      ამერიკაში. ჩემი ნაშრომები გამოქვეყნებულია პოლიტიკის მეცნიერებისა და მომიჯნავე დარგების ჟურნალების
+      ფართო სპექტრში, მათ შორის <em>American Political Science Review</em>, <em>American Journal
+      of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>,
+      <em>Journal of Public Administration Research &amp; Theory</em> და <em>Political Analysis</em>.
+    de: >
+      Im Allgemeinen interessiere ich mich für Demokratisierung und demokratische Entwicklung. Ein
+      Großteil meiner Forschung befasst sich mit der Rolle, die Information in der Entwicklung
+      demokratischer Gemeinwesen spielt. Darüber hinaus interessiere ich mich für die
+      Weiterentwicklung quantitativer Methoden zur Messung von Informationseffekten. Ich führe aktive
+      Forschungsprojekte in der ehemaligen Sowjetunion, im östlichen und südlichen Afrika sowie in
+      Nordamerika durch. Meine Arbeiten sind in einer breiten Auswahl von Fachzeitschriften der
+      Politikwissenschaft und angrenzender Disziplinen erschienen, darunter unter anderem <em>American
+      Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative
+      Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration
+      Research &amp; Theory</em> sowie <em>Political Analysis</em>.
   pre_academia:
     en: Before returning to academia, I worked for the National Democratic Institute covering Kenya and
       the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.
