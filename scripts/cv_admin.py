@@ -36,9 +36,33 @@ REPO = Path(__file__).resolve().parents[1]
 CV_PATH = REPO / "_data" / "cv.yml"
 LAB_PATH = REPO / "_data" / "lab.yml"
 PROPOSAL_PATH = REPO / "_data" / "cv-tag-proposal.yml"
+LETTERS_PATH = REPO / "_data" / "letter-requests.yml"
 BUILD_SCRIPT = REPO / "scripts" / "build-cv.py"
 BUILD_LAB_SCRIPT = REPO / "scripts" / "build-lab.py"
 CV_QMD = REPO / "cv.qmd"
+
+# Letters of recommendation — OneDrive folder where the archive lives.
+LORS_ROOT = Path.home() / "Library" / "CloudStorage" / "OneDrive-McGillUniversity" / "LORs"
+LETTER_CATEGORIES = [
+    "Undergrad_LORs",
+    "MA_toPHDJOB_LORs",
+    "McGillPHD_LORs",
+    "Colleagues_LORs",
+]
+LETTER_TYPES = [
+    ("ma", "MA / grad school application (target: 1 page, 2 only for exceptional)"),
+    ("phd", "PhD program / fellowship (length as needed)"),
+    ("job_or_internship", "Job / internship (target: 1 page, never more)"),
+]
+LETTER_STATES = [
+    "pending_upload",
+    "uploaded",
+    "drafting",
+    "draft_ready",
+    "approved",
+    "sent",
+    "closed",
+]
 
 ZOTERO_USER_ID = 38708
 ZOTERO_API = f"https://api.zotero.org/users/{ZOTERO_USER_ID}"
@@ -614,6 +638,7 @@ small { color: #777; }
 {% endfor %}
 <a href="{{ url_for('publications_list') }}">Publications (Zotero)</a>
 <a href="{{ url_for('lab_view') }}">Lab</a>
+<a href="{{ url_for('letters_view') }}">Letters</a>
 <a href="{{ url_for('rebuild') }}" style="background:#2a6;color:#fff">Rebuild &amp; Preview</a>
 </nav>
 {% with messages = get_flashed_messages(with_categories=true) %}
@@ -1241,6 +1266,466 @@ def section_delete(section, idx):
         dump_yaml_with_header(CV_PATH, header, data)
         flash(f"Deleted: {sec['summary'](removed)}", "")
     return redirect(url_for("section_view", section=section))
+
+
+# ---------- Letters of Recommendation ----------
+
+import secrets
+from datetime import datetime, date as _date
+
+
+def load_letters() -> dict:
+    """Load letter-requests.yml, return the raw dict with 'requests' list."""
+    if not LETTERS_PATH.exists():
+        return {"requests": []}
+    text = LETTERS_PATH.read_text(encoding="utf-8")
+    data = yaml.safe_load(text) or {}
+    data.setdefault("requests", [])
+    return data
+
+
+def save_letters(data: dict) -> None:
+    """Save letter-requests.yml preserving header comments."""
+    # Preserve top-of-file comments (same convention as cv.yml / lab.yml)
+    existing_header = ""
+    if LETTERS_PATH.exists():
+        lines = LETTERS_PATH.read_text(encoding="utf-8").splitlines()
+        header_lines = []
+        for line in lines:
+            if line.lstrip().startswith("#") or line.strip() == "":
+                header_lines.append(line)
+            else:
+                break
+        if header_lines:
+            existing_header = "\n".join(header_lines).rstrip() + "\n\n"
+    with open(LETTERS_PATH, "w", encoding="utf-8") as f:
+        if existing_header:
+            f.write(existing_header)
+        yaml.safe_dump(data, f, allow_unicode=True, sort_keys=False, width=120, default_flow_style=False)
+
+
+def find_letter(token: str) -> tuple[int, dict | None]:
+    """Return (index, entry) for a given token, or (-1, None)."""
+    data = load_letters()
+    for i, r in enumerate(data["requests"]):
+        if r.get("token") == token:
+            return i, r
+    return -1, None
+
+
+def transition_letter(token: str, new_state: str) -> bool:
+    if new_state not in LETTER_STATES:
+        return False
+    data = load_letters()
+    for r in data["requests"]:
+        if r.get("token") == token:
+            r["state"] = new_state
+            r.setdefault("state_log", []).append({
+                "state": new_state,
+                "at": datetime.now().isoformat(timespec="seconds"),
+            })
+            save_letters(data)
+            return True
+    return False
+
+
+def list_existing_folders() -> list[dict]:
+    """Scan the OneDrive LORs tree and return existing student folders.
+    Used by the re-upload picker. Each entry: {category, folder_name, path}."""
+    results = []
+    if not LORS_ROOT.exists():
+        return results
+    for cat in LETTER_CATEGORIES:
+        cat_dir = LORS_ROOT / cat
+        if not cat_dir.exists():
+            continue
+        try:
+            for d in sorted(cat_dir.iterdir()):
+                if d.is_dir() and not d.name.startswith("."):
+                    results.append({
+                        "category": cat,
+                        "folder_name": d.name,
+                        "relative_path": f"{cat}/{d.name}",
+                        "full_path": str(d),
+                    })
+        except PermissionError:
+            continue
+    return results
+
+
+# ---------- Letters routes ----------
+
+@app.route("/letters")
+def letters_view():
+    data = load_letters()
+    # Split active vs closed
+    active = [r for r in data["requests"] if r.get("state") not in ("sent", "closed")]
+    closed = [r for r in data["requests"] if r.get("state") in ("sent", "closed")]
+    # Sort active by created date descending
+    active.sort(key=lambda r: r.get("created", ""), reverse=True)
+    closed.sort(key=lambda r: r.get("created", ""), reverse=True)
+    return render_template_string(
+        PAGE_HEAD + """
+<h2>Letters of Recommendation</h2>
+<p>
+  <a href="{{ url_for('letters_new') }}" style="background:#6b1b1b;color:#fff;padding:0.4em 0.9em;border-radius:3px;text-decoration:none">+ New letter request</a>
+  &nbsp;
+  <a href="{{ url_for('letters_reupload_pick') }}" style="background:#2a6;color:#fff;padding:0.4em 0.9em;border-radius:3px;text-decoration:none">↻ Re-upload link (returning student)</a>
+</p>
+
+<h3>Active requests <small>({{ active|length }})</small></h3>
+{% if active %}
+<table>
+<thead><tr><th>State</th><th>Student</th><th>Category</th><th>Type</th><th>Deadline</th><th>Created</th><th>Actions</th></tr></thead>
+<tbody>
+{% for r in active %}
+<tr>
+  <td><code>{{ r.state }}</code></td>
+  <td><strong>{{ r.last_name }}, {{ r.first_name }}</strong> ({{ r.first_year }})</td>
+  <td>{{ r.category }}</td>
+  <td>{{ r.letter_type }}</td>
+  <td>
+    {% if r.programs %}
+      {% for p in r.programs %}{{ p.deadline or '' }}{% if not loop.last %}, {% endif %}{% endfor %}
+    {% endif %}
+  </td>
+  <td>{{ r.created }}</td>
+  <td class="actions">
+    <a href="{{ url_for('letters_detail', token=r.token) }}">open</a>
+    {% if r.state == 'draft_ready' %}
+    <a href="{{ url_for('letters_transition', token=r.token, new_state='approved') }}" style="color:#2a6">approve</a>
+    {% endif %}
+    {% if r.state == 'approved' %}
+    <a href="{{ url_for('letters_transition', token=r.token, new_state='sent') }}" style="color:#2a6">mark sent</a>
+    {% endif %}
+    <a class="del" href="{{ url_for('letters_delete', token=r.token) }}" onclick="return confirm('Delete this letter request?')">del</a>
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p><em>No active requests.</em></p>
+{% endif %}
+
+<h3>Sent / closed <small>({{ closed|length }})</small></h3>
+{% if closed %}
+<table>
+<thead><tr><th>State</th><th>Student</th><th>Category</th><th>Type</th><th>Sent</th></tr></thead>
+<tbody>
+{% for r in closed %}
+<tr>
+  <td><code>{{ r.state }}</code></td>
+  <td>{{ r.last_name }}, {{ r.first_name }}</td>
+  <td>{{ r.category }}</td>
+  <td>{{ r.letter_type }}</td>
+  <td>{% for e in r.state_log %}{% if e.state == 'sent' %}{{ e.at[:10] }}{% endif %}{% endfor %}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+{% else %}
+<p><em>No sent/closed requests yet.</em></p>
+{% endif %}
+""" + PAGE_FOOT,
+        title="Letters", sections=SECTIONS, active=active, closed=closed,
+    )
+
+
+@app.route("/letters/new", methods=["GET", "POST"])
+def letters_new():
+    if request.method == "POST":
+        last_name = (request.form.get("last_name") or "").strip()
+        first_name = (request.form.get("first_name") or "").strip()
+        first_year = (request.form.get("first_year") or "").strip()
+        category = (request.form.get("category") or "").strip()
+        letter_type = (request.form.get("letter_type") or "").strip()
+        if not all([last_name, first_name, first_year, category, letter_type]):
+            flash("All fields are required", "error")
+            return redirect(url_for("letters_new"))
+        if category not in LETTER_CATEGORIES:
+            flash("Invalid category", "error")
+            return redirect(url_for("letters_new"))
+        if letter_type not in [t[0] for t in LETTER_TYPES]:
+            flash("Invalid letter type", "error")
+            return redirect(url_for("letters_new"))
+
+        # Parse programs (one per line: "Program Name | deadline")
+        programs = []
+        programs_text = request.form.get("programs") or ""
+        for line in programs_text.splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            if "|" in line:
+                name, deadline = line.split("|", 1)
+                programs.append({"name": name.strip(), "deadline": deadline.strip()})
+            else:
+                programs.append({"name": line, "deadline": ""})
+
+        folder_name = f"{last_name}_{first_name}_{first_year}"
+        folder_path = f"{category}/{folder_name}"
+        token = secrets.token_urlsafe(18)  # ~24 chars
+
+        entry = {
+            "token": token,
+            "last_name": last_name,
+            "first_name": first_name,
+            "first_year": int(first_year) if first_year.isdigit() else first_year,
+            "category": category,
+            "letter_type": letter_type,
+            "folder_path": folder_path,
+            "programs": programs,
+            "state": "pending_upload",
+            "created": _date.today().isoformat(),
+            "state_log": [
+                {"state": "pending_upload", "at": datetime.now().isoformat(timespec="seconds")}
+            ],
+        }
+        data = load_letters()
+        data["requests"].append(entry)
+        save_letters(data)
+        return redirect(url_for("letters_detail", token=token))
+
+    today_year = _date.today().year
+    return render_template_string(
+        PAGE_HEAD + """
+<h2>New letter request</h2>
+<form method="post">
+  <label>Last name *</label>
+  <input type="text" name="last_name" required autofocus>
+
+  <label>First name *</label>
+  <input type="text" name="first_name" required>
+
+  <label>First year you wrote this student a letter *</label>
+  <input type="number" name="first_year" value="{{ today_year }}" required>
+  <small>For brand-new students, keep the default. For returning students, use <em>Re-upload link</em> instead — this form creates a new folder.</small>
+
+  <label>Category *</label>
+  <select name="category" required>
+    {% for c in categories %}
+    <option value="{{ c }}">{{ c }}</option>
+    {% endfor %}
+  </select>
+
+  <label>Letter type *</label>
+  <select name="letter_type" required>
+    {% for val, label in types %}
+    <option value="{{ val }}">{{ label }}</option>
+    {% endfor %}
+  </select>
+
+  <label>Programs / deadlines (one per line, <code>Program Name | YYYY-MM-DD</code>)</label>
+  <textarea name="programs" rows="4" placeholder="Oxford DPhil Politics | 2026-12-01&#10;Yale PhD Polisci | 2026-12-15"></textarea>
+
+  <button type="submit">Generate upload link</button>
+  <a href="{{ url_for('letters_view') }}" style="margin-left:1em">Cancel</a>
+</form>
+""" + PAGE_FOOT,
+        title="New letter request", sections=SECTIONS,
+        categories=LETTER_CATEGORIES, types=LETTER_TYPES, today_year=today_year,
+    )
+
+
+@app.route("/letters/reupload")
+def letters_reupload_pick():
+    folders = list_existing_folders()
+    return render_template_string(
+        PAGE_HEAD + """
+<h2>Re-upload link for returning student</h2>
+<p>Pick an existing student folder. A new upload link will be generated that targets the same folder; new uploads land alongside existing files.</p>
+<p>Search: <input type="text" id="filter" oninput="filterTable()" placeholder="type to filter"></p>
+<table id="folders-table">
+<thead><tr><th>Category</th><th>Folder</th><th></th></tr></thead>
+<tbody>
+{% for f in folders %}
+<tr>
+  <td>{{ f.category }}</td>
+  <td><code>{{ f.folder_name }}</code></td>
+  <td><a href="{{ url_for('letters_reupload_confirm', category=f.category, folder_name=f.folder_name) }}">select</a></td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<p><small>Found {{ folders|length }} folders under <code>{{ lors_root }}</code></small></p>
+<script>
+function filterTable() {
+  var q = document.getElementById('filter').value.toLowerCase();
+  var rows = document.querySelectorAll('#folders-table tbody tr');
+  rows.forEach(function(r) {
+    r.style.display = r.textContent.toLowerCase().includes(q) ? '' : 'none';
+  });
+}
+</script>
+""" + PAGE_FOOT,
+        title="Re-upload link", sections=SECTIONS, folders=folders, lors_root=LORS_ROOT,
+    )
+
+
+@app.route("/letters/reupload/confirm", methods=["GET", "POST"])
+def letters_reupload_confirm():
+    category = request.args.get("category", "") or request.form.get("category", "")
+    folder_name = request.args.get("folder_name", "") or request.form.get("folder_name", "")
+    if category not in LETTER_CATEGORIES:
+        flash("Invalid category", "error")
+        return redirect(url_for("letters_reupload_pick"))
+
+    if request.method == "POST":
+        letter_type = (request.form.get("letter_type") or "").strip()
+        if letter_type not in [t[0] for t in LETTER_TYPES]:
+            flash("Invalid letter type", "error")
+            return redirect(url_for("letters_reupload_confirm", category=category, folder_name=folder_name))
+
+        programs = []
+        programs_text = request.form.get("programs") or ""
+        for line in programs_text.splitlines():
+            line = line.strip()
+            if not line:
+                continue
+            if "|" in line:
+                name, deadline = line.split("|", 1)
+                programs.append({"name": name.strip(), "deadline": deadline.strip()})
+            else:
+                programs.append({"name": line, "deadline": ""})
+
+        # Parse folder name: LastName_FirstName_YYYY
+        parts = folder_name.rsplit("_", 1)
+        try:
+            first_year = int(parts[-1]) if parts[-1].isdigit() else folder_name
+            name_parts = parts[0].split("_", 1)
+            last_name = name_parts[0]
+            first_name = name_parts[1] if len(name_parts) > 1 else ""
+        except Exception:
+            last_name = folder_name
+            first_name = ""
+            first_year = ""
+
+        token = secrets.token_urlsafe(18)
+        entry = {
+            "token": token,
+            "last_name": last_name,
+            "first_name": first_name,
+            "first_year": first_year,
+            "category": category,
+            "letter_type": letter_type,
+            "folder_path": f"{category}/{folder_name}",
+            "programs": programs,
+            "returning": True,
+            "state": "pending_upload",
+            "created": _date.today().isoformat(),
+            "state_log": [
+                {"state": "pending_upload", "at": datetime.now().isoformat(timespec="seconds")}
+            ],
+        }
+        data = load_letters()
+        data["requests"].append(entry)
+        save_letters(data)
+        return redirect(url_for("letters_detail", token=token))
+
+    return render_template_string(
+        PAGE_HEAD + """
+<h2>Re-upload for: {{ folder_name }}</h2>
+<p>Category: <strong>{{ category }}</strong></p>
+<p>New uploads will land in <code>LORs/{{ category }}/{{ folder_name }}/</code> alongside any existing files.</p>
+<form method="post">
+  <input type="hidden" name="category" value="{{ category }}">
+  <input type="hidden" name="folder_name" value="{{ folder_name }}">
+  <label>Letter type *</label>
+  <select name="letter_type" required>
+    {% for val, label in types %}
+    <option value="{{ val }}">{{ label }}</option>
+    {% endfor %}
+  </select>
+  <label>Programs / deadlines (one per line, <code>Program Name | YYYY-MM-DD</code>)</label>
+  <textarea name="programs" rows="4"></textarea>
+  <button type="submit">Generate re-upload link</button>
+  <a href="{{ url_for('letters_reupload_pick') }}" style="margin-left:1em">Back</a>
+</form>
+""" + PAGE_FOOT,
+        title="Re-upload confirm", sections=SECTIONS,
+        category=category, folder_name=folder_name, types=LETTER_TYPES,
+    )
+
+
+@app.route("/letters/<token>")
+def letters_detail(token):
+    _, r = find_letter(token)
+    if not r:
+        flash("Request not found", "error")
+        return redirect(url_for("letters_view"))
+    upload_url = f"https://upload.aaronerlich.com/upload/{token}"
+    folder_full = LORS_ROOT / r.get("folder_path", "")
+    return render_template_string(
+        PAGE_HEAD + """
+<h2>{{ r.last_name }}, {{ r.first_name }} ({{ r.first_year }})</h2>
+<p>
+  <strong>State:</strong> <code>{{ r.state }}</code>
+  &nbsp; <strong>Type:</strong> {{ r.letter_type }}
+  &nbsp; <strong>Category:</strong> {{ r.category }}
+</p>
+
+<h3>Upload link (email to student)</h3>
+<p><input type="text" value="{{ upload_url }}" readonly style="width:100%;font-family:monospace;padding:0.5em;background:#fff8e1;border:1px solid #e0c060" onclick="this.select()"></p>
+<p><small>Click to select, then copy. Send this URL in your reply email to the student. The token is single-use and tied to this student.</small></p>
+
+<h3>Folder</h3>
+<p><code>{{ folder_full }}</code></p>
+<p><small>Files will land here once the student uploads. Check the folder manually or wait for the notification email.</small></p>
+
+<h3>Programs</h3>
+{% if r.programs %}
+<ul>
+  {% for p in r.programs %}
+  <li><strong>{{ p.name }}</strong>{% if p.deadline %} — deadline {{ p.deadline }}{% endif %}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p><em>None listed.</em></p>
+{% endif %}
+
+<h3>State transitions</h3>
+<p>
+  {% for state in states %}
+    {% if state == r.state %}
+      <strong style="color:#6b1b1b">{{ state }}</strong>
+    {% else %}
+      <a href="{{ url_for('letters_transition', token=token, new_state=state) }}">{{ state }}</a>
+    {% endif %}
+    {% if not loop.last %} → {% endif %}
+  {% endfor %}
+</p>
+
+<h3>State log</h3>
+<ul>
+{% for e in r.state_log %}
+  <li><code>{{ e.at }}</code> — {{ e.state }}</li>
+{% endfor %}
+</ul>
+
+<p><a href="{{ url_for('letters_view') }}">← back to Letters</a></p>
+""" + PAGE_FOOT,
+        title=f"{r['last_name']}, {r['first_name']}", sections=SECTIONS,
+        r=r, upload_url=upload_url, folder_full=folder_full, states=LETTER_STATES, token=token,
+    )
+
+
+@app.route("/letters/<token>/transition/<new_state>")
+def letters_transition(token, new_state):
+    if transition_letter(token, new_state):
+        flash(f"State → {new_state}", "")
+    else:
+        flash(f"Failed to transition to {new_state}", "error")
+    return redirect(url_for("letters_detail", token=token))
+
+
+@app.route("/letters/<token>/delete")
+def letters_delete(token):
+    data = load_letters()
+    data["requests"] = [r for r in data["requests"] if r.get("token") != token]
+    save_letters(data)
+    flash("Letter request deleted", "")
+    return redirect(url_for("letters_view"))
 
 
 @app.route("/rebuild")

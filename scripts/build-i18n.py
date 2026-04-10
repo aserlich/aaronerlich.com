@@ -27,8 +27,74 @@ SOURCES = [
     REPO / "_data" / "cv.yml",
     REPO / "_data" / "site-i18n.yml",
 ]
+INSTITUTIONS_PATH = REPO / "_data" / "institution-names.yml"
 OUTPUT = REPO / "_generated" / "i18n-toggle.html"
 SUPPORTED = ("en", "fr", "es", "ru", "uk", "ka", "de")
+
+
+def institution_slug(name: str) -> str:
+    """Generate a stable i18n key slug from an institution's English name."""
+    import re
+    s = name.lower()
+    s = re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+    return s[:60]
+
+
+def load_institution_overrides() -> dict:
+    """Load _data/institution-names.yml and return {slug: {lang: value}}.
+
+    Two keys per entry:
+      institutions.<slug>          — full name only ("Centre pour l'étude...")
+      institutions.<slug>.combined — full name with parenthesized abbr
+                                      ("Centre pour l'étude... (CÉCD)")
+
+    The combined form matches how orgs are written in cv.yml. Renderers
+    wrap the org string in a <span data-i18n="institutions.<slug>.combined">
+    so the toggle swaps to the local form."""
+    if not INSTITUTIONS_PATH.exists():
+        return {}
+    data = yaml.safe_load(INSTITUTIONS_PATH.read_text(encoding="utf-8")) or {}
+    entries = data.get("institutions") or []
+    result = {}
+    for e in entries:
+        en = e.get("en")
+        if not en:
+            continue
+        slug = institution_slug(en)
+
+        # Full-name-only values per language (falls back to EN)
+        name_values = {}
+        if e.get("all"):
+            for lang in SUPPORTED:
+                name_values[lang] = e["all"]
+        else:
+            for lang in SUPPORTED:
+                if lang in e:
+                    name_values[lang] = e[lang]
+            name_values.setdefault("en", en)
+            # Fill missing languages with English so the toggle doesn't
+            # fall back to the English full form when another language
+            # wasn't explicitly set
+            for lang in SUPPORTED:
+                name_values.setdefault(lang, name_values["en"])
+        result[f"institutions.{slug}"] = name_values
+
+        # Combined "Name (Abbr)" form per language
+        if e.get("abbr_en"):
+            combined = {}
+            for lang in SUPPORTED:
+                name = name_values.get(lang, en)
+                abbr = e.get(f"abbr_{lang}") or e.get("abbr_en")
+                combined[lang] = f"{name} ({abbr})"
+            result[f"institutions.{slug}.combined"] = combined
+
+        # Abbreviation-only values (e.g., for inline "per CSDC guidelines" text)
+        if e.get("abbr_en"):
+            abbr_values = {}
+            for lang in SUPPORTED:
+                abbr_values[lang] = e.get(f"abbr_{lang}") or e["abbr_en"]
+            result[f"institutions.{slug}.abbr"] = abbr_values
+    return result
 
 
 def is_lang_node(node) -> bool:
@@ -167,6 +233,12 @@ def main():
         keys = collect(data)
         print(f"  {src.name}: {len(keys)} keys", file=sys.stderr)
         all_i18n.update(keys)
+
+    # Merge institution overrides
+    inst = load_institution_overrides()
+    if inst:
+        print(f"  institution-names.yml: {len(inst)} overrides", file=sys.stderr)
+        all_i18n.update(inst)
 
     blob = json.dumps(all_i18n, ensure_ascii=False, separators=(",", ":"))
 

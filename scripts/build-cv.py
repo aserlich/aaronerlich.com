@@ -62,6 +62,55 @@ PUB_SECTIONS = [
 _HREF_RE = re.compile(r"\\href\s*\{([^}]+)\}\s*\{((?:[^{}]|\{[^{}]*\})*)\}")
 
 
+# Institution name overrides: loaded lazily, matched by exact English
+# string including the parenthesized abbreviation. Used by render_affiliations
+# (and future renderers) to emit <span data-i18n="institutions.<slug>">
+# so the language toggle picks up the local form (e.g. CSDC → CÉCD in FR).
+_INSTITUTION_INDEX_CACHE = None
+
+def _institution_slug(name: str) -> str:
+    s = name.lower()
+    s = re.sub(r"[^a-z0-9]+", "_", s).strip("_")
+    return s[:60]
+
+
+def _load_institution_index() -> dict:
+    """Return {english_canonical_string: (slug, variant)} for overrides
+    in institution-names.yml. variant is '' for plain name or 'combined'
+    for the '<Name> (<Abbr>)' form."""
+    global _INSTITUTION_INDEX_CACHE
+    if _INSTITUTION_INDEX_CACHE is not None:
+        return _INSTITUTION_INDEX_CACHE
+    index = {}
+    path = Path(__file__).resolve().parents[1] / "_data" / "institution-names.yml"
+    if path.exists():
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        for e in data.get("institutions") or []:
+            en = e.get("en")
+            if not en:
+                continue
+            slug = _institution_slug(en)
+            # Plain English name → name-only key
+            index[en] = (slug, "")
+            # "Name (ABBR)" form → combined key
+            if e.get("abbr_en"):
+                index[f"{en} ({e['abbr_en']})"] = (slug, "combined")
+    _INSTITUTION_INDEX_CACHE = index
+    return index
+
+
+def institution_span(org_string: str) -> str:
+    """If org_string matches an entry in institution-names.yml, return an i18n
+    span so the language toggle swaps to the local form. Otherwise return
+    the plain escaped string."""
+    idx = _load_institution_index()
+    if org_string in idx:
+        slug, variant = idx[org_string]
+        key = f"institutions.{slug}.combined" if variant == "combined" else f"institutions.{slug}"
+        return f'<span data-i18n="{key}">{html_escape(org_string)}</span>'
+    return html_escape(org_string)
+
+
 def latex_to_html(text: str) -> str:
     """Convert LaTeX \\href{url}{label} and inline markup to safe HTML."""
     def _href(m):
@@ -280,7 +329,8 @@ def render_affiliations(cv: dict) -> str:
            '<ul class="cv-affil-list">']
     for i, a in enumerate(cv["affiliations"]):
         url = a.get("url", "")
-        org = f'<a href="{html_escape(url)}">{html_escape(a["org"])}</a>' if url else html_escape(a["org"])
+        org_inner = institution_span(a["org"])
+        org = f'<a href="{html_escape(url)}">{org_inner}</a>' if url else org_inner
         out.append(
             f'<li>{i18n_span(f"affiliations.{i}.role", a["role"]["en"])}, {org}, {html_escape(a["dates"])}</li>'
         )
