@@ -1,0 +1,43 @@
+#:schema node_modules/wrangler/config-schema.json
+# Cloudflare Worker: letter-upload-worker
+#
+# Handles student letter-of-recommendation material uploads. Serves a secret
+# token-gated form, writes received files into Aaron's OneDrive via the
+# Microsoft Graph API, fires a notification email via Resend.
+#
+# Deploy:
+#   npm install
+#   wrangler login
+#   wrangler kv namespace create TOKENS
+#   # Paste the returned namespace id into the [[kv_namespaces]] block below.
+#   wrangler secret put GRAPH_CLIENT_ID        # from Microsoft Entra app registration
+#   wrangler secret put GRAPH_CLIENT_SECRET
+#   wrangler secret put GRAPH_TENANT_ID        # your McGill tenant ID
+#   wrangler secret put GRAPH_REFRESH_TOKEN    # obtained once via OAuth consent flow
+#   wrangler secret put RESEND_API_KEY         # from resend.com
+#   wrangler secret put NOTIFICATION_EMAIL     # aaron.erlich@mcgill.ca
+#   wrangler deploy
+
+name = "letter-upload-worker"
+main = "src/index.ts"
+compatibility_date = "2026-04-01"
+workers_dev = true
+
+[vars]
+ENVIRONMENT = "production"
+# Max file size in bytes (50 MB). Worker memory caps request bodies at ~100 MB total.
+MAX_FILE_SIZE = "52428800"
+MAX_FILES = "12"
+
+# Token store — populated by scripts/sync-letter-tokens-to-kv.py from the
+# Flask admin's _data/letter-requests.yml
+[[kv_namespaces]]
+binding = "TOKENS"
+id = "REPLACE_AFTER_RUNNING_wrangler_kv_namespace_create"
+
+# Custom domain: upload.aaronerlich.com
+# Requires a CNAME on the aaronerlich.com DNS pointing at workers.dev, then
+# "Custom Domain" added in the Cloudflare dashboard under this worker.
+# [[routes]]
+# pattern = "upload.aaronerlich.com/*"
+# custom_domain = true
