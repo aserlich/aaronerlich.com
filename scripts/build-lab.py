@@ -88,6 +88,8 @@ def main():
         parts.append("")
         parts.append("These students worked with me closely. The research and publications listed are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.")
         parts.append("")
+        parts.append("Former lab members — if you need a letter of recommendation years after the fact, you're still in the rotation. Start at the [Letter of Recommendation](resources/letters.qmd) page.")
+        parts.append("")
         parts.append('<details class="lab-details" open>')
         parts.append('<summary>Show / hide alumni table (click any column to sort)</summary>')
         parts.append("")

@@ -64,6 +64,8 @@ Bringing together researchers interested in transparency, information provision,
 
 These students worked with me closely. The research and publications listed are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.
 
+Former lab members — if you need a letter of recommendation years after the fact, you're still in the rotation. Start at the [Letter of Recommendation](resources/letters.qmd) page.
+
 <details class="lab-details" open>
 <summary>Show / hide alumni table (click any column to sort)</summary>
 

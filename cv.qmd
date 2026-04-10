@@ -36,11 +36,11 @@ format:
 </ul></div>
 <h2><span data-i18n="section_headers.affiliations">Affiliations</span></h2>
 <ul class="cv-affil-list">
-<li><span data-i18n="affiliations.0.role">Member</span>, <a href="https://csdc-cecd.ca/">Centre for the Study of Democratic Citizenship (CSDC)</a>, 2017–</li>
+<li><span data-i18n="affiliations.0.role">Member</span>, <a href="https://csdc-cecd.ca/"><span data-i18n="institutions.centre_for_the_study_of_democratic_citizenship.combined">Centre for the Study of Democratic Citizenship (CSDC)</span></a>, 2017–</li>
 <li><span data-i18n="affiliations.1.role">Member</span>, <a href="https://www.mcgill.ca/popcentre/">Centre on Population Dynamics — McGill</a>, 2019–</li>
 <li><span data-i18n="affiliations.2.role">Faculty Research Affiliate</span>, <a href="https://csmapnyu.org/">Center for Social Media and Politics (CsMaP), NYU</a>, 2023–</li>
 <li><span data-i18n="affiliations.3.role">Member</span>, Centre for Social and Cultural Data Science (CSCDS), 2016–2020</li>
-<li><span data-i18n="affiliations.4.role">Visiting Professor</span>, Université de Montréal, 2024–25</li>
+<li><span data-i18n="affiliations.4.role">Visiting Professor</span>, <span data-i18n="institutions.universit_de_montr_al">Université de Montréal</span>, 2024–25</li>
 </ul>
 <h2><span data-i18n="section_headers.education">Education</span></h2>
 <div class="cv-block">

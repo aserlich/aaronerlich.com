@@ -1,5 +1,68 @@
 [
   {
+    "objectID": "teaching.html",
+    "href": "teaching.html",
+    "title": "Teaching",
+    "section": "",
+    "text": "If you are taking one of my classes, please book office hours using the scheduling system below.\n[Office hours booking system - you can embed your simplybook.me widget here, or just link to your booking page directly]\nBook office hours: aaronerlich.simplybook.me"
+  },
+  {
+    "objectID": "teaching.html#office-hours",
+    "href": "teaching.html#office-hours",
+    "title": "Teaching",
+    "section": "",
+    "text": "If you are taking one of my classes, please book office hours using the scheduling system below.\n[Office hours booking system - you can embed your simplybook.me widget here, or just link to your booking page directly]\nBook office hours: aaronerlich.simplybook.me"
+  },
+  {
+    "objectID": "teaching.html#writing-advice",
+    "href": "teaching.html#writing-advice",
+    "title": "Teaching",
+    "section": "Writing Advice",
+    "text": "Writing Advice\nHere, I give some general advice about writing papers. Many folks have written good advice: I highly recommend Barry Weingast’s, which can be found here. Also see Chris Blattman and Henry Farrell.\nDownload my writing advice (PDF)"
+  },
+  {
+    "objectID": "resources/thesis-internships.html",
+    "href": "resources/thesis-internships.html",
+    "title": "Undergraduate Thesis and Internships",
+    "section": "",
+    "text": "Please see instructions here.\n[Note: You’ll need to add the specific instructions from your current page at https://www.aaronerlich.com/resources/undergraduate-thesis-and-internships]"
+  },
+  {
+    "objectID": "resources/georgia-bib.html",
+    "href": "resources/georgia-bib.html",
+    "title": "Georgia Bibliography",
+    "section": "",
+    "text": "[Content for your Georgia Bibliography will go here]\nNote: You’ll need to fetch the content from your current page at https://www.aaronerlich.com/resources/georgia-bibliography"
+  },
+  {
+    "objectID": "r-tutorials.html",
+    "href": "r-tutorials.html",
+    "title": "R Tutorials",
+    "section": "",
+    "text": "[Content for your R tutorials will go here]\nNote: You’ll need to fetch the content from your current R Tutorials page at https://www.aaronerlich.com/teaching/r-tutorials"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "About",
+    "section": "",
+    "text": "Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University of Washington in Seattle.\nBroadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as American Political Science Review, American Journal of Political Science, Comparative Political Studies, Journal of Politics, Journal of Public Administration Research & Theory, and Political Analysis, among others. You can see more about my academic work on my C.V.\nBefore returning to academia, I worked for the National Democratic Institute covering Kenya and the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.\nI am an avid bicycle tourer."
+  },
+  {
+    "objectID": "index.html#contact-me",
+    "href": "index.html#contact-me",
+    "title": "About",
+    "section": "Contact me",
+    "text": "Contact me\nAaron Erlich, Associate Professor Department of Political Science McGill University 3610 McTavish, Room 26-4 Montreal, Quebec, Canada H3A 1Y2 T: 514-398-4756 F: 514-398-4938 aaron.erlich [at] mcgill.ca"
+  },
+  {
+    "objectID": "index.html#affiliations",
+    "href": "index.html#affiliations",
+    "title": "About",
+    "section": "Affiliations",
+    "text": "Affiliations\nCentre for the Study of Democratic Citizenship Centre on Population Dynamics Center for Social Media and Politics"
+  },
+  {
     "objectID": "cv.html",
     "href": "cv.html",
     "title": "Curriculum Vitae",
@@ -39,28 +102,7 @@
     "href": "lab.html#demotip-alumni",
     "title": "DemoTIP Laboratory",
     "section": "DemoTIP Alumni",
-    "text": "DemoTIP Alumni\nThese students worked with me closely. The research and publications listed are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.\n\n\nShow / hide alumni table (click any column to sort)\n\n\n\n\n\nResearcher\n\n\nDegree\n\n\nGraduation Year\n\n\nPublications & Research\n\n\nPost-McGill Employment / Education\n\n\n\n\n\n\nMathieu Lavigne\n\n\nPh.D.\n\n\n2024\n\n\nThesis - Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment\n\n\nPost-Doc, Dartmouth College\n\n\n\n\nPratik Mahajan\n\n\nM.A.\n\n\n2024\n\n\nThesis - Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India\n\n\n\n\n\n\nChristopher Ross\n\n\nM.A.\n\n\n2023\n\n\nThesis - Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\n\n\nThe Media Ecosystem Observatory\n\n\n\n\nAlice Brocheux\n\n\nB.A.\n\n\n2022\n\n\n\n\nPh.D. Student, University of Rochester\n\n\n\n\nCostin Ciobanu\n\n\nPh.D.\n\n\n2022\n\n\nThesis - The political and electoral consequences of economic shocks; Unveiling\n\n\nPost-Doc, Royal Holloway University; Post-doc, University of Aarhus\n\n\n\n\nDilse Kaygisiz\n\n\nM.A.\n\n\n2022\n\n\nThesis - Do laws affect attitudes? A study on domestic violence laws in Turkey\n\n\nData Sciences\n\n\n\n\nHenry Atkins\n\n\nM.A.\n\n\n2021\n\n\nThesis - Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack\n\n\n\n\n\n\nStefano Dantas\n\n\nM.A.\n\n\n2021\n\n\nMulti-Label Prediction for Political Text-as-Data\n\n\n\n\n\n\nÉtienne Gagnon\n\n\nM.A.\n\n\n2020\n\n\nThesis - Multiview Representation Learning for Political Science Research\n\n\nMEXT Fellowship, Japan; Ph.D. Student, Princeton University\n\n\n\n\nSaewon Park\n\n\nM.A.\n\n\n2020\n\n\nWeaponizing Election Petitions; Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation\n\n\nTrackTik; The Media Ecosystem Observatory\n\n\n\n\nTanner Ducharme\n\n\nB.A.\n\n\n2020\n\n\n\n\n\n\n\n\nAlex Xin Tong Wang\n\n\nM.A.\n\n\n2020\n\n\n\n\n\n\n\n\nHair Parra Barrera\n\n\nB.A.\n\n\n2020\n\n\n\n\nM.A., HEC-Montréal\n\n\n\n\nSu Goh\n\n\nB.A.\n\n\n2020\n\n\n\n\n\n\n\n\nAnnie Chen\n\n\nB.A.\n\n\n2020\n\n\nThesis - Incumbency Advantage in Australia; Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates\n\n\nBright Line Watch\n\n\n\n\nAndrew McCormack\n\n\nM.A.\n\n\n2019\n\n\nmapcan R package; Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US\n\n\nData Sciences\n\n\n\n\nAengus Bridgman\n\n\nPh.D.\n\n\n2022\n\n\nUnveiling\n\n\nAssistant Prof (Research), McGill University\n\n\n\n\nTim Roy\n\n\nB.A."
-  },
-  {
-    "objectID": "resources/georgia-bib.html",
-    "href": "resources/georgia-bib.html",
-    "title": "Georgia Bibliography",
-    "section": "",
-    "text": "[Content for your Georgia Bibliography will go here]\nNote: You’ll need to fetch the content from your current page at https://www.aaronerlich.com/resources/georgia-bibliography"
-  },
-  {
-    "objectID": "resources/letters.html",
-    "href": "resources/letters.html",
-    "title": "Letter of Recommendation",
-    "section": "",
-    "text": "If you are an undergraduate looking for a letter of recommendation, I recommend you ask me if you feel like I could write you a strong letter. Usually, a strong letter comes from a letter writer who knows you well and thinks highly of your work.\nIf you are interested in a letter from me, first send an inquiry."
-  },
-  {
-    "objectID": "resources/letters.html#materials-needed",
-    "href": "resources/letters.html#materials-needed",
-    "title": "Letter of Recommendation",
-    "section": "Materials Needed",
-    "text": "Materials Needed\nPlease provide the following:\n\nStatement of purpose\nUnofficial transcript\nA spreadsheet with all programs to which you are applying\nA document with anything else you would like me to know or to include in the letter\n\n\nExample Spreadsheet Format\nThe spreadsheet should include details about each program (two programs shown as examples):\n\n\n\nProgram\nInstitution\nDeadline\nStatus\n\n\n\n\nMA Political Science\nMcGill University\nJan 15\nPending\n\n\nPhD Political Science\nUniversity of Toronto\nDec 1\nPending"
+    "text": "DemoTIP Alumni\nThese students worked with me closely. The research and publications listed are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.\nFormer lab members — if you need a letter of recommendation years after the fact, you’re still in the rotation. Start at the Letter of Recommendation page.\n\n\nShow / hide alumni table (click any column to sort)\n\n\n\n\n\nResearcher\n\n\nDegree\n\n\nGraduation Year\n\n\nPublications & Research\n\n\nPost-McGill Employment / Education\n\n\n\n\n\n\nMathieu Lavigne\n\n\nPh.D.\n\n\n2024\n\n\nThesis - Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment\n\n\nPost-Doc, Dartmouth College\n\n\n\n\nPratik Mahajan\n\n\nM.A.\n\n\n2024\n\n\nThesis - Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India\n\n\n\n\n\n\nChristopher Ross\n\n\nM.A.\n\n\n2023\n\n\nThesis - Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus; Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader\n\n\nThe Media Ecosystem Observatory\n\n\n\n\nAlice Brocheux\n\n\nB.A.\n\n\n2022\n\n\n\n\nPh.D. Student, University of Rochester\n\n\n\n\nCostin Ciobanu\n\n\nPh.D.\n\n\n2022\n\n\nThesis - The political and electoral consequences of economic shocks; Unveiling\n\n\nPost-Doc, Royal Holloway University; Post-doc, University of Aarhus\n\n\n\n\nDilse Kaygisiz\n\n\nM.A.\n\n\n2022\n\n\nThesis - Do laws affect attitudes? A study on domestic violence laws in Turkey\n\n\nData Sciences\n\n\n\n\nHenry Atkins\n\n\nM.A.\n\n\n2021\n\n\nThesis - Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack\n\n\n\n\n\n\nStefano Dantas\n\n\nM.A.\n\n\n2021\n\n\nMulti-Label Prediction for Political Text-as-Data\n\n\n\n\n\n\nÉtienne Gagnon\n\n\nM.A.\n\n\n2020\n\n\nThesis - Multiview Representation Learning for Political Science Research\n\n\nMEXT Fellowship, Japan; Ph.D. Student, Princeton University\n\n\n\n\nSaewon Park\n\n\nM.A.\n\n\n2020\n\n\nWeaponizing Election Petitions; Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation\n\n\nTrackTik; The Media Ecosystem Observatory\n\n\n\n\nTanner Ducharme\n\n\nB.A.\n\n\n2020\n\n\n\n\n\n\n\n\nAlex Xin Tong Wang\n\n\nM.A.\n\n\n2020\n\n\n\n\n\n\n\n\nHair Parra Barrera\n\n\nB.A.\n\n\n2020\n\n\n\n\nM.A., HEC-Montréal\n\n\n\n\nSu Goh\n\n\nB.A.\n\n\n2020\n\n\n\n\n\n\n\n\nAnnie Chen\n\n\nB.A.\n\n\n2020\n\n\nThesis - Incumbency Advantage in Australia; Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates\n\n\nBright Line Watch\n\n\n\n\nAndrew McCormack\n\n\nM.A.\n\n\n2019\n\n\nmapcan R package; Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US\n\n\nData Sciences\n\n\n\n\nAengus Bridgman\n\n\nPh.D.\n\n\n2022\n\n\nUnveiling\n\n\nAssistant Prof (Research), McGill University\n\n\n\n\nTim Roy\n\n\nB.A."
   },
   {
     "objectID": "research.html",
@@ -77,32 +119,88 @@
     "text": "Selected Published Manuscripts\nErlich, Aaron, Jordan Gans-Morse, and Simeon Nichter. Online First. “Selective Bribery: When Do Citizens Engage in Corruption?” Comparative Political Studies: 00104140241259444.\nungated wp version: [here]\nReplication Data\n\nErlich, Aaron, Danielle F. Jung, and James D. Long. Online First. “Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage With Application to an Emerging Democracy.” Social Science Computer Review: 08944393241247420.\nReplication Data\n\nSoehl, Thomas, Aaron Erlich, and Zhenxiang Chen. Online First. “Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.” Sociological Methods & Research.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Karen E. Ferree, Clark C. Gibson, Danielle F. Jung, James D. Long, and Craig McIntosh. 2024. “Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa.” Economic Development and Cultural Change 72(3): 1425–63.\nReplication Data\n\nErlich, Aaron, and Edana Beauvais. 2023. “Explaining Women’s Political Underrepresentation in Democracies with High Levels of Corruption.” Political Science Research & Methods.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Calvin Garner, Gordon Pennycook, and David G. Rand. 2023. “Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation: Evidence from Ukraine.” Political Psychology 11(4) 804-22.\nReplication Data\n\nErlich, Aaron, and Calvin Garner. 2023. “Is Pro-Kremlin Disinformation Effective: Evidence from Ukraine.” International Journal of Press/Politics 28(1) 5-28.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Thomas Soehl, and Annie Y. Chen. 2023. “Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates.” Journal of Experimental Political Science.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Stefano Dantas, Benjamin Bagozzi, Daniel Berliner, and Brian Palmer-Rubin. 2022. “Multi-label Prediction for Political Text-as-Data.” Political Analysis 30(4) 463-480.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, Daniel Berliner, Brian Palmer-Rubin, and Benjamin Bagozzi. 2021. “Media Attention and Bureaucratic Responsiveness.” Journal of Public Administration Research & Theory 31(4): 687-703.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, and Calvin Garner. 2021. “Implicit Associations, Explicit Attitudes, and Sub-group Differences during Wartime.” International Studies Quarterly 65(2): 528-541.\nReplication Data\n\nBridgman, Aengus, Costin Ciobanu, Aaron Erlich, Danielle Bohonos, and Christopher Ross. 2021. “Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader.” Journal of Politics 83(3) 1024-1029.\nReplication Data\n\nBerliner, Daniel, Benjamin Bagozzi, Brian Palmer-Rubin, and Aaron Erlich. 2021. “The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico.” Journal of Politics 83(1) 231-245.\nReplication Data\n\nErlich, Aaron. 2020. “Can information campaigns impact preferences toward vote selling? Theory and evidence from Kenya.” International Political Science Review 41(3) 419-435.\nOnline Appendix\nReplication Data\n\nErlich, Aaron, and Calvin Garner. 2020. “Interpersonal Incomparability in Citizens’ Views of Democracy: Survey Evidence from Ukraine.” Journal of Elections, Public Opinion and Parties 30(02) 139-160.\nOnline Appendix\nReplication Data\n\nErlich, Aaron. 2018. “Pre-Acceptance as a Method to Combat Publication Bias in Area Studies: A Pilot in the Caucasus.” Caucasus Survey 6(3): 224–29.\n\nErlich, Aaron, Danielle F. Jung, James D. Long, and Craig McIntosh. 2018. “The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries.” Development Engineering 3: 34–46.\n\nErlich, Aaron, and Nicholas Kerr. 2016. “‘The Local Mwananchi Has Lost Trust’: Design, Transition and Legitimacy in Kenyan Election Management.” The Journal of Modern African Studies 54(04): 671–702.\nReplication Data\n\nBush, Sarah Sunn, Aaron Erlich, Lauren Prather, and Yael Zeira. 2016. “The Effects of Authoritarian Iconography: An Experimental Test.” Comparative Political Studies 49(13): 1704–1738.\nPublication version (ungated) available here\nReplication Data\nPre-registration\n\nBerliner, Daniel, and Aaron Erlich. 2015. “Competing for Transparency: Political Competition and Institutional Reform in Mexican States.” American Political Science Review 109(01): 110–28.\nPublication version (ungated) available here\nOnline Appendix\nReplication Data\n\nLevi, Margaret et al. 2012. “Aligning Rights and Interests: Why, When and How to Uphold Labor Standards.” World Bank Development Report Background Paper."
   },
   {
-    "objectID": "teaching.html",
-    "href": "teaching.html",
-    "title": "Teaching",
+    "objectID": "resources/letters.html",
+    "href": "resources/letters.html",
+    "title": "Letter of Recommendation",
     "section": "",
-    "text": "If you are taking one of my classes, please book office hours using the scheduling system below.\n[Office hours booking system - you can embed your simplybook.me widget here, or just link to your booking page directly]\nBook office hours: aaronerlich.simplybook.me"
+    "text": "If you are looking for a letter of recommendation from me, please read this page carefully before emailing me. Following these guidelines makes my letters better, saves you back-and-forth email, and protects your deadlines."
   },
   {
-    "objectID": "teaching.html#office-hours",
-    "href": "teaching.html#office-hours",
-    "title": "Teaching",
-    "section": "",
-    "text": "If you are taking one of my classes, please book office hours using the scheduling system below.\n[Office hours booking system - you can embed your simplybook.me widget here, or just link to your booking page directly]\nBook office hours: aaronerlich.simplybook.me"
+    "objectID": "resources/letters.html#when-to-ask",
+    "href": "resources/letters.html#when-to-ask",
+    "title": "Letter of Recommendation",
+    "section": "When to ask",
+    "text": "When to ask\nThe minimum lead time I ask for is:\n\nThree weeks before the earliest deadline for graduate school applications or jobs\nFive weeks for major fellowships (SSHRC Doctoral, Vanier, Fulbright, Rhodes, Trudeau, Marshall, etc.)\nMore is better — a month is comfortable, two weeks is tight, less than two weeks means I will probably decline\n\nIf you email me less than two weeks before a deadline, I may still agree, but I will not be able to write my best letter under that time pressure and I may not be able to submit to every program on your list.\nI am busiest with letters between mid-October and mid-December. If your deadlines fall in that window, please ask in September."
   },
   {
-    "objectID": "teaching.html#writing-advice",
-    "href": "teaching.html#writing-advice",
-    "title": "Teaching",
-    "section": "Writing Advice",
-    "text": "Writing Advice\nHere, I give some general advice about writing papers. Many folks have written good advice: I highly recommend Barry Weingast’s, which can be found here. Also see Chris Blattman and Henry Farrell.\nDownload my writing advice (PDF)"
+    "objectID": "resources/letters.html#am-i-the-right-letter-writer-for-you",
+    "href": "resources/letters.html#am-i-the-right-letter-writer-for-you",
+    "title": "Letter of Recommendation",
+    "section": "Am I the right letter writer for you?",
+    "text": "Am I the right letter writer for you?\nBefore asking, please self-assess. A strong letter needs a letter-writer who knows you well and thinks highly of your work. Ask yourself:\n\nHave you taken a course with me where you earned a grade I can speak to substantively?\nHave we had meaningful interactions beyond class — office hours conversations, lab work, a thesis, research assistance, or extended email exchanges about your academic work?\nDoes the program you’re applying to care about the areas I can speak to: quantitative methods, survey design, post-Soviet politics, misinformation, political economy of development, African politics, field research?\nDo you have at least one stronger option (e.g., your honours supervisor, a professor you’ve done sustained research with, someone who can speak to your writing in detail)?\n\nIf you have taken a single large lecture with me and we have not spoken outside class, I will struggle to write you a strong letter. A generic “good student” letter from me will not help your application. Be honest with yourself, and consider whether another professor would be a better advocate."
   },
   {
-    "objectID": "resources/thesis-internships.html",
-    "href": "resources/thesis-internships.html",
-    "title": "Undergraduate Thesis and Internships",
-    "section": "",
-    "text": "Please see instructions here.\n[Note: You’ll need to add the specific instructions from your current page at https://www.aaronerlich.com/resources/undergraduate-thesis-and-internships]"
+    "objectID": "resources/letters.html#how-to-make-the-initial-request",
+    "href": "resources/letters.html#how-to-make-the-initial-request",
+    "title": "Letter of Recommendation",
+    "section": "How to make the initial request",
+    "text": "How to make the initial request\nSend me a short email with:\n\nA one-paragraph reminder of who you are — how we know each other (course, lab, thesis), when, and the highlights of your work together\nA brief summary of what you are applying to and the earliest deadline\nWhy you are asking me specifically\n\nI will reply within three business days to tell you whether I can write a strong letter. If I agree, I will tell you how to send me your materials — typically a personalized upload link, occasionally email. Please use whichever method I specify; it keeps everything organized on my end and makes it far less likely that something falls through the cracks."
+  },
+  {
+    "objectID": "resources/letters.html#what-to-upload",
+    "href": "resources/letters.html#what-to-upload",
+    "title": "Letter of Recommendation",
+    "section": "What to upload",
+    "text": "What to upload\nWhen I send you the upload link, please include all five of the items below in a single submission:\n1. Statement of purpose. If you are writing different statements for different programs, include each one labeled by program. I will read these to anchor my letter to the specific story you are telling admissions committees — rather than writing a generic letter that could apply to anyone.\n2. Unofficial transcript. So I can reference specific grades and courses. If you have taken other methods or quantitative courses beyond what you took with me, the transcript tells me.\n3. Your CV or résumé. Keep it to one page for undergraduates, up to two pages for MA students.\n4. Program spreadsheet. A list of every program or job you are applying to, with: program name, institution, city, deadline (date + time + time zone), submission method, portal URL, whether the letter is waived-right-to-access, and any program-specific requirements. An Excel file or Google Sheet works. This prevents me from missing deadlines or uploading to the wrong portal.\n5. A self-brief. This is the most important document and the one most students skip. Write me a 1–2 page document that includes:\n\nThree specific moments from our work together that stood out — a comment you made in class, a question in office hours, a paper you wrote, a piece of research assistance. Being specific jogs my memory and gives me raw material for the letter.\nYour career goals and how this program fits into them\nWhat you want me to emphasize that may not be obvious from your statement of purpose (leadership, resilience, unusual coursework, public-facing work, language skills, etc.)\nAny weaknesses you want me to pre-empt — a dropped grade, a gap year, an unusual academic path, an incomplete course. If I address these head-on, they have less weight; if I leave them unaddressed, admissions committees fill in the blanks on their own.\nYour cumulative GPA, and any specific courses you want highlighted\n\nWithout the self-brief, my letters are generic. With it, they are specific and memorable."
+  },
+  {
+    "objectID": "resources/letters.html#process-and-timeline",
+    "href": "resources/letters.html#process-and-timeline",
+    "title": "Letter of Recommendation",
+    "section": "Process and timeline",
+    "text": "Process and timeline\n\nInitial inquiry — you email me asking if I can write. I reply within 3 business days.\nIf I agree — I tell you how to send materials (upload link or email) and you submit all five items in a single batch.\nI draft the letter — typically within a week of receiving your materials, sometimes faster.\nI submit — I upload to each portal on your spreadsheet. For letters I send by email, I CC you on the first submission so you have confirmation.\nYou confirm and update me — let me know whenever an application goes through, and eventually how the decisions come out."
+  },
+  {
+    "objectID": "resources/letters.html#what-to-do-after-you-submit-your-materials",
+    "href": "resources/letters.html#what-to-do-after-you-submit-your-materials",
+    "title": "Letter of Recommendation",
+    "section": "What to do after you submit your materials",
+    "text": "What to do after you submit your materials\n\nReply to my confirmation so I know you received my “letter submitted” notifications\nSend me updates on outcomes — accepted, rejected, waitlisted, whichever. Not for ego reasons: your outcomes help me calibrate how to write future letters for other students.\nSend a brief thank-you note. Not a gift. A note.\nStay in touch. Add me on LinkedIn, email when you have news, update me when you graduate or take a new position. I think about my former students often and I genuinely like hearing what happens to them."
+  },
+  {
+    "objectID": "resources/letters.html#language",
+    "href": "resources/letters.html#language",
+    "title": "Letter of Recommendation",
+    "section": "Language",
+    "text": "Language\nI can write letters in either English or French. For international programs outside Canada, I recommend English unless the program is in France, Belgium, Switzerland, or Francophone Africa. For Quebec or bilingual Canadian programs, either works; tell me your preference."
+  },
+  {
+    "objectID": "resources/letters.html#letters-i-will-write",
+    "href": "resources/letters.html#letters-i-will-write",
+    "title": "Letter of Recommendation",
+    "section": "Letters I will write",
+    "text": "Letters I will write\n\nGraduate school applications (MA, PhD) in political science, public policy, international affairs, development studies, and related fields\nFellowships and scholarships (SSHRC, Vanier, Fulbright, Rhodes, Trudeau, Marshall, etc.)\nResearch internships and summer programs\nJobs in research, policy, international development, data science, NGOs, think tanks, and civil society\nFormer lab members years later — once you’re in the lab, you’re in the rotation. No expiration date on letters of recommendation."
+  },
+  {
+    "objectID": "resources/letters.html#letters-that-work-best",
+    "href": "resources/letters.html#letters-that-work-best",
+    "title": "Letter of Recommendation",
+    "section": "Letters that work best",
+    "text": "Letters that work best\nA few honest observations after writing several hundred of these:\n\nStrong letters are specific. The best letters include a concrete anecdote that shows what makes you distinctive — an observation you made in class, a question no one else thought to ask, a creative methodological choice in a paper. This is why your self-brief matters so much: it gives me the raw material.\nStrong letters acknowledge limits. Good letter-writers do not pretend to know things they don’t. If I acknowledge that I only know you from one course, admissions committees will trust the parts I do claim more than if I oversold our relationship.\nStrong letters come from specific advocates, not generic ones. A letter from a methods person carries weight for methods-heavy programs. A letter from a post-Soviet specialist carries weight for programs with regional experts. Think about match."
+  },
+  {
+    "objectID": "resources/letters.html#faq",
+    "href": "resources/letters.html#faq",
+    "title": "Letter of Recommendation",
+    "section": "FAQ",
+    "text": "FAQ\nHow many letters can you write for me? There is no hard cap, but I ask that you ask early — especially during fall application season — so I can schedule my time.\nCan you write me a letter for a non-academic job? Yes, if it’s a field adjacent to research or policy (think tank, NGO, data science, government research, journalism with a data bent). Tell me in the initial email what kind of job it is so I can tailor the tone.\nCan I see the letter? No. Letters of recommendation are confidential by convention — admissions committees and employers trust letters that the student has not read. You can ask me generally what I plan to emphasize, and I may share key themes, but I will not share the text.\nCan you write me a letter for medical school, law school, or a pure economics PhD? Probably not. These fields have specialized letter conventions that I cannot speak to effectively, and a letter from me will be less useful than one from a professor who regularly writes for those programs. Ask someone in that field.\nWhat if I forgot to include a program on my spreadsheet? Email me the additions — program name, institution, deadline, submission method. Try to catch this early rather than late.\nWhat if my deadline is in less than two weeks? Ask me anyway, but understand that I may decline or limit how many programs I can write for. Have a backup plan.\nCan I reuse the same letter for multiple programs? The core letter is the same across programs. I tailor the opening and any program-specific details. You do not need to do anything — I handle tailoring once I have your spreadsheet.\nCan I get a letter years after I graduated? Yes. Email me the way you would for a first-time letter, and include a short note about what you’ve been doing since we last worked together. I will likely still have your prior folder and can build on what I wrote before."
+  },
+  {
+    "objectID": "resources/letters.html#contact",
+    "href": "resources/letters.html#contact",
+    "title": "Letter of Recommendation",
+    "section": "Contact",
+    "text": "Contact\nIf you have any questions about this process, or if you want to ask whether I would be a good fit to write your letter, please email me at aaron.erlich@mcgill.ca."
   },
   {
     "objectID": "resources/writing.html",
@@ -110,33 +208,5 @@
     "title": "Political Science Writing",
     "section": "",
     "text": "Download my writing advice (PDF)\nMany folks have written good advice: I highly recommend Barry Weingast’s, which can be found here. Also see Chris Blattman and Henry Farrell."
-  },
-  {
-    "objectID": "r-tutorials.html",
-    "href": "r-tutorials.html",
-    "title": "R Tutorials",
-    "section": "",
-    "text": "[Content for your R tutorials will go here]\nNote: You’ll need to fetch the content from your current R Tutorials page at https://www.aaronerlich.com/teaching/r-tutorials"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "About",
-    "section": "",
-    "text": "Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University of Washington in Seattle.\nBroadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as American Political Science Review, American Journal of Political Science, Comparative Political Studies, Journal of Politics, Journal of Public Administration Research & Theory, and Political Analysis, among others. You can see more about my academic work on my C.V.\nBefore returning to academia, I worked for the National Democratic Institute covering Kenya and the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.\nI am an avid bicycle tourer."
-  },
-  {
-    "objectID": "index.html#contact-me",
-    "href": "index.html#contact-me",
-    "title": "About",
-    "section": "Contact me",
-    "text": "Contact me\nAaron Erlich, Associate Professor Department of Political Science McGill University 3610 McTavish, Room 26-4 Montreal, Quebec, Canada H3A 1Y2 T: 514-398-4756 F: 514-398-4938 aaron.erlich [at] mcgill.ca"
-  },
-  {
-    "objectID": "index.html#affiliations",
-    "href": "index.html#affiliations",
-    "title": "About",
-    "section": "Affiliations",
-    "text": "Affiliations\nCentre for the Study of Democratic Citizenship Centre on Population Dynamics Center for Social Media and Politics"
   }
 ]
