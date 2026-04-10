@@ -166,20 +166,13 @@ body.cv-page main.content {
   margin-right: auto;
 }
 
-/* About page: left-justify content (not centered) */
+/* About page: same width as CV, no extra left offset */
 body.about-page #quarto-document-content,
 body.about-page main.content,
 body.about-page #title-block-header {
   max-width: 900px;
-  margin-left: 3em;
+  margin-left: auto;
   margin-right: auto;
-}
-@media (max-width: 768px) {
-  body.about-page #quarto-document-content,
-  body.about-page main.content,
-  body.about-page #title-block-header {
-    margin-left: 1em;
-  }
 }
 
 /* Tighten up the auto-generated <ul> bullets in presentations etc. */
