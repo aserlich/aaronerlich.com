@@ -4,7 +4,15 @@ page-layout: full
 body-classes: about-page
 ---
 
-<img src="images/profile.jpg" class="profile-photo" style="float: right; margin: 0 0 1em 1.5em;" alt="Aaron Erlich">
+<div class="profile-sidebar" style="float: right; margin: 0 0 1em 1.5em; text-align: center;">
+<img src="images/profile.jpg" class="profile-photo" alt="Aaron Erlich">
+<div class="academic-links" aria-label="Academic profiles">
+<a href="https://orcid.org/0000-0001-6571-9081" title="ORCID" aria-label="ORCID" rel="me noopener" target="_blank"><i class="ai ai-orcid"></i></a>
+<a href="https://scholar.google.ca/citations?user=h8n98PQAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="me noopener" target="_blank"><i class="ai ai-google-scholar"></i></a>
+<a href="https://bsky.app/profile/aaronerlich.bsky.social" title="Bluesky" aria-label="Bluesky" rel="me noopener" target="_blank"><i class="bi bi-bluesky"></i></a>
+<a href="https://osf.io/25gep/" title="OSF" aria-label="OSF" rel="me noopener" target="_blank"><i class="ai ai-osf"></i></a>
+</div>
+</div>
 
 <span data-i18n="index.welcome">Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University of Washington in Seattle.</span>
 

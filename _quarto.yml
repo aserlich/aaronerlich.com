@@ -37,6 +37,8 @@ website:
 format:
   html:
     theme: cosmo
-    css: styles.css
+    css:
+      - styles.css
+      - https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css
     toc: false
     include-after-body: _generated/i18n-toggle.html

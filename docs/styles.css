@@ -107,6 +107,26 @@ img {
   .profile-photo { width: 180px; height: 180px; }
 }
 
+.academic-links {
+  display: flex;
+  justify-content: center;
+  gap: 0.85em;
+  margin-top: -0.25em;
+  font-size: 1.6rem;
+}
+
+.academic-links a {
+  color: #6b1b1b;
+  text-decoration: none;
+  transition: color 0.15s ease, transform 0.15s ease;
+}
+
+.academic-links a:hover,
+.academic-links a:focus {
+  color: #000;
+  transform: translateY(-2px);
+}
+
 /* ===========================================================
    Collapsible sections (<details>)
    =========================================================== */
