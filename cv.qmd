@@ -62,7 +62,13 @@ format:
 <li><span data-i18n="education.2.degrees.0.degree">B.A., cum laude, Government</span>, 2002</li>
 </ul></div>
 <h2><span data-i18n="section_headers.peer_reviewed">Peer-Reviewed Publications</span></h2>
-<ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 30">
+<ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 31">
+<li class="cv-pub" id="pub-erlich_WhoShould_">
+<span class="cv-pub-title">&ldquo;Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora.&rdquo;</span>
+ <span class="cv-pub-status">Forthcoming.</span>
+ <em class="cv-pub-venue">Comparative Migration Studies</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl)</span>
+</li>
 <li class="cv-pub" id="pub-erlich_CanNormBased_2023">
 <a class="cv-pub-title" href="https://www.ipr.northwestern.edu/documents/working-papers/2023/wp-23-33.pdf">&ldquo;Can Norm-Based Information Campaigns Reduce Corruption?.&rdquo;</a>
  <span class="cv-pub-year">2023.</span>
@@ -309,9 +315,8 @@ format:
 </li>
 </ol>
 <h2><span data-i18n="section_headers.under_review">Under Review / To Resubmit</span></h2>
-<ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 8">
+<ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 7">
 <li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;Studying Global Diasporas via Social Media Recruitment: Practical Considerations.&rdquo;</span> (with Zeke Chen and Thomas Soehl) <em class="cv-pub-status">Revise &amp; Resubmit at International Journal of Social Research Methodology</em></li>
-<li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora.&rdquo;</span> (with Thomas Soehl) <em class="cv-pub-status">Revise &amp; Resubmit</em></li>
 <li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;A 'mega study' of approaches for sharing accurate news in the face of government repression.&rdquo;</span> (with Julia Minson, Jordan Gans-Morse, and Christopher Higgins) <em class="cv-pub-status">Under Review</em></li>
 <li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;War Fatigue?.&rdquo;</span> (with Rafael Campos-Gottardo) <em class="cv-pub-status">Under Review</em></li>
 <li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;Border proximity and preferences for conflict resolution in Eastern Ukraine.&rdquo;</span> (with Calvin Garner and Matej Jungwirth) <em class="cv-pub-status">Under Review</em></li>

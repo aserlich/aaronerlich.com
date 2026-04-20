@@ -5,6 +5,15 @@ summary:
   no_match: 40
 sections:
   peer-reviewed:
+  - latex_title: 'Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora'
+    latex_year: null
+    match_citekey: erlich_WhoShould_
+    match_zotero_title: 'Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora'
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_status: Forthcoming
   - latex_title: Can Norm-Based Information Campaigns Reduce Corruption?
     latex_year: null
     match_citekey: erlich_CanNormBased_2023
