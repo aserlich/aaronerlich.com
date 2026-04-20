@@ -24,23 +24,41 @@ const FROM_ADDRESS = "Letter Intake <noreply@aaronerlich.com>";
 export async function sendNotificationEmail(
   env: EmailEnv,
   request: LetterRequest,
-  uploadedFiles: Array<{ name: string; size: number }>,
+  uploadedFiles: Array<{ name: string; size: number; slot?: string }>,
 ): Promise<void> {
   const subject = `Letter request: ${request.first_name} ${request.last_name} (${request.category})`;
 
+  const methodLabel: Record<string, string> = {
+    portal: "online portal (student has URL)",
+    portal_emailed: "online portal (you'll receive a link by email)",
+    email: "email",
+    mail: "postal mail",
+  };
+
   const programLines =
     (request.programs ?? [])
-      .map(
-        (p) =>
-          `  • ${p.name}${p.deadline ? ` — deadline ${p.deadline}` : ""}`,
-      )
+      .map((p) => {
+        const header = `  • ${p.name} — ${p.institution}`;
+        const when = p.deadline ? `\n      deadline: ${p.deadline}` : "";
+        const where = p.city ? `\n      location: ${p.city}` : "";
+        const how = p.submission_method
+          ? `\n      submit via: ${methodLabel[p.submission_method] ?? p.submission_method}${p.portal_url ? ` — ${p.portal_url}` : ""}`
+          : "";
+        const waived = p.waived_right === true ? "\n      right to access: waived" : "";
+        const notes = p.notes ? `\n      notes: ${p.notes}` : "";
+        return header + when + where + how + waived + notes;
+      })
       .join("\n") || "  (none listed)";
 
   const fileLines = uploadedFiles
-    .map((f) => `  • ${f.name} (${formatSize(f.size)})`)
+    .map((f) => {
+      const tag = f.slot ? `[${f.slot}] ` : "";
+      return `  • ${tag}${f.name} (${formatSize(f.size)})`;
+    })
     .join("\n");
 
-  const folderAbs = `$HOME/Library/CloudStorage/OneDrive-McGillUniversity/LORs/${request.folder_path}`;
+  const folderDropbox = `$HOME/Dropbox/Apps/letter-upload-worker/LORs/${request.folder_path}`;
+  const folderOneDrive = `$HOME/Library/CloudStorage/OneDrive-McGillUniversity/LORs/${request.folder_path}`;
 
   const body = `New letter-request materials uploaded.
 
@@ -57,8 +75,10 @@ ${programLines}
 
 Next steps:
 
-1. Open the folder in Finder:
-   open "${folderAbs}"
+1. Open the folder in Finder (Dropbox — files land here first):
+   open "${folderDropbox}"
+   After the rsync mirror runs (launchd, every 5 min), they'll also be at:
+   ${folderOneDrive}
 
 2. Run the Claude skill to draft the letter:
    python3 ~/.claude/skills/letter-draft/letter_draft.py --token ${request.token}
@@ -78,6 +98,7 @@ Next steps:
     body: JSON.stringify({
       from: FROM_ADDRESS,
       to: [env.NOTIFICATION_EMAIL],
+      reply_to: env.NOTIFICATION_EMAIL,
       subject,
       text: body,
     }),

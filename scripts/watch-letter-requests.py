@@ -33,7 +33,7 @@ except ImportError:
 REPO = Path(__file__).resolve().parents[1]
 LETTERS_PATH = REPO / "_data" / "letter-requests.yml"
 SKILL_SCRIPT = Path.home() / ".claude" / "skills" / "letter-draft" / "letter_draft.py"
-LOG_PATH = Path.home() / "Library" / "Logs" / "letter-watcher.log"
+LOG_PATH = Path.home() / "Library" / "Caches" / "letter-watcher.log"
 LOCK_PATH = Path("/tmp/letter-watcher.lock")
 
 

@@ -24,7 +24,7 @@ contact:
     ru: Доцент
     uk: Доцент
     ka: ასოცირებული პროფესორი
-    de: Außerordentlicher Professor
+    de: Professor
   department:
     en: Department of Political Science
     fr: Département de science politique
@@ -32,7 +32,7 @@ contact:
     ru: Кафедра политических наук
     uk: Кафедра політичних наук
     ka: პოლიტიკური მეცნიერების დეპარტამენტი
-    de: Department of Political Science
+    de: Institut für Politikwissenschaft
   institution: McGill University
   address_line1: 855 Sherbrooke Street West
   address_line2: Montréal, QC, H3A 2T7
@@ -57,7 +57,7 @@ academic_appointments:
     ru: Кафедра политических наук
     uk: Кафедра політичних наук
     ka: პოლიტიკური მეცნიერების დეპარტამენტი
-    de: Department of Political Science
+    de: Institut für Politikwissenschaft
   location: Montréal, QC
   positions:
   - role:
@@ -67,7 +67,7 @@ academic_appointments:
       ru: Доцент
       uk: Доцент
       ka: ასოცირებული პროფესორი
-      de: Außerordentlicher Professor
+      de: Professor
     dates: 2023–
   - role:
       en: Assistant Professor

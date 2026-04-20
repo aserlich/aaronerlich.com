@@ -10,7 +10,27 @@
 
 export type Program = {
   name: string;
-  deadline?: string;
+  institution: string;
+  city?: string;
+  deadline: string;                    // ISO date YYYY-MM-DD
+  submission_method: "portal" | "portal_emailed" | "email" | "mail";
+  portal_url?: string;
+  waived_right?: boolean;
+  notes?: string;
+};
+
+export type LetterState =
+  | "pending_upload"
+  | "uploaded"
+  | "drafting"
+  | "draft_ready"
+  | "approved"
+  | "sent"
+  | "closed";
+
+export type StateLogEntry = {
+  state: LetterState;
+  at: string; // ISO timestamp
 };
 
 export type LetterRequest = {
@@ -22,16 +42,10 @@ export type LetterRequest = {
   letter_type: "ma" | "phd" | "job_or_internship";
   folder_path: string;
   programs?: Program[];
-  state:
-    | "pending_upload"
-    | "uploaded"
-    | "drafting"
-    | "draft_ready"
-    | "approved"
-    | "sent"
-    | "closed";
+  state: LetterState;
   created: string;
   returning?: boolean;
+  state_log?: StateLogEntry[];
 };
 
 export async function lookupToken(

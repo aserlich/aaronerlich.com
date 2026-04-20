@@ -33,7 +33,7 @@ MAX_FILES = "12"
 # Flask admin's _data/letter-requests.yml
 [[kv_namespaces]]
 binding = "TOKENS"
-id = "REPLACE_AFTER_RUNNING_wrangler_kv_namespace_create"
+id = "5df261b8e3a94338817aedaf3284b0f5"
 
 # Custom domain: upload.aaronerlich.com
 # Requires a CNAME on the aaronerlich.com DNS pointing at workers.dev, then

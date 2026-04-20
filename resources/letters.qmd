@@ -30,7 +30,9 @@ If you have taken a single large lecture with me and we have not spoken outside 
 
 ## How to make the initial request
 
-Send me a short email with:
+You can ask in person during my office hours, or by email. In person, just ask — we can talk through the rest.
+
+If you ask by email, please include:
 
 1. A one-paragraph reminder of who you are — how we know each other (course, lab, thesis), when, and the highlights of your work together
 2. A brief summary of what you are applying to and the earliest deadline
@@ -40,17 +42,15 @@ I will reply within **three business days** to tell you whether I can write a st
 
 ## What to upload
 
-When I send you the upload link, please include **all five** of the items below in a single submission:
+When I send you the upload link, you'll first fill in the programs you're applying to (program name, institution, deadline, submission method, portal URL if you have one, etc.) directly in the form. Then upload **all four** of the documents below in the same submission:
 
-**1. Statement of purpose.** If you are writing different statements for different programs, include each one labeled by program. I will read these to anchor my letter to the specific story you are telling admissions committees — rather than writing a generic letter that could apply to anyone.
+**1. Statement of purpose.** If you are writing different statements for different programs, combine them into a single ZIP. I will read these to anchor my letter to the specific story you are telling admissions committees — rather than writing a generic letter that could apply to anyone.
 
-**2. Unofficial transcript.** So I can reference specific grades and courses. If you have taken other methods or quantitative courses beyond what you took with me, the transcript tells me.
+**2. Unofficial transcript.** So I can reference specific grades and courses. If you have taken other methods or quantitative courses beyond what you took with me, the transcript tells me. Combine multiple transcripts (e.g., undergrad + grad) into a single PDF.
 
 **3. Your CV or résumé.** Keep it to one page for undergraduates, up to two pages for MA students.
 
-**4. Program spreadsheet.** A list of every program or job you are applying to, with: program name, institution, city, deadline (date + time + time zone), submission method, portal URL, whether the letter is waived-right-to-access, and any program-specific requirements. An Excel file or Google Sheet works. This prevents me from missing deadlines or uploading to the wrong portal.
-
-**5. A self-brief.** This is the most important document and the one most students skip. Write me a 1–2 page document that includes:
+**4. A self-brief.** This is the most important document and the one most students skip. Write me a 1–2 page document that includes:
 
 - **Three specific moments** from our work together that stood out — a comment you made in class, a question in office hours, a paper you wrote, a piece of research assistance. Being specific jogs my memory and gives me raw material for the letter.
 - **Your career goals** and how this program fits into them
@@ -63,7 +63,7 @@ Without the self-brief, my letters are generic. With it, they are specific and m
 ## Process and timeline
 
 1. **Initial inquiry** — you email me asking if I can write. I reply within 3 business days.
-2. **If I agree** — I tell you how to send materials (upload link or email) and you submit all five items in a single batch.
+2. **If I agree** — I tell you how to send materials (upload link or email) and you submit all four documents in a single batch.
 3. **I draft the letter** — typically within a week of receiving your materials, sometimes faster.
 4. **I submit** — I upload to each portal on your spreadsheet. For letters I send by email, I CC you on the first submission so you have confirmation.
 5. **You confirm and update me** — let me know whenever an application goes through, and eventually how the decisions come out.
@@ -77,7 +77,7 @@ Without the self-brief, my letters are generic. With it, they are specific and m
 
 ## Language
 
-I can write letters in either **English** or **French**. For international programs outside Canada, I recommend English unless the program is in France, Belgium, Switzerland, or Francophone Africa. For Quebec or bilingual Canadian programs, either works; tell me your preference.
+I generally write letters in English.
 
 ## Letters I will write
 
@@ -107,16 +107,16 @@ Yes, if it's a field adjacent to research or policy (think tank, NGO, data scien
 No. Letters of recommendation are confidential by convention — admissions committees and employers trust letters that the student has not read. You can ask me generally what I plan to emphasize, and I may share key themes, but I will not share the text.
 
 **Can you write me a letter for medical school, law school, or a pure economics PhD?**
-Probably not. These fields have specialized letter conventions that I cannot speak to effectively, and a letter from me will be less useful than one from a professor who regularly writes for those programs. Ask someone in that field.
+Yes, I can. Before you ask, just think carefully about whether I am the best person — a professor who regularly writes for the field you're applying to (a pre-med advisor, a law professor, an economist) will usually be more familiar with the conventions of those letters than I am. If I am one of the people who knows you best, I am happy to write.
 
-**What if I forgot to include a program on my spreadsheet?**
+**What if I forgot to include a program on the form?**
 Email me the additions — program name, institution, deadline, submission method. Try to catch this early rather than late.
 
 **What if my deadline is in less than two weeks?**
 Ask me anyway, but understand that I may decline or limit how many programs I can write for. Have a backup plan.
 
 **Can I reuse the same letter for multiple programs?**
-The core letter is the same across programs. I tailor the opening and any program-specific details. You do not need to do anything — I handle tailoring once I have your spreadsheet.
+The core letter is the same across programs. I tailor the opening and any program-specific details. You do not need to do anything — I handle tailoring once I have your program list from the form.
 
 **Can I get a letter years after I graduated?**
 Yes. Email me the way you would for a first-time letter, and include a short note about what you've been doing since we last worked together. I will likely still have your prior folder and can build on what I wrote before.

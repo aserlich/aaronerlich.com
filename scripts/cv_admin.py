@@ -1304,6 +1304,32 @@ def save_letters(data: dict) -> None:
         yaml.safe_dump(data, f, allow_unicode=True, sort_keys=False, width=120, default_flow_style=False)
 
 
+def sync_tokens_to_kv_async() -> None:
+    """Fire-and-forget: push active letter-request tokens to Cloudflare KV
+    so the Worker can validate them immediately. Called after creating a
+    new letter request so Aaron doesn't have to remember to run the sync
+    script manually before emailing the student their upload link.
+
+    Runs asynchronously to keep the Flask response snappy — typical KV
+    sync takes <1s but network hiccups can stretch that."""
+    sync_script = REPO / "scripts" / "sync-letter-tokens-to-kv.py"
+    if not sync_script.exists():
+        return
+    try:
+        # Popen with no wait() — child process runs independently
+        subprocess.Popen(
+            [sys.executable, str(sync_script)],
+            cwd=str(REPO),
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+            start_new_session=True,
+        )
+    except Exception as e:
+        # Don't block letter creation on sync failures — user can run
+        # `python3 scripts/sync-letter-tokens-to-kv.py` manually.
+        app.logger.warning(f"sync-to-KV launch failed: {e}")
+
+
 def find_letter(token: str) -> tuple[int, dict | None]:
     """Return (index, entry) for a given token, or (-1, None)."""
     data = load_letters()
@@ -1450,19 +1476,6 @@ def letters_new():
             flash("Invalid letter type", "error")
             return redirect(url_for("letters_new"))
 
-        # Parse programs (one per line: "Program Name | deadline")
-        programs = []
-        programs_text = request.form.get("programs") or ""
-        for line in programs_text.splitlines():
-            line = line.strip()
-            if not line:
-                continue
-            if "|" in line:
-                name, deadline = line.split("|", 1)
-                programs.append({"name": name.strip(), "deadline": deadline.strip()})
-            else:
-                programs.append({"name": line, "deadline": ""})
-
         folder_name = f"{last_name}_{first_name}_{first_year}"
         folder_path = f"{category}/{folder_name}"
         token = secrets.token_urlsafe(18)  # ~24 chars
@@ -1475,7 +1488,7 @@ def letters_new():
             "category": category,
             "letter_type": letter_type,
             "folder_path": folder_path,
-            "programs": programs,
+            "programs": [],  # populated by the student via the Worker form
             "state": "pending_upload",
             "created": _date.today().isoformat(),
             "state_log": [
@@ -1485,6 +1498,7 @@ def letters_new():
         data = load_letters()
         data["requests"].append(entry)
         save_letters(data)
+        sync_tokens_to_kv_async()
         return redirect(url_for("letters_detail", token=token))
 
     today_year = _date.today().year
@@ -1516,8 +1530,11 @@ def letters_new():
     {% endfor %}
   </select>
 
-  <label>Programs / deadlines (one per line, <code>Program Name | YYYY-MM-DD</code>)</label>
-  <textarea name="programs" rows="4" placeholder="Oxford DPhil Politics | 2026-12-01&#10;Yale PhD Polisci | 2026-12-15"></textarea>
+  <p style="background:#fff8e1;border-left:4px solid #e0c060;padding:0.8em 1em;margin:1.2em 0;font-size:0.92em">
+    <strong>Note:</strong> The student fills in their list of programs, deadlines, portal URLs, etc. on the upload form itself.
+    You don't enter any of that here — just generate the link, paste it into your reply email, and after they submit run
+    <code>scripts/pull-letter-forms-from-kv.py</code> to pull their answers back into this dashboard.
+  </p>
 
   <button type="submit">Generate upload link</button>
   <a href="{{ url_for('letters_view') }}" style="margin-left:1em">Cancel</a>
@@ -1577,18 +1594,6 @@ def letters_reupload_confirm():
             flash("Invalid letter type", "error")
             return redirect(url_for("letters_reupload_confirm", category=category, folder_name=folder_name))
 
-        programs = []
-        programs_text = request.form.get("programs") or ""
-        for line in programs_text.splitlines():
-            line = line.strip()
-            if not line:
-                continue
-            if "|" in line:
-                name, deadline = line.split("|", 1)
-                programs.append({"name": name.strip(), "deadline": deadline.strip()})
-            else:
-                programs.append({"name": line, "deadline": ""})
-
         # Parse folder name: LastName_FirstName_YYYY
         parts = folder_name.rsplit("_", 1)
         try:
@@ -1610,7 +1615,7 @@ def letters_reupload_confirm():
             "category": category,
             "letter_type": letter_type,
             "folder_path": f"{category}/{folder_name}",
-            "programs": programs,
+            "programs": [],  # populated by the student via the Worker form
             "returning": True,
             "state": "pending_upload",
             "created": _date.today().isoformat(),
@@ -1621,6 +1626,7 @@ def letters_reupload_confirm():
         data = load_letters()
         data["requests"].append(entry)
         save_letters(data)
+        sync_tokens_to_kv_async()
         return redirect(url_for("letters_detail", token=token))
 
     return render_template_string(
@@ -1637,8 +1643,10 @@ def letters_reupload_confirm():
     <option value="{{ val }}">{{ label }}</option>
     {% endfor %}
   </select>
-  <label>Programs / deadlines (one per line, <code>Program Name | YYYY-MM-DD</code>)</label>
-  <textarea name="programs" rows="4"></textarea>
+  <p style="background:#fff8e1;border-left:4px solid #e0c060;padding:0.8em 1em;margin:1.2em 0;font-size:0.92em">
+    <strong>Note:</strong> The student fills in programs, deadlines, and portal URLs on the upload form itself.
+    Run <code>scripts/pull-letter-forms-from-kv.py</code> after they submit to mirror their answers back here.
+  </p>
   <button type="submit">Generate re-upload link</button>
   <a href="{{ url_for('letters_reupload_pick') }}" style="margin-left:1em">Back</a>
 </form>
@@ -1677,11 +1685,22 @@ def letters_detail(token):
 {% if r.programs %}
 <ul>
   {% for p in r.programs %}
-  <li><strong>{{ p.name }}</strong>{% if p.deadline %} — deadline {{ p.deadline }}{% endif %}</li>
+  <li>
+    <strong>{{ p.name }}</strong>
+    {% if p.institution %} — {{ p.institution }}{% endif %}
+    {% if p.city %} ({{ p.city }}){% endif %}
+    <br><small>
+      {% if p.deadline %}Deadline: <code>{{ p.deadline }}</code>{% endif %}
+      {% if p.submission_method %} &nbsp; · &nbsp; via <code>{{ p.submission_method }}</code>{% endif %}
+      {% if p.portal_url %} &nbsp; · &nbsp; <a href="{{ p.portal_url }}" target="_blank" rel="noopener">{{ p.portal_url }}</a>{% endif %}
+      {% if p.waived_right %} &nbsp; · &nbsp; waived{% endif %}
+    </small>
+    {% if p.notes %}<br><small><em>{{ p.notes }}</em></small>{% endif %}
+  </li>
   {% endfor %}
 </ul>
 {% else %}
-<p><em>None listed.</em></p>
+<p><em>No programs submitted yet.</em> Once the student fills in the form, run <code>scripts/pull-letter-forms-from-kv.py</code> to pull the data.</p>
 {% endif %}
 
 <h3>State transitions</h3>

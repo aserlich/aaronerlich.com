@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.aaronerlich.letter-pipeline</string>
+
+  <!--
+    Runs the full letter-of-rec submission pipeline once every 5 minutes:
+    pull KV → rsync Dropbox to OneDrive → run letter-draft skill.
+
+    The orchestration script is at scripts/letter-pipeline.sh and handles
+    all three stages with per-stage locks. Logs to
+    ~/Library/Caches/letter-pipeline.log.
+
+    Install (one-time):
+      cp ~/Dropbox/admin_projects/aaronerlich.com/scripts/com.aaronerlich.letter-pipeline.plist \
+         ~/Library/LaunchAgents/
+      launchctl load ~/Library/LaunchAgents/com.aaronerlich.letter-pipeline.plist
+
+    Remove:
+      launchctl unload ~/Library/LaunchAgents/com.aaronerlich.letter-pipeline.plist
+      rm ~/Library/LaunchAgents/com.aaronerlich.letter-pipeline.plist
+
+    Verify it's loaded:
+      launchctl list | grep letter-pipeline
+
+    Watch the log:
+      tail -f ~/Library/Caches/letter-pipeline.log
+  -->
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/bash</string>
+    <string>/Users/aaronerlich/Dropbox/admin_projects/aaronerlich.com/scripts/letter-pipeline.sh</string>
+  </array>
+
+  <key>StartInterval</key>
+  <integer>300</integer>
+
+  <!-- Run at login so the queue drains immediately on boot. -->
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- launchd's own stdout/stderr (for wrapper-level errors from
+       bash itself); the script writes its own timestamped log to
+       ~/Library/Caches/letter-pipeline.log. -->
+  <key>StandardOutPath</key>
+  <string>/Users/aaronerlich/Library/Caches/letter-pipeline.launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/aaronerlich/Library/Caches/letter-pipeline.launchd.log</string>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/aaronerlich/Dropbox/admin_projects/aaronerlich.com</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+    <key>HOME</key>
+    <string>/Users/aaronerlich</string>
+  </dict>
+
+  <!-- Scheduled, not persistent. launchd reschedules via StartInterval. -->
+  <key>KeepAlive</key>
+  <false/>
+</dict>
+</plist>

@@ -58,3 +58,53 @@ institutions:
   # Add more as you discover them. When Aaron flags "this should be in
   # French" or similar, add an entry here and re-run translate-cv.py --force
   # to regenerate.
+
+# Academic titles / ranks. Pinned here when a language does not have a
+# 1:1 equivalent of the English rank and the machine translation would
+# otherwise invent one (or use a calque that misrepresents the role).
+titles:
+  - en: "Associate Professor"
+    fr: "Professeur agrégé"      # Quebec usage; France uses "Maître de conférences HDR"
+    es: "Profesor Asociado"      # Latin American norm; "Profesor agregado" is a calque
+    ru: "Доцент"                 # post-Soviet rank, cultural equivalent
+    uk: "Доцент"                 # post-Soviet rank, cultural equivalent
+    ka: "ასოცირებული პროფესორი"   # Georgia adopted Western 3-tier post-2005 reform
+    de: "Professor"              # German academia has no 'associate' tier
+    note: >
+      German Habilitation system has no Associate Professor rank —
+      once you're a Professor (W2/W3), you're a Professor. Post-Soviet
+      'Доцент' is the natural cultural equivalent, not the calque
+      'ассоциированный профессор'.
+
+  - en: "Assistant Professor"
+    fr: "Professeur adjoint"
+    es: "Profesor Asistente"
+    ru: "Ассистент профессора"
+    uk: "Асистент професора"
+    ka: "ასისტენტ-პროფესორი"
+    de: "Juniorprofessor"        # German tenure-track; "Assistenzprofessor" is AT/CH
+    note: >
+      In Germany proper the tenure-track rank is Juniorprofessor;
+      Assistenzprofessor is Austrian/Swiss. Post-Soviet systems
+      traditionally use Ассистент/Асистент (plain assistant) — not a
+      perfect match for the North American tenure-track rank, but
+      closest in context.
+
+# Academic unit names (departments, institutes, centres). Pinned when
+# the target language uses a different organizational word than the
+# literal calque of "department" would suggest.
+departments:
+  - en: "Department of Political Science"
+    fr: "Département de science politique"    # Quebec usage
+    es: "Departamento de Ciencia Política"    # singular; LatAm often uses plural
+    ru: "Кафедра политических наук"            # alt: "Кафедра политологии" (single-word form)
+    uk: "Кафедра політичних наук"              # alt: "Кафедра політології"
+    ka: "პოლიტიკური მეცნიერების დეპარტამენტი"
+    de: "Institut für Politikwissenschaft"    # NOT "Department"; German universities have Institute
+    note: >
+      German academic units are "Institute" (Institut), not
+      "Department" — the English word exists in a few newer
+      German schools but is not standard. Russian/Ukrainian
+      "Кафедра" is a sub-unit within a Faculty, which structurally
+      matches a North American departmental chair better than
+      "Факультет" (Faculty).

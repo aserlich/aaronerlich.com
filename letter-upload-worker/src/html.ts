@@ -10,9 +10,9 @@ const commonStyles = `
   * { box-sizing: border-box; }
   body {
     font-family: "Space Mono", ui-monospace, Menlo, monospace;
-    max-width: 680px;
+    max-width: 920px;
     margin: 2.5em auto;
-    padding: 0 1.2em;
+    padding: 0 1.5em;
     color: #222;
     background: #fafafa;
     line-height: 1.55;
@@ -47,6 +47,60 @@ const commonStyles = `
     border: 1px dashed #aaa;
     border-radius: 3px;
   }
+  input[type=text], input[type=url], input[type=date], input[type=time],
+  select, textarea {
+    width: 100%;
+    padding: 0.5em 0.6em;
+    font-family: inherit;
+    font-size: 0.95em;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background: #fff;
+    margin-top: 0.2em;
+  }
+  textarea { resize: vertical; min-height: 3em; }
+  input:focus, select:focus, textarea:focus {
+    outline: 2px solid var(--maroon);
+    outline-offset: 0;
+    border-color: var(--maroon);
+  }
+  fieldset.program-row {
+    border: 1px solid var(--maroon);
+    border-radius: 3px;
+    padding: 0.8em 1.2em 1em;
+    margin: 1em 0;
+    background: #fff;
+  }
+  fieldset.program-row legend {
+    color: var(--maroon);
+    font-weight: 700;
+    padding: 0 0.5em;
+  }
+  .program-row label {
+    font-size: 0.9em;
+    margin-top: 0.7em;
+  }
+  .program-row label.inline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4em;
+    font-weight: 400;
+  }
+  .program-row label.inline input[type=checkbox] {
+    width: auto;
+    margin: 0;
+  }
+  .program-row .row-controls {
+    margin-top: 1em;
+    text-align: right;
+  }
+  .program-row button.remove-row {
+    background: #fff;
+    color: var(--maroon);
+    border: 1px solid var(--maroon);
+    padding: 0.4em 1em;
+    font-size: 0.85em;
+  }
   button {
     background: var(--maroon);
     color: #fff;
@@ -59,6 +113,15 @@ const commonStyles = `
     cursor: pointer;
   }
   button:hover { background: #8a2828; }
+  button.add-program {
+    background: #fff;
+    color: var(--maroon);
+    border: 1px dashed var(--maroon);
+    padding: 0.6em 1.2em;
+    font-size: 0.9em;
+    margin-bottom: 1.2em;
+  }
+  button.add-program:hover { background: #fdf4f4; }
   .checklist {
     background: #fff8e1;
     padding: 1em 1.5em;
@@ -92,78 +155,214 @@ ${inner}
 }
 
 export function renderUploadForm(req: LetterRequest): string {
-  const programs =
-    (req.programs ?? [])
-      .map(
-        (p) =>
-          `<li><strong>${escapeHtml(p.name)}</strong>${
-            p.deadline ? ` — deadline ${escapeHtml(p.deadline)}` : ""
-          }</li>`,
-      )
-      .join("") || "<li><em>No specific programs listed</em></li>";
-
   const returningNote = req.returning
-    ? `<p><em>This is a re-upload for materials building on my prior letter for you. New files will land alongside the previous cycle's materials.</em></p>`
+    ? `<p><em>This submission is for a new cycle of applications. Files will land alongside your previous cycle's materials, and I'll reuse what I remember about you from last time.</em></p>`
     : "";
 
   const inner = `
-<h1>Letter of Recommendation — Material Upload</h1>
+<h1>Letter of Recommendation — Submission</h1>
 
 <p>Hi ${escapeHtml(req.first_name)},</p>
 
-<p>This is your personalized upload link for the letter of recommendation I'm writing on your behalf. Please upload the materials below in a single submission — the link is single-use and tied to your application.</p>
+<p>This is your personalized submission link for the letter of recommendation I'm writing on your behalf. Please fill in the programs you're applying to and upload your materials below in a single submission — the link is single-use and tied to your application.</p>
 
 ${returningNote}
 
-<h2>Programs I'm writing for</h2>
-<ul>${programs}</ul>
+<form method="post" enctype="multipart/form-data" id="letter-form">
+  <h2>Programs you're applying to</h2>
+  <p>Fill in one section per program. Click "Add another program" if you're applying to more than one.</p>
 
-<div class="checklist">
-<strong>Please upload (one submission, ideally):</strong>
-<ol>
-  <li><strong>Statement of purpose</strong> — one per program if they differ</li>
-  <li><strong>Unofficial transcript</strong></li>
-  <li><strong>Your CV / résumé</strong></li>
-  <li><strong>A "self-brief"</strong>: a short document (1–2 pages) with specific anecdotes from our interactions, career goals, and anything you'd like me to highlight. See <a href="https://aaronerlich.com/resources/letters.html" target="_blank">my letters page</a> for details on what to include.</li>
-  <li><strong>A list of programs + deadlines</strong> (spreadsheet or document) — so I submit to the right places by the right dates</li>
-</ol>
-</div>
+  <div id="programs-container">
+    ${renderProgramRow(0)}
+  </div>
 
-<form method="post" enctype="multipart/form-data">
-  <label for="files">Select files (up to 12, 50 MB each):</label>
-  <input type="file" name="files" id="files" multiple required>
-  <button type="submit">Upload materials</button>
+  <button type="button" class="add-program" id="add-program">+ Add another program</button>
+
+  <h2>Materials to upload</h2>
+  <p>All four documents below are required. PDF preferred (DOCX accepted). Max 50 MB per file. You don't need a separate "list of programs" file — the form above captures everything I need.</p>
+
+  <fieldset class="program-row">
+    <legend>1. Statement of purpose *</legend>
+    <label>If you have <strong>different statements per program</strong>, combine them into a single ZIP file (or merge into one PDF labeled by program section). One file per slot.<input type="file" name="file_statement" accept=".pdf,.docx,.zip" required></label>
+  </fieldset>
+
+  <fieldset class="program-row">
+    <legend>2. Transcript *</legend>
+    <label>If you have <strong>multiple transcripts</strong> (e.g., undergrad + grad, or transcripts from multiple universities), combine them into a single PDF before uploading.<input type="file" name="file_transcript" accept=".pdf" required></label>
+  </fieldset>
+
+  <fieldset class="program-row">
+    <legend>3. CV / résumé *</legend>
+    <label>One page for undergraduates, up to two pages for MA students.<input type="file" name="file_cv" accept=".pdf,.docx" required></label>
+  </fieldset>
+
+  <fieldset class="program-row">
+    <legend>4. Self-brief *</legend>
+    <label>A 1–2 page document with specific anecdotes from our interactions, your career goals, and anything you'd like me to highlight. See <a href="https://aaronerlich.com/resources/letters.html" target="_blank">my letters page</a> for the full description of what to include.<input type="file" name="file_selfbrief" accept=".pdf,.docx" required></label>
+  </fieldset>
+
+  <input type="hidden" name="programs_json" id="programs_json" value="">
+
+  <button type="submit" id="submit-btn">Submit programs + materials</button>
 </form>
 
-<p class="meta">This link is unique to you and can only be used once. Materials go directly to my secure OneDrive and are never visible publicly. If you run into trouble, email <a href="mailto:aaron.erlich@mcgill.ca">aaron.erlich@mcgill.ca</a>.</p>`;
+<p class="meta">This link is unique to you and can only be used once. Materials go directly to my secure OneDrive and are never visible publicly. If you run into trouble, email <a href="mailto:aaron.erlich@mcgill.ca">aaron.erlich@mcgill.ca</a>.</p>
 
-  return wrap(`Letter upload — ${req.first_name} ${req.last_name}`, inner);
+<script>
+(function () {
+  var container = document.getElementById("programs-container");
+  var addBtn = document.getElementById("add-program");
+  var form = document.getElementById("letter-form");
+  var rowTemplate = container.querySelector("fieldset.program-row").outerHTML;
+
+  function renumberRows() {
+    var rows = container.querySelectorAll("fieldset.program-row");
+    rows.forEach(function (row, idx) {
+      row.setAttribute("data-row", String(idx));
+      var legend = row.querySelector("legend");
+      if (legend) legend.textContent = "Program " + (idx + 1);
+      var removeBtn = row.querySelector("button.remove-row");
+      if (removeBtn) removeBtn.style.display = rows.length > 1 ? "" : "none";
+    });
+  }
+
+  addBtn.addEventListener("click", function () {
+    var wrapper = document.createElement("div");
+    wrapper.innerHTML = rowTemplate;
+    var fresh = wrapper.firstElementChild;
+    // Clear any values carried over from the template HTML
+    fresh.querySelectorAll("input, textarea, select").forEach(function (el) {
+      if (el.type === "checkbox") {
+        el.checked = false;
+      } else if (el.tagName === "SELECT") {
+        el.selectedIndex = 0;
+      } else {
+        el.value = "";
+      }
+    });
+    container.appendChild(fresh);
+    renumberRows();
+  });
+
+  container.addEventListener("click", function (e) {
+    var t = e.target;
+    if (t && t.classList && t.classList.contains("remove-row")) {
+      var rows = container.querySelectorAll("fieldset.program-row");
+      if (rows.length > 1) {
+        t.closest("fieldset.program-row").remove();
+        renumberRows();
+      }
+    }
+  });
+
+  form.addEventListener("submit", function (e) {
+    var rows = container.querySelectorAll("fieldset.program-row");
+    var programs = [];
+    rows.forEach(function (row) {
+      var get = function (name) {
+        var el = row.querySelector("[name='" + name + "']");
+        return el ? el.value.trim() : "";
+      };
+      var checked = function (name) {
+        var el = row.querySelector("[name='" + name + "']");
+        return !!(el && el.checked);
+      };
+      programs.push({
+        name: get("program_name"),
+        institution: get("program_institution"),
+        city: get("program_city"),
+        deadline: get("program_deadline"),
+        submission_method: get("program_submission_method"),
+        portal_url: get("program_portal_url"),
+        waived_right: checked("program_waived"),
+        notes: get("program_notes")
+      });
+    });
+    document.getElementById("programs_json").value = JSON.stringify(programs);
+    // Validation: at least one program with required fields
+    var hasValid = programs.some(function (p) {
+      return p.name && p.institution && p.deadline && p.submission_method;
+    });
+    if (!hasValid) {
+      e.preventDefault();
+      alert("Please fill in at least one program with its name, institution, deadline, and submission method.");
+      return false;
+    }
+    // Disable submit to prevent double-submission
+    var btn = document.getElementById("submit-btn");
+    btn.disabled = true;
+    btn.textContent = "Uploading — please wait…";
+  });
+
+  renumberRows();
+})();
+</script>`;
+
+  return wrap(`Letter submission — ${req.first_name} ${req.last_name}`, inner);
+}
+
+function renderProgramRow(idx: number): string {
+  return `<fieldset class="program-row" data-row="${idx}">
+    <legend>Program ${idx + 1}</legend>
+    <label>Program name *<input type="text" name="program_name" required placeholder="e.g. DPhil in Politics"></label>
+    <label>Institution *<input type="text" name="program_institution" required placeholder="e.g. University of Oxford"></label>
+    <label>City / location<input type="text" name="program_city" placeholder="e.g. Oxford, UK"></label>
+    <label>Deadline *<input type="date" name="program_deadline" required></label>
+    <label>Submission method *
+      <select name="program_submission_method" required>
+        <option value="portal">Online portal — I already have the URL</option>
+        <option value="portal_emailed">Online portal — Prof. Erlich will be emailed a link</option>
+        <option value="email">Email (I'll give Prof. Erlich the address)</option>
+        <option value="mail">Postal mail</option>
+      </select>
+    </label>
+    <label>Portal URL (only if you already have it)<input type="url" name="program_portal_url" placeholder="https://…"></label>
+    <label class="inline"><input type="checkbox" name="program_waived" value="1"> I waived my right to access this letter</label>
+    <label>Program-specific requirements / notes<textarea name="program_notes" rows="2" placeholder="e.g. letter must be on letterhead, 1-page cap, submitted via Interfolio…"></textarea></label>
+    <div class="row-controls">
+      <button type="button" class="remove-row">Remove this program</button>
+    </div>
+  </fieldset>`;
 }
 
 export function renderSuccessPage(
   req: LetterRequest,
-  files: Array<{ name: string; size: number }>,
+  files: Array<{ name: string; size: number; slot?: string }>,
 ): string {
   const fileList = files
     .map(
-      (f) =>
-        `<li>${escapeHtml(f.name)} <small style="color:#777">(${formatSize(f.size)})</small></li>`,
+      (f) => {
+        const tag = f.slot ? `<strong>${escapeHtml(f.slot)}:</strong> ` : "";
+        return `<li>${tag}${escapeHtml(f.name)} <small style="color:#777">(${formatSize(f.size)})</small></li>`;
+      },
+    )
+    .join("");
+
+  const programList = (req.programs ?? [])
+    .map(
+      (p) =>
+        `<li><strong>${escapeHtml(p.name)}</strong> — ${escapeHtml(p.institution)}, deadline ${escapeHtml(p.deadline)}</li>`,
     )
     .join("");
 
   const inner = `
 <h1>Thank you, ${escapeHtml(req.first_name)}</h1>
 
-<p>I've received your materials:</p>
+<p>I've received your submission.</p>
+
+<h2>Programs</h2>
+<ul>${programList}</ul>
+
+<h2>Files uploaded</h2>
 <ul>${fileList}</ul>
 
 <p>I'll reach out when I have a draft ready or if I need anything else. Best of luck with your applications.</p>
 
-<p>— Aaron Erlich</p>
+<p>— Prof. Erlich</p>
 
 <p class="meta">You can close this tab. A confirmation has been logged — I don't send automated replies, but I'll email you personally when the letters are on their way.</p>`;
 
-  return wrap("Upload received — thank you", inner);
+  return wrap("Submission received — thank you", inner);
 }
 
 export function renderErrorPage(message: string, status = 400): string {

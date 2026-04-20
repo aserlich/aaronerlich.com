@@ -1,20 +1,24 @@
 // letter-upload-worker
 //
-// GET  /upload/<token> — render upload form
-// POST /upload/<token> — accept multipart files, write to OneDrive, notify Aaron
+// GET  /upload/<token> — render submission form: structured program rows + file upload
+// POST /upload/<token> — parse + validate programs JSON, write files to Dropbox
+//                       (App folder sandbox), update KV entry with programs +
+//                       state, notify Aaron via Resend. A separate launchd rsync
+//                       mirrors the Dropbox folder into his OneDrive archive.
 // GET  /                — health check
 
 import { Hono } from "hono";
-import { lookupToken, markTokenState, type LetterRequest } from "./tokens";
-import { uploadToOneDrive, type GraphEnv } from "./graph";
+import { lookupToken, type LetterRequest } from "./tokens";
+import { uploadToDropbox, type DropboxEnv } from "./dropbox";
 import { sendNotificationEmail, type EmailEnv } from "./email";
 import {
   renderUploadForm,
   renderSuccessPage,
   renderErrorPage,
 } from "./html";
+import { parsePrograms } from "./validation";
 
-type Env = GraphEnv &
+type Env = DropboxEnv &
   EmailEnv & {
     TOKENS: KVNamespace;
     ENVIRONMENT: string;
@@ -59,7 +63,6 @@ app.post("/upload/:token", async (c) => {
   }
 
   const maxFileSize = parseInt(c.env.MAX_FILE_SIZE || "52428800", 10);
-  const maxFiles = parseInt(c.env.MAX_FILES || "12", 10);
 
   // Collect files from multipart form data
   let formData: FormData;
@@ -74,53 +77,111 @@ app.post("/upload/:token", async (c) => {
     );
   }
 
-  const files: Array<{ name: string; data: ArrayBuffer; size: number }> = [];
-  for (const value of formData.getAll("files")) {
-    if (!(value instanceof File)) continue;
-    if (value.size === 0) continue;
-    if (value.size > maxFileSize) {
-      return c.html(
-        renderErrorPage(
-          `File "${value.name}" exceeds the ${(maxFileSize / 1024 / 1024).toFixed(0)} MB limit.`,
-        ),
-        413,
-      );
-    }
-    const data = await value.arrayBuffer();
-    files.push({ name: value.name, data, size: value.size });
-  }
-
-  if (files.length === 0) {
-    return c.html(renderErrorPage("No files were uploaded."), 400);
-  }
-  if (files.length > maxFiles) {
+  // Parse + validate the structured programs blob (hidden field emitted by
+  // the form's inline JS). Must have at least one fully-valid program row.
+  const programsRaw = formData.get("programs_json");
+  const programsJson =
+    typeof programsRaw === "string" ? programsRaw : null;
+  const programs = parsePrograms(programsJson);
+  if (programs === null) {
     return c.html(
-      renderErrorPage(`Too many files — max is ${maxFiles}.`),
+      renderErrorPage(
+        "Could not parse the programs data. Please go back and re-fill the form.",
+      ),
+      400,
+    );
+  }
+  if (programs.length === 0) {
+    return c.html(
+      renderErrorPage(
+        "Please fill in at least one program with name, institution, deadline, and submission method (and a URL if using an online portal).",
+      ),
       400,
     );
   }
 
-  // Upload each file to OneDrive
-  const uploadedFiles: Array<{ name: string; size: number }> = [];
+  // Four required, slot-tagged file inputs. Filename prefixes (`01-statement_…`,
+  // etc.) make the slot identity durable in Dropbox / OneDrive / the
+  // letter-draft skill, regardless of what the student named the original file.
+  const SLOTS = [
+    { key: "file_statement",  label: "Statement of purpose", prefix: "01-statement"   },
+    { key: "file_transcript", label: "Transcript",           prefix: "02-transcript"  },
+    { key: "file_cv",         label: "CV / résumé",          prefix: "03-cv"          },
+    { key: "file_selfbrief",  label: "Self-brief",           prefix: "04-self-brief"  },
+  ] as const;
+
+  const files: Array<{ name: string; data: ArrayBuffer; size: number; slot: string }> = [];
+  for (const slot of SLOTS) {
+    const value = formData.get(slot.key);
+    if (!(value instanceof File) || value.size === 0) {
+      return c.html(
+        renderErrorPage(
+          `Missing required file: ${slot.label}. Please go back and attach all four documents.`,
+        ),
+        400,
+      );
+    }
+    if (value.size > maxFileSize) {
+      return c.html(
+        renderErrorPage(
+          `File "${value.name}" (${slot.label}) exceeds the ${(maxFileSize / 1024 / 1024).toFixed(0)} MB limit.`,
+        ),
+        413,
+      );
+    }
+    // Sanitize the original filename: keep only word chars, dot, hyphen.
+    // Anything else collapses to underscore. Preserves the extension.
+    const safe = value.name.replace(/[^\w.\-]+/g, "_").replace(/^_+|_+$/g, "");
+    const data = await value.arrayBuffer();
+    files.push({
+      name: `${slot.prefix}_${safe || "file"}`,
+      data,
+      size: value.size,
+      slot: slot.label,
+    });
+  }
+
+  // Upload each file to Dropbox
+  const uploadedFiles: Array<{ name: string; size: number; slot: string }> = [];
   try {
     for (const f of files) {
-      await uploadToOneDrive(c.env, request.folder_path, f.name, f.data);
-      uploadedFiles.push({ name: f.name, size: f.size });
+      await uploadToDropbox(c.env, request.folder_path, f.name, f.data);
+      uploadedFiles.push({ name: f.name, size: f.size, slot: f.slot });
     }
   } catch (e: unknown) {
     const msg = e instanceof Error ? e.message : "unknown error";
     return c.html(
-      renderErrorPage(`Upload failed while writing to OneDrive: ${msg}`),
+      renderErrorPage(`Upload failed while writing to Dropbox: ${msg}`),
       500,
     );
   }
 
-  // Mark token as used
-  await markTokenState(c.env.TOKENS, token, "uploaded");
+  // Write the updated LetterRequest back to KV: populated programs array
+  // + advanced state + an appended state_log entry. The Python pull-script
+  // will later mirror this back into _data/letter-requests.yml.
+  const nowIso = new Date().toISOString();
+  const stateLog = [
+    ...(request.state_log ?? []),
+    { state: "uploaded" as const, at: nowIso },
+  ];
+  const updatedRequest: LetterRequest = {
+    ...request,
+    programs,
+    state: "uploaded",
+    state_log: stateLog,
+  };
+  try {
+    await c.env.TOKENS.put(token, JSON.stringify(updatedRequest));
+  } catch (e) {
+    console.error(
+      "KV write-back failed:",
+      e instanceof Error ? e.message : e,
+    );
+  }
 
   // Fire notification email (non-blocking — log failure but don't fail the request)
   try {
-    await sendNotificationEmail(c.env, request, uploadedFiles);
+    await sendNotificationEmail(c.env, updatedRequest, uploadedFiles);
   } catch (e) {
     console.error(
       "Notification email failed:",
@@ -128,7 +189,7 @@ app.post("/upload/:token", async (c) => {
     );
   }
 
-  return c.html(renderSuccessPage(request, uploadedFiles));
+  return c.html(renderSuccessPage(updatedRequest, uploadedFiles));
 });
 
 // Catch-all for unknown paths

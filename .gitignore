@@ -19,3 +19,6 @@ __pycache__/
 # Local secrets (defensive — keys live in ~/.config/)
 *.api_key
 secret*
+
+# Claude Code local project settings
+.claude/
