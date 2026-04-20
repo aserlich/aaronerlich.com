@@ -7,6 +7,10 @@ project:
 
 website:
   title: "Aaron Erlich"
+  # Disabled — the language toggle lives at top-right and overlaps the
+  # default search box. Site has few enough pages that the navbar
+  # suffices; search is cruft.
+  search: false
   navbar:
     left:
       - text: "About"
