@@ -174,10 +174,13 @@ def format_annotation_latex(ann: str) -> str:
 
 # ---------- publication row renderer ----------
 
-def render_publication_latex(item: dict, annotations: list | None) -> str:
+def render_publication_latex(item: dict, annotations: list | None,
+                              status: str = "") -> str:
     """Emit one \\item block for a Zotero publication entry, matching the
     cv_source.tex style: linked title, year, italic venue, vol(issue) pages,
-    (with Coauthors), optional annotation trailers."""
+    (with Coauthors), optional annotation trailers. When `status` is given
+    (e.g., "Forthcoming", "Online First") it replaces the year — used for
+    accepted-but-undated papers. Sort to the top is handled section-side."""
     title = item.get("title") or "(untitled)"
     venue = item.get("container-title") or item.get("collection-title") or ""
     volume = item.get("volume") or ""
@@ -196,7 +199,9 @@ def render_publication_latex(item: dict, annotations: list | None) -> str:
         title_part = title_quoted
 
     parts = [title_part]
-    if year:
+    if status:
+        parts.append(f" {tex_escape(status)}.")
+    elif year:
         parts.append(f" {year}.")
     if venue:
         parts.append(f" \\textit{{{tex_escape(venue)}}}")
@@ -225,9 +230,11 @@ def render_publication_latex(item: dict, annotations: list | None) -> str:
 
 def render_stub_latex(entry: dict) -> str:
     """Fallback when a cv-tag-proposal.yml row has no Zotero match — emit
-    title + optional URL + year from the proposal fields alone."""
+    title + optional URL + year from the proposal fields alone. Honors
+    `latex_status` the same way render_publication_latex does."""
     title = entry.get("latex_title") or "(untitled)"
     year = entry.get("latex_year") or ""
+    status = entry.get("latex_status") or ""
     url = entry.get("latex_url") or ""
     title_quoted = tex_quotes(tex_escape(title))
     if url:
@@ -235,7 +242,9 @@ def render_stub_latex(entry: dict) -> str:
     else:
         title_part = title_quoted
     pieces = [title_part]
-    if year:
+    if status:
+        pieces.append(f" {tex_escape(status)}.")
+    elif year:
         pieces.append(f" {year}.")
     body = "".join(pieces)
     if entry.get("latex_annotations"):
@@ -254,6 +263,10 @@ def render_zotero_section(proposal: dict, by_citekey: dict,
     `numbered=True` uses etaremune (reverse count); False uses itemize
     with em-dash markers, matching cv_source.tex."""
     items = (proposal.get("sections") or {}).get(proposal_key) or []
+    # Pin status-bearing entries (forthcoming / accepted / online first) to
+    # the top of the section. Stable sort preserves proposal order within
+    # each group.
+    items = sorted(items, key=lambda e: not bool(e.get("latex_status")))
     out = [f"\\section{{\\sc {header}}}"]
     if not items:
         out.append("% (no entries)")
@@ -271,8 +284,9 @@ def render_zotero_section(proposal: dict, by_citekey: dict,
     for entry in items:
         ck = entry.get("match_citekey")
         anns = entry.get("latex_annotations") or []
+        status = entry.get("latex_status") or ""
         if ck and ck != "SKIP" and ck in by_citekey:
-            out.append(render_publication_latex(by_citekey[ck], anns))
+            out.append(render_publication_latex(by_citekey[ck], anns, status=status))
         else:
             out.append(render_stub_latex(entry))
             if ck and ck != "SKIP" and ck not in by_citekey:

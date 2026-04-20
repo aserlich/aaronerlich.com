@@ -227,7 +227,8 @@ def detect_annotation(ann: str):
 
 # ---------- publication renderer ----------
 
-def render_publication(item: dict, citekey: str, annotations: list, label_with: str) -> str:
+def render_publication(item: dict, citekey: str, annotations: list, label_with: str,
+                        status: str = "") -> str:
     title = item.get("title") or "(untitled)"
     venue = item.get("container-title") or item.get("collection-title") or ""
     volume = item.get("volume") or ""
@@ -245,7 +246,12 @@ def render_publication(item: dict, citekey: str, annotations: list, label_with: 
     else:
         parts.append(f'<span class="cv-pub-title">&ldquo;{html_escape(title)}.&rdquo;</span>')
 
-    if year:
+    # `status` (e.g., "Forthcoming", "Online First", "Accepted") takes precedence
+    # over `year` — used for accepted-but-undated papers. Sort order handled at
+    # the section level: papers with a status are pinned to the top.
+    if status:
+        parts.append(f' <span class="cv-pub-status">{html_escape(status)}.</span>')
+    elif year:
         parts.append(f' <span class="cv-pub-year">{year}.</span>')
     if venue:
         parts.append(f' <em class="cv-pub-venue">{html_escape(venue)}</em>')
@@ -359,6 +365,10 @@ def render_education(cv: dict) -> str:
 def render_publications_section(cv: dict, proposal: dict, by_citekey: dict, label_with: str,
                                 proposal_key: str, header_key: str, numbered: bool) -> str:
     items = (proposal.get("sections") or {}).get(proposal_key) or []
+    # Status-bearing entries (forthcoming / accepted / in press / online first)
+    # pin to the top of their section, ahead of dated entries. Python's sort
+    # is stable, so the proposal-yml order is preserved within each group.
+    items = sorted(items, key=lambda e: not bool(e.get("latex_status")))
     out = [f'<h2>{i18n_span(f"section_headers.{header_key}", t(cv, f"section_headers.{header_key}"))}</h2>']
     if not items:
         out.append('<p><em>(none)</em></p>')
@@ -370,8 +380,9 @@ def render_publications_section(cv: dict, proposal: dict, by_citekey: dict, labe
     for entry in items:
         ck = entry.get("match_citekey")
         anns = entry.get("latex_annotations") or []
+        status = entry.get("latex_status") or ""
         if ck and ck != "SKIP" and ck in by_citekey:
-            out.append(render_publication(by_citekey[ck], ck, anns, label_with))
+            out.append(render_publication(by_citekey[ck], ck, anns, label_with, status=status))
         else:
             # Fall back to LaTeX title + optional latex_url for a link
             title = entry.get("latex_title") or "(untitled)"
