@@ -203,20 +203,45 @@ strings; only new/changed English strings hit the Claude API.
    - Zotero → right-click "My Library" → **Export Library**
    - Format: **Better BibTeX CSL JSON**
    - Save as `~/Dropbox/research_projects/My Library.json` (overwrite)
-3. Regenerate the proposal bridge:
-   - Either edit `_data/cv-tag-proposal.yml` by hand: add a new entry
-     under the correct section with at minimum `match_citekey: <the citekey>`
-   - Or use `python3 scripts/cv-add.py --citekey <citekey> --section peer-reviewed`
+3. Sync the proposal bridge from your Zotero tags:
+   ```bash
+   python3 scripts/sync-proposal-from-zotero.py            # preview
+   python3 scripts/sync-proposal-from-zotero.py --commit   # apply
+   ```
+   This reads Zotero's Web API, finds every item tagged `cv:include`,
+   matches citekeys against your local BBT export, and updates
+   `_data/cv-tag-proposal.yml` — adds new entries, moves between
+   sections when the section tag changes, preserves any curated
+   fields (`latex_annotations`, `latex_status`, etc.) on existing
+   entries.
 4. Rebuild:
    ```bash
    python3 scripts/build-cv.py && python3 scripts/build-cv-latex.py && quarto render cv.qmd
    ```
 5. Commit and push.
 
+**Alternative**: skip steps 1-3 and hand-edit `_data/cv-tag-proposal.yml`
+directly. The sync is a convenience — the yml file is the
+authoritative source for the build.
+
 **If the paper is NOT yet in Zotero:**
 
 1. Add it to Zotero first (via DOI lookup, manual entry, or a PDF import).
-2. Then follow the steps above.
+2. Tag it as above and follow the rest of the flow.
+
+**Zotero hygiene notes:**
+
+- The sync script expects each paper to have **one** Zotero entry
+  with a proper BBT citekey. Duplicates (same title, multiple
+  entries) confuse the matcher, which falls back to title-lookup
+  against the BBT export.
+- If you see weird citekeys like `__b` or `_ElderAm_` showing up in
+  the sync preview, those are stub entries in Zotero (no author or
+  year set). Fill them in or delete the duplicates in Zotero, then
+  re-export the BBT JSON and re-sync.
+- BBT needs to be configured with `Citation Key: <ck>` lines in the
+  Extra field to make the matcher reliable; without it the fallback
+  is title-based (works for unique titles, breaks for dup titles).
 
 ### Handle an accepted / forthcoming paper
 
