@@ -56,13 +56,23 @@ ZOTERO_API = f"https://api.zotero.org/users/{USER_ID}"
 
 # Must match the cv:section/<name> tag suffix → cv-tag-proposal.yml key.
 # Any cv:section/* tag outside this list is warned about and skipped.
-KNOWN_SECTIONS = {
-    "peer-reviewed",
-    "editor-reviewed",
-    "book-review",
+# Order matters: used as a priority ranking when a citekey appears in
+# multiple sections (from duplicate Zotero items or stale tags on a
+# single item). Higher-index = more "published" = wins.
+SECTION_PRIORITY = [
+    "working-paper",   # least published
     "blog",
-    "working-paper",
-}
+    "book-review",
+    "editor-reviewed",
+    "peer-reviewed",   # most published → wins ties
+]
+KNOWN_SECTIONS = set(SECTION_PRIORITY)
+
+def _section_rank(s: str) -> int:
+    try:
+        return SECTION_PRIORITY.index(s)
+    except ValueError:
+        return -1
 
 # Fields we preserve when an entry already exists in the proposal — these
 # are manually curated (annotations, status, overrides) and should not be
@@ -186,15 +196,17 @@ def resolve_citekey(title: str, title_idx: dict, existing_proposal_cks: set) -> 
 
 def section_from_tags(tags: list[dict]) -> tuple[str | None, list[str]]:
     """Return (canonical-section, all cv:section/* subtypes) found in the
-    tag list. If an item has multiple cv:section/* tags, returns the first
-    one we know about and a list of all of them for warning purposes."""
+    tag list. If an item has multiple cv:section/* tags (stale + fresh),
+    returns the most-published one (peer-reviewed > editor-reviewed >
+    book-review > blog > working-paper)."""
     found = []
     for t in tags or []:
         name = t.get("tag") if isinstance(t, dict) else str(t)
         if name and name.startswith("cv:section/"):
             suffix = name.split("/", 1)[1]
             found.append(suffix)
-    canonical = next((f for f in found if f in KNOWN_SECTIONS), None)
+    known = [f for f in found if f in KNOWN_SECTIONS]
+    canonical = max(known, key=_section_rank) if known else None
     return canonical, found
 
 
@@ -251,15 +263,14 @@ def sync(dry_run: bool = False) -> int:
     skipped = 0
     warnings: list[str] = []
 
-    # Track which citekeys we saw from Zotero so we can warn about orphans
-    seen_citekeys: set[str] = set()
+    # Track which citekeys we saw, and for each, which section they best
+    # belong to (highest-ranked across all Zotero items carrying that ck).
+    # Storing section + source title lets us dedupe when Zotero has multiple
+    # items with the same title but different section tags.
+    resolved: dict[str, dict] = {}  # citekey → {"section", "title", "all_titles": []}
 
-    # Build the new state section-by-section. We rebuild entries that come
-    # from Zotero; proposal-only entries (no Zotero match) stay as-is.
-    new_sections: dict[str, list[dict]] = {s: [] for s in KNOWN_SECTIONS}
-
-    # First pass: process each tagged item. Preserve existing proposal
-    # data when we can find it by citekey.
+    # First pass: resolve each Zotero item to a (citekey, section) pair, and
+    # for each citekey track the highest-ranked section encountered.
     for item in tagged:
         data = item.get("data") or {}
         tags = data.get("tags") or []
@@ -286,9 +297,41 @@ def sync(dry_run: bool = False) -> int:
             skipped += 1
             continue
 
-        seen_citekeys.add(citekey)
+        if citekey in resolved:
+            # Same citekey from multiple Zotero items — keep the higher-
+            # ranked section (more-published wins). Warn either way so
+            # Aaron can deduplicate in Zotero.
+            prior = resolved[citekey]
+            if _section_rank(section) > _section_rank(prior["section"]):
+                warnings.append(
+                    f"  ! {citekey} resolved from multiple Zotero items "
+                    f"(prior section={prior['section']!r}, now {section!r}) "
+                    f"— keeping {section!r} (more-published)"
+                )
+                resolved[citekey] = {"section": section, "title": title}
+            elif _section_rank(section) < _section_rank(prior["section"]):
+                warnings.append(
+                    f"  ! {citekey} resolved from multiple Zotero items "
+                    f"(prior section={prior['section']!r}, now {section!r}) "
+                    f"— keeping {prior['section']!r} (more-published)"
+                )
+            # Equal rank → keep first, silent
+            continue
 
-        # Pull any existing curated fields forward
+        resolved[citekey] = {"section": section, "title": title}
+
+    seen_citekeys = set(resolved.keys())
+
+    # Build the new state section-by-section. We rebuild entries that come
+    # from Zotero; proposal-only entries (no Zotero match) stay as-is.
+    new_sections: dict[str, list[dict]] = {s: [] for s in KNOWN_SECTIONS}
+
+    # Second pass: emit one entry per resolved citekey, in its best section,
+    # merging any curated fields forward from the existing proposal.
+    for citekey, info in resolved.items():
+        section = info["section"]
+        title = info["title"]
+
         if citekey in existing_idx:
             old_sect, old_i = existing_idx[citekey]
             old_entry = (proposal["sections"].get(old_sect) or [])[old_i]
@@ -300,7 +343,6 @@ def sync(dry_run: bool = False) -> int:
             for field in PRESERVE_FIELDS:
                 if field in old_entry and old_entry[field] is not None:
                     merged[field] = old_entry[field]
-            # latex_title may have been blank; always ensure it's populated
             if not merged.get("latex_title"):
                 merged["latex_title"] = title
             if old_sect != section:
