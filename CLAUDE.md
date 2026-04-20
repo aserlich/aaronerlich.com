@@ -12,6 +12,10 @@ Aaron Erlich's academic website at https://aaronerlich.com. Quarto static site d
 # Rebuild the CV page from YAML + Zotero
 python3 scripts/build-cv.py
 
+# Regenerate the LaTeX publication sections for the Overleaf CV
+# (writes _generated/cv_publications.tex; paste into Overleaf manually)
+python3 scripts/build-cv-latex.py
+
 # Rebuild the lab page from _data/lab.yml
 python3 scripts/build-lab.py
 
