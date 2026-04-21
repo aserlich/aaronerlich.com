@@ -142,10 +142,9 @@ def _normalize_title(s: str) -> str:
 
 def build_title_index() -> dict[str, list[dict]]:
     """Map normalized-title → list of candidate CSL entries from the local
-    BBT CSL JSON. Each candidate is a dict with citekey + metadata we can
-    score on (year present? author present?). Duplicates in Zotero
-    (same title, multiple citekeys) are common in Aaron's library, so
-    returning a list and scoring is more robust than picking the first."""
+    BBT CSL JSON. Each candidate carries enough metadata (year, venue, DOI)
+    to content-match against a Zotero Web API item and distinguish
+    working-paper vs. peer-reviewed versions of the same title."""
     if not ZOTERO_JSON.exists():
         return {}
     try:
@@ -163,57 +162,82 @@ def build_title_index() -> dict[str, list[dict]]:
         if not key:
             continue
         issued = it.get("issued") or {}
-        has_year = bool((issued.get("date-parts") or [[None]])[0][0])
-        has_authors = bool(it.get("author"))
+        year = None
+        parts = issued.get("date-parts") or [[None]]
+        if parts and parts[0]:
+            year = str(parts[0][0]) if parts[0][0] else None
         idx.setdefault(key, []).append({
             "citekey": citekey,
-            "has_year": has_year,
-            "has_authors": has_authors,
+            "year": year,
+            "venue": (it.get("container-title") or "").lower(),
+            "doi": (it.get("DOI") or "").lower(),
+            "has_year": bool(year),
+            "has_authors": bool(it.get("author")),
         })
     return idx
 
 
+def _zotero_year(item_data: dict) -> str | None:
+    """Pull a year out of a Zotero Web API item's `date` field (free-form
+    string, but usually starts with a year)."""
+    d = (item_data.get("date") or "").strip()
+    m = re.match(r"\s*(\d{4})", d)
+    return m.group(1) if m else None
+
+
 def resolve_citekey(
-    title: str,
+    item_data: dict,
     title_idx: dict,
     proposal_idx: dict,
     desired_section: str,
     already_used: set,
 ) -> str | None:
-    """Pick the best citekey for a Zotero item, honoring the convention that
-    a paper can legitimately appear in the CV as two entries (working-paper
-    version AND peer-reviewed version). The desired_section (derived from
-    the Zotero item's cv:section/* tag) biases the match toward a citekey
-    that's already in that section of the proposal, so two items with the
-    same title resolve to two distinct citekeys.
+    """Pick the best citekey for a Zotero Web API item by content-matching
+    against local BBT CSL JSON candidates. Same title can resolve to
+    different citekeys (working-paper vs peer-reviewed vs preprint vs …)
+    and the right one is the one whose CSL metadata matches on year,
+    venue, and DOI.
 
-    Tier order:
-      1. In proposal AND in the desired section  (stability; no move)
-      2. In proposal in ANY section  (this is a section move)
-      3. Non-stub (year + authors present)
-      4. Any remaining candidate, alphabetical tiebreaker
+    Scoring (higher wins; tiebreak by already-in-desired-section):
+      DOI exact match              +1000
+      Year match                    +200
+      Venue (container-title) match  +50
+      In proposal's desired section  +20
+      In proposal anywhere           +10
+      Non-stub (year + authors)       +5
 
     `already_used` rules out citekeys that have already been claimed by a
     previously-processed Zotero item in this run — enforces one-to-one
-    matching when multiple items share a title."""
+    matching so two items with identical titles don't collapse to one."""
+    title = item_data.get("title") or ""
+    z_year = _zotero_year(item_data)
+    z_venue = (item_data.get("publicationTitle") or "").lower()
+    z_doi = (item_data.get("DOI") or "").lower()
+
     cands = title_idx.get(_normalize_title(title)) or []
     cands = [c for c in cands if c["citekey"] not in already_used]
     if not cands:
         return None
-    # Tier 1: citekey already in the desired section
-    t1 = [c for c in cands if proposal_idx.get(c["citekey"]) == desired_section]
-    if t1:
-        return t1[0]["citekey"]
-    # Tier 2: citekey in proposal somewhere else (cross-section move)
-    t2 = [c for c in cands if c["citekey"] in proposal_idx]
-    if t2:
-        return t2[0]["citekey"]
-    # Tier 3: non-stub candidate
-    t3 = [c for c in cands if c["has_year"] and c["has_authors"]]
-    if t3:
-        return sorted(t3, key=lambda c: c["citekey"])[0]["citekey"]
-    # Tier 4: anything
-    return sorted(cands, key=lambda c: c["citekey"])[0]["citekey"]
+
+    def score(c: dict) -> int:
+        s = 0
+        if z_doi and c["doi"] and c["doi"] == z_doi:
+            s += 1000
+        if z_year and c["year"] and c["year"] == z_year:
+            s += 200
+        if z_venue and c["venue"] and c["venue"] == z_venue:
+            s += 50
+        prior_sect = proposal_idx.get(c["citekey"])
+        if prior_sect == desired_section:
+            s += 20
+        elif prior_sect:
+            s += 10
+        if c["has_year"] and c["has_authors"]:
+            s += 5
+        return s
+
+    scored = sorted(cands, key=lambda c: (score(c), c["citekey"]), reverse=True)
+    return scored[0]["citekey"]
 
 
 def section_from_tags(tags: list[dict]) -> tuple[str | None, list[str]]:
@@ -313,7 +337,7 @@ def sync(dry_run: bool = False) -> int:
         section, all_section_tags = section_from_tags(tags)
 
         citekey = citekey_from_extra(extra) or resolve_citekey(
-            title, title_idx, proposal_idx, section or "", claimed)
+            data, title_idx, proposal_idx, section or "", claimed)
         if not citekey:
             warnings.append(
                 f"  ! no citekey for {title[:60]!r} — "

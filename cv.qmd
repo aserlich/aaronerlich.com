@@ -69,6 +69,14 @@ format:
  <em class="cv-pub-venue">Comparative Migration Studies</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl)</span>
 </li>
+<li class="cv-pub" id="pub-erlich_CanNormbased_2026">
+<a class="cv-pub-title" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12940">&ldquo;Can norm-based information campaigns reduce corruption?.&rdquo;</a>
+ <span class="cv-pub-year">2026.</span>
+ <em class="cv-pub-venue">American Journal of Political Science</em>
+ <span class="cv-pub-vol">70(2)</span>
+ <span class="cv-pub-pages">471–490</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse)</span>
+</li>
 <li class="cv-pub" id="pub-erlich_WhatCorruption_2025">
 <a class="cv-pub-title" href="https://www.sciencedirect.com/science/article/pii/S0305750X25000865">&ldquo;What corruption is most harmful? Unbundling citizen perceptions.&rdquo;</a>
  <span class="cv-pub-year">2025.</span>
@@ -77,123 +85,78 @@ format:
  <span class="cv-pub-pages">107001</span>.
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse, Simeon Nichter, and Arne Holverscheid)</span>
 </li>
-<li class="cv-pub" id="pub-erlichSelectiveBriberyWhen2022">
-<a class="cv-pub-title" href="https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf">&ldquo;Selective Bribery: When Do Citizens Engage in Corruption?.&rdquo;</a>
- <span class="cv-pub-year">2022.</span>
- <em class="cv-pub-venue">IPR Working Paper Series</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse and Simeon NIchter)</span>
-</li>
-<li class="cv-pub" id="pub-chen_StudyingGlobal_">
-<span class="cv-pub-title">&ldquo;Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations.&rdquo;</span>
- <em class="cv-pub-venue">International Journal of Social Research Methodology</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Zhenxiang Chen and Thomas Soehl)</span>
-</li>
-<li class="cv-pub" id="pub-erlich_CanNormBased_2023">
-<a class="cv-pub-title" href="https://www.ipr.northwestern.edu/documents/working-papers/2023/wp-23-33.pdf">&ldquo;Can Norm-Based Information Campaigns Reduce Corruption?.&rdquo;</a>
- <span class="cv-pub-year">2023.</span>
- <em class="cv-pub-venue">IPR Working Paper Series</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse)</span>
-</li>
-<li class="cv-pub" id="pub-berlinerCompetingTransparencyPolitical2015">
-<a class="cv-pub-title" href="http://journals.cambridge.org/article_S0003055414000616">&ldquo;Competing for Transparency: Political Competition and Institutional Reform in Mexican States.&rdquo;</a>
- <span class="cv-pub-year">2015.</span>
- <em class="cv-pub-venue">American Political Science Review</em>
- <span class="cv-pub-vol">109(01)</span>
- <span class="cv-pub-pages">110–128</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner)</span>
-</li>
-<li class="cv-pub" id="pub-bushEffectsAuthoritarianIconography2016">
-<a class="cv-pub-title" href="http://cps.sagepub.com/content/early/2016/04/05/0010414016633228.abstract">&ldquo;The Effects of Authoritarian Iconography An Experimental Test.&rdquo;</a>
- <span class="cv-pub-year">2016.</span>
+<li class="cv-pub" id="pub-erlich_SelectiveBribery_2025">
+<a class="cv-pub-title" href="https://doi.org/10.1177/00104140241259444">&ldquo;Selective Bribery: When Do Citizens Engage in Corruption?.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
  <em class="cv-pub-venue">Comparative Political Studies</em>
- <span class="cv-pub-vol">49(13)</span>
- <span class="cv-pub-pages">1704–1738</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Sarah Sunn Bush, Lauren Prather, and Yael Zeira)</span>
+ <span class="cv-pub-vol">58(5)</span>
+ <span class="cv-pub-pages">996–1036</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse and Simeon Nichter)</span>
+</li>
+<li class="cv-pub" id="pub-light_UrbanDisorder_2025">
+<a class="cv-pub-title" href="https://www.tandfonline.com/doi/abs/10.1080/10439463.2024.2411538">&ldquo;Urban disorder in democratic transitions: Ukraine’s municipal policing debates in comparative perspective.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">Policing and Society</em>
+ <span class="cv-pub-vol">35(4)</span>
+ <span class="cv-pub-pages">448–464</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Matthew Light, Anne-Marie Singh, and Oleh Feday)</span>
+</li>
+<li class="cv-pub" id="pub-erlich_ElderAm_2025">
+<a class="cv-pub-title" href="https://doi.org/10.1093/ijpor/edaf003">&ldquo;Elder, Am I Right? Age-Group Differences in Social and Political Interactions in Africa.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">International Journal of Public Opinion Research</em>
+ <span class="cv-pub-vol">37(2)</span>
+ <span class="cv-pub-pages">edaf003</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Andrew McCormack)</span>
+</li>
+<li class="cv-pub" id="pub-palmer-rubin_AccountabilityTime_2025">
+<a class="cv-pub-title" href="https://muse.jhu.edu/pub/1/article/964463">&ldquo;Accountability in Time: Evolution and Expertise in Participatory Institutions.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">World Politics</em>
+ <span class="cv-pub-vol">77(3)</span>
+ <span class="cv-pub-pages">468–514</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Brian Palmer-Rubin, Jésica E. Tapia Reyes, Daniel Berliner, and Benjamin E. Bagozzi)</span>
 <ul class="cv-pub-notes">
-<li class="cv-pub-media"><strong data-i18n="labels.media_coverage">Media coverage</strong>: <a href="https://marginalrevolution.com/marginalrevolution/2016/07/results-free-review.html" class="cv-pub-media-link"><em>Marginal Revolution</em></a>, <a href="https://www.washingtonpost.com/news/monkey-cage/wp/2016/08/25/heres-what-happens-when-scientists-evaluate-research-without-knowing-the-results/" class="cv-pub-media-link"><em>Washington Post: The Monkey Cage</em></a>, <a href="https://www.psypost.org/2016/12/scientists-investigate-subliminal-authoritarian-imagery-encourages-citizens-obey-46570" class="cv-pub-media-link"><em>PsyPost</em></a></li>
+<li class="cv-pub-award"><strong data-i18n="labels.award_winner">Winner</strong>: Best Paper on Political Institutions from the 2021 LASA Congress</li>
+<li class="cv-pub-award"><strong data-i18n="labels.award_honorable_mention">Honourable Mention</strong>: Best Paper in the social sciences, LASA Mexico section</li>
 </ul>
 </li>
-<li class="cv-pub" id="pub-erlichLocalMwananchiHas2016">
-<a class="cv-pub-title" href="http://www.journals.cambridge.org/abstract_S0022278X16000604">&ldquo;‘The local mwananchi has lost trust’: design, transition and legitimacy in Kenyan election management.&rdquo;</a>
- <span class="cv-pub-year">2016.</span>
- <em class="cv-pub-venue">The Journal of Modern African Studies</em>
- <span class="cv-pub-vol">54(04)</span>
- <span class="cv-pub-pages">671–702</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Nicholas Kerr)</span>
+<li class="cv-pub" id="pub-erlich_TwoImplications_2025">
+<a class="cv-pub-title" href="https://doi.org/10.1080/1060586X.2025.2529114">&ldquo;Two implications of survey research mode during war: evidence from Russia’s full-scale invasion of Ukraine.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">Post-Soviet Affairs</em>
+ <span class="cv-pub-vol">41(6)</span>
+ <span class="cv-pub-pages">573–592</span>.
 </li>
-<li class="cv-pub" id="pub-erlichDoubleEdgedSwordMobilizing2018">
-<a class="cv-pub-title" href="http://www.sciencedirect.com/science/article/pii/S2352728517300362">&ldquo;The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries.&rdquo;</a>
- <span class="cv-pub-year">2018.</span>
- <em class="cv-pub-venue">Development Engineering</em>
- <span class="cv-pub-vol">3</span>
- <span class="cv-pub-pages">34–46</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Danielle F. Jung, James D. Long, and Craig McIntosh)</span>
+<li class="cv-pub" id="pub-erlich_HowLanguage_2025">
+<a class="cv-pub-title" href="https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/how-language-shapes-belief-in-misinformation-a-study-among-multilinguals-in-ukraine/920BF2F7A7D76BA74C4332CE8C444E0F">&ldquo;How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">Journal of Experimental Political Science</em>
+ <span class="cv-pub-pages">1–15</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Kevin Aslett, Sarah Graham, and Joshua A. Tucker)</span>
 </li>
-<li class="cv-pub" id="pub-erlich_CanInformation_2020">
-<a class="cv-pub-title" href="https://doi.org/10.1177/0192512119836283">&ldquo;Can information campaigns impact preferences toward vote selling? Theory and evidence from Kenya.&rdquo;</a>
- <span class="cv-pub-year">2020.</span>
- <em class="cv-pub-venue">International Political Science Review</em>
- <span class="cv-pub-vol">41(3)</span>
- <span class="cv-pub-pages">419–435</span>.
+<li class="cv-pub" id="pub-erlich_UsingCommunications_2024">
+<a class="cv-pub-title" href="https://www.journals.uchicago.edu/doi/abs/10.1086/724010">&ldquo;Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa.&rdquo;</a>
+ <span class="cv-pub-year">2024.</span>
+ <em class="cv-pub-venue">Economic Development and Cultural Change</em>
+ <span class="cv-pub-vol">72(3)</span>
+ <span class="cv-pub-pages">1425–1463</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Karen E. Ferree, Clark C. Gibson, Danielle F. Jung, James D. Long, and Craig McIntosh)</span>
 </li>
-<li class="cv-pub" id="pub-erlich_InterpersonalIncomparability_2020">
-<a class="cv-pub-title" href="https://doi.org/10.1080/17457289.2018.1554664">&ldquo;Interpersonal incomparability in citizens’ views of democracy: survey evidence from Ukraine.&rdquo;</a>
- <span class="cv-pub-year">2020.</span>
- <em class="cv-pub-venue">Journal of Elections, Public Opinion and Parties</em>
- <span class="cv-pub-vol">30(2)</span>
- <span class="cv-pub-pages">139–160</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Calvin Garner)</span>
+<li class="cv-pub" id="pub-erlich_CoveringCampaign_2024">
+<a class="cv-pub-title" href="https://journals.sagepub.com/doi/10.1177/08944393241247420">&ldquo;Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage With Application to an Emerging Democracy.&rdquo;</a>
+ <span class="cv-pub-year">2024.</span>
+ <em class="cv-pub-venue">Social Science Computer Review</em>
+ <span class="cv-pub-vol">42(6)</span>
+ <span class="cv-pub-pages">1313–1337</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Danielle F. Jung and James D. Long)</span>
 </li>
-<li class="cv-pub" id="pub-berlinerPoliticalLogicGovernment2021">
-<a class="cv-pub-title" href="https://www.journals.uchicago.edu/doi/10.1086/709148">&ldquo;The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico.&rdquo;</a>
- <span class="cv-pub-year">2021.</span>
- <em class="cv-pub-venue">The Journal of Politics</em>
- <span class="cv-pub-vol">83(1)</span>
- <span class="cv-pub-pages">229–245</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner, Benjamin E. Bagozzi, and Brian Palmer-Rubin)</span>
-</li>
-<li class="cv-pub" id="pub-bridgman_UnveilingUnexpected_2021">
-<a class="cv-pub-title" href="https://www.journals.uchicago.edu/doi/full/10.1086/711177">&ldquo;Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader.&rdquo;</a>
- <span class="cv-pub-year">2021.</span>
- <em class="cv-pub-venue">The Journal of Politics</em>
- <span class="cv-pub-vol">83(3)</span>
- <span class="cv-pub-pages">1024–1029</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Aengus Bridgman, Costin Ciobanu, Danielle Bohonos, and Christopher Ross)</span>
-<ul class="cv-pub-notes">
-<li class="cv-pub-media"><strong data-i18n="labels.media_coverage">Media coverage</strong>: <a href="https://www.macleans.ca/opinion/jagmeet-singh-calls-mp-racist-but-has-he-forgotten-about-bill-21/" class="cv-pub-media-link"><em>Maclean's</em></a>, <a href="https://www.journaldemontreal.com/2021/06/25/prudence-avec-les-meteorites-pre-electoraux" class="cv-pub-media-link"><em>Journal de Montréal</em></a></li>
-</ul>
-</li>
-<li class="cv-pub" id="pub-erlichSubgroupDifferencesImplicit2021">
-<a class="cv-pub-title" href="https://academic.oup.com/isq/article/65/2/528/6145845">&ldquo;Subgroup Differences in Implicit Associations and Explicit Attitudes during Wartime.&rdquo;</a>
- <span class="cv-pub-year">2021.</span>
- <em class="cv-pub-venue">International Studies Quarterly</em>
- <span class="cv-pub-vol">65(2)</span>
- <span class="cv-pub-pages">528–541</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Calvin Garner)</span>
-</li>
-<li class="cv-pub" id="pub-erlichMediaAttentionBureaucratic2021">
-<a class="cv-pub-title" href="https://academic.oup.com/jpart/article/31/4/687/6101515">&ldquo;Media Attention and Bureaucratic Responsiveness.&rdquo;</a>
- <span class="cv-pub-year">2021.</span>
- <em class="cv-pub-venue">Journal of Public Administration Research and Theory</em>
- <span class="cv-pub-vol">31(4)</span>
- <span class="cv-pub-pages">687–703</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner, Brian Palmer-Rubin, and Benjamin E Bagozzi)</span>
-</li>
-<li class="cv-pub" id="pub-ellingtonMeasuringHumanRights2022">
-<a class="cv-pub-title" href="http://journals.sagepub.com/doi/10.1177/00220027211035553">&ldquo;Measuring Human Rights Abuse from Access to Information Requests.&rdquo;</a>
- <span class="cv-pub-year">2022.</span>
- <em class="cv-pub-venue">Journal of Conflict Resolution</em>
- <span class="cv-pub-vol">66(2)</span>
- <span class="cv-pub-pages">357–384</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Sarah A. V. Ellington, Benjamin E. Bagozzi, Daniel Berliner, and Brian Palmer-Rubin)</span>
-</li>
-<li class="cv-pub" id="pub-erlich_MultiLabelPrediction_2022">
-<a class="cv-pub-title" href="https://www.cambridge.org/core/journals/political-analysis/article/multilabel-prediction-for-political-textasdata/0EC24DBB4E3854EBE0AD247DCB27F828">&ldquo;Multi-Label Prediction for Political Text-as-Data.&rdquo;</a>
- <span class="cv-pub-year">2022.</span>
- <em class="cv-pub-venue">Political Analysis</em>
- <span class="cv-pub-vol">30(4)</span>
- <span class="cv-pub-pages">463–480</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Stefano G. Dantas, Benjamin E. Bagozzi, Daniel Berliner, and Brian Palmer-Rubin)</span>
+<li class="cv-pub" id="pub-soehl_PromisesLimits_2024">
+<a class="cv-pub-title" href="https://doi.org/DOI: 10.1177/00491241241266634">&ldquo;Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.&rdquo;</a>
+ <span class="cv-pub-year">2024.</span>
+ <em class="cv-pub-venue">Sociological Methods &amp; Research</em>
+ <span class="cv-pub-vol">nd(nd)</span>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl and Zhenxiang Chen)</span>
 </li>
 <li class="cv-pub" id="pub-erlich_ProKremlinDisinformationEffective_2023">
 <a class="cv-pub-title" href="http://journals.sagepub.com/doi/10.1177/19401612211045221">&ldquo;Is pro-Kremlin Disinformation Effective? Evidence from Ukraine.&rdquo;</a>
@@ -243,76 +206,117 @@ format:
 <li class="cv-pub-media"><strong data-i18n="labels.media_coverage">Media coverage</strong>: <a href="https://web.archive.org/web/20220516083222/https://www.independent.co.ug/court-cant-reverse-museveni-election-win/" class="cv-pub-media-link"><em>Independent</em> (Uganda)</a></li>
 </ul>
 </li>
-<li class="cv-pub" id="pub-erlich_UsingCommunications_2024">
-<a class="cv-pub-title" href="https://www.journals.uchicago.edu/doi/abs/10.1086/724010">&ldquo;Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa.&rdquo;</a>
- <span class="cv-pub-year">2024.</span>
- <em class="cv-pub-venue">Economic Development and Cultural Change</em>
- <span class="cv-pub-vol">72(3)</span>
- <span class="cv-pub-pages">1425–1463</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Karen E. Ferree, Clark C. Gibson, Danielle F. Jung, James D. Long, and Craig McIntosh)</span>
+<li class="cv-pub" id="pub-ellingtonMeasuringHumanRights2022">
+<a class="cv-pub-title" href="http://journals.sagepub.com/doi/10.1177/00220027211035553">&ldquo;Measuring Human Rights Abuse from Access to Information Requests.&rdquo;</a>
+ <span class="cv-pub-year">2022.</span>
+ <em class="cv-pub-venue">Journal of Conflict Resolution</em>
+ <span class="cv-pub-vol">66(2)</span>
+ <span class="cv-pub-pages">357–384</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Sarah A. V. Ellington, Benjamin E. Bagozzi, Daniel Berliner, and Brian Palmer-Rubin)</span>
 </li>
-<li class="cv-pub" id="pub-erlich_CoveringCampaign_2024">
-<a class="cv-pub-title" href="https://journals.sagepub.com/doi/10.1177/08944393241247420">&ldquo;Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage With Application to an Emerging Democracy.&rdquo;</a>
- <span class="cv-pub-year">2024.</span>
- <em class="cv-pub-venue">Social Science Computer Review</em>
- <span class="cv-pub-vol">42(6)</span>
- <span class="cv-pub-pages">1313–1337</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Danielle F. Jung and James D. Long)</span>
+<li class="cv-pub" id="pub-erlich_MultiLabelPrediction_2022">
+<a class="cv-pub-title" href="https://www.cambridge.org/core/journals/political-analysis/article/multilabel-prediction-for-political-textasdata/0EC24DBB4E3854EBE0AD247DCB27F828">&ldquo;Multi-Label Prediction for Political Text-as-Data.&rdquo;</a>
+ <span class="cv-pub-year">2022.</span>
+ <em class="cv-pub-venue">Political Analysis</em>
+ <span class="cv-pub-vol">30(4)</span>
+ <span class="cv-pub-pages">463–480</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Stefano G. Dantas, Benjamin E. Bagozzi, Daniel Berliner, and Brian Palmer-Rubin)</span>
 </li>
-<li class="cv-pub" id="pub-light_UrbanDisorder_2025">
-<a class="cv-pub-title" href="https://www.tandfonline.com/doi/abs/10.1080/10439463.2024.2411538">&ldquo;Urban disorder in democratic transitions: Ukraine’s municipal policing debates in comparative perspective.&rdquo;</a>
- <span class="cv-pub-year">2025.</span>
- <em class="cv-pub-venue">Policing and Society</em>
- <span class="cv-pub-vol">35(4)</span>
- <span class="cv-pub-pages">448–464</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Matthew Light, Anne-Marie Singh, and Oleh Feday)</span>
+<li class="cv-pub" id="pub-berlinerPoliticalLogicGovernment2021">
+<a class="cv-pub-title" href="https://www.journals.uchicago.edu/doi/10.1086/709148">&ldquo;The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico.&rdquo;</a>
+ <span class="cv-pub-year">2021.</span>
+ <em class="cv-pub-venue">The Journal of Politics</em>
+ <span class="cv-pub-vol">83(1)</span>
+ <span class="cv-pub-pages">229–245</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner, Benjamin E. Bagozzi, and Brian Palmer-Rubin)</span>
 </li>
-<li class="cv-pub" id="pub-erlich_ElderAm_2025">
-<a class="cv-pub-title" href="https://doi.org/10.1093/ijpor/edaf003">&ldquo;Elder, Am I Right? Age-Group Differences in Social and Political Interactions in Africa.&rdquo;</a>
- <span class="cv-pub-year">2025.</span>
- <em class="cv-pub-venue">International Journal of Public Opinion Research</em>
- <span class="cv-pub-vol">37(2)</span>
- <span class="cv-pub-pages">edaf003</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Andrew McCormack)</span>
-</li>
-<li class="cv-pub" id="pub-palmer-rubin_AccountabilityTime_2025">
-<a class="cv-pub-title" href="https://muse.jhu.edu/pub/1/article/964463">&ldquo;Accountability in Time: Evolution and Expertise in Participatory Institutions.&rdquo;</a>
- <span class="cv-pub-year">2025.</span>
- <em class="cv-pub-venue">World Politics</em>
- <span class="cv-pub-vol">77(3)</span>
- <span class="cv-pub-pages">468–514</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Brian Palmer-Rubin, Jésica E. Tapia Reyes, Daniel Berliner, and Benjamin E. Bagozzi)</span>
+<li class="cv-pub" id="pub-bridgman_UnveilingUnexpected_2021">
+<a class="cv-pub-title" href="https://www.journals.uchicago.edu/doi/full/10.1086/711177">&ldquo;Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader.&rdquo;</a>
+ <span class="cv-pub-year">2021.</span>
+ <em class="cv-pub-venue">The Journal of Politics</em>
+ <span class="cv-pub-vol">83(3)</span>
+ <span class="cv-pub-pages">1024–1029</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Aengus Bridgman, Costin Ciobanu, Danielle Bohonos, and Christopher Ross)</span>
 <ul class="cv-pub-notes">
-<li class="cv-pub-award"><strong data-i18n="labels.award_winner">Winner</strong>: Best Paper on Political Institutions from the 2021 LASA Congress</li>
-<li class="cv-pub-award"><strong data-i18n="labels.award_honorable_mention">Honourable Mention</strong>: Best Paper in the social sciences, LASA Mexico section</li>
+<li class="cv-pub-media"><strong data-i18n="labels.media_coverage">Media coverage</strong>: <a href="https://www.macleans.ca/opinion/jagmeet-singh-calls-mp-racist-but-has-he-forgotten-about-bill-21/" class="cv-pub-media-link"><em>Maclean's</em></a>, <a href="https://www.journaldemontreal.com/2021/06/25/prudence-avec-les-meteorites-pre-electoraux" class="cv-pub-media-link"><em>Journal de Montréal</em></a></li>
 </ul>
 </li>
-<li class="cv-pub" id="pub-erlich_TwoImplications_2025">
-<a class="cv-pub-title" href="https://doi.org/10.1080/1060586X.2025.2529114">&ldquo;Two implications of survey research mode during war: evidence from Russia’s full-scale invasion of Ukraine.&rdquo;</a>
- <span class="cv-pub-year">2025.</span>
- <em class="cv-pub-venue">Post-Soviet Affairs</em>
- <span class="cv-pub-vol">41(6)</span>
- <span class="cv-pub-pages">573–592</span>.
+<li class="cv-pub" id="pub-erlichSubgroupDifferencesImplicit2021">
+<a class="cv-pub-title" href="https://academic.oup.com/isq/article/65/2/528/6145845">&ldquo;Subgroup Differences in Implicit Associations and Explicit Attitudes during Wartime.&rdquo;</a>
+ <span class="cv-pub-year">2021.</span>
+ <em class="cv-pub-venue">International Studies Quarterly</em>
+ <span class="cv-pub-vol">65(2)</span>
+ <span class="cv-pub-pages">528–541</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Calvin Garner)</span>
 </li>
-<li class="cv-pub" id="pub-soehl_PromisesLimits_2024">
-<a class="cv-pub-title" href="https://doi.org/DOI: 10.1177/00491241241266634">&ldquo;Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.&rdquo;</a>
- <span class="cv-pub-year">2024.</span>
- <em class="cv-pub-venue">Sociological Methods &amp; Research</em>
- <span class="cv-pub-vol">nd(nd)</span>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl and Zhenxiang Chen)</span>
+<li class="cv-pub" id="pub-erlichMediaAttentionBureaucratic2021">
+<a class="cv-pub-title" href="https://academic.oup.com/jpart/article/31/4/687/6101515">&ldquo;Media Attention and Bureaucratic Responsiveness.&rdquo;</a>
+ <span class="cv-pub-year">2021.</span>
+ <em class="cv-pub-venue">Journal of Public Administration Research and Theory</em>
+ <span class="cv-pub-vol">31(4)</span>
+ <span class="cv-pub-pages">687–703</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner, Brian Palmer-Rubin, and Benjamin E Bagozzi)</span>
 </li>
-<li class="cv-pub" id="pub-erlich_HowLanguage_2025">
-<a class="cv-pub-title" href="https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/how-language-shapes-belief-in-misinformation-a-study-among-multilinguals-in-ukraine/920BF2F7A7D76BA74C4332CE8C444E0F">&ldquo;How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine.&rdquo;</a>
- <span class="cv-pub-year">2025.</span>
- <em class="cv-pub-venue">Journal of Experimental Political Science</em>
- <span class="cv-pub-pages">1–15</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Kevin Aslett, Sarah Graham, and Joshua A. Tucker)</span>
+<li class="cv-pub" id="pub-erlich_CanInformation_2020">
+<a class="cv-pub-title" href="https://doi.org/10.1177/0192512119836283">&ldquo;Can information campaigns impact preferences toward vote selling? Theory and evidence from Kenya.&rdquo;</a>
+ <span class="cv-pub-year">2020.</span>
+ <em class="cv-pub-venue">International Political Science Review</em>
+ <span class="cv-pub-vol">41(3)</span>
+ <span class="cv-pub-pages">419–435</span>.
+</li>
+<li class="cv-pub" id="pub-erlich_InterpersonalIncomparability_2020">
+<a class="cv-pub-title" href="https://doi.org/10.1080/17457289.2018.1554664">&ldquo;Interpersonal incomparability in citizens’ views of democracy: survey evidence from Ukraine.&rdquo;</a>
+ <span class="cv-pub-year">2020.</span>
+ <em class="cv-pub-venue">Journal of Elections, Public Opinion and Parties</em>
+ <span class="cv-pub-vol">30(2)</span>
+ <span class="cv-pub-pages">139–160</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Calvin Garner)</span>
+</li>
+<li class="cv-pub" id="pub-erlichDoubleEdgedSwordMobilizing2018">
+<a class="cv-pub-title" href="http://www.sciencedirect.com/science/article/pii/S2352728517300362">&ldquo;The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries.&rdquo;</a>
+ <span class="cv-pub-year">2018.</span>
+ <em class="cv-pub-venue">Development Engineering</em>
+ <span class="cv-pub-vol">3</span>
+ <span class="cv-pub-pages">34–46</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Danielle F. Jung, James D. Long, and Craig McIntosh)</span>
+</li>
+<li class="cv-pub" id="pub-bushEffectsAuthoritarianIconography2016">
+<a class="cv-pub-title" href="http://cps.sagepub.com/content/early/2016/04/05/0010414016633228.abstract">&ldquo;The Effects of Authoritarian Iconography An Experimental Test.&rdquo;</a>
+ <span class="cv-pub-year">2016.</span>
+ <em class="cv-pub-venue">Comparative Political Studies</em>
+ <span class="cv-pub-vol">49(13)</span>
+ <span class="cv-pub-pages">1704–1738</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Sarah Sunn Bush, Lauren Prather, and Yael Zeira)</span>
+<ul class="cv-pub-notes">
+<li class="cv-pub-media"><strong data-i18n="labels.media_coverage">Media coverage</strong>: <a href="https://marginalrevolution.com/marginalrevolution/2016/07/results-free-review.html" class="cv-pub-media-link"><em>Marginal Revolution</em></a>, <a href="https://www.washingtonpost.com/news/monkey-cage/wp/2016/08/25/heres-what-happens-when-scientists-evaluate-research-without-knowing-the-results/" class="cv-pub-media-link"><em>Washington Post: The Monkey Cage</em></a>, <a href="https://www.psypost.org/2016/12/scientists-investigate-subliminal-authoritarian-imagery-encourages-citizens-obey-46570" class="cv-pub-media-link"><em>PsyPost</em></a></li>
+</ul>
+</li>
+<li class="cv-pub" id="pub-erlichLocalMwananchiHas2016">
+<a class="cv-pub-title" href="http://www.journals.cambridge.org/abstract_S0022278X16000604">&ldquo;‘The local mwananchi has lost trust’: design, transition and legitimacy in Kenyan election management.&rdquo;</a>
+ <span class="cv-pub-year">2016.</span>
+ <em class="cv-pub-venue">The Journal of Modern African Studies</em>
+ <span class="cv-pub-vol">54(04)</span>
+ <span class="cv-pub-pages">671–702</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Nicholas Kerr)</span>
+</li>
+<li class="cv-pub" id="pub-berlinerCompetingTransparencyPolitical2015">
+<a class="cv-pub-title" href="http://journals.cambridge.org/article_S0003055414000616">&ldquo;Competing for Transparency: Political Competition and Institutional Reform in Mexican States.&rdquo;</a>
+ <span class="cv-pub-year">2015.</span>
+ <em class="cv-pub-venue">American Political Science Review</em>
+ <span class="cv-pub-vol">109(01)</span>
+ <span class="cv-pub-pages">110–128</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner)</span>
 </li>
 <li class="cv-pub" id="pub-leviAligningRightsInterests2012">
 <span class="cv-pub-title">&ldquo;Aligning Rights and Interests: Why, When and How to Uphold Labor Standards.&rdquo;</span>
  <span class="cv-pub-year">2012.</span>
  <em class="cv-pub-venue">World Bank Development Report Background Paper</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Margaret Levi, Christoper Adolph, Daniel Berliner, Anne Greenleaf, Milli Lake, and Jennifer Noveck)</span>
+</li>
+<li class="cv-pub" id="pub-chen_StudyingGlobal_">
+<span class="cv-pub-title">&ldquo;Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations.&rdquo;</span>
+ <em class="cv-pub-venue">International Journal of Social Research Methodology</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Zhenxiang Chen and Thomas Soehl)</span>
 </li>
 </ol>
 <h2><span data-i18n="section_headers.under_review">Under Review / To Resubmit</span></h2>
@@ -326,21 +330,6 @@ format:
 </ol>
 <h2><span data-i18n="section_headers.editor_reviewed">Editor-Reviewed Publications</span></h2>
 <ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 7">
-<li class="cv-pub" id="pub-gutbrodImplausibleIncarcerationData2013">
-<a class="cv-pub-title" href="http://www.thelancet.com/journals/langlo/article/PIIS2214-109X(13)70142-6/fulltext">&ldquo;Implausible incarceration data need to be addressed.&rdquo;</a>
- <span class="cv-pub-year">2013.</span>
- <em class="cv-pub-venue">The Lancet Global Health</em>
- <span class="cv-pub-vol">1(6)</span>
- <span class="cv-pub-pages">e334-e335</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Hans Gutbrod)</span>
-</li>
-<li class="cv-pub" id="pub-erlichDevelopmentTrapsEscaping2016">
-<a class="cv-pub-title" href="http://www-tandfonline-com.proxy3.library.mcgill.ca/doi/abs/10.1080/08853908.2016.1211571">&ldquo;Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?.&rdquo;</a>
- <span class="cv-pub-year">2016.</span>
- <em class="cv-pub-venue">The International Trade Journal</em>
- <span class="cv-pub-vol">30(5)</span>
- <span class="cv-pub-pages">378–382</span>.
-</li>
 <li class="cv-pub" id="pub-bushLessonsResultsBlindReview2018">
 <span class="cv-pub-title">&ldquo;Lessons from Results-Blind Review.&rdquo;</span>
  <span class="cv-pub-year">2018.</span>
@@ -355,6 +344,21 @@ format:
  <em class="cv-pub-venue">Caucasus Survey</em>
  <span class="cv-pub-vol">6(3)</span>
  <span class="cv-pub-pages">224–229</span>.
+</li>
+<li class="cv-pub" id="pub-erlichDevelopmentTrapsEscaping2016">
+<a class="cv-pub-title" href="http://www-tandfonline-com.proxy3.library.mcgill.ca/doi/abs/10.1080/08853908.2016.1211571">&ldquo;Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?.&rdquo;</a>
+ <span class="cv-pub-year">2016.</span>
+ <em class="cv-pub-venue">The International Trade Journal</em>
+ <span class="cv-pub-vol">30(5)</span>
+ <span class="cv-pub-pages">378–382</span>.
+</li>
+<li class="cv-pub" id="pub-gutbrodImplausibleIncarcerationData2013">
+<a class="cv-pub-title" href="http://www.thelancet.com/journals/langlo/article/PIIS2214-109X(13)70142-6/fulltext">&ldquo;Implausible incarceration data need to be addressed.&rdquo;</a>
+ <span class="cv-pub-year">2013.</span>
+ <em class="cv-pub-venue">The Lancet Global Health</em>
+ <span class="cv-pub-vol">1(6)</span>
+ <span class="cv-pub-pages">e334-e335</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Hans Gutbrod)</span>
 </li>
 <li class="cv-pub" id="pub-gutbrod_OpinionSurvey_2009">
 <span class="cv-pub-title">&ldquo;Opinion survey opportunities and exit poll limitations.&rdquo;</span>
@@ -381,16 +385,28 @@ format:
 </ul>
 <h2><span data-i18n="section_headers.blogs">Blogs and Popular Press</span></h2>
 <ul class="cv-pub-list cv-pub-list--dash">
-<li class="cv-pub" id="pub-erlichGetCredibleModest2017">
-<a class="cv-pub-title" href="https://crrc-caucasus.blogspot.com/2017/09/get-credible-or-modest-proposal-to.html">&ldquo;Get credible! ... Or a modest proposal to implement pre-registration in think tank research.&rdquo;</a>
- <span class="cv-pub-year">2017.</span>
- <em class="cv-pub-venue">On Think Tanks</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Dustin Gilbreath)</span>
+<li class="cv-pub" id="pub-erlichCriticalThinkingProtects2022">
+<a class="cv-pub-title" href="https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation">&ldquo;Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality and Social Psychology.&rdquo;</a>
+ <span class="cv-pub-year">2022.</span>
+ <em class="cv-pub-venue">Character and Context</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> David Rand)</span>
 </li>
-<li class="cv-pub" id="pub-brikTrumpImpeachmentIsn">
-<a class="cv-pub-title" href="https://www.washingtonpost.com/politics/2020/02/19/trumps-impeachment-isnt-over-ukraines-citizens/">&ldquo;Trump’s impeachment isn’t over for Ukraine’s citizens.&rdquo;</a>
- <em class="cv-pub-venue">Washington Post</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Tymofii Brik and Jordan Gans-Morse)</span>
+<li class="cv-pub" id="pub-berlinerBigDataAcceso2022">
+<a class="cv-pub-title" href="bigdataytransparenciamx.lse.ac.uk/">&ldquo;Big data y acceso a la información en México.&rdquo;</a>
+ <span class="cv-pub-year">2022.</span>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner, Brian Palmer-Rubin, Jésica E. Tapia Reyes, and Benjamin Bagozzi)</span>
+</li>
+<li class="cv-pub" id="pub-light_SurveysShowUkrainians_2022">
+<a class="cv-pub-title" href="https://kyivindependent.com/group-of-authors-surveys-show-ukrainians-dont-want-kalashnikov-society/">&ldquo;Surveys show Ukrainians don't want 'Kalashnikov society'.&rdquo;</a>
+ <span class="cv-pub-year">2022.</span>
+ <em class="cv-pub-venue">Kyiv Independent</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Matthew Light, Anne-Marie Singh, and Serhii Bahlaii)</span>
+</li>
+<li class="cv-pub" id="pub-erlichaaronRootsResistanceUnderstanding2022">
+<a class="cv-pub-title" href="https://warontherocks.com/2022/04/roots-of-the-resistance-understanding-national-identity-in-ukraine/">&ldquo;Roots of the Resistance: Understanding National Identity in Ukraine.&rdquo;</a>
+ <span class="cv-pub-year">2022.</span>
+ <em class="cv-pub-venue">War on the Rocks</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Erlich, Aaron)</span>
 </li>
 <li class="cv-pub" id="pub-tapiaQuienSirveTransparencia2021">
 <a class="cv-pub-title" href="https://redaccion.nexos.com.mx/a-quien-le-sirve-la-transparencia-en-mexico/">&ldquo;¿A quién le sirve la transparencia en México?.&rdquo;</a>
@@ -409,22 +425,10 @@ format:
  <span class="cv-pub-year">2021.</span>
  <em class="cv-pub-venue">The Conversation</em>
 </li>
-<li class="cv-pub" id="pub-erlichCriticalThinkingProtects2022">
-<a class="cv-pub-title" href="https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation">&ldquo;Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality and Social Psychology.&rdquo;</a>
- <span class="cv-pub-year">2022.</span>
- <em class="cv-pub-venue">Character and Context</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> David Rand)</span>
-</li>
-<li class="cv-pub" id="pub-berlinerBigDataAcceso2022">
-<a class="cv-pub-title" href="bigdataytransparenciamx.lse.ac.uk/">&ldquo;Big data y acceso a la información en México.&rdquo;</a>
- <span class="cv-pub-year">2022.</span>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Daniel Berliner, Brian Palmer-Rubin, Jésica E. Tapia Reyes, and Benjamin Bagozzi)</span>
-</li>
-<li class="cv-pub" id="pub-light_SurveysShowUkrainians_2022">
-<a class="cv-pub-title" href="https://kyivindependent.com/group-of-authors-surveys-show-ukrainians-dont-want-kalashnikov-society/">&ldquo;Surveys show Ukrainians don't want 'Kalashnikov society'.&rdquo;</a>
- <span class="cv-pub-year">2022.</span>
- <em class="cv-pub-venue">Kyiv Independent</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Matthew Light, Anne-Marie Singh, and Serhii Bahlaii)</span>
+<li class="cv-pub" id="pub-brikTrumpImpeachmentIsn">
+<a class="cv-pub-title" href="https://www.washingtonpost.com/politics/2020/02/19/trumps-impeachment-isnt-over-ukraines-citizens/">&ldquo;Trump’s impeachment isn’t over for Ukraine’s citizens.&rdquo;</a>
+ <em class="cv-pub-venue">Washington Post</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Tymofii Brik and Jordan Gans-Morse)</span>
 </li>
 <li class="cv-pub" id="pub-brikRussiaWartimePropaganda2020">
 <a class="cv-pub-title" href="https://www.washingtonpost.com/politics/2022/06/20/russia-ukraine-relatives-conversations-propaganda/">&ldquo;Is Russia’s wartime propaganda more powerful than family bonds?.&rdquo;</a>
@@ -432,11 +436,11 @@ format:
  <em class="cv-pub-venue">Washington Post</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Tymofii Brik, Erlich, Aaron, and Jordan Gans-Morse)</span>
 </li>
-<li class="cv-pub" id="pub-erlichaaronRootsResistanceUnderstanding2022">
-<a class="cv-pub-title" href="https://warontherocks.com/2022/04/roots-of-the-resistance-understanding-national-identity-in-ukraine/">&ldquo;Roots of the Resistance: Understanding National Identity in Ukraine.&rdquo;</a>
- <span class="cv-pub-year">2022.</span>
- <em class="cv-pub-venue">War on the Rocks</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Erlich, Aaron)</span>
+<li class="cv-pub" id="pub-erlichGetCredibleModest2017">
+<a class="cv-pub-title" href="https://crrc-caucasus.blogspot.com/2017/09/get-credible-or-modest-proposal-to.html">&ldquo;Get credible! ... Or a modest proposal to implement pre-registration in think tank research.&rdquo;</a>
+ <span class="cv-pub-year">2017.</span>
+ <em class="cv-pub-venue">On Think Tanks</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Dustin Gilbreath)</span>
 </li>
 </ul>
 <h2><span data-i18n="section_headers.working_papers">Published Working Papers</span></h2>
@@ -447,30 +451,26 @@ format:
  <em class="cv-pub-venue">IPR Working Paper Series</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse, Simeon Nichter, and Arne Holverscheid)</span>
 </li>
-<li class="cv-pub" id="pub-erlich_CanNormbased_2026">
-<a class="cv-pub-title" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12940">&ldquo;Can norm-based information campaigns reduce corruption?.&rdquo;</a>
- <span class="cv-pub-year">2026.</span>
- <em class="cv-pub-venue">American Journal of Political Science</em>
- <span class="cv-pub-vol">70(2)</span>
- <span class="cv-pub-pages">471–490</span>.
+<li class="cv-pub" id="pub-erlich_CanNormBased_2023">
+<a class="cv-pub-title" href="https://www.ipr.northwestern.edu/documents/working-papers/2023/wp-23-33.pdf">&ldquo;Can Norm-Based Information Campaigns Reduce Corruption?.&rdquo;</a>
+ <span class="cv-pub-year">2023.</span>
+ <em class="cv-pub-venue">IPR Working Paper Series</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse)</span>
+</li>
+<li class="cv-pub" id="pub-erlich_MeasuringHow_2023">
+<a class="cv-pub-title" href="https://osf.io/mwg7u_v1/">&ldquo;Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the Country of Georgia.&rdquo;</a>
+ <span class="cv-pub-year">2023.</span>
+</li>
+<li class="cv-pub" id="pub-erlichSelectiveBriberyWhen2022">
+<a class="cv-pub-title" href="https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf">&ldquo;Selective Bribery: When Do Citizens Engage in Corruption?.&rdquo;</a>
+ <span class="cv-pub-year">2022.</span>
+ <em class="cv-pub-venue">IPR Working Paper Series</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse and Simeon NIchter)</span>
 </li>
 <li class="cv-pub" id="pub-erlichElderYouRe2021">
 <a class="cv-pub-title" href="https://afrobarometer.org/sites/default/files/publications/Working%20papers/wp185-age-group_differences_in_social_and_political_interactions_in_africa-afrobarometer_working_paper-16june20.pdf">&ldquo;Elder, you’re right! Age-group differences in social and political interactions in Africa.&rdquo;</a>
  <span class="cv-pub-year">2021.</span>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Andrew McCormack)</span>
-</li>
-<li class="cv-pub" id="pub-erlich_SelectiveBribery_2025">
-<a class="cv-pub-title" href="https://doi.org/10.1177/00104140241259444">&ldquo;Selective Bribery: When Do Citizens Engage in Corruption?.&rdquo;</a>
- <span class="cv-pub-year">2025.</span>
- <em class="cv-pub-venue">Comparative Political Studies</em>
- <span class="cv-pub-vol">58(5)</span>
- <span class="cv-pub-pages">996–1036</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse and Simeon Nichter)</span>
-</li>
-<li class="cv-pub" id="pub-erlich_MeasuringHow_2023">
-<a class="cv-pub-title" href="https://osf.io/mwg7u_v1/">&ldquo;Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the Country of Georgia.&rdquo;</a>
- <span class="cv-pub-year">2023.</span>
 </li>
 </ul>
 <h2><span data-i18n="section_headers.in_prep">Manuscripts in Preparation</span></h2>

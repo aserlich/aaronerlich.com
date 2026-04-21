@@ -263,10 +263,35 @@ def render_zotero_section(proposal: dict, by_citekey: dict,
     `numbered=True` uses etaremune (reverse count); False uses itemize
     with em-dash markers, matching cv_source.tex."""
     items = (proposal.get("sections") or {}).get(proposal_key) or []
-    # Pin status-bearing entries (forthcoming / accepted / online first) to
-    # the top of the section. Stable sort preserves proposal order within
-    # each group.
-    items = sorted(items, key=lambda e: not bool(e.get("latex_status")))
+
+    def _year(e: dict) -> int:
+        """Prefer Zotero `issued` year (authoritative), fall back to the
+        proposal's `latex_year`, then 0."""
+        ck = e.get("match_citekey")
+        if ck and ck in by_citekey:
+            parts = (by_citekey[ck].get("issued") or {}).get("date-parts") or [[None]]
+            y = parts[0][0] if parts and parts[0] else None
+            if y:
+                try:
+                    return int(y)
+                except (TypeError, ValueError):
+                    pass
+        ly = e.get("latex_year")
+        if ly:
+            try:
+                return int(ly)
+            except (TypeError, ValueError):
+                return 0
+        return 0
+
+    # Status entries pin to top; otherwise reverse-chronological.
+    items = sorted(
+        items,
+        key=lambda e: (
+            0 if e.get("latex_status") else 1,
+            -_year(e),
+        ),
+    )
     out = [f"\\section{{\\sc {header}}}"]
     if not items:
         out.append("% (no entries)")

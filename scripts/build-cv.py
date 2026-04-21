@@ -365,10 +365,36 @@ def render_education(cv: dict) -> str:
 def render_publications_section(cv: dict, proposal: dict, by_citekey: dict, label_with: str,
                                 proposal_key: str, header_key: str, numbered: bool) -> str:
     items = (proposal.get("sections") or {}).get(proposal_key) or []
-    # Status-bearing entries (forthcoming / accepted / in press / online first)
-    # pin to the top of their section, ahead of dated entries. Python's sort
-    # is stable, so the proposal-yml order is preserved within each group.
-    items = sorted(items, key=lambda e: not bool(e.get("latex_status")))
+
+    def _year(e: dict) -> int:
+        """Sort key — prefer Zotero `issued` year (authoritative), fall back
+        to proposal's `latex_year`, then 0 so unknown-year entries sink."""
+        ck = e.get("match_citekey")
+        if ck and ck in by_citekey:
+            parts = (by_citekey[ck].get("issued") or {}).get("date-parts") or [[None]]
+            y = parts[0][0] if parts and parts[0] else None
+            if y:
+                try:
+                    return int(y)
+                except (TypeError, ValueError):
+                    pass
+        ly = e.get("latex_year")
+        if ly:
+            try:
+                return int(ly)
+            except (TypeError, ValueError):
+                return 0
+        return 0
+
+    # Status entries (Forthcoming / Online First) pin to the top. Below
+    # them, sort reverse-chronologically by year.
+    items = sorted(
+        items,
+        key=lambda e: (
+            0 if e.get("latex_status") else 1,  # status first
+            -_year(e),                           # newest first
+        ),
+    )
     out = [f'<h2>{i18n_span(f"section_headers.{header_key}", t(cv, f"section_headers.{header_key}"))}</h2>']
     if not items:
         out.append('<p><em>(none)</em></p>')

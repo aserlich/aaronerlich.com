@@ -4,30 +4,20 @@ summary:
   matched_low: 1
   no_match: 40
 sections:
-  book-review:
-  - match_citekey: erlichBookReviewSay2012
-    latex_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
-    proposed_tags:
-    - cv:include
-    - cv:section/book-review
-    latex_year: 2012
-    match_zotero_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
-    match_score: 100
   working-paper:
   - match_citekey: erlich_WhatCorruption_2025a
     latex_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
-    latex_year: null
     proposed_tags:
     - cv:include
     - cv:section/working-paper
     match_zotero_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
     match_score: 100
-  - match_citekey: erlich_CanNormbased_2026
+  - match_citekey: erlich_CanNormBased_2023
     latex_title: Can Norm-Based Information Campaigns Reduce Corruption?
-    latex_year: null
     proposed_tags:
     - cv:include
     - cv:section/working-paper
+    latex_url: https://www.econstor.eu/bitstream/10419/280691/1/I4R-DP094.pdf
     match_zotero_title: Can Norm-Based Information Campaigns Reduce Corruption?
     match_score: 100
   - match_citekey: erlichElderYouRe2021
@@ -37,12 +27,13 @@ sections:
     - cv:section/working-paper
     latex_url: http://afrobarometer.org/publications/wp185-age-group-differences-social-and-political-interactions-africa
     match_score: 100
-  - match_citekey: erlich_SelectiveBribery_2025
+  - match_citekey: erlichSelectiveBriberyWhen2022
     latex_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
-    latex_year: null
     proposed_tags:
     - cv:include
     - cv:section/working-paper
+    latex_url: https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf
+    latex_year: 2022
     match_zotero_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
     match_score: 100
   - latex_title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the Country of Georgia.'
@@ -64,13 +55,11 @@ sections:
     latex_year: 2025
     match_zotero_title: What corruption is most harmful? Unbundling citizen perceptions
     match_score: 100
-  - match_citekey: erlichSelectiveBriberyWhen2022
+  - match_citekey: erlich_SelectiveBribery_2025
     latex_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
     proposed_tags:
     - cv:include
     - cv:section/peer-reviewed
-    latex_url: https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf
-    latex_year: 2022
     match_zotero_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
     match_score: 100
   - match_citekey: chen_StudyingGlobal_
@@ -88,12 +77,11 @@ sections:
     latex_status: Forthcoming
     match_zotero_title: Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora
     match_score: 100
-  - match_citekey: erlich_CanNormBased_2023
+  - match_citekey: erlich_CanNormbased_2026
     latex_title: Can Norm-Based Information Campaigns Reduce Corruption?
     proposed_tags:
     - cv:include
     - cv:section/peer-reviewed
-    latex_url: https://www.econstor.eu/bitstream/10419/280691/1/I4R-DP094.pdf
     match_zotero_title: Can Norm-Based Information Campaigns Reduce Corruption?
     match_score: 100
   - match_citekey: berlinerCompetingTransparencyPolitical2015
@@ -338,6 +326,65 @@ sections:
     match_score: 57
     proposed_tags: []
     latex_url: http://siteresources.worldbank.org/EXTNWDR2013/Resources/8258024-1320950747192/8260293-1320956712276/8261091-1348683883703/WDR2013_bp_Aligning_Rights_and_Incentives.pdf
+  book-review:
+  - match_citekey: erlichBookReviewSay2012
+    latex_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
+    proposed_tags:
+    - cv:include
+    - cv:section/book-review
+    latex_year: 2012
+    match_zotero_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
+    match_score: 100
+  editor-reviewed:
+  - match_citekey: gutbrodImplausibleIncarcerationData2013
+    latex_title: Implausible Incarceration Data Need to Be Addressed
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+    latex_year: 2013
+    match_zotero_title: Implausible incarceration data need to be addressed
+    match_score: 100
+  - match_citekey: erlichDevelopmentTrapsEscaping2016
+    latex_title: 'Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?'
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+    latex_year: 2016
+    match_zotero_title: 'Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?'
+    match_score: 100
+  - match_citekey: bushLessonsResultsBlindReview2018
+    latex_title: Lessons from Results-Blind Review.
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+    latex_url: https://docs.google.com/viewer?a=v&pid=sites&srcid=dW1pY2guZWR1fHBvbGl0aWNhbC1lY29ub21pc3QtbmV3c2xldHRlcnxneDoxZjU3NWI4ZjgyMjNmN2M4
+    latex_year: 2018
+    match_score: 100
+  - match_citekey: erlichPreacceptanceMethodCombat2018
+    latex_title: 'Pre-acceptance as a method to combat publication bias in area studies: a pilot in the Caucasus.'
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+    latex_url: https://doi.org/10.1080/23761199.2018.1522796
+    latex_year: 2018
+    match_zotero_title: 'Pre-acceptance as a method to combat publication bias in area studies: a pilot in the Caucasus'
+    match_score: 100
+  - latex_title: Opinion Survey Opportunities and Exit Poll Limitations
+    latex_year: 2009
+    match_citekey: gutbrod_OpinionSurvey_2009
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
+  - latex_title: 'Tajikistan: from refugee sender to labor exporter.'
+    latex_year: 2006
+    match_citekey: erlich_TajikistanRefugee_2006
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/editor-reviewed
   blog:
   - match_citekey: erlichGetCredibleModest2017
     latex_title: Get credible! …Or a modest proposal to implement pre-registration in think tank research.
@@ -423,56 +470,6 @@ sections:
     - cv:include
     - cv:section/blog
     latex_url: https://warontherocks.com/2022/04/roots-of-the-resistance-understanding-national-identity-in-ukraine/
-  editor-reviewed:
-  - match_citekey: gutbrodImplausibleIncarcerationData2013
-    latex_title: Implausible Incarceration Data Need to Be Addressed
-    proposed_tags:
-    - cv:include
-    - cv:section/editor-reviewed
-    latex_year: 2013
-    match_zotero_title: Implausible incarceration data need to be addressed
-    match_score: 100
-  - match_citekey: erlichDevelopmentTrapsEscaping2016
-    latex_title: 'Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?'
-    proposed_tags:
-    - cv:include
-    - cv:section/editor-reviewed
-    latex_year: 2016
-    match_zotero_title: 'Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information Laws?'
-    match_score: 100
-  - match_citekey: bushLessonsResultsBlindReview2018
-    latex_title: Lessons from Results-Blind Review.
-    proposed_tags:
-    - cv:include
-    - cv:section/editor-reviewed
-    latex_url: https://docs.google.com/viewer?a=v&pid=sites&srcid=dW1pY2guZWR1fHBvbGl0aWNhbC1lY29ub21pc3QtbmV3c2xldHRlcnxneDoxZjU3NWI4ZjgyMjNmN2M4
-    latex_year: 2018
-    match_score: 100
-  - match_citekey: erlichPreacceptanceMethodCombat2018
-    latex_title: 'Pre-acceptance as a method to combat publication bias in area studies: a pilot in the Caucasus.'
-    proposed_tags:
-    - cv:include
-    - cv:section/editor-reviewed
-    latex_url: https://doi.org/10.1080/23761199.2018.1522796
-    latex_year: 2018
-    match_zotero_title: 'Pre-acceptance as a method to combat publication bias in area studies: a pilot in the Caucasus'
-    match_score: 100
-  - latex_title: Opinion Survey Opportunities and Exit Poll Limitations
-    latex_year: 2009
-    match_citekey: gutbrod_OpinionSurvey_2009
-    match_zotero_title: null
-    match_score: 100
-    proposed_tags:
-    - cv:include
-    - cv:section/editor-reviewed
-  - latex_title: 'Tajikistan: from refugee sender to labor exporter.'
-    latex_year: 2006
-    match_citekey: erlich_TajikistanRefugee_2006
-    match_zotero_title: null
-    match_score: 100
-    proposed_tags:
-    - cv:include
-    - cv:section/editor-reviewed
 unmatched:
 - section: peer-reviewed
   title: 'Accountability in Time: Gradual Change in Access-to-Information Institutions.'
