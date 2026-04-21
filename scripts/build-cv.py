@@ -202,6 +202,18 @@ def get_year(item: dict) -> str:
     return ""
 
 
+_YEAR_SORT_RE = re.compile(r"(\d{4})")
+
+def year_sort_key(value) -> int:
+    """Extract the first 4-digit year from a free-form string like '2025',
+    '2025-26', 'Fall 2024', 'April 2025', 'Aug 2023'. Returns 0 when no
+    year is found, so unknown-year entries sink."""
+    if value is None:
+        return 0
+    m = _YEAR_SORT_RE.search(str(value))
+    return int(m.group(1)) if m else 0
+
+
 def detect_annotation(ann: str):
     """Return (label_key, label_text, content, css_class) for an annotation."""
     a = ann.strip().rstrip(".")
@@ -439,7 +451,11 @@ def render_publications_section(cv: dict, proposal: dict, by_citekey: dict, labe
 
 def render_grants(cv: dict) -> str:
     out = [f'<h2>{i18n_span("section_headers.grants", t(cv, "section_headers.grants"))}</h2>']
-    for i, g in enumerate(cv["grants"]):
+    # Keep original index for i18n keys — sort indices by year desc.
+    grants = cv["grants"]
+    order = sorted(range(len(grants)), key=lambda i: -year_sort_key(grants[i].get("year")))
+    for i in order:
+        g = grants[i]
         title_html = i18n_span(f"grants.{i}.title", g["title"]["en"])
         if g.get("agency"):
             title_html += f' &mdash; {html_escape(g["agency"])}'
@@ -585,7 +601,11 @@ def render_presentations(cv: dict) -> str:
     out = [f'<h2>{i18n_span("section_headers.presentations", t(cv, "section_headers.presentations"))}</h2>',
            '<p><em>★ denotes invited talk</em></p>',
            '<ul class="cv-pub-list cv-pub-list--dash">']
-    for p in cv.get("presentations", []):
+    # Sort by the year parsed out of `date` (free-form, e.g.,
+    # "April 2025" / "Fall 2023"), newest first.
+    entries = sorted(cv.get("presentations", []),
+                     key=lambda p: -year_sort_key(p.get("date")))
+    for p in entries:
         invited_mark = '<span class="invited-mark">★</span> ' if p.get("invited") else ''
         title = html_escape(p.get("title", ""))
         venue = html_escape(p.get("venue", ""))
@@ -633,6 +653,8 @@ def render_mentorship(cv: dict) -> str:
         entries = ms.get(level, [])
         if not entries:
             continue
+        # Sort each cohort by graduation year, newest first
+        entries = sorted(entries, key=lambda m: -year_sort_key(m.get("year")))
         out.append(f'<p><strong>{label}</strong> (year of graduation)</p>')
         if show_placement:
             out.append('<table><thead><tr><th>Year</th><th>Name</th><th>Roles</th><th>Placement</th></tr></thead><tbody>')
@@ -653,7 +675,11 @@ def render_mentorship(cv: dict) -> str:
 
 def render_professional_experience(cv: dict) -> str:
     out = [f'<h2>{i18n_span("section_headers.relevant_experience", t(cv, "section_headers.relevant_experience"))}</h2>']
-    for exp in cv.get("professional_experience", []):
+    # Sort by the start year parsed out of `dates` (e.g., "2010 — 2012"),
+    # newest first. Entries without a parseable date sink.
+    entries = sorted(cv.get("professional_experience", []),
+                     key=lambda e: -year_sort_key(e.get("dates")))
+    for exp in entries:
         out.append('<div class="cv-block">')
         emp = html_escape(exp.get("employer", ""))
         loc = exp.get("locations", "")
@@ -673,30 +699,39 @@ def render_professional_experience(cv: dict) -> str:
     return "\n".join(out)
 
 
+def _group_by_year_and_render(entries: list, out: list) -> None:
+    """Merge entries that share a `year` and render reverse-chronologically.
+    Used by service subsections where multiple roles in the same year
+    should appear on one line as `<year> — role1; role2; role3`."""
+    # Preserve role order within each year by iterating entries in list order
+    from collections import OrderedDict
+    buckets: "OrderedDict[str, list[str]]" = OrderedDict()
+    for entry in entries:
+        yr = str(entry.get("year", ""))
+        buckets.setdefault(yr, []).extend(entry.get("roles", []) or [])
+    # Sort years reverse-chronologically; unknown years (0) sink to the bottom
+    for yr, roles in sorted(buckets.items(), key=lambda kv: -year_sort_key(kv[0])):
+        out.append(
+            f'<p><strong>{html_escape(yr)}</strong> &mdash; '
+            f'{"; ".join(html_escape(r) for r in roles)}</p>'
+        )
+
+
 def render_professional_service(cv: dict) -> str:
     ps = cv.get("professional_service", {})
     out = [f'<h2>{i18n_span("section_headers.professional_service", t(cv, "section_headers.professional_service"))}</h2>']
-    # Departmental
+    # Departmental — group by year, reverse-chron
     out.append('<h3>Departmental Service</h3>')
-    for entry in ps.get("departmental", []):
-        yr = html_escape(str(entry.get("year", "")))
-        roles = "; ".join(html_escape(r) for r in entry.get("roles", []))
-        out.append(f'<p><strong>{yr}</strong> &mdash; {roles}</p>')
-    # University
+    _group_by_year_and_render(ps.get("departmental", []), out)
+    # University — same
     out.append('<h3>University Service</h3>')
     uni = ps.get("university", {})
     if uni.get("founder_note"):
         out.append(f'<p><em>{html_escape(uni["founder_note"])}</em></p>')
-    for entry in uni.get("entries", []):
-        yr = html_escape(str(entry.get("year", "")))
-        roles = "; ".join(html_escape(r) for r in entry.get("roles", []))
-        out.append(f'<p><strong>{yr}</strong> &mdash; {roles}</p>')
-    # Profession
+    _group_by_year_and_render(uni.get("entries", []), out)
+    # Profession — same
     out.append('<h3>Profession</h3>')
-    for entry in ps.get("profession", []):
-        yr = html_escape(str(entry.get("year", "")))
-        roles = "; ".join(html_escape(r) for r in entry.get("roles", []))
-        out.append(f'<p><strong>{yr}</strong> &mdash; {roles}</p>')
+    _group_by_year_and_render(ps.get("profession", []), out)
     # Journal review
     jrl = ps.get("journal_review", [])
     if jrl:

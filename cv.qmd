@@ -569,23 +569,23 @@ format:
 <details class="cv-section-collapse"><summary>Mentorship</summary><h3><span data-i18n="section_headers.mentorship_header">Mentorship</span></h3>
 <p><strong>Ph.D. in Political Science</strong> (year of graduation)</p>
 <table><thead><tr><th>Year</th><th>Name</th><th>Roles</th><th>Placement</th></tr></thead><tbody>
-<tr><td>2022</td><td>Costin Ciobanu</td><td>Co-author, Lab Member, Dissertation Committee</td><td>Post-Doc, Royal Holloway University; Post-doc, University of Aarhus</td></tr>
-<tr><td>2023</td><td>Mathieu Lavigne</td><td>Co-author, Dissertation Committee</td><td>Post-Doc, Dartmouth College</td></tr>
-<tr><td>2024</td><td>Aengus Bridgman</td><td>Co-author, Lab Member, Dissertation Committee</td><td>Assistant Prof (Research), McGill University</td></tr>
 <tr><td>2025</td><td>Maxime Blanchard</td><td>Dissertation Committee</td><td>IRCC Canada</td></tr>
+<tr><td>2024</td><td>Aengus Bridgman</td><td>Co-author, Lab Member, Dissertation Committee</td><td>Assistant Prof (Research), McGill University</td></tr>
+<tr><td>2023</td><td>Mathieu Lavigne</td><td>Co-author, Dissertation Committee</td><td>Post-Doc, Dartmouth College</td></tr>
+<tr><td>2022</td><td>Costin Ciobanu</td><td>Co-author, Lab Member, Dissertation Committee</td><td>Post-Doc, Royal Holloway University; Post-doc, University of Aarhus</td></tr>
 <tr><td>TBD</td><td>Qinggang Li</td><td>Co-Supervisor</td><td></td></tr>
 </tbody></table>
 <p><strong>M.A. in Political Science</strong> (year of graduation)</p>
 <table><thead><tr><th>Year</th><th>Name</th><th>Roles</th><th>Placement</th></tr></thead><tbody>
-<tr><td>2019</td><td>Andrew McCormack</td><td>Co-Author, Research Assistant, Lab Member</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
-<tr><td>2019</td><td>Saewon Park</td><td>Supervisor, Research Assistant, Lab Manager, Co-author</td><td>[TrackTik](https://www.tracktik.com/); [The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
+<tr><td>2025</td><td>Rafael Campos-Gottardo</td><td>Supervisor, Lab member, Co-author</td><td></td></tr>
+<tr><td>2024</td><td>Pratik Mahajan</td><td>Co-Supervisor</td><td></td></tr>
+<tr><td>2023</td><td>Christopher Ross</td><td>Supervisor</td><td>[The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
+<tr><td>2022</td><td>Dilse Kaygisiz</td><td>Supervisor, Lab Member</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
+<tr><td>2021</td><td>Henry Atkins</td><td>Supervisor, Lab Member</td><td></td></tr>
 <tr><td>2020</td><td>Annie Chen</td><td>Supervisor, Lab Member, Co-author</td><td>[Bright Line Watch](http://brightlinewatch.org/)</td></tr>
 <tr><td>2020</td><td>Etienne Gagnon</td><td>Supervisor, Lab Manager</td><td></td></tr>
-<tr><td>2021</td><td>Henry Atkins</td><td>Supervisor, Lab Member</td><td></td></tr>
-<tr><td>2022</td><td>Dilse Kaygisiz</td><td>Supervisor, Lab Member</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
-<tr><td>2023</td><td>Christopher Ross</td><td>Supervisor</td><td>[The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
-<tr><td>2024</td><td>Pratik Mahajan</td><td>Co-Supervisor</td><td></td></tr>
-<tr><td>2025</td><td>Rafael Campos-Gottardo</td><td>Supervisor, Lab member, Co-author</td><td></td></tr>
+<tr><td>2019</td><td>Andrew McCormack</td><td>Co-Author, Research Assistant, Lab Member</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
+<tr><td>2019</td><td>Saewon Park</td><td>Supervisor, Research Assistant, Lab Manager, Co-author</td><td>[TrackTik](https://www.tracktik.com/); [The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
 <tr><td>TBD</td><td>Luis Alvarez</td><td>Supervisor</td><td></td></tr>
 <tr><td>TBD</td><td>Katerina McMullen</td><td>Supervisor, Lab member</td><td></td></tr>
 <tr><td>TBD</td><td>Aung (Koye) Myat</td><td>Supervisor</td><td></td></tr>
@@ -593,11 +593,11 @@ format:
 </tbody></table>
 <p><strong>Undergraduate</strong> (year of graduation)</p>
 <table><thead><tr><th>Year</th><th>Name</th><th>Roles</th></tr></thead><tbody>
-<tr><td>2017</td><td>Aidan McLaughlin</td><td>Internship Independent Study Supervisor (POLI 599)</td></tr>
-<tr><td>2017</td><td>Marie Lemieux</td><td>Internship Independent Study Supervisor (POLI 599)</td></tr>
-<tr><td>2018</td><td>Henry McKenzie</td><td>Honour's Thesis Supervisor (POLI 499)</td></tr>
 <tr><td>2019</td><td>Lucie Goulard</td><td>Independent Study Supervisor (POLI 599)</td></tr>
 <tr><td>2019</td><td>Tim Roy</td><td>Research Assistant, Lab Member, Independent Research Supervisor (POLI 490)</td></tr>
+<tr><td>2018</td><td>Henry McKenzie</td><td>Honour's Thesis Supervisor (POLI 499)</td></tr>
+<tr><td>2017</td><td>Aidan McLaughlin</td><td>Internship Independent Study Supervisor (POLI 599)</td></tr>
+<tr><td>2017</td><td>Marie Lemieux</td><td>Internship Independent Study Supervisor (POLI 599)</td></tr>
 </tbody></table></details>
 <details class="cv-section-collapse"><summary>Relevant Professional Experience</summary><h2><span data-i18n="section_headers.relevant_experience">Relevant Professional Experience</span></h2>
 <div class="cv-block">
@@ -639,7 +639,7 @@ format:
 </ul></details>
 <details class="cv-section-collapse"><summary>Professional Service</summary><h2><span data-i18n="section_headers.professional_service">Professional Service</span></h2>
 <h3>Departmental Service</h3>
-<p><strong>2025-26</strong> &mdash; CERC Chair Search Committee; Graduate Program/Admissions Committee</p>
+<p><strong>2025-26</strong> &mdash; CERC Chair Search Committee; Graduate Program/Admissions Committee; ad-hoc Committee on AI-related Issues; Methods Field Co-chair</p>
 <p><strong>2023-24</strong> &mdash; Placement Director</p>
 <p><strong>2022-23</strong> &mdash; Equity Committee; Dean's Rep - Economics Department Job Search</p>
 <p><strong>2021-22</strong> &mdash; Methods Stream Coordinator; Graduate Program/Admissions Committee</p>
@@ -647,8 +647,6 @@ format:
 <p><strong>2019-20</strong> &mdash; Honours and Joint Honours Undergraduate Advisor; Cyclical Review Undergraduate Committee; Quantitative Methods Coordinator</p>
 <p><strong>2018-19</strong> &mdash; Undergraduate Advisor; Comparative Behaviour Search Committee; Quantitative Methods Coordinator</p>
 <p><strong>2017-18</strong> &mdash; Comparative Behaviour Search Committee; Quantitative Methods Coordinator</p>
-<p><strong>2025-26</strong> &mdash; ad-hoc Committee on AI-related Issues</p>
-<p><strong>2025-26</strong> &mdash; Methods Field Co-chair</p>
 <h3>University Service</h3>
 <p><em>Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems Initiative (CDSI)</em></p>
 <p><strong>2025-26</strong> &mdash; Arts Curriculum Committee; Geographic Information Centre (GIC) Oversight Committee</p>
