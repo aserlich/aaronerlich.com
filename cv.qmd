@@ -9,7 +9,7 @@ format:
     section-divs: false
 ---
 
-<div class="cv-toolbar"><a href="files/Erlich_CV_en.pdf" class="btn btn-primary" data-i18n="labels.download_pdf">Download PDF</a> &nbsp; <em><span data-i18n="meta.last_updated">Last updated April 10, 2026</span></em></div>
+<div class="cv-toolbar"><a href="files/Erlich_CV_en.pdf" class="btn btn-primary" data-i18n="labels.download_pdf">Download PDF</a> &nbsp; <em><span data-i18n="meta.last_updated">Last updated April 20, 2026</span></em></div>
 <header class="cv-header">
 <h1>Aaron S. Erlich</h1>
 <table class="cv-contact-table">
@@ -321,8 +321,7 @@ format:
 </li>
 </ol>
 <h2><span data-i18n="section_headers.under_review">Under Review / To Resubmit</span></h2>
-<ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 7">
-<li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;Studying Global Diasporas via Social Media Recruitment: Practical Considerations.&rdquo;</span> (with Zeke Chen and Thomas Soehl) <em class="cv-pub-status">Revise &amp; Resubmit at International Journal of Social Research Methodology</em></li>
+<ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 6">
 <li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;A 'mega study' of approaches for sharing accurate news in the face of government repression.&rdquo;</span> (with Julia Minson, Jordan Gans-Morse, and Christopher Higgins) <em class="cv-pub-status">Under Review</em></li>
 <li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;War Fatigue?.&rdquo;</span> (with Rafael Campos-Gottardo) <em class="cv-pub-status">Under Review</em></li>
 <li class="cv-pub"><span class="cv-pub-title-plain">&ldquo;Border proximity and preferences for conflict resolution in Eastern Ukraine.&rdquo;</span> (with Calvin Garner and Matej Jungwirth) <em class="cv-pub-status">Under Review</em></li>
@@ -648,6 +647,8 @@ format:
 <p><strong>2019-20</strong> &mdash; Honours and Joint Honours Undergraduate Advisor; Cyclical Review Undergraduate Committee; Quantitative Methods Coordinator</p>
 <p><strong>2018-19</strong> &mdash; Undergraduate Advisor; Comparative Behaviour Search Committee; Quantitative Methods Coordinator</p>
 <p><strong>2017-18</strong> &mdash; Comparative Behaviour Search Committee; Quantitative Methods Coordinator</p>
+<p><strong>2025-26</strong> &mdash; ad-hoc Committee on AI-related Issues</p>
+<p><strong>2025-26</strong> &mdash; Methods Field Co-chair</p>
 <h3>University Service</h3>
 <p><em>Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems Initiative (CDSI)</em></p>
 <p><strong>2025-26</strong> &mdash; Arts Curriculum Committee; Geographic Information Centre (GIC) Oversight Committee</p>
