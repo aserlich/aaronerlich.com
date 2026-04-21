@@ -69,6 +69,14 @@ format:
  <em class="cv-pub-venue">Comparative Migration Studies</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl)</span>
 </li>
+<li class="cv-pub" id="pub-erlich_WhatCorruption_2025">
+<a class="cv-pub-title" href="https://www.sciencedirect.com/science/article/pii/S0305750X25000865">&ldquo;What corruption is most harmful? Unbundling citizen perceptions.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">World Development</em>
+ <span class="cv-pub-vol">194</span>
+ <span class="cv-pub-pages">107001</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse, Simeon Nichter, and Arne Holverscheid)</span>
+</li>
 <li class="cv-pub" id="pub-erlichSelectiveBriberyWhen2022">
 <a class="cv-pub-title" href="https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf">&ldquo;Selective Bribery: When Do Citizens Engage in Corruption?.&rdquo;</a>
  <span class="cv-pub-year">2022.</span>
@@ -85,14 +93,6 @@ format:
  <span class="cv-pub-year">2023.</span>
  <em class="cv-pub-venue">IPR Working Paper Series</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse)</span>
-</li>
-<li class="cv-pub" id="pub-erlich_WhatCorruption_2025">
-<a class="cv-pub-title" href="https://www.sciencedirect.com/science/article/pii/S0305750X25000865">&ldquo;What corruption is most harmful? Unbundling citizen perceptions.&rdquo;</a>
- <span class="cv-pub-year">2025.</span>
- <em class="cv-pub-venue">World Development</em>
- <span class="cv-pub-vol">194</span>
- <span class="cv-pub-pages">107001</span>.
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse, Simeon Nichter, and Arne Holverscheid)</span>
 </li>
 <li class="cv-pub" id="pub-berlinerCompetingTransparencyPolitical2015">
 <a class="cv-pub-title" href="http://journals.cambridge.org/article_S0003055414000616">&ldquo;Competing for Transparency: Political Competition and Institutional Reform in Mexican States.&rdquo;</a>
@@ -441,10 +441,32 @@ format:
 </ul>
 <h2><span data-i18n="section_headers.working_papers">Published Working Papers</span></h2>
 <ul class="cv-pub-list cv-pub-list--dash">
+<li class="cv-pub" id="pub-erlich_WhatCorruption_2025a">
+<a class="cv-pub-title" href="https://www.ipr.northwestern.edu/documents/working-papers/2025/wp-25-02.pdf">&ldquo;What Corruption is Most Harmful? Unbundling Citizen Perceptions.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">IPR Working Paper Series</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse, Simeon Nichter, and Arne Holverscheid)</span>
+</li>
+<li class="cv-pub" id="pub-erlich_CanNormbased_2026">
+<a class="cv-pub-title" href="https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12940">&ldquo;Can norm-based information campaigns reduce corruption?.&rdquo;</a>
+ <span class="cv-pub-year">2026.</span>
+ <em class="cv-pub-venue">American Journal of Political Science</em>
+ <span class="cv-pub-vol">70(2)</span>
+ <span class="cv-pub-pages">471–490</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse)</span>
+</li>
 <li class="cv-pub" id="pub-erlichElderYouRe2021">
 <a class="cv-pub-title" href="https://afrobarometer.org/sites/default/files/publications/Working%20papers/wp185-age-group_differences_in_social_and_political_interactions_in_africa-afrobarometer_working_paper-16june20.pdf">&ldquo;Elder, you’re right! Age-group differences in social and political interactions in Africa.&rdquo;</a>
  <span class="cv-pub-year">2021.</span>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Andrew McCormack)</span>
+</li>
+<li class="cv-pub" id="pub-erlich_SelectiveBribery_2025">
+<a class="cv-pub-title" href="https://doi.org/10.1177/00104140241259444">&ldquo;Selective Bribery: When Do Citizens Engage in Corruption?.&rdquo;</a>
+ <span class="cv-pub-year">2025.</span>
+ <em class="cv-pub-venue">Comparative Political Studies</em>
+ <span class="cv-pub-vol">58(5)</span>
+ <span class="cv-pub-pages">996–1036</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse and Simeon Nichter)</span>
 </li>
 <li class="cv-pub" id="pub-erlich_MeasuringHow_2023">
 <a class="cv-pub-title" href="https://osf.io/mwg7u_v1/">&ldquo;Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the Country of Georgia.&rdquo;</a>

@@ -173,24 +173,46 @@ def build_title_index() -> dict[str, list[dict]]:
     return idx
 
 
-def resolve_citekey(title: str, title_idx: dict, existing_proposal_cks: set) -> str | None:
-    """Pick the best citekey for a title, preferring:
-      1. A citekey already present in the current proposal (stability)
-      2. A citekey whose CSL entry has both year and authors (non-stub)
-      3. The alphabetically-first remaining candidate (tiebreaker)
-    Returns None if no title match at all."""
+def resolve_citekey(
+    title: str,
+    title_idx: dict,
+    proposal_idx: dict,
+    desired_section: str,
+    already_used: set,
+) -> str | None:
+    """Pick the best citekey for a Zotero item, honoring the convention that
+    a paper can legitimately appear in the CV as two entries (working-paper
+    version AND peer-reviewed version). The desired_section (derived from
+    the Zotero item's cv:section/* tag) biases the match toward a citekey
+    that's already in that section of the proposal, so two items with the
+    same title resolve to two distinct citekeys.
+
+    Tier order:
+      1. In proposal AND in the desired section  (stability; no move)
+      2. In proposal in ANY section  (this is a section move)
+      3. Non-stub (year + authors present)
+      4. Any remaining candidate, alphabetical tiebreaker
+
+    `already_used` rules out citekeys that have already been claimed by a
+    previously-processed Zotero item in this run — enforces one-to-one
+    matching when multiple items share a title."""
     cands = title_idx.get(_normalize_title(title)) or []
+    cands = [c for c in cands if c["citekey"] not in already_used]
     if not cands:
         return None
-    # Tier 1: citekeys already in the proposal
-    in_proposal = [c for c in cands if c["citekey"] in existing_proposal_cks]
-    if in_proposal:
-        return in_proposal[0]["citekey"]
-    # Tier 2: non-stubs (year + authors present)
-    complete = [c for c in cands if c["has_year"] and c["has_authors"]]
-    if complete:
-        return sorted(complete, key=lambda c: c["citekey"])[0]["citekey"]
-    # Tier 3: anything else, sorted for determinism
+    # Tier 1: citekey already in the desired section
+    t1 = [c for c in cands if proposal_idx.get(c["citekey"]) == desired_section]
+    if t1:
+        return t1[0]["citekey"]
+    # Tier 2: citekey in proposal somewhere else (cross-section move)
+    t2 = [c for c in cands if c["citekey"] in proposal_idx]
+    if t2:
+        return t2[0]["citekey"]
+    # Tier 3: non-stub candidate
+    t3 = [c for c in cands if c["has_year"] and c["has_authors"]]
+    if t3:
+        return sorted(t3, key=lambda c: c["citekey"])[0]["citekey"]
+    # Tier 4: anything
     return sorted(cands, key=lambda c: c["citekey"])[0]["citekey"]
 
 
@@ -263,14 +285,25 @@ def sync(dry_run: bool = False) -> int:
     skipped = 0
     warnings: list[str] = []
 
-    # Track which citekeys we saw, and for each, which section they best
-    # belong to (highest-ranked across all Zotero items carrying that ck).
-    # Storing section + source title lets us dedupe when Zotero has multiple
-    # items with the same title but different section tags.
-    resolved: dict[str, dict] = {}  # citekey → {"section", "title", "all_titles": []}
+    # proposal_idx: citekey → section (current location in the proposal).
+    # Passed to resolve_citekey so that when a Zotero item's title matches
+    # multiple citekeys, we prefer the one whose current proposal section
+    # matches the item's cv:section/* tag. Makes two-version papers (same
+    # title under both working-paper and peer-reviewed citekeys) keep their
+    # identities instead of collapsing.
+    proposal_idx: dict[str, str] = {ck: sect for ck, (sect, _) in existing_idx.items()}
 
-    # First pass: resolve each Zotero item to a (citekey, section) pair, and
-    # for each citekey track the highest-ranked section encountered.
+    # Track claimed citekeys so a second Zotero item with the same title
+    # resolves to a different candidate.
+    claimed: set[str] = set()
+    # seen_citekeys accumulates everything we've mapped into new_sections
+    # — used by the second pass to decide which proposal orphans to keep.
+    seen_citekeys: set[str] = set()
+
+    # Build the new state section-by-section. We rebuild entries that come
+    # from Zotero; proposal-only entries (no Zotero match) stay as-is.
+    new_sections: dict[str, list[dict]] = {s: [] for s in KNOWN_SECTIONS}
+
     for item in tagged:
         data = item.get("data") or {}
         tags = data.get("tags") or []
@@ -280,11 +313,12 @@ def sync(dry_run: bool = False) -> int:
         section, all_section_tags = section_from_tags(tags)
 
         citekey = citekey_from_extra(extra) or resolve_citekey(
-            title, title_idx, set(existing_idx.keys()))
+            title, title_idx, proposal_idx, section or "", claimed)
         if not citekey:
             warnings.append(
                 f"  ! no citekey for {title[:60]!r} — "
-                f"not in Extra field AND no matching title in BBT export"
+                f"not in Extra field AND no remaining title match in BBT export "
+                f"(likely all candidates claimed by earlier items)"
             )
             skipped += 1
             continue
@@ -297,40 +331,8 @@ def sync(dry_run: bool = False) -> int:
             skipped += 1
             continue
 
-        if citekey in resolved:
-            # Same citekey from multiple Zotero items — keep the higher-
-            # ranked section (more-published wins). Warn either way so
-            # Aaron can deduplicate in Zotero.
-            prior = resolved[citekey]
-            if _section_rank(section) > _section_rank(prior["section"]):
-                warnings.append(
-                    f"  ! {citekey} resolved from multiple Zotero items "
-                    f"(prior section={prior['section']!r}, now {section!r}) "
-                    f"— keeping {section!r} (more-published)"
-                )
-                resolved[citekey] = {"section": section, "title": title}
-            elif _section_rank(section) < _section_rank(prior["section"]):
-                warnings.append(
-                    f"  ! {citekey} resolved from multiple Zotero items "
-                    f"(prior section={prior['section']!r}, now {section!r}) "
-                    f"— keeping {prior['section']!r} (more-published)"
-                )
-            # Equal rank → keep first, silent
-            continue
-
-        resolved[citekey] = {"section": section, "title": title}
-
-    seen_citekeys = set(resolved.keys())
-
-    # Build the new state section-by-section. We rebuild entries that come
-    # from Zotero; proposal-only entries (no Zotero match) stay as-is.
-    new_sections: dict[str, list[dict]] = {s: [] for s in KNOWN_SECTIONS}
-
-    # Second pass: emit one entry per resolved citekey, in its best section,
-    # merging any curated fields forward from the existing proposal.
-    for citekey, info in resolved.items():
-        section = info["section"]
-        title = info["title"]
+        claimed.add(citekey)
+        seen_citekeys.add(citekey)
 
         if citekey in existing_idx:
             old_sect, old_i = existing_idx[citekey]

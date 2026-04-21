@@ -1,17 +1,49 @@
-
 summary:
   total: 70
   matched_high: 29
   matched_low: 1
   no_match: 40
 sections:
+  book-review:
+  - match_citekey: erlichBookReviewSay2012
+    latex_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
+    proposed_tags:
+    - cv:include
+    - cv:section/book-review
+    latex_year: 2012
+    match_zotero_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
+    match_score: 100
   working-paper:
+  - match_citekey: erlich_WhatCorruption_2025a
+    latex_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
+    latex_year: null
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    match_zotero_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
+    match_score: 100
+  - match_citekey: erlich_CanNormbased_2026
+    latex_title: Can Norm-Based Information Campaigns Reduce Corruption?
+    latex_year: null
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    match_zotero_title: Can Norm-Based Information Campaigns Reduce Corruption?
+    match_score: 100
   - match_citekey: erlichElderYouRe2021
     latex_title: Elder, you're Right! Age-Group Differences in social and political interactions in Africa
     proposed_tags:
     - cv:include
     - cv:section/working-paper
     latex_url: http://afrobarometer.org/publications/wp185-age-group-differences-social-and-political-interactions-africa
+    match_score: 100
+  - match_citekey: erlich_SelectiveBribery_2025
+    latex_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
+    latex_year: null
+    proposed_tags:
+    - cv:include
+    - cv:section/working-paper
+    match_zotero_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
     match_score: 100
   - latex_title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the Country of Georgia.'
     latex_year: null
@@ -22,92 +54,16 @@ sections:
     - cv:include
     - cv:section/working-paper
     latex_url: https://osf.io/mwg7u/
-  blog:
-  - match_citekey: erlichGetCredibleModest2017
-    latex_title: Get credible! …Or a modest proposal to implement pre-registration in think tank research.
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://onthinktanks.org/articles/get-credible-or-a-modest-proposal-to-implement-pre-registration-in-think-tank-research/
-    match_score: 100
-  - match_citekey: brikTrumpImpeachmentIsn
-    latex_title: Trump's impeachment isn't over for Ukraine's citizens
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://www.washingtonpost.com/politics/2020/02/19/trumps-impeachment-isnt-over-ukraines-citizens/
-    latex_year: 2020
-    match_score: 100
-  - match_citekey: tapiaQuienSirveTransparencia2021
-    latex_title: ¿A quién le sirve la transparencia en México?
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://redaccion.nexos.com.mx/a-quien-le-sirve-la-transparencia-en-mexico/
-    match_zotero_title: ¿A quién le sirve la transparencia en México?
-    match_score: 100
-  - match_citekey: bridgmanConservativePartySlowly2021
-    latex_title: Conservative Party slowly learning real cost of promoting culturally divisive policies.
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://www.hilltimes.com/2021/06/30/conservative-party-slowly-learning-real-cost-of-promoting-culturally-divisive-policies/303970
-    latex_year: 2021
-    match_zotero_title: Conservative Party slowly learning real cost of promoting culturally divisive policies
-    match_score: 100
-  - match_citekey: erlichVoteBuyingBig2021
-    latex_title: Vote buying is a big problem in Kenya. How to curb it before the 2022 elections.
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://theconversation.com/vote-buying-is-a-big-problem-in-kenya-how-to-curb-it-before-the-2022-elections-171630
-    latex_year: 2022
-    match_zotero_title: Vote buying is a big problem in Kenya. How to curb it before the 2022 elections
-    match_score: 100
-  - match_citekey: erlichCriticalThinkingProtects2022
-    latex_title: Critical Thinking Protects Ukrainians from the Kremlin's Disinformation War
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation
-    match_zotero_title: Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality and Social Psychology
-    match_score: 76
-  - match_citekey: berlinerBigDataAcceso2022
-    latex_title: Big data y acceso a la información en México
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: //osf.io/nbqus/.
-    match_zotero_title: Big data y acceso a la información en México
-    match_score: 100
-  - latex_title: Surveys show Ukrainians don't want 'Kalashnikov society'
-    latex_year: null
-    match_citekey: light_SurveysShowUkrainians_2022
-    match_zotero_title: null
-    match_score: 100
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://kyivindependent.com/group-of-authors-surveys-show-ukrainians-dont-want-kalashnikov-society/
-  - latex_title: Is Russia's wartime propaganda more powerful than family bonds?
-    latex_year: 2022
-    match_citekey: brikRussiaWartimePropaganda2020
-    match_zotero_title: null
-    match_score: 100
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://www.washingtonpost.com/politics/2022/06/20/russia-ukraine-relatives-conversations-propaganda/
-  - latex_title: 'Root of Resistance: Understanding National Identiy in Ukraine.'
-    latex_year: 2022
-    match_citekey: erlichaaronRootsResistanceUnderstanding2022
-    match_zotero_title: null
-    match_score: 100
-    proposed_tags:
-    - cv:include
-    - cv:section/blog
-    latex_url: https://warontherocks.com/2022/04/roots-of-the-resistance-understanding-national-identity-in-ukraine/
   peer-reviewed:
+  - match_citekey: erlich_WhatCorruption_2025
+    latex_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
+    proposed_tags:
+    - cv:include
+    - cv:section/peer-reviewed
+    latex_url: https://www.ipr.northwestern.edu/documents/working-papers/2025/wp-25-2.pdf
+    latex_year: 2025
+    match_zotero_title: What corruption is most harmful? Unbundling citizen perceptions
+    match_score: 100
   - match_citekey: erlichSelectiveBriberyWhen2022
     latex_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
     proposed_tags:
@@ -119,7 +75,6 @@ sections:
     match_score: 100
   - match_citekey: chen_StudyingGlobal_
     latex_title: 'Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations'
-    latex_year: null
     proposed_tags:
     - cv:include
     - cv:section/peer-reviewed
@@ -140,15 +95,6 @@ sections:
     - cv:section/peer-reviewed
     latex_url: https://www.econstor.eu/bitstream/10419/280691/1/I4R-DP094.pdf
     match_zotero_title: Can Norm-Based Information Campaigns Reduce Corruption?
-    match_score: 100
-  - match_citekey: erlich_WhatCorruption_2025
-    latex_title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
-    proposed_tags:
-    - cv:include
-    - cv:section/peer-reviewed
-    latex_url: https://www.ipr.northwestern.edu/documents/working-papers/2025/wp-25-2.pdf
-    latex_year: 2025
-    match_zotero_title: What corruption is most harmful? Unbundling citizen perceptions
     match_score: 100
   - match_citekey: berlinerCompetingTransparencyPolitical2015
     latex_title: 'Competing for Transparency: Political Competition and Institutional Reform in Mexican States.'
@@ -392,6 +338,91 @@ sections:
     match_score: 57
     proposed_tags: []
     latex_url: http://siteresources.worldbank.org/EXTNWDR2013/Resources/8258024-1320950747192/8260293-1320956712276/8261091-1348683883703/WDR2013_bp_Aligning_Rights_and_Incentives.pdf
+  blog:
+  - match_citekey: erlichGetCredibleModest2017
+    latex_title: Get credible! …Or a modest proposal to implement pre-registration in think tank research.
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://onthinktanks.org/articles/get-credible-or-a-modest-proposal-to-implement-pre-registration-in-think-tank-research/
+    match_score: 100
+  - match_citekey: brikTrumpImpeachmentIsn
+    latex_title: Trump's impeachment isn't over for Ukraine's citizens
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://www.washingtonpost.com/politics/2020/02/19/trumps-impeachment-isnt-over-ukraines-citizens/
+    latex_year: 2020
+    match_score: 100
+  - match_citekey: tapiaQuienSirveTransparencia2021
+    latex_title: ¿A quién le sirve la transparencia en México?
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://redaccion.nexos.com.mx/a-quien-le-sirve-la-transparencia-en-mexico/
+    match_zotero_title: ¿A quién le sirve la transparencia en México?
+    match_score: 100
+  - match_citekey: bridgmanConservativePartySlowly2021
+    latex_title: Conservative Party slowly learning real cost of promoting culturally divisive policies.
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://www.hilltimes.com/2021/06/30/conservative-party-slowly-learning-real-cost-of-promoting-culturally-divisive-policies/303970
+    latex_year: 2021
+    match_zotero_title: Conservative Party slowly learning real cost of promoting culturally divisive policies
+    match_score: 100
+  - match_citekey: erlichVoteBuyingBig2021
+    latex_title: Vote buying is a big problem in Kenya. How to curb it before the 2022 elections.
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://theconversation.com/vote-buying-is-a-big-problem-in-kenya-how-to-curb-it-before-the-2022-elections-171630
+    latex_year: 2022
+    match_zotero_title: Vote buying is a big problem in Kenya. How to curb it before the 2022 elections
+    match_score: 100
+  - match_citekey: erlichCriticalThinkingProtects2022
+    latex_title: Critical Thinking Protects Ukrainians from the Kremlin's Disinformation War
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation
+    match_zotero_title: Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality and Social Psychology
+    match_score: 76
+  - match_citekey: berlinerBigDataAcceso2022
+    latex_title: Big data y acceso a la información en México
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: //osf.io/nbqus/.
+    match_zotero_title: Big data y acceso a la información en México
+    match_score: 100
+  - latex_title: Surveys show Ukrainians don't want 'Kalashnikov society'
+    latex_year: null
+    match_citekey: light_SurveysShowUkrainians_2022
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://kyivindependent.com/group-of-authors-surveys-show-ukrainians-dont-want-kalashnikov-society/
+  - latex_title: Is Russia's wartime propaganda more powerful than family bonds?
+    latex_year: 2022
+    match_citekey: brikRussiaWartimePropaganda2020
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://www.washingtonpost.com/politics/2022/06/20/russia-ukraine-relatives-conversations-propaganda/
+  - latex_title: 'Root of Resistance: Understanding National Identiy in Ukraine.'
+    latex_year: 2022
+    match_citekey: erlichaaronRootsResistanceUnderstanding2022
+    match_zotero_title: null
+    match_score: 100
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://warontherocks.com/2022/04/roots-of-the-resistance-understanding-national-identity-in-ukraine/
   editor-reviewed:
   - match_citekey: gutbrodImplausibleIncarcerationData2013
     latex_title: Implausible Incarceration Data Need to Be Addressed
@@ -442,15 +473,6 @@ sections:
     proposed_tags:
     - cv:include
     - cv:section/editor-reviewed
-  book-review:
-  - match_citekey: erlichBookReviewSay2012
-    latex_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
-    proposed_tags:
-    - cv:include
-    - cv:section/book-review
-    latex_year: 2012
-    match_zotero_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
-    match_score: 100
 unmatched:
 - section: peer-reviewed
   title: 'Accountability in Time: Gradual Change in Access-to-Information Institutions.'
