@@ -63,9 +63,15 @@ format:
 </ul></div>
 <h2><span data-i18n="section_headers.peer_reviewed">Peer-Reviewed Publications</span></h2>
 <ol class="cv-pub-list cv-pub-list--reverse" style="--cv-pub-start: 32">
+<li class="cv-pub" id="pub-chen_StudyingGlobal_">
+<span class="cv-pub-title">&ldquo;Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations.&rdquo;</span>
+ <span class="cv-pub-status">Accepted.</span>
+ <em class="cv-pub-venue">International Journal of Social Research Methodology</em>
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Zhenxiang Chen and Thomas Soehl)</span>
+</li>
 <li class="cv-pub" id="pub-erlich_WhoShould_">
 <span class="cv-pub-title">&ldquo;Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora.&rdquo;</span>
- <span class="cv-pub-status">Forthcoming.</span>
+ <span class="cv-pub-status">Accepted.</span>
  <em class="cv-pub-venue">Comparative Migration Studies</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl)</span>
 </li>
@@ -312,11 +318,6 @@ format:
  <span class="cv-pub-year">2012.</span>
  <em class="cv-pub-venue">World Bank Development Report Background Paper</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Margaret Levi, Christoper Adolph, Daniel Berliner, Anne Greenleaf, Milli Lake, and Jennifer Noveck)</span>
-</li>
-<li class="cv-pub" id="pub-chen_StudyingGlobal_">
-<span class="cv-pub-title">&ldquo;Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations.&rdquo;</span>
- <em class="cv-pub-venue">International Journal of Social Research Methodology</em>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Zhenxiang Chen and Thomas Soehl)</span>
 </li>
 </ol>
 <h2><span data-i18n="section_headers.under_review">Under Review / To Resubmit</span></h2>

@@ -89,6 +89,20 @@ PRESERVE_FIELDS = (
 
 CITEKEY_RE = re.compile(r"^Citation Key:\s*(\S+)\s*$", re.MULTILINE)
 
+# Explicit `tex.cv-status: Forthcoming` line in Extra (CV_SYSTEM.md
+# convention), OR a bare recognized status word on its own line.
+STATUS_TEX_RE = re.compile(r"^tex\.cv-status:\s*(.+?)\s*$", re.MULTILINE | re.IGNORECASE)
+_BARE_STATUS_WORDS = {
+    "accepted":     "Accepted",
+    "forthcoming":  "Forthcoming",
+    "in press":     "In Press",
+    "online first": "Online First",
+}
+STATUS_BARE_RE = re.compile(
+    r"^(" + "|".join(re.escape(w) for w in _BARE_STATUS_WORDS.keys()) + r")\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
+
 
 def load_api_key() -> str:
     if not KEY_FILE.exists():
@@ -129,6 +143,26 @@ def citekey_from_extra(extra: str) -> str | None:
         return None
     m = CITEKEY_RE.search(extra)
     return m.group(1) if m else None
+
+
+def status_from_extra(extra: str) -> str | None:
+    """Pull a publication status ("Forthcoming", "Accepted", "In Press",
+    "Online First") from the Zotero Extra field. Two recognized forms:
+
+      1. Explicit:  `tex.cv-status: Forthcoming`
+      2. Bare word on its own line: `Accepted`, `Forthcoming`, `In Press`,
+         `Online First` (case-insensitive, normalized to Title Case)
+
+    Returns None when neither is present."""
+    if not extra:
+        return None
+    m = STATUS_TEX_RE.search(extra)
+    if m:
+        return m.group(1).strip()
+    m = STATUS_BARE_RE.search(extra)
+    if m:
+        return _BARE_STATUS_WORDS[m.group(1).lower()]
+    return None
 
 
 _NORMALIZE_RE = re.compile(r"[^a-z0-9]+")
@@ -358,6 +392,11 @@ def sync(dry_run: bool = False) -> int:
         claimed.add(citekey)
         seen_citekeys.add(citekey)
 
+        # Publication status (Forthcoming / Accepted / In Press / Online First)
+        # from the Zotero Extra field. Authoritative — overwrites whatever
+        # was in the proposal, so updating Extra → re-sync propagates.
+        status_from_zotero = status_from_extra(extra)
+
         if citekey in existing_idx:
             old_sect, old_i = existing_idx[citekey]
             old_entry = (proposal["sections"].get(old_sect) or [])[old_i]
@@ -385,6 +424,20 @@ def sync(dry_run: bool = False) -> int:
                 "match_score": 100,
             }
             print(f"  add  {citekey}  → {section}: {title[:60]}", file=sys.stderr)
+
+        # Sync status from Zotero Extra last — wins over any preserved value
+        # from the old proposal, so clearing Extra after publication removes
+        # the status label next time the sync runs.
+        if status_from_zotero:
+            if merged.get("latex_status") != status_from_zotero:
+                print(f"       status: {merged.get('latex_status') or '(none)'} → {status_from_zotero}",
+                      file=sys.stderr)
+            merged["latex_status"] = status_from_zotero
+        elif "latex_status" in merged:
+            # Zotero Extra no longer has a status line → drop it.
+            print(f"       status dropped: was {merged['latex_status']!r}",
+                  file=sys.stderr)
+            merged.pop("latex_status", None)
 
         new_sections[section].append(merged)
 

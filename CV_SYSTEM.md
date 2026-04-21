@@ -246,32 +246,44 @@ authoritative source for the build.
 ### Handle an accepted / forthcoming paper
 
 When a paper is accepted but has no publication date yet, it should
-appear at the **top** of its section in the CV, with "Forthcoming."
-(or "Accepted" / "In Press" / "Online First") in place of the year.
+appear at the **top** of its section in the CV, with "Accepted."
+(or "Forthcoming." / "In Press." / "Online First.") in place of the
+year.
 
-**Convention:**
+**Recommended: Zotero Extra field** (lets the sync pipeline pick it up
+automatically). On the Zotero item, put a single line in the **Extra**
+field — either form works:
 
-1. In `_data/cv-tag-proposal.yml`, find the paper's entry (or add a
-   new one per the "Add a new publication" flow above) and add a
-   single line:
-   ```yaml
-   - match_citekey: smith_FuturePaper_2026
-     latex_title: "Title of the Accepted Paper"
-     proposed_tags: [cv:include, cv:section/peer-reviewed]
-     latex_status: Forthcoming   # ← this line pins to top + prints "Forthcoming."
-   ```
-   Values you can use for `latex_status` (all render as-is with a
-   trailing period):
-   - `Forthcoming` — safe default
-   - `Accepted` — after acceptance notice, before any official listing
-   - `In Press` — after copy-edit / typesetting, before issue assignment
-   - `Online First` — journal convention for early online publication
-     (AJPS uses this; match what your journal says)
-2. Optional: in the Zotero `Extra` field on the same item, add a line
-   `tex.cv-status: Forthcoming` for archival parallel. The build
-   pipeline doesn't read this — the proposal yml entry is authoritative
-   — but it keeps Zotero internally consistent with the CV if you ever
-   look at the item there.
+```
+Accepted
+```
+
+or more explicitly:
+
+```
+tex.cv-status: Accepted
+```
+
+Recognized values (case-insensitive on input; rendered Title Case):
+`Accepted`, `Forthcoming`, `In Press`, `Online First`.
+
+Run `python3 scripts/sync-proposal-from-zotero.py --commit` and the
+status will flow into `_data/cv-tag-proposal.yml` as a `latex_status`
+field. Clearing the Extra line after publication and re-syncing
+removes the status label again.
+
+**Alternative: edit the proposal directly.** If you're not using Zotero
+or want to set status on a non-Zotero entry, add the line by hand:
+
+```yaml
+- match_citekey: smith_FuturePaper_2026
+  latex_title: "Title of the Accepted Paper"
+  proposed_tags: [cv:include, cv:section/peer-reviewed]
+  latex_status: Forthcoming
+```
+
+Either approach: the entry sorts to the top of its section, and the
+status string renders in place of the year.
 3. Rebuild and push:
    ```bash
    python3 scripts/build-cv.py && python3 scripts/build-cv-latex.py && quarto render cv.qmd
