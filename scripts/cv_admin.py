@@ -18,6 +18,8 @@ Requirements:
 from __future__ import annotations
 import subprocess
 import sys
+import urllib.error
+import urllib.request
 import webbrowser
 from pathlib import Path
 
@@ -40,6 +42,51 @@ LETTERS_PATH = REPO / "_data" / "letter-requests.yml"
 BUILD_SCRIPT = REPO / "scripts" / "build-cv.py"
 BUILD_LAB_SCRIPT = REPO / "scripts" / "build-lab.py"
 CV_QMD = REPO / "cv.qmd"
+
+DOCS = REPO / "docs"
+PREVIEW_PORT = 8765
+PREVIEW_URL = f"http://localhost:{PREVIEW_PORT}"
+
+
+def preview_status():
+    """Return ('ok'|'wrong'|'free', message) for the preview server on PREVIEW_PORT.
+
+    'ok'    -> something is serving docs/cv.html (200)
+    'wrong' -> port is occupied but cv.html is not found (wrong directory)
+    'free'  -> nothing is listening on the port
+    """
+    try:
+        with urllib.request.urlopen(f"{PREVIEW_URL}/cv.html", timeout=1.5) as r:
+            if r.status == 200:
+                return "ok", f"Preview server serving docs/ at {PREVIEW_URL}"
+            return "wrong", f"Port {PREVIEW_PORT} returned HTTP {r.status} for cv.html"
+    except urllib.error.HTTPError:
+        # Port answers HTTP but cv.html 404s -> a server for a *different* directory.
+        return "wrong", (
+            f"Port {PREVIEW_PORT} is in use by a server that is NOT serving this "
+            f"site's docs/ (cv.html 404s). Stop that server, then restart this admin."
+        )
+    except (urllib.error.URLError, OSError):
+        return "free", f"Nothing listening on port {PREVIEW_PORT}"
+
+
+def ensure_preview_server():
+    """Start the docs/ preview server if the port is free; warn if it's misused."""
+    state, msg = preview_status()
+    if state == "ok":
+        print(f"✓ {msg}", file=sys.stderr)
+        return
+    if state == "wrong":
+        print(f"⚠ {msg}", file=sys.stderr)
+        return
+    # free -> launch our own, detached so it outlives a quick restart of this loop
+    subprocess.Popen(
+        [sys.executable, "-m", "http.server", "-d", str(DOCS), str(PREVIEW_PORT)],
+        cwd=str(REPO),
+        stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
+        start_new_session=True,
+    )
+    print(f"✓ Started preview server: {PREVIEW_URL} (serving docs/)", file=sys.stderr)
 
 # Letters of recommendation — OneDrive folder where the archive lives.
 LORS_ROOT = Path.home() / "Library" / "CloudStorage" / "OneDrive-McGillUniversity" / "LORs"
@@ -1767,20 +1814,29 @@ def rebuild():
         f"$ quarto render cv.qmd lab.qmd\n{proc2.stdout[-2000:]}\n{proc2.stderr[-1000:]}"
     )
     success = proc1.returncode == 0 and proc_lab.returncode == 0 and proc2.returncode == 0
+    # Make sure a preview server is actually up (auto-start if the port is free).
+    ensure_preview_server()
+    prev_state, prev_msg = preview_status()
     return render_template_string(
         PAGE_HEAD + """
 <h2>Rebuild result {% if success %}✓{% else %}✗{% endif %}</h2>
+{% if prev_state != 'ok' %}
+<p style="background:#fdd;border:1px solid #c00;padding:0.6em;border-radius:4px;">
+⚠ {{ prev_msg }}
+</p>
+{% endif %}
 <pre class="rebuild-output">{{ output }}</pre>
 <p>
-<a href="http://localhost:8765/cv.html" target="_blank">Open cv.html →</a>
+<a href="{{ preview_url }}/cv.html" target="_blank">Open cv.html →</a>
 &nbsp; <a href="{{ url_for('index') }}">Back to admin</a>
 </p>
 """ + PAGE_FOOT,
         title="Rebuild", sections=SECTIONS, output=output, success=success,
+        prev_state=prev_state, prev_msg=prev_msg, preview_url=PREVIEW_URL,
     )
 
 
 if __name__ == "__main__":
     print("CV Admin running at http://localhost:5000", file=sys.stderr)
-    print("(Make sure your preview server is at http://localhost:8765)", file=sys.stderr)
+    ensure_preview_server()
     app.run(debug=False, port=5000, host="127.0.0.1")
