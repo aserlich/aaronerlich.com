@@ -9,7 +9,7 @@ format:
     section-divs: false
 ---
 
-<div class="cv-toolbar"><a href="files/Erlich_CV_en.pdf" class="btn btn-primary" data-i18n="labels.download_pdf">Download PDF</a> &nbsp; <em><span data-i18n="meta.last_updated">Last updated June 2, 2026</span></em></div>
+<div class="cv-toolbar"><a href="files/Erlich_CV_en.pdf" class="btn btn-primary" data-i18n="labels.download_pdf">Download PDF</a> &nbsp; <em><span data-i18n="meta.last_updated">Last updated June 4, 2026</span></em></div>
 <header class="cv-header">
 <h1>Aaron S. Erlich</h1>
 <table class="cv-contact-table">
@@ -523,6 +523,8 @@ format:
 <details class="cv-section-collapse"><summary>Recent Presentations</summary><h2><span data-i18n="section_headers.presentations">Recent Presentations</span></h2>
 <p><em>★ denotes invited talk</em></p>
 <ul class="cv-pub-list cv-pub-list--dash">
+<li class="cv-pub"><span class="invited-mark">★</span> &ldquo;The Past, Present, and Future of Public Opinion Survey Research in Ukraine: From Pen and Paper to Agentic AI (2015-2026)”.&rdquo; Research for Impact: Academic Expertise and the War in Ukraine , May 2, 2026.</li>
+<li class="cv-pub">&ldquo;Thinking About Europe and Governance Expectations: Evidence from an EU Candidate Country (Montenegro).&rdquo; Assocaition for the Study of Nationalisties, May 28, 2026.</li>
 <li class="cv-pub"><span class="invited-mark">★</span> &ldquo;How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine.&rdquo; Disinformation, Propaganda, and Russia's War on Ukraine, Institute of European, Russian, and Eurasian Studies, Carleton University, October 10, 2025.</li>
 <li class="cv-pub">&ldquo;Debates over Civilian Handgun Ownership in Wartime Ukraine.&rdquo; Danlyiw Seminar, University of Ottawa, September 25, 2025.</li>
 <li class="cv-pub">&ldquo;How do citizens view ESG?.&rdquo; Annual Meetings of the American Political Science Association, Vancouver, September 11, 2025.</li>
@@ -661,7 +663,7 @@ format:
 <p><strong>2018-19</strong> &mdash; Co-director R, Math and Replicable Summer Workshops</p>
 <p><strong>2017-18</strong> &mdash; Co-director R, Math and Replicable Summer Workshops</p>
 <h3>Profession</h3>
-<p><strong>2025-26</strong> &mdash; APSA Chair, Discussant</p>
+<p><strong>2025-26</strong> &mdash; APSA Chair; Discussant; ASN Chair; Discussant</p>
 <p><strong>2024-25</strong> &mdash; ASN Discussant; MPSA Chair, Discussant</p>
 <p><strong>2023-24</strong> &mdash; ASN Discussant; MPSA Discussant</p>
 <p><strong>2022-23</strong> &mdash; SSHRC Insight Development Grant (IDG) Review; APSA Discussant</p>
