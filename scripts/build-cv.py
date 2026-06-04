@@ -712,7 +712,7 @@ def _group_by_year_and_render(entries: list, out: list) -> None:
     # Sort years reverse-chronologically; unknown years (0) sink to the bottom
     for yr, roles in sorted(buckets.items(), key=lambda kv: -year_sort_key(kv[0])):
         out.append(
-            f'<p><strong>{html_escape(yr)}</strong> &mdash; '
+            f'<p class="cv-service-year"><strong>{html_escape(yr)}</strong> &mdash; '
             f'{"; ".join(html_escape(r) for r in roles)}</p>'
         )
 

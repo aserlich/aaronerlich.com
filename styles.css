@@ -271,6 +271,12 @@ body.about-page #title-block-header {
   color: #777;
 }
 
+/* Service year lines — indent the whole line under its subsection heading;
+   wrapped role text aligns with the indent (no hanging negative indent). */
+.cv-service-year {
+  padding-left: 1.5em;
+}
+
 /* Collapsible sections (after Testimony) — closed by default. The PDF
    render still shows everything since <details> is browser-only. */
 details.cv-section-collapse {
