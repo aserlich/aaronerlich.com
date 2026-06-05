@@ -321,16 +321,31 @@ def render_publication(item: dict, citekey: str, annotations: list, label_with: 
 
     if annotations:
         parts.append('<ul class="cv-pub-notes">')
+        # Group annotations that share a label so e.g. the original multi-outlet
+        # "Media coverage" line and any outlets added later via the admin render
+        # on ONE "Media coverage:" line instead of repeating the label. Distinct
+        # labels (Winner vs Honourable Mention) still get their own lines; unlabeled
+        # notes never merge.
+        grouped = []          # [ [key, label, cls, [content, ...]], ... ]
+        pos = {}              # label_key -> index in grouped
         for ann in annotations:
             key, label, content, cls = detect_annotation(ann)
+            if key and key in pos:
+                grouped[pos[key]][3].append(content)
+            else:
+                if key:
+                    pos[key] = len(grouped)
+                grouped.append([key, label, cls, [content]])
+        for key, label, cls, contents in grouped:
+            joined = ", ".join(latex_to_html(c) for c in contents if c)
             if label and key:
                 parts.append(
                     f'<li class="{cls}">'
                     f'<strong data-i18n="{key}">{html_escape(label)}</strong>: '
-                    f'{latex_to_html(content)}</li>'
+                    f'{joined}</li>'
                 )
             else:
-                parts.append(f'<li class="{cls}">{latex_to_html(content)}</li>')
+                parts.append(f'<li class="{cls}">{joined}</li>')
         parts.append('</ul>')
 
     parts.append('</li>')
