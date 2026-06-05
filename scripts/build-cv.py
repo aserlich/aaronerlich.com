@@ -214,9 +214,47 @@ def year_sort_key(value) -> int:
     return int(m.group(1)) if m else 0
 
 
+def _detect_tex_cv(a: str):
+    """Translate a raw Zotero `tex.cv-*` extra line into the same
+    (label_key, label_text, content, css_class) shape the LaTeX patterns
+    produce. These are written into the proposal's latex_annotations by the
+    Flask admin (cv_admin.py) and cv-add.py."""
+    body = a[len("tex.cv-"):]
+    kind, _, rest = body.partition(":")
+    kind, rest = kind.strip(), rest.strip()
+    if kind == "award":
+        sub, _, value = rest.partition("|")
+        sub, value = sub.strip(), value.strip()
+        if sub == "honorable-mention":
+            return "labels.award_honorable_mention", "Honourable Mention", value, "cv-pub-award"
+        if sub == "top-cited":
+            return "labels.top_cited", "Top 10 Most Cited", value, "cv-pub-award"
+        return "labels.award_winner", "Winner", value, "cv-pub-award"
+    if kind == "media":
+        fields = [p.strip() for p in rest.split("|")]
+        # outlet-kind | label | url  (3 fields) or  other | text  (2 fields)
+        if len(fields) >= 3 and fields[2]:
+            content = f"\\href{{{fields[2]}}}{{\\textit{{{fields[1]}}}}}"
+        else:
+            content = fields[-1]
+        return "labels.media_coverage", "Media coverage", content, "cv-pub-media"
+    if kind == "press-release":
+        content = f"\\href{{{rest}}}{{{rest}}}" if rest.startswith("http") else rest
+        return "labels.press_release", "Press release", content, "cv-pub-pressrelease"
+    if kind == "note":
+        return None, None, rest, "cv-pub-note"
+    return None, None, a, "cv-pub-note"
+
+
 def detect_annotation(ann: str):
-    """Return (label_key, label_text, content, css_class) for an annotation."""
+    """Return (label_key, label_text, content, css_class) for an annotation.
+
+    Handles both the human-readable LaTeX form parsed from the original CV
+    (e.g. "Media coverage: \\href{}{}") and the raw Zotero `tex.cv-*` form
+    written into latex_annotations by the admin UI."""
     a = ann.strip().rstrip(".")
+    if a.startswith("tex.cv-"):
+        return _detect_tex_cv(a)
     patterns = [
         (r"(?i)^winner\s*[:\-]\s*(.+)",
          "labels.award_winner", "Winner", "cv-pub-award"),
