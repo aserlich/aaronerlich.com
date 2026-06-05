@@ -33,19 +33,19 @@ Bringing together researchers interested in transparency, information provision,
 
 ::: {.grid}
 ::: {.g-col-md-2 .g-col-12}
-![](images/headshot-campos.jpg){.headshot fig-alt="Rafael Campos-Gottardo"}
+![](images/headshot-mcmullen.jpeg){.headshot fig-alt="Katerina McMullen"}
 :::
 ::: {.g-col-md-10 .g-col-12}
-**Rafael Campos-Gottardo** is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on levels of affective polarization in the United Kingdom. He is also interested in using causal inference techniques to study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich on several Ukrainian survey-data-related projects.
+**Katerina McMullen** is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project.
 :::
 :::
 
 ::: {.grid}
 ::: {.g-col-md-2 .g-col-12}
-![](images/headshot-mcmullen.jpeg){.headshot fig-alt="Katerina McMullen"}
+<!-- no headshot for Aiden McIlvaney -->
 :::
 ::: {.g-col-md-10 .g-col-12}
-**Katerina McMullen** is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project.
+**Aiden McIlvaney** 
 :::
 :::
 
@@ -78,8 +78,9 @@ Former lab members — if you need a letter of recommendation years after the fa
 <th data-sort-method="string">Post-McGill Employment / Education</th>
 </tr></thead>
 <tbody>
+<tr><td><strong>Rafael Campos-Gottardo</strong></td><td>M.A.</td><td>2025</td><td>Thesis - [The Impact of Political Violence on Levels of Polarization: Evidence from a Natural Experiment in the United Kingdom](https://mcgill.scholaris.ca/items/9ea27e1c-1f34-48b2-a58e-7335571f99a1)</td><td></td></tr>
 <tr><td><strong>Mathieu Lavigne</strong></td><td>Ph.D.</td><td>2024</td><td>Thesis - [Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment](https://escholarship.mcgill.ca/concern/theses/z603r346t)</td><td>Post-Doc, Dartmouth College</td></tr>
-<tr><td><strong>Pratik Mahajan</strong></td><td>M.A.</td><td>2024</td><td>Thesis - [Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India](https://escholarship.mcgill.ca/concern/theses/h415ph28t)</td><td></td></tr>
+<tr><td><strong>Pratik Mahajan</strong></td><td>M.A.</td><td>2024</td><td>Thesis - [Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India](https://escholarship.mcgill.ca/concern/theses/h415ph28t)</td><td>Ph.D student, Yale University</td></tr>
 <tr><td><strong>Christopher Ross</strong></td><td>M.A.</td><td>2023</td><td>Thesis - [Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus](https://escholarship.mcgill.ca/concern/theses/w6634906j); [Unveiling: An Unexpected Mid-campaign Court Ruling's Consequences and the Limits of Following the Leader](https://doi.org/10.1086/711177)</td><td>[The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
 <tr><td><strong>Alice Brocheux</strong></td><td>B.A.</td><td>2022</td><td></td><td>Ph.D. Student, University of Rochester</td></tr>
 <tr><td><strong>Costin Ciobanu</strong></td><td>Ph.D.</td><td>2022</td><td>Thesis - [The political and electoral consequences of economic shocks](https://escholarship.mcgill.ca/concern/theses/5d86p5382?locale=en); [Unveiling](https://doi.org/10.1086/711177)</td><td>Post-Doc, Royal Holloway University; Post-doc, University of Aarhus</td></tr>

@@ -15,13 +15,6 @@ current_grad:
     and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for
     causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data
     analysis.
-- name: Rafael Campos-Gottardo
-  headshot: images/headshot-campos.jpg
-  degree: MA student
-  bio: is an M.A. student in political science at McGill University. His thesis examines the effect of partisan violence on
-    levels of affective polarization in the United Kingdom. He is also interested in using causal inference techniques to
-    study the consequences of affective polarization on democracy in a comparative context. He has worked with Professor Erlich
-    on several Ukrainian survey-data-related projects.
 - name: Katerina McMullen
   headshot: images/headshot-mcmullen.jpeg
   degree: MA student
@@ -29,6 +22,10 @@ current_grad:
     of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted
     with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council
     (SSHRC) for that project.
+- name: Aiden McIlvaney
+  degree: MA student
+  headshot: ''
+  bio: ''
 current_undergrad:
 - name: Lawrence Plastina
   headshot: ''
@@ -37,6 +34,12 @@ current_undergrad:
     of McGill's 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported
     firearm ownership under Prof. Erlich's supervision.
 alumni:
+- name: Rafael Campos-Gottardo
+  degree: M.A.
+  graduation_year: '2025'
+  publications: 'Thesis - [The Impact of Political Violence on Levels of Polarization: Evidence from a Natural Experiment
+    in the United Kingdom](https://mcgill.scholaris.ca/items/9ea27e1c-1f34-48b2-a58e-7335571f99a1)'
+  post_mcgill: ''
 - name: Mathieu Lavigne
   degree: Ph.D.
   graduation_year: 2024
@@ -44,10 +47,10 @@ alumni:
   post_mcgill: Post-Doc, Dartmouth College
 - name: Pratik Mahajan
   degree: M.A.
-  graduation_year: 2024
+  graduation_year: '2024'
   publications: Thesis - [Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid
     Hindu Nationalism in a Scheduled Tribe Constituency in India](https://escholarship.mcgill.ca/concern/theses/h415ph28t)
-  post_mcgill: ''
+  post_mcgill: Ph.D student, Yale University
 - name: Christopher Ross
   degree: M.A.
   graduation_year: 2023

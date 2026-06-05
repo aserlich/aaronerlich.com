@@ -190,7 +190,7 @@ body.cv-page main.content {
 body.about-page #quarto-document-content,
 body.about-page main.content,
 body.about-page #title-block-header {
-  max-width: 900px;
+  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -269,6 +269,12 @@ body.about-page #title-block-header {
   margin-left: -1.5em;
   width: 1.5em;
   color: #777;
+}
+
+/* Service year lines — indent the whole line under its subsection heading;
+   wrapped role text aligns with the indent (no hanging negative indent). */
+.cv-service-year {
+  padding-left: 1.5em;
 }
 
 /* Collapsible sections (after Testimony) — closed by default. The PDF

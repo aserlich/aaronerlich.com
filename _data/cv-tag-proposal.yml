@@ -61,7 +61,8 @@ sections:
     - cv:include
     - cv:section/blog
     latex_url: https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation
-    match_zotero_title: Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality and Social Psychology
+    match_zotero_title: Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality
+      and Social Psychology
     match_score: 76
   - match_citekey: berlinerBigDataAcceso2022
     latex_title: Big data y acceso a la información en México
@@ -180,7 +181,8 @@ sections:
     latex_year: 2022
     match_zotero_title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
     match_score: 100
-  - latex_title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the Country of Georgia.'
+  - latex_title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence
+      from the Country of Georgia.'
     latex_year: null
     match_citekey: erlich_MeasuringHow_2023
     match_zotero_title: null
@@ -244,8 +246,10 @@ sections:
     - cv:include
     - cv:section/peer-reviewed
     latex_annotations:
-    - 'Media coverage: \href{https://marginalrevolution.com/marginalrevolution/2016/07/results-free-review.html}{\textit{Marginal Revolution}}, \href{https://www.washingtonpost.com/news/monkey-cage/wp/2016/08/25/heres-what-happens-when-scientists-evaluate-research-without-knowing-the-results/}{\textit{Washington
+    - 'Media coverage: \href{https://marginalrevolution.com/marginalrevolution/2016/07/results-free-review.html}{\textit{Marginal
+      Revolution}}, \href{https://www.washingtonpost.com/news/monkey-cage/wp/2016/08/25/heres-what-happens-when-scientists-evaluate-research-without-knowing-the-results/}{\textit{Washington
       Post: The Monkey Cage}}, \href{https://www.psypost.org/2016/12/scientists-investigate-subliminal-authoritarian-imagery-encourages-citizens-obey-46570}{\textit{PsyPost}}'
+    - 'tex.cv-media: news | The Guardian | https://www.theguardian.com/commentisfree/2026/jun/04/the-guardian-view-on-trumps-omnipresence-commanding-attention-like-a-king'
     latex_url: https://doi.org/10.1177/0010414016633228
     latex_year: 2016
     match_zotero_title: The Effects of Authoritarian Iconography An Experimental Test
@@ -299,8 +303,9 @@ sections:
     - cv:include
     - cv:section/peer-reviewed
     latex_annotations:
-    - 'Media coverage: \href{https://www.macleans.ca/opinion/jagmeet-singh-calls-mp-racist-but-has-he-forgotten-about-bill-21/}{\textit{Maclean''s}}, \href{https://www.journaldemontreal.com/2021/06/25/prudence-avec-les-meteorites-pre-electoraux}{\textit{Journal
-      de Montréal}} }'
+    - 'Media coverage: \href{https://www.macleans.ca/opinion/jagmeet-singh-calls-mp-racist-but-has-he-forgotten-about-bill-21/}{\textit{Maclean''s}},
+      \href{https://www.journaldemontreal.com/2021/06/25/prudence-avec-les-meteorites-pre-electoraux}{\textit{Journal de Montréal}}
+      }'
     latex_url: https://www.journals.uchicago.edu/doi/full/10.1086/711177
     latex_year: 2021
     match_score: 100
@@ -349,13 +354,15 @@ sections:
     match_zotero_title: Is pro-Kremlin Disinformation Effective? Evidence from Ukraine
     match_score: 100
   - match_citekey: erlich_DiscriminatoryImmigration_2023
-    latex_title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates.'
+    latex_title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian
+      Expatriates.'
     proposed_tags:
     - cv:include
     - cv:section/peer-reviewed
     latex_url: https://doi.org/10.1017/XPS.2021.26
     latex_year: 2021
-    match_zotero_title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates'
+    match_zotero_title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian
+      Expatriates'
     match_score: 100
   - match_citekey: erlichDoesAnalyticThinking
     latex_title: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence from Ukraine.
@@ -363,8 +370,9 @@ sections:
     - cv:include
     - cv:section/peer-reviewed
     latex_annotations:
-    - 'Media coverage: \href{https://www.prnewswire.com/news-releases/ukrainians-who-engage-in-more-analytic-thinking-are-less-susceptible-to-russias-disinformation-campaign-301488184.html}{Press Release},
-      \href{https://web.archive.org/web/20240624183718/https://demtech.oii.ox.ac.uk/war-in-ukraine-and-disinformation-newsletter-29-march-2022/}{Oxford Demtech}'
+    - 'Media coverage: \href{https://www.prnewswire.com/news-releases/ukrainians-who-engage-in-more-analytic-thinking-are-less-susceptible-to-russias-disinformation-campaign-301488184.html}{Press
+      Release}, \href{https://web.archive.org/web/20240624183718/https://demtech.oii.ox.ac.uk/war-in-ukraine-and-disinformation-newsletter-29-march-2022/}{Oxford
+      Demtech}'
     - Top 10 Most cited article award International Society of Political Psychology (ISPP)
     latex_url: https://psyarxiv.com/4yrdj
     latex_year: 2023
@@ -384,7 +392,8 @@ sections:
     - cv:include
     - cv:section/peer-reviewed
     latex_annotations:
-    - 'Media coverage: \href{https://web.archive.org/web/20220516083222/https://www.independent.co.ug/court-cant-reverse-museveni-election-win/}{\textit{Independent} (Uganda)}'
+    - 'Media coverage: \href{https://web.archive.org/web/20220516083222/https://www.independent.co.ug/court-cant-reverse-museveni-election-win/}{\textit{Independent}
+      (Uganda)}'
     latex_url: https://doi.org/10.1016/j.electstud.2023.102676
     latex_year: 2023
     match_zotero_title: 'Weaponizing post-election court challenges: Assessing losers’ motivations'
@@ -396,16 +405,19 @@ sections:
     - cv:section/peer-reviewed
     latex_url: https://www.journals.uchicago.edu/doi/10.1086/724010
     latex_year: 2024
-    match_zotero_title: 'Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa'
+    match_zotero_title: 'Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South
+      Africa'
     match_score: 100
   - match_citekey: erlich_CoveringCampaign_2024
-    latex_title: 'Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage with Application to an Emerging Democracy'
+    latex_title: 'Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage
+      with Application to an Emerging Democracy'
     proposed_tags:
     - cv:include
     - cv:section/peer-reviewed
     latex_url: https://journals.sagepub.com/doi/10.1177/08944393241247420
     latex_year: 2024
-    match_zotero_title: 'Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage With Application to an Emerging Democracy'
+    match_zotero_title: 'Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News
+      Coverage With Application to an Emerging Democracy'
     match_score: 100
   - match_citekey: light_UrbanDisorder_2025
     latex_title: 'Urban Disorder in Democratic Transitions: Ukraine''s Municipal Policing Debates in Comparative Perspective.'
@@ -444,7 +456,8 @@ sections:
     - cv:section/peer-reviewed
     latex_url: https://doi.org/10.1080/1060586X.2025.2529114
     latex_year: 2025
-    match_zotero_title: 'Two implications of survey research mode during war: evidence from Russia’s full-scale invasion of Ukraine'
+    match_zotero_title: 'Two implications of survey research mode during war: evidence from Russia’s full-scale invasion of
+      Ukraine'
     match_score: 100
   - match_citekey: soehl_PromisesLimits_2024
     latex_title: 'Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.'
@@ -453,7 +466,8 @@ sections:
     - cv:section/peer-reviewed
     latex_url: https://doi.org/10.1177/00491241241266634
     latex_year: 2026
-    match_zotero_title: 'Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad'
+    match_zotero_title: 'Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations:
+      Nigerians at Home and Abroad'
     match_score: 90
   - match_citekey: erlich_HowLanguage_2025
     latex_title: 'How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine.'
@@ -581,7 +595,8 @@ unmatched:
   year: null
   score: 0
 - section: working-paper
-  title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the Country of Georgia.'
+  title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental Evidence from the
+    Country of Georgia.'
   year: null
   score: 0
 - section: in-prep
