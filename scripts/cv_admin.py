@@ -16,6 +16,7 @@ Requirements:
   pip3 install --user --break-system-packages flask pyyaml
 """
 from __future__ import annotations
+import os
 import subprocess
 import sys
 import urllib.error
@@ -1105,7 +1106,7 @@ def publications_list():
 <h2>Publications</h2>
 <p>Click any entry to add an award, media coverage, or press release. Annotations write directly to the Zotero item's <code>extra</code> field via the Web API.</p>
 {% for sec in pub_sections %}
-  {% set items = sections.get(sec, []) %}
+  {% set items = pub_data.get(sec, []) %}
   {% if items %}
     <h3>{{ sec }} ({{ items|length }})</h3>
     <table>
@@ -1135,6 +1136,7 @@ def publications_list():
 {% endfor %}
 """ + PAGE_FOOT,
         title="Publications", sections=SECTIONS, pub_sections=PUB_SECTIONS,
+        pub_data=sections,
     )
 
 
@@ -1837,6 +1839,10 @@ def rebuild():
 
 
 if __name__ == "__main__":
-    print("CV Admin running at http://localhost:5000", file=sys.stderr)
+    # Default to 5001: macOS Control Center's AirPlay Receiver squats on port 5000,
+    # which silently steals requests (returns an empty 403) and blocks Flask from
+    # binding. Override with ADMIN_PORT if needed.
+    admin_port = int(os.environ.get("ADMIN_PORT", "5001"))
+    print(f"CV Admin running at http://localhost:{admin_port}", file=sys.stderr)
     ensure_preview_server()
-    app.run(debug=False, port=5000, host="127.0.0.1")
+    app.run(debug=False, port=admin_port, host="127.0.0.1")
