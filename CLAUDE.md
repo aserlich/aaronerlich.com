@@ -30,7 +30,7 @@ quarto preview
 # OR
 quarto render && python3 -m http.server -d docs 8765
 
-# Local admin Flask UI for editing content (runs at :5000)
+# Local admin Flask UI for editing content (runs at :5001; override with ADMIN_PORT)
 python3 scripts/cv_admin.py
 ```
 
@@ -145,12 +145,12 @@ Lab alumni in `_data/lab.yml` and political-science mentees in `_data/cv.yml > m
 
 ## Flask admin app routes
 
-`scripts/cv_admin.py` serves at `http://localhost:5000`:
+`scripts/cv_admin.py` serves at `http://localhost:5001` (override with `ADMIN_PORT`; default moved off 5000 because macOS AirPlay Receiver squats on it):
 
 - `/section/<name>` — generic CRUD for any simple section (presentations, grants, teaching, mentorship, etc.)
 - `/section/under_review/publish/<idx>` — move an under-review entry to a published Zotero-tracked one
 - `/publications` — list all tagged pubs
-- `/publications/<citekey>/annotate` — add a `tex.cv-*` line directly to Zotero via the Web API
+- `/publications/<citekey>/annotate` — add a `tex.cv-*` line directly to Zotero via the Web API; also mirrors it into the proposal's `latex_annotations` and auto-runs `build-cv.py` + `quarto render cv.qmd` so it shows in the preview immediately
 - `/lab` — lab member management
 - `/lab/<group>/promote/<idx>` — promote current member to alumni (also syncs placement back to cv.yml mentorship)
 - `/rebuild` — runs `build-cv.py` + `build-lab.py` + `quarto render cv.qmd lab.qmd`

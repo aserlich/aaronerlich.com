@@ -4,7 +4,7 @@ cv_admin.py — Local Flask web app for managing aaronerlich.com CV content.
 
 Run:
   python3 scripts/cv_admin.py
-  # then open http://localhost:5000
+  # then open http://localhost:5001  (override with ADMIN_PORT=...)
 
 Features:
 - Add / edit / delete entries in any cv.yml section via web forms
@@ -1140,6 +1140,26 @@ def publications_list():
     )
 
 
+def _rebuild_cv() -> tuple[bool, str]:
+    """Regenerate the CV page (build-cv.py + quarto render cv.qmd). Returns
+    (success, combined_output). Annotations only affect the CV, so this skips
+    the lab page that the full /rebuild route also renders."""
+    p1 = subprocess.run(
+        [sys.executable, str(BUILD_SCRIPT)],
+        capture_output=True, text=True, cwd=str(REPO),
+    )
+    p2 = subprocess.run(
+        ["quarto", "render", "cv.qmd"],
+        capture_output=True, text=True, cwd=str(REPO),
+    )
+    ok = p1.returncode == 0 and p2.returncode == 0
+    out = (
+        f"$ python3 scripts/build-cv.py\n{p1.stdout}\n{p1.stderr}\n\n"
+        f"$ quarto render cv.qmd\n{p2.stdout[-1500:]}\n{p2.stderr[-800:]}"
+    )
+    return ok, out
+
+
 @app.route("/publications/<citekey>/annotate", methods=["GET", "POST"])
 def annotate_publication(citekey):
     """Add an award or media citation to an existing tagged publication."""
@@ -1188,7 +1208,18 @@ def annotate_publication(citekey):
                         e.setdefault("latex_annotations", []).append(line)
                         break
             dump_yaml_with_header(PROPOSAL_PATH, ph, proposal)
-            flash(f"Wrote to Zotero: {line}", "")
+            # Auto-rebuild so the new annotation shows up in the preview without
+            # a manual build-cv.py / quarto render step.
+            ok, build_out = _rebuild_cv()
+            if ok:
+                ensure_preview_server()
+                flash(f"Wrote to Zotero and rebuilt CV: {line}", "")
+            else:
+                flash(
+                    f"Wrote to Zotero ({line}), but the CV rebuild FAILED — "
+                    f"run build-cv.py manually. Tail: {build_out[-300:]}",
+                    "error",
+                )
             return redirect(url_for("publications_list"))
         else:
             flash(f"Zotero PATCH failed ({code}): {err[:200]}", "error")
