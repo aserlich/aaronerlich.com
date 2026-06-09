@@ -24,8 +24,20 @@ current_grad:
     (SSHRC) for that project.
 - name: Aiden McIlvaney
   degree: MA student
-  headshot: ''
-  bio: ''
+  headshot: images/headshot-mcilvaney-2026.jpeg
+  bio: Aiden McIlvaney is an M.A. student in Political Science at McGill University. His research examines political behaviour
+    & public opinion, political uses of technology, electoral governance, and cyber threats targeting democratic institutions,
+    with a methodological focus on survey experiments and causal inference. He holds a SSHRC CGS-M and an FRQ Master’s Research
+    Scholarship, and is a 2026–2027 CIGI Digital Policy Hub Fellow. His current work focuses on Canadian public attitudes
+    towards the use of AI in electoral campaigns and attitudes towards the use of AI in defence and security.
+- name: Alan Nemirovski
+  degree: MA student
+  headshot: images/headshot-nemirovski-2026.png
+  bio: Alan Nemirovski is an M.A. student in Political Science at McGill University, supported by an FRQSC master's scholarship.
+    He is interested in how emerging technologies and current issues in digital governance are changing political life and
+    participation, from individuals to their social networks. Drawing on an interdisciplinary social sciences background,
+    he approaches these questions with a methodological toolkit ranging from computational methods and statistical techniques
+    to interpretive approaches.
 current_undergrad:
 - name: Lawrence Plastina
   headshot: ''
@@ -70,8 +82,8 @@ alumni:
   post_mcgill: Post-Doc, Royal Holloway University; Post-doc, University of Aarhus
 - name: Dilse Kaygisiz
   degree: M.A.
-  graduation_year: 2022
-  publications: Thesis - Do laws affect attitudes? A study on domestic violence laws in Turkey
+  graduation_year: '2022'
+  publications: Thesis - [Do laws affect attitudes? A study on domestic violence laws in Turkey](https://mcgill.scholaris.ca/items/346915d2-2a4a-40d2-a529-4aaecb5d3d1a)
   post_mcgill: '[Data Sciences](https://datasciences.ca/)'
 - name: Henry Atkins
   degree: M.A.
@@ -116,10 +128,10 @@ alumni:
   publications: ''
   post_mcgill: ''
 - name: Annie Chen
-  degree: B.A.
-  graduation_year: 2020
-  publications: 'Thesis - Incumbency Advantage in Australia; [Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted
-    Communities: Evidence from Nigerian Expatriates](https://doi.org/10.1017/XPS.2021.26)'
+  degree: M.A.
+  graduation_year: '2020'
+  publications: 'Thesis - [Incumbency Advantage in Australia](https://mcgill.scholaris.ca/items/cf050e75-9f47-42bb-bd56-717e2cc90aab);
+    [Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates](https://doi.org/10.1017/XPS.2021.26)'
   post_mcgill: '[Bright Line Watch](http://brightlinewatch.org/)'
 - name: Andrew McCormack
   degree: M.A.

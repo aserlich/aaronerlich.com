@@ -42,10 +42,19 @@ Bringing together researchers interested in transparency, information provision,
 
 ::: {.grid}
 ::: {.g-col-md-2 .g-col-12}
-<!-- no headshot for Aiden McIlvaney -->
+![](images/headshot-mcilvaney-2026.jpeg){.headshot fig-alt="Aiden McIlvaney"}
 :::
 ::: {.g-col-md-10 .g-col-12}
-**Aiden McIlvaney** 
+**Aiden McIlvaney** Aiden McIlvaney is an M.A. student in Political Science at McGill University. His research examines political behaviour & public opinion, political uses of technology, electoral governance, and cyber threats targeting democratic institutions, with a methodological focus on survey experiments and causal inference. He holds a SSHRC CGS-M and an FRQ Master’s Research Scholarship, and is a 2026–2027 CIGI Digital Policy Hub Fellow. His current work focuses on Canadian public attitudes towards the use of AI in electoral campaigns and attitudes towards the use of AI in defence and security.
+:::
+:::
+
+::: {.grid}
+::: {.g-col-md-2 .g-col-12}
+![](images/headshot-nemirovski-2026.png){.headshot fig-alt="Alan Nemirovski"}
+:::
+::: {.g-col-md-10 .g-col-12}
+**Alan Nemirovski** Alan Nemirovski is an M.A. student in Political Science at McGill University, supported by an FRQSC master's scholarship. He is interested in how emerging technologies and current issues in digital governance are changing political life and participation, from individuals to their social networks. Drawing on an interdisciplinary social sciences background, he approaches these questions with a methodological toolkit ranging from computational methods and statistical techniques to interpretive approaches.
 :::
 :::
 
@@ -84,7 +93,7 @@ Former lab members — if you need a letter of recommendation years after the fa
 <tr><td><strong>Christopher Ross</strong></td><td>M.A.</td><td>2023</td><td>Thesis - [Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus](https://escholarship.mcgill.ca/concern/theses/w6634906j); [Unveiling: An Unexpected Mid-campaign Court Ruling's Consequences and the Limits of Following the Leader](https://doi.org/10.1086/711177)</td><td>[The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
 <tr><td><strong>Alice Brocheux</strong></td><td>B.A.</td><td>2022</td><td></td><td>Ph.D. Student, University of Rochester</td></tr>
 <tr><td><strong>Costin Ciobanu</strong></td><td>Ph.D.</td><td>2022</td><td>Thesis - [The political and electoral consequences of economic shocks](https://escholarship.mcgill.ca/concern/theses/5d86p5382?locale=en); [Unveiling](https://doi.org/10.1086/711177)</td><td>Post-Doc, Royal Holloway University; Post-doc, University of Aarhus</td></tr>
-<tr><td><strong>Dilse Kaygisiz</strong></td><td>M.A.</td><td>2022</td><td>Thesis - Do laws affect attitudes? A study on domestic violence laws in Turkey</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
+<tr><td><strong>Dilse Kaygisiz</strong></td><td>M.A.</td><td>2022</td><td>Thesis - [Do laws affect attitudes? A study on domestic violence laws in Turkey](https://mcgill.scholaris.ca/items/346915d2-2a4a-40d2-a529-4aaecb5d3d1a)</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
 <tr><td><strong>Henry Atkins</strong></td><td>M.A.</td><td>2021</td><td>Thesis - [Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack](https://escholarship.mcgill.ca/concern/theses/z603r346t)</td><td></td></tr>
 <tr><td><strong>Stefano Dantas</strong></td><td>M.A.</td><td>2021</td><td>[Multi-Label Prediction for Political Text-as-Data](https://doi.org/10.1017/pan.2021.15)</td><td></td></tr>
 <tr><td><strong>Étienne Gagnon</strong></td><td>M.A.</td><td>2020</td><td>Thesis - Multiview Representation Learning for Political Science Research</td><td>[MEXT Fellowship, Japan](https://www.ca.emb-japan.go.jp/itpr_en/education.html); Ph.D. Student, Princeton University</td></tr>
@@ -93,7 +102,7 @@ Former lab members — if you need a letter of recommendation years after the fa
 <tr><td><strong>Alex Xin Tong Wang</strong></td><td>M.A.</td><td>2020</td><td></td><td></td></tr>
 <tr><td><strong>Hair Parra Barrera</strong></td><td>B.A.</td><td>2020</td><td></td><td>M.A., HEC-Montréal</td></tr>
 <tr><td><strong>Su Goh</strong></td><td>B.A.</td><td>2020</td><td></td><td></td></tr>
-<tr><td><strong>Annie Chen</strong></td><td>B.A.</td><td>2020</td><td>Thesis - Incumbency Advantage in Australia; [Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates](https://doi.org/10.1017/XPS.2021.26)</td><td>[Bright Line Watch](http://brightlinewatch.org/)</td></tr>
+<tr><td><strong>Annie Chen</strong></td><td>M.A.</td><td>2020</td><td>Thesis - [Incumbency Advantage in Australia](https://mcgill.scholaris.ca/items/cf050e75-9f47-42bb-bd56-717e2cc90aab); [Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates](https://doi.org/10.1017/XPS.2021.26)</td><td>[Bright Line Watch](http://brightlinewatch.org/)</td></tr>
 <tr><td><strong>Andrew McCormack</strong></td><td>M.A.</td><td>2019</td><td>[mapcan R package](https://www.rdocumentation.org/packages/mapcan/versions/0.0.1); Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
 <tr><td><strong>Aengus Bridgman</strong></td><td>Ph.D.</td><td>2022</td><td>[Unveiling](https://doi.org/10.1086/711177)</td><td>Assistant Prof (Research), McGill University</td></tr>
 <tr><td><strong>Tim Roy</strong></td><td>B.A.</td><td></td><td></td><td></td></tr>
