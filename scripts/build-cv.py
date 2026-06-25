@@ -286,6 +286,9 @@ def render_publication(item: dict, citekey: str, annotations: list, label_with: 
     pages = item.get("page") or ""
     year = get_year(item)
     doi = item.get("DOI") or ""
+    # Normalize: some Zotero DOI fields hold a full https://doi.org/… URL.
+    # Strip the resolver prefix so we don't double it when building the href.
+    doi = re.sub(r"^\s*https?://(dx\.)?doi\.org/", "", doi).strip()
     url = item.get("URL") or (f"https://doi.org/{doi}" if doi else "")
     coauthors_str = fmt_authors(item.get("author") or [])
 
