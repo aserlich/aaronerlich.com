@@ -4,6 +4,7 @@ project:
   render:
     - "*.qmd"
     - "resources/*.qmd"
+    - "posts/*/index.qmd"
 
 website:
   title: "Aaron Erlich"
@@ -19,6 +20,10 @@ website:
         href: lab.qmd
       - text: "C.V."
         href: cv.qmd
+      - text: "Publication Record"
+        href: submissions.qmd
+      - text: "Blog"
+        href: blog.qmd
       - text: "Letter of Rec"
         href: resources/letters.qmd
       # - text: "Research"

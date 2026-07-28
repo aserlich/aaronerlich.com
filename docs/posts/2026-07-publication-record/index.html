@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Aaron Erlich">
+<meta name="dcterms.date" content="2026-07-28">
+<meta name="description" content="I put my entire journal publication record online — and what it shows about the hidden time in publishing, and about aiming (or not) for the top-tier journal.">
 
-<title>DemoTIP Laboratory – Aaron Erlich</title>
+<title>What it actually takes to publish a paper – Aaron Erlich</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,23 +23,58 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -52,20 +90,22 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script type="module" src="../../site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
+<link href="../../site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed blog-post fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Aaron Erlich</span>
     </a>
   </div>
@@ -75,27 +115,27 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="../../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./lab.html" aria-current="page"> 
+    <a class="nav-link" href="../../lab.html"> 
 <span class="menu-text">Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../../cv.html"> 
 <span class="menu-text">C.V.</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./submissions.html"> 
+    <a class="nav-link" href="../../submissions.html"> 
 <span class="menu-text">Publication Record</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources/letters.html"> 
+    <a class="nav-link" href="../../resources/letters.html"> 
 <span class="menu-text">Letter of Rec</span></a>
   </li>  
 </ul>
@@ -111,19 +151,36 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DemoTIP Laboratory</h1>
-<p class="subtitle lead">Democracy, Transparency, Information Provision, and Participation</p>
-</div>
+<h1 class="title">What it actually takes to publish a paper</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">publishing</div>
+    <div class="quarto-category">transparency</div>
+    <div class="quarto-category">graduate students</div>
+    <div class="quarto-category">data viz</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Aaron Erlich </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 28, 2026</p>
+    </div>
+  </div>
   
     
   </div>
@@ -133,451 +190,235 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="page-columns page-full">
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="images/lab-presentation.jpeg" class="img-fluid figure-img column-page" alt="DemoTIP lab members presenting research"></p>
-<figcaption>Lab presentation</figcaption>
-</figure>
+<p>I just added something to my website I’ve wanted to share for a while: an interactive <a href="../../submissions.html"><strong>Publication Record</strong></a> — every accepted paper, how long it spent under review, how many journals it passed through, and how long the <em>whole</em> road to publication really took.</p>
+<p>The inspiration is <a href="https://www.linkedin.com/in/yusaku-horiuchi-197682232/">Yusaku Horiuchi</a>, who has generously shared <a href="https://www.linkedin.com/posts/yusaku-horiuchi-197682232_based-on-a-complete-log-of-my-interactions-activity-7463660266237579264-k2BC">a complete log of his own journal interactions</a> publicly. I wanted to build on that with one addition I think matters, especially for graduate students.</p>
+<section id="the-whole-clock-not-just-the-review-clock" class="level2">
+<h2 class="anchored" data-anchor-id="the-whole-clock-not-just-the-review-clock">The whole clock, not just the review clock</h2>
+<p><strong>My chart shows the whole elapsed time — not just the months a paper was under review.</strong></p>
+<p>When we talk about how long publishing takes, we usually count the time a manuscript sits with reviewers. That badly understates it. A huge share of the calendar is the paper <em>not</em> under review at all: the months it sits on my desk while I revise, the gaps between one journal’s rejection and the next submission, the wait from acceptance to the version of record appearing online. On the chart below, those stretches show up as <strong>gaps in the faint through-line</strong> — and for many papers they add up to more than the review time itself.</p>
+<p>Graduate students rarely get to see that hidden part of the process. Seeing it makes the long road feel less like a personal failing and more like the normal shape of the work.</p>
+<style>
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; align-items: center; margin: 0.5rem 0 0.75rem; }
+.legend span.sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+.legend span.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+.post-note { font-size: 0.8rem; color: #777; margin-top: 0.5rem; }
+</style>
+<div class="legend">
+  <span><span class="sw" style="background:#c98a2b"></span>Desk reject</span>
+  <span><span class="sw" style="background:#2e8bb0"></span>Reject after review</span>
+  <span><span class="sw" style="background:#9a8aa8"></span>Withdrawn</span>
+  <span><span class="sw" style="background:#6b1b1b"></span>Accepting journal</span>
+  <span><span class="dot" style="background:#6b1b1b"></span>Accepted</span>
+  <span><span class="dot" style="background:#fff;border:1.5px solid #6b1b1b"></span>First online</span>
+  <span><span class="dot" style="background:radial-gradient(circle,#6b1b1b 0 38%,#fff 42% 100%);border:1.5px solid #6b1b1b"></span>Version of record (issue)</span>
+  <span style="color:#4c7a4c">◆ In-principle acceptance</span>
+  <span>✱ Registered report</span>
+</div>
+<p style="font-size:0.78rem;color:#888;margin:0.15rem 0 0">For online-only journals the online and final versions are the same date — a single ◉.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="57" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 56;"><span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>db <span class="op">=</span> <span class="fu">FileAttachment</span>(<span class="st">"../../_data/submissions_public.json"</span>)<span class="op">.</span><span class="fu">json</span>()</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>COL <span class="op">=</span> ({ <span class="dt">accept</span><span class="op">:</span> <span class="st">"#6b1b1b"</span><span class="op">,</span> <span class="dt">reject</span><span class="op">:</span> <span class="st">"#2e8bb0"</span><span class="op">,</span> <span class="dt">desk_reject</span><span class="op">:</span> <span class="st">"#c98a2b"</span><span class="op">,</span> <span class="dt">in_principle_accept</span><span class="op">:</span> <span class="st">"#4c7a4c"</span><span class="op">,</span> <span class="dt">withdrawn</span><span class="op">:</span> <span class="st">"#9a8aa8"</span> })</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>dcol <span class="op">=</span> d <span class="kw">=&gt;</span> COL[d] <span class="op">||</span> <span class="st">"#9aa0a6"</span></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>accepted <span class="op">=</span> db<span class="op">.</span><span class="at">accepted</span><span class="op">.</span><span class="fu">map</span>((a<span class="op">,</span> i) <span class="kw">=&gt;</span> {</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pub <span class="op">=</span> a<span class="op">.</span><span class="at">pub_date</span> <span class="op">?</span> <span class="kw">new</span> <span class="bu">Date</span>(a<span class="op">.</span><span class="at">pub_date</span>) <span class="op">:</span> <span class="kw">null</span><span class="op">;</span>                 <span class="co">// first online (advance access)</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> pubfinal <span class="op">=</span> a<span class="op">.</span><span class="at">pub_date_final</span> <span class="op">?</span> <span class="kw">new</span> <span class="bu">Date</span>(a<span class="op">.</span><span class="at">pub_date_final</span>) <span class="op">:</span> <span class="kw">null</span><span class="op">;</span> <span class="co">// final journal issue (version of record)</span></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> vor <span class="op">=</span> pubfinal <span class="op">||</span> (a<span class="op">.</span><span class="at">awaiting_issue</span> <span class="op">?</span> <span class="kw">null</span> <span class="op">:</span> pub)<span class="op">;</span>             <span class="co">// awaiting an issue → no VoR yet</span></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> sameVoR <span class="op">=</span> <span class="op">!</span>pubfinal <span class="op">||</span> (pub <span class="op">&amp;&amp;</span> <span class="op">+</span>pubfinal <span class="op">===</span> <span class="op">+</span>pub)<span class="op">;</span>            <span class="co">// online-only / same-day → one dot</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> labelYear <span class="op">=</span> (a<span class="op">.</span><span class="at">awaiting_issue</span> <span class="op">&amp;&amp;</span> <span class="op">!</span>pubfinal) <span class="op">?</span> <span class="st">"TBD"</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>    <span class="op">:</span> pubfinal <span class="op">?</span> pubfinal<span class="op">.</span><span class="fu">getUTCFullYear</span>() <span class="op">:</span> (a<span class="op">.</span><span class="at">year</span> <span class="op">?</span> a<span class="op">.</span><span class="at">year</span> <span class="op">:</span> <span class="st">"(in press)"</span>)<span class="op">;</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> {</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    <span class="op">...</span>a<span class="op">,</span> i<span class="op">,</span></span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>    <span class="dt">acc</span><span class="op">:</span> <span class="kw">new</span> <span class="bu">Date</span>(a<span class="op">.</span><span class="at">accept_date</span>)<span class="op">,</span></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    pub<span class="op">,</span> pubfinal<span class="op">,</span> vor<span class="op">,</span> sameVoR<span class="op">,</span></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>    <span class="dt">vorDate</span><span class="op">:</span> a<span class="op">.</span><span class="at">pub_date_final</span> <span class="op">||</span> a<span class="op">.</span><span class="at">pub_date</span><span class="op">,</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>    <span class="dt">fsub</span><span class="op">:</span> a<span class="op">.</span><span class="at">first_sub_date</span> <span class="op">?</span> <span class="kw">new</span> <span class="bu">Date</span>(a<span class="op">.</span><span class="at">first_sub_date</span>) <span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>    <span class="dt">ipa</span><span class="op">:</span> a<span class="op">.</span><span class="at">ipa_date</span> <span class="op">?</span> <span class="kw">new</span> <span class="bu">Date</span>(a<span class="op">.</span><span class="at">ipa_date</span>) <span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="dt">label</span><span class="op">:</span> (a<span class="op">.</span><span class="at">registered_report</span> <span class="op">?</span> <span class="st">"✱ "</span> <span class="op">:</span> <span class="st">""</span>)</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> <span class="vs">`</span><span class="sc">${</span>a<span class="op">.</span><span class="at">authors</span><span class="sc">}</span><span class="vs"> </span><span class="sc">${</span>labelYear<span class="sc">}</span><span class="vs"> · </span><span class="sc">${</span>a<span class="op">.</span><span class="at">journal</span><span class="sc">}</span><span class="vs">`</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>      <span class="op">+</span> (a<span class="op">.</span><span class="at">timing_known</span> <span class="op">?</span> <span class="vs">` · </span><span class="sc">${</span>a<span class="op">.</span><span class="at">rr_missing</span> <span class="op">?</span> <span class="st">"R&amp;R ?"</span> <span class="op">:</span> a<span class="op">.</span><span class="at">total_rr</span> <span class="op">+</span> <span class="st">" R&amp;R"</span><span class="sc">}</span><span class="vs">`</span> <span class="op">:</span> <span class="st">""</span>)</span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
 </div>
 </div>
-<p>Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!</p>
-<section id="principal-investigator" class="level2">
-<h2 class="anchored" data-anchor-id="principal-investigator">Principal Investigator</h2>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/profile.jpg" class="headshot img-fluid" alt="Aaron Erlich"></p>
 </div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Aaron Erlich</strong> is Associate Professor of Political Science at McGill University. He received his Ph.D.&nbsp;from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the <em>American Political Science Review</em>, <em>Journal of Politics</em>, <em>Comparative Political Studies</em>, and many others.</p>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
 </div>
 </div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="83" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 82;"><span id="cb2-83"><a href="#cb2-83" aria-hidden="true" tabindex="-1"></a>allDates <span class="op">=</span> accepted<span class="op">.</span><span class="fu">flatMap</span>(a <span class="kw">=&gt;</span> [a<span class="op">.</span><span class="at">acc</span><span class="op">,</span> a<span class="op">.</span><span class="at">pub</span><span class="op">,</span> a<span class="op">.</span><span class="at">vor</span><span class="op">,</span> a<span class="op">.</span><span class="at">fsub</span><span class="op">,</span> a<span class="op">.</span><span class="at">ipa</span>]<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>)</span>
+<span id="cb2-84"><a href="#cb2-84" aria-hidden="true" tabindex="-1"></a>  <span class="op">.</span><span class="fu">concat</span>(a<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">flatMap</span>(s <span class="kw">=&gt;</span> [s<span class="op">.</span><span class="at">sub_date</span> <span class="op">&amp;&amp;</span> <span class="kw">new</span> <span class="bu">Date</span>(s<span class="op">.</span><span class="at">sub_date</span>)<span class="op">,</span> s<span class="op">.</span><span class="at">fin_date</span> <span class="op">&amp;&amp;</span> <span class="kw">new</span> <span class="bu">Date</span>(s<span class="op">.</span><span class="at">fin_date</span>)]<span class="op">.</span><span class="fu">filter</span>(<span class="bu">Boolean</span>))))</span>
+<span id="cb2-85"><a href="#cb2-85" aria-hidden="true" tabindex="-1"></a>loYear <span class="op">=</span> d3<span class="op">.</span><span class="fu">min</span>(allDates<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">getUTCFullYear</span>())</span>
+<span id="cb2-86"><a href="#cb2-86" aria-hidden="true" tabindex="-1"></a>hiYear <span class="op">=</span> d3<span class="op">.</span><span class="fu">max</span>(allDates<span class="op">,</span> d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="fu">getUTCFullYear</span>()) <span class="op">+</span> <span class="dv">1</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb3" data-startfrom="90" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 89;"><span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> order <span class="op">=</span> d3<span class="op">.</span><span class="fu">sort</span>(accepted<span class="op">,</span> d <span class="kw">=&gt;</span> <span class="op">-</span>d<span class="op">.</span><span class="at">acc</span>)<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">i</span>)<span class="op">;</span></span>
+<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> segs <span class="op">=</span> accepted<span class="op">.</span><span class="fu">flatMap</span>(a <span class="kw">=&gt;</span> a<span class="op">.</span><span class="at">segments</span></span>
+<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">filter</span>(s <span class="kw">=&gt;</span> s<span class="op">.</span><span class="at">sub_date</span> <span class="op">&amp;&amp;</span> s<span class="op">.</span><span class="at">fin_date</span>)</span>
+<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a>    <span class="op">.</span><span class="fu">map</span>(s <span class="kw">=&gt;</span> ({ <span class="dt">i</span><span class="op">:</span> a<span class="op">.</span><span class="at">i</span><span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> <span class="kw">new</span> <span class="bu">Date</span>(s<span class="op">.</span><span class="at">sub_date</span>)<span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="kw">new</span> <span class="bu">Date</span>(s<span class="op">.</span><span class="at">fin_date</span>)<span class="op">,</span> <span class="dt">disp</span><span class="op">:</span> s<span class="op">.</span><span class="at">disposition</span><span class="op">,</span></span>
+<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a>      <span class="dt">days</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">round</span>((<span class="kw">new</span> <span class="bu">Date</span>(s<span class="op">.</span><span class="at">fin_date</span>) <span class="op">-</span> <span class="kw">new</span> <span class="bu">Date</span>(s<span class="op">.</span><span class="at">sub_date</span>)) <span class="op">/</span> <span class="dv">86400000</span>) })))<span class="op">;</span></span>
+<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> marks_short <span class="op">=</span> segs<span class="op">.</span><span class="fu">filter</span>(s <span class="kw">=&gt;</span> s<span class="op">.</span><span class="at">disp</span> <span class="op">!==</span> <span class="st">"accept"</span> <span class="op">&amp;&amp;</span> s<span class="op">.</span><span class="at">days</span> <span class="op">&lt;=</span> <span class="dv">45</span>)<span class="op">;</span></span>
+<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> spans <span class="op">=</span> accepted<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">fsub</span>)<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({ <span class="dt">i</span><span class="op">:</span> d<span class="op">.</span><span class="at">i</span><span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> d<span class="op">.</span><span class="at">fsub</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> d<span class="op">.</span><span class="at">vor</span> <span class="op">||</span> d<span class="op">.</span><span class="at">pub</span> <span class="op">||</span> d<span class="op">.</span><span class="at">acc</span> }))<span class="op">;</span></span>
+<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> inpress <span class="op">=</span> accepted<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">vor</span> <span class="op">||</span> d<span class="op">.</span><span class="at">pub</span>)<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({ <span class="dt">i</span><span class="op">:</span> d<span class="op">.</span><span class="at">i</span><span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> d<span class="op">.</span><span class="at">acc</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> d<span class="op">.</span><span class="at">vor</span> <span class="op">||</span> d<span class="op">.</span><span class="at">pub</span> }))<span class="op">;</span></span>
+<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a>    width<span class="op">,</span> <span class="dt">height</span><span class="op">:</span> accepted<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">+</span> <span class="dv">44</span><span class="op">,</span></span>
+<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span> <span class="dt">marginTop</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">28</span><span class="op">,</span></span>
+<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">type</span><span class="op">:</span> <span class="st">"utc"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span></span>
+<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a>         <span class="dt">domain</span><span class="op">:</span> [<span class="bu">Date</span><span class="op">.</span><span class="fu">UTC</span>(loYear<span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">,</span> <span class="bu">Date</span><span class="op">.</span><span class="fu">UTC</span>(hiYear<span class="op">,</span> <span class="dv">11</span><span class="op">,</span> <span class="dv">31</span>)]<span class="op">,</span></span>
+<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a>         <span class="dt">ticks</span><span class="op">:</span> d3<span class="op">.</span><span class="at">utcYear</span><span class="op">.</span><span class="fu">every</span>(<span class="dv">1</span>)<span class="op">,</span></span>
+<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a>         <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> { <span class="kw">const</span> y <span class="op">=</span> d<span class="op">.</span><span class="fu">getUTCFullYear</span>()<span class="op">;</span> <span class="cf">return</span> y <span class="op">%</span> <span class="dv">2</span> <span class="op">===</span> <span class="dv">0</span> <span class="op">?</span> <span class="bu">String</span>(y) <span class="op">:</span> <span class="st">""</span><span class="op">;</span> } }<span class="op">,</span></span>
+<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> order }<span class="op">,</span></span>
+<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">ruleY</span>(spans<span class="op">,</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="st">"x2"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#ddd"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">ruleY</span>(inpress<span class="op">,</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="st">"x2"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#6b1b1b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">strokeDasharray</span><span class="op">:</span> <span class="st">"1,2"</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">barX</span>(segs<span class="op">,</span> { <span class="dt">x1</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="st">"x2"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="fu">dcol</span>(d<span class="op">.</span><span class="at">disp</span>)<span class="op">,</span> <span class="dt">insetY</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> <span class="dt">rx</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a>        <span class="dt">channels</span><span class="op">:</span> { <span class="dt">Outcome</span><span class="op">:</span> <span class="st">"disp"</span><span class="op">,</span> <span class="dt">Days</span><span class="op">:</span> <span class="st">"days"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> { <span class="dt">format</span><span class="op">:</span> { <span class="dt">x1</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span> } } })<span class="op">,</span></span>
+<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(marks_short<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="kw">new</span> <span class="bu">Date</span>((<span class="op">+</span>d<span class="op">.</span><span class="at">x1</span> <span class="op">+</span> <span class="op">+</span>d<span class="op">.</span><span class="at">x2</span>) <span class="op">/</span> <span class="dv">2</span>)<span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">symbol</span><span class="op">:</span> <span class="st">"square"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="fl">3.6</span><span class="op">,</span></span>
+<span id="cb3-113"><a href="#cb3-113" aria-hidden="true" tabindex="-1"></a>        <span class="dt">fill</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="fu">dcol</span>(d<span class="op">.</span><span class="at">disp</span>)<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">0.6</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-114"><a href="#cb3-114" aria-hidden="true" tabindex="-1"></a>        <span class="dt">channels</span><span class="op">:</span> { <span class="dt">Outcome</span><span class="op">:</span> <span class="st">"disp"</span><span class="op">,</span> <span class="dt">Days</span><span class="op">:</span> <span class="st">"days"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> { <span class="dt">format</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span> } } })<span class="op">,</span></span>
+<span id="cb3-115"><a href="#cb3-115" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(accepted<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"acc"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="fl">4.5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#6b1b1b"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-116"><a href="#cb3-116" aria-hidden="true" tabindex="-1"></a>        <span class="dt">channels</span><span class="op">:</span> { <span class="dt">Paper</span><span class="op">:</span> <span class="st">"paper"</span><span class="op">,</span> <span class="dt">Journal</span><span class="op">:</span> <span class="st">"journal"</span><span class="op">,</span> <span class="dt">Accepted</span><span class="op">:</span> <span class="st">"accept_date"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb3-117"><a href="#cb3-117" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(accepted<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">pub</span> <span class="op">&amp;&amp;</span> (d<span class="op">.</span><span class="at">awaiting_issue</span> <span class="op">||</span> <span class="op">!</span>d<span class="op">.</span><span class="at">sameVoR</span>))<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"pub"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">4</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#6b1b1b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-118"><a href="#cb3-118" aria-hidden="true" tabindex="-1"></a>        <span class="dt">channels</span><span class="op">:</span> { <span class="st">"First online"</span><span class="op">:</span> <span class="st">"pub_date"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb3-119"><a href="#cb3-119" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(accepted<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">vor</span>)<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"vor"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"#6b1b1b"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb3-120"><a href="#cb3-120" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(accepted<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">vor</span>)<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"vor"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="fl">1.9</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#6b1b1b"</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-121"><a href="#cb3-121" aria-hidden="true" tabindex="-1"></a>        <span class="dt">channels</span><span class="op">:</span> { <span class="st">"Version of record"</span><span class="op">:</span> <span class="st">"vorDate"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb3-122"><a href="#cb3-122" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(accepted<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">ipa</span>)<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"ipa"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">symbol</span><span class="op">:</span> <span class="st">"diamond"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="dv">5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#4c7a4c"</span><span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">clip</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span></span>
+<span id="cb3-123"><a href="#cb3-123" aria-hidden="true" tabindex="-1"></a>        <span class="dt">channels</span><span class="op">:</span> { <span class="st">"In-principle acceptance"</span><span class="op">:</span> <span class="st">"ipa_date"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb3-124"><a href="#cb3-124" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">text</span>(accepted<span class="op">,</span> { <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"label"</span><span class="op">,</span> <span class="dt">frameAnchor</span><span class="op">:</span> <span class="st">"right"</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#333"</span> })</span>
+<span id="cb3-125"><a href="#cb3-125" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb3-126"><a href="#cb3-126" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb3-127"><a href="#cb3-127" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p class="post-note">Each row is one accepted paper, ordered by acceptance date. The bar is
+time under review at each journal (coloured by outcome); earlier, rejecting journals are
+shown by outcome but not named. The filled dot (●) is acceptance; then comes first online
+(○, advance access) and the version of record in a journal issue (◉). For online-only
+journals those two coincide as a single ◉, and the gap from ● to ◉ is production time. The
+<a href="../../submissions.html">full interactive version</a> lets you zoom to any window.</p>
+<p>And here is the same record ranked purely by <strong>total time under review</strong> — the gaps between journals collapsed away, so each bar is only the months a paper actually sat with reviewers:</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb4" data-startfrom="144" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 143;"><span id="cb4-144"><a href="#cb4-144" aria-hidden="true" tabindex="-1"></a>{</span>
+<span id="cb4-145"><a href="#cb4-145" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> timed <span class="op">=</span> accepted<span class="op">.</span><span class="fu">filter</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">timing_known</span> <span class="op">&amp;&amp;</span> d<span class="op">.</span><span class="at">total_days</span> <span class="op">!=</span> <span class="kw">null</span>)<span class="op">;</span></span>
+<span id="cb4-146"><a href="#cb4-146" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> order <span class="op">=</span> d3<span class="op">.</span><span class="fu">sort</span>(timed<span class="op">,</span> d <span class="kw">=&gt;</span> <span class="op">-</span>d<span class="op">.</span><span class="at">total_days</span>)<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> d<span class="op">.</span><span class="at">i</span>)<span class="op">;</span></span>
+<span id="cb4-147"><a href="#cb4-147" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> segs <span class="op">=</span> timed<span class="op">.</span><span class="fu">flatMap</span>(a <span class="kw">=&gt;</span> {</span>
+<span id="cb4-148"><a href="#cb4-148" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> cum <span class="op">=</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb4-149"><a href="#cb4-149" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a<span class="op">.</span><span class="at">segments</span><span class="op">.</span><span class="fu">filter</span>(s <span class="kw">=&gt;</span> s<span class="op">.</span><span class="at">days</span> <span class="op">!=</span> <span class="kw">null</span>)<span class="op">.</span><span class="fu">map</span>(s <span class="kw">=&gt;</span> {</span>
+<span id="cb4-150"><a href="#cb4-150" aria-hidden="true" tabindex="-1"></a>      <span class="kw">const</span> x0 <span class="op">=</span> cum<span class="op">;</span> cum <span class="op">+=</span> s<span class="op">.</span><span class="at">days</span><span class="op">;</span></span>
+<span id="cb4-151"><a href="#cb4-151" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> { <span class="dt">i</span><span class="op">:</span> a<span class="op">.</span><span class="at">i</span><span class="op">,</span> x0<span class="op">,</span> <span class="dt">x1</span><span class="op">:</span> cum<span class="op">,</span> <span class="dt">disp</span><span class="op">:</span> s<span class="op">.</span><span class="at">disposition</span><span class="op">,</span> <span class="dt">days</span><span class="op">:</span> s<span class="op">.</span><span class="at">days</span> }<span class="op">;</span></span>
+<span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a>    })<span class="op">;</span></span>
+<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> ends <span class="op">=</span> timed<span class="op">.</span><span class="fu">map</span>(d <span class="kw">=&gt;</span> ({ <span class="dt">i</span><span class="op">:</span> d<span class="op">.</span><span class="at">i</span><span class="op">,</span> <span class="dt">x</span><span class="op">:</span> d<span class="op">.</span><span class="at">total_days</span><span class="op">,</span> <span class="dt">label</span><span class="op">:</span> d<span class="op">.</span><span class="at">label</span> }))<span class="op">;</span></span>
+<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> marks_short <span class="op">=</span> segs<span class="op">.</span><span class="fu">filter</span>(s <span class="kw">=&gt;</span> s<span class="op">.</span><span class="at">disp</span> <span class="op">!==</span> <span class="st">"accept"</span> <span class="op">&amp;&amp;</span> s<span class="op">.</span><span class="at">days</span> <span class="op">&lt;=</span> <span class="dv">45</span>)<span class="op">;</span></span>
+<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>  <span class="cf">return</span> Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>    width<span class="op">,</span> <span class="dt">height</span><span class="op">:</span> timed<span class="op">.</span><span class="at">length</span> <span class="op">*</span> <span class="dv">24</span> <span class="op">+</span> <span class="dv">44</span><span class="op">,</span></span>
+<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marginLeft</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> <span class="dt">marginRight</span><span class="op">:</span> <span class="dv">300</span><span class="op">,</span> <span class="dt">marginTop</span><span class="op">:</span> <span class="dv">10</span><span class="op">,</span> <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">30</span><span class="op">,</span></span>
+<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>    <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Cumulative days under review →"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span><span class="op">,</span> <span class="dt">nice</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
+<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>    <span class="dt">y</span><span class="op">:</span> { <span class="dt">axis</span><span class="op">:</span> <span class="kw">null</span><span class="op">,</span> <span class="dt">domain</span><span class="op">:</span> order }<span class="op">,</span></span>
+<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a>    <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">barX</span>(segs<span class="op">,</span> { <span class="dt">x1</span><span class="op">:</span> <span class="st">"x0"</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="st">"x1"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="fu">dcol</span>(d<span class="op">.</span><span class="at">disp</span>)<span class="op">,</span> <span class="dt">insetY</span><span class="op">:</span> <span class="dv">8</span><span class="op">,</span> <span class="dt">rx</span><span class="op">:</span> <span class="fl">1.5</span><span class="op">,</span></span>
+<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>        <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="dv">1</span><span class="op">,</span> <span class="dt">channels</span><span class="op">:</span> { <span class="dt">Outcome</span><span class="op">:</span> <span class="st">"disp"</span><span class="op">,</span> <span class="dt">Days</span><span class="op">:</span> <span class="st">"days"</span> }<span class="op">,</span></span>
+<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>        <span class="dt">tip</span><span class="op">:</span> { <span class="dt">format</span><span class="op">:</span> { <span class="dt">x1</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">x2</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span> } } })<span class="op">,</span></span>
+<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">dot</span>(marks_short<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> d <span class="kw">=&gt;</span> (d<span class="op">.</span><span class="at">x0</span> <span class="op">+</span> d<span class="op">.</span><span class="at">x1</span>) <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">symbol</span><span class="op">:</span> <span class="st">"square"</span><span class="op">,</span> <span class="dt">r</span><span class="op">:</span> <span class="fl">3.6</span><span class="op">,</span></span>
+<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>        <span class="dt">fill</span><span class="op">:</span> d <span class="kw">=&gt;</span> <span class="fu">dcol</span>(d<span class="op">.</span><span class="at">disp</span>)<span class="op">,</span> <span class="dt">stroke</span><span class="op">:</span> <span class="st">"white"</span><span class="op">,</span> <span class="dt">strokeWidth</span><span class="op">:</span> <span class="fl">0.6</span><span class="op">,</span></span>
+<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>        <span class="dt">channels</span><span class="op">:</span> { <span class="dt">Outcome</span><span class="op">:</span> <span class="st">"disp"</span><span class="op">,</span> <span class="dt">Days</span><span class="op">:</span> <span class="st">"days"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> { <span class="dt">format</span><span class="op">:</span> { <span class="dt">x</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="kw">false</span> } } })<span class="op">,</span></span>
+<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>      Plot<span class="op">.</span><span class="fu">text</span>(ends<span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"x"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"i"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"label"</span><span class="op">,</span> <span class="dt">dx</span><span class="op">:</span> <span class="dv">9</span><span class="op">,</span> <span class="dt">textAnchor</span><span class="op">:</span> <span class="st">"start"</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="fl">10.5</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#333"</span> })</span>
+<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>    ]</span>
+<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a>  })<span class="op">;</span></span>
+<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-4" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p class="post-note">Same papers, ranked by total months actually under review. A handful of
+acceptance-only records (older papers whose submission dates I haven't reconstructed) don't
+appear here — they show as dots in the calendar above.</p>
 </section>
-<section id="mcgill-graduate-post-doc-researchers" class="level2">
-<h2 class="anchored" data-anchor-id="mcgill-graduate-post-doc-researchers">McGill Graduate &amp; Post-Doc Researchers</h2>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-dube.png" class="headshot img-fluid" alt="David Dubé"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>David Dubé</strong> is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for causal inference and machine learning (natural language processing &amp; computer vision) for large datasets and complex data analysis.</p>
-</div>
-</div>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-mcmullen.jpeg" class="headshot img-fluid" alt="Katerina McMullen"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Katerina McMullen</strong> is an M.A.&nbsp;student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project.</p>
-</div>
-</div>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-mcilvaney-2026.jpeg" class="headshot img-fluid" alt="Aiden McIlvaney"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Aiden McIlvaney</strong> is an M.A.&nbsp;student in Political Science at McGill University. His research examines political behaviour &amp; public opinion, political uses of technology, electoral governance, and cyber threats targeting democratic institutions, with a methodological focus on survey experiments and causal inference. He holds a SSHRC CGS-M and an FRQ Master’s Research Scholarship, and is a 2026–2027 CIGI Digital Policy Hub Fellow. His current work focuses on Canadian public attitudes towards the use of AI in electoral campaigns and attitudes towards the use of AI in defence and security.</p>
-</div>
-</div>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-nemirovski-2026.png" class="headshot img-fluid" alt="Alan Nemirovski"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Alan Nemirovski</strong> is an M.A.&nbsp;student in Political Science at McGill University, supported by an FRQSC master’s scholarship. He is interested in how emerging technologies and current issues in digital governance are changing political life and participation, from individuals to their social networks. Drawing on an interdisciplinary social sciences background, he approaches these questions with a methodological toolkit ranging from computational methods and statistical techniques to interpretive approaches.</p>
-</div>
-</div>
+<section id="registered-reports-bend-the-clock" class="level2">
+<h2 class="anchored" data-anchor-id="registered-reports-bend-the-clock">Registered reports bend the clock</h2>
+<p>A timeline like this also has to reckon with <strong>registered reports</strong>, where the clock runs differently. In a registered report the study <em>design</em> is reviewed before any data are collected: the journal grants an in-principle acceptance — the ◆ on my chart — on the strength of the protocol, and the results-stage review comes later. So “time under review” and even “acceptance” mean something different; a paper can be accepted in principle before I’ve even run the study. Any honest picture of how long publishing takes has to treat that two-stage path as its own kind of timeline rather than force it into the same bar as a standard submission.</p>
 </section>
-<section id="mcgill-undergraduate-researchers" class="level2">
-<h2 class="anchored" data-anchor-id="mcgill-undergraduate-researchers">McGill Undergraduate Researchers</h2>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<!-- no headshot for Lawrence Plastina -->
+<section id="i-dont-always-aim-for-the-top-tier-journal" class="level2">
+<h2 class="anchored" data-anchor-id="i-dont-always-aim-for-the-top-tier-journal">I don’t always aim for the top-tier journal</h2>
+<p>There’s a second thing the data shows, and I’ll be honest about it: <strong>I don’t always send a paper to the top-tier journal first.</strong> You can see it in the chart below — plenty of my papers landed on the first or second try, which usually means I wasn’t swinging for the fences.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb5" data-startfrom="200" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 199;"><span id="cb5-200"><a href="#cb5-200" aria-hidden="true" tabindex="-1"></a>Plot<span class="op">.</span><span class="fu">plot</span>({</span>
+<span id="cb5-201"><a href="#cb5-201" aria-hidden="true" tabindex="-1"></a>  <span class="dt">width</span><span class="op">:</span> <span class="bu">Math</span><span class="op">.</span><span class="fu">min</span>(width<span class="op">,</span> <span class="dv">560</span>)<span class="op">,</span> <span class="dt">height</span><span class="op">:</span> <span class="dv">240</span><span class="op">,</span> <span class="dt">marginBottom</span><span class="op">:</span> <span class="dv">40</span><span class="op">,</span></span>
+<span id="cb5-202"><a href="#cb5-202" aria-hidden="true" tabindex="-1"></a>  <span class="dt">x</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Journals submitted to before acceptance"</span><span class="op">,</span> <span class="dt">tickFormat</span><span class="op">:</span> d <span class="kw">=&gt;</span> d<span class="op">,</span> <span class="dt">interval</span><span class="op">:</span> <span class="dv">1</span> }<span class="op">,</span></span>
+<span id="cb5-203"><a href="#cb5-203" aria-hidden="true" tabindex="-1"></a>  <span class="dt">y</span><span class="op">:</span> { <span class="dt">label</span><span class="op">:</span> <span class="st">"Papers"</span><span class="op">,</span> <span class="dt">grid</span><span class="op">:</span> <span class="kw">true</span> }<span class="op">,</span></span>
+<span id="cb5-204"><a href="#cb5-204" aria-hidden="true" tabindex="-1"></a>  <span class="dt">marks</span><span class="op">:</span> [</span>
+<span id="cb5-205"><a href="#cb5-205" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">barY</span>(db<span class="op">.</span><span class="at">submission_counts</span><span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"n_journals"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"n_papers"</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#6b1b1b"</span><span class="op">,</span> <span class="dt">rx</span><span class="op">:</span> <span class="dv">2</span><span class="op">,</span></span>
+<span id="cb5-206"><a href="#cb5-206" aria-hidden="true" tabindex="-1"></a>      <span class="dt">channels</span><span class="op">:</span> { <span class="dt">Papers</span><span class="op">:</span> <span class="st">"n_papers"</span><span class="op">,</span> <span class="dt">Journals</span><span class="op">:</span> <span class="st">"n_journals"</span> }<span class="op">,</span> <span class="dt">tip</span><span class="op">:</span> <span class="kw">true</span> })<span class="op">,</span></span>
+<span id="cb5-207"><a href="#cb5-207" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">ruleY</span>([<span class="dv">0</span>])<span class="op">,</span></span>
+<span id="cb5-208"><a href="#cb5-208" aria-hidden="true" tabindex="-1"></a>    Plot<span class="op">.</span><span class="fu">text</span>(db<span class="op">.</span><span class="at">submission_counts</span><span class="op">,</span> { <span class="dt">x</span><span class="op">:</span> <span class="st">"n_journals"</span><span class="op">,</span> <span class="dt">y</span><span class="op">:</span> <span class="st">"n_papers"</span><span class="op">,</span> <span class="dt">text</span><span class="op">:</span> <span class="st">"n_papers"</span><span class="op">,</span> <span class="dt">dy</span><span class="op">:</span> <span class="op">-</span><span class="dv">8</span><span class="op">,</span> <span class="dt">fontSize</span><span class="op">:</span> <span class="dv">11</span><span class="op">,</span> <span class="dt">fill</span><span class="op">:</span> <span class="st">"#444"</span> })</span>
+<span id="cb5-209"><a href="#cb5-209" aria-hidden="true" tabindex="-1"></a>  ]</span>
+<span id="cb5-210"><a href="#cb5-210" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-5" data-nodetype="expression">
+
 </div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Lawrence Plastina</strong> is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients of McGill’s 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported firearm ownership under Prof.&nbsp;Erlich’s supervision.</p>
 </div>
 </div>
+<p>In some cases I probably should have aimed higher. But part of it is deliberate. I run a <strong>differentiated strategy</strong> depending on the kind of paper: some work is a better fit for a specialized or methods outlet than for a flagship general-interest journal, and the goal isn’t always the most prestigious placement — sometimes it’s the right readership, a faster timeline, or a venue that takes the method seriously. My record makes that strategy visible.</p>
+<p>Other scholars make very different choices, and I think there’s real value in students seeing that there’s no single “correct” path through publishing. The people who only ever show you their <em>CV</em> show you the destinations. What I’m trying to show is the route.</p>
 </section>
-<section id="demotip-alumni" class="level2">
-<h2 class="anchored" data-anchor-id="demotip-alumni">DemoTIP Alumni</h2>
-<p>These students worked with me closely. The research and publications listed are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.</p>
-<p>Former lab members — if you need a letter of recommendation years after the fact, you’re still in the rotation. Start at the <a href="./resources/letters.html">Letter of Recommendation</a> page.</p>
-<details class="lab-details" open="">
-<summary>
-Show / hide alumni table (click any column to sort)
-</summary>
-<table class="sortable" id="alumni-table">
-<thead>
-<tr>
-<th data-sort-method="string">
-Researcher
-</th>
-<th data-sort-method="string">
-Degree
-</th>
-<th data-sort-method="number">
-Graduation Year
-</th>
-<th data-sort-method="string">
-Publications &amp; Research
-</th>
-<th data-sort-method="string">
-Post-McGill Employment / Education
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<strong>Rafael Campos-Gottardo</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2025
-</td>
-<td>
-Thesis - <a href="https://mcgill.scholaris.ca/items/9ea27e1c-1f34-48b2-a58e-7335571f99a1">The Impact of Political Violence on Levels of Polarization: Evidence from a Natural Experiment in the United Kingdom</a>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Mathieu Lavigne</strong>
-</td>
-<td>
-Ph.D.
-</td>
-<td>
-2024
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/z603r346t">Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment</a>
-</td>
-<td>
-Post-Doc, Dartmouth College
-</td>
-</tr>
-<tr>
-<td>
-<strong>Pratik Mahajan</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2024
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/h415ph28t">Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India</a>
-</td>
-<td>
-Ph.D student, Yale University
-</td>
-</tr>
-<tr>
-<td>
-<strong>Christopher Ross</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2023
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/w6634906j">Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus</a>; <a href="https://doi.org/10.1086/711177">Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader</a>
-</td>
-<td>
-<a href="https://meo.ca/">The Media Ecosystem Observatory</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Alice Brocheux</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2022
-</td>
-<td>
-</td>
-<td>
-Ph.D.&nbsp;Student, University of Rochester
-</td>
-</tr>
-<tr>
-<td>
-<strong>Costin Ciobanu</strong>
-</td>
-<td>
-Ph.D.
-</td>
-<td>
-2022
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/5d86p5382?locale=en">The political and electoral consequences of economic shocks</a>; <a href="https://doi.org/10.1086/711177">Unveiling</a>
-</td>
-<td>
-Post-Doc, Royal Holloway University; Post-doc, University of Aarhus
-</td>
-</tr>
-<tr>
-<td>
-<strong>Dilse Kaygisiz</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2022
-</td>
-<td>
-Thesis - <a href="https://mcgill.scholaris.ca/items/346915d2-2a4a-40d2-a529-4aaecb5d3d1a">Do laws affect attitudes? A study on domestic violence laws in Turkey</a>
-</td>
-<td>
-<a href="https://datasciences.ca/">Data Sciences</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Henry Atkins</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2021
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/z603r346t">Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack</a>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Stefano Dantas</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2021
-</td>
-<td>
-<a href="https://doi.org/10.1017/pan.2021.15">Multi-Label Prediction for Political Text-as-Data</a>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Étienne Gagnon</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-Thesis - Multiview Representation Learning for Political Science Research
-</td>
-<td>
-<a href="https://www.ca.emb-japan.go.jp/itpr_en/education.html">MEXT Fellowship, Japan</a>; Ph.D.&nbsp;Student, Princeton University
-</td>
-</tr>
-<tr>
-<td>
-<strong>Saewon Park</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-<a href="https://files.osf.io/v1/resources/tsmvz/providers/osfstorage/5ca5384824df750019c52f55?action=download&amp;version=2&amp;direct&amp;format=pdf">Weaponizing Election Petitions</a>; Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation
-</td>
-<td>
-<a href="https://www.tracktik.com/">TrackTik</a>; <a href="https://meo.ca/">The Media Ecosystem Observatory</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Tanner Ducharme</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Alex Xin Tong Wang</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Hair Parra Barrera</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-M.A., HEC-Montréal
-</td>
-</tr>
-<tr>
-<td>
-<strong>Su Goh</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Annie Chen</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-Thesis - <a href="https://mcgill.scholaris.ca/items/cf050e75-9f47-42bb-bd56-717e2cc90aab">Incumbency Advantage in Australia</a>; <a href="https://doi.org/10.1017/XPS.2021.26">Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates</a>
-</td>
-<td>
-<a href="http://brightlinewatch.org/">Bright Line Watch</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Andrew McCormack</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2019
-</td>
-<td>
-<a href="https://www.rdocumentation.org/packages/mapcan/versions/0.0.1">mapcan R package</a>; Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US
-</td>
-<td>
-<a href="https://datasciences.ca/">Data Sciences</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Aengus Bridgman</strong>
-</td>
-<td>
-Ph.D.
-</td>
-<td>
-2022
-</td>
-<td>
-<a href="https://doi.org/10.1086/711177">Unveiling</a>
-</td>
-<td>
-Assistant Prof (Research), McGill University
-</td>
-</tr>
-<tr>
-<td>
-<strong>Tim Roy</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-</tbody>
-</table>
-</details>
-<script>
-(function () {
-  function sortTable(table, colIndex, asc, type) {
-    var tbody = table.tBodies[0];
-    var rows = Array.prototype.slice.call(tbody.rows);
-    rows.sort(function (a, b) {
-      var ax = a.cells[colIndex].textContent.trim();
-      var bx = b.cells[colIndex].textContent.trim();
-      if (type === "number") {
-        var an = parseFloat(ax); var bn = parseFloat(bx);
-        if (isNaN(an)) an = asc ? Infinity : -Infinity;
-        if (isNaN(bn)) bn = asc ? Infinity : -Infinity;
-        return asc ? an - bn : bn - an;
-      }
-      return asc
-        ? ax.localeCompare(bx, undefined, { sensitivity: "base" })
-        : bx.localeCompare(ax, undefined, { sensitivity: "base" });
-    });
-    rows.forEach(function (r) { tbody.appendChild(r); });
-  }
-  document.querySelectorAll("table.sortable").forEach(function (table) {
-    var headers = table.tHead ? table.tHead.rows[0].cells : [];
-    Array.prototype.forEach.call(headers, function (th, idx) {
-      var type = th.getAttribute("data-sort-method") || "string";
-      var asc = true;
-      th.addEventListener("click", function () {
-        Array.prototype.forEach.call(headers, function (o) {
-          if (o !== th) o.classList.remove("sort-asc", "sort-desc");
-        });
-        sortTable(table, idx, asc, type);
-        th.classList.toggle("sort-asc", asc);
-        th.classList.toggle("sort-desc", !asc);
-        asc = !asc;
-      });
-    });
-  });
-})();
-</script>
+<section id="why-share-it" class="level2">
+<h2 class="anchored" data-anchor-id="why-share-it">Why share it</h2>
+<p>None of this is a brag or a complaint — it’s just the actual data, shared in the hope that it’s useful to people earlier in the pipeline than I am. It’s built with R and Quarto from a tidy log of every submission I’ve ever made; happy to talk shop about the setup.</p>
+<p>And a caveat about the future: AI may change all of this — how fast we write, review, and publish — quite quickly. Whether it actually does remains to be seen.</p>
+<p><strong>Comments welcome</strong> — I’d genuinely like to hear how other people think about timing and journal strategy, so reply on LinkedIn or reach out directly.</p>
+<p><a href="../../submissions.html"><strong>→ Explore the full interactive Publication Record</strong></a></p>
 
 
 </section>
@@ -686,6 +527,17 @@ B.A.
     init();
   }
 })();
+</script>
+<script type="ojs-module-contents">
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6ImRiID0gRmlsZUF0dGFjaG1lbnQoXCIuLi8uLi9fZGF0YS9zdWJtaXNzaW9uc19wdWJsaWMuanNvblwiKS5qc29uKClcbkNPTCA9ICh7IGFjY2VwdDogXCIjNmIxYjFiXCIsIHJlamVjdDogXCIjMmU4YmIwXCIsIGRlc2tfcmVqZWN0OiBcIiNjOThhMmJcIiwgaW5fcHJpbmNpcGxlX2FjY2VwdDogXCIjNGM3YTRjXCIsIHdpdGhkcmF3bjogXCIjOWE4YWE4XCIgfSlcbmRjb2wgPSBkID0+IENPTFtkXSB8fCBcIiM5YWEwYTZcIlxuYWNjZXB0ZWQgPSBkYi5hY2NlcHRlZC5tYXAoKGEsIGkpID0+IHtcbiAgY29uc3QgcHViID0gYS5wdWJfZGF0ZSA/IG5ldyBEYXRlKGEucHViX2RhdGUpIDogbnVsbDsgICAgICAgICAgICAgICAgIC8vIGZpcnN0IG9ubGluZSAoYWR2YW5jZSBhY2Nlc3MpXG4gIGNvbnN0IHB1YmZpbmFsID0gYS5wdWJfZGF0ZV9maW5hbCA/IG5ldyBEYXRlKGEucHViX2RhdGVfZmluYWwpIDogbnVsbDsgLy8gZmluYWwgam91cm5hbCBpc3N1ZSAodmVyc2lvbiBvZiByZWNvcmQpXG4gIGNvbnN0IHZvciA9IHB1YmZpbmFsIHx8IChhLmF3YWl0aW5nX2lzc3VlID8gbnVsbCA6IHB1Yik7ICAgICAgICAgICAgIC8vIGF3YWl0aW5nIGFuIGlzc3VlIOKGkiBubyBWb1IgeWV0XG4gIGNvbnN0IHNhbWVWb1IgPSAhcHViZmluYWwgfHwgKHB1YiAmJiArcHViZmluYWwgPT09ICtwdWIpOyAgICAgICAgICAgIC8vIG9ubGluZS1vbmx5IC8gc2FtZS1kYXkg4oaSIG9uZSBkb3RcbiAgY29uc3QgbGFiZWxZZWFyID0gKGEuYXdhaXRpbmdfaXNzdWUgJiYgIXB1YmZpbmFsKSA/IFwiVEJEXCJcbiAgICA6IHB1YmZpbmFsID8gcHViZmluYWwuZ2V0VVRDRnVsbFllYXIoKSA6IChhLnllYXIgPyBhLnllYXIgOiBcIihpbiBwcmVzcylcIik7XG4gIHJldHVybiB7XG4gICAgLi4uYSwgaSxcbiAgICBhY2M6IG5ldyBEYXRlKGEuYWNjZXB0X2RhdGUpLFxuICAgIHB1YiwgcHViZmluYWwsIHZvciwgc2FtZVZvUixcbiAgICB2b3JEYXRlOiBhLnB1Yl9kYXRlX2ZpbmFsIHx8IGEucHViX2RhdGUsXG4gICAgZnN1YjogYS5maXJzdF9zdWJfZGF0ZSA/IG5ldyBEYXRlKGEuZmlyc3Rfc3ViX2RhdGUpIDogbnVsbCxcbiAgICBpcGE6IGEuaXBhX2RhdGUgPyBuZXcgRGF0ZShhLmlwYV9kYXRlKSA6IG51bGwsXG4gICAgbGFiZWw6IChhLnJlZ2lzdGVyZWRfcmVwb3J0ID8gXCLinLEgXCIgOiBcIlwiKVxuICAgICAgKyBgJHthLmF1dGhvcnN9ICR7bGFiZWxZZWFyfSDCtyAke2Euam91cm5hbH1gXG4gICAgICArIChhLnRpbWluZ19rbm93biA/IGAgwrcgJHthLnJyX21pc3NpbmcgPyBcIlImUiA/XCIgOiBhLnRvdGFsX3JyICsgXCIgUiZSXCJ9YCA6IFwiXCIpXG4gIH07XG59KVxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0yIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiYWxsRGF0ZXMgPSBhY2NlcHRlZC5mbGF0TWFwKGEgPT4gW2EuYWNjLCBhLnB1YiwgYS52b3IsIGEuZnN1YiwgYS5pcGFdLmZpbHRlcihCb29sZWFuKVxuICAuY29uY2F0KGEuc2VnbWVudHMuZmxhdE1hcChzID0+IFtzLnN1Yl9kYXRlICYmIG5ldyBEYXRlKHMuc3ViX2RhdGUpLCBzLmZpbl9kYXRlICYmIG5ldyBEYXRlKHMuZmluX2RhdGUpXS5maWx0ZXIoQm9vbGVhbikpKSlcbmxvWWVhciA9IGQzLm1pbihhbGxEYXRlcywgZCA9PiBkLmdldFVUQ0Z1bGxZZWFyKCkpXG5oaVllYXIgPSBkMy5tYXgoYWxsRGF0ZXMsIGQgPT4gZC5nZXRVVENGdWxsWWVhcigpKSArIDFcbiJ9LHsibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMyIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IntcbiAgY29uc3Qgb3JkZXIgPSBkMy5zb3J0KGFjY2VwdGVkLCBkID0+IC1kLmFjYykubWFwKGQgPT4gZC5pKTtcbiAgY29uc3Qgc2VncyA9IGFjY2VwdGVkLmZsYXRNYXAoYSA9PiBhLnNlZ21lbnRzXG4gICAgLmZpbHRlcihzID0+IHMuc3ViX2RhdGUgJiYgcy5maW5fZGF0ZSlcbiAgICAubWFwKHMgPT4gKHsgaTogYS5pLCB4MTogbmV3IERhdGUocy5zdWJfZGF0ZSksIHgyOiBuZXcgRGF0ZShzLmZpbl9kYXRlKSwgZGlzcDogcy5kaXNwb3NpdGlvbixcbiAgICAgIGRheXM6IE1hdGgucm91bmQoKG5ldyBEYXRlKHMuZmluX2RhdGUpIC0gbmV3IERhdGUocy5zdWJfZGF0ZSkpIC8gODY0MDAwMDApIH0pKSk7XG4gIGNvbnN0IG1hcmtzX3Nob3J0ID0gc2Vncy5maWx0ZXIocyA9PiBzLmRpc3AgIT09IFwiYWNjZXB0XCIgJiYgcy5kYXlzIDw9IDQ1KTtcbiAgY29uc3Qgc3BhbnMgPSBhY2NlcHRlZC5maWx0ZXIoZCA9PiBkLmZzdWIpLm1hcChkID0+ICh7IGk6IGQuaSwgeDE6IGQuZnN1YiwgeDI6IGQudm9yIHx8IGQucHViIHx8IGQuYWNjIH0pKTtcbiAgY29uc3QgaW5wcmVzcyA9IGFjY2VwdGVkLmZpbHRlcihkID0+IGQudm9yIHx8IGQucHViKS5tYXAoZCA9PiAoeyBpOiBkLmksIHgxOiBkLmFjYywgeDI6IGQudm9yIHx8IGQucHViIH0pKTtcbiAgcmV0dXJuIFBsb3QucGxvdCh7XG4gICAgd2lkdGgsIGhlaWdodDogYWNjZXB0ZWQubGVuZ3RoICogMjQgKyA0NCxcbiAgICBtYXJnaW5MZWZ0OiA4LCBtYXJnaW5SaWdodDogMzAwLCBtYXJnaW5Ub3A6IDEwLCBtYXJnaW5Cb3R0b206IDI4LFxuICAgIHg6IHsgdHlwZTogXCJ1dGNcIiwgZ3JpZDogdHJ1ZSwgbGFiZWw6IG51bGwsXG4gICAgICAgICBkb21haW46IFtEYXRlLlVUQyhsb1llYXIsIDAsIDEpLCBEYXRlLlVUQyhoaVllYXIsIDExLCAzMSldLFxuICAgICAgICAgdGlja3M6IGQzLnV0Y1llYXIuZXZlcnkoMSksXG4gICAgICAgICB0aWNrRm9ybWF0OiBkID0+IHsgY29uc3QgeSA9IGQuZ2V0VVRDRnVsbFllYXIoKTsgcmV0dXJuIHkgJSAyID09PSAwID8gU3RyaW5nKHkpIDogXCJcIjsgfSB9LFxuICAgIHk6IHsgYXhpczogbnVsbCwgZG9tYWluOiBvcmRlciB9LFxuICAgIG1hcmtzOiBbXG4gICAgICBQbG90LnJ1bGVZKHNwYW5zLCB7IHk6IFwiaVwiLCB4MTogXCJ4MVwiLCB4MjogXCJ4MlwiLCBzdHJva2U6IFwiI2RkZFwiLCBzdHJva2VXaWR0aDogMSwgY2xpcDogdHJ1ZSB9KSxcbiAgICAgIFBsb3QucnVsZVkoaW5wcmVzcywgeyB5OiBcImlcIiwgeDE6IFwieDFcIiwgeDI6IFwieDJcIiwgc3Ryb2tlOiBcIiM2YjFiMWJcIiwgc3Ryb2tlV2lkdGg6IDEsIHN0cm9rZURhc2hhcnJheTogXCIxLDJcIiwgY2xpcDogdHJ1ZSB9KSxcbiAgICAgIFBsb3QuYmFyWChzZWdzLCB7IHgxOiBcIngxXCIsIHgyOiBcIngyXCIsIHk6IFwiaVwiLCBmaWxsOiBkID0+IGRjb2woZC5kaXNwKSwgaW5zZXRZOiA4LCByeDogMS41LCBjbGlwOiB0cnVlLFxuICAgICAgICBjaGFubmVsczogeyBPdXRjb21lOiBcImRpc3BcIiwgRGF5czogXCJkYXlzXCIgfSwgdGlwOiB7IGZvcm1hdDogeyB4MTogZmFsc2UsIHgyOiBmYWxzZSwgeTogZmFsc2UsIGZpbGw6IGZhbHNlIH0gfSB9KSxcbiAgICAgIFBsb3QuZG90KG1hcmtzX3Nob3J0LCB7IHg6IGQgPT4gbmV3IERhdGUoKCtkLngxICsgK2QueDIpIC8gMiksIHk6IFwiaVwiLCBzeW1ib2w6IFwic3F1YXJlXCIsIHI6IDMuNixcbiAgICAgICAgZmlsbDogZCA9PiBkY29sKGQuZGlzcCksIHN0cm9rZTogXCJ3aGl0ZVwiLCBzdHJva2VXaWR0aDogMC42LCBjbGlwOiB0cnVlLFxuICAgICAgICBjaGFubmVsczogeyBPdXRjb21lOiBcImRpc3BcIiwgRGF5czogXCJkYXlzXCIgfSwgdGlwOiB7IGZvcm1hdDogeyB4OiBmYWxzZSwgeTogZmFsc2UsIGZpbGw6IGZhbHNlIH0gfSB9KSxcbiAgICAgIFBsb3QuZG90KGFjY2VwdGVkLCB7IHg6IFwiYWNjXCIsIHk6IFwiaVwiLCByOiA0LjUsIGZpbGw6IFwiIzZiMWIxYlwiLCBzdHJva2U6IFwid2hpdGVcIiwgc3Ryb2tlV2lkdGg6IDEsIGNsaXA6IHRydWUsXG4gICAgICAgIGNoYW5uZWxzOiB7IFBhcGVyOiBcInBhcGVyXCIsIEpvdXJuYWw6IFwiam91cm5hbFwiLCBBY2NlcHRlZDogXCJhY2NlcHRfZGF0ZVwiIH0sIHRpcDogdHJ1ZSB9KSxcbiAgICAgIFBsb3QuZG90KGFjY2VwdGVkLmZpbHRlcihkID0+IGQucHViICYmIChkLmF3YWl0aW5nX2lzc3VlIHx8ICFkLnNhbWVWb1IpKSwgeyB4OiBcInB1YlwiLCB5OiBcImlcIiwgcjogNCwgZmlsbDogXCJ3aGl0ZVwiLCBzdHJva2U6IFwiIzZiMWIxYlwiLCBzdHJva2VXaWR0aDogMS41LCBjbGlwOiB0cnVlLFxuICAgICAgICBjaGFubmVsczogeyBcIkZpcnN0IG9ubGluZVwiOiBcInB1Yl9kYXRlXCIgfSwgdGlwOiB0cnVlIH0pLFxuICAgICAgUGxvdC5kb3QoYWNjZXB0ZWQuZmlsdGVyKGQgPT4gZC52b3IpLCB7IHg6IFwidm9yXCIsIHk6IFwiaVwiLCByOiA1LCBmaWxsOiBcIndoaXRlXCIsIHN0cm9rZTogXCIjNmIxYjFiXCIsIHN0cm9rZVdpZHRoOiAxLjUsIGNsaXA6IHRydWUgfSksXG4gICAgICBQbG90LmRvdChhY2NlcHRlZC5maWx0ZXIoZCA9PiBkLnZvciksIHsgeDogXCJ2b3JcIiwgeTogXCJpXCIsIHI6IDEuOSwgZmlsbDogXCIjNmIxYjFiXCIsIGNsaXA6IHRydWUsXG4gICAgICAgIGNoYW5uZWxzOiB7IFwiVmVyc2lvbiBvZiByZWNvcmRcIjogXCJ2b3JEYXRlXCIgfSwgdGlwOiB0cnVlIH0pLFxuICAgICAgUGxvdC5kb3QoYWNjZXB0ZWQuZmlsdGVyKGQgPT4gZC5pcGEpLCB7IHg6IFwiaXBhXCIsIHk6IFwiaVwiLCBzeW1ib2w6IFwiZGlhbW9uZFwiLCByOiA1LCBmaWxsOiBcIiM0YzdhNGNcIiwgc3Ryb2tlOiBcIndoaXRlXCIsIHN0cm9rZVdpZHRoOiAxLCBjbGlwOiB0cnVlLFxuICAgICAgICBjaGFubmVsczogeyBcIkluLXByaW5jaXBsZSBhY2NlcHRhbmNlXCI6IFwiaXBhX2RhdGVcIiB9LCB0aXA6IHRydWUgfSksXG4gICAgICBQbG90LnRleHQoYWNjZXB0ZWQsIHsgeTogXCJpXCIsIHRleHQ6IFwibGFiZWxcIiwgZnJhbWVBbmNob3I6IFwicmlnaHRcIiwgdGV4dEFuY2hvcjogXCJzdGFydFwiLCBkeDogOCwgZm9udFNpemU6IDEwLCBmaWxsOiBcIiMzMzNcIiB9KVxuICAgIF1cbiAgfSk7XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTQiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJ7XG4gIGNvbnN0IHRpbWVkID0gYWNjZXB0ZWQuZmlsdGVyKGQgPT4gZC50aW1pbmdfa25vd24gJiYgZC50b3RhbF9kYXlzICE9IG51bGwpO1xuICBjb25zdCBvcmRlciA9IGQzLnNvcnQodGltZWQsIGQgPT4gLWQudG90YWxfZGF5cykubWFwKGQgPT4gZC5pKTtcbiAgY29uc3Qgc2VncyA9IHRpbWVkLmZsYXRNYXAoYSA9PiB7XG4gICAgbGV0IGN1bSA9IDA7XG4gICAgcmV0dXJuIGEuc2VnbWVudHMuZmlsdGVyKHMgPT4gcy5kYXlzICE9IG51bGwpLm1hcChzID0+IHtcbiAgICAgIGNvbnN0IHgwID0gY3VtOyBjdW0gKz0gcy5kYXlzO1xuICAgICAgcmV0dXJuIHsgaTogYS5pLCB4MCwgeDE6IGN1bSwgZGlzcDogcy5kaXNwb3NpdGlvbiwgZGF5czogcy5kYXlzIH07XG4gICAgfSk7XG4gIH0pO1xuICBjb25zdCBlbmRzID0gdGltZWQubWFwKGQgPT4gKHsgaTogZC5pLCB4OiBkLnRvdGFsX2RheXMsIGxhYmVsOiBkLmxhYmVsIH0pKTtcbiAgY29uc3QgbWFya3Nfc2hvcnQgPSBzZWdzLmZpbHRlcihzID0+IHMuZGlzcCAhPT0gXCJhY2NlcHRcIiAmJiBzLmRheXMgPD0gNDUpO1xuICByZXR1cm4gUGxvdC5wbG90KHtcbiAgICB3aWR0aCwgaGVpZ2h0OiB0aW1lZC5sZW5ndGggKiAyNCArIDQ0LFxuICAgIG1hcmdpbkxlZnQ6IDgsIG1hcmdpblJpZ2h0OiAzMDAsIG1hcmdpblRvcDogMTAsIG1hcmdpbkJvdHRvbTogMzAsXG4gICAgeDogeyBsYWJlbDogXCJDdW11bGF0aXZlIGRheXMgdW5kZXIgcmV2aWV3IOKGklwiLCBncmlkOiB0cnVlLCBuaWNlOiB0cnVlIH0sXG4gICAgeTogeyBheGlzOiBudWxsLCBkb21haW46IG9yZGVyIH0sXG4gICAgbWFya3M6IFtcbiAgICAgIFBsb3QuYmFyWChzZWdzLCB7IHgxOiBcIngwXCIsIHgyOiBcIngxXCIsIHk6IFwiaVwiLCBmaWxsOiBkID0+IGRjb2woZC5kaXNwKSwgaW5zZXRZOiA4LCByeDogMS41LFxuICAgICAgICBzdHJva2U6IFwid2hpdGVcIiwgc3Ryb2tlV2lkdGg6IDEsIGNoYW5uZWxzOiB7IE91dGNvbWU6IFwiZGlzcFwiLCBEYXlzOiBcImRheXNcIiB9LFxuICAgICAgICB0aXA6IHsgZm9ybWF0OiB7IHgxOiBmYWxzZSwgeDI6IGZhbHNlLCB5OiBmYWxzZSwgZmlsbDogZmFsc2UgfSB9IH0pLFxuICAgICAgUGxvdC5kb3QobWFya3Nfc2hvcnQsIHsgeDogZCA9PiAoZC54MCArIGQueDEpIC8gMiwgeTogXCJpXCIsIHN5bWJvbDogXCJzcXVhcmVcIiwgcjogMy42LFxuICAgICAgICBmaWxsOiBkID0+IGRjb2woZC5kaXNwKSwgc3Ryb2tlOiBcIndoaXRlXCIsIHN0cm9rZVdpZHRoOiAwLjYsXG4gICAgICAgIGNoYW5uZWxzOiB7IE91dGNvbWU6IFwiZGlzcFwiLCBEYXlzOiBcImRheXNcIiB9LCB0aXA6IHsgZm9ybWF0OiB7IHg6IGZhbHNlLCB5OiBmYWxzZSwgZmlsbDogZmFsc2UgfSB9IH0pLFxuICAgICAgUGxvdC50ZXh0KGVuZHMsIHsgeDogXCJ4XCIsIHk6IFwiaVwiLCB0ZXh0OiBcImxhYmVsXCIsIGR4OiA5LCB0ZXh0QW5jaG9yOiBcInN0YXJ0XCIsIGZvbnRTaXplOiAxMC41LCBmaWxsOiBcIiMzMzNcIiB9KVxuICAgIF1cbiAgfSk7XG59XG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTUiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJQbG90LnBsb3Qoe1xuICB3aWR0aDogTWF0aC5taW4od2lkdGgsIDU2MCksIGhlaWdodDogMjQwLCBtYXJnaW5Cb3R0b206IDQwLFxuICB4OiB7IGxhYmVsOiBcIkpvdXJuYWxzIHN1Ym1pdHRlZCB0byBiZWZvcmUgYWNjZXB0YW5jZVwiLCB0aWNrRm9ybWF0OiBkID0+IGQsIGludGVydmFsOiAxIH0sXG4gIHk6IHsgbGFiZWw6IFwiUGFwZXJzXCIsIGdyaWQ6IHRydWUgfSxcbiAgbWFya3M6IFtcbiAgICBQbG90LmJhclkoZGIuc3VibWlzc2lvbl9jb3VudHMsIHsgeDogXCJuX2pvdXJuYWxzXCIsIHk6IFwibl9wYXBlcnNcIiwgZmlsbDogXCIjNmIxYjFiXCIsIHJ4OiAyLFxuICAgICAgY2hhbm5lbHM6IHsgUGFwZXJzOiBcIm5fcGFwZXJzXCIsIEpvdXJuYWxzOiBcIm5fam91cm5hbHNcIiB9LCB0aXA6IHRydWUgfSksXG4gICAgUGxvdC5ydWxlWShbMF0pLFxuICAgIFBsb3QudGV4dChkYi5zdWJtaXNzaW9uX2NvdW50cywgeyB4OiBcIm5fam91cm5hbHNcIiwgeTogXCJuX3BhcGVyc1wiLCB0ZXh0OiBcIm5fcGFwZXJzXCIsIGR5OiAtOCwgZm9udFNpemU6IDExLCBmaWxsOiBcIiM0NDRcIiB9KVxuICBdXG59KVxuIn1dfQ==
+</script>
+<script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
+window._ojs.paths.runtimeToDoc = "../../posts/2026-07-publication-record";
+window._ojs.paths.runtimeToRoot = "../..";
+window._ojs.paths.docToRoot = "../..";
+window._ojs.selfContained = false;
+window._ojs.runtime.interpretFromScriptTags();
 </script>
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {

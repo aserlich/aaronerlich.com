@@ -1,0 +1,236 @@
+---
+title: "What it actually takes to publish a paper"
+description-meta: "I put my entire journal publication record online — and what it shows about the hidden time in publishing, and about aiming (or not) for the top-tier journal."
+date: "2026-07-28"
+categories: [publishing, transparency, graduate students, data viz]
+---
+
+I just added something to my website I've wanted to share for a while: an interactive
+[**Publication Record**](../../submissions.qmd) — every accepted paper, how long it spent
+under review, how many journals it passed through, and how long the *whole* road to
+publication really took.
+
+The inspiration is [Yusaku Horiuchi](https://www.linkedin.com/in/yusaku-horiuchi-197682232/),
+who has generously shared [a complete log of his own journal
+interactions](https://www.linkedin.com/posts/yusaku-horiuchi-197682232_based-on-a-complete-log-of-my-interactions-activity-7463660266237579264-k2BC)
+publicly. I wanted to build on that with one addition I think matters, especially for
+graduate students.
+
+## The whole clock, not just the review clock
+
+**My chart shows the whole elapsed time — not just the months a paper was under review.**
+
+When we talk about how long publishing takes, we usually count the time a manuscript sits
+with reviewers. That badly understates it. A huge share of the calendar is the paper *not*
+under review at all: the months it sits on my desk while I revise, the gaps between one
+journal's rejection and the next submission, the wait from acceptance to the version of
+record appearing online. On the chart below, those stretches show up as **gaps in the
+faint through-line** — and for many papers they add up to more than the review time
+itself.
+
+Graduate students rarely get to see that hidden part of the process. Seeing it makes the
+long road feel less like a personal failing and more like the normal shape of the work.
+
+```{=html}
+<style>
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; align-items: center; margin: 0.5rem 0 0.75rem; }
+.legend span.sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+.legend span.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+.post-note { font-size: 0.8rem; color: #777; margin-top: 0.5rem; }
+</style>
+<div class="legend">
+  <span><span class="sw" style="background:#c98a2b"></span>Desk reject</span>
+  <span><span class="sw" style="background:#2e8bb0"></span>Reject after review</span>
+  <span><span class="sw" style="background:#9a8aa8"></span>Withdrawn</span>
+  <span><span class="sw" style="background:#6b1b1b"></span>Accepting journal</span>
+  <span><span class="dot" style="background:#6b1b1b"></span>Accepted</span>
+  <span><span class="dot" style="background:#fff;border:1.5px solid #6b1b1b"></span>First online</span>
+  <span><span class="dot" style="background:radial-gradient(circle,#6b1b1b 0 38%,#fff 42% 100%);border:1.5px solid #6b1b1b"></span>Version of record (issue)</span>
+  <span style="color:#4c7a4c">◆ In-principle acceptance</span>
+  <span>✱ Registered report</span>
+</div>
+<p style="font-size:0.78rem;color:#888;margin:0.15rem 0 0">For online-only journals the online and final versions are the same date — a single ◉.</p>
+```
+
+```{ojs}
+//| echo: false
+db = FileAttachment("../../_data/submissions_public.json").json()
+COL = ({ accept: "#6b1b1b", reject: "#2e8bb0", desk_reject: "#c98a2b", in_principle_accept: "#4c7a4c", withdrawn: "#9a8aa8" })
+dcol = d => COL[d] || "#9aa0a6"
+accepted = db.accepted.map((a, i) => {
+  const pub = a.pub_date ? new Date(a.pub_date) : null;                 // first online (advance access)
+  const pubfinal = a.pub_date_final ? new Date(a.pub_date_final) : null; // final journal issue (version of record)
+  const vor = pubfinal || (a.awaiting_issue ? null : pub);             // awaiting an issue → no VoR yet
+  const sameVoR = !pubfinal || (pub && +pubfinal === +pub);            // online-only / same-day → one dot
+  const labelYear = (a.awaiting_issue && !pubfinal) ? "TBD"
+    : pubfinal ? pubfinal.getUTCFullYear() : (a.year ? a.year : "(in press)");
+  return {
+    ...a, i,
+    acc: new Date(a.accept_date),
+    pub, pubfinal, vor, sameVoR,
+    vorDate: a.pub_date_final || a.pub_date,
+    fsub: a.first_sub_date ? new Date(a.first_sub_date) : null,
+    ipa: a.ipa_date ? new Date(a.ipa_date) : null,
+    label: (a.registered_report ? "✱ " : "")
+      + `${a.authors} ${labelYear} · ${a.journal}`
+      + (a.timing_known ? ` · ${a.rr_missing ? "R&R ?" : a.total_rr + " R&R"}` : "")
+  };
+})
+```
+
+```{ojs}
+//| echo: false
+allDates = accepted.flatMap(a => [a.acc, a.pub, a.vor, a.fsub, a.ipa].filter(Boolean)
+  .concat(a.segments.flatMap(s => [s.sub_date && new Date(s.sub_date), s.fin_date && new Date(s.fin_date)].filter(Boolean))))
+loYear = d3.min(allDates, d => d.getUTCFullYear())
+hiYear = d3.max(allDates, d => d.getUTCFullYear()) + 1
+```
+
+```{ojs}
+//| echo: false
+{
+  const order = d3.sort(accepted, d => -d.acc).map(d => d.i);
+  const segs = accepted.flatMap(a => a.segments
+    .filter(s => s.sub_date && s.fin_date)
+    .map(s => ({ i: a.i, x1: new Date(s.sub_date), x2: new Date(s.fin_date), disp: s.disposition,
+      days: Math.round((new Date(s.fin_date) - new Date(s.sub_date)) / 86400000) })));
+  const marks_short = segs.filter(s => s.disp !== "accept" && s.days <= 45);
+  const spans = accepted.filter(d => d.fsub).map(d => ({ i: d.i, x1: d.fsub, x2: d.vor || d.pub || d.acc }));
+  const inpress = accepted.filter(d => d.vor || d.pub).map(d => ({ i: d.i, x1: d.acc, x2: d.vor || d.pub }));
+  return Plot.plot({
+    width, height: accepted.length * 24 + 44,
+    marginLeft: 8, marginRight: 300, marginTop: 10, marginBottom: 28,
+    x: { type: "utc", grid: true, label: null,
+         domain: [Date.UTC(loYear, 0, 1), Date.UTC(hiYear, 11, 31)],
+         ticks: d3.utcYear.every(1),
+         tickFormat: d => { const y = d.getUTCFullYear(); return y % 2 === 0 ? String(y) : ""; } },
+    y: { axis: null, domain: order },
+    marks: [
+      Plot.ruleY(spans, { y: "i", x1: "x1", x2: "x2", stroke: "#ddd", strokeWidth: 1, clip: true }),
+      Plot.ruleY(inpress, { y: "i", x1: "x1", x2: "x2", stroke: "#6b1b1b", strokeWidth: 1, strokeDasharray: "1,2", clip: true }),
+      Plot.barX(segs, { x1: "x1", x2: "x2", y: "i", fill: d => dcol(d.disp), insetY: 8, rx: 1.5, clip: true,
+        channels: { Outcome: "disp", Days: "days" }, tip: { format: { x1: false, x2: false, y: false, fill: false } } }),
+      Plot.dot(marks_short, { x: d => new Date((+d.x1 + +d.x2) / 2), y: "i", symbol: "square", r: 3.6,
+        fill: d => dcol(d.disp), stroke: "white", strokeWidth: 0.6, clip: true,
+        channels: { Outcome: "disp", Days: "days" }, tip: { format: { x: false, y: false, fill: false } } }),
+      Plot.dot(accepted, { x: "acc", y: "i", r: 4.5, fill: "#6b1b1b", stroke: "white", strokeWidth: 1, clip: true,
+        channels: { Paper: "paper", Journal: "journal", Accepted: "accept_date" }, tip: true }),
+      Plot.dot(accepted.filter(d => d.pub && (d.awaiting_issue || !d.sameVoR)), { x: "pub", y: "i", r: 4, fill: "white", stroke: "#6b1b1b", strokeWidth: 1.5, clip: true,
+        channels: { "First online": "pub_date" }, tip: true }),
+      Plot.dot(accepted.filter(d => d.vor), { x: "vor", y: "i", r: 5, fill: "white", stroke: "#6b1b1b", strokeWidth: 1.5, clip: true }),
+      Plot.dot(accepted.filter(d => d.vor), { x: "vor", y: "i", r: 1.9, fill: "#6b1b1b", clip: true,
+        channels: { "Version of record": "vorDate" }, tip: true }),
+      Plot.dot(accepted.filter(d => d.ipa), { x: "ipa", y: "i", symbol: "diamond", r: 5, fill: "#4c7a4c", stroke: "white", strokeWidth: 1, clip: true,
+        channels: { "In-principle acceptance": "ipa_date" }, tip: true }),
+      Plot.text(accepted, { y: "i", text: "label", frameAnchor: "right", textAnchor: "start", dx: 8, fontSize: 10, fill: "#333" })
+    ]
+  });
+}
+```
+
+```{=html}
+<p class="post-note">Each row is one accepted paper, ordered by acceptance date. The bar is
+time under review at each journal (coloured by outcome); earlier, rejecting journals are
+shown by outcome but not named. The filled dot (●) is acceptance; then comes first online
+(○, advance access) and the version of record in a journal issue (◉). For online-only
+journals those two coincide as a single ◉, and the gap from ● to ◉ is production time. The
+<a href="../../submissions.qmd">full interactive version</a> lets you zoom to any window.</p>
+```
+
+And here is the same record ranked purely by **total time under review** — the gaps between
+journals collapsed away, so each bar is only the months a paper actually sat with reviewers:
+
+```{ojs}
+//| echo: false
+{
+  const timed = accepted.filter(d => d.timing_known && d.total_days != null);
+  const order = d3.sort(timed, d => -d.total_days).map(d => d.i);
+  const segs = timed.flatMap(a => {
+    let cum = 0;
+    return a.segments.filter(s => s.days != null).map(s => {
+      const x0 = cum; cum += s.days;
+      return { i: a.i, x0, x1: cum, disp: s.disposition, days: s.days };
+    });
+  });
+  const ends = timed.map(d => ({ i: d.i, x: d.total_days, label: d.label }));
+  const marks_short = segs.filter(s => s.disp !== "accept" && s.days <= 45);
+  return Plot.plot({
+    width, height: timed.length * 24 + 44,
+    marginLeft: 8, marginRight: 300, marginTop: 10, marginBottom: 30,
+    x: { label: "Cumulative days under review →", grid: true, nice: true },
+    y: { axis: null, domain: order },
+    marks: [
+      Plot.barX(segs, { x1: "x0", x2: "x1", y: "i", fill: d => dcol(d.disp), insetY: 8, rx: 1.5,
+        stroke: "white", strokeWidth: 1, channels: { Outcome: "disp", Days: "days" },
+        tip: { format: { x1: false, x2: false, y: false, fill: false } } }),
+      Plot.dot(marks_short, { x: d => (d.x0 + d.x1) / 2, y: "i", symbol: "square", r: 3.6,
+        fill: d => dcol(d.disp), stroke: "white", strokeWidth: 0.6,
+        channels: { Outcome: "disp", Days: "days" }, tip: { format: { x: false, y: false, fill: false } } }),
+      Plot.text(ends, { x: "x", y: "i", text: "label", dx: 9, textAnchor: "start", fontSize: 10.5, fill: "#333" })
+    ]
+  });
+}
+```
+
+```{=html}
+<p class="post-note">Same papers, ranked by total months actually under review. A handful of
+acceptance-only records (older papers whose submission dates I haven't reconstructed) don't
+appear here — they show as dots in the calendar above.</p>
+```
+
+## Registered reports bend the clock
+
+A timeline like this also has to reckon with **registered reports**, where the clock runs
+differently. In a registered report the study *design* is reviewed before any data are
+collected: the journal grants an in-principle acceptance — the ◆ on my chart — on the
+strength of the protocol, and the results-stage review comes later. So "time under review"
+and even "acceptance" mean something different; a paper can be accepted in principle before
+I've even run the study. Any honest picture of how long publishing takes has to treat that
+two-stage path as its own kind of timeline rather than force it into the same bar as a
+standard submission.
+
+## I don't always aim for the top-tier journal
+
+There's a second thing the data shows, and I'll be honest about it: **I don't always send a
+paper to the top-tier journal first.** You can see it in the chart below — plenty of my
+papers landed on the first or second try, which usually means I wasn't swinging for the
+fences.
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  width: Math.min(width, 560), height: 240, marginBottom: 40,
+  x: { label: "Journals submitted to before acceptance", tickFormat: d => d, interval: 1 },
+  y: { label: "Papers", grid: true },
+  marks: [
+    Plot.barY(db.submission_counts, { x: "n_journals", y: "n_papers", fill: "#6b1b1b", rx: 2,
+      channels: { Papers: "n_papers", Journals: "n_journals" }, tip: true }),
+    Plot.ruleY([0]),
+    Plot.text(db.submission_counts, { x: "n_journals", y: "n_papers", text: "n_papers", dy: -8, fontSize: 11, fill: "#444" })
+  ]
+})
+```
+
+In some cases I probably should have aimed higher. But part of it is deliberate. I run a
+**differentiated strategy** depending on the kind of paper: some work is a better fit for a
+specialized or methods outlet than for a flagship general-interest journal, and the goal
+isn't always the most prestigious placement — sometimes it's the right readership, a faster
+timeline, or a venue that takes the method seriously. My record makes that strategy visible.
+
+Other scholars make very different choices, and I think there's real value in students
+seeing that there's no single "correct" path through publishing. The people who only ever
+show you their *CV* show you the destinations. What I'm trying to show is the route.
+
+## Why share it
+
+None of this is a brag or a complaint — it's just the actual data, shared in the hope that
+it's useful to people earlier in the pipeline than I am. It's built with R and Quarto from a
+tidy log of every submission I've ever made; happy to talk shop about the setup.
+
+And a caveat about the future: AI may change all of this — how fast we write, review, and
+publish — quite quickly. Whether it actually does remains to be seen.
+
+**Comments welcome** — I'd genuinely like to hear how other people think about timing and
+journal strategy, so reply on LinkedIn or reach out directly.
+
+[**→ Explore the full interactive Publication Record**](../../submissions.qmd)

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>DemoTIP Laboratory – Aaron Erlich</title>
+<title>Blog – Aaron Erlich</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -25,6 +25,8 @@ ul.task-list li input[type="checkbox"] {
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
 <script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/quarto-listing/list.min.js"></script>
+<script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
@@ -52,13 +54,71 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
+<script>
 
+  window.document.addEventListener("DOMContentLoaded", function (_event) {
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
+    if (!listingTargetEl) {
+      // No listing discovered, do not attach.
+      return; 
+    }
+
+    const options = {
+      valueNames: ['listing-date','listing-title','listing-description','listing-categories','listing-reading-time',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      
+      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
+    };
+
+    window['quarto-listings'] = window['quarto-listings'] || {};
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
+
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  });
+
+  window.addEventListener('hashchange',() => {
+    if (window['quarto-listing-loaded']) {
+      window['quarto-listing-loaded']();
+    }
+  })
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css">
 </head>
 
-<body class="nav-fixed fullcontent quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -79,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./lab.html" aria-current="page"> 
+    <a class="nav-link" href="./lab.html"> 
 <span class="menu-text">Lab</span></a>
   </li>  
   <li class="nav-item">
@@ -91,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Publication Record</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link active" href="./blog.html" aria-current="page"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
@@ -106,22 +166,23 @@ ul.task-list li input[type="checkbox"] {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(2)</span></div><div class="category" data-category="ZGF0YSUyMHZpeg==">data viz <span class="quarto-category-count">(2)</span></div><div class="category" data-category="Z3JhZHVhdGUlMjBzdHVkZW50cw==">graduate students <span class="quarto-category-count">(1)</span></div><div class="category" data-category="S2VueWE=">Kenya <span class="quarto-category-count">(1)</span></div><div class="category" data-category="bWFwcw==">maps <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHVibGlzaGluZw==">publishing <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Ug==">R <span class="quarto-category-count">(1)</span></div><div class="category" data-category="dHJhbnNwYXJlbmN5">transparency <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content column-page-left" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">DemoTIP Laboratory</h1>
-<p class="subtitle lead">Democracy, Transparency, Information Provision, and Participation</p>
+<h1 class="title">Blog</h1>
+<p class="subtitle lead">Notes on research, methods, and the academic craft</p>
 </div>
 
 
 
-<div class="quarto-title-meta">
+<div class="quarto-title-meta column-page-left">
 
     
   
@@ -133,456 +194,74 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="page-columns page-full">
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="images/lab-presentation.jpeg" class="img-fluid figure-img column-page" alt="DemoTIP lab members presenting research"></p>
-<figcaption>Lab presentation</figcaption>
-</figure>
-</div>
-</div>
-<p>Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!</p>
-<section id="principal-investigator" class="level2">
-<h2 class="anchored" data-anchor-id="principal-investigator">Principal Investigator</h2>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/profile.jpg" class="headshot img-fluid" alt="Aaron Erlich"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Aaron Erlich</strong> is Associate Professor of Political Science at McGill University. He received his Ph.D.&nbsp;from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the <em>American Political Science Review</em>, <em>Journal of Politics</em>, <em>Comparative Political Studies</em>, and many others.</p>
-</div>
-</div>
-</section>
-<section id="mcgill-graduate-post-doc-researchers" class="level2">
-<h2 class="anchored" data-anchor-id="mcgill-graduate-post-doc-researchers">McGill Graduate &amp; Post-Doc Researchers</h2>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-dube.png" class="headshot img-fluid" alt="David Dubé"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>David Dubé</strong> is a PhD candidate in Political Science at McGill University, interested in the informal political economy of post-communist Europe and Eurasia and the relationship between (mis)information, beliefs, and political behaviour in democratic, hybrid and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for causal inference and machine learning (natural language processing &amp; computer vision) for large datasets and complex data analysis.</p>
-</div>
-</div>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-mcmullen.jpeg" class="headshot img-fluid" alt="Katerina McMullen"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Katerina McMullen</strong> is an M.A.&nbsp;student in Political Science at McGill University. Her research focuses on the socio-political analysis of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council (SSHRC) for that project.</p>
-</div>
-</div>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-mcilvaney-2026.jpeg" class="headshot img-fluid" alt="Aiden McIlvaney"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Aiden McIlvaney</strong> is an M.A.&nbsp;student in Political Science at McGill University. His research examines political behaviour &amp; public opinion, political uses of technology, electoral governance, and cyber threats targeting democratic institutions, with a methodological focus on survey experiments and causal inference. He holds a SSHRC CGS-M and an FRQ Master’s Research Scholarship, and is a 2026–2027 CIGI Digital Policy Hub Fellow. His current work focuses on Canadian public attitudes towards the use of AI in electoral campaigns and attitudes towards the use of AI in defence and security.</p>
-</div>
-</div>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<p><img src="images/headshot-nemirovski-2026.png" class="headshot img-fluid" alt="Alan Nemirovski"></p>
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Alan Nemirovski</strong> is an M.A.&nbsp;student in Political Science at McGill University, supported by an FRQSC master’s scholarship. He is interested in how emerging technologies and current issues in digital governance are changing political life and participation, from individuals to their social networks. Drawing on an interdisciplinary social sciences background, he approaches these questions with a methodological toolkit ranging from computational methods and statistical techniques to interpretive approaches.</p>
-</div>
-</div>
-</section>
-<section id="mcgill-undergraduate-researchers" class="level2">
-<h2 class="anchored" data-anchor-id="mcgill-undergraduate-researchers">McGill Undergraduate Researchers</h2>
-<div class="grid">
-<div class="g-col-md-2 g-col-12">
-<!-- no headshot for Lawrence Plastina -->
-</div>
-<div class="g-col-md-10 g-col-12">
-<p><strong>Lawrence Plastina</strong> is a third-year undergraduate student double majoring in political science and statistics. He was one of 29 recipients of McGill’s 2024 Arts Undergraduate Research Internship Award, using quantitative methods to study Ukrainian self-reported firearm ownership under Prof.&nbsp;Erlich’s supervision.</p>
-</div>
-</div>
-</section>
-<section id="demotip-alumni" class="level2">
-<h2 class="anchored" data-anchor-id="demotip-alumni">DemoTIP Alumni</h2>
-<p>These students worked with me closely. The research and publications listed are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.</p>
-<p>Former lab members — if you need a letter of recommendation years after the fact, you’re still in the rotation. Start at the <a href="./resources/letters.html">Letter of Recommendation</a> page.</p>
-<details class="lab-details" open="">
-<summary>
-Show / hide alumni table (click any column to sort)
-</summary>
-<table class="sortable" id="alumni-table">
-<thead>
-<tr>
-<th data-sort-method="string">
-Researcher
-</th>
-<th data-sort-method="string">
-Degree
-</th>
-<th data-sort-method="number">
-Graduation Year
-</th>
-<th data-sort-method="string">
-Publications &amp; Research
-</th>
-<th data-sort-method="string">
-Post-McGill Employment / Education
-</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<strong>Rafael Campos-Gottardo</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2025
-</td>
-<td>
-Thesis - <a href="https://mcgill.scholaris.ca/items/9ea27e1c-1f34-48b2-a58e-7335571f99a1">The Impact of Political Violence on Levels of Polarization: Evidence from a Natural Experiment in the United Kingdom</a>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Mathieu Lavigne</strong>
-</td>
-<td>
-Ph.D.
-</td>
-<td>
-2024
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/z603r346t">Resilient? Perceptions, Spread, and Impacts of Misinformation in the New Political Information Environment</a>
-</td>
-<td>
-Post-Doc, Dartmouth College
-</td>
-</tr>
-<tr>
-<td>
-<strong>Pratik Mahajan</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2024
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/h415ph28t">Ideological Transformation After Patron Cooptation? The Resilience of Ethno-Clientelist Ties Amid Hindu Nationalism in a Scheduled Tribe Constituency in India</a>
-</td>
-<td>
-Ph.D student, Yale University
-</td>
-</tr>
-<tr>
-<td>
-<strong>Christopher Ross</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2023
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/w6634906j">Elite Framing and Carbon Pricing: An Experiment in Embracing Expert Consensus</a>; <a href="https://doi.org/10.1086/711177">Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following the Leader</a>
-</td>
-<td>
-<a href="https://meo.ca/">The Media Ecosystem Observatory</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Alice Brocheux</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2022
-</td>
-<td>
-</td>
-<td>
-Ph.D.&nbsp;Student, University of Rochester
-</td>
-</tr>
-<tr>
-<td>
-<strong>Costin Ciobanu</strong>
-</td>
-<td>
-Ph.D.
-</td>
-<td>
-2022
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/5d86p5382?locale=en">The political and electoral consequences of economic shocks</a>; <a href="https://doi.org/10.1086/711177">Unveiling</a>
-</td>
-<td>
-Post-Doc, Royal Holloway University; Post-doc, University of Aarhus
-</td>
-</tr>
-<tr>
-<td>
-<strong>Dilse Kaygisiz</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2022
-</td>
-<td>
-Thesis - <a href="https://mcgill.scholaris.ca/items/346915d2-2a4a-40d2-a529-4aaecb5d3d1a">Do laws affect attitudes? A study on domestic violence laws in Turkey</a>
-</td>
-<td>
-<a href="https://datasciences.ca/">Data Sciences</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Henry Atkins</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2021
-</td>
-<td>
-Thesis - <a href="https://escholarship.mcgill.ca/concern/theses/z603r346t">Do Right-Wing Terror Attacks Change Minds about Out-groups? Evidence from the 2018 Macerata Attack</a>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Stefano Dantas</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2021
-</td>
-<td>
-<a href="https://doi.org/10.1017/pan.2021.15">Multi-Label Prediction for Political Text-as-Data</a>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Étienne Gagnon</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-Thesis - Multiview Representation Learning for Political Science Research
-</td>
-<td>
-<a href="https://www.ca.emb-japan.go.jp/itpr_en/education.html">MEXT Fellowship, Japan</a>; Ph.D.&nbsp;Student, Princeton University
-</td>
-</tr>
-<tr>
-<td>
-<strong>Saewon Park</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-<a href="https://files.osf.io/v1/resources/tsmvz/providers/osfstorage/5ca5384824df750019c52f55?action=download&amp;version=2&amp;direct&amp;format=pdf">Weaponizing Election Petitions</a>; Thesis - When Aid is not a Reward: Diaspora Activism and Democracy Aid Allocation
-</td>
-<td>
-<a href="https://www.tracktik.com/">TrackTik</a>; <a href="https://meo.ca/">The Media Ecosystem Observatory</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Tanner Ducharme</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Alex Xin Tong Wang</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Hair Parra Barrera</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-M.A., HEC-Montréal
-</td>
-</tr>
-<tr>
-<td>
-<strong>Su Goh</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-2020
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Annie Chen</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2020
-</td>
-<td>
-Thesis - <a href="https://mcgill.scholaris.ca/items/cf050e75-9f47-42bb-bd56-717e2cc90aab">Incumbency Advantage in Australia</a>; <a href="https://doi.org/10.1017/XPS.2021.26">Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates</a>
-</td>
-<td>
-<a href="http://brightlinewatch.org/">Bright Line Watch</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Andrew McCormack</strong>
-</td>
-<td>
-M.A.
-</td>
-<td>
-2019
-</td>
-<td>
-<a href="https://www.rdocumentation.org/packages/mapcan/versions/0.0.1">mapcan R package</a>; Thesis - Contextual Determinants of Policy Preferences: Local-Level Economic Inequality and Public Opinion in the US
-</td>
-<td>
-<a href="https://datasciences.ca/">Data Sciences</a>
-</td>
-</tr>
-<tr>
-<td>
-<strong>Aengus Bridgman</strong>
-</td>
-<td>
-Ph.D.
-</td>
-<td>
-2022
-</td>
-<td>
-<a href="https://doi.org/10.1086/711177">Unveiling</a>
-</td>
-<td>
-Assistant Prof (Research), McGill University
-</td>
-</tr>
-<tr>
-<td>
-<strong>Tim Roy</strong>
-</td>
-<td>
-B.A.
-</td>
-<td>
-</td>
-<td>
-</td>
-<td>
-</td>
-</tr>
-</tbody>
-</table>
-</details>
-<script>
-(function () {
-  function sortTable(table, colIndex, asc, type) {
-    var tbody = table.tBodies[0];
-    var rows = Array.prototype.slice.call(tbody.rows);
-    rows.sort(function (a, b) {
-      var ax = a.cells[colIndex].textContent.trim();
-      var bx = b.cells[colIndex].textContent.trim();
-      if (type === "number") {
-        var an = parseFloat(ax); var bn = parseFloat(bx);
-        if (isNaN(an)) an = asc ? Infinity : -Infinity;
-        if (isNaN(bn)) bn = asc ? Infinity : -Infinity;
-        return asc ? an - bn : bn - an;
-      }
-      return asc
-        ? ax.localeCompare(bx, undefined, { sensitivity: "base" })
-        : bx.localeCompare(ax, undefined, { sensitivity: "base" });
-    });
-    rows.forEach(function (r) { tbody.appendChild(r); });
-  }
-  document.querySelectorAll("table.sortable").forEach(function (table) {
-    var headers = table.tHead ? table.tHead.rows[0].cells : [];
-    Array.prototype.forEach.call(headers, function (th, idx) {
-      var type = th.getAttribute("data-sort-method") || "string";
-      var asc = true;
-      th.addEventListener("click", function () {
-        Array.prototype.forEach.call(headers, function (o) {
-          if (o !== th) o.classList.remove("sort-asc", "sort-desc");
-        });
-        sortTable(table, idx, asc, type);
-        th.classList.toggle("sort-asc", asc);
-        th.classList.toggle("sort-desc", !asc);
-        asc = !asc;
-      });
-    });
-  });
-})();
-</script>
+<p>Occasional posts on research, methods, and the academic craft. <strong>Comments and reactions are welcome</strong> — I share most of these on LinkedIn, which is the easiest place to reply, or you can reach me from the <a href="./index.html">About</a> page.</p>
 
 
-</section>
 
-</main> <!-- /main -->
+
+<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
+<div class="list quarto-listing-default">
+<div class="quarto-post image-right" data-index="0" data-categories="cHVibGlzaGluZyUyQ3RyYW5zcGFyZW5jeSUyQ2dyYWR1YXRlJTIwc3R1ZGVudHMlMkNkYXRhJTIwdml6" data-listing-date-sort="1785211200000" data-listing-file-modified-sort="1785267322381" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="11" data-listing-word-count-sort="2138">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2026-07-publication-record/index.html" class="no-external">What it actually takes to publish a paper</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('cHVibGlzaGluZw=='); return false;">publishing</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('dHJhbnNwYXJlbmN5'); return false;">transparency</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Z3JhZHVhdGUlMjBzdHVkZW50cw=='); return false;">graduate students</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpeg=='); return false;">data viz</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/2026-07-publication-record/index.html" class="no-external">
+I just added something to my website I’ve wanted to share for a while: an interactive <strong>Publication Record</strong> — every accepted paper, how long it spent under review, how many…<em></em>
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2026-07-publication-record/index.html" class="no-external">
+<div class="listing-date">
+Jul 28, 2026
+</div>
+<div class="listing-reading-time">11 min</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="1" data-categories="bWFwcyUyQ1IlMkNkYXRhJTIwdml6JTJDS2VueWE=" data-listing-date-sort="1417928400000" data-listing-file-modified-sort="1785267332187" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="121">
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2014-area-proportional-maps/index.html" class="no-external">Area proportional to population maps</a>
+</h3>
+<div class="listing-categories">
+
+<div class="listing-category" onclick="window.quartoListingCategory('bWFwcw=='); return false;">maps</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('Ug=='); return false;">R</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('ZGF0YSUyMHZpeg=='); return false;">data viz</div>
+
+<div class="listing-category" onclick="window.quartoListingCategory('S2VueWE='); return false;">Kenya</div>
+
+</div>
+<div class="delink listing-description"><a href="./posts/2014-area-proportional-maps/index.html" class="no-external">
+Restored from my original WordPress blog (posted December 7, 2014).
+</a></div>
+</div>
+<div class="metadata">
+<a href="./posts/2014-area-proportional-maps/index.html" class="no-external">
+<div class="listing-date">
+Dec 7, 2014
+</div>
+<div class="listing-reading-time">1 min</div>
+</a>
+</div>
+</div>
+</div>
+<div class="listing-no-matching d-none">No matching items</div>
+</div></main> <!-- /main -->
 <script id="site-i18n" type="application/json">{"meta.last_updated":{"en":"Last updated April 20, 2026","fr":"Dernière mise à jour le 10 février 2026","es":"Última actualización: 10 de febrero de 2026","ru":"Последнее обновление: 10 февраля 2026 г.","uk":"Останнє оновлення: 10 лютого 2026 року","ka":"ბოლოს განახლდა 2026 წლის 10 თებერვალს","de":"Zuletzt aktualisiert am 10. Februar 2026"},"meta.pdf_url":{"en":"files/Erlich_CV_en.pdf","fr":"files/Erlich_CV_fr.pdf","es":"files/Erlich_CV_es.pdf","ru":"files/Erlich_CV_ru.pdf","uk":"files/Erlich_CV_uk.pdf","ka":"files/Erlich_CV_ka.pdf","de":"files/Erlich_CV_de.pdf"},"contact.title":{"en":"Associate Professor","fr":"Professeur agrégé","es":"Profesor agregado","ru":"Доцент","uk":"Доцент","ka":"ასოცირებული პროფესორი","de":"Professor"},"contact.department":{"en":"Department of Political Science","fr":"Département de science politique","es":"Departamento de Ciencia Política","ru":"Кафедра политических наук","uk":"Кафедра політичних наук","ka":"პოლიტიკური მეცნიერების დეპარტამენტი","de":"Institut für Politikwissenschaft"},"contact.country":{"en":"Canada","fr":"Canada","es":"Canadá","ru":"Канада","uk":"Канада","ka":"კანადა","de":"Kanada"},"academic_appointments.0.department":{"en":"Department of Political Science","fr":"Département de science politique","es":"Departamento de Ciencia Política","ru":"Кафедра политических наук","uk":"Кафедра політичних наук","ka":"პოლიტიკური მეცნიერების დეპარტამენტი","de":"Institut für Politikwissenschaft"},"academic_appointments.0.positions.0.role":{"en":"Associate Professor","fr":"Professeur agrégé","es":"Profesor agregado","ru":"Доцент","uk":"Доцент","ka":"ასოცირებული პროფესორი","de":"Professor"},"academic_appointments.0.positions.1.role":{"en":"Assistant Professor","fr":"Professeur adjoint","es":"Profesor asistente","ru":"Ассистент профессора","uk":"Асистент професора","ka":"ასისტენტ-პროფესორი","de":"Assistenzprofessor"},"academic_appointments.0.positions.1.notes":{"en":"(Paternity Leave: Autumn 2020, Autumn 2022)","fr":"(Congé de paternité : automne 2020, automne 2022)","es":"(Licencia de paternidad: otoño de 2020, otoño de 2022)","ru":"(Отпуск по уходу за ребёнком: осень 2020, осень 2022)","uk":"(Відпустка у зв'язку з батьківством: осінь 2020 р., осінь 2022 р.)","ka":"(მამობის შვებულება: შემოდგომა 2020, შემოდგომა 2022)","de":"(Vaterschaftsurlaub: Herbst 2020, Herbst 2022)"},"affiliations.0.role":{"en":"Member","fr":"Membre","es":"Miembro","ru":"Член","uk":"Член","ka":"წევრი","de":"Mitglied"},"affiliations.1.role":{"en":"Member","fr":"Membre","es":"Miembro","ru":"Член","uk":"Член","ka":"წევრი","de":"Mitglied"},"affiliations.2.role":{"en":"Faculty Research Affiliate","fr":"Chercheur affilié","es":"Investigador afiliado de la facultad","ru":"Научный сотрудник (аффилированный)","uk":"Науковий співробітник факультету","ka":"ფაკულტეტის კვლევითი აფილირებული","de":"Forschungsbeauftragter der Fakultät"},"affiliations.3.role":{"en":"Member","fr":"Membre","es":"Miembro","ru":"Член","uk":"Член","ka":"წევრი","de":"Mitglied"},"affiliations.4.role":{"en":"Visiting Professor","fr":"Professeur invité","es":"Profesor visitante","ru":"Приглашённый профессор","uk":"Запрошений професор","ka":"ვიზიტინგ-პროფესორი","de":"Gastprofessor"},"education.0.degrees.0.degree":{"en":"Ph.D., Political Science","fr":"Doctorat, science politique","es":"Doctorado en Ciencia Política","ru":"Доктор философии (Ph.D.), политические науки","uk":"Доктор філософії, політичні науки","ka":"დოქტორი (Ph.D.), პოლიტიკური მეცნიერება","de":"Ph.D., Politikwissenschaft"},"education.0.degrees.1.degree":{"en":"Political Methodology Certificate, Center for Statistics and the Social Sciences","fr":"Certificat en méthodologie politique, Center for Statistics and the Social Sciences","es":"Certificado en Metodología Política, Center for Statistics and the Social Sciences","ru":"Сертификат по политической методологии, Center for Statistics and the Social Sciences","uk":"Сертифікат з політичної методології, Center for Statistics and the Social Sciences","ka":"პოლიტიკური მეთოდოლოგიის სერტიფიკატი, Center for Statistics and the Social Sciences","de":"Zertifikat in Politischer Methodenlehre, Center for Statistics and the Social Sciences"},"education.0.degrees.2.degree":{"en":"M.A., Political Science","fr":"Maîtrise, science politique","es":"Maestría en Ciencia Política","ru":"Магистр (M.A.), политические науки","uk":"Магістр, політичні науки","ka":"მაგისტრი (M.A.), პოლიტიკური მეცნიერება","de":"M.A., Politikwissenschaft"},"education.1.degrees.0.degree":{"en":"M.A., European Studies, with distinction","fr":"Maîtrise, études européennes, avec distinction","es":"Maestría en Estudios Europeos, con distinción","ru":"Магистр (M.A.), европейские исследования, с отличием","uk":"Магістр, європейські студії, з відзнакою","ka":"მაგისტრი (M.A.), ევროპული კვლევები, პატივით","de":"M.A., Europäische Studien, mit Auszeichnung"},"education.1.degrees.1.degree":{"en":"Certificate in Refugee and Humanitarian Emergencies","fr":"Certificat en réfugiés et urgences humanitaires","es":"Certificado en Refugiados y Emergencias Humanitarias","ru":"Сертификат по вопросам беженцев и гуманитарных кризисов","uk":"Сертифікат з питань біженців та гуманітарних надзвичайних ситуацій","ka":"სერტიფიკატი ლტოლვილთა და ჰუმანიტარული საგანგებო სიტუაციების დარგში","de":"Zertifikat in Flüchtlings- und humanitären Notlagen"},"education.2.degrees.0.degree":{"en":"B.A., cum laude, Government","fr":"Baccalauréat, cum laude, science du gouvernement","es":"Licenciatura cum laude en Ciencias de Gobierno","ru":"Бакалавр (B.A.), cum laude, государственное управление","uk":"Бакалавр, cum laude, державне управління","ka":"ბაკალავრი (B.A.), cum laude, სახელმწიფო მართვა","de":"B.A., cum laude, Staatswissenschaften"},"grants.0.title":{"en":"Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora","fr":"Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora","es":"Nigerianos en el exterior y en casa: política e identidad nacional en una diáspora global","ru":"Нигерийцы за рубежом и на родине: политика и национальная идентичность в условиях глобальной диаспоры","uk":"Нігерійці за кордоном і вдома: політика та національна ідентичність у глобальній діаспорі","ka":"საზღვარგარეთ და სამშობლოში მცხოვრები ნიგერიელები: პოლიტიკა და ეროვნული იდენტობა გლობალურ დიასპორაში","de":"Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora"},"grants.0.role":{"en":"Co-Investigator","fr":"Co-chercheur","es":"Co-investigador","ru":"Со-исследователь","uk":"Співдослідник","ka":"თანათანადგინვლი","de":"Co-Leiterin"},"grants.1.title":{"en":"Consortium on Analytics for Data-Driven Decision-Making (CAnD3)","fr":"Consortium on Analytics for Data-Driven Decision-Making (CAnD3)","es":"Consortium on Analytics for Data-Driven Decision-Making (CAnD3)","ru":"Consortium on Analytics for Data-Driven Decision-Making (CAnD3)","uk":"Consortium on Analytics for Data-Driven Decision-Making (CAnD3)","ka":"Consortium on Analytics for Data-Driven Decision-Making (CAnD3)","de":"Consortium on Analytics for Data-Driven Decision-Making (CAnD3)"},"grants.1.role":{"en":"Co-Applicant","fr":"Co-demandeur","es":"Co-solicitante","ru":"Со-заявитель","uk":"Співзаявник","ka":"თანაამომქმედი","de":"Co-Antragstellerin"},"grants.2.title":{"en":"International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014","fr":"International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014","es":"Expertos internacionales e iniciativas anticorrupción en una democracia en transición: la reforma policial en Ucrania desde 2014","ru":"Международные эксперты и антикоррупционные инициативы в условиях переходной демократии: реформа полиции Украины с 2014 года","uk":"Міжнародні експерти та антикорупційні ініціативи в транзитивній демократії: реформа поліції України після 2014 року","ka":"საერთაშორისო ექსპერტები და კორუფციასთან ბრძოლის ინიციატივები გარდამავალ დემოკრატიაში: უკრაინის პოლიციის რეფორმა 2014 წლიდან","de":"International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014"},"grants.2.role":{"en":"Co-Investigator","fr":"Co-chercheur","es":"Co-investigador","ru":"Со-исследователь","uk":"Співдослідник","ka":"თანათანადგინვლი","de":"Co-Leiterin"},"grants.3.title":{"en":"Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements","fr":"Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements","es":"Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements","ru":"Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements","uk":"Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements","ka":"Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements","de":"Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements"},"grants.3.role":{"en":"PI","fr":"Chercheur principal","es":"Investigador principal","ru":"Руководитель проекта","uk":"Головний дослідник","ka":"მთავარი მკვლევარი","de":"Hauptantragstellerin"},"grants.4.title":{"en":"Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions","fr":"Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions","es":"Estudio de la rendición de cuentas y la capacidad de respuesta gubernamental mediante macrodatos sobre las interacciones entre ciudadanos y gobierno","ru":"Изучение подотчётности и отзывчивости органов государственного управления с применением больших данных о взаимодействии граждан с государством","uk":"Вивчення підзвітності та відповідальності уряду за допомогою великих даних про взаємодію громадян з державою","ka":"მთავრობის ანგარიშვალდებულებისა და რეაგირებაუნარიანობის შესწავლა მოქალაქე-მთავრობის ურთიერთქმედების დიდი მონაცემების საშუალებით","de":"Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions"},"grants.4.role":{"en":"PI","fr":"Chercheur principal","es":"Investigador principal","ru":"Руководитель проекта","uk":"Головний дослідник","ka":"მთავარი მკვლევარი","de":"Hauptantragstellerin"},"grants.5.title":{"en":"Democracy in disruption? Engaging Canadians to face emerging threats","fr":"Democracy in disruption? Engaging Canadians to face emerging threats","es":"¿Democracia en crisis? Comprometiendo a los canadienses para enfrentar amenazas emergentes","ru":"Демократия под угрозой? Вовлечение канадцев в противодействие возникающим вызовам","uk":"Демократія в умовах потрясінь? Залучення канадців до протидії новим загрозам","ka":"დემოკრატია დარღვევის პირობებში? კანადელების ჩართვა განვითარებადი საფრთხეების წინაშე","de":"Democracy in disruption? Engaging Canadians to face emerging threats"},"grants.5.role":{"en":"Co-applicant (Fenwick McKelvey, Lead-PI)","fr":"Co-demandeur (Fenwick McKelvey, chercheur principal)","es":"Co-solicitante (Fenwick McKelvey, investigador principal)","ru":"Со-заявитель (Fenwick McKelvey, ведущий руководитель проекта)","uk":"Співзаявник (Fenwick McKelvey, головний дослідник)","ka":"თანაამომქმედი (Fenwick McKelvey, წამყვანი მთავარი მკვლევარი)","de":"Co-Antragstellerin (Fenwick McKelvey, federführende Hauptantragstellerin)"},"grants.6.title":{"en":"What's in a Tally","fr":"What's in a Tally","es":"What's in a Tally","ru":"What's in a Tally","uk":"Що приховує підрахунок","ka":"What's in a Tally","de":"What's in a Tally"},"grants.7.title":{"en":"Power of the Panopticon","fr":"Power of the Panopticon","es":"Power of the Panopticon","ru":"Power of the Panopticon","uk":"Сила паноптикуму","ka":"Power of the Panopticon","de":"Power of the Panopticon"},"grants.7.notes":{"en":"with S. Bush, L. Prather, Y. Zeira","fr":"avec S. Bush, L. Prather, Y. Zeira","es":"con S. Bush, L. Prather, Y. Zeira","ru":"с S. Bush, L. Prather, Y. Zeira","uk":"з S. Bush, L. Prather, Y. Zeira","ka":"S. Bush-თან ერთად, L. Prather-თან ერთად, Y. Zeira-სთან ერთად","de":"mit S. Bush, L. Prather, Y. Zeira"},"grants.8.title":{"en":"Power of the Panopticon","fr":"Power of the Panopticon","es":"Power of the Panopticon","ru":"Power of the Panopticon","uk":"Сила паноптикуму","ka":"Power of the Panopticon","de":"Power of the Panopticon"},"grants.8.notes":{"en":"with L. Prather","fr":"avec L. Prather","es":"con L. Prather","ru":"с L. Prather","uk":"з L. Prather","ka":"L. Prather-თან ერთად","de":"mit L. Prather"},"grants.9.title":{"en":"Center for Statistics & Social Sciences Travel Grant","fr":"Center for Statistics & Social Sciences Travel Grant","es":"Center for Statistics & Social Sciences Travel Grant","ru":"Center for Statistics & Social Sciences Travel Grant","uk":"Дорожній грант Center for Statistics & Social Sciences","ka":"Center for Statistics & Social Sciences-ის სამგზავრო გრანტი","de":"Center for Statistics & Social Sciences Travel Grant"},"grants.10.title":{"en":"Levi-Kaplan Comparative Political Economy Research Award","fr":"Levi-Kaplan Comparative Political Economy Research Award","es":"Levi-Kaplan Comparative Political Economy Research Award","ru":"Levi-Kaplan Comparative Political Economy Research Award","uk":"Дослідницька премія Levi-Kaplan з порівняльної політичної економії","ka":"Levi-Kaplan შედარებითი პოლიტიკური ეკონომიის სამეცნიერო ჯილდო","de":"Levi-Kaplan Comparative Political Economy Research Award"},"grants.11.title":{"en":"Chester A. Fritz Fellowship","fr":"Chester A. Fritz Fellowship","es":"Chester A. Fritz Fellowship","ru":"Chester A. Fritz Fellowship","uk":"Стипендія Chester A. Fritz","ka":"Chester A. Fritz სტიპენდია","de":"Chester A. Fritz Fellowship"},"grants.12.title":{"en":"International Research & Exchanges Board (IREX)","fr":"International Research & Exchanges Board (IREX)","es":"International Research & Exchanges Board (IREX)","ru":"International Research & Exchanges Board (IREX)","uk":"International Research & Exchanges Board (IREX)","ka":"International Research & Exchanges Board (IREX)","de":"International Research & Exchanges Board (IREX)"},"grants.13.title":{"en":"Full scholarship from NYU to attend Inaugural Winter Experimental Social Sciences Institute at NYU Abu Dhabi","fr":"Bourse complète de NYU pour participer à l'Inaugural Winter Experimental Social Sciences Institute à NYU Abu Dhabi","es":"Beca completa de NYU para asistir al Inaugural Winter Experimental Social Sciences Institute en NYU Abu Dhabi","ru":"Полная стипендия NYU для участия в Инаугурационном зимнем институте экспериментальных социальных наук при NYU Abu Dhabi","uk":"Повна стипендія від NYU для участі в Інавгураційному зимовому інституті експериментальних суспільних наук у NYU Abu Dhabi","ka":"NYU-ს სრული სტიპენდია NYU Abu Dhabi-ში საინაუგურაციო ზამთრის ექსპერიმენტული სოციალური მეცნიერებების ინსტიტუტში დასასწრებად","de":"Vollstipendium der NYU zur Teilnahme am Inaugural Winter Experimental Social Sciences Institute an der NYU Abu Dhabi"},"grants.14.title":{"en":"EITM Scholarship to attend ICPSR","fr":"Bourse EITM pour participer à l'ICPSR","es":"Beca EITM para asistir al ICPSR","ru":"Стипендия EITM для участия в ICPSR","uk":"Стипендія EITM для участі в ICPSR","ka":"EITM სტიპენდია ICPSR-ში დასასწრებად","de":"EITM-Stipendium zur Teilnahme am ICPSR"},"grants.15.title":{"en":"Durden Family Fellowship, University of Washington, Department of Political Science","fr":"Bourse Durden Family Fellowship, University of Washington, Department of Political Science","es":"Beca Durden Family Fellowship, University of Washington, Departamento de Ciencia Política","ru":"Стипендия Durden Family Fellowship, University of Washington, кафедра политических наук","uk":"Стипендія родини Durden, University of Washington, кафедра політичної науки","ka":"Durden Family Fellowship, University of Washington, პოლიტიკური მეცნიერების დეპარტამენტი","de":"Durden Family Fellowship, University of Washington, Department of Political Science"},"grants.16.title":{"en":"U.S. Fulbright Program, Georgia Recipient (declined)","fr":"Programme Fulbright américain, récipiendaire pour la Géorgie (refusée)","es":"Programa U.S. Fulbright, Beneficiario en Georgia (rechazada)","ru":"Программа Fulbright США, грант для Грузии (отклонено)","uk":"Програма U.S. Fulbright, отримувач від Грузії (відхилено)","ka":"აშშ-ს Fulbright პროგრამა, Georgia-ს რეციპიენტი (უარყოფილია)","de":"U.S. Fulbright Program, Stipendium für Georgien (abgelehnt)"},"grants.17.title":{"en":"Merit-based tuition scholarship, Georgetown University","fr":"Bourse d'études au mérite, Georgetown University","es":"Beca de matrícula por mérito académico, Georgetown University","ru":"Стипендия на оплату обучения на конкурсной основе, Georgetown University","uk":"Стипендія за успішність на оплату навчання, Georgetown University","ka":"დამსახურებაზე დაფუძნებული სწავლების სტიპენდია, Georgetown University","de":"Leistungsbasiertes Stipendium, Georgetown University"},"software.0.description":{"en":"A variety of functions that make it easy to plot standard choropleth Canadian maps as well as choropleth alternatives in ggplot2.","fr":"Un ensemble de fonctions facilitant la création de cartes choroplèthes standard du Canada ainsi que d'alternatives aux cartes choroplèthes dans ggplot2.","es":"Una variedad de funciones que facilitan la elaboración de mapas coropléticos estándar de Canadá, así como alternativas a los mapas coropléticos en ggplot2.","ru":"Набор функций, упрощающих построение стандартных хороплетных карт Канады, а также альтернативных хороплетных визуализаций в ggplot2.","uk":"Набір функцій, що спрощують побудову стандартних хороплетних карт Канади, а також альтернатив хороплетним картам у ggplot2.","ka":"მრავალფეროვანი ფუნქციების ნაკრები, რომელიც ggplot2-ში კანადის სტანდარტული ქოროპლეთური რუქების, აგრეთვე ქოროპლეთური ალტერნატივების დახაზვას ამარტივებს.","de":"Eine Reihe von Funktionen, die es erleichtern, standardmäßige Choroplethenkarten Kanadas sowie Alternativen zur Choroplethendarstellung in ggplot2 zu erstellen."},"professional_evaluations.0.title":{"en":"Corruption Perceptions in Armenia: Implications for Anti-Corruption Messaging","fr":"Perceptions de la corruption en Arménie : implications pour les messages de lutte contre la corruption","es":"Percepciones de corrupción en Armenia: implicaciones para la comunicación anticorrupción","ru":"Восприятие коррупции в Армении: последствия для антикоррупционных информационных кампаний","uk":"Сприйняття корупції у Вірменії: наслідки для антикорупційних повідомлень","ka":"კორუფციის აღქმა სომხეთში: შედეგები კორუფციასთან საბრძოლო შეტყობინებისათვის","de":"Korruptionswahrnehmungen in Armenien: Implikationen für Anti-Korruptions-Kommunikation"},"professional_evaluations.0.submitted_to":{"en":"USAID Armenia Integrity Project","fr":"USAID Armenia Integrity Project","es":"USAID Armenia Integrity Project","ru":"USAID Armenia Integrity Project","uk":"USAID Armenia Integrity Project","ka":"USAID Armenia Integrity Project","de":"USAID Armenia Integrity Project"},"professional_evaluations.1.title":{"en":"Workplace, Labor Rights and Outcomes","fr":"Milieu de travail, droits des travailleurs et résultats","es":"Lugar de trabajo, derechos laborales y resultados","ru":"Условия труда, трудовые права и их результаты","uk":"Умови праці, трудові права та результати","ka":"სამუშაო გარემო, შრომის უფლებები და შედეგები","de":"Arbeitsplatz, Arbeitnehmerrechte und -ergebnisse"},"professional_evaluations.1.submitted_to":{"en":"World Bank","fr":"World Bank","es":"World Bank","ru":"World Bank","uk":"World Bank","ka":"World Bank","de":"World Bank"},"professional_evaluations.2.title":{"en":"Final Evaluation of OSI's Central Eurasia Project's Labor Migration Program","fr":"Évaluation finale du programme de migration de travail du Central Eurasia Project de l'OSI","es":"Evaluación final del Programa de Migración Laboral del Central Eurasia Project de OSI","ru":"Итоговая оценка программы трудовой миграции в рамках проекта OSI по Центральной Евразии","uk":"Підсумкова оцінка програми трудової міграції Центральноєвразійського проєкту OSI","ka":"OSI-ის ცენტრალური ევრაზიის პროექტის შრომითი მიგრაციის პროგრამის საბოლოო შეფასება","de":"Abschlussevaluierung des Arbeitsmigrationsprogramms des Central Eurasia Project der OSI"},"professional_evaluations.2.submitted_to":{"en":"OSI: New York","fr":"OSI : New York","es":"OSI: Nueva York","ru":"OSI: New York","uk":"OSI: New York","ka":"OSI: New York","de":"OSI: New York"},"professional_evaluations.3.title":{"en":"Challenges Facing Effective Governance in Georgia","fr":"Les défis d'une gouvernance efficace en Géorgie","es":"Desafíos para la gobernanza efectiva en Georgia","ru":"Проблемы эффективного государственного управления в Грузии","uk":"Виклики ефективного врядування в Грузії","ka":"ეფექტური მმართველობის წინაშე მდგარი გამოწვევები საქართველოში","de":"Herausforderungen für eine effektive Regierungsführung in Georgien"},"professional_evaluations.3.notes":{"en":"Co-edited with Mzia Mikeladze; USAID-sponsored edited volume","fr":"Codirigé avec Mzia Mikeladze ; volume collectif commandité par l'USAID","es":"Coeditado con Mzia Mikeladze; volumen colectivo financiado por USAID","ru":"Под совместной редакцией с Mzia Mikeladze; сборник под эгидой USAID","uk":"Співредактор — Mzia Mikeladze; збірник за підтримки USAID","ka":"თანარედაქტირებულია Mzia Mikeladze-სთან ერთად; USAID-ის მხარდაჭერით გამოცემული კრებული","de":"Mitherausgegeben mit Mzia Mikeladze; von USAID geförderter Sammelband"},"professional_evaluations.4.title":{"en":"Voices of Migrants from Georgia","fr":"Voix des migrants de Géorgie","es":"Voces de migrantes de Georgia","ru":"Голоса мигрантов из Грузии","uk":"Голоси мігрантів з Грузії","ka":"საქართველოდან მიგრანტების ხმები","de":"Stimmen der Migranten aus Georgien"},"professional_evaluations.4.submitted_to":{"en":"Danish Refugee Council, Tbilisi, Georgia","fr":"Danish Refugee Council, Tbilisi, Géorgie","es":"Danish Refugee Council, Tbilisi, Georgia","ru":"Danish Refugee Council, Tbilisi, Грузия","uk":"Danish Refugee Council, Tbilisi, Georgia","ka":"Danish Refugee Council, Tbilisi, საქართველო","de":"Danish Refugee Council, Tbilisi, Georgien"},"professional_evaluations.5.title":{"en":"Labor Migration in Armenia: A Sociological Survey of Six Communities","fr":"La migration de travail en Arménie : une enquête sociologique dans six communautés","es":"Migración laboral en Armenia: una encuesta sociológica de seis comunidades","ru":"Трудовая миграция в Армении: социологическое обследование шести общин","uk":"Трудова міграція у Вірменії: соціологічне опитування шести громад","ka":"შრომითი მიგრაცია სომხეთში: ექვსი თემის სოციოლოგიური კვლევა","de":"Arbeitsmigration in Armenien: Eine soziologische Untersuchung in sechs Gemeinden"},"professional_evaluations.5.submitted_to":{"en":"USAID, Yerevan, Armenia","fr":"USAID, Erevan, Arménie","es":"USAID, Ereván, Armenia","ru":"USAID, Ереван, Армения","uk":"USAID, Yerevan, Armenia","ka":"USAID, Yerevan, სომხეთი","de":"USAID, Yerevan, Armenien"},"testimony.0.title":{"en":"Disinformation and cyber operations in the context of Russia's war against Ukraine","fr":"La désinformation et les cyberopérations dans le contexte de la guerre de la Russie contre l'Ukraine","es":"Desinformación y operaciones cibernéticas en el contexto de la guerra de Rusia contra Ucrania","ru":"Дезинформация и кибероперации в контексте войны России против Украины","uk":"Дезінформація та кібероперації в контексті війни Росії проти України","ka":"დეზინფორმაცია და კიბეროპერაციები რუსეთის უკრაინის წინააღმდეგ ომის კონტექსტში","de":"Desinformation und Cyberoperationen im Kontext des russischen Krieges gegen die Ukraine"},"testimony.0.venue":{"en":"Standing Senate Committee on National Security, Defence, and Veterans Affairs, Senate of Canada","fr":"Comité sénatorial permanent de la sécurité nationale, de la défense et des anciens combattants, Sénat du Canada","es":"Comité Permanente del Senado sobre Seguridad Nacional, Defensa y Asuntos de Veteranos, Senado de Canadá","ru":"Постоянный комитет Сената по вопросам национальной безопасности, обороны и делам ветеранов, Сенат Канады","uk":"Постійний комітет Сенату з питань національної безпеки, оборони та у справах ветеранів, Сенат Канади","ka":"ეროვნული უსაფრთხოების, თავდაცვისა და ვეტერანთა საქმეების მუდმივმოქმედი სენატის კომიტეტი, Canada-ს სენატი","de":"Ständiger Senatsausschuss für nationale Sicherheit, Verteidigung und Veteranenangelegenheiten, Senat von Kanada"},"skills.statistical_packages":{"en":"Stata, SPSS","fr":"Stata, SPSS","es":"Stata, SPSS","ru":"Stata, SPSS","uk":"Stata, SPSS","ka":"Stata, SPSS","de":"Stata, SPSS"},"skills.computer_languages":{"en":"R, Python, bash and Unix shell scripts","fr":"R, Python, scripts bash et Unix","es":"R, Python, bash y scripts de shell Unix","ru":"R, Python, bash и сценарии командной оболочки Unix","uk":"R, Python, bash та сценарії командної оболонки Unix","ka":"R, Python, bash და Unix shell scripts","de":"R, Python, bash und Unix-Shell-Skripte"},"skills.computer_applications":{"en":"emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond","fr":"emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond","es":"emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond","ru":"emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond","uk":"emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond","ka":"emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond","de":"emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond"},"skills.languages":{"en":"Proficient in Spanish; Research skills in French, Georgian, German, Russian; Rusty in Slovak; Elementary Turkish, Swahili","fr":"Maîtrise de l'espagnol ; compétences en recherche en français, géorgien, allemand et russe ; notions rouillées de slovaque ; turc et swahili élémentaires","es":"Dominio del español; competencia investigadora en francés, georgiano, alemán y ruso; nivel oxidado en eslovaco; turco y suajili elemental","ru":"Свободное владение испанским; исследовательские навыки на французском, грузинском, немецком, русском языках; утраченные навыки словацкого; начальный уровень турецкого и суахили","uk":"Вільно іспанська; дослідницькі навички французькою, грузинською, німецькою, російською; певною мірою словацька; базовий рівень турецької, суахілі","ka":"თავისუფლად ფლობს ესპანურს; სამეცნიერო კვლევის უნარები ფრანგულ, ქართულ, გერმანულ და რუსულ ენებში; გამოსულია პრაქტიკიდან სლოვაკურში; დამწყები დონე თურქულსა და სუაჰილიში","de":"Fließend in Spanisch; Forschungskenntnisse in Französisch, Georgisch, Deutsch, Russisch; Eingerostet in Slowakisch; Grundkenntnisse in Türkisch und Suaheli"},"section_headers.contact_information":{"en":"Contact Information","fr":"Coordonnées","es":"Información de contacto","ru":"Контактная информация","uk":"Контактна інформація","ka":"საკონტაქტო ინფორმაცია","de":"Kontaktinformationen"},"section_headers.academic_appointments":{"en":"Academic Appointments","fr":"Postes universitaires","es":"Cargos académicos","ru":"Академические должности","uk":"Академічні посади","ka":"აკადემიური თანამდებობები","de":"Akademische Stellen"},"section_headers.affiliations":{"en":"Affiliations","fr":"Affiliations","es":"Afiliaciones","ru":"Аффилиации","uk":"Афіліації","ka":"აფილიაციები","de":"Zugehörigkeiten"},"section_headers.education":{"en":"Education","fr":"Formation","es":"Formación académica","ru":"Образование","uk":"Освіта","ka":"განათლება","de":"Ausbildung"},"section_headers.peer_reviewed":{"en":"Peer-Reviewed Publications","fr":"Publications évaluées par les pairs","es":"Publicaciones arbitradas por pares","ru":"Рецензируемые публикации","uk":"Публікації з рецензуванням","ka":"რეცენზირებული პუბლიკაციები","de":"Begutachtete Veröffentlichungen"},"section_headers.under_review":{"en":"Under Review / To Resubmit","fr":"En évaluation / À resoumettre","es":"En revisión / Para reenvío","ru":"На рецензировании / Ожидает повторной подачи","uk":"На рецензуванні / До повторного подання","ka":"განხილვის პროცესში / გადასაგზავნად","de":"Eingereicht / Zur Wiedereinreichung"},"section_headers.editor_reviewed":{"en":"Editor-Reviewed Publications","fr":"Publications évaluées par la direction éditoriale","es":"Publicaciones arbitradas por editor","ru":"Публикации, рецензированные редактором","uk":"Публікації, відібрані редактором","ka":"რედაქტორის მიერ განხილული პუბლიკაციები","de":"Redaktionell geprüfte Veröffentlichungen"},"section_headers.book_reviews":{"en":"Book Reviews","fr":"Comptes rendus d'ouvrages","es":"Reseñas de libros","ru":"Рецензии на книги","uk":"Рецензії на книги","ka":"წიგნების რეცენზიები","de":"Buchbesprechungen"},"section_headers.blogs":{"en":"Blogs and Popular Press","fr":"Blogues et presse grand public","es":"Blogs y prensa de divulgación","ru":"Блоги и публикации в популярной прессе","uk":"Блоги та публікації у популярній пресі","ka":"ბლოგები და პოპულარული პრესა","de":"Blogs und populäre Presse"},"section_headers.working_papers":{"en":"Published Working Papers","fr":"Documents de travail publiés","es":"Documentos de trabajo publicados","ru":"Опубликованные рабочие материалы","uk":"Опубліковані робочі матеріали","ka":"გამოქვეყნებული სამუშაო ნაშრომები","de":"Veröffentlichte Arbeitspapiere"},"section_headers.in_prep":{"en":"Manuscripts in Preparation","fr":"Manuscrits en préparation","es":"Manuscritos en preparación","ru":"Рукописи в стадии подготовки","uk":"Рукописи у підготовці","ka":"მომზადების პროცესში მყოფი ხელნაწერები","de":"Manuskripte in Vorbereitung"},"section_headers.on_hold":{"en":"On Hold","fr":"En suspens","es":"En suspenso","ru":"Приостановленные проекты","uk":"Призупинені","ka":"შეჩერებული","de":"Zurückgestellt"},"section_headers.grants":{"en":"Grants & Scholarships","fr":"Subventions et bourses","es":"Subvenciones y becas","ru":"Гранты и стипендии","uk":"Гранти та стипендії","ka":"გრანტები და სტიპენდიები","de":"Förderungen & Stipendien"},"section_headers.software":{"en":"Software","fr":"Logiciels","es":"Software","ru":"Программное обеспечение","uk":"Програмне забезпечення","ka":"პროგრამული უზრუნველყოფა","de":"Software"},"section_headers.professional_evaluations":{"en":"Professional Evaluations and Reports","fr":"Évaluations et rapports professionnels","es":"Evaluaciones e informes profesionales","ru":"Профессиональные оценки и отчёты","uk":"Професійні оцінки та звіти","ka":"პროფესიული შეფასებები და ანგარიშები","de":"Professionelle Evaluierungen und Berichte"},"section_headers.testimony":{"en":"Testimony","fr":"Témoignages","es":"Testimonio","ru":"Экспертные свидетельства","uk":"Свідчення","ka":"ჩვენება","de":"Zeugenaussagen"},"section_headers.presentations":{"en":"Recent Presentations","fr":"Présentations récentes","es":"Presentaciones Recientes","ru":"Недавние выступления","uk":"Нещодавні виступи","ka":"ბოლოდროინდელი პრეზენტაციები","de":"Aktuelle Vorträge"},"section_headers.teaching":{"en":"Teaching & Mentorship","fr":"Enseignement et encadrement","es":"Docencia y Mentoría","ru":"Преподавание и наставничество","uk":"Викладання та наставництво","ka":"სწავლება და მენტორობა","de":"Lehre & Betreuung"},"section_headers.relevant_experience":{"en":"Relevant Professional Experience","fr":"Expérience professionnelle pertinente","es":"Experiencia Profesional Relevante","ru":"Соответствующий профессиональный опыт","uk":"Відповідний професійний досвід","ka":"შესაბამისი პროფესიული გამოცდილება","de":"Einschlägige Berufserfahrung"},"section_headers.skills":{"en":"Skills","fr":"Compétences","es":"Competencias","ru":"Навыки","uk":"Навички","ka":"უნარები","de":"Kenntnisse"},"section_headers.field_research":{"en":"Field Research","fr":"Recherche de terrain","es":"Investigación de Campo","ru":"Полевые исследования","uk":"Польові дослідження","ka":"საველე კვლევა","de":"Feldforschung"},"section_headers.professional_service":{"en":"Professional Service","fr":"Service professionnel","es":"Servicio Profesional","ru":"Профессиональная деятельность","uk":"Професійна діяльність","ka":"პროფესიული სამსახური","de":"Fachlicher Dienst"},"section_headers.other_service":{"en":"Other Service","fr":"Autres services","es":"Otros Servicios","ru":"Иная деятельность","uk":"Інша діяльність","ka":"სხვა სამსახური","de":"Sonstiger Dienst"},"section_headers.courses_taught":{"en":"Courses Taught"},"section_headers.graduate_student_instructor":{"en":"Graduate Student Instructor"},"section_headers.mentorship_header":{"en":"Mentorship"},"section_headers.journal_review":{"en":"Journal & Press Peer Review"},"section_headers.grant_review_header":{"en":"Grant Review"},"section_headers.government_review":{"en":"Government Agency Review"},"section_headers.volunteer":{"en":"Volunteer"},"section_headers.election_observer":{"en":"International Election Observer"},"labels.download_pdf":{"en":"Download PDF","fr":"Télécharger le PDF","es":"Descargar PDF","ru":"Скачать PDF","uk":"Завантажити PDF","ka":"PDF-ის გადმოწერა","de":"PDF herunterladen"},"labels.google_scholar":{"en":"Google Scholar","fr":"Google Scholar","es":"Google Scholar","ru":"Google Scholar","uk":"Google Scholar","ka":"Google Scholar","de":"Google Scholar"},"labels.contact":{"en":"Contact","fr":"Contact","es":"Contacto","ru":"Контакт","uk":"Контакт","ka":"კონტაქტი","de":"Kontakt"},"labels.with":{"en":"with","fr":"avec","es":"con","ru":"с","uk":"з","ka":"-თან ერთად","de":"mit"},"labels.award_winner":{"en":"Winner","fr":"Lauréat","es":"Ganador","ru":"Лауреат","uk":"Лауреат","ka":"გამარჯვებული","de":"Preisträger"},"labels.award_honorable_mention":{"en":"Honourable Mention","fr":"Mention honorable","es":"Mención Honorífica","ru":"Почётная грамота","uk":"Почесна відзнака","ka":"საპატიო მოხსენება","de":"Belobigung"},"labels.media_coverage":{"en":"Media coverage","fr":"Couverture médiatique","es":"Cobertura mediática","ru":"Освещение в СМИ","uk":"Висвітлення в медіа","ka":"მედიის გაშუქება","de":"Medienberichterstattung"},"labels.press_release":{"en":"Press release","fr":"Communiqué de presse","es":"Comunicado de prensa","ru":"Пресс-релиз","uk":"Прес-реліз","ka":"პრეს-რელიზი","de":"Pressemitteilung"},"labels.top_cited":{"en":"Top 10 Most Cited","fr":"Top 10 des articles les plus cités","es":"10 más citados","ru":"Топ-10 наиболее цитируемых","uk":"Топ-10 найцитованіших","ka":"ყველაზე ხშირად ციტირებული 10","de":"Top 10 der meistzitierten Artikel"},"labels.online_first":{"en":"Online First","fr":"En ligne en avant-première","es":"Online First","ru":"Online First","uk":"Online First","ka":"Online First","de":"Online First"},"labels.forthcoming":{"en":"Forthcoming","fr":"À paraître","es":"En prensa","ru":"В печати","uk":"Готується до друку","ka":"მომავალი გამოცემა","de":"Im Erscheinen"},"labels.revise_resubmit":{"en":"Revise & Resubmit","fr":"Révision et resoumission","es":"Revisar y Reenviar","ru":"Доработка и повторная подача","uk":"На доопрацювання","ka":"გადასინჯვა და ხელახალი წარდგენა","de":"Überarbeitung & Wiedereinreichung"},"labels.under_review":{"en":"Under Review","fr":"En cours d'évaluation","es":"En evaluación","ru":"На рецензировании","uk":"На рецензуванні","ka":"განხილვის პროცესში","de":"Unter Begutachtung"},"labels.pre_print_note":{"en":"Many pre-print versions are on my website. Contact me if you need something that is not available!","fr":"De nombreuses versions préliminaires sont disponibles sur mon site Web. Contactez-moi si vous ne trouvez pas ce dont vous avez besoin !","es":"Muchas versiones de preimpresión están disponibles en mi sitio web. ¡Contácteme si necesita algo que no esté disponible!","ru":"Многие препринты размещены на моём сайте. Свяжитесь со мной, если вам нужна работа, которая недоступна на сайте!","uk":"Чимало препринтів розміщено на моєму веб-сайті. Зв'яжіться зі мною, якщо вам потрібен матеріал, якого там немає!","ka":"პრეპრინტების უმეტესობა განთავსებულია ჩემს ვებსაიტზე. დამიკავშირდით, თუ გჭირდებათ რაიმე, რაც ხელმისაწვდომი არ არის!","de":"Viele Vorabdruckversionen sind auf meiner Website verfügbar. Kontaktieren Sie mich, falls Sie etwas benötigen, das nicht verfügbar ist!"},"navbar.about":{"en":"About","fr":"À propos","es":"Acerca de","ru":"Обо мне","uk":"Про мене","ka":"შესახებ","de":"Über mich"},"navbar.lab":{"en":"Lab","fr":"Laboratoire","es":"Laboratorio","ru":"Лаборатория","uk":"Лабораторія","ka":"ლაბორატორია","de":"Labor"},"navbar.cv":{"en":"C.V.","fr":"C.V.","es":"C.V.","ru":"Резюме","uk":"Резюме","ka":"C.V.","de":"Lebenslauf"},"index.welcome":{"en":"Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D. at the University of Washington in Seattle.","fr":"Bienvenue sur mon site ! Je suis Professeur agrégé au Département de science politique de l'Université McGill, où je suis membre du Centre pour l'étude de la citoyenneté démocratique (CÉCD) et membre associé du Centre on Population Dynamics (CPD). J'ai obtenu mon doctorat à l'Université de Washington à Seattle.","es":"¡Bienvenido a mi sitio! Soy Profesor Asociado en el Departamento de Ciencia Política de McGill University, donde soy miembro del Centre for the Study of Democratic Citizenship (CSDC) y Miembro Asociado del Centre on Population Dynamics (CPD). Hice mi Doctorado en la Universidad de Washington en Seattle.","ru":"Добро пожаловать на мой сайт! Я — доцент кафедры политической науки в McGill University, где являюсь членом Centre for the Study of Democratic Citizenship (CSDC) и ассоциированным членом Centre on Population Dynamics (CPD). Степень доктора философии (Ph.D.) я получил в Университете Вашингтона в Сиэтле.","uk":"Ласкаво просимо на мій сайт! Я — доцент кафедри політичної науки в McGill University, де є членом Centre for the Study of Democratic Citizenship (CSDC) та асоційованим членом Centre on Population Dynamics (CPD). Я здобув ступінь доктора філософії (Ph.D.) в Університеті Вашингтона у Сіетлі.","ka":"კეთილი იყოს თქვენი მობრძანება ჩემს საიტზე! მე ვარ პოლიტიკის მეცნიერების დეპარტამენტის ასოცირებული პროფესორი McGill University-ში, სადაც ვარ დემოკრატიული მოქალაქეობის კვლევის ცენტრის (CSDC) წევრი და მოსახლეობის დინამიკის ცენტრის (CPD) ასოცირებული წევრი. დოქტორანტურა დავამთავრე ვაშინგტონის უნივერსიტეტში, სიეტლში.","de":"Willkommen auf meiner Website! Ich bin Professor am Institut für Politikwissenschaft an der McGill University, wo ich Mitglied des Centre for the Study of Democratic Citizenship (CSDC) und assoziiertes Mitglied des Centre on Population Dynamics (CPD) bin. Ich habe meinen Ph.D. an der Universität Washington in Seattle abgeschlossen."},"index.research_interests":{"en":"Broadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em>, and <em>Political Analysis</em>, among others.\n","fr":"De manière générale, je m'intéresse à la démocratisation et au développement démocratique. Une grande partie de mes recherches porte sur le rôle que joue l'information dans le développement des régimes démocratiques. Je m'intéresse également à l'avancement des méthodes quantitatives permettant de mesurer l'effet de l'information. Je mène des projets de recherche actifs dans l'ex-Union soviétique, en Afrique orientale et australe, ainsi qu'en Amérique du Nord. Mes travaux ont paru dans un large éventail de revues en science politique et dans des domaines connexes, notamment <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em> et <em>Political Analysis</em>, entre autres.\n","es":"En términos generales, me interesa la democratización y el desarrollo democrático. Gran parte de mi investigación aborda el papel que desempeña la información en el desarrollo de sistemas políticos democráticos. También me interesa el avance de los métodos cuantitativos para medir el efecto de la información. Mantengo proyectos de investigación activos en la antigua Unión Soviética, África Oriental y Meridional, y América del Norte. Mi trabajo ha aparecido en una amplia variedad de revistas de ciencia política y campos afines, tales como <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em> y <em>Political Analysis</em>, entre otras.\n","ru":"В широком смысле меня интересуют вопросы демократизации и демократического развития. Значительная часть моих исследований посвящена роли информации в формировании демократических политий. Я также занимаюсь разработкой количественных методов для измерения эффекта информации. В настоящее время я веду активные исследовательские проекты на постсоветском пространстве, в Восточной и Южной Африке, а также в Северной Америке. Мои работы опубликованы в широком круге журналов по политической науке и смежным дисциплинам, в том числе в <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em> и <em>Political Analysis</em>.\n","uk":"У широкому сенсі мої наукові інтереси зосереджені на демократизації та демократичному розвитку. Значна частина моїх досліджень присвячена ролі інформації у становленні демократичних полій. Я також займаюся розробкою кількісних методів для вимірювання ефекту інформації. Я веду активні дослідницькі проєкти на пострадянському просторі, у Східній і Південній Африці та в Північній Америці. Мої праці опубліковані в широкому колі журналів із політичної науки та суміжних дисциплін, зокрема в <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em> та <em>Political Analysis</em>.\n","ka":"ზოგადად, მე მაინტერესებს დემოკრატიზაცია და დემოკრატიული განვითარება. ჩემი კვლევის დიდი ნაწილი ეხება იმ როლს, რომელსაც ინფორმაცია ასრულებს დემოკრატიული პოლიტიკური სისტემების ჩამოყალიბებაში. ასევე მაინტერესებს რაოდენობრივი მეთოდების სრულყოფა ინფორმაციის ეფექტის გასაზომად. აქტიური სამეცნიერო პროექტები მაქვს ყოფილ საბჭოთა კავშირში, აღმოსავლეთ და სამხრეთ აფრიკაში, და ჩრდილოეთ ამერიკაში. ჩემი ნაშრომები გამოქვეყნებულია პოლიტიკის მეცნიერებისა და მომიჯნავე დარგების ჟურნალების ფართო სპექტრში, მათ შორის <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em> და <em>Political Analysis</em>.\n","de":"Im Allgemeinen interessiere ich mich für Demokratisierung und demokratische Entwicklung. Ein Großteil meiner Forschung befasst sich mit der Rolle, die Information in der Entwicklung demokratischer Gemeinwesen spielt. Darüber hinaus interessiere ich mich für die Weiterentwicklung quantitativer Methoden zur Messung von Informationseffekten. Ich führe aktive Forschungsprojekte in der ehemaligen Sowjetunion, im östlichen und südlichen Afrika sowie in Nordamerika durch. Meine Arbeiten sind in einer breiten Auswahl von Fachzeitschriften der Politikwissenschaft und angrenzender Disziplinen erschienen, darunter unter anderem <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em> sowie <em>Political Analysis</em>.\n"},"index.pre_academia":{"en":"Before returning to academia, I worked for the National Democratic Institute covering Kenya and the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.","fr":"Avant de retourner au milieu universitaire, j'ai travaillé pour le National Democratic Institute, où je couvrais le Kenya, ainsi que pour les Caucasus Research Resource Centers, où je couvrais l'Arménie, l'Azerbaïdjan et la Géorgie.","es":"Antes de regresar a la academia, trabajé para el National Democratic Institute cubriendo Kenia y los Caucasus Research Resource Centers cubriendo Armenia, Azerbaiyán y Georgia.","ru":"До возвращения в академическую среду я работал в National Democratic Institute, курируя Кению, а также в Caucasus Research Resource Centers, занимаясь Арменией, Азербайджаном и Грузией.","uk":"До повернення в академію я працював у National Democratic Institute, займаючись Кенією, а також у Caucasus Research Resource Centers, де відповідав за Вірменію, Азербайджан і Грузію.","ka":"აკადემიურ საქმიანობაზე დაბრუნებამდე ვმუშაობდი National Democratic Institute-ში, სადაც კენიის მიმართულებით ვიყავი პასუხისმგებელი, ასევე კავკასიის კვლევითი რესურსების ცენტრში, სომხეთის, აზერბაიჯანისა და საქართველოს მიმართულებით.","de":"Bevor ich zur Wissenschaft zurückkehrte, arbeitete ich für das National Democratic Institute mit Zuständigkeit für Kenia sowie für die Caucasus Research Resource Centers mit Zuständigkeit für Armenien, Aserbaidschan und Georgien."},"index.bicycle":{"en":"I am an avid bicycle tourer.","fr":"Je suis un adepte passionné du cyclotourisme.","es":"Soy un ávido ciclista de turismo.","ru":"Я увлечённый велотурист.","uk":"Я — захоплений велотурист.","ka":"მე ვარ მგზნებარე ველოსიპედ-ტურისტი.","de":"Ich bin ein begeisterter Fahrradtourist."},"index.see_cv":{"en":"You can see more about my academic work on my","fr":"Vous pouvez en savoir plus sur mon travail académique dans mon","es":"Puede obtener más información sobre mi trabajo académico en mi","ru":"Подробнее о моей научной деятельности можно узнать в моём","uk":"Більше про мою наукову діяльність можна дізнатися у моєму","ka":"ჩემი აკადემიური საქმიანობის შესახებ მეტი ინფორმაცია შეგიძლიათ იხილოთ ჩემს","de":"Mehr über meine akademische Arbeit finden Sie in meinem"},"index.contact_me":{"en":"Contact me","fr":"Me contacter","es":"Contácteme","ru":"Связаться со мной","uk":"Зв'язатися зі мною","ka":"დაგვიკავშირდით","de":"Kontakt"},"index.affiliations":{"en":"Affiliations","fr":"Affiliations","es":"Afiliaciones","ru":"Аффилиации","uk":"Афіліації","ka":"აფილიაციები","de":"Zugehörigkeiten"},"lab.intro":{"en":"Bringing together researchers interested in transparency, information provision, and participation (TIP), the DemoTIP laboratory applies state of the art research methods to bring answers to empirical problems in political science. Lab members test and challenge conventional theories regarding political transparency and accountability, the provision of political information, and citizen participation in democratic processes. Email if you are interested in getting involved!","fr":"Réunissant des chercheurs et chercheuses intéressés par la transparence, la fourniture d'information et la participation (TIP), le laboratoire DemoTIP applique des méthodes de recherche de pointe pour apporter des réponses à des problèmes empiriques en science politique. Les membres du laboratoire mettent à l'épreuve et remettent en question les théories conventionnelles relatives à la transparence et à la reddition de comptes politiques, à la fourniture d'information politique, ainsi qu'à la participation citoyenne dans les processus démocratiques. Écrivez-nous si vous souhaitez vous impliquer !","es":"El laboratorio DemoTIP reúne a investigadores interesados en transparencia, provisión de información y participación (TIP), y aplica métodos de investigación de vanguardia para dar respuesta a problemas empíricos en ciencia política. Los miembros del laboratorio ponen a prueba y cuestionan las teorías convencionales sobre la transparencia y la rendición de cuentas políticas, la provisión de información política y la participación ciudadana en los procesos democráticos. ¡Escríbanos si le interesa participar!","ru":"Объединяя исследователей, занимающихся вопросами прозрачности, предоставления информации и участия (TIP), лаборатория DemoTIP применяет передовые методы исследования для решения эмпирических проблем политической науки. Члены лаборатории проверяют и оспаривают устоявшиеся теории, касающиеся политической прозрачности и подотчётности, распространения политической информации и участия граждан в демократических процессах. Если вас интересует сотрудничество, напишите нам!","uk":"Об'єднуючи дослідників, зацікавлених у прозорості, наданні інформації та участі (TIP), лабораторія DemoTIP застосовує найсучасніші дослідницькі методи для пошуку відповідей на емпіричні питання політичної науки. Члени лабораторії перевіряють і переосмислюють загальноприйняті теорії щодо політичної прозорості та підзвітності, поширення політичної інформації та участі громадян у демократичних процесах. Якщо вас цікавить участь у нашій роботі — напишіть нам!","ka":"DemoTIP ლაბორატორია აერთიანებს მკვლევარებს, რომლებიც დაინტერესებულნი არიან გამჭვირვალობით, ინფორმაციის მიწოდებით და მონაწილეობით (TIP), და იყენებს უახლეს სამეცნიერო მეთოდებს პოლიტიკის მეცნიერებაში არსებული ემპირიული პრობლემების გადასაჭრელად. ლაბორატორიის წევრები ამოწმებენ და სადავოდ ხდიან კონვენციურ თეორიებს პოლიტიკური გამჭვირვალობისა და ანგარიშვალდებულების, პოლიტიკური ინფორმაციის მიწოდებისა და დემოკრატიულ პროცესებში მოქალაქეთა მონაწილეობის შესახებ. მოგვწერეთ ელ. ფოსტაზე, თუ გაინტერესებთ მონაწილეობა!","de":"Das DemoTIP-Labor vereint Forschende, die sich für Transparenz, Informationsbereitstellung und Partizipation (TIP) interessieren, und wendet modernste Forschungsmethoden an, um empirische Fragestellungen der Politikwissenschaft zu beantworten. Die Labormitglieder überprüfen und hinterfragen gängige Theorien zu politischer Transparenz und Rechenschaftspflicht, zur Bereitstellung politischer Informationen sowie zur Bürgerbeteiligung an demokratischen Prozessen. Bei Interesse an einer Mitwirkung bitte per E-Mail melden!"},"lab.section_pi":{"en":"Principal Investigator","fr":"Chercheur principal","es":"Investigador Principal","ru":"Главный исследователь","uk":"Головний дослідник","ka":"მთავარი მკვლევარი","de":"Hauptforschungsleitung"},"lab.section_grad":{"en":"McGill Graduate & Post-Doc Researchers","fr":"Chercheurs aux cycles supérieurs et postdoctorants de McGill University","es":"Investigadores de Posgrado y Postdoctorales de McGill","ru":"Аспиранты и постдокторанты McGill University","uk":"Аспіранти та постдокторанти McGill University","ka":"McGill-ის სამაგისტრო/სადოქტორო და პოსტდოქტორანტი მკვლევარები","de":"Graduierte Forschende und Postdoktoranden der McGill University"},"lab.section_undergrad":{"en":"McGill Undergraduate Researchers","fr":"Chercheurs au premier cycle de McGill University","es":"Investigadores de Pregrado de McGill","ru":"Студенты-исследователи McGill University","uk":"Студенти-бакалаври McGill University","ka":"McGill-ის სამაგისტრო საფეხურამდელი მკვლევარები","de":"Undergraduate-Forschende der McGill University"},"lab.section_alumni":{"en":"DemoTIP Alumni","fr":"Anciens membres du laboratoire DemoTIP","es":"Exmiembros de DemoTIP","ru":"Выпускники DemoTIP","uk":"Випускники DemoTIP","ka":"DemoTIP-ის კურსდამთავრებულები","de":"DemoTIP-Alumni"},"lab.alumni_intro":{"en":"These students worked with me closely. The research and publications listed are just those completed with me during their time affiliated with the lab. For prospective students, this table gives you a good sense of the types of students who work with me.","fr":"Ces étudiantes et étudiants ont travaillé en étroite collaboration avec moi. Les recherches et publications répertoriées sont uniquement celles réalisées avec moi durant leur affiliation au laboratoire. Pour les candidats potentiels, ce tableau donne un bon aperçu des profils d'étudiants qui travaillent avec moi.","es":"Estos estudiantes trabajaron estrechamente conmigo. Las investigaciones y publicaciones enumeradas son únicamente aquellas completadas conmigo durante el período en que estuvieron afiliados al laboratorio. Para los estudiantes prospectivos, esta tabla ofrece una buena idea del tipo de estudiantes que trabajan conmigo.","ru":"Эти студенты тесно сотрудничали со мной. Перечисленные исследования и публикации — лишь те, что были выполнены совместно со мной в период их работы в лаборатории. Для потенциальных студентов данная таблица даёт наглядное представление о том, с какими исследователями я работаю.","uk":"Ці студенти тісно співпрацювали зі мною. Зазначені дослідження та публікації стосуються лише тих робіт, що були виконані спільно зі мною в період їхньої приналежності до лабораторії. Для майбутніх студентів ця таблиця дає уявлення про типовий профіль тих, хто працює зі мною.","ka":"ეს სტუდენტები მჭიდროდ თანამშრომლობდნენ ჩემთან. ჩამოთვლილი კვლევები და პუბლიკაციები მხოლოდ ის ნამუშევრებია, რომლებიც ლაბორატორიასთან აფილიაციის პერიოდში ჩემთანთ ერთად შეასრულეს. პოტენციური სტუდენტებისთვის ეს ცხრილი კარგ წარმოდგენას გაძლევთ იმ სტუდენტების ტიპებზე, ვინც ჩემთან მუშაობს.","de":"Diese Studierenden haben eng mit mir zusammengearbeitet. Die aufgeführten Forschungsarbeiten und Publikationen sind ausschließlich jene, die gemeinsam mit mir während ihrer Zeit im Labor entstanden sind. Für Studieninteressierte vermittelt diese Tabelle einen guten Eindruck von den Studierenden, die mit mir zusammenarbeiten."},"lab.alumni_toggle":{"en":"Show / hide alumni table (click any column to sort)","fr":"Afficher / masquer le tableau des anciens membres (cliquer sur une colonne pour trier)","es":"Mostrar / ocultar tabla de exmiembros (haga clic en cualquier columna para ordenar)","ru":"Показать / скрыть таблицу выпускников (нажмите на любой столбец для сортировки)","uk":"Показати / приховати таблицю випускників (натисніть будь-який стовпець для сортування)","ka":"კურსდამთავრებულთა ცხრილის ჩვენება / დამალვა (დახარისხებისთვის დააწკაპუნეთ ნებისმიერ სვეტზე)","de":"Alumni-Tabelle ein-/ausblenden (zum Sortieren auf eine beliebige Spalte klicken)"},"lab.aaron_bio":{"en":"Aaron Erlich is Associate Professor of Political Science at McGill University. He received his Ph.D. from the University of Washington in 2016. His wide-ranging research interests touch upon various themes such as democracy, political participation, the effect of information, and the development and use of advanced quantitative methods. His research has been published in journals such as the American Political Science Review, Journal of Politics, Comparative Political Studies, and many others.","fr":"Aaron Erlich est Professeur agrégé de science politique à McGill University. Il a obtenu son doctorat de l'Université de Washington en 2016. Ses intérêts de recherche, qui couvrent un large spectre, portent sur diverses thématiques telles que la démocratie, la participation politique, l'effet de l'information, ainsi que le développement et l'utilisation de méthodes quantitatives avancées. Ses recherches ont été publiées dans des revues telles que l'American Political Science Review, le Journal of Politics, Comparative Political Studies, et bien d'autres.","es":"Aaron Erlich es Profesor Asociado de Ciencia Política en McGill University. Obtuvo su Doctorado en la Universidad de Washington en 2016. Sus amplios intereses de investigación abarcan diversas temáticas, tales como la democracia, la participación política, el efecto de la información, y el desarrollo y uso de métodos cuantitativos avanzados. Su investigación ha sido publicada en revistas como la American Political Science Review, Journal of Politics, Comparative Political Studies, y muchas otras.","ru":"Aaron Erlich — доцент кафедры политической науки в McGill University. Степень доктора философии (Ph.D.) он получил в Университете Вашингтона в 2016 году. Его широкий круг научных интересов охватывает такие темы, как демократия, политическое участие, эффект информации, а также разработка и применение передовых количественных методов. Его исследования опубликованы в таких журналах, как American Political Science Review, Journal of Politics, Comparative Political Studies и многих других.","uk":"Aaron Erlich — доцент кафедри політичної науки в McGill University. Він здобув ступінь доктора філософії (Ph.D.) в Університеті Вашингтона у 2016 році. Його різноманітні наукові інтереси охоплюють такі теми, як демократія, політична участь, вплив інформації, а також розробка та застосування сучасних кількісних методів. Його дослідження опубліковані в таких журналах, як American Political Science Review, Journal of Politics, Comparative Political Studies та багатьох інших.","ka":"Aaron Erlich არის McGill University-ის პოლიტიკის მეცნიერების ასოცირებული პროფესორი. მან დოქტორის ხარისხი მიიღო ვაშინგტონის უნივერსიტეტში 2016 წელს. მისი მრავალმხრივი სამეცნიერო ინტერესები მოიცავს სხვადასხვა თემას, როგორებიცაა დემოკრატია, პოლიტიკური მონაწილეობა, ინფორმაციის ეფექტი, და მოწინავე რაოდენობრივი მეთოდების შემუშავება და გამოყენება. მისი კვლევები გამოქვეყნებულია ისეთ ჟურნალებში, როგორებიცაა American Political Science Review, Journal of Politics, Comparative Political Studies და სხვა მრავალი.","de":"Aaron Erlich ist Professor für Politikwissenschaft an der McGill University. Er promovierte 2016 an der Universität Washington. Seine vielfältigen Forschungsinteressen berühren verschiedene Themen wie Demokratie, politische Partizipation, Informationseffekte sowie die Entwicklung und Anwendung fortgeschrittener quantitativer Methoden. Seine Forschungsergebnisse wurden in Fachzeitschriften wie dem American Political Science Review, dem Journal of Politics, Comparative Political Studies und vielen anderen veröffentlicht."},"institutions.centre_for_the_study_of_democratic_citizenship":{"en":"Centre for the Study of Democratic Citizenship","fr":"Centre pour l'étude de la citoyenneté démocratique","es":"Centre for the Study of Democratic Citizenship","ru":"Centre for the Study of Democratic Citizenship","uk":"Centre for the Study of Democratic Citizenship","ka":"Centre for the Study of Democratic Citizenship","de":"Centre for the Study of Democratic Citizenship"},"institutions.centre_for_the_study_of_democratic_citizenship.combined":{"en":"Centre for the Study of Democratic Citizenship (CSDC)","fr":"Centre pour l'étude de la citoyenneté démocratique (CÉCD)","es":"Centre for the Study of Democratic Citizenship (CSDC)","ru":"Centre for the Study of Democratic Citizenship (CSDC)","uk":"Centre for the Study of Democratic Citizenship (CSDC)","ka":"Centre for the Study of Democratic Citizenship (CSDC)","de":"Centre for the Study of Democratic Citizenship (CSDC)"},"institutions.centre_for_the_study_of_democratic_citizenship.abbr":{"en":"CSDC","fr":"CÉCD","es":"CSDC","ru":"CSDC","uk":"CSDC","ka":"CSDC","de":"CSDC"},"institutions.mcgill_university":{"en":"McGill University","fr":"Université McGill","es":"Universidad McGill","ru":"Университет Макгилла","uk":"Університет Макгілла","ka":"მაკგილის უნივერსიტეტი","de":"McGill University"},"institutions.university_of_washington":{"en":"University of Washington","fr":"Université de Washington","es":"Universidad de Washington","ru":"Университет Вашингтона","uk":"Університет Вашингтона","ka":"ვაშინგტონის უნივერსიტეტი","de":"Universität Washington"},"institutions.universit_de_montr_al":{"en":"Université de Montréal","fr":"Université de Montréal","es":"Université de Montréal","ru":"Université de Montréal","uk":"Université de Montréal","ka":"Université de Montréal","de":"Université de Montréal"},"institutions.national_democratic_institute":{"en":"National Democratic Institute","fr":"National Democratic Institute","es":"National Democratic Institute","ru":"National Democratic Institute","uk":"National Democratic Institute","ka":"National Democratic Institute","de":"National Democratic Institute"},"institutions.national_democratic_institute.combined":{"en":"National Democratic Institute (NDI)","fr":"National Democratic Institute (NDI)","es":"National Democratic Institute (NDI)","ru":"National Democratic Institute (NDI)","uk":"National Democratic Institute (NDI)","ka":"National Democratic Institute (NDI)","de":"National Democratic Institute (NDI)"},"institutions.national_democratic_institute.abbr":{"en":"NDI","fr":"NDI","es":"NDI","ru":"NDI","uk":"NDI","ka":"NDI","de":"NDI"},"institutions.caucasus_research_resource_centers":{"en":"Caucasus Research Resource Centers","ka":"კავკასიის კვლევითი რესურსების ცენტრი","fr":"Caucasus Research Resource Centers","es":"Caucasus Research Resource Centers","ru":"Caucasus Research Resource Centers","uk":"Caucasus Research Resource Centers","de":"Caucasus Research Resource Centers"},"institutions.caucasus_research_resource_centers.combined":{"en":"Caucasus Research Resource Centers (CRRC)","fr":"Caucasus Research Resource Centers (CRRC)","es":"Caucasus Research Resource Centers (CRRC)","ru":"Caucasus Research Resource Centers (CRRC)","uk":"Caucasus Research Resource Centers (CRRC)","ka":"კავკასიის კვლევითი რესურსების ცენტრი (CRRC)","de":"Caucasus Research Resource Centers (CRRC)"},"institutions.caucasus_research_resource_centers.abbr":{"en":"CRRC","fr":"CRRC","es":"CRRC","ru":"CRRC","uk":"CRRC","ka":"CRRC","de":"CRRC"}}</script>
 <script>
 (function () {

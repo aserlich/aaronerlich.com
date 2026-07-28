@@ -1,0 +1,224 @@
+---
+title: "Publication Record"
+subtitle: "A living log of my journal articles — the road to acceptance, time under review, and the wait to print"
+page-layout: full
+body-classes: about-page
+---
+
+```{=html}
+<style>
+.stat-tiles { display: flex; flex-wrap: wrap; gap: 1.75rem; margin: 0.5rem 0 1rem; }
+.stat-num { font-size: 2rem; font-weight: 700; color: #6b1b1b; line-height: 1.1; }
+.stat-lab { font-size: 0.78rem; color: #666; text-transform: uppercase; letter-spacing: 0.04em; }
+.record-note { font-size: 0.8rem; color: #777; margin-top: 0.5rem; }
+.legend { display: flex; flex-wrap: wrap; gap: 1rem; font-size: 0.85rem; align-items: center; margin: 0.25rem 0 0.75rem; }
+.legend span.sw { display: inline-block; width: 12px; height: 12px; border-radius: 2px; margin-right: 5px; vertical-align: middle; }
+.legend span.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; margin-right: 5px; vertical-align: middle; }
+.jt-table { border-collapse: collapse; font-size: 0.9rem; margin: 0.5rem 0 1rem; width: 100%; max-width: 640px; }
+.jt-table th, .jt-table td { padding: 0.35rem 0.7rem; border-bottom: 1px solid #eee; text-align: right; }
+.jt-table th:first-child, .jt-table td:first-child { text-align: left; }
+.jt-table th { color: #6b1b1b; border-bottom: 2px solid #6b1b1b; }
+h2 { margin-top: 2rem; }
+</style>
+```
+
+```{ojs}
+//| echo: false
+db = FileAttachment("_data/submissions_public.json").json()
+COL = ({ accept: "#6b1b1b", reject: "#2e8bb0", desk_reject: "#c98a2b", in_principle_accept: "#4c7a4c", withdrawn: "#9a8aa8" })
+dcol = d => COL[d] || "#9aa0a6"
+accepted = db.accepted.map((a, i) => {
+  const pub = a.pub_date ? new Date(a.pub_date) : null;                 // first online (advance access)
+  const pubfinal = a.pub_date_final ? new Date(a.pub_date_final) : null; // final journal issue (version of record)
+  const vor = pubfinal || (a.awaiting_issue ? null : pub);             // awaiting an issue → no VoR yet
+  const sameVoR = !pubfinal || (pub && +pubfinal === +pub);            // online-only / same-day → one dot
+  const labelYear = (a.awaiting_issue && !pubfinal) ? "TBD"
+    : pubfinal ? pubfinal.getUTCFullYear() : (a.year ? a.year : "(in press)");
+  return {
+    ...a, i,
+    acc: new Date(a.accept_date),
+    pub, pubfinal, vor, sameVoR,
+    vorDate: a.pub_date_final || a.pub_date,
+    fsub: a.first_sub_date ? new Date(a.first_sub_date) : null,
+    ipa: a.ipa_date ? new Date(a.ipa_date) : null,
+    label: (a.registered_report ? "✱ " : "")
+      + `${a.authors} ${labelYear} · ${a.journal}`
+      + (a.timing_known ? ` · ${a.rr_missing ? "R&R ?" : a.total_rr + " R&R"}` : "")
+  };
+})
+```
+
+```{ojs}
+//| echo: false
+html`<div class="stat-tiles">
+  <div><div class="stat-num">${db.n}</div><div class="stat-lab">accepted / published</div></div>
+  <div><div class="stat-num">${db.median_months_total}</div><div class="stat-lab">median months under review</div></div>
+  <div><div class="stat-num">${db.max_journals}</div><div class="stat-lab">most journals for one paper</div></div>
+  <div><div class="stat-num">${db.n_timed}</div><div class="stat-lab">with tracked timing</div></div>
+</div>`
+```
+
+## The road to acceptance
+
+Each row is one paper. **Acceptance-date view** places every submission on a real calendar,
+so the empty stretches between submissions — when a paper was *not* under review — show as
+gaps in a faint through-line. After acceptance (●) comes the wait to **first online** (○,
+advance access) and then to the **version of record** in a journal issue (◉); for
+online-only journals those two coincide as a single ◉. **Total-time view** collapses the
+gaps to rank papers purely by time spent under review. Segment colour is the outcome of each
+submission; earlier journals are not named.
+
+*Review time is measured to acceptance — a conditional acceptance counts as accepted, and
+for registered reports the clock stops at in-principle acceptance. The post-acceptance dots
+(first online, then the assigned issue) show production time; later production steps and
+post-acceptance replication are not tracked.*
+
+```{=html}
+<div class="legend">
+  <span><span class="sw" style="background:#c98a2b"></span>Desk reject</span>
+  <span><span class="sw" style="background:#2e8bb0"></span>Reject after review</span>
+  <span><span class="sw" style="background:#9a8aa8"></span>Withdrawn</span>
+  <span><span class="sw" style="background:#6b1b1b"></span>Accepting journal</span>
+  <span><span class="dot" style="background:#6b1b1b"></span>Accepted</span>
+  <span><span class="dot" style="background:#fff;border:1.5px solid #6b1b1b"></span>First online</span>
+  <span><span class="dot" style="background:radial-gradient(circle,#6b1b1b 0 38%,#fff 42% 100%);border:1.5px solid #6b1b1b"></span>Version of record (issue)</span>
+  <span style="color:#4c7a4c">◆ In-principle acceptance</span>
+  <span>✱ Registered report</span>
+</div>
+<p style="font-size:0.78rem;color:#888;margin:0.15rem 0 0.75rem">For online-only journals the online and final versions are the same date — shown as a single ◉.</p>
+```
+
+```{ojs}
+//| echo: false
+viewof mode = Inputs.radio(
+  new Map([["Acceptance date", "date"], ["Total time under review", "time"]]),
+  { value: "date", label: "View" }
+)
+```
+
+```{ojs}
+//| echo: false
+allDates = accepted.flatMap(a => [a.acc, a.pub, a.vor, a.fsub, a.ipa].filter(Boolean)
+  .concat(a.segments.flatMap(s => [s.sub_date && new Date(s.sub_date), s.fin_date && new Date(s.fin_date)].filter(Boolean))))
+minYear = d3.min(allDates, d => d.getUTCFullYear())
+maxYear = d3.max(allDates, d => d.getUTCFullYear()) + 1
+```
+
+```{ojs}
+//| echo: false
+viewof win = Inputs.form({
+  from: Inputs.range([minYear, maxYear], { step: 1, value: minYear, label: "Zoom (date view) — from" }),
+  to: Inputs.range([minYear, maxYear], { step: 1, value: maxYear, label: "to" })
+})
+```
+
+```{ojs}
+//| echo: false
+calendarChart = (win) => {
+  const lo = Math.min(win.from, win.to), hi = Math.max(win.from, win.to), span = hi - lo;
+  const order = d3.sort(accepted, d => -d.acc).map(d => d.i);
+  const segs = accepted.flatMap(a => a.segments
+    .filter(s => s.sub_date && s.fin_date)
+    .map(s => ({ i: a.i, x1: new Date(s.sub_date), x2: new Date(s.fin_date), disp: s.disposition,
+      days: Math.round((new Date(s.fin_date) - new Date(s.sub_date)) / 86400000) })));
+  const marks_short = segs.filter(s => s.disp !== "accept" && s.days <= 45);  // tiny reject/desk-reject bars, hard to see
+  const spans = accepted.filter(d => d.fsub).map(d => ({ i: d.i, x1: d.fsub, x2: d.vor || d.pub || d.acc }));
+  const inpress = accepted.filter(d => d.vor || d.pub).map(d => ({ i: d.i, x1: d.acc, x2: d.vor || d.pub }));
+  return Plot.plot({
+    width, height: accepted.length * 24 + 44,
+    marginLeft: 8, marginRight: 300, marginTop: 10, marginBottom: 28,
+    x: { type: "utc", grid: true, label: null,
+         domain: [Date.UTC(lo, 0, 1), Date.UTC(hi, 11, 31)],
+         ticks: d3.utcYear.every(1),
+         tickFormat: d => { const y = d.getUTCFullYear(); return (span <= 8 || y % 2 === 0) ? String(y) : ""; } },
+    y: { axis: null, domain: order },
+    marks: [
+      Plot.ruleY(spans, { y: "i", x1: "x1", x2: "x2", stroke: "#ddd", strokeWidth: 1, clip: true }),
+      Plot.ruleY(inpress, { y: "i", x1: "x1", x2: "x2", stroke: "#6b1b1b", strokeWidth: 1, strokeDasharray: "1,2", clip: true }),
+      Plot.barX(segs, { x1: "x1", x2: "x2", y: "i", fill: d => dcol(d.disp), insetY: 8, rx: 1.5, clip: true,
+        channels: { Outcome: "disp", Days: "days" }, tip: { format: { x1: false, x2: false, y: false, fill: false } } }),
+      Plot.dot(marks_short, { x: d => new Date((+d.x1 + +d.x2) / 2), y: "i", symbol: "square", r: 3.6,
+        fill: d => dcol(d.disp), stroke: "white", strokeWidth: 0.6, clip: true,
+        channels: { Outcome: "disp", Days: "days" }, tip: { format: { x: false, y: false, fill: false } } }),
+      Plot.dot(accepted, { x: "acc", y: "i", r: 4.5, fill: "#6b1b1b", stroke: "white", strokeWidth: 1, clip: true,
+        channels: { Paper: "paper", Journal: "journal", Accepted: "accept_date" }, tip: true }),
+      Plot.dot(accepted.filter(d => d.pub && (d.awaiting_issue || !d.sameVoR)), { x: "pub", y: "i", r: 4, fill: "white", stroke: "#6b1b1b", strokeWidth: 1.5, clip: true,
+        channels: { "First online": "pub_date" }, tip: true }),
+      Plot.dot(accepted.filter(d => d.vor), { x: "vor", y: "i", r: 5, fill: "white", stroke: "#6b1b1b", strokeWidth: 1.5, clip: true }),
+      Plot.dot(accepted.filter(d => d.vor), { x: "vor", y: "i", r: 1.9, fill: "#6b1b1b", clip: true,
+        channels: { "Version of record": "vorDate" }, tip: true }),
+      Plot.dot(accepted.filter(d => d.ipa), { x: "ipa", y: "i", symbol: "diamond", r: 5, fill: "#4c7a4c", stroke: "white", strokeWidth: 1, clip: true,
+        channels: { "In-principle acceptance": "ipa_date" }, tip: true }),
+      Plot.text(accepted, { y: "i", text: "label", frameAnchor: "right", textAnchor: "start", dx: 8, fontSize: 10, fill: "#333" })
+    ]
+  });
+}
+```
+
+```{ojs}
+//| echo: false
+durationChart = () => {
+  const timed = accepted.filter(d => d.timing_known && d.total_days != null);
+  const order = d3.sort(timed, d => -d.total_days).map(d => d.i);
+  const segs = timed.flatMap(a => {
+    let cum = 0;
+    return a.segments.filter(s => s.days != null).map(s => {
+      const x0 = cum; cum += s.days;
+      return { i: a.i, x0, x1: cum, disp: s.disposition, days: s.days };
+    });
+  });
+  const ends = timed.map(d => ({ i: d.i, x: d.total_days, label: d.label }));
+  const marks_short = segs.filter(s => s.disp !== "accept" && s.days <= 45);
+  return Plot.plot({
+    width, height: timed.length * 24 + 44,
+    marginLeft: 8, marginRight: 300, marginTop: 10, marginBottom: 30,
+    x: { label: "Cumulative days under review →", grid: true, nice: true },
+    y: { axis: null, domain: order },
+    marks: [
+      Plot.barX(segs, { x1: "x0", x2: "x1", y: "i", fill: d => dcol(d.disp), insetY: 8, rx: 1.5,
+        stroke: "white", strokeWidth: 1, channels: { Outcome: "disp", Days: "days" },
+        tip: { format: { x1: false, x2: false, y: false, fill: false } } }),
+      Plot.dot(marks_short, { x: d => (d.x0 + d.x1) / 2, y: "i", symbol: "square", r: 3.6,
+        fill: d => dcol(d.disp), stroke: "white", strokeWidth: 0.6,
+        channels: { Outcome: "disp", Days: "days" }, tip: { format: { x: false, y: false, fill: false } } }),
+      Plot.text(ends, { x: "x", y: "i", text: "label", dx: 9, textAnchor: "start", fontSize: 10.5, fill: "#333" })
+    ]
+  });
+}
+```
+
+```{ojs}
+//| echo: false
+mode === "date" ? calendarChart(win) : durationChart()
+```
+
+```{ojs}
+//| echo: false
+mode === "time" && db.n - db.n_timed > 0
+  ? html`<p class="record-note">${db.n - db.n_timed} acceptance-only records (submission timing not yet logged) are omitted from this view; they appear as dots in the acceptance-date view.</p>`
+  : html``
+```
+
+## How many journals to acceptance?
+
+```{ojs}
+//| echo: false
+Plot.plot({
+  width: Math.min(width, 560), height: 240, marginBottom: 40,
+  x: { label: "Journals submitted to before acceptance", tickFormat: d => d, interval: 1 },
+  y: { label: "Papers", grid: true },
+  marks: [
+    Plot.barY(db.submission_counts, { x: "n_journals", y: "n_papers", fill: "#6b1b1b", rx: 2,
+      channels: { Papers: "n_papers", Journals: "n_journals" }, tip: true }),
+    Plot.ruleY([0]),
+    Plot.text(db.submission_counts, { x: "n_journals", y: "n_papers", text: "n_papers", dy: -8, fontSize: 11, fill: "#444" })
+  ]
+})
+```
+
+```{ojs}
+//| echo: false
+html`<p class="record-note">Accepted / published articles only. Generated ${db.generated}
+from a complete private log of every submission. Earlier (rejecting) journals are shown by
+outcome and timing but are not named. Some acceptance dates are placeholders pending exact dates.</p>`
+```

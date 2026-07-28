@@ -1,0 +1,21 @@
+---
+title: "Area proportional to population maps"
+description-meta: "A density-equalizing cartogram of Kenya's counties, with each county's area proportional to its voting-age population."
+date: "2014-12-07"
+categories: [maps, R, data viz, Kenya]
+image: kenya-cartogram.png
+image-alt: "A cartogram of Kenya with each county distorted so its area is proportional to its voting-age population."
+---
+
+::: {.callout-note appearance="simple"}
+Restored from my original WordPress blog (posted December 7, 2014).
+:::
+
+I was cleaning out my downloads folder, and I remembered I had made this cool map of
+Kenya that uses the algorithm of Scharl and Weichselbraun to make a density equalizing map
+of Kenya. This map shows each of Kenya's counties with the area proportional to the
+voting-age population. You can see how unequal the county sizes are in the map.
+
+![Density-equalizing cartogram of Kenya — each county's area is proportional to its voting-age population.](kenya-cartogram.png){fig-alt="Cartogram of Kenya's counties distorted by voting-age population; the arid northern counties shrink while the highlands, Nairobi, and the Lake Victoria west expand."}
+
+![Kenya's counties drawn to their true geographic area, for comparison.](district-map.jpeg){fig-alt="Ordinary, undistorted map of Kenya's counties shown for comparison."}

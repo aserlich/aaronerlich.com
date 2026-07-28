@@ -1,6 +1,15 @@
 /* Custom styles for Aaron Erlich's website */
 
 /* ===========================================================
+   Blog posts — cleaner title block and no heading underlines.
+   The `description` still ships as a <meta> tag (for link
+   previews) but is hidden in the visible title block.
+   =========================================================== */
+body.blog-post #title-block-header .description { display: none; }
+body.blog-post h2 { border-bottom: none; padding-bottom: 0; }
+
+
+/* ===========================================================
    Typography — Space Mono (typewriter-style) site-wide,
    with Noto Sans Georgian fallback for Mkhedruli (ka).
    =========================================================== */

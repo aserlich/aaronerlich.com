@@ -1,0 +1,10 @@
+# Shared defaults for every blog post under posts/
+author: "Aaron Erlich"
+freeze: auto
+title-block-banner: false
+toc: false
+body-classes: blog-post
+
+format:
+  html:
+    date-format: "MMMM D, YYYY"

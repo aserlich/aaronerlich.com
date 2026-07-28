@@ -1,0 +1,19 @@
+---
+title: "Blog"
+subtitle: "Notes on research, methods, and the academic craft"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+  fields: [date, title, description, categories, reading-time]
+  feed: true
+page-layout: full
+title-block-banner: false
+---
+
+Occasional posts on research, methods, and the academic craft. **Comments and reactions
+are welcome** — I share most of these on LinkedIn, which is the easiest place to reply, or
+you can reach me from the [About](index.qmd) page.

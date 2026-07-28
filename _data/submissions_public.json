@@ -1,0 +1,1120 @@
+{
+  "generated": "2026-07-28",
+  "n": 30,
+  "n_timed": 30,
+  "median_months_total": 12.2,
+  "max_journals": 7,
+  "accepted": [
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & Soehl",
+      "paper": "Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora\"",
+      "journal": "CMS",
+      "year": 2026,
+      "accept_date": "2026-04-20",
+      "pub_date": "2026-05-22",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2025-07-15",
+      "total_days": 279,
+      "months_total": 9.2,
+      "n_journals": 1,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2025-07-15",
+          "fin_date": "2026-04-20",
+          "days": 279,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Chen et al.",
+      "paper": "Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations",
+      "journal": "IJSRM",
+      "year": 2026,
+      "accept_date": "2026-04-18",
+      "pub_date": "2026-06-25",
+      "pub_date_final": null,
+      "awaiting_issue": true,
+      "first_sub_date": "2025-03-06",
+      "total_days": 408,
+      "months_total": 13.4,
+      "n_journals": 1,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2025-03-06",
+          "fin_date": "2026-04-18",
+          "days": 408,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich",
+      "paper": "Two implications of survey mode during raw: Evidence from Russia's full-scale invasion of Ukraine",
+      "journal": "PSA",
+      "year": 2025,
+      "accept_date": "2025-06-17",
+      "pub_date": "2025-07-22",
+      "pub_date_final": "2025-11-02",
+      "awaiting_issue": false,
+      "first_sub_date": "2023-06-30",
+      "total_days": 427,
+      "months_total": 14,
+      "n_journals": 4,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2023-06-30",
+          "fin_date": "2023-07-03",
+          "days": 3,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2023-08-01",
+          "fin_date": "2023-08-02",
+          "days": 1,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2023-08-18",
+          "fin_date": "2023-12-18",
+          "days": 122,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2024-08-20",
+          "fin_date": "2025-06-17",
+          "days": 301,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": true,
+      "ipa_date": "2023-11-26",
+      "authors": "Erlich et al.",
+      "paper": "How Language Shapes Belief in Misinformation: A Study Among Multilingual Speakers in Ukraine",
+      "journal": "JEPS",
+      "year": 2025,
+      "accept_date": "2025-05-12",
+      "pub_date": "2025-08-26",
+      "pub_date_final": "2026-01-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2021-09-03",
+      "total_days": 760,
+      "months_total": 25,
+      "n_journals": 1,
+      "total_rr": 5,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2021-09-03",
+          "fin_date": "2022-03-06",
+          "days": 184,
+          "disposition": "withdrawn",
+          "accepting": false
+        },
+        {
+          "sub_date": "2022-07-27",
+          "fin_date": "2023-11-26",
+          "days": 487,
+          "disposition": "in_principle_accept",
+          "accepting": false
+        },
+        {
+          "sub_date": "2025-02-12",
+          "fin_date": "2025-05-12",
+          "days": 89,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "(title forthcoming)",
+      "journal": "World Dev",
+      "year": 2025,
+      "accept_date": "2025-03-21",
+      "pub_date": "2025-10-01",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2024-11-20",
+      "total_days": 121,
+      "months_total": 4,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2024-11-20",
+          "fin_date": "2025-03-21",
+          "days": 121,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & McCormack",
+      "paper": "Elder, am I right? Age-group differences in social and political interactions in Africa",
+      "journal": "IJPOR",
+      "year": 2025,
+      "accept_date": "2025-01-08",
+      "pub_date": "2025-03-28",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2023-08-17",
+      "total_days": 463,
+      "months_total": 15.2,
+      "n_journals": 2,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2023-08-17",
+          "fin_date": "2023-12-08",
+          "days": 113,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2024-01-24",
+          "fin_date": "2025-01-08",
+          "days": 350,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & Gans-Morse",
+      "paper": "Can Norm-Based Information Campaigns Reduce Corruption?",
+      "journal": "AJPS",
+      "year": 2025,
+      "accept_date": "2024-10-02",
+      "pub_date": "2025-01-05",
+      "pub_date_final": "2026-04-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2023-03-08",
+      "total_days": 525,
+      "months_total": 17.2,
+      "n_journals": 2,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2023-03-08",
+          "fin_date": "2023-06-10",
+          "days": 94,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2023-07-29",
+          "fin_date": "2024-10-02",
+          "days": 431,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Light et al.",
+      "paper": "Urban Disorder in Democratic Transitions: Ukraine's Municipal Policing Debates in Comparative Perspective.",
+      "journal": "Policing & Soc",
+      "year": 2025,
+      "accept_date": "2024-09-27",
+      "pub_date": "2025-04-03",
+      "pub_date_final": "2025-04-21",
+      "awaiting_issue": false,
+      "first_sub_date": "2024-03-09",
+      "total_days": 202,
+      "months_total": 6.6,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2024-03-09",
+          "fin_date": "2024-09-27",
+          "days": 202,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Palmer-Rubin et al.",
+      "paper": "Accountability in Time: Evolution and Expertise in Participatory Institutions",
+      "journal": "WP",
+      "year": 2025,
+      "accept_date": "2024-06-21",
+      "pub_date": "2025-07-07",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2022-07-07",
+      "total_days": 573,
+      "months_total": 18.8,
+      "n_journals": 3,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2022-07-07",
+          "fin_date": "2022-09-09",
+          "days": 64,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2022-12-16",
+          "fin_date": "2023-02-25",
+          "days": 71,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2023-04-10",
+          "fin_date": "2024-06-21",
+          "days": 438,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Soehl et al.",
+      "paper": "Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad",
+      "journal": "SMR",
+      "year": 2024,
+      "accept_date": "2024-06-11",
+      "pub_date": "2024-07-26",
+      "pub_date_final": "2026-02-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2023-01-23",
+      "total_days": 505,
+      "months_total": 16.6,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2023-01-23",
+          "fin_date": "2024-06-11",
+          "days": 505,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "Selective Bribery",
+      "journal": "CPS",
+      "year": 2024,
+      "accept_date": "2024-05-13",
+      "pub_date": "2024-08-16",
+      "pub_date_final": "2025-04-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2022-06-10",
+      "total_days": 645,
+      "months_total": 21.2,
+      "n_journals": 3,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2022-06-10",
+          "fin_date": "2022-08-15",
+          "days": 66,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2022-08-27",
+          "fin_date": "2022-12-12",
+          "days": 107,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2023-01-27",
+          "fin_date": "2024-05-13",
+          "days": 472,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party News Coverage with Application to an Emerging Democracy",
+      "journal": "SSCR",
+      "year": 2024,
+      "accept_date": "2024-03-29",
+      "pub_date": "2024-04-18",
+      "pub_date_final": "2024-12-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2018-06-21",
+      "total_days": 893,
+      "months_total": 29.3,
+      "n_journals": 5,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2018-06-21",
+          "fin_date": "2019-01-26",
+          "days": 219,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2019-07-09",
+          "fin_date": "2019-07-28",
+          "days": 19,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2019-09-04",
+          "fin_date": "2019-11-09",
+          "days": 66,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2020-06-09",
+          "fin_date": "2020-09-01",
+          "days": 84,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2022-11-10",
+          "fin_date": "2024-03-29",
+          "days": 505,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "Weaponizing post-election court challenges: Assessing losers’ motivations",
+      "journal": "ES",
+      "year": 2023,
+      "accept_date": "2023-08-24",
+      "pub_date": "2023-12-01",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2019-04-15",
+      "total_days": 351,
+      "months_total": 11.5,
+      "n_journals": 3,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2019-04-15",
+          "fin_date": "2019-07-29",
+          "days": 105,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2021-01-31",
+          "fin_date": "2021-02-08",
+          "days": 8,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2022-12-29",
+          "fin_date": "2023-08-24",
+          "days": 238,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al",
+      "paper": "Using Communications Technology to Promote Democratic Participation: Experimental Evidence from South Africa",
+      "journal": "EDCC",
+      "year": 2024,
+      "accept_date": "2022-11-13",
+      "pub_date": "2024-04-01",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2022-01-06",
+      "total_days": 297,
+      "months_total": 9.8,
+      "n_journals": 3,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2022-01-06",
+          "fin_date": "2022-01-12",
+          "days": 6,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2022-01-18",
+          "fin_date": "2022-04-24",
+          "days": 96,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2022-05-02",
+          "fin_date": "2022-11-13",
+          "days": 195,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & Beauvais",
+      "paper": "Explaining women's political underrepresentation in democracies with high levels of corruption",
+      "journal": "PSRM",
+      "year": 2022,
+      "accept_date": "2022-06-30",
+      "pub_date": "2022-10-07",
+      "pub_date_final": "2023-10-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2018-01-23",
+      "total_days": 956,
+      "months_total": 31.4,
+      "n_journals": 7,
+      "total_rr": 3,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2018-01-23",
+          "fin_date": "2018-09-07",
+          "days": 227,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2018-10-04",
+          "fin_date": "2018-12-03",
+          "days": 60,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2019-07-08",
+          "fin_date": "2019-10-07",
+          "days": 91,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2019-10-22",
+          "fin_date": "2019-12-19",
+          "days": 58,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2020-11-10",
+          "fin_date": "2021-02-07",
+          "days": 89,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2021-04-23",
+          "fin_date": "2021-04-28",
+          "days": 5,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2021-04-30",
+          "fin_date": "2022-06-30",
+          "days": 426,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence from Ukraine",
+      "journal": "Pol Psych",
+      "year": 2022,
+      "accept_date": "2022-02-09",
+      "pub_date": "2022-05-22",
+      "pub_date_final": "2023-02-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2021-07-07",
+      "total_days": 217,
+      "months_total": 7.1,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2021-07-07",
+          "fin_date": "2022-02-09",
+          "days": 217,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian Expatriates",
+      "journal": "JEPS",
+      "year": 2021,
+      "accept_date": "2021-07-01",
+      "pub_date": "2021-10-21",
+      "pub_date_final": "2023-01-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2020-08-27",
+      "total_days": 237,
+      "months_total": 7.8,
+      "n_journals": 3,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2020-08-27",
+          "fin_date": "2020-09-02",
+          "days": 6,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2020-09-08",
+          "fin_date": "2020-12-02",
+          "days": 85,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2021-02-05",
+          "fin_date": "2021-07-01",
+          "days": 146,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Ellington et al.",
+      "paper": "Measuring Human Rights Abuses from Access to Information Requests",
+      "journal": "JCR",
+      "year": 2021,
+      "accept_date": "2021-06-29",
+      "pub_date": "2021-09-29",
+      "pub_date_final": "2022-02-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2020-04-05",
+      "total_days": 450,
+      "months_total": 14.8,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2020-04-05",
+          "fin_date": "2021-06-29",
+          "days": 450,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & Garner",
+      "paper": "Is pro-Kremlin Disinformation Effective? Evidence from Ukraine",
+      "journal": "IJPP",
+      "year": 2021,
+      "accept_date": "2021-06-15",
+      "pub_date": "2021-11-01",
+      "pub_date_final": "2023-01-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2020-10-12",
+      "total_days": 246,
+      "months_total": 8.1,
+      "n_journals": 1,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2020-10-12",
+          "fin_date": "2021-06-15",
+          "days": 246,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "(title forthcoming)",
+      "journal": "PA",
+      "year": 2021,
+      "accept_date": "2021-01-22",
+      "pub_date": "2021-06-14",
+      "pub_date_final": "2022-10-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2020-07-31",
+      "total_days": 175,
+      "months_total": 5.7,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2020-07-31",
+          "fin_date": "2021-01-22",
+          "days": 175,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Berliner et al.",
+      "paper": "Media Attention and Bureacratic Responsiveness",
+      "journal": "JPART",
+      "year": 2021,
+      "accept_date": "2021-01-04",
+      "pub_date": "2021-02-05",
+      "pub_date_final": "2021-09-13",
+      "awaiting_issue": false,
+      "first_sub_date": "2020-04-13",
+      "total_days": 266,
+      "months_total": 8.7,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2020-04-13",
+          "fin_date": "2021-01-04",
+          "days": 266,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & Garner",
+      "paper": "Subgroup Differences in Implicit Associations and Explicit Attitudes during Wartime",
+      "journal": "ISQ",
+      "year": 2021,
+      "accept_date": "2020-12-03",
+      "pub_date": "2021-02-20",
+      "pub_date_final": "2021-06-08",
+      "awaiting_issue": false,
+      "first_sub_date": "2019-06-12",
+      "total_days": 468,
+      "months_total": 15.4,
+      "n_journals": 2,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2019-06-12",
+          "fin_date": "2019-07-16",
+          "days": 34,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2019-09-26",
+          "fin_date": "2020-12-03",
+          "days": 434,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Bridgman et al.",
+      "paper": "Unveiling: The Electoral Consequences",
+      "journal": "JOP",
+      "year": 2021,
+      "accept_date": "2020-05-23",
+      "pub_date": "2021-05-20",
+      "pub_date_final": "2021-07-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2019-05-23",
+      "total_days": 366,
+      "months_total": 12,
+      "n_journals": 1,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2019-05-23",
+          "fin_date": "2020-05-23",
+          "days": 366,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Berliner et al.",
+      "paper": "The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico",
+      "journal": "JOP",
+      "year": 2020,
+      "accept_date": "2019-05-20",
+      "pub_date": "2020-09-21",
+      "pub_date_final": "2021-01-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2018-05-11",
+      "total_days": 374,
+      "months_total": 12.3,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2018-05-11",
+          "fin_date": "2019-05-20",
+          "days": 374,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich",
+      "paper": "Can information campaigns impact preferences toward vote selling? Theory and evidence from Kenya",
+      "journal": "IPSR",
+      "year": 2019,
+      "accept_date": "2018-11-21",
+      "pub_date": "2019-06-12",
+      "pub_date_final": "2020-06-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2014-10-15",
+      "total_days": 614,
+      "months_total": 20.2,
+      "n_journals": 5,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2014-10-15",
+          "fin_date": "2014-12-09",
+          "days": 55,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2015-09-14",
+          "fin_date": "2015-12-14",
+          "days": 91,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2017-07-14",
+          "fin_date": "2017-09-25",
+          "days": 73,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2017-05-26",
+          "fin_date": "2017-06-04",
+          "days": 9,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2017-10-31",
+          "fin_date": "2018-11-21",
+          "days": 386,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & Garner",
+      "paper": "Interpersonal incomparability in citizens’ views of democracy: survey evidence from Ukraine",
+      "journal": "JEPOP",
+      "year": 2018,
+      "accept_date": "2018-10-26",
+      "pub_date": "2018-12-11",
+      "pub_date_final": "2020-04-02",
+      "awaiting_issue": false,
+      "first_sub_date": "2017-06-20",
+      "total_days": 430,
+      "months_total": 14.1,
+      "n_journals": 3,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2017-06-20",
+          "fin_date": "2017-10-16",
+          "days": 118,
+          "disposition": "reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2017-12-15",
+          "fin_date": "2017-12-17",
+          "days": 2,
+          "disposition": "desk_reject",
+          "accepting": false
+        },
+        {
+          "sub_date": "2017-12-20",
+          "fin_date": "2018-10-26",
+          "days": 310,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich et al.",
+      "paper": "The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries",
+      "journal": "Dev. Eng",
+      "year": 2018,
+      "accept_date": "2017-11-30",
+      "pub_date": "2018-01-01",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2017-06-16",
+      "total_days": 167,
+      "months_total": 5.5,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2017-06-16",
+          "fin_date": "2017-11-30",
+          "days": 167,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Erlich & Kerr",
+      "paper": "The Local Mwaninchi",
+      "journal": "JMAS",
+      "year": 2016,
+      "accept_date": "2016-03-16",
+      "pub_date": "2016-11-04",
+      "pub_date_final": "2016-12-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2015-08-28",
+      "total_days": 201,
+      "months_total": 6.6,
+      "n_journals": 1,
+      "total_rr": 1,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2015-08-28",
+          "fin_date": "2016-03-16",
+          "days": 201,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": true,
+      "ipa_date": "2015-05-08",
+      "authors": "Bush et al.",
+      "paper": "The Effects of Authoritarian Iconography An Experimental Test",
+      "journal": "CPS",
+      "year": 2016,
+      "accept_date": "2016-01-13",
+      "pub_date": "2016-07-09",
+      "pub_date_final": "2016-11-01",
+      "awaiting_issue": false,
+      "first_sub_date": "2014-11-17",
+      "total_days": 198,
+      "months_total": 6.5,
+      "n_journals": 1,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2014-11-17",
+          "fin_date": "2015-05-08",
+          "days": 172,
+          "disposition": "in_principle_accept",
+          "accepting": false
+        },
+        {
+          "sub_date": "2015-12-18",
+          "fin_date": "2016-01-13",
+          "days": 26,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    },
+    {
+      "registered_report": false,
+      "ipa_date": null,
+      "authors": "Berliner & Erlich",
+      "paper": "Competing for Transparency: Political Competition and Institutional Reform in Mexican States",
+      "journal": "APSR",
+      "year": 2015,
+      "accept_date": "2014-09-11",
+      "pub_date": "2015-03-03",
+      "pub_date_final": null,
+      "awaiting_issue": false,
+      "first_sub_date": "2014-01-15",
+      "total_days": 239,
+      "months_total": 7.9,
+      "n_journals": 1,
+      "total_rr": 2,
+      "rr_missing": false,
+      "timing_known": true,
+      "segments": [
+        {
+          "sub_date": "2014-01-15",
+          "fin_date": "2014-09-11",
+          "days": 239,
+          "disposition": "accept",
+          "accepting": true
+        }
+      ]
+    }
+  ],
+  "submission_counts": [
+    {
+      "n_journals": 1,
+      "n_papers": 17
+    },
+    {
+      "n_journals": 2,
+      "n_papers": 3
+    },
+    {
+      "n_journals": 3,
+      "n_papers": 6
+    },
+    {
+      "n_journals": 4,
+      "n_papers": 1
+    },
+    {
+      "n_journals": 5,
+      "n_papers": 2
+    },
+    {
+      "n_journals": 7,
+      "n_papers": 1
+    }
+  ]
+}
