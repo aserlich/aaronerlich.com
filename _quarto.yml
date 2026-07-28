@@ -1,6 +1,12 @@
 project:
   type: website
   output-dir: docs
+  resources:
+    # load-bearing files Quarto must re-emit into docs/ on every render, else a
+    # full render strips them: CNAME (custom domain) and .nojekyll (so GitHub Pages
+    # serves the underscore dir _data/, which the OJS charts fetch at runtime).
+    - CNAME
+    - ".nojekyll"
   render:
     - "*.qmd"
     - "resources/*.qmd"
