@@ -60,18 +60,9 @@ html`<div class="stat-tiles">
 
 ## The road to acceptance
 
-Each row is one paper. **Acceptance-date view** places every submission on a real calendar,
-so the empty stretches between submissions — when a paper was *not* under review — show as
-gaps in a faint through-line. After acceptance (●) comes the wait to **first online** (○,
-advance access) and then to the **version of record** in a journal issue (◉); for
-online-only journals those two coincide as a single ◉. **Total-time view** collapses the
-gaps to rank papers purely by time spent under review. Segment colour is the outcome of each
-submission; earlier journals are not named.
+Each row is one paper. **Acceptance-date view** places every submission on a real calendar, so the empty stretches between submissions — when a paper was *not* under review — show as gaps in a faint through-line. After acceptance (●) comes the wait to **first online** (○, advance access) and then to the **version of record** in a journal issue (◉); for online-only journals those two coincide as a single ◉. **Total-time view** collapses the gaps to rank papers purely by time spent under review. Segment colour is the outcome of each submission; earlier journals are not named.
 
-*Review time is measured to acceptance — a conditional acceptance counts as accepted, and
-for registered reports the clock stops at in-principle acceptance. The post-acceptance dots
-(first online, then the assigned issue) show production time; later production steps and
-post-acceptance replication are not tracked.*
+*Review time is measured to acceptance — a conditional acceptance counts as accepted, and for registered reports the clock stops at in-principle acceptance. The post-acceptance dots (first online, then the assigned issue) show production time; later production steps and post-acceptance replication are not tracked.*
 
 ```{=html}
 <div class="legend">
@@ -110,6 +101,12 @@ viewof win = Inputs.form({
   from: Inputs.range([minYear, maxYear], { step: 1, value: minYear, label: "Zoom (date view) — from" }),
   to: Inputs.range([minYear, maxYear], { step: 1, value: maxYear, label: "to" })
 })
+```
+
+```{ojs}
+//| echo: false
+// The zoom control only makes sense for the acceptance-date view — hide its whole cell in the total-time view.
+{ ((viewof win).closest(".cell") || (viewof win)).style.display = mode === "date" ? "" : "none"; }
 ```
 
 ```{ojs}
@@ -195,7 +192,7 @@ mode === "date" ? calendarChart(win) : durationChart()
 ```{ojs}
 //| echo: false
 mode === "time" && db.n - db.n_timed > 0
-  ? html`<p class="record-note">${db.n - db.n_timed} acceptance-only records (submission timing not yet logged) are omitted from this view; they appear as dots in the acceptance-date view.</p>`
+  ? html`<p class="record-note">${db.n - db.n_timed} manuscripts under review are not shown.</p>`
   : html``
 ```
 
@@ -220,5 +217,5 @@ Plot.plot({
 //| echo: false
 html`<p class="record-note">Accepted / published articles only. Generated ${db.generated}
 from a complete private log of every submission. Earlier (rejecting) journals are shown by
-outcome and timing but are not named. Some acceptance dates are placeholders pending exact dates.</p>`
+outcome and timing but are not named.</p>`
 ```

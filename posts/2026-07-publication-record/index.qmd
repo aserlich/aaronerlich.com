@@ -5,31 +5,17 @@ date: "2026-07-28"
 categories: [publishing, transparency, graduate students, data viz]
 ---
 
-I just added something to my website I've wanted to share for a while: an interactive
-[**Publication Record**](../../submissions.qmd) — every accepted paper, how long it spent
-under review, how many journals it passed through, and how long the *whole* road to
-publication really took.
+I just added something to my website I've wanted to share for a while: an interactive [**Publication Record**](../../submissions.qmd) — every accepted paper, how long it spent under review, how many journals it passed through, and how long the *whole* road to publication took.
 
-The inspiration is [Yusaku Horiuchi](https://www.linkedin.com/in/yusaku-horiuchi-197682232/),
-who has generously shared [a complete log of his own journal
-interactions](https://www.linkedin.com/posts/yusaku-horiuchi-197682232_based-on-a-complete-log-of-my-interactions-activity-7463660266237579264-k2BC)
-publicly. I wanted to build on that with one addition I think matters, especially for
-graduate students.
+The inspiration is [Yusaku Horiuchi](https://www.linkedin.com/in/yusaku-horiuchi-197682232/), who has generously shared [a complete log of his own journal interactions](https://www.linkedin.com/posts/yusaku-horiuchi-197682232_based-on-a-complete-log-of-my-interactions-activity-7463660266237579264-k2BC) publicly. I wanted to build on that with a few addition I think matter, especially for graduate students.
 
 ## The whole clock, not just the review clock
 
 **My chart shows the whole elapsed time — not just the months a paper was under review.**
 
-When we talk about how long publishing takes, we usually count the time a manuscript sits
-with reviewers. That badly understates it. A huge share of the calendar is the paper *not*
-under review at all: the months it sits on my desk while I revise, the gaps between one
-journal's rejection and the next submission, the wait from acceptance to the version of
-record appearing online. On the chart below, those stretches show up as **gaps in the
-faint through-line** — and for many papers they add up to more than the review time
-itself.
+When we talk about how long publishing takes, we usually count the time a manuscript sits with reviewers. That heuristic often massively understates the total time to publish a manuscript. A huge share of the calendar is the paper *not* under review at all.. First, there is the time a manuscript sits on my desk while I (and coauthors) revise an R&R. Second, revisions also often need to occur between one journal's rejection and the next updated submission, which can often take months. Third, there the wait from acceptance to the version of record appearing online and final in an issue — and the final print data is often the one that counts for merit and promotion. On the chart below, those stretches appear as **gaps in the faint through-line** — and for many papers they add up to more than the review time itself.
 
-Graduate students rarely get to see that hidden part of the process. Seeing it makes the
-long road feel less like a personal failing and more like the normal shape of the work.
+Graduate students rarely get to see that hidden part of the process. Seeing it makes the long road feel less like a personal failing and more like the normal shape of the work.
 
 ```{=html}
 <style>
@@ -137,8 +123,7 @@ journals those two coincide as a single ◉, and the gap from ● to ◉ is prod
 <a href="../../submissions.qmd">full interactive version</a> lets you zoom to any window.</p>
 ```
 
-And here is the same record ranked purely by **total time under review** — the gaps between
-journals collapsed away, so each bar is only the months a paper actually sat with reviewers:
+And here is the same record ranked purely by **total time under review** — the gaps between journals collapsed away, so each bar is only the months a paper actually sat with reviewers:
 
 ```{ojs}
 //| echo: false
@@ -180,21 +165,11 @@ appear here — they show as dots in the calendar above.</p>
 
 ## Registered reports bend the clock
 
-A timeline like this also has to reckon with **registered reports**, where the clock runs
-differently. In a registered report the study *design* is reviewed before any data are
-collected: the journal grants an in-principle acceptance — the ◆ on my chart — on the
-strength of the protocol, and the results-stage review comes later. So "time under review"
-and even "acceptance" mean something different; a paper can be accepted in principle before
-I've even run the study. Any honest picture of how long publishing takes has to treat that
-two-stage path as its own kind of timeline rather than force it into the same bar as a
-standard submission.
+Particularly though not exclusively for scholars who do experimental work, a timeline like this also has to reckon with **registered reports**, where the clock runs differently. In a registered report the study *design* is reviewed before any data are collected: the journal grants an in-principle acceptance — the ◆ on my chart — on the strength of the protocol, and the results-stage review comes later. So "time under review" and even "acceptance" mean something different; a paper can be accepted in principle before we run the study. Any honest picture of how long publishing takes has to treat that two-stage path as its own kind of timeline rather than force it into the same bar as a standard submission. As my graphs show, I believe a major barrier for junior scholars undertaking registered reports is the length of time the two stages take.
 
 ## I don't always aim for the top-tier journal
 
-There's a second thing the data shows, and I'll be honest about it: **I don't always send a
-paper to the top-tier journal first.** You can see it in the chart below — plenty of my
-papers landed on the first or second try, which usually means I wasn't swinging for the
-fences.
+There's a third thing the data shows, and I'll be honest about it: **I don't always send a paper to the top-tier journal first.** You can see it in the chart below — plenty of my papers landed on the first or second try, which means I wasn't always trying to land a top three publication.
 
 ```{ojs}
 //| echo: false
@@ -211,26 +186,16 @@ Plot.plot({
 })
 ```
 
-In some cases I probably should have aimed higher. But part of it is deliberate. I run a
-**differentiated strategy** depending on the kind of paper: some work is a better fit for a
-specialized or methods outlet than for a flagship general-interest journal, and the goal
-isn't always the most prestigious placement — sometimes it's the right readership, a faster
-timeline, or a venue that takes the method seriously. My record makes that strategy visible.
+In some cases I probably should have aimed higher. But part of it is deliberate. I run a **differentiated strategy** depending on the kind of paper: some work is a better fit for a specialized or methods outlet than for a flagship general-interest journal, and the goal isn't always the most prestigious placement — sometimes it's the right readership, a faster timeline, or a venue that takes the method seriously. My record makes that strategy visible.
 
-Other scholars make very different choices, and I think there's real value in students
-seeing that there's no single "correct" path through publishing. The people who only ever
-show you their *CV* show you the destinations. What I'm trying to show is the route.
+Other scholars make very different choices, and I think there's real value in students seeing that there's no single "correct" path through publishing. The people who only ever show you their *CV* show you the destinations. What I'm trying to show is the route.
 
 ## Why share it
 
-None of this is a brag or a complaint — it's just the actual data, shared in the hope that
-it's useful to people earlier in the pipeline than I am. It's built with R and Quarto from a
-tidy log of every submission I've ever made; happy to talk shop about the setup.
+None of this is a brag or a complaint, rather I am sharing it in the hope that it's useful to people earlier in the pipeline than I am. It's built with R and Quarto from a tidy log of every submission I've ever made; happy to talk shop about the setup.
 
-And a caveat about the future: AI may change all of this — how fast we write, review, and
-publish — quite quickly. Whether it actually does remains to be seen.
+And a caveat about the future: AI may change all of this — how fast we write, review, and publish — quite quickly. Whether it actually does remains to be seen.
 
-**Comments welcome** — I'd genuinely like to hear how other people think about timing and
-journal strategy, so reply on LinkedIn or reach out directly.
+**Comments welcome** — I'd genuinely like to hear how other people think about timing and journal strategy, so reply on LinkedIn or reach out directly.
 
 [**→ Explore the full interactive Publication Record**](../../submissions.qmd)
