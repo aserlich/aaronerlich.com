@@ -230,7 +230,7 @@ format:
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Stefano G. Dantas, Benjamin E. Bagozzi, Daniel Berliner, and Brian Palmer-Rubin)</span>
 </li>
 <li class="cv-pub" id="pub-berlinerPoliticalLogicGovernment2021">
-<a class="cv-pub-title" href="https://www.journals.uchicago.edu/doi/10.1086/709148">&ldquo;The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico.&rdquo;</a>
+<a class="cv-pub-title" href="https://doi.org/10.1086/709148">&ldquo;The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico.&rdquo;</a>
  <span class="cv-pub-year">2021.</span>
  <em class="cv-pub-venue">The Journal of Politics</em>
  <span class="cv-pub-vol">83(1)</span>
@@ -386,6 +386,11 @@ format:
 </ul>
 <h2><span data-i18n="section_headers.blogs">Blogs and Popular Press</span></h2>
 <ul class="cv-pub-list cv-pub-list--dash">
+<li class="cv-pub" id="pub-erlichCoverageCandour2026">
+<a class="cv-pub-title" href="https://discuss-data.net/cs/eescca/section/blog/coverage-or-candour/">&ldquo;Coverage or Candour? Survey-Mode Trade-offs for Studying Wartime Ukraine.&rdquo;</a>
+ <span class="cv-pub-year">2026.</span>
+ <em class="cv-pub-venue">Discuss Data</em>
+</li>
 <li class="cv-pub" id="pub-erlichCriticalThinkingProtects2022">
 <a class="cv-pub-title" href="https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation">&ldquo;Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for Personality and Social Psychology.&rdquo;</a>
  <span class="cv-pub-year">2022.</span>

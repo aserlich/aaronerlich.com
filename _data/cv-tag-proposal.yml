@@ -14,6 +14,15 @@ sections:
     match_zotero_title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
     match_score: 100
   blog:
+  - match_citekey: erlichCoverageCandour2026
+    latex_title: 'Coverage or Candour? Survey-Mode Trade-offs for Studying Wartime Ukraine'
+    proposed_tags:
+    - cv:include
+    - cv:section/blog
+    latex_url: https://discuss-data.net/cs/eescca/section/blog/coverage-or-candour/
+    latex_year: 2026
+    match_zotero_title: 'Coverage or Candour? Survey-Mode Trade-offs for Studying Wartime Ukraine'
+    match_score: 100
   - match_citekey: erlichGetCredibleModest2017
     latex_title: Get credible! …Or a modest proposal to implement pre-registration in think tank research.
     proposed_tags:
