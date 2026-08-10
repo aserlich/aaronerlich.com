@@ -145,14 +145,19 @@ I should say plainly that I did not write most of this code. The analysis, the c
 package were built with [Claude Code](https://claude.com/claude-code), with me making the calls that
 actually mattered: which journals belong in which group, that year zero should be first-published-
 online rather than the print date, that the comparison had to be anonymised, and which claims were
-strong enough to keep. Several of the findings above only exist because the model pushed back on
-what I asked for — the "my median is low because my papers are new" explanation was mine, and it was
-wrong; the data said so and I had to drop it.
+strong enough to keep. Several of the findings above exist because the model pushed back on what I
+asked for — the "my median is low because my papers are just new" explanation was mine, and it was
+wrong; the data said so, and the claim had to go.
 
-That division of labour feels worth naming, because I think it is going to be common. The
-bottleneck in this project was never writing R. It was knowing which reference population makes a
-journal tier meaningful, and noticing when a number was measuring something other than what it
-appeared to.
+I want to be precise about what that changed, because the usual framing is wrong. I could have
+written all of this. Any of us could have. What I did not have was three uninterrupted days to write
+it, and that is the actual constraint on most of the work academics would like to do but never do.
+The scarce input was never the R. It was the time to find out that ranking journals against a
+name-search of your field puts 27 of your 35 papers in the "top decile", and then to find a
+reference population that behaves.
+
+That is the shift worth noticing. Not that the analysis became possible, but that it became cheap
+enough to be worth doing on a Sunday for a blog post.
 
 ### Tell me what is wrong with it
 
