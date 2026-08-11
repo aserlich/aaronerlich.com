@@ -175,11 +175,21 @@ ui <- page_sidebar(
         "OpenAlex reports fewer citations than Google Scholar but ranks papers similarly.")),
   uiOutput("msg"),
   navset_card_tab(
-    nav_panel("Aligned on publication", plotOutput("p2", height = "520px"),
-      helpText("Every paper restarted at its own year zero. x < 0 means it was cited as a preprint.")),
-    nav_panel("The arc", plotOutput("p3", height = "520px"),
+    nav_panel("Aligned on publication",
+      plotOutput("p2", height = "520px",
+                 hover = hoverOpts("h2", delay = 80, delayType = "debounce")),
+      uiOutput("hov2"),
+      helpText("Every paper restarted at its own year zero. x < 0 means it was cited as a preprint. ",
+               "Hover a line to see which paper it is.")),
+    nav_panel("The arc",
+      plotOutput("p3", height = "520px",
+                 hover = hoverOpts("h3", delay = 80, delayType = "debounce")),
+      uiOutput("hov3"),
       helpText("Citations per year, not cumulative — the only view that shows when a paper peaked.")),
-    nav_panel("Calendar time", plotOutput("p1", height = "520px"),
+    nav_panel("Calendar time",
+      plotOutput("p1", height = "520px",
+                 hover = hoverOpts("h1", delay = 80, delayType = "debounce")),
+      uiOutput("hov1"),
       helpText("Dominated by age: older papers have had longer to accumulate."))))
 
 server <- function(input, output, session) {
@@ -237,6 +247,38 @@ server <- function(input, output, session) {
   })
 
   facet_if <- function(s) if (n_distinct(s$tier) > 1) facet_wrap(~tier, ncol = 2) else NULL
+
+  # Hover readout. nearPoints() handles the facets as long as the panel variable
+  # is a column of the data, which `tier` is. Matching on the plotted points means
+  # a hover anywhere along a line finds the year you are actually over, so the
+  # readout can report the value at that point rather than just the paper.
+  hover_card <- function(hv, df, xv, yv, valfmt) {
+    if (is.null(hv)) return(NULL)
+    np <- nearPoints(df, hv, xvar = xv, yvar = yv, threshold = 30, maxpoints = 1)
+    if (!nrow(np)) return(
+      div(class = "text-muted small", style = "min-height:3.2em;padding:.4rem .2rem;",
+          "Hover a line to identify the paper."))
+    div(class = "small", style = "min-height:3.2em;padding:.4rem .2rem;border-left:3px solid #2a78d6;padding-left:.6rem;",
+        tags$b(np$title[1]),
+        tags$br(),
+        sprintf("%s · published %d · %s",
+                np$venue[1] %||% "venue unknown", np$pub_year[1], valfmt(np)))
+  }
+
+  hov_df <- reactive(req(rv$s))
+
+  output$hov1 <- renderUI(hover_card(
+    input$h1, filter(hov_df(), !partial), "year", "cum_cites",
+    function(p) sprintf("%d citations by %d", p$cum_cites[1], p$year[1])))
+
+  output$hov2 <- renderUI(hover_card(
+    input$h2, filter(hov_df(), !partial), "years_since_pub", "cum_cites",
+    function(p) sprintf("%d citations %d years after publication",
+                        p$cum_cites[1], p$years_since_pub[1])))
+
+  output$hov3 <- renderUI(hover_card(
+    input$h3, filter(hov_df(), !partial), "years_since_pub", "cites",
+    function(p) sprintf("%d citations in year %d", p$cites[1], p$years_since_pub[1])))
 
   output$p1 <- renderPlot({
     s <- req(rv$s); L <- layers_of(s, year)
