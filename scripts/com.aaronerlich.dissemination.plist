@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+  "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.aaronerlich.dissemination</string>
+
+  <!--
+    Drives the publication/blog/tool dissemination queue every 15 minutes:
+      1. scans for new announceable things (at most once a day — guarded by
+         meta.last_scan, so the 3 MB Zotero export isn't re-parsed 96×/day)
+      2. fires any scheduled round whose post_at has passed: Bluesky posts
+         automatically, LinkedIn copy goes to the clipboard + a notification
+
+    Nothing is ever posted that wasn't explicitly approved first — `scan` only
+    ever appends status: new rows, and `run` only fires rounds already marked
+    scheduled. Secrets are NOT injected here; the script reads them from
+    ~/.config/bluesky/credentials.env, matching the house convention.
+
+    15 minutes is the scheduling granularity: a post set for 09:30 goes out
+    between 09:30 and 09:45. Note launchd does not wake a sleeping Mac for a
+    StartInterval job — with the laptop shut, a due post fires on next wake.
+
+    Logs to ~/Library/Caches/dissemination.log.
+
+    Install (one-time):
+      cp ~/Dropbox/admin_projects/aaronerlich.com/scripts/com.aaronerlich.dissemination.plist \
+         ~/Library/LaunchAgents/
+      launchctl load ~/Library/LaunchAgents/com.aaronerlich.dissemination.plist
+
+    Remove:
+      launchctl unload ~/Library/LaunchAgents/com.aaronerlich.dissemination.plist
+      rm ~/Library/LaunchAgents/com.aaronerlich.dissemination.plist
+
+    Verify it's loaded (second column is the last exit status):
+      launchctl list | grep dissemination
+
+    Watch the log:
+      tail -f ~/Library/Caches/dissemination.log
+  -->
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/local/bin/python3</string>
+    <string>/Users/aaronerlich/Dropbox/admin_projects/aaronerlich.com/scripts/disseminate.py</string>
+    <string>run</string>
+    <string>--once</string>
+  </array>
+
+  <key>StartInterval</key>
+  <integer>900</integer>
+
+  <!-- Run at login so anything that came due while the machine was off fires
+       promptly rather than waiting out a full interval. -->
+  <key>RunAtLoad</key>
+  <true/>
+
+  <!-- launchd's own stdout/stderr (interpreter-level failures); the script
+       writes its own timestamped log to ~/Library/Caches/dissemination.log. -->
+  <key>StandardOutPath</key>
+  <string>/Users/aaronerlich/Library/Caches/dissemination.launchd.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/aaronerlich/Library/Caches/dissemination.launchd.log</string>
+
+  <key>WorkingDirectory</key>
+  <string>/Users/aaronerlich/Dropbox/admin_projects/aaronerlich.com</string>
+
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/usr/local/bin:/usr/bin:/bin:/opt/homebrew/bin</string>
+    <key>HOME</key>
+    <string>/Users/aaronerlich</string>
+  </dict>
+
+  <!-- Scheduled, not persistent. launchd reschedules via StartInterval. -->
+  <key>KeepAlive</key>
+  <false/>
+</dict>
+</plist>

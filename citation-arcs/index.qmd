@@ -1,6 +1,6 @@
 ---
 title: "Citation Arcs"
-description-meta: "Draw three views of any researcher's citation record: cumulative in calendar time, aligned on publication, and the per-year arc. Runs entirely in your browser using OpenAlex."
+description: "Draw three views of any researcher's citation record: cumulative in calendar time, aligned on publication, and the per-year arc. Runs entirely in your browser using OpenAlex."
 pagetitle: "Citation Arcs"
 toc: false
 page-layout: full

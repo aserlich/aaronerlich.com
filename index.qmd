@@ -10,6 +10,7 @@ body-classes: about-page
 <a href="https://orcid.org/0000-0001-6571-9081" title="ORCID" aria-label="ORCID" rel="me noopener" target="_blank"><i class="ai ai-orcid"></i></a>
 <a href="https://scholar.google.ca/citations?user=h8n98PQAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="me noopener" target="_blank"><i class="ai ai-google-scholar"></i></a>
 <a href="https://bsky.app/profile/aaronerlich.bsky.social" title="Bluesky" aria-label="Bluesky" rel="me noopener" target="_blank"><i class="bi bi-bluesky"></i></a>
+<a href="https://www.linkedin.com/in/aaron-erlich-4435312/" title="LinkedIn" aria-label="LinkedIn" rel="me noopener" target="_blank"><i class="bi bi-linkedin"></i></a>
 <a href="https://osf.io/25gep/" title="OSF" aria-label="OSF" rel="me noopener" target="_blank"><i class="ai ai-osf"></i></a>
 </div>
 </div>

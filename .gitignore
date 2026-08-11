@@ -22,7 +22,3 @@ secret*
 
 # Claude Code local project settings
 .claude/
-
-# Draft post — rendered locally but not published until it is ready.
-# Remove this line and `draft: true` in the qmd to publish.
-docs/posts/2026-08-citation-arcs/

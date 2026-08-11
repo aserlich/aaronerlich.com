@@ -1,6 +1,6 @@
 ---
 title: "What it actually takes to publish a paper"
-description-meta: "I put my entire journal publication record online — and what it shows about the hidden time in publishing, and about aiming (or not) for the top-tier journal."
+description: "I put my entire journal publication record online — and what it shows about the hidden time in publishing, and about aiming (or not) for the top-tier journal."
 date: "2026-07-28"
 categories: [publishing, transparency, graduate students, data viz]
 ---

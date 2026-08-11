@@ -15,6 +15,14 @@ project:
 
 website:
   title: "Aaron Erlich"
+  # Load-bearing for dissemination: Quarto only emits og:/twitter: card tags and
+  # only generates the blog RSS feed (docs/blog.xml, from `feed: true` in blog.qmd)
+  # when site-url is set. Bluesky and LinkedIn build their link preview cards from
+  # those tags, so removing this silently degrades every shared link to a bare URL.
+  site-url: https://aaronerlich.com
+  description: "Aaron Erlich — political science, post-Soviet politics, survey methodology."
+  open-graph: true
+  twitter-card: true
   # Disabled — the language toggle lives at top-right and overlaps the
   # default search box. Site has few enough pages that the navbar
   # suffices; search is cruft.

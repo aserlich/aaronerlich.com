@@ -1,6 +1,6 @@
 ---
 title: "Area proportional to population maps"
-description-meta: "A density-equalizing cartogram of Kenya's counties, with each county's area proportional to its voting-age population."
+description: "A density-equalizing cartogram of Kenya's counties, with each county's area proportional to its voting-age population."
 date: "2014-12-07"
 categories: [maps, R, data viz, Kenya]
 image: kenya-cartogram.png

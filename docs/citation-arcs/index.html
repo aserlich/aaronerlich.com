@@ -97,6 +97,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css">
+<meta property="og:title" content="Citation Arcs">
+<meta property="og:description" content="Draw three views of any researcher’s citation record: cumulative in calendar time, aligned on publication, and the per-year arc. Runs entirely in your browser using OpenAlex.">
+<meta property="og:site_name" content="Aaron Erlich">
+<meta name="twitter:title" content="Citation Arcs">
+<meta name="twitter:description" content="Draw three views of any researcher’s citation record: cumulative in calendar time, aligned on publication, and the per-year arc. Runs entirely in your browser using OpenAlex.">
+<meta name="twitter:card" content="summary">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -163,6 +169,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h1 class="title">Citation Arcs</h1>
 </div>
 
+<div>
+  <div class="description">
+    Draw three views of any researcher’s citation record: cumulative in calendar time, aligned on publication, and the per-year arc. Runs entirely in your browser using OpenAlex.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta column-page">
@@ -774,7 +785,7 @@ shinyApp(ui, server)
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/aaronerlich\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

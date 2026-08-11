@@ -59,6 +59,20 @@ ul.task-list li input[type="checkbox"] {
 
 <link rel="stylesheet" href="../../styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css">
+<meta property="og:title" content="Area proportional to population maps – Aaron Erlich">
+<meta property="og:description" content="A density-equalizing cartogram of Kenya’s counties, with each county’s area proportional to its voting-age population.">
+<meta property="og:image" content="https://aaronerlich.com/posts/2014-area-proportional-maps/kenya-cartogram.png">
+<meta property="og:site_name" content="Aaron Erlich">
+<meta property="og:image:height" content="1240">
+<meta property="og:image:width" content="1755">
+<meta property="og:image:alt" content="A cartogram of Kenya with each county distorted so its area is proportional to its voting-age population.">
+<meta name="twitter:title" content="Area proportional to population maps – Aaron Erlich">
+<meta name="twitter:description" content="A density-equalizing cartogram of Kenya’s counties, with each county’s area proportional to its voting-age population.">
+<meta name="twitter:image" content="https://aaronerlich.com/posts/2014-area-proportional-maps/kenya-cartogram.png">
+<meta name="twitter:image-height" content="1240">
+<meta name="twitter:image-width" content="1755">
+<meta name="twitter:image:alt" content="A cartogram of Kenya with each county distorted so its area is proportional to its voting-age population.">
+<meta name="twitter:card" content="summary_large_image">
 </head>
 
 <body class="nav-fixed blog-post fullcontent quarto-light">
@@ -131,6 +145,11 @@ ul.task-list li input[type="checkbox"] {
   </div>
   </div>
 
+<div>
+  <div class="description">
+    A density-equalizing cartogram of Kenya’s counties, with each county’s area proportional to its voting-age population.
+  </div>
+</div>
 
 
 <div class="quarto-title-meta">
@@ -361,7 +380,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/aaronerlich\.com");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }

@@ -157,6 +157,41 @@ Lab alumni in `_data/lab.yml` and political-science mentees in `_data/cv.yml > m
 
 The Flask app **automatically bumps `meta.last_updated.en` to today's date** on every save to `cv.yml` (via `dump_yaml_with_header`).
 
+## Dissemination pipeline (Bluesky + LinkedIn)
+
+`_data/dissemination.yml` is the queue *and* the permanent record of what was announced where. `scripts/disseminate.py` drives it; `scripts/bluesky.py` is a stdlib-only AT Protocol client (no `atproto` dependency — `urllib`, like `sync-letter-tokens-to-kv.py`).
+
+**Nothing reaches the public without an explicit `approve`.** `scan` only ever appends `status: new` rows, so it is safe to run unattended.
+
+```bash
+python3 scripts/disseminate.py scan            # detect new announceable things
+python3 scripts/disseminate.py list --status new
+python3 scripts/disseminate.py draft <id>      # [w] $EDITOR  [c] ask Claude  [s] skip
+python3 scripts/disseminate.py approve <id>
+python3 scripts/disseminate.py schedule --all-approved --starting "2026-08-13 09:30" --every 2d --weekdays-only
+python3 scripts/disseminate.py queue           # the rollout, in time order
+python3 scripts/disseminate.py post <id>       # or let the launchd job fire it
+python3 scripts/disseminate.py mark-posted <id> --linkedin <url>
+```
+
+**Claude does the drafting — there is no API call in this pipeline.** The `[c]` branch of `draft` is a pointer: ask Claude in-session ("draft the announcement for `tool-citation-arcs`") and it composes the copy with full repo context and saves it via `disseminate.py set-draft <id> --bluesky … --linkedin …`. Adding an Anthropic API call here would be strictly worse — a cold call has none of the repo context.
+
+**Eight kinds**, each with its own detection source: `publication` (Zotero via `cv-tag-proposal.yml`), `blog` (non-draft `posts/*/index.qmd`), `media` and `award` (the `tex.cv-*` lines already parsed into `latex_annotations`), `grant` and `talk` (`cv.yml`), `tool` (`cv.yml > software`, plus manual), `other` (manual only). Past-dated talks seed as `archived`, never queued.
+
+**Rounds.** Each item keeps a list of announcement rounds (`drafted → approved → scheduled → posted`), so `reannounce <id>` resurfaces something months later without destroying the record of round 1.
+
+**LinkedIn is deliberately manual** — its API needs a Developer app, OAuth consent, and a token refreshed every ~60 days. `post` puts the LinkedIn copy on the clipboard (`pbcopy`) and raises a macOS notification; you paste, then `mark-posted --linkedin <url>`. Bluesky posts automatically via an app password.
+
+**The one non-obvious correctness trap:** Bluesky does not auto-link URLs — each needs a *facet* whose `byteStart`/`byteEnd` are offsets into the **UTF-8 encoding**, not character indices. Any non-ASCII character before a link (an em-dash, "Côte d'Ivoire", Cyrillic) shifts them. `bluesky.link_facets()` asserts the slice round-trips; `python3 scripts/bluesky.py` runs that check offline.
+
+**Site coupling:** `_quarto.yml`'s `site-url` + `open-graph` are load-bearing here — without them Quarto emits no `og:` tags and no `docs/blog.xml`, and every shared link degrades to a bare URL. Post frontmatter must use `description:` (feeds og:description, the listing card, and the RSS feed), **not** `description-meta:` (feeds none of them).
+
+**Credentials:** `~/.config/bluesky/credentials.env` (chmod 600) with `BLUESKY_HANDLE` / `BLUESKY_APP_PASSWORD` — an app password from bsky.app → Settings → Privacy and Security → App Passwords, never the account password. Env vars override the file.
+
+**Background job:** `scripts/com.aaronerlich.dissemination.plist` runs `disseminate.py run --once` every 15 minutes — scans at most once a day (guarded by `meta.last_scan`) and fires due scheduled rounds. Secrets are not in the plist. launchd does not wake a sleeping Mac, so a post due while the laptop is shut fires on next wake.
+
+> ⚠️ **This repo is public — commit `dissemination.yml` *after* posting, not while drafts are pending.** Unposted copy becomes visible on GitHub the moment you commit it, and a killed draft then lives in git history forever. (It is not served on the site: Quarto only copies `_data` files a page actually references.)
+
 ## Commit and push
 
 All changes commit locally in the working tree; `git push` goes straight to `main`, which triggers GitHub Pages deploy from `docs/`. **The `docs/` directory is committed** (Quarto writes rendered HTML there; GH Pages serves from `/docs`). Always include the rendered `docs/*.html` files in commits that change content, otherwise the live site gets out of sync with the source.
