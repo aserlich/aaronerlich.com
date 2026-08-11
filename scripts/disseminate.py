@@ -638,13 +638,28 @@ def cmd_draft(args) -> int:
             print(f"  Bluesky copy is {n} graphemes (limit {BLUESKY_LIMIT}) — not saved.",
                   file=sys.stderr)
             continue
-        _apply_drafts(item, rnd, drafts)
-        _print_drafts(item, rnd)
+        if args.dry_run:
+            _apply_drafts(item, rnd, drafts)
+            _print_drafts(item, rnd)
+            continue
+
+        # Re-read the store before writing. An editor session can sit open for
+        # a long time, and anything else that touched the store meanwhile — a
+        # scan, another draft, the launchd runner — would be silently reverted
+        # if we wrote back the copy we loaded before the editor opened.
+        fresh = load_store()
+        fresh_item = find(fresh, item["id"])
+        if fresh_item is None:                       # vanished mid-edit
+            fresh["items"].append(item)
+            fresh_item = item
+        fresh_rnd = _round_for_drafting(fresh_item)
+        _apply_drafts(fresh_item, fresh_rnd, drafts)
+        save_store(fresh)
+        _print_drafts(fresh_item, fresh_rnd)
+        store = fresh                                # keep iterating on fresh state
 
     if args.dry_run:
         print("[dry-run] not saved")
-        return 0
-    save_store(store)
     return 0
 
 
