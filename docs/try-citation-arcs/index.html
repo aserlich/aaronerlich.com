@@ -422,20 +422,25 @@ ui &lt;- page_sidebar(
   uiOutput("msg"),
   navset_card_tab(
     nav_panel("Aligned on publication",
-      plotOutput("p2", height = "520px",
-                 hover = hoverOpts("h2", delay = 80, delayType = "debounce")),
-      uiOutput("hov2"),
+      # position:relative anchors the absolutely-positioned tooltip to the plot,
+      # so it floats over the chart at the cursor instead of pushing layout below.
+      div(style = "position:relative;",
+          plotOutput("p2", height = "520px",
+                     hover = hoverOpts("h2", delay = 60, delayType = "debounce")),
+          uiOutput("tip2")),
       helpText("Every paper restarted at its own year zero. x &lt; 0 means it was cited as a preprint. ",
                "Hover a line to see which paper it is.")),
     nav_panel("The arc",
-      plotOutput("p3", height = "520px",
-                 hover = hoverOpts("h3", delay = 80, delayType = "debounce")),
-      uiOutput("hov3"),
+      div(style = "position:relative;",
+          plotOutput("p3", height = "520px",
+                     hover = hoverOpts("h3", delay = 60, delayType = "debounce")),
+          uiOutput("tip3")),
       helpText("Citations per year, not cumulative — the only view that shows when a paper peaked.")),
     nav_panel("Calendar time",
-      plotOutput("p1", height = "520px",
-                 hover = hoverOpts("h1", delay = 80, delayType = "debounce")),
-      uiOutput("hov1"),
+      div(style = "position:relative;",
+          plotOutput("p1", height = "520px",
+                     hover = hoverOpts("h1", delay = 60, delayType = "debounce")),
+          uiOutput("tip1")),
       helpText("Dominated by age: older papers have had longer to accumulate."))))
 
 server &lt;- function(input, output, session) {
@@ -499,36 +504,54 @@ server &lt;- function(input, output, session) {
 
   facet_if &lt;- function(s) if (n_distinct(s$tier) &gt; 1) facet_wrap(~tier, ncol = 2) else NULL
 
-  # Hover readout. nearPoints() handles the facets as long as the panel variable
-  # is a column of the data, which `tier` is. Matching on the plotted points means
-  # a hover anywhere along a line finds the year you are actually over, so the
-  # readout can report the value at that point rather than just the paper.
-  hover_card &lt;- function(hv, df, xv, yv, valfmt) {
-    if (is.null(hv)) return(NULL)
+  # Tooltip that floats over the plot at the cursor. Returns NULL when nothing is
+  # under the pointer, so it occupies no layout and reserves no blank space.
+  # nearPoints() resolves the facet itself, since `tier` is a column of the data.
+  hover_tip &lt;- function(hv, df, xv, yv, valfmt) {
+    if (is.null(hv) || is.null(hv$coords_css)) return(NULL)
     np &lt;- nearPoints(df, hv, xvar = xv, yvar = yv, threshold = 30, maxpoints = 1)
-    if (!nrow(np)) return(
-      div(class = "text-muted small", style = "min-height:3.2em;padding:.4rem .2rem;",
-          "Hover a line to identify the paper."))
-    div(class = "small", style = "min-height:3.2em;padding:.4rem .2rem;border-left:3px solid #2a78d6;padding-left:.6rem;",
+    if (!nrow(np)) return(NULL)
+
+    # Flip to the left of the cursor near the right edge, and upward near the
+    # bottom, so the tooltip never runs off the plot.
+    ratio &lt;- hv$img_css_ratio$x %||% 1
+    w_css &lt;- (hv$range$right %||% 0) / ratio
+    h_css &lt;- (hv$range$bottom %||% 0) / (hv$img_css_ratio$y %||% 1)
+    flip_x &lt;- w_css &gt; 0 &amp;&amp; hv$coords_css$x &gt; w_css * 0.62
+    flip_y &lt;- h_css &gt; 0 &amp;&amp; hv$coords_css$y &gt; h_css * 0.80
+
+    pos &lt;- paste0(
+      if (flip_x) sprintf("right:%.0fpx;", w_css - hv$coords_css$x + 14)
+      else        sprintf("left:%.0fpx;",  hv$coords_css$x + 14),
+      if (flip_y) sprintf("bottom:%.0fpx;", h_css - hv$coords_css$y + 14)
+      else        sprintf("top:%.0fpx;",    hv$coords_css$y + 14))
+
+    div(style = paste0(
+          "position:absolute; z-index:200; pointer-events:none; ", pos,
+          "max-width:24rem; background:rgba(255,255,255,.97); ",
+          "border:1px solid #c3c2b7; border-left:3px solid #2a78d6; border-radius:4px; ",
+          "padding:.4rem .6rem; font-size:.78rem; line-height:1.35; ",
+          "box-shadow:0 2px 8px rgba(0,0,0,.18);"),
         tags$b(np$title[1]),
         tags$br(),
-        sprintf("%s · published %d · %s",
-                np$venue[1] %||% "venue unknown", np$pub_year[1], valfmt(np)))
+        tags$span(style = "color:#52514e;",
+                  sprintf("%s · %d · %s",
+                          np$venue[1] %||% "venue unknown", np$pub_year[1], valfmt(np))))
   }
 
-  hov_df &lt;- reactive(req(rv$s))
+  hov_df &lt;- reactive(filter(req(rv$s), !partial))
 
-  output$hov1 &lt;- renderUI(hover_card(
-    input$h1, filter(hov_df(), !partial), "year", "cum_cites",
+  output$tip1 &lt;- renderUI(hover_tip(
+    input$h1, hov_df(), "year", "cum_cites",
     function(p) sprintf("%d citations by %d", p$cum_cites[1], p$year[1])))
 
-  output$hov2 &lt;- renderUI(hover_card(
-    input$h2, filter(hov_df(), !partial), "years_since_pub", "cum_cites",
-    function(p) sprintf("%d citations %d years after publication",
+  output$tip2 &lt;- renderUI(hover_tip(
+    input$h2, hov_df(), "years_since_pub", "cum_cites",
+    function(p) sprintf("%d citations %d yrs after publication",
                         p$cum_cites[1], p$years_since_pub[1])))
 
-  output$hov3 &lt;- renderUI(hover_card(
-    input$h3, filter(hov_df(), !partial), "years_since_pub", "cites",
+  output$tip3 &lt;- renderUI(hover_tip(
+    input$h3, hov_df(), "years_since_pub", "cites",
     function(p) sprintf("%d citations in year %d", p$cites[1], p$years_since_pub[1])))
 
   output$p1 &lt;- renderPlot({
