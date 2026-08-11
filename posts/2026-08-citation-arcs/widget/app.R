@@ -31,13 +31,26 @@ oa <- function(path, query = list()) {
 }
 oid <- function(x) if (is.null(x)) NA_character_ else sub("^https://openalex.org/", "", x)
 
+# Returns list(id, name) on success, "malformed" / "notfound" / "unreachable" on
+# failure — the caller needs to tell them apart. Reporting a network blip as "no
+# such ORCID" sends people off checking an identifier that was fine.
+#
+# Uses the filter form rather than authors/https://orcid.org/{id}: that variant
+# embeds a full URL inside the path, and intermediaries that normalise "//" break
+# it. The filter form has no such trap.
 resolve_orcid <- function(orcid) {
   orcid <- sub("^https?://orcid\\.org/", "", trimws(orcid))
-  if (!grepl("^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$", orcid)) return(NULL)
-  a <- tryCatch(jsonlite::fromJSON(
-    sprintf("https://api.openalex.org/authors/https://orcid.org/%s?mailto=%s", orcid, MAILTO),
-    simplifyVector = FALSE), error = function(e) NULL)
-  if (is.null(a$id)) NULL else list(id = oid(a$id), name = a$display_name)
+  if (!grepl("^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$", orcid)) return("malformed")
+  for (attempt in 1:2) {
+    r <- oa("authors", list(filter = paste0("orcid:", orcid), per_page = "1"))
+    if (!is.null(r$results)) {
+      if (!length(r$results)) return("notfound")
+      a <- r$results[[1]]
+      return(list(id = oid(a$id), name = a$display_name %||% "?"))
+    }
+    Sys.sleep(1)
+  }
+  "unreachable"
 }
 
 search_authors <- function(name) {
@@ -222,7 +235,12 @@ server <- function(input, output, session) {
   observeEvent(input$go, {
     req(nzchar(input$orcid))
     a <- resolve_orcid(input$orcid)
-    if (is.null(a)) return(say("No OpenAlex record for that ORCID.", FALSE))
+    if (identical(a, "malformed"))
+      return(say("That does not look like an ORCID. They run 0000-0000-0000-0000.", FALSE))
+    if (identical(a, "notfound"))
+      return(say("That ORCID is valid but OpenAlex has no author record attached to it. Try searching your name instead.", FALSE))
+    if (identical(a, "unreachable"))
+      return(say("Could not reach OpenAlex just now — your ORCID is probably fine. Try again in a moment.", FALSE))
     load_author(a$id, a$name)
   })
 
