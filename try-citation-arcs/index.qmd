@@ -1,0 +1,103 @@
+---
+title: "Citation arcs — preview"
+description-meta: "Private preview."
+pagetitle: "Citation arcs — preview"
+toc: false
+search: false
+sidebar: false
+page-layout: full
+include-in-header:
+  text: |
+    <meta name="robots" content="noindex, nofollow, noarchive">
+filters:
+  - shinylive
+---
+
+```{=html}
+<style>
+  #gate { max-width: 30rem; margin: 3rem auto; text-align: center; }
+  #gate input { padding: .5rem .75rem; font-size: 1rem; width: 14rem; }
+  #gate button { padding: .5rem 1rem; font-size: 1rem; }
+  #gated-content { display: none; }
+  #gate-err { color: #b3261e; min-height: 1.2rem; font-size: .9rem; }
+</style>
+
+<div id="gate">
+  <h3>Private preview</h3>
+  <p class="text-muted">Aaron shared a passphrase with you.</p>
+  <p><input id="gate-pw" type="password" autocomplete="off" placeholder="passphrase"
+            onkeydown="if(event.key==='Enter')checkGate()">
+     <button onclick="checkGate()">Enter</button></p>
+  <p id="gate-err"></p>
+</div>
+
+<script>
+// Deliberately weak by construction: this page is static, so the app and every
+// asset behind it can be fetched directly regardless of what this check says.
+// It keeps casual visitors out. It is not access control, and nothing sensitive
+// should ever sit behind it.
+async function sha256(s) {
+  const b = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(s));
+  return [...new Uint8Array(b)].map(x => x.toString(16).padStart(2,'0')).join('');
+}
+const GATE_HASH = '2acd6e0d5f19f1589b4ff8af77e9f5a3e51ad2e8e78eda5055a4064b2f301e9f';
+async function checkGate() {
+  const v = document.getElementById('gate-pw').value.trim().toLowerCase();
+  if (await sha256(v) === GATE_HASH) {
+    sessionStorage.setItem('arcs-gate', '1');
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('gated-content').style.display = 'block';
+    window.dispatchEvent(new Event('resize'));
+  } else {
+    document.getElementById('gate-err').textContent = 'Not quite — try again.';
+  }
+}
+if (sessionStorage.getItem('arcs-gate') === '1') {
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('gated-content').style.display = 'block';
+  });
+}
+</script>
+
+<div id="gated-content">
+```
+
+## Citation arcs
+
+Put in your ORCID, or search your name. It draws three views of your citation record: cumulative in
+calendar time, cumulative aligned on each paper's publication year, and the per-year arc that shows
+when your papers actually peaked. Venues are tiered against journals in your own topic area, so it
+works outside political science too.
+
+Everything runs **in your browser**. Your identifier goes to [OpenAlex](https://openalex.org) and
+nowhere else — there is no server of mine involved and nothing is logged. The first load pulls down
+R compiled to WebAssembly, so give it up to a minute.
+
+Numbers will look low if you are used to Google Scholar. OpenAlex reports roughly two thirds of
+Scholar's counts, because Scholar indexes preprints, chapters and theses that OpenAlex does not. It
+ranks papers almost identically though, and these charts are about shape rather than level.
+
+```{shinylive-r}
+#| standalone: true
+#| viewerHeight: 720
+#| components: [viewer]
+{{< include ../posts/2026-08-citation-arcs/widget/app.R >}}
+```
+
+### Tell me what's broken
+
+Known weak spots, and the ones I'd most like reports on:
+
+- **Venue tiering.** It ranks each journal against journals in your topic area by two-year mean
+  citedness. Three reference populations were tried before one behaved. If it puts your journals
+  somewhere absurd — especially in a field with different citation norms — that's the bug.
+- **OpenAlex sometimes merges two researchers into one profile.** If someone else's career appears
+  mixed into yours, that's why.
+- **Small tiers give medians over one or two papers.** The charts draw them anyway.
+
+Code: [github.com/aserlich/scholar-arcs](https://github.com/aserlich/scholar-arcs)
+
+```{=html}
+</div>
+```

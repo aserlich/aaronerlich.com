@@ -3,6 +3,7 @@ title: "Did it matter where the paper landed?"
 description-meta: "I pulled citation histories for all 30 of my published papers and colour-coded them by journal type. Top-3 journals raise the floor, not the ceiling — and the most-cited paper in my record is the one that got lucky."
 date: "2026-08-10"
 categories: [publishing, transparency, citations, data viz]
+draft: true
 filters:
   - shinylive
 ---
