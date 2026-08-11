@@ -19,13 +19,13 @@ I provide three charts because they answer different questions.
 
 ![](citations-calendar.png)
 
-One line per paper, running in calendar time. Vintage dominates this chart. "Total citations" mostly measures: age. Useful as a reminder, not as an answer. A 2015 APSR paper has had eleven years to accumulate, and everything else sits squashed underneath it. This was my incredible early career luck, which many have come recognized as important in academia.
+One line per paper, running in calendar time. Vintage dominates this chart. "Total citations" mostly measures age: useful as a reminder, not as an answer. A 2015 APSR paper has had eleven years to accumulate, and everything else sits squashed underneath it. That paper was my early-career luck, and luck is something many have come to recognize as important in academia.
 
 ## 2. Aligned on publication — where the real pattern is
 
 ![](citations-by-group.png)
 
-Here every paper restarts at its own year zero, faceted by journal type. Now the comparison makes comparisons between papers more sense, and one pattern survives it: **the top 3 have a much higher floor.**
+Here every paper restarts at its own year zero, faceted by journal type. Now the comparison between papers makes more sense, and one pattern survives it: **the top 3 have a much higher floor.**
 
 At three years post-publication, my AJPS/APSR/JOP papers sit at 18, 26 and 55 citations. My subfield-journal papers at the same age run from 1 to 104.
 
