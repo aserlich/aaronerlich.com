@@ -450,6 +450,7 @@ server &lt;- function(input, output, session) {
 shinyApp(ui, server)
 </code></pre>
 <p>A caveat on the numbers it shows you. This runs on OpenAlex, not Google Scholar, because Scholar has no API and blocks anything that is not a person at a browser. OpenAlex will report <strong>fewer</strong> citations than you are used to seeing — about two thirds, on my record. It ranks papers almost identically though (Spearman 0.94), and all three charts are about shape rather than level, so the picture holds even though the axis is smaller.</p>
+<p>If you want the Scholar numbers you recognise, you have to run it on your own machine, and the <a href="../../citation-arcs/index.html"><strong>Citation Arcs</strong></a> page has the two-minute setup — along with the list of things I already know are weak, if you would rather tell me what broke.</p>
 <p>The code is at <a href="https://github.com/aserlich/scholar-arcs"><strong>github.com/aserlich/scholar-arcs</strong></a>. The R package there does more than the widget: a Google Scholar backend for exact numbers when you run it on your own machine, an editable venue grouping, PNG and CSV export, and a peer-comparison view that samples researchers in your area so you can find out whether your own “one paper is a quarter of my citations” is unusual. (Mine was not.)</p>
 <section id="how-this-was-built" class="level3">
 <h3 class="anchored" data-anchor-id="how-this-was-built">How this was built</h3>

@@ -84,6 +84,8 @@ It runs **entirely in your browser**. Your identifier is sent to [OpenAlex](http
 
 A caveat on the numbers it shows you. This runs on OpenAlex, not Google Scholar, because Scholar has no API and blocks anything that is not a person at a browser. OpenAlex will report **fewer** citations than you are used to seeing — about two thirds, on my record. It ranks papers almost identically though (Spearman 0.94), and all three charts are about shape rather than level, so the picture holds even though the axis is smaller.
 
+If you want the Scholar numbers you recognise, you have to run it on your own machine, and the [**Citation Arcs**](../../citation-arcs/index.qmd) page has the two-minute setup — along with the list of things I already know are weak, if you would rather tell me what broke.
+
 The code is at [**github.com/aserlich/scholar-arcs**](https://github.com/aserlich/scholar-arcs). The R package there does more than the widget: a Google Scholar backend for exact numbers when you run it on your own machine, an editable venue grouping, PNG and CSV export, and a peer-comparison view that samples researchers in your area so you can find out whether your own "one paper is a quarter of my citations" is unusual. (Mine was not.)
 
 ### How this was built

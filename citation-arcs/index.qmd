@@ -15,6 +15,10 @@ calendar time, cumulative aligned on each paper's publication year, and the per-
 when your papers actually peaked. Venues are tiered against journals in your own topic area, so it
 works outside political science too.
 
+This started as a look at my own record — whether it mattered where my papers landed. That write-up,
+including the two things I was confident about that did not survive the data, is in
+[**Did it matter where the paper landed?**](../posts/2026-08-citation-arcs/index.qmd)
+
 Everything runs **in your browser**. Your identifier goes to [OpenAlex](https://openalex.org) and
 nowhere else — there is no server of mine involved and nothing is logged. The first load pulls down
 R compiled to WebAssembly, so give it up to a minute.
