@@ -21,6 +21,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -492,6 +527,24 @@ server &lt;- function(input, output, session) {
 
 shinyApp(ui, server)
 </code></pre>
+<section id="want-the-google-scholar-numbers-instead" class="level3">
+<h3 class="anchored" data-anchor-id="want-the-google-scholar-numbers-instead">Want the Google Scholar numbers instead?</h3>
+<p>The widget above uses OpenAlex, because Google Scholar has no API and blocks anything that isn’t a person sitting at a browser. If you want the Scholar counts you recognise — roughly 1.5× higher, since Scholar indexes preprints, chapters and theses — you have to run it on your own machine. Two minutes of setup.</p>
+<p>In R (4.1 or newer):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"bslib"</span>, <span class="st">"DT"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"purrr"</span>, <span class="st">"tibble"</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"rlang"</span>, <span class="st">"ggplot2"</span>, <span class="st">"ggrepel"</span>, <span class="st">"scales"</span>, <span class="st">"jsonlite"</span>, <span class="st">"httr2"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"aserlich/scholar-arcs"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>scholararcs<span class="sc">::</span><span class="fu">run_app</span>(<span class="at">mailto =</span> <span class="st">"you@example.edu"</span>)   <span class="co"># OpenAlex, same as above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For the Scholar backend, add one more package and pass <code>source</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"scholar"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>scholararcs<span class="sc">::</span><span class="fu">run_app</span>(<span class="at">source =</span> <span class="st">"scholar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then paste your Scholar <strong>profile id</strong> — the <code>user=</code> value from your profile URL (<code>scholar.google.com/citations?user=</code><strong><code>h8n98PQAAAAJ</code></strong>). Name lookup isn’t offered, because Google no longer permits it.</p>
+<p>Two things to expect. It fetches one paper at a time behind an 8-second throttle, so a 50-paper profile takes around seven minutes; progress is cached as it goes, so if Google starts blocking you can re-run and it resumes rather than starting over. And Scholar returns journal names but no venue identifiers, so automatic tiering doesn’t work on that backend — you group venues by hand, or load a saved mapping.</p>
+<p>Full instructions and the venue-grouping presets: <a href="https://github.com/aserlich/scholar-arcs#use-google-scholar-instead"><strong>github.com/aserlich/scholar-arcs</strong></a></p>
+</section>
 <section id="tell-me-whats-broken" class="level3">
 <h3 class="anchored" data-anchor-id="tell-me-whats-broken">Tell me what’s broken</h3>
 <p>Known weak spots, and the ones I’d most like reports on:</p>

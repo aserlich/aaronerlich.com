@@ -85,6 +85,45 @@ ranks papers almost identically though, and these charts are about shape rather 
 {{< include ../posts/2026-08-citation-arcs/widget/app.R >}}
 ```
 
+### Want the Google Scholar numbers instead?
+
+The widget above uses OpenAlex, because Google Scholar has no API and blocks anything that isn't a
+person sitting at a browser. If you want the Scholar counts you recognise — roughly 1.5× higher,
+since Scholar indexes preprints, chapters and theses — you have to run it on your own machine. Two
+minutes of setup.
+
+In R (4.1 or newer):
+
+```r
+install.packages(c("shiny", "bslib", "DT", "dplyr", "tidyr", "purrr", "tibble",
+                   "rlang", "ggplot2", "ggrepel", "scales", "jsonlite", "httr2"))
+
+# install.packages("remotes")
+remotes::install_github("aserlich/scholar-arcs")
+
+scholararcs::run_app(mailto = "you@example.edu")   # OpenAlex, same as above
+```
+
+For the Scholar backend, add one more package and pass `source`:
+
+```r
+install.packages("scholar")
+scholararcs::run_app(source = "scholar")
+```
+
+Then paste your Scholar **profile id** — the `user=` value from your profile URL
+(`scholar.google.com/citations?user=`**`h8n98PQAAAAJ`**). Name lookup isn't offered, because Google
+no longer permits it.
+
+Two things to expect. It fetches one paper at a time behind an 8-second throttle, so a 50-paper
+profile takes around seven minutes; progress is cached as it goes, so if Google starts blocking you
+can re-run and it resumes rather than starting over. And Scholar returns journal names but no venue
+identifiers, so automatic tiering doesn't work on that backend — you group venues by hand, or load a
+saved mapping.
+
+Full instructions and the venue-grouping presets:
+[**github.com/aserlich/scholar-arcs**](https://github.com/aserlich/scholar-arcs#use-google-scholar-instead)
+
 ### Tell me what's broken
 
 Known weak spots, and the ones I'd most like reports on:
