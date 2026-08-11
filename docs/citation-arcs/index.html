@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="description" content="Draw three views of any researcher’s citation record: cumulative in calendar time, aligned on publication, and the per-year arc. Runs entirely in your browser using OpenAlex.">
 
-<title>About – Aaron Erlich</title>
+<title>Citation Arcs – Aaron Erlich</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,23 +21,63 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<meta name="shinylive:serviceworker_dir" content="..">
+<script src="../site_libs/quarto-contrib/shinylive-0.10.12/shinylive/load-shinylive-sw.js" type="module"></script>
+<script src="../site_libs/quarto-contrib/shinylive-0.10.12/shinylive/run-python-blocks.js" type="module"></script>
+<link href="../site_libs/quarto-contrib/shinylive-0.10.12/shinylive/shinylive.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/shinylive-quarto-css/shinylive-quarto.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "language": {
     "search-no-results-text": "No results",
@@ -54,18 +95,18 @@ ul.task-list li input[type="checkbox"] {
 }</script>
 
 
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css">
 </head>
 
-<body class="nav-fixed about-page quarto-light">
+<body class="nav-fixed quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Aaron Erlich</span>
     </a>
   </div>
@@ -75,31 +116,31 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../index.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./lab.html"> 
+    <a class="nav-link" href="../lab.html"> 
 <span class="menu-text">Lab</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./cv.html"> 
+    <a class="nav-link" href="../cv.html"> 
 <span class="menu-text">C.V.</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./submissions.html"> 
+    <a class="nav-link" href="../submissions.html"> 
 <span class="menu-text">Publication Record</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./citation-arcs/index.html"> 
+    <a class="nav-link active" href="../citation-arcs/index.html" aria-current="page"> 
 <span class="menu-text">Citation Arcs</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./blog.html"> 
+    <a class="nav-link" href="../blog.html"> 
 <span class="menu-text">Blog</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./resources/letters.html"> 
+    <a class="nav-link" href="../resources/letters.html"> 
 <span class="menu-text">Letter of Rec</span></a>
   </li>  
 </ul>
@@ -119,7 +160,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Citation Arcs</h1>
 </div>
 
 
@@ -136,26 +177,421 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<div class="profile-sidebar" style="float: right; margin: 0 0 1em 1.5em; text-align: center;">
-<img src="images/profile.jpg" class="profile-photo" alt="Aaron Erlich">
-<div class="academic-links" aria-label="Academic profiles">
-<p><a href="https://orcid.org/0000-0001-6571-9081" title="ORCID" aria-label="ORCID" rel="me noopener" target="_blank"><i class="ai ai-orcid"></i></a> <a href="https://scholar.google.ca/citations?user=h8n98PQAAAAJ" title="Google Scholar" aria-label="Google Scholar" rel="me noopener" target="_blank"><i class="ai ai-google-scholar"></i></a> <a href="https://bsky.app/profile/aaronerlich.bsky.social" title="Bluesky" aria-label="Bluesky" rel="me noopener" target="_blank"><i class="bi bi-bluesky"></i></a> <a href="https://osf.io/25gep/" title="OSF" aria-label="OSF" rel="me noopener" target="_blank"><i class="ai ai-osf"></i></a></p>
-</div>
-</div>
-<p><span data-i18n="index.welcome">Welcome to my site! I am an Associate Professor in the Department of Political Science at McGill University, where I am a member of the Centre for the Study of Democratic Citizenship (CSDC) and an Associate Member of the Centre on Population Dynamics (CPD). I completed my Ph.D.&nbsp;at the University of Washington in Seattle.</span></p>
-<p><span data-i18n-html="index.research_interests">Broadly speaking, I am interested in democratization and democratic development. Much of my research addresses the role that information plays in developing democratic polities. I am also interested in advancing quantitative methods to measure the effect of information. I maintain active research projects in the former Soviet Union, Eastern and Southern Africa, and North America. My work has appeared in a broad range of journals in political science and adjacent fields, such as <em>American Political Science Review</em>, <em>American Journal of Political Science</em>, <em>Comparative Political Studies</em>, <em>Journal of Politics</em>, <em>Journal of Public Administration Research &amp; Theory</em>, and <em>Political Analysis</em>, among others.</span> <span data-i18n="index.see_cv">You can see more about my academic work on my</span> <a href="./cv.html">C.V.</a></p>
-<p><span data-i18n="index.pre_academia">Before returning to academia, I worked for the National Democratic Institute covering Kenya and the Caucasus Research Resource Centers covering Armenia, Azerbaijan and Georgia.</span></p>
-<p><span data-i18n="index.bicycle">I am an avid bicycle tourer.</span></p>
-<div style="clear: both;">
+<p>Put in your ORCID, or search your name. It draws three views of your citation record: cumulative in calendar time, cumulative aligned on each paper’s publication year, and the per-year arc that shows when your papers actually peaked. Venues are tiered against journals in your own topic area, so it works outside political science too.</p>
+<p>Everything runs <strong>in your browser</strong>. Your identifier goes to <a href="https://openalex.org">OpenAlex</a> and nowhere else — there is no server of mine involved and nothing is logged. The first load pulls down R compiled to WebAssembly, so give it up to a minute.</p>
+<p>Numbers will look low if you are used to Google Scholar. OpenAlex reports roughly two thirds of Scholar’s counts, because Scholar indexes preprints, chapters and theses that OpenAlex does not. It ranks papers almost identically though, and these charts are about shape rather than level.</p>
+<pre class="shinylive-r" data-engine="r"><code>#| '!! shinylive warning !!': |
+#|   shinylive does not work in self-contained HTML documents.
+#|   Please set `embed-resources: false` in your metadata.
+#| standalone: true
+#| viewerHeight: 720
+#| components: [viewer]
+## Citation-arcs widget — the browser-side (shinylive/webR) cut of
+## github.com/aserlich/scholar-arcs. Self-contained on purpose: shinylive
+## compiles one file, and the reader's browser runs it with no server involved.
+##
+## Deliberately uses jsonlite::fromJSON(url) rather than httr2. webR patches R's
+## url() connections onto the browser's fetch, so that path works in WebAssembly;
+## curl-based transports are far less reliable there. OpenAlex sends
+## `access-control-allow-origin: *`, so the browser is allowed to read it.
+##
+## Trimmed relative to the full package: no Google Scholar (impossible in a
+## browser — Scholar sends no CORS headers), no venue-tier editor, no peer
+## sampling. Those live in the R package.
 
-</div>
-<section id="contact-me" class="level2">
-<h2 class="anchored" data-anchor-id="contact-me"><span data-i18n="index.contact_me">Contact me</span></h2>
-<p>Aaron Erlich, Associate Professor<br> Department of Political Science<br> McGill University<br> 3610 McTavish, Room 26-4<br> Montreal, Quebec, Canada H3A 1Y2<br> T: 514-398-4756<br> F: 514-398-4938<br> aaron.erlich [at] mcgill.ca</p>
+library(shiny)
+library(bslib)
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(tibble)
+library(ggplot2)
+library(jsonlite)
+
+MAILTO &lt;- "scholararcs@example.org"
+HUES &lt;- c("#2a78d6", "#eb6834", "#1baf7a", "#eda100", "#e87ba4", "#008300")
+
+oa &lt;- function(path, query = list()) {
+  q &lt;- paste(names(query), vapply(query, utils::URLencode, character(1), reserved = TRUE),
+             sep = "=", collapse = "&amp;")
+  url &lt;- sprintf("https://api.openalex.org/%s?%s&amp;mailto=%s", path, q, MAILTO)
+  tryCatch(jsonlite::fromJSON(url, simplifyVector = FALSE), error = function(e) NULL)
+}
+oid &lt;- function(x) if (is.null(x)) NA_character_ else sub("^https://openalex.org/", "", x)
+
+# Returns list(id, name) on success, "malformed" / "notfound" / "unreachable" on
+# failure — the caller needs to tell them apart. Reporting a network blip as "no
+# such ORCID" sends people off checking an identifier that was fine.
+#
+# Uses the filter form rather than authors/https://orcid.org/{id}: that variant
+# embeds a full URL inside the path, and intermediaries that normalise "//" break
+# it. The filter form has no such trap.
+resolve_orcid &lt;- function(orcid) {
+  orcid &lt;- sub("^https?://orcid\\.org/", "", trimws(orcid))
+  if (!grepl("^[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}[0-9X]$", orcid)) return("malformed")
+  for (attempt in 1:2) {
+    r &lt;- oa("authors", list(filter = paste0("orcid:", orcid), per_page = "1"))
+    if (!is.null(r$results)) {
+      if (!length(r$results)) return("notfound")
+      a &lt;- r$results[[1]]
+      return(list(id = oid(a$id), name = a$display_name %||% "?"))
+    }
+    Sys.sleep(1)
+  }
+  "unreachable"
+}
+
+search_authors &lt;- function(name) {
+  r &lt;- oa("authors", list(search = name, per_page = "8"))
+  if (is.null(r$results) || !length(r$results)) return(NULL)
+  map_dfr(r$results, function(a) {
+    inst &lt;- a$last_known_institutions
+    tibble(id = oid(a$id), name = a$display_name %||% "?",
+           institution = if (length(inst)) (inst[[1]]$display_name %||% "—") else "—",
+           works = as.integer(a$works_count %||% 0), cites = as.integer(a$cited_by_count %||% 0))
+  })
+}
+
+fetch_works &lt;- function(author_id) {
+  r &lt;- oa("works", list(
+    filter = sprintf("author.id:%s,type:article", author_id),
+    select = "id,display_name,publication_year,cited_by_count,counts_by_year,primary_location",
+    `per-page` = "200"))
+  if (is.null(r$results) || !length(r$results)) return(NULL)
+  map_dfr(r$results, function(w) {
+    cby &lt;- w$counts_by_year %||% list()
+    tibble(
+      paper_id = oid(w$id),
+      title    = w$display_name %||% "?",
+      pub_year = as.integer(w$publication_year %||% NA),
+      total    = as.integer(w$cited_by_count %||% 0),
+      venue    = w$primary_location$source$display_name %||% NA_character_,
+      counts   = list(if (length(cby))
+        tibble(year = map_int(cby, ~ as.integer(.x$year)),
+               cites = map_dbl(cby, ~ as.numeric(.x$cited_by_count)))
+        else tibble(year = integer(), cites = numeric())))
+  }) |&gt; filter(!is.na(pub_year))
+}
+
+# One row per paper x year. Citations predating publication keep a negative
+# offset; the current calendar year is carried but flagged partial.
+build_series &lt;- function(w) {
+  this_year &lt;- as.integer(format(Sys.Date(), "%Y"))
+  long &lt;- map_dfr(seq_len(nrow(w)), function(i) {
+    cy &lt;- w$counts[[i]]
+    if (!nrow(cy)) cy &lt;- tibble(year = w$pub_year[i], cites = 0)
+    mutate(cy, paper_id = w$paper_id[i])
+  }) |&gt; filter(year &lt;= this_year)
+
+  w |&gt; select(paper_id, title, pub_year, venue) |&gt;
+    left_join(summarise(group_by(long, paper_id), first = min(year), .groups = "drop"),
+              by = "paper_id") |&gt;
+    mutate(start = pmin(pub_year, coalesce(first, pub_year)),
+           year = map2(start, this_year, ~ seq.int(.x, .y))) |&gt;
+    unnest_longer(year) |&gt;
+    left_join(long, by = c("paper_id", "year")) |&gt;
+    mutate(cites = coalesce(cites, 0)) |&gt;
+    arrange(paper_id, year) |&gt;
+    group_by(paper_id) |&gt;
+    mutate(cum_cites = cumsum(cites)) |&gt;
+    ungroup() |&gt;
+    mutate(years_since_pub = year - pub_year,
+           partial = year &gt;= this_year,
+           tier = "All papers")
+}
+
+# Tier venues against journals in the author's own topic area. Ranking against
+# anything else -- a name search, or a sample of articles -- gives nonsense; see
+# the package for the three attempts that failed.
+tier_of &lt;- function(w, author_id) {
+  r &lt;- oa("works", list(filter = sprintf("author.id:%s,type:article", author_id),
+                        select = "primary_topic", `per-page` = "100"))
+  tids &lt;- if (!is.null(r$results))
+    unique(na.omit(map_chr(r$results, ~ oid(.x$primary_topic$id)))) else character()
+  if (!length(tids)) return(NULL)
+  tids &lt;- head(tids, 5)
+  s &lt;- oa("sources", list(
+    filter = sprintf("topics.id:%s,type:journal,works_count:&gt;50,summary_stats.2yr_mean_citedness:&gt;0",
+                     paste(tids, collapse = "|")),
+    select = "display_name,summary_stats", `per-page` = "200", sort = "works_count:desc"))
+  ref &lt;- if (!is.null(s$results))
+    na.omit(map_dbl(s$results, ~ as.numeric(.x$summary_stats$`2yr_mean_citedness` %||% NA))) else numeric()
+  if (length(ref) &lt; 20) return(NULL)
+  brk &lt;- quantile(ref, c(0.90, 0.75, 0.50), na.rm = TRUE)
+  labs &lt;- c("Top decile", "Top quartile", "Upper half", "Rest")
+
+  vn &lt;- unique(na.omit(w$venue))
+  vs &lt;- oa("sources", list(filter = paste0("display_name.search:", paste(vn[1], collapse = "")),
+                           select = "display_name", `per-page` = "1"))  # warm-up, ignored
+  cite_of &lt;- setNames(rep(NA_real_, length(vn)), vn)
+  # Look venues up in bulk by name; OpenAlex has no multi-name filter, so pull the
+  # author's own sources from their works instead.
+  sr &lt;- oa("works", list(filter = sprintf("author.id:%s,type:article", author_id),
+                         select = "primary_location", `per-page` = "200"))
+  sids &lt;- unique(na.omit(map_chr(sr$results %||% list(), ~ oid(.x$primary_location$source$id))))
+  if (!length(sids)) return(NULL)
+  st &lt;- oa("sources", list(filter = paste0("ids.openalex:", paste(sids, collapse = "|")),
+                           select = "display_name,summary_stats", `per-page` = "200"))
+  if (is.null(st$results)) return(NULL)
+  lut &lt;- map_dfr(st$results, ~ tibble(
+    venue = .x$display_name %||% NA_character_,
+    citedness = as.numeric(.x$summary_stats$`2yr_mean_citedness` %||% NA)))
+  lut |&gt; mutate(tier = vapply(citedness, function(c) {
+    if (is.na(c)) return("Rest")
+    labs[which(c &gt;= brk)[1] %||% length(labs)] }, character(1)),
+    tier = ifelse(is.na(tier), "Rest", tier)) |&gt;
+    select(venue, tier)
+}
+
+pal &lt;- function(g) setNames(rep(HUES, length.out = nlevels(g)), levels(g))
+
+base_theme &lt;- theme_minimal(base_size = 12) +
+  theme(panel.grid.minor = element_blank(),
+        panel.grid.major = element_line(colour = "#e1e0d9", linewidth = 0.3),
+        strip.text = element_text(face = "bold", size = 9, hjust = 0),
+        plot.title = element_text(face = "bold"),
+        plot.subtitle = element_text(size = 8, colour = "#52514e"))
+
+layers_of &lt;- function(s, xv) list(
+  solid  = filter(s, !partial),
+  bridge = s |&gt; group_by(paper_id) |&gt; filter(any(partial)) |&gt;
+    filter(years_since_pub &gt;= max(c(years_since_pub[!partial], -Inf))) |&gt; ungroup(),
+  ends   = s |&gt; filter(!partial) |&gt; group_by(paper_id) |&gt;
+    slice_max({{ xv }}, n = 1, with_ties = FALSE) |&gt; ungroup())
+
+ui &lt;- page_sidebar(
+  title = "Citation arcs",
+  theme = bs_theme(version = 5, primary = "#2a78d6"),
+  sidebar = sidebar(
+    width = 300,
+    textInput("orcid", "Your ORCID", placeholder = "0000-0001-6571-9081"),
+    actionButton("go", "Draw my arcs", class = "btn-primary btn-sm"),
+    hr(),
+    textInput("nm", "…or search by name"),
+    actionButton("srch", "Search", class = "btn-sm"),
+    uiOutput("cands"),
+    hr(),
+    div(class = "small text-muted",
+        "Runs entirely in your browser using OpenAlex — nothing is sent anywhere else. ",
+        "OpenAlex reports fewer citations than Google Scholar but ranks papers similarly.")),
+  uiOutput("msg"),
+  navset_card_tab(
+    nav_panel("Aligned on publication",
+      # position:relative anchors the absolutely-positioned tooltip to the plot,
+      # so it floats over the chart at the cursor instead of pushing layout below.
+      div(style = "position:relative;",
+          plotOutput("p2", height = "520px",
+                     hover = hoverOpts("h2", delay = 60, delayType = "debounce")),
+          uiOutput("tip2")),
+      helpText("Every paper restarted at its own year zero. x &lt; 0 means it was cited as a preprint. ",
+               "Hover a line to see which paper it is.")),
+    nav_panel("The arc",
+      div(style = "position:relative;",
+          plotOutput("p3", height = "520px",
+                     hover = hoverOpts("h3", delay = 60, delayType = "debounce")),
+          uiOutput("tip3")),
+      helpText("Citations per year, not cumulative — the only view that shows when a paper peaked.")),
+    nav_panel("Calendar time",
+      div(style = "position:relative;",
+          plotOutput("p1", height = "520px",
+                     hover = hoverOpts("h1", delay = 60, delayType = "debounce")),
+          uiOutput("tip1")),
+      helpText("Dominated by age: older papers have had longer to accumulate."))))
+
+server &lt;- function(input, output, session) {
+  rv &lt;- reactiveValues(s = NULL, msg = NULL, cands = NULL)
+  say &lt;- function(t, ok = TRUE) rv$msg &lt;- list(t = t, ok = ok)
+
+  output$msg &lt;- renderUI({
+    m &lt;- rv$msg; if (is.null(m)) return(NULL)
+    div(class = paste("alert py-2", if (m$ok) "alert-info" else "alert-danger"), m$t)
+  })
+
+  load_author &lt;- function(id, label) {
+    withProgress(message = "Fetching from OpenAlex", value = 0.3, {
+      w &lt;- fetch_works(id)
+      if (is.null(w) || !nrow(w)) return(say("No journal articles found for that profile.", FALSE))
+      setProgress(0.7, detail = "tiering venues")
+      tv &lt;- tryCatch(tier_of(w, id), error = function(e) NULL)
+      s &lt;- build_series(w)
+      if (!is.null(tv) &amp;&amp; nrow(tv)) {
+        s &lt;- s |&gt; left_join(tv, by = "venue") |&gt;
+          mutate(tier = coalesce(tier.y, "Rest")) |&gt; select(-tier.x, -tier.y)
+      }
+      lv &lt;- intersect(c("Top decile", "Top quartile", "Upper half", "Rest", "All papers"),
+                      unique(s$tier))
+      rv$s &lt;- mutate(s, tier = factor(tier, levels = lv))
+      say(sprintf("%s — %d papers, %d citations.", label, n_distinct(w$paper_id), sum(w$total)))
+    })
+  }
+
+  observeEvent(input$go, {
+    req(nzchar(input$orcid))
+    a &lt;- resolve_orcid(input$orcid)
+    if (identical(a, "malformed"))
+      return(say("That does not look like an ORCID. They run 0000-0000-0000-0000.", FALSE))
+    if (identical(a, "notfound"))
+      return(say("That ORCID is valid but OpenAlex has no author record attached to it. Try searching your name instead.", FALSE))
+    if (identical(a, "unreachable"))
+      return(say("Could not reach OpenAlex just now — your ORCID is probably fine. Try again in a moment.", FALSE))
+    load_author(a$id, a$name)
+  })
+
+  observeEvent(input$srch, {
+    req(nzchar(input$nm))
+    c &lt;- search_authors(input$nm)
+    if (is.null(c)) return(say("No authors matched.", FALSE))
+    rv$cands &lt;- c
+    output$cands &lt;- renderUI(tagList(
+      helpText("Pick your profile — check the work count; OpenAlex sometimes merges two people."),
+      radioButtons("cand", NULL, choiceValues = c$id, selected = character(0),
+        choiceNames = lapply(seq_len(nrow(c)), function(i) HTML(sprintf(
+          "&lt;b&gt;%s&lt;/b&gt;&lt;br&gt;&lt;span class='small text-muted'&gt;%s · %d works&lt;/span&gt;",
+          c$name[i], c$institution[i], c$works[i])))),
+      actionButton("pick", "Use this profile", class = "btn-primary btn-sm")))
+  })
+
+  observeEvent(input$pick, {
+    req(input$cand)
+    r &lt;- filter(rv$cands, id == input$cand)
+    load_author(r$id[1], r$name[1])
+  })
+
+  facet_if &lt;- function(s) if (n_distinct(s$tier) &gt; 1) facet_wrap(~tier, ncol = 2) else NULL
+
+  # Tooltip that floats over the plot at the cursor. Returns NULL when nothing is
+  # under the pointer, so it occupies no layout and reserves no blank space.
+  # nearPoints() resolves the facet itself, since `tier` is a column of the data.
+  hover_tip &lt;- function(hv, df, xv, yv, valfmt) {
+    if (is.null(hv) || is.null(hv$coords_css)) return(NULL)
+    np &lt;- nearPoints(df, hv, xvar = xv, yvar = yv, threshold = 30, maxpoints = 1)
+    if (!nrow(np)) return(NULL)
+
+    # Flip to the left of the cursor near the right edge, and upward near the
+    # bottom, so the tooltip never runs off the plot.
+    ratio &lt;- hv$img_css_ratio$x %||% 1
+    w_css &lt;- (hv$range$right %||% 0) / ratio
+    h_css &lt;- (hv$range$bottom %||% 0) / (hv$img_css_ratio$y %||% 1)
+    flip_x &lt;- w_css &gt; 0 &amp;&amp; hv$coords_css$x &gt; w_css * 0.62
+    flip_y &lt;- h_css &gt; 0 &amp;&amp; hv$coords_css$y &gt; h_css * 0.80
+
+    pos &lt;- paste0(
+      if (flip_x) sprintf("right:%.0fpx;", w_css - hv$coords_css$x + 14)
+      else        sprintf("left:%.0fpx;",  hv$coords_css$x + 14),
+      if (flip_y) sprintf("bottom:%.0fpx;", h_css - hv$coords_css$y + 14)
+      else        sprintf("top:%.0fpx;",    hv$coords_css$y + 14))
+
+    div(style = paste0(
+          "position:absolute; z-index:200; pointer-events:none; ", pos,
+          "max-width:24rem; background:rgba(255,255,255,.97); ",
+          "border:1px solid #c3c2b7; border-left:3px solid #2a78d6; border-radius:4px; ",
+          "padding:.4rem .6rem; font-size:.78rem; line-height:1.35; ",
+          "box-shadow:0 2px 8px rgba(0,0,0,.18);"),
+        tags$b(np$title[1]),
+        tags$br(),
+        tags$span(style = "color:#52514e;",
+                  sprintf("%s · %d · %s",
+                          np$venue[1] %||% "venue unknown", np$pub_year[1], valfmt(np))))
+  }
+
+  hov_df &lt;- reactive(filter(req(rv$s), !partial))
+
+  output$tip1 &lt;- renderUI(hover_tip(
+    input$h1, hov_df(), "year", "cum_cites",
+    function(p) sprintf("%d citations by %d", p$cum_cites[1], p$year[1])))
+
+  output$tip2 &lt;- renderUI(hover_tip(
+    input$h2, hov_df(), "years_since_pub", "cum_cites",
+    function(p) sprintf("%d citations %d yrs after publication",
+                        p$cum_cites[1], p$years_since_pub[1])))
+
+  output$tip3 &lt;- renderUI(hover_tip(
+    input$h3, hov_df(), "years_since_pub", "cites",
+    function(p) sprintf("%d citations in year %d", p$cites[1], p$years_since_pub[1])))
+
+  output$p1 &lt;- renderPlot({
+    s &lt;- req(rv$s); L &lt;- layers_of(s, year)
+    ggplot(mapping = aes(year, cum_cites, group = paper_id, colour = tier)) +
+      geom_line(data = L$solid, linewidth = 0.7) +
+      geom_line(data = L$bridge, linewidth = 0.7, linetype = "22") +
+      geom_point(data = L$ends, size = 1.1) +
+      scale_colour_manual(values = pal(s$tier), name = NULL) +
+      labs(title = "Cumulative citations, calendar time", x = NULL, y = "Cumulative citations",
+           subtitle = "Dashed tail = the current, incomplete year") +
+      base_theme + theme(legend.position = "top")
+  }, res = 100)
+
+  output$p2 &lt;- renderPlot({
+    s &lt;- req(rv$s); L &lt;- layers_of(s, years_since_pub)
+    ctx &lt;- s |&gt; filter(!partial) |&gt; select(paper_id, years_since_pub, cum_cites)
+    ggplot(mapping = aes(years_since_pub, cum_cites, group = paper_id, colour = tier)) +
+      geom_line(data = ctx, aes(years_since_pub, cum_cites, group = paper_id),
+                inherit.aes = FALSE, colour = "#e1e0d9", linewidth = 0.35) +
+      geom_vline(xintercept = 0, colour = "#c3c2b7", linewidth = 0.4) +
+      geom_line(data = L$solid, linewidth = 0.7) +
+      geom_line(data = L$bridge, linewidth = 0.7, linetype = "22") +
+      geom_point(data = L$ends, size = 1.1) +
+      facet_if(s) +
+      scale_colour_manual(values = pal(s$tier), guide = "none") +
+      labs(title = "Cumulative citations by years since publication",
+           subtitle = "Grey = all papers · x &lt; 0 = cited before publication",
+           x = "Years since publication", y = "Cumulative citations") +
+      base_theme
+  }, res = 100)
+
+  output$p3 &lt;- renderPlot({
+    s &lt;- req(rv$s) |&gt; filter(!partial)
+    ctx &lt;- select(s, paper_id, years_since_pub, cites)
+    med &lt;- s |&gt; filter(years_since_pub &gt;= 0) |&gt;
+      group_by(tier, years_since_pub) |&gt;
+      summarise(m = median(cites), n = n_distinct(paper_id), .groups = "drop") |&gt;
+      arrange(tier, years_since_pub) |&gt; group_by(tier) |&gt; filter(cumall(n &gt;= 3)) |&gt; ungroup()
+    ggplot(mapping = aes(years_since_pub, cites, group = paper_id, colour = tier)) +
+      geom_line(data = ctx, aes(years_since_pub, cites, group = paper_id),
+                inherit.aes = FALSE, colour = "#e1e0d9", linewidth = 0.35) +
+      geom_vline(xintercept = 0, colour = "#c3c2b7", linewidth = 0.4) +
+      geom_line(data = s, linewidth = 0.7) +
+      geom_point(data = s |&gt; group_by(paper_id) |&gt; filter(n() == 1) |&gt; ungroup(), size = 1.1) +
+      { if (nrow(med)) geom_line(data = med, aes(years_since_pub, m), inherit.aes = FALSE,
+                                 colour = "#0b0b0b", linewidth = 0.9, linetype = "22") } +
+      facet_if(s) +
+      scale_colour_manual(values = pal(s$tier), guide = "none") +
+      labs(title = "The arc: citations per year",
+           subtitle = "Annual rate · dashed black = tier median while n ≥ 3 · partial year excluded",
+           x = "Years since publication", y = "Citations that year") +
+      base_theme
+  }, res = 100)
+}
+
+shinyApp(ui, server)
+</code></pre>
+<section id="want-the-google-scholar-numbers-instead" class="level3">
+<h3 class="anchored" data-anchor-id="want-the-google-scholar-numbers-instead">Want the Google Scholar numbers instead?</h3>
+<p>The widget above uses OpenAlex, because Google Scholar has no API and blocks anything that isn’t a person sitting at a browser. If you want the Scholar counts you recognise — roughly 1.5× higher, since Scholar indexes preprints, chapters and theses — you have to run it on your own machine. Two minutes of setup.</p>
+<p>In R (4.1 or newer):</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"shiny"</span>, <span class="st">"bslib"</span>, <span class="st">"DT"</span>, <span class="st">"dplyr"</span>, <span class="st">"tidyr"</span>, <span class="st">"purrr"</span>, <span class="st">"tibble"</span>,</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>                   <span class="st">"rlang"</span>, <span class="st">"ggplot2"</span>, <span class="st">"ggrepel"</span>, <span class="st">"scales"</span>, <span class="st">"jsonlite"</span>, <span class="st">"httr2"</span>))</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># install.packages("remotes")</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>remotes<span class="sc">::</span><span class="fu">install_github</span>(<span class="st">"aserlich/scholar-arcs"</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>scholararcs<span class="sc">::</span><span class="fu">run_app</span>(<span class="at">mailto =</span> <span class="st">"you@example.edu"</span>)   <span class="co"># OpenAlex, same as above</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>For the Scholar backend, add one more package and pass <code>source</code>:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"scholar"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>scholararcs<span class="sc">::</span><span class="fu">run_app</span>(<span class="at">source =</span> <span class="st">"scholar"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Then paste your Scholar <strong>profile id</strong> — the <code>user=</code> value from your profile URL (<code>scholar.google.com/citations?user=</code><strong><code>h8n98PQAAAAJ</code></strong>). Name lookup isn’t offered, because Google no longer permits it.</p>
+<p>Two things to expect. It fetches one paper at a time behind an 8-second throttle, so a 50-paper profile takes around seven minutes; progress is cached as it goes, so if Google starts blocking you can re-run and it resumes rather than starting over. And Scholar returns journal names but no venue identifiers, so automatic tiering doesn’t work on that backend — you group venues by hand, or load a saved mapping.</p>
+<p>Full instructions and the venue-grouping presets: <a href="https://github.com/aserlich/scholar-arcs#use-google-scholar-instead"><strong>github.com/aserlich/scholar-arcs</strong></a></p>
 </section>
-<section id="affiliations" class="level2">
-<h2 class="anchored" data-anchor-id="affiliations"><span data-i18n="index.affiliations">Affiliations</span></h2>
-<p><a href="http://csdc-cecd.ca/">Centre for the Study of Democratic Citizenship</a><br> <a href="https://www.mcgill.ca/popcentre/">Centre on Population Dynamics</a><br> <a href="https://csmapnyu.org/">Center for Social Media and Politics</a></p>
+<section id="tell-me-whats-broken" class="level3">
+<h3 class="anchored" data-anchor-id="tell-me-whats-broken">Tell me what’s broken</h3>
+<p>Known weak spots, and the ones I’d most like reports on:</p>
+<ul>
+<li><strong>Venue tiering.</strong> It ranks each journal against journals in your topic area by two-year mean citedness. Three reference populations were tried before one behaved. If it puts your journals somewhere absurd — especially in a field with different citation norms — that’s the bug.</li>
+<li><strong>OpenAlex sometimes merges two researchers into one profile.</strong> If someone else’s career appears mixed into yours, that’s why.</li>
+<li><strong>Small tiers give medians over one or two papers.</strong> The charts draw them anyway.</li>
+</ul>
+<p>Code: <a href="https://github.com/aserlich/scholar-arcs">github.com/aserlich/scholar-arcs</a></p>
 
 
 </section>

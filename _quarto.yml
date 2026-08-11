@@ -11,6 +11,7 @@ project:
     - "*.qmd"
     - "resources/*.qmd"
     - "posts/*/index.qmd"
+    - "citation-arcs/index.qmd"
 
 website:
   title: "Aaron Erlich"
@@ -28,6 +29,8 @@ website:
         href: cv.qmd
       - text: "Publication Record"
         href: submissions.qmd
+      - text: "Citation Arcs"
+        href: citation-arcs/index.qmd
       - text: "Blog"
         href: blog.qmd
       - text: "Letter of Rec"
