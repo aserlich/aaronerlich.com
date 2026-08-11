@@ -9,7 +9,7 @@ filters:
   - shinylive
 ---
 
-A few weeks ago I put my entire [**Publication Record**](../../submissions.qmd) online. A colleague followed-up with the same question: *did it actually matter where things landed?*
+A few weeks ago I put my entire [**Publication Record**](../../submissions.qmd) online. A colleague followed up with a question: *did it actually matter where things landed?*
 
 Of course, this is a very difficult causal inference problem that I am not going to answer. But, I pulled Google Scholar citation histories for all 30 published papers and colour-coded them by the kind of journal that took them: the top 3 (AJPS/APSR/JOP), other general political science, subfield journals, area studies, interdisciplinary, and outside political science entirely.
 

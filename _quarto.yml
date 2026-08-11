@@ -35,10 +35,17 @@ website:
         href: lab.qmd
       - text: "C.V."
         href: cv.qmd
-      - text: "Publication Record"
-        href: submissions.qmd
-      - text: "Citation Arcs"
-        href: citation-arcs/index.qmd
+      # Two views of the same subject — the road to acceptance, then what
+      # happens to citations afterwards. Grouped rather than moved: the page
+      # URLs are baked into published social posts, and citation-arcs/index.qmd
+      # includes its widget from posts/2026-08-citation-arcs/widget/app.R, so
+      # relocating either file breaks the render outright.
+      - text: "Publication Pipeline"
+        menu:
+          - text: "Publication Record"
+            href: submissions.qmd
+          - text: "Citation Arcs"
+            href: citation-arcs/index.qmd
       - text: "Blog"
         href: blog.qmd
       - text: "Letter of Rec"

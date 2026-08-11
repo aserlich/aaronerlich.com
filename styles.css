@@ -27,8 +27,11 @@ body {
   line-height: 1.6;
 }
 
+/* .dropdown-item is here because Bootstrap renders navbar menu children as
+   .dropdown-item, not .nav-link — without it the Publication Pipeline items
+   silently fall back to the theme font while every other nav item doesn't. */
 h1, h2, h3, h4, h5, h6,
-.navbar-brand, .navbar .nav-link {
+.navbar-brand, .navbar .nav-link, .navbar .dropdown-item {
   font-family: var(--body-font);
   letter-spacing: -0.01em;
 }
