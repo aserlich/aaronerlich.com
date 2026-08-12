@@ -1,0 +1,1904 @@
+# Dissemination queue and archive. Generated and maintained by scripts/disseminate.py.
+#
+# This repo is PUBLIC. Unposted drafts in this file become visible on GitHub the
+# moment you commit them — so commit this file *after* posting, not while drafts
+# are pending. A killed draft otherwise lives in git history forever.
+#
+# Not served on aaronerlich.com: Quarto only copies _data files that a page
+# actually references (submissions_public.json, via an OJS FileAttachment).
+meta:
+  last_scan: '2026-08-12'
+items:
+- id: pub-erlichBookReviewSay2012
+  kind: publication
+  title: 'Book Review: I Say to You: Ethnic Politics and the Kalenjin in Kenya'
+  url: http://cps.sagepub.com/content/45/12/1691
+  blurb: ''
+  year: '2012'
+  venue: Comparative Political Studies
+  coauthors: []
+  source:
+    citekey: erlichBookReviewSay2012
+    section: book-review
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichCoverageCandour2026
+  kind: publication
+  title: Coverage or Candour? Survey-Mode Trade-offs for Studying Wartime Ukraine
+  url: https://discuss-data.net/cs/eescca/section/blog/coverage-or-candour/
+  blurb: ''
+  year: '2026'
+  venue: Discuss Data
+  coauthors: []
+  source:
+    citekey: erlichCoverageCandour2026
+    section: blog
+  added: '2026-08-11'
+  status: scheduled
+  rounds:
+  - n: 1
+    opened: '2026-08-11'
+    status: scheduled
+    note: launch
+    drafts:
+      bluesky:
+        text: 'Phone or web panel in wartime Ukraine? Phone reaches the third of the country a panel
+          cannot: rural, over 55. But phone respondents overstated volunteering by ~16%. You pick
+          which error you can live with. https://discuss-data.net/cs/eescca/section/blog/coverage-or-candour/'
+        embed:
+          uri: https://discuss-data.net/cs/eescca/section/blog/coverage-or-candour/
+          title: Coverage or Candour? Survey-Mode Trade-offs for Studying Wartime Ukraine
+          description: Discuss Data
+      linkedin:
+        text: |-
+          If you run surveys in wartime Ukraine, the mode you choose decides which error you get. I wrote up the trade-off for Discuss Data's new blog.
+
+          Two surveys, fielded simultaneously between 25 July and 1 August 2022: a random-digit-dial telephone survey (n=1,206) and an opt-in web panel (n=1,192).
+
+          The web panel is cheaper and faster, and it misses roughly a third of the country — rural residents and anyone over 55 were simply not reachable on it (this changes all the time, so the situation may be different now). That is not a rounding error, it is a structural hole, and it shows up in the results: the telephone sample recorded 14% displaced respondents against the panel's 21%, along with more Soviet-era veterans and higher concern about the draft.
+
+          The telephone survey has the opposite problem. Talking to a person invites you to perform civic virtue. Under an honesty frame, telephone respondents overstated their volunteering by about 16%. The web respondents showed no such inflation.
+
+          So neither is the correct mode. The useful question is which kind of error your particular question can tolerate — and the answer differs for "how many people were displaced" and "how many people volunteered". Where the budget allows, mixed-mode designs let each mode cover for the other. Where it does not, ask your provider directly which demographics they cannot reach, and report the limits to your readers and your funders rather than hiding it.
+
+          The post: https://discuss-data.net/cs/eescca/section/blog/coverage-or-candour/
+
+          It draws on my article in Post-Soviet Affairs, "Two implications of survey research mode during war": https://doi.org/10.1080/1060586X.2025.2529114
+
+          Discuss Data (@[Discuss Data]) has just launched this blog for research on Eastern Europe, the South Caucasus and Central Asia — worth following if that is your region: https://discuss-data.net/cs/eescca/section/blog/
+    post_at: '2026-08-14T09:30:00-04:00'
+- id: pub-erlichGetCredibleModest2017
+  kind: publication
+  title: Get credible! ... Or a modest proposal to implement pre-registration in think tank research
+  url: https://crrc-caucasus.blogspot.com/2017/09/get-credible-or-modest-proposal-to.html
+  blurb: ''
+  year: '2017'
+  venue: On Think Tanks
+  coauthors:
+  - Dustin Gilbreath
+  source:
+    citekey: erlichGetCredibleModest2017
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-brikTrumpImpeachmentIsn
+  kind: publication
+  title: Trump’s impeachment isn’t over for Ukraine’s citizens
+  url: https://www.washingtonpost.com/politics/2020/02/19/trumps-impeachment-isnt-over-ukraines-citizens/
+  blurb: ''
+  year: '2020'
+  venue: Washington Post
+  coauthors:
+  - Tymofii Brik
+  - Jordan Gans-Morse
+  source:
+    citekey: brikTrumpImpeachmentIsn
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-tapiaQuienSirveTransparencia2021
+  kind: publication
+  title: ¿A quién le sirve la transparencia en México?
+  url: https://redaccion.nexos.com.mx/a-quien-le-sirve-la-transparencia-en-mexico/
+  blurb: ''
+  year: '2021'
+  venue: Nexos
+  coauthors:
+  - Jésica Tapia
+  - Brian Palmer Rubin
+  - Daniel Berliner
+  - Benjamin E. Bagozzi
+  source:
+    citekey: tapiaQuienSirveTransparencia2021
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-bridgmanConservativePartySlowly2021
+  kind: publication
+  title: Conservative Party slowly learning real cost of promoting culturally divisive policies
+  url: https://www.hilltimes.com/2021/06/30/conservative-party-slowly-learning-real-cost-of-promoting-culturally-divisive-policies/303970
+  blurb: ''
+  year: '2021'
+  venue: The Hill Times
+  coauthors:
+  - Aengus Bridgman
+  - Costin Ciobanu
+  source:
+    citekey: bridgmanConservativePartySlowly2021
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichVoteBuyingBig2021
+  kind: publication
+  title: Vote buying is a big problem in Kenya. How to curb it before the 2022 elections
+  url: http://theconversation.com/vote-buying-is-a-big-problem-in-kenya-how-to-curb-it-before-the-2022-elections-171630
+  blurb: ''
+  year: '2021'
+  venue: The Conversation
+  coauthors: []
+  source:
+    citekey: erlichVoteBuyingBig2021
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichCriticalThinkingProtects2022
+  kind: publication
+  title: Critical Thinking Protects Ukrainians from the Kremlin’s Disinformation War | Society for
+    Personality and Social Psychology
+  url: https://spsp.org/news/character-and-context-blog/erlich-rand-critical-thinking-disinformation
+  blurb: ''
+  year: '2022'
+  venue: Character and Context
+  coauthors:
+  - David Rand
+  source:
+    citekey: erlichCriticalThinkingProtects2022
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-berlinerBigDataAcceso2022
+  kind: publication
+  title: Big data y acceso a la información en México
+  url: bigdataytransparenciamx.lse.ac.uk/
+  blurb: ''
+  year: '2022'
+  venue: ''
+  coauthors:
+  - Daniel Berliner
+  - Brian Palmer-Rubin
+  - Jésica E. Tapia Reyes
+  - Benjamin Bagozzi
+  source:
+    citekey: berlinerBigDataAcceso2022
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-light_SurveysShowUkrainians_2022
+  kind: publication
+  title: Surveys show Ukrainians don't want 'Kalashnikov society'
+  url: https://kyivindependent.com/group-of-authors-surveys-show-ukrainians-dont-want-kalashnikov-society/
+  blurb: ''
+  year: '2022'
+  venue: Kyiv Independent
+  coauthors:
+  - Matthew Light
+  - Anne-Marie Singh
+  - Serhii Bahlaii
+  source:
+    citekey: light_SurveysShowUkrainians_2022
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-brikRussiaWartimePropaganda2020
+  kind: publication
+  title: Is Russia’s wartime propaganda more powerful than family bonds?
+  url: https://www.washingtonpost.com/politics/2022/06/20/russia-ukraine-relatives-conversations-propaganda/
+  blurb: ''
+  year: '2020'
+  venue: Washington Post
+  coauthors:
+  - Tymofii Brik
+  - Erlich, Aaron
+  - Jordan Gans-Morse
+  source:
+    citekey: brikRussiaWartimePropaganda2020
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichaaronRootsResistanceUnderstanding2022
+  kind: publication
+  title: 'Roots of the Resistance: Understanding National Identity in Ukraine'
+  url: https://warontherocks.com/2022/04/roots-of-the-resistance-understanding-national-identity-in-ukraine/
+  blurb: ''
+  year: '2022'
+  venue: War on the Rocks
+  coauthors:
+  - Erlich, Aaron
+  source:
+    citekey: erlichaaronRootsResistanceUnderstanding2022
+    section: blog
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-gutbrodImplausibleIncarcerationData2013
+  kind: publication
+  title: Implausible incarceration data need to be addressed
+  url: http://www.thelancet.com/journals/langlo/article/PIIS2214-109X(13)70142-6/fulltext
+  blurb: ''
+  year: '2013'
+  venue: The Lancet Global Health
+  coauthors:
+  - Hans Gutbrod
+  source:
+    citekey: gutbrodImplausibleIncarcerationData2013
+    section: editor-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichDevelopmentTrapsEscaping2016
+  kind: publication
+  title: 'Development Traps and Escaping Development Traps: What Can We Learn from Freedom of Information
+    Laws?'
+  url: http://www-tandfonline-com.proxy3.library.mcgill.ca/doi/abs/10.1080/08853908.2016.1211571
+  blurb: ''
+  year: '2016'
+  venue: The International Trade Journal
+  coauthors: []
+  source:
+    citekey: erlichDevelopmentTrapsEscaping2016
+    section: editor-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-bushLessonsResultsBlindReview2018
+  kind: publication
+  title: Lessons from Results-Blind Review
+  url: https://docs.google.com/viewer?a=v&pid=sites&srcid=dW1pY2guZWR1fHBvbGl0aWNhbC1lY29ub21pc3QtbmV3c2xldHRlcnxneDoxZjU3NWI4ZjgyMjNmN2M4
+  blurb: ''
+  year: '2018'
+  venue: The Political Economist
+  coauthors:
+  - Sarah Sunn Bush
+  - Lauren Prather
+  - Yael Zeira
+  source:
+    citekey: bushLessonsResultsBlindReview2018
+    section: editor-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichPreacceptanceMethodCombat2018
+  kind: publication
+  title: 'Pre-acceptance as a method to combat publication bias in area studies: a pilot in the Caucasus'
+  url: https://www.tandfonline.com/doi/full/10.1080/23761199.2018.1522796
+  blurb: ''
+  year: '2018'
+  venue: Caucasus Survey
+  coauthors: []
+  source:
+    citekey: erlichPreacceptanceMethodCombat2018
+    section: editor-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-gutbrod_OpinionSurvey_2009
+  kind: publication
+  title: Opinion survey opportunities and exit poll limitations
+  url: ''
+  blurb: ''
+  year: '2009'
+  venue: 'Georgia – presidential and parliamentary elections 2008: Lessons learned'
+  coauthors:
+  - Hans Gutbrod
+  source:
+    citekey: gutbrod_OpinionSurvey_2009
+    section: editor-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_TajikistanRefugee_2006
+  kind: publication
+  title: 'Tajikistan: From Refugee Sender to Labor Exporter'
+  url: https://www.migrationpolicy.org/article/tajikistan-refugee-sender-labor-exporter
+  blurb: ''
+  year: '2006'
+  venue: Migration Information Source
+  coauthors: []
+  source:
+    citekey: erlich_TajikistanRefugee_2006
+    section: editor-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_WhatCorruption_2025a
+  kind: publication
+  title: What Corruption is Most Harmful? Unbundling Citizen Perceptions
+  url: https://www.ipr.northwestern.edu/documents/working-papers/2025/wp-25-02.pdf
+  blurb: ''
+  year: '2025'
+  venue: IPR Working Paper Series
+  coauthors:
+  - Jordan Gans-Morse
+  - Simeon Nichter
+  - Arne Holverscheid
+  source:
+    citekey: erlich_WhatCorruption_2025a
+    section: working-paper
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_CanNormBased_2023
+  kind: publication
+  title: Can Norm-Based Information Campaigns Reduce Corruption?
+  url: https://www.ipr.northwestern.edu/documents/working-papers/2023/wp-23-33.pdf
+  blurb: ''
+  year: '2023'
+  venue: IPR Working Paper Series
+  coauthors:
+  - Jordan Gans-Morse
+  source:
+    citekey: erlich_CanNormBased_2023
+    section: working-paper
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichElderYouRe2021
+  kind: publication
+  title: Elder, you’re right! Age-group differences in social and political interactions in Africa
+  url: https://afrobarometer.org/sites/default/files/publications/Working%20papers/wp185-age-group_differences_in_social_and_political_interactions_in_africa-afrobarometer_working_paper-16june20.pdf
+  blurb: ''
+  year: '2021'
+  venue: ''
+  coauthors:
+  - Andrew McCormack
+  source:
+    citekey: erlichElderYouRe2021
+    section: working-paper
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichSelectiveBriberyWhen2022
+  kind: publication
+  title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
+  url: https://www.ipr.northwestern.edu/documents/working-papers/2022/wp-22-28.pdf
+  blurb: ''
+  year: '2022'
+  venue: IPR Working Paper Series
+  coauthors:
+  - Jordan Gans-Morse
+  - Simeon NIchter
+  source:
+    citekey: erlichSelectiveBriberyWhen2022
+    section: working-paper
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_MeasuringHow_2023
+  kind: publication
+  title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental
+    Evidence from the Country of Georgia'
+  url: https://osf.io/mwg7u_v1/
+  blurb: ''
+  year: '2023'
+  venue: ''
+  coauthors: []
+  source:
+    citekey: erlich_MeasuringHow_2023
+    section: working-paper
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_WhatCorruption_2025
+  kind: publication
+  title: What corruption is most harmful? Unbundling citizen perceptions
+  url: https://www.sciencedirect.com/science/article/pii/S0305750X25000865
+  blurb: ''
+  year: '2025'
+  venue: World Development
+  coauthors:
+  - Jordan Gans-Morse
+  - Simeon Nichter
+  - Arne Holverscheid
+  source:
+    citekey: erlich_WhatCorruption_2025
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_SelectiveBribery_2025
+  kind: publication
+  title: 'Selective Bribery: When Do Citizens Engage in Corruption?'
+  url: https://doi.org/10.1177/00104140241259444
+  blurb: ''
+  year: '2025'
+  venue: Comparative Political Studies
+  coauthors:
+  - Jordan Gans-Morse
+  - Simeon Nichter
+  source:
+    citekey: erlich_SelectiveBribery_2025
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-chen_StudyingGlobal_
+  kind: publication
+  title: 'Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations'
+  url: https://doi.org/10.1080/13645579.2026.2693111
+  blurb: ''
+  year: '2026'
+  venue: International Journal of Social Research Methodology
+  coauthors:
+  - Zhenxiang Chen
+  - Thomas Soehl
+  source:
+    citekey: chen_StudyingGlobal_
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_WhoShould_
+  kind: publication
+  title: Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian
+    Diaspora
+  url: ''
+  blurb: ''
+  year: ''
+  venue: Comparative Migration Studies
+  coauthors:
+  - Thomas Soehl
+  source:
+    citekey: erlich_WhoShould_
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_CanNormbased_2026
+  kind: publication
+  title: Can norm-based information campaigns reduce corruption?
+  url: https://onlinelibrary.wiley.com/doi/abs/10.1111/ajps.12940
+  blurb: ''
+  year: '2026'
+  venue: American Journal of Political Science
+  coauthors:
+  - Jordan Gans-Morse
+  source:
+    citekey: erlich_CanNormbased_2026
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-berlinerCompetingTransparencyPolitical2015
+  kind: publication
+  title: 'Competing for Transparency: Political Competition and Institutional Reform in Mexican States'
+  url: http://journals.cambridge.org/article_S0003055414000616
+  blurb: ''
+  year: '2015'
+  venue: American Political Science Review
+  coauthors:
+  - Daniel Berliner
+  source:
+    citekey: berlinerCompetingTransparencyPolitical2015
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-bushEffectsAuthoritarianIconography2016
+  kind: publication
+  title: The Effects of Authoritarian Iconography An Experimental Test
+  url: http://cps.sagepub.com/content/early/2016/04/05/0010414016633228.abstract
+  blurb: ''
+  year: '2016'
+  venue: Comparative Political Studies
+  coauthors: &id001
+  - Sarah Sunn Bush
+  - Lauren Prather
+  - Yael Zeira
+  source:
+    citekey: bushEffectsAuthoritarianIconography2016
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-bushEffectsAuthoritarianIconography2016-marginal-revolution
+  kind: media
+  title: Marginal Revolution on “The Effects of Authoritarian Iconography An Experimental Test”
+  url: https://marginalrevolution.com/marginalrevolution/2016/07/results-free-review.html
+  blurb: ''
+  year: '2016'
+  venue: Marginal Revolution
+  coauthors: *id001
+  source:
+    citekey: bushEffectsAuthoritarianIconography2016
+    outlet: Marginal Revolution
+    paper: The Effects of Authoritarian Iconography An Experimental Test
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-bushEffectsAuthoritarianIconography2016-washington-post-the-monk
+  kind: media
+  title: 'Washington Post: The Monkey Cage on “The Effects of Authoritarian Iconography An Experimental
+    Test”'
+  url: https://www.washingtonpost.com/news/monkey-cage/wp/2016/08/25/heres-what-happens-when-scientists-evaluate-research-without-knowing-the-results/
+  blurb: ''
+  year: '2016'
+  venue: 'Washington Post: The Monkey Cage'
+  coauthors: *id001
+  source:
+    citekey: bushEffectsAuthoritarianIconography2016
+    outlet: 'Washington Post: The Monkey Cage'
+    paper: The Effects of Authoritarian Iconography An Experimental Test
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-bushEffectsAuthoritarianIconography2016-psypost
+  kind: media
+  title: PsyPost on “The Effects of Authoritarian Iconography An Experimental Test”
+  url: https://www.psypost.org/2016/12/scientists-investigate-subliminal-authoritarian-imagery-encourages-citizens-obey-46570
+  blurb: ''
+  year: '2016'
+  venue: PsyPost
+  coauthors: *id001
+  source:
+    citekey: bushEffectsAuthoritarianIconography2016
+    outlet: PsyPost
+    paper: The Effects of Authoritarian Iconography An Experimental Test
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-bushEffectsAuthoritarianIconography2016-the-guardian
+  kind: media
+  title: The Guardian on “The Effects of Authoritarian Iconography An Experimental Test”
+  url: https://www.theguardian.com/commentisfree/2026/jun/04/the-guardian-view-on-trumps-omnipresence-commanding-attention-like-a-king
+  blurb: ''
+  year: '2016'
+  venue: The Guardian
+  coauthors: *id001
+  source:
+    citekey: bushEffectsAuthoritarianIconography2016
+    outlet: The Guardian
+    paper: The Effects of Authoritarian Iconography An Experimental Test
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichLocalMwananchiHas2016
+  kind: publication
+  title: '‘The local mwananchi has lost trust’: design, transition and legitimacy in Kenyan election
+    management'
+  url: http://www.journals.cambridge.org/abstract_S0022278X16000604
+  blurb: ''
+  year: '2016'
+  venue: The Journal of Modern African Studies
+  coauthors:
+  - Nicholas Kerr
+  source:
+    citekey: erlichLocalMwananchiHas2016
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichDoubleEdgedSwordMobilizing2018
+  kind: publication
+  title: The Double-Edged Sword of Mobilizing Citizens Via Mobile Phone in Developing Countries
+  url: http://www.sciencedirect.com/science/article/pii/S2352728517300362
+  blurb: ''
+  year: '2018'
+  venue: Development Engineering
+  coauthors:
+  - Danielle F. Jung
+  - James D. Long
+  - Craig McIntosh
+  source:
+    citekey: erlichDoubleEdgedSwordMobilizing2018
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_CanInformation_2020
+  kind: publication
+  title: Can information campaigns impact preferences toward vote selling? Theory and evidence from
+    Kenya
+  url: https://doi.org/10.1177/0192512119836283
+  blurb: ''
+  year: '2020'
+  venue: International Political Science Review
+  coauthors: []
+  source:
+    citekey: erlich_CanInformation_2020
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_InterpersonalIncomparability_2020
+  kind: publication
+  title: 'Interpersonal incomparability in citizens’ views of democracy: survey evidence from Ukraine'
+  url: https://doi.org/10.1080/17457289.2018.1554664
+  blurb: ''
+  year: '2020'
+  venue: Journal of Elections, Public Opinion and Parties
+  coauthors:
+  - Calvin Garner
+  source:
+    citekey: erlich_InterpersonalIncomparability_2020
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-berlinerPoliticalLogicGovernment2021
+  kind: publication
+  title: 'The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico'
+  url: https://doi.org/10.1086/709148
+  blurb: ''
+  year: '2021'
+  venue: The Journal of Politics
+  coauthors:
+  - Daniel Berliner
+  - Benjamin E. Bagozzi
+  - Brian Palmer-Rubin
+  source:
+    citekey: berlinerPoliticalLogicGovernment2021
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-bridgman_UnveilingUnexpected_2021
+  kind: publication
+  title: 'Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following
+    the Leader'
+  url: https://www.journals.uchicago.edu/doi/full/10.1086/711177
+  blurb: ''
+  year: '2021'
+  venue: The Journal of Politics
+  coauthors: &id002
+  - Aengus Bridgman
+  - Costin Ciobanu
+  - Danielle Bohonos
+  - Christopher Ross
+  source:
+    citekey: bridgman_UnveilingUnexpected_2021
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-bridgman_UnveilingUnexpected_2021-maclean-s
+  kind: media
+  title: 'Maclean''s on “Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the
+    Limits of Following the Leader”'
+  url: https://www.macleans.ca/opinion/jagmeet-singh-calls-mp-racist-but-has-he-forgotten-about-bill-21/
+  blurb: ''
+  year: '2021'
+  venue: Maclean's
+  coauthors: *id002
+  source:
+    citekey: bridgman_UnveilingUnexpected_2021
+    outlet: Maclean's
+    paper: 'Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following
+      the Leader'
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-bridgman_UnveilingUnexpected_2021-journal-de-montr-al
+  kind: media
+  title: 'Journal de Montréal on “Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences
+    and the Limits of Following the Leader”'
+  url: https://www.journaldemontreal.com/2021/06/25/prudence-avec-les-meteorites-pre-electoraux
+  blurb: ''
+  year: '2021'
+  venue: Journal de Montréal
+  coauthors: *id002
+  source:
+    citekey: bridgman_UnveilingUnexpected_2021
+    outlet: Journal de Montréal
+    paper: 'Unveiling: An Unexpected Mid-campaign Court Ruling’s Consequences and the Limits of Following
+      the Leader'
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichSubgroupDifferencesImplicit2021
+  kind: publication
+  title: Subgroup Differences in Implicit Associations and Explicit Attitudes during Wartime
+  url: https://academic.oup.com/isq/article/65/2/528/6145845
+  blurb: ''
+  year: '2021'
+  venue: International Studies Quarterly
+  coauthors:
+  - Calvin Garner
+  source:
+    citekey: erlichSubgroupDifferencesImplicit2021
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichMediaAttentionBureaucratic2021
+  kind: publication
+  title: Media Attention and Bureaucratic Responsiveness
+  url: https://academic.oup.com/jpart/article/31/4/687/6101515
+  blurb: ''
+  year: '2021'
+  venue: Journal of Public Administration Research and Theory
+  coauthors:
+  - Daniel Berliner
+  - Brian Palmer-Rubin
+  - Benjamin E Bagozzi
+  source:
+    citekey: erlichMediaAttentionBureaucratic2021
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-ellingtonMeasuringHumanRights2022
+  kind: publication
+  title: Measuring Human Rights Abuse from Access to Information Requests
+  url: http://journals.sagepub.com/doi/10.1177/00220027211035553
+  blurb: ''
+  year: '2022'
+  venue: Journal of Conflict Resolution
+  coauthors:
+  - Sarah A. V. Ellington
+  - Benjamin E. Bagozzi
+  - Daniel Berliner
+  - Brian Palmer-Rubin
+  source:
+    citekey: ellingtonMeasuringHumanRights2022
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_MultiLabelPrediction_2022
+  kind: publication
+  title: Multi-Label Prediction for Political Text-as-Data
+  url: https://www.cambridge.org/core/journals/political-analysis/article/multilabel-prediction-for-political-textasdata/0EC24DBB4E3854EBE0AD247DCB27F828
+  blurb: ''
+  year: '2022'
+  venue: Political Analysis
+  coauthors:
+  - Stefano G. Dantas
+  - Benjamin E. Bagozzi
+  - Daniel Berliner
+  - Brian Palmer-Rubin
+  source:
+    citekey: erlich_MultiLabelPrediction_2022
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_ProKremlinDisinformationEffective_2023
+  kind: publication
+  title: Is pro-Kremlin Disinformation Effective? Evidence from Ukraine
+  url: http://journals.sagepub.com/doi/10.1177/19401612211045221
+  blurb: ''
+  year: '2023'
+  venue: The International Journal of Press/Politics
+  coauthors: &id003
+  - Calvin Garner
+  source:
+    citekey: erlich_ProKremlinDisinformationEffective_2023
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-erlich_ProKremlinDisinformationEffective_2023-grid-themessenger
+  kind: media
+  title: Grid/TheMessenger on “Is pro-Kremlin Disinformation Effective? Evidence from Ukraine”
+  url: https://web.archive.org/web/20240110204946/https://themessenger.com/grid/autopsied-bodies-and-false-flags-how-pro-russian-disinformation-spreads-chaos-in-ukraine
+  blurb: ''
+  year: '2023'
+  venue: Grid/TheMessenger
+  coauthors: *id003
+  source:
+    citekey: erlich_ProKremlinDisinformationEffective_2023
+    outlet: Grid/TheMessenger
+    paper: Is pro-Kremlin Disinformation Effective? Evidence from Ukraine
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-erlich_ProKremlinDisinformationEffective_2023-canadaland
+  kind: media
+  title: Canadaland on “Is pro-Kremlin Disinformation Effective? Evidence from Ukraine”
+  url: https://www.canadaland.com/podcast/760-russias-weapons-of-mass-deception/
+  blurb: ''
+  year: '2023'
+  venue: Canadaland
+  coauthors: *id003
+  source:
+    citekey: erlich_ProKremlinDisinformationEffective_2023
+    outlet: Canadaland
+    paper: Is pro-Kremlin Disinformation Effective? Evidence from Ukraine
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_DiscriminatoryImmigration_2023
+  kind: publication
+  title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence
+    from Nigerian Expatriates'
+  url: https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/discriminatory-immigration-bans-elicit-antiamericanism-in-targeted-communities-evidence-from-nigerian-expatriates/22D07261FCD7D6AA453F7641F80D9F71
+  blurb: ''
+  year: '2023'
+  venue: Journal of Experimental Political Science
+  coauthors:
+  - Thomas Soehl
+  - Annie Y. Chen
+  source:
+    citekey: erlich_DiscriminatoryImmigration_2023
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlichDoesAnalyticThinking
+  kind: publication
+  title: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  url: https://onlinelibrary.wiley.com/doi/abs/10.1111/pops.12819
+  blurb: ''
+  year: '2023'
+  venue: Political Psychology
+  coauthors: &id004
+  - Calvin Garner
+  - Gordon Pennycook
+  - David G. Rand
+  source:
+    citekey: erlichDoesAnalyticThinking
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-erlichDoesAnalyticThinking-press-release
+  kind: media
+  title: Press Release on “Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence
+    From Ukraine”
+  url: https://www.prnewswire.com/news-releases/ukrainians-who-engage-in-more-analytic-thinking-are-less-susceptible-to-russias-disinformation-campaign-301488184.html
+  blurb: ''
+  year: '2023'
+  venue: Press Release
+  coauthors: *id004
+  source:
+    citekey: erlichDoesAnalyticThinking
+    outlet: Press Release
+    paper: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-erlichDoesAnalyticThinking-oxford-demtech
+  kind: media
+  title: Oxford Demtech on “Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence
+    From Ukraine”
+  url: https://web.archive.org/web/20240624183718/https://demtech.oii.ox.ac.uk/war-in-ukraine-and-disinformation-newsletter-29-march-2022/
+  blurb: ''
+  year: '2023'
+  venue: Oxford Demtech
+  coauthors: *id004
+  source:
+    citekey: erlichDoesAnalyticThinking
+    outlet: Oxford Demtech
+    paper: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: award-erlichDoesAnalyticThinking-top-cited
+  kind: award
+  title: Top 10 Most cited article award International Society of Political Psychology (ISPP)
+  url: https://onlinelibrary.wiley.com/doi/abs/10.1111/pops.12819
+  blurb: ''
+  year: '2023'
+  venue: Political Psychology
+  coauthors: *id004
+  source:
+    citekey: erlichDoesAnalyticThinking
+    award_kind: top-cited
+    paper: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_ExplainingWomen_2023
+  kind: publication
+  title: Explaining women's political underrepresentation in democracies with high levels of corruption
+  url: https://www.cambridge.org/core/product/identifier/S2049847022000462/type/journal_article
+  blurb: ''
+  year: '2023'
+  venue: Political Science Research and Methods
+  coauthors:
+  - Edana Beauvais
+  source:
+    citekey: erlich_ExplainingWomen_2023
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_WeaponizingPostelection_2023
+  kind: publication
+  title: 'Weaponizing post-election court challenges: Assessing losers’ motivations'
+  url: https://www.sciencedirect.com/science/article/pii/S0261379423000987
+  blurb: ''
+  year: '2023'
+  venue: Electoral Studies
+  coauthors: &id005
+  - Nicholas Kerr
+  - Saewon Park
+  source:
+    citekey: erlich_WeaponizingPostelection_2023
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: media-erlich_WeaponizingPostelection_2023-independent-uganda
+  kind: media
+  title: 'Independent (Uganda) on “Weaponizing post-election court challenges: Assessing losers’
+    motivations”'
+  url: https://web.archive.org/web/20220516083222/https://www.independent.co.ug/court-cant-reverse-museveni-election-win/
+  blurb: ''
+  year: '2023'
+  venue: Independent (Uganda)
+  coauthors: *id005
+  source:
+    citekey: erlich_WeaponizingPostelection_2023
+    outlet: Independent (Uganda)
+    paper: 'Weaponizing post-election court challenges: Assessing losers’ motivations'
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_UsingCommunications_2024
+  kind: publication
+  title: 'Using Communications Technology to Promote Democratic Participation: Experimental Evidence
+    from South Africa'
+  url: https://www.journals.uchicago.edu/doi/abs/10.1086/724010
+  blurb: ''
+  year: '2024'
+  venue: Economic Development and Cultural Change
+  coauthors:
+  - Karen E. Ferree
+  - Clark C. Gibson
+  - Danielle F. Jung
+  - James D. Long
+  - Craig McIntosh
+  source:
+    citekey: erlich_UsingCommunications_2024
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_CoveringCampaign_2024
+  kind: publication
+  title: 'Covering the Campaign: Computational Tools for Measuring Differences in Candidate and Party
+    News Coverage With Application to an Emerging Democracy'
+  url: https://journals.sagepub.com/doi/10.1177/08944393241247420
+  blurb: ''
+  year: '2024'
+  venue: Social Science Computer Review
+  coauthors:
+  - Danielle F. Jung
+  - James D. Long
+  source:
+    citekey: erlich_CoveringCampaign_2024
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-light_UrbanDisorder_2025
+  kind: publication
+  title: 'Urban disorder in democratic transitions: Ukraine’s municipal policing debates in comparative
+    perspective'
+  url: https://www.tandfonline.com/doi/abs/10.1080/10439463.2024.2411538
+  blurb: ''
+  year: '2025'
+  venue: Policing and Society
+  coauthors:
+  - Matthew Light
+  - Anne-Marie Singh
+  - Oleh Feday
+  source:
+    citekey: light_UrbanDisorder_2025
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_ElderAm_2025
+  kind: publication
+  title: Elder, Am I Right? Age-Group Differences in Social and Political Interactions in Africa
+  url: https://doi.org/10.1093/ijpor/edaf003
+  blurb: ''
+  year: '2025'
+  venue: International Journal of Public Opinion Research
+  coauthors:
+  - Andrew McCormack
+  source:
+    citekey: erlich_ElderAm_2025
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-palmer-rubin_AccountabilityTime_2025
+  kind: publication
+  title: 'Accountability in Time: Evolution and Expertise in Participatory Institutions'
+  url: https://muse.jhu.edu/pub/1/article/964463
+  blurb: ''
+  year: '2025'
+  venue: World Politics
+  coauthors: &id006
+  - Brian Palmer-Rubin
+  - Jésica E. Tapia Reyes
+  - Daniel Berliner
+  - Benjamin E. Bagozzi
+  source:
+    citekey: palmer-rubin_AccountabilityTime_2025
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: award-palmer-rubin_AccountabilityTime_2025-winner
+  kind: award
+  title: Best Paper on Political Institutions from the 2021 LASA Congress
+  url: https://muse.jhu.edu/pub/1/article/964463
+  blurb: ''
+  year: '2025'
+  venue: World Politics
+  coauthors: *id006
+  source:
+    citekey: palmer-rubin_AccountabilityTime_2025
+    award_kind: winner
+    paper: 'Accountability in Time: Evolution and Expertise in Participatory Institutions'
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: award-palmer-rubin_AccountabilityTime_2025-honorable-mention
+  kind: award
+  title: Best Paper in the social sciences, LASA Mexico section
+  url: https://muse.jhu.edu/pub/1/article/964463
+  blurb: ''
+  year: '2025'
+  venue: World Politics
+  coauthors: *id006
+  source:
+    citekey: palmer-rubin_AccountabilityTime_2025
+    award_kind: honorable-mention
+    paper: 'Accountability in Time: Evolution and Expertise in Participatory Institutions'
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_TwoImplications_2025
+  kind: publication
+  title: 'Two implications of survey research mode during war: evidence from Russia’s full-scale
+    invasion of Ukraine'
+  url: https://doi.org/10.1080/1060586X.2025.2529114
+  blurb: ''
+  year: '2025'
+  venue: Post-Soviet Affairs
+  coauthors: []
+  source:
+    citekey: erlich_TwoImplications_2025
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-soehl_PromisesLimits_2024
+  kind: publication
+  title: 'Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant
+    Populations: Nigerians at Home and Abroad'
+  url: 'https://doi.org/DOI: 10.1177/00491241241266634'
+  blurb: ''
+  year: '2024'
+  venue: Sociological Methods & Research
+  coauthors:
+  - Thomas Soehl
+  - Zhenxiang Chen
+  source:
+    citekey: soehl_PromisesLimits_2024
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-erlich_HowLanguage_2025
+  kind: publication
+  title: 'How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine'
+  url: https://www.cambridge.org/core/journals/journal-of-experimental-political-science/article/how-language-shapes-belief-in-misinformation-a-study-among-multilinguals-in-ukraine/920BF2F7A7D76BA74C4332CE8C444E0F
+  blurb: ''
+  year: '2026'
+  venue: Journal of Experimental Political Science
+  coauthors:
+  - Kevin Aslett
+  - Sarah Graham
+  - Joshua A. Tucker
+  source:
+    citekey: erlich_HowLanguage_2025
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: pub-leviAligningRightsInterests2012
+  kind: publication
+  title: 'Aligning Rights and Interests: Why, When and How to Uphold Labor Standards'
+  url: http://siteresources.worldbank.org/EXTNWDR2013/Resources/8258024-1320950747192/8260293-1320956712276/8261091-1348683883703/WDR2013_bp_Aligning_Rights_and_Incentives.pdf
+  blurb: ''
+  year: '2012'
+  venue: World Bank Development Report Background Paper
+  coauthors:
+  - Margaret Levi
+  - Christoper Adolph
+  - Daniel Berliner
+  - Anne Greenleaf
+  - Milli Lake
+  - Jennifer Noveck
+  source:
+    citekey: leviAligningRightsInterests2012
+    section: peer-reviewed
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: post-2014-area-proportional-maps
+  kind: blog
+  title: Area proportional to population maps
+  url: https://aaronerlich.com/posts/2014-area-proportional-maps/
+  blurb: A density-equalizing cartogram of Kenya's counties, with each county's area proportional
+    to its voting-age population.
+  year: '2014'
+  venue: ''
+  coauthors: []
+  source:
+    path: posts/2014-area-proportional-maps/index.qmd
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: post-2026-07-publication-record
+  kind: blog
+  title: What it actually takes to publish a paper
+  url: https://aaronerlich.com/posts/2026-07-publication-record/
+  blurb: I put my entire journal publication record online — and what it shows about the hidden time
+    in publishing, and about aiming (or not) for the top-tier journal.
+  year: '2026'
+  venue: ''
+  coauthors: []
+  source:
+    path: posts/2026-07-publication-record/index.qmd
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: tool-mapcan
+  kind: tool
+  title: mapcan
+  url: https://CRAN.R-project.org/package=mapcan
+  blurb: A variety of functions that make it easy to plot standard choropleth Canadian maps as well
+    as choropleth alternatives in ggplot2.
+  year: ''
+  venue: ''
+  coauthors:
+  - Andrew McCormack
+  source:
+    cv_section: software
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-nigerians-abroad-and-at-home-politics-and-nation-2020
+  kind: grant
+  title: 'Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora'
+  url: ''
+  blurb: ''
+  year: '2020'
+  venue: SSHRC Insight Development Grant
+  coauthors: []
+  source:
+    cv_section: grants
+    role: Co-Investigator
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-consortium-on-analytics-for-data-driven-decision-2020
+  kind: grant
+  title: Consortium on Analytics for Data-Driven Decision-Making (CAnD3)
+  url: ''
+  blurb: ''
+  year: '2020'
+  venue: SSHRC Partnership Grant
+  coauthors: []
+  source:
+    cv_section: grants
+    role: Co-Applicant
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-international-experts-and-anti-corruption-initia-2018
+  kind: grant
+  title: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine
+    police reform since 2014'
+  url: ''
+  blurb: ''
+  year: '2018'
+  venue: SSHRC Insight Grant
+  coauthors: []
+  source:
+    cv_section: grants
+    role: Co-Investigator
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-discr-tion-ou-capacit-utilisation-de-m-gadonn-es-2018
+  kind: grant
+  title: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse
+    des gouvernements'
+  url: ''
+  blurb: ''
+  year: '2018'
+  venue: FRQSC Soutien à la recherche pour la relève professorale
+  coauthors: []
+  source:
+    cv_section: grants
+    role: PI
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-studying-government-accountability-and-responsiv-2018
+  kind: grant
+  title: Studying Government Accountability and Responsiveness with Big Data on Citizen-Government
+    Interactions
+  url: ''
+  blurb: ''
+  year: '2018'
+  venue: SSHRC Insight Development Grant
+  coauthors: []
+  source:
+    cv_section: grants
+    role: PI
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-democracy-in-disruption-engaging-canadians-to-fa-2018
+  kind: grant
+  title: Democracy in disruption? Engaging Canadians to face emerging threats
+  url: ''
+  blurb: ''
+  year: '2018'
+  venue: SSHRC Connection Grant
+  coauthors: []
+  source:
+    cv_section: grants
+    role: Co-applicant (Fenwick McKelvey, Lead-PI)
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-what-s-in-a-tally-2017
+  kind: grant
+  title: What's in a Tally
+  url: ''
+  blurb: ''
+  year: '2017'
+  venue: SSHRC Internal Grant
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-power-of-the-panopticon-2015
+  kind: grant
+  title: Power of the Panopticon
+  url: ''
+  blurb: with S. Bush, L. Prather, Y. Zeira
+  year: '2015'
+  venue: 'Comparative Political Studies: Transparency Special Issue'
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-power-of-the-panopticon-2015-2
+  kind: grant
+  title: Power of the Panopticon
+  url: ''
+  blurb: with L. Prather
+  year: '2015'
+  venue: Program on Middle East Political Science
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-center-for-statistics-social-sciences-travel-gra-2015
+  kind: grant
+  title: Center for Statistics & Social Sciences Travel Grant
+  url: ''
+  blurb: ''
+  year: '2015'
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-levi-kaplan-comparative-political-economy-resear-2015
+  kind: grant
+  title: Levi-Kaplan Comparative Political Economy Research Award
+  url: ''
+  blurb: ''
+  year: '2015'
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-chester-a-fritz-fellowship-2014–2015
+  kind: grant
+  title: Chester A. Fritz Fellowship
+  url: ''
+  blurb: ''
+  year: 2014–2015
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-international-research-exchanges-board-irex-2014
+  kind: grant
+  title: International Research & Exchanges Board (IREX)
+  url: ''
+  blurb: ''
+  year: '2014'
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-full-scholarship-from-nyu-to-attend-inaugural-wi-2013
+  kind: grant
+  title: Full scholarship from NYU to attend Inaugural Winter Experimental Social Sciences Institute
+    at NYU Abu Dhabi
+  url: ''
+  blurb: ''
+  year: '2013'
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-eitm-scholarship-to-attend-icpsr-2013
+  kind: grant
+  title: EITM Scholarship to attend ICPSR
+  url: ''
+  blurb: ''
+  year: '2013'
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-durden-family-fellowship-university-of-washingto-2013
+  kind: grant
+  title: Durden Family Fellowship, University of Washington, Department of Political Science
+  url: ''
+  blurb: ''
+  year: '2013'
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-u-s-fulbright-program-georgia-recipient-declined-2007
+  kind: grant
+  title: U.S. Fulbright Program, Georgia Recipient (declined)
+  url: ''
+  blurb: ''
+  year: '2007'
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-merit-based-tuition-scholarship-georgetown-unive-2004–2006
+  kind: grant
+  title: Merit-based tuition scholarship, Georgetown University
+  url: ''
+  blurb: ''
+  year: 2004–2006
+  venue: ''
+  coauthors: []
+  source:
+    cv_section: grants
+    role: ''
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-digital-tools-for-democracy-2026-2033
+  kind: grant
+  title: Digital Tools for Democracy
+  url: ''
+  blurb: Clifton van der Linden, lead PI
+  year: 2026-2033
+  venue: SSHRC Partnership Grant (Stage 2)
+  coauthors: []
+  source:
+    cv_section: grants
+    role: Co-applicant
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: grant-opinion-stability-and-change-during-ukraine-s-cr-2026
+  kind: grant
+  title: Opinion Stability and Change During Ukraine's Critical Juncture (2014-2022)
+  url: ''
+  blurb: ''
+  year: '2026'
+  venue: SSHRC Internal Grant
+  coauthors: []
+  source:
+    cv_section: grants
+    role: PI
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-how-language-shapes-belief-in-misinforma-2025-10-10
+  kind: talk
+  title: 'How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine'
+  url: ''
+  blurb: ''
+  year: '2025'
+  venue: Disinformation, Propaganda, and Russia's War on Ukraine, Institute of European, Russian,
+    and Eurasian Studies, Carleton University
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: October 10, 2025
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-debates-over-civilian-handgun-ownership-2025-09-25
+  kind: talk
+  title: Debates over Civilian Handgun Ownership in Wartime Ukraine
+  url: ''
+  blurb: ''
+  year: '2025'
+  venue: Danlyiw Seminar, University of Ottawa
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: September 25, 2025
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-how-do-citizens-view-esg-2025-09-11
+  kind: talk
+  title: How do citizens view ESG?
+  url: ''
+  blurb: ''
+  year: '2025'
+  venue: Annual Meetings of the American Political Science Association, Vancouver
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: September 11, 2025
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-war-fatigue-2025-05-22
+  kind: talk
+  title: War Fatigue?
+  url: ''
+  blurb: ''
+  year: '2025'
+  venue: Association for the Study of Nationalities, New York
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: May 22, 2025
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-citizen-perspectives-of-corruption-harms-2024-05-16
+  kind: talk
+  title: 'Citizen Perspectives of Corruption Harms: Evidence from Armenia'
+  url: ''
+  blurb: ''
+  year: '2024'
+  venue: Association for the Study of Nationalities, New York
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: May 16, 2024
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-georgia-s-euromaidan-making-sense-of-mas-2024-05-16
+  kind: talk
+  title: Georgia's Euromaidan? Making Sense of Mass Protests in Georgia
+  url: ''
+  blurb: ''
+  year: '2024'
+  venue: Roundtable talk, Association for the Study of Nationalities, New York
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: May 16, 2024
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-police-decentralization-in-ukraine-since-2023-09-29
+  kind: talk
+  title: Police Decentralization in Ukraine since 2014 and Collaborative Democracy
+  url: ''
+  blurb: ''
+  year: '2023'
+  venue: Danlyiw Seminar, University of Ottawa
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: September 29, 2023
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-promises-and-limits-of-using-targeted-so-2023-04-19
+  kind: talk
+  title: Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant
+    Populations
+  url: ''
+  blurb: ''
+  year: '2023'
+  venue: 'Democracy under Threat: How Education can Save it (DEMED), University of Glasgow'
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: April 19, 2023
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-volunteering-under-invasion-descriptive-2023-01-20
+  kind: talk
+  title: 'Volunteering Under Invasion: Descriptive and Experimental Evidence on Civilian Mobilization'
+  url: ''
+  blurb: ''
+  year: '2023'
+  venue: U.S. Dept of State
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: January 20, 2023
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-pro-kremlin-propaganda-s-failure-in-ukra-2023-01-19
+  kind: talk
+  title: 'Pro-Kremlin Propaganda''s Failure in Ukraine: Evidence and Lessons Learned'
+  url: ''
+  blurb: ''
+  year: '2023'
+  venue: PONARS, George Washington University; follow-up CEPA Roundtable
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: January 19, 2023
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-ukrainians-attitudes-towards-pro-kremlin-2022-03-23
+  kind: talk
+  title: Ukrainians' Attitudes towards Pro-Kremlin Disinformation
+  url: ''
+  blurb: ''
+  year: '2022'
+  venue: DRUMS, S. Rajaratnam School of International Studies, Nanyang Technological University
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: March 23, 2022
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-russia-s-attack-on-ukraine-an-expert-rou-2022-03-09
+  kind: talk
+  title: 'Russia''s Attack on Ukraine: An Expert Roundtable'
+  url: ''
+  blurb: ''
+  year: '2022'
+  venue: Jean Monnet Network 'Between the EU and Russia' (BEAR), Montreal
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: March 9, 2022
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-weaponizing-election-petitions-undated
+  kind: talk
+  title: Weaponizing Election Petitions
+  url: ''
+  blurb: ''
+  year: ''
+  venue: Annual Meeting of the Southern Political Science Association, San Juan PR
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: January 9-11, 2022
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-russian-disinformation-in-ukraine-undated
+  kind: talk
+  title: Russian Disinformation in Ukraine
+  url: ''
+  blurb: ''
+  year: ''
+  venue: Annual Meeting of the Southern Political Science Association, San Juan PR
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: January 9-11, 2022
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-media-attention-and-bureaucratic-respons-2019-01-01
+  kind: talk
+  title: Media Attention and Bureaucratic Responsiveness
+  url: ''
+  blurb: ''
+  year: '2019'
+  venue: MPSA Chicago; TextXD Berkeley; SPSA San Juan PR
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: '2019'
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-what-can-we-learn-from-election-petition-undated
+  kind: talk
+  title: What Can we Learn From Election Petitions? An Analysis of Kenya's 2013 Election-related
+    Court Cases
+  url: ''
+  blurb: ''
+  year: ''
+  venue: APSA Annual Convention, Boston
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: August 30 - September 2, 2018
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-ethnic-rivalry-or-citizen-solidarity-undated
+  kind: talk
+  title: Ethnic Rivalry or Citizen Solidarity?
+  url: ''
+  blurb: ''
+  year: ''
+  venue: Temple University Comparative Politics Colloquium; University of Toronto CERES
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: 2018-2019
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-covering-the-campaign-the-2014-south-afr-undated
+  kind: talk
+  title: 'Covering the Campaign: The 2014 South African Presidential Election'
+  url: ''
+  blurb: ''
+  year: ''
+  venue: APSA Annual Convention, San Francisco
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: September 1-4, 2017
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-evaluating-women-candidates-in-a-corrupt-2017-01-01
+  kind: talk
+  title: Evaluating Women Candidates in a Corrupt Environment with Low Levels of Women's Representation
+  url: ''
+  blurb: ''
+  year: '2017'
+  venue: MPSA Annual Convention, Chicago; CRRC 5th Annual Methodological Conference, Tbilisi
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: '2017'
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-the-future-of-transparency-and-experimen-2017-01-01
+  kind: talk
+  title: 'The future of transparency and experimentation: new ideas and initiatives'
+  url: ''
+  blurb: ''
+  year: '2017'
+  venue: 'Trends behind the numbers: bridging policies and needs, Tbilisi, Georgia'
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: January 2017
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-do-pre-election-polls-changes-citizens-b-undated
+  kind: talk
+  title: Do Pre-Election Polls Changes Citizens' Beliefs or Behavior? Evidence from a Laboratory
+    Experiment in the Country of Georgia
+  url: ''
+  blurb: ''
+  year: ''
+  venue: MPSA Annual Convention, Chicago
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: April 16-19, 2015
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-power-of-the-panopticon-how-leaders-imag-undated
+  kind: talk
+  title: Power of the Panopticon? How Leaders' Images Affect Compliance
+  url: ''
+  blurb: ''
+  year: ''
+  venue: MPSA Annual Convention, Chicago
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: April 16-19, 2015
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-the-past-present-and-future-of-public-op-2026-05-02
+  kind: talk
+  title: 'The Past, Present, and Future of Public Opinion Survey Research in Ukraine: From Pen and
+    Paper to Agentic AI (2015-2026)'
+  url: ''
+  blurb: ''
+  year: '2026'
+  venue: 'Cornell University, Research for Impact: Academic Expertise and the War in Ukraine '
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: May 2, 2026
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: talk-thinking-about-europe-and-governance-exp-2026-05-28
+  kind: talk
+  title: 'Thinking About Europe and Governance Expectations: Evidence from an EU Candidate Country
+    (Montenegro)'
+  url: ''
+  blurb: ''
+  year: '2026'
+  venue: New York, Assocaition for the Study of Nationalisties
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: May 28, 2026
+  added: '2026-08-11'
+  status: archived
+  rounds: []
+- id: tool-citation-arcs
+  kind: tool
+  title: Citation Arcs
+  url: https://aaronerlich.com/citation-arcs/
+  blurb: 'Draw three views of any researcher''s citation record: cumulative in calendar time, aligned
+    on publication, and the per-year arc. Runs entirely in your browser using OpenAlex.'
+  year: '2026'
+  venue: ''
+  coauthors: []
+  source:
+    manual: true
+  added: '2026-08-11'
+  status: scheduled
+  rounds:
+  - n: 1
+    opened: '2026-08-11'
+    status: scheduled
+    note: launch
+    drafts:
+      bluesky:
+        text: 'A while back I posted my own citation record. This is the tool that drew it: put in
+          your ORCID and it makes the same three charts for yours, including the arc showing when
+          each paper actually peaked. Runs in your browser. https://aaronerlich.com/citation-arcs/'
+        embed:
+          uri: https://aaronerlich.com/citation-arcs/
+          title: Citation Arcs
+          description: 'Draw three views of any researcher''s citation record: cumulative in calendar
+            time, aligned on publication, and the per-year arc. Runs entirely in your browser using
+            OpenAlex.'
+      linkedin:
+        text: |-
+          A while back I posted what my own citation record looks like once you take age out of it. Several people asked whether they could run the same thing on themselves. You can.
+
+          Put in your ORCID (or search your name) and it draws three views of your record: the cumulative curves, the same curves realigned so every paper starts at its own year zero, and a per-year arc showing when each paper actually peaked — something a cumulative curve can never show you, because it can only go up.
+
+          Two things it does that most citation graphics hide. Citations before publication are real and drawn as such: a working paper does work long before it appears in an issue. And the incomplete current year is dashed, because drawing it solid makes every curve appear to flatten at the same moment, which looks like a finding and is an artifact.
+
+          It runs entirely in your browser. Your identifier goes to OpenAlex and nowhere else — there is no server of mine involved and nothing is logged. Numbers will look lower than Google Scholar, which indexes preprints and chapters OpenAlex does not; the ranking is nearly identical, and these charts are about shape rather than level.
+
+          Venue tiering is the shakiest part and I would genuinely like bug reports. Code, and an R package that does more than the widget: github.com/aserlich/scholar-arcs
+
+          https://aaronerlich.com/citation-arcs/
+    post_at: '2026-08-19T09:30:00-04:00'
+- id: post-2026-08-citation-arcs
+  kind: blog
+  title: Did it matter where the paper landed?
+  url: https://aaronerlich.com/posts/2026-08-citation-arcs/
+  blurb: I pulled citation histories for all 30 of my published papers and colour-coded them by journal
+    type. Top-3 journals raise the floor, not the ceiling — and the most-cited paper in my record
+    is the one that got lucky.
+  year: '2026'
+  venue: ''
+  coauthors: []
+  source:
+    path: posts/2026-08-citation-arcs/index.qmd
+  added: '2026-08-11'
+  status: posted
+  rounds:
+  - n: 1
+    opened: '2026-08-11'
+    status: posted
+    note: launch
+    drafts:
+      bluesky:
+        text: All 30 of my published papers, grouped by where they landed. The top 3 don't raise
+          the ceiling — they raise the floor. My fastest-climbing paper is in a subfield journal;
+          it came out three months before the invasion. https://aaronerlich.com/posts/2026-08-citation-arcs/
+        embed:
+          uri: https://aaronerlich.com/posts/2026-08-citation-arcs/
+          title: Did it matter where the paper landed?
+          description: I pulled citation histories for all 30 of my published papers and colour-coded
+            them by journal type. Top-3 journals raise the floor, not the ceiling — and the most-cited
+            paper in my record is the one that got lucky.
+      linkedin:
+        text: "Does it matter where a paper lands, a colleague asked about my last post. While I\
+          \ can't causally answer that question, I pulled citation histories for all 30 of my published\
+          \ papers and colour-coded them by the kind of journal that took them.\n\nThe pattern that\
+          \ survives: the top 3 don't raise the ceiling. They raise the floor. At three years post-publication\
+          \ my AJPS/APSR/JOP papers sit at 18, 26 and 55 citations — while my subfield-journal papers\
+          \ at the same age run from 1 all the way to 104. Publishing in the top 3 doesn't look like\
+          \ it gets you cited more. It looks more like protection from being ignored.\n\nThe most\
+          \ unuusual paper in my record makes the point. \"Is pro-Kremlin Disinformation Effective?\"\
+          \ came out in a subfield journal in November 2021, three months before the full-scale invasion.\
+          \ It went 1 → 10 → 44 → 49 citations a year and is now my second-most-cited paper. It has\
+          \ already turned; year four is down to 39 and falling. My APSR paper peaked around year\
+          \ six and was still pulling 14 a decade out. I would rather have the second — but I chose\
+          \ neither.\n\nTwo other things I learned: The fact that one paper carries a quarter of\
+          \ my citations turns out to be unremarkable: the peer median of 10 of my peers is 23%.\
+          \ And a comparison I liked, showing my median paper looking thin against peers, was mostly\
+          \ measuring how differently people curate their Google Scholar profiles. \n\nYou can see\
+          \ all the nice graphs here:\n\nhttps://aaronerlich.com/posts/2026-08-citation-arcs/"
+    post_at: '2026-08-12T09:30:00-04:00'
+    posted:
+      bluesky:
+        url: https://bsky.app/profile/aaronerlich.bsky.social/post/3msvcc44ckk2q
+        uri: at://did:plc:pu4k4ebwm2cpi5klhm3ne437/app.bsky.feed.post/3msvcc44ckk2q
+        at: '2026-08-12T14:04:17+00:00'
+      linkedin:
+        url: null
+        at: '2026-08-12T14:24:30+00:00'
+        note: posted by hand; text above is the version of record
