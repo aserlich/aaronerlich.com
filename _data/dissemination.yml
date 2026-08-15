@@ -7,7 +7,7 @@
 # Not served on aaronerlich.com: Quarto only copies _data files that a page
 # actually references (submissions_public.json, via an OJS FileAttachment).
 meta:
-  last_scan: '2026-08-12'
+  last_scan: '2026-08-15'
 items:
 - id: pub-erlichBookReviewSay2012
   kind: publication
@@ -35,11 +35,11 @@ items:
     citekey: erlichCoverageCandour2026
     section: blog
   added: '2026-08-11'
-  status: scheduled
+  status: posted
   rounds:
   - n: 1
     opened: '2026-08-11'
-    status: scheduled
+    status: posted
     note: launch
     drafts:
       bluesky:
@@ -68,6 +68,15 @@ items:
 
           Discuss Data (@[Discuss Data]) has just launched this blog for research on Eastern Europe, the South Caucasus and Central Asia — worth following if that is your region: https://discuss-data.net/cs/eescca/section/blog/
     post_at: '2026-08-14T09:30:00-04:00'
+    posted:
+      bluesky:
+        url: https://bsky.app/profile/aaronerlich.bsky.social/post/3mt2benmod62n
+        uri: at://did:plc:pu4k4ebwm2cpi5klhm3ne437/app.bsky.feed.post/3mt2benmod62n
+        at: '2026-08-14T13:31:07+00:00'
+      linkedin:
+        url: null
+        at: '2026-08-15T21:15:43+00:00'
+        note: posted by hand; URL not captured
 - id: pub-erlichGetCredibleModest2017
   kind: publication
   title: Get credible! ... Or a modest proposal to implement pre-registration in think tank research
