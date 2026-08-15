@@ -818,13 +818,22 @@ def cmd_unschedule(args) -> int:
 
 
 def due_rounds(store: dict, now: dt.datetime | None = None) -> list:
-    """(item, round) pairs whose scheduled time has passed."""
+    """(item, round) pairs whose scheduled time has passed and still have
+    automatic work outstanding.
+
+    The second condition is belt-and-braces against the status bug above: even
+    if a round is somehow left `scheduled` after its Bluesky half has posted,
+    it will not be re-fired.
+    """
     now = now or dt.datetime.now(LOCAL_TZ)
     out = []
     for item in store["items"]:
         rnd = current_round(item)
         if not rnd or rnd["status"] != "scheduled" or not rnd.get("post_at"):
             continue
+        drafts, posted = rnd.get("drafts") or {}, rnd.get("posted") or {}
+        if "bluesky" in drafts and "bluesky" in posted:
+            continue                                  # automatic half already done
         if parse_when(rnd["post_at"]) <= now:
             out.append((item, rnd))
     return out
@@ -900,8 +909,19 @@ def publish_round(item: dict, rnd: dict, dry_run: bool = False,
             if open_linkedin:
                 subprocess.run(["open", "https://www.linkedin.com/feed/"], check=False)
 
-    if not dry_run and not posted.get("linkedin", {}).get("pending_manual"):
-        rnd["status"] = "posted"
+    if not dry_run:
+        # The round leaves `scheduled` as soon as the *automatic* half is done,
+        # even when the manual LinkedIn half is still outstanding. Gating this on
+        # LinkedIn left the round `scheduled` forever, so due_rounds() kept
+        # returning it and the runner re-entered this function every 15 minutes
+        # (~100 times over two days before it was caught). Nothing was double-
+        # posted — the `not in posted` guards above are what saved it — but the
+        # log filled with misleading "firing" lines. The daily LinkedIn re-nudge
+        # keys on posted.linkedin.pending_manual, not on this status, so it keeps
+        # working regardless.
+        rnd["status"] = ("awaiting-linkedin"
+                         if posted.get("linkedin", {}).get("pending_manual")
+                         else "posted")
     return True
 
 
