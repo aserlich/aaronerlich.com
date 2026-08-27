@@ -587,6 +587,7 @@ format:
 </tbody></table>
 <p><strong>M.A. in Political Science</strong> (year of graduation)</p>
 <table><thead><tr><th>Year</th><th>Name</th><th>Roles</th><th>Placement</th></tr></thead><tbody>
+<tr><td>2026</td><td>Aung (Koye) Myat</td><td>Supervisor</td><td></td></tr>
 <tr><td>2025</td><td>Rafael Campos-Gottardo</td><td>Supervisor, Lab member, Co-author</td><td></td></tr>
 <tr><td>2024</td><td>Pratik Mahajan</td><td>Co-Supervisor</td><td>Ph.D student, Yale University</td></tr>
 <tr><td>2023</td><td>Christopher Ross</td><td>Supervisor</td><td>[The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
@@ -598,7 +599,6 @@ format:
 <tr><td>2019</td><td>Saewon Park</td><td>Supervisor, Research Assistant, Lab Manager, Co-author</td><td>[TrackTik](https://www.tracktik.com/); [The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
 <tr><td>TBD</td><td>Luis Alvarez</td><td>Supervisor</td><td></td></tr>
 <tr><td>TBD</td><td>Katerina McMullen</td><td>Supervisor, Lab member</td><td></td></tr>
-<tr><td>TBD</td><td>Aung (Koye) Myat</td><td>Supervisor</td><td></td></tr>
 <tr><td>TBD</td><td>Aiden McIlvaney</td><td>Supervisor</td><td></td></tr>
 </tbody></table>
 <p><strong>Undergraduate</strong> (year of graduation)</p>
@@ -649,6 +649,7 @@ format:
 </ul></details>
 <details class="cv-section-collapse"><summary>Professional Service</summary><h2><span data-i18n="section_headers.professional_service">Professional Service</span></h2>
 <h3>Departmental Service</h3>
+<p class="cv-service-year"><strong>2026-27</strong> &mdash; Dean's Rep - Sociology Department Job Search (Computational and Political Sociology); Graduate Program/Admissions Committee; Co-chair, Departmental Initiative on Canadian Resilience and AI; Methods Field Co-chair (through October 2026)</p>
 <p class="cv-service-year"><strong>2025-26</strong> &mdash; CERC Chair Search Committee; Graduate Program/Admissions Committee; ad-hoc Committee on AI-related Issues; Methods Field Co-chair</p>
 <p class="cv-service-year"><strong>2023-24</strong> &mdash; Placement Director</p>
 <p class="cv-service-year"><strong>2022-23</strong> &mdash; Equity Committee; Dean's Rep - Economics Department Job Search</p>
@@ -659,6 +660,7 @@ format:
 <p class="cv-service-year"><strong>2017-18</strong> &mdash; Comparative Behaviour Search Committee; Quantitative Methods Coordinator</p>
 <h3>University Service</h3>
 <p><em>Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems Initiative (CDSI)</em></p>
+<p class="cv-service-year"><strong>2026-27</strong> &mdash; Arts Curriculum Committee; Geographic Information Centre (GIC) Oversight Committee</p>
 <p class="cv-service-year"><strong>2025-26</strong> &mdash; Arts Curriculum Committee; Geographic Information Centre (GIC) Oversight Committee</p>
 <p class="cv-service-year"><strong>2023-24</strong> &mdash; Pro-dean Psychology; Geographic Information Centre (GIC) Oversight Committee</p>
 <p class="cv-service-year"><strong>2022-23</strong> &mdash; Geographic Information Centre (GIC) Oversight Committee; Tomlinson Doctoral Fellowship Review Committee; Co-director R, Math and Replicable Summer Workshops</p>

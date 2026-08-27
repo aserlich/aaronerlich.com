@@ -1191,7 +1191,7 @@ mentorship:
   - year: TBD
     name: Katerina McMullen
     roles: Supervisor, Lab member
-  - year: TBD
+  - year: 2026
     name: Aung (Koye) Myat
     roles: Supervisor
   - year: TBD
@@ -1327,6 +1327,12 @@ professional_experience:
   - Ran a 600,000 dollar election-related research program in cooperation with NDI.
 professional_service:
   departmental:
+  - year: 2026-27
+    roles:
+    - Dean's Rep - Sociology Department Job Search (Computational and Political Sociology)
+    - Graduate Program/Admissions Committee
+    - Co-chair, Departmental Initiative on Canadian Resilience and AI
+    - Methods Field Co-chair (through October 2026)
   - year: 2025-26
     roles:
     - CERC Chair Search Committee
@@ -1369,6 +1375,10 @@ professional_service:
     founder_note: Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems
       Initiative (CDSI)
     entries:
+    - year: 2026-27
+      roles:
+      - Arts Curriculum Committee
+      - Geographic Information Centre (GIC) Oversight Committee
     - year: 2025-26
       roles:
       - Arts Curriculum Committee
