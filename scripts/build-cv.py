@@ -777,16 +777,16 @@ def render_professional_service(cv: dict) -> str:
     ps = cv.get("professional_service", {})
     out = [f'<h2>{i18n_span("section_headers.professional_service", t(cv, "section_headers.professional_service"))}</h2>']
     # Departmental — group by year, reverse-chron
-    out.append('<h3>Departmental Service</h3>')
+    out.append(f'<h3>{i18n_span("section_headers.departmental_service", t(cv, "section_headers.departmental_service"))}</h3>')
     _group_by_year_and_render(ps.get("departmental", []), out)
     # University — same
-    out.append('<h3>University Service</h3>')
+    out.append(f'<h3>{i18n_span("section_headers.university_service", t(cv, "section_headers.university_service"))}</h3>')
     uni = ps.get("university", {})
     if uni.get("founder_note"):
         out.append(f'<p><em>{html_escape(uni["founder_note"])}</em></p>')
     _group_by_year_and_render(uni.get("entries", []), out)
     # Profession — same
-    out.append('<h3>Profession</h3>')
+    out.append(f'<h3>{i18n_span("section_headers.profession_service", t(cv, "section_headers.profession_service"))}</h3>')
     _group_by_year_and_render(ps.get("profession", []), out)
     # Journal review
     jrl = ps.get("journal_review", [])

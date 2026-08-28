@@ -210,7 +210,8 @@ grants:
     en: 'Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora'
     fr: 'Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora'
     es: 'Nigerianos en el exterior y en casa: política e identidad nacional en una diáspora global'
-    ru: 'Нигерийцы за рубежом и на родине: политика и национальная идентичность в условиях глобальной диаспоры'
+    ru: 'Нигерийцы за рубежом и на родине: политика и национальная идентичность в условиях глобальной
+      диаспоры'
     uk: 'Нігерійці за кордоном і вдома: політика та національна ідентичність у глобальній діаспорі'
     ka: 'საზღვარგარეთ და სამშობლოში მცხოვრები ნიგერიელები: პოლიტიკა და ეროვნული იდენტობა გლობალურ დიასპორაში'
     de: 'Nigerians Abroad and at Home: Politics and National Identity in a Global Diaspora'
@@ -245,16 +246,20 @@ grants:
   amount: CAD 2,500,000
 - year: 2018
   title:
-    en: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014'
-    fr: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014'
-    es: 'Expertos internacionales e iniciativas anticorrupción en una democracia en transición: la reforma policial en Ucrania
-      desde 2014'
-    ru: 'Международные эксперты и антикоррупционные инициативы в условиях переходной демократии: реформа полиции Украины с
-      2014 года'
-    uk: 'Міжнародні експерти та антикорупційні ініціативи в транзитивній демократії: реформа поліції України після 2014 року'
-    ka: 'საერთაშორისო ექსპერტები და კორუფციასთან ბრძოლის ინიციატივები გარდამავალ დემოკრატიაში: უკრაინის პოლიციის რეფორმა 2014
-      წლიდან'
-    de: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police reform since 2014'
+    en: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police
+      reform since 2014'
+    fr: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police
+      reform since 2014'
+    es: 'Expertos internacionales e iniciativas anticorrupción en una democracia en transición: la reforma
+      policial en Ucrania desde 2014'
+    ru: 'Международные эксперты и антикоррупционные инициативы в условиях переходной демократии: реформа
+      полиции Украины с 2014 года'
+    uk: 'Міжнародні експерти та антикорупційні ініціативи в транзитивній демократії: реформа поліції України
+      після 2014 року'
+    ka: 'საერთაშორისო ექსპერტები და კორუფციასთან ბრძოლის ინიციატივები გარდამავალ დემოკრატიაში: უკრაინის
+      პოლიციის რეფორმა 2014 წლიდან'
+    de: 'International experts and anti-corruption initiatives in a transitional democracy: Ukraine police
+      reform since 2014'
   agency: SSHRC Insight Grant
   role:
     en: Co-Investigator
@@ -267,13 +272,20 @@ grants:
   amount: CAD 218,310
 - year: 2018
   title:
-    en: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
-    fr: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
-    es: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
-    ru: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
-    uk: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
-    ka: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
-    de: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des gouvernements'
+    en: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des
+      gouvernements'
+    fr: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des
+      gouvernements'
+    es: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des
+      gouvernements'
+    ru: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des
+      gouvernements'
+    uk: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des
+      gouvernements'
+    ka: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des
+      gouvernements'
+    de: 'Discrétion ou capacité : Utilisation de mégadonnées pour modéliser la faculté de réponse des
+      gouvernements'
   agency: FRQSC Soutien à la recherche pour la relève professorale
   role:
     en: PI
@@ -288,13 +300,14 @@ grants:
   title:
     en: Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions
     fr: Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions
-    es: Estudio de la rendición de cuentas y la capacidad de respuesta gubernamental mediante macrodatos sobre las interacciones
-      entre ciudadanos y gobierno
-    ru: Изучение подотчётности и отзывчивости органов государственного управления с применением больших данных о взаимодействии
-      граждан с государством
-    uk: Вивчення підзвітності та відповідальності уряду за допомогою великих даних про взаємодію громадян з державою
-    ka: მთავრობის ანგარიშვალდებულებისა და რეაგირებაუნარიანობის შესწავლა მოქალაქე-მთავრობის ურთიერთქმედების დიდი მონაცემების
-      საშუალებით
+    es: Estudio de la rendición de cuentas y la capacidad de respuesta gubernamental mediante macrodatos
+      sobre las interacciones entre ciudadanos y gobierno
+    ru: Изучение подотчётности и отзывчивости органов государственного управления с применением больших
+      данных о взаимодействии граждан с государством
+    uk: Вивчення підзвітності та відповідальності уряду за допомогою великих даних про взаємодію громадян
+      з державою
+    ka: მთავრობის ანგარიშვალდებულებისა და რეაგირებაუნარიანობის შესწავლა მოქალაქე-მთავრობის ურთიერთქმედების
+      დიდი მონაცემების საშუალებით
     de: Studying Government Accountability and Responsiveness with Big Data on Citizen-Government Interactions
   agency: SSHRC Insight Development Grant
   role:
@@ -416,15 +429,20 @@ grants:
   amount: USD 9,000
 - year: 2013
   title:
-    en: Full scholarship from NYU to attend Inaugural Winter Experimental Social Sciences Institute at NYU Abu Dhabi
-    fr: Bourse complète de NYU pour participer à l'Inaugural Winter Experimental Social Sciences Institute à NYU Abu Dhabi
-    es: Beca completa de NYU para asistir al Inaugural Winter Experimental Social Sciences Institute en NYU Abu Dhabi
-    ru: Полная стипендия NYU для участия в Инаугурационном зимнем институте экспериментальных социальных наук при NYU Abu
-      Dhabi
-    uk: Повна стипендія від NYU для участі в Інавгураційному зимовому інституті експериментальних суспільних наук у NYU Abu
-      Dhabi
-    ka: NYU-ს სრული სტიპენდია NYU Abu Dhabi-ში საინაუგურაციო ზამთრის ექსპერიმენტული სოციალური მეცნიერებების ინსტიტუტში დასასწრებად
-    de: Vollstipendium der NYU zur Teilnahme am Inaugural Winter Experimental Social Sciences Institute an der NYU Abu Dhabi
+    en: Full scholarship from NYU to attend Inaugural Winter Experimental Social Sciences Institute at
+      NYU Abu Dhabi
+    fr: Bourse complète de NYU pour participer à l'Inaugural Winter Experimental Social Sciences Institute
+      à NYU Abu Dhabi
+    es: Beca completa de NYU para asistir al Inaugural Winter Experimental Social Sciences Institute en
+      NYU Abu Dhabi
+    ru: Полная стипендия NYU для участия в Инаугурационном зимнем институте экспериментальных социальных
+      наук при NYU Abu Dhabi
+    uk: Повна стипендія від NYU для участі в Інавгураційному зимовому інституті експериментальних суспільних
+      наук у NYU Abu Dhabi
+    ka: NYU-ს სრული სტიპენდია NYU Abu Dhabi-ში საინაუგურაციო ზამთრის ექსპერიმენტული სოციალური მეცნიერებების
+      ინსტიტუტში დასასწრებად
+    de: Vollstipendium der NYU zur Teilnahme am Inaugural Winter Experimental Social Sciences Institute
+      an der NYU Abu Dhabi
 - year: 2013
   title:
     en: EITM Scholarship to attend ICPSR
@@ -497,7 +515,8 @@ grants:
     ru: Стабильность и изменение общественного мнения в переломный момент истории Украины (2014–2022)
     uk: Стабільність та зміна суспільної думки під час критичного зламу в Україні (2014–2022)
     ka: აზრის სტაბილურობა და ცვლილება უკრაინის კრიტიკულ გარდამტეხ მომენტში (2014–2022)
-    de: Stabilität und Wandel politischer Meinungen während der kritischen Weichenstellung der Ukraine (2014–2022)
+    de: Stabilität und Wandel politischer Meinungen während der kritischen Weichenstellung der Ukraine
+      (2014–2022)
   agency: SSHRC Internal Grant
   role:
     en: PI
@@ -512,20 +531,20 @@ software:
 - name: mapcan
   url: https://CRAN.R-project.org/package=mapcan
   description:
-    en: A variety of functions that make it easy to plot standard choropleth Canadian maps as well as choropleth alternatives
-      in ggplot2.
-    fr: Un ensemble de fonctions facilitant la création de cartes choroplèthes standard du Canada ainsi que d'alternatives
-      aux cartes choroplèthes dans ggplot2.
-    es: Una variedad de funciones que facilitan la elaboración de mapas coropléticos estándar de Canadá, así como alternativas
-      a los mapas coropléticos en ggplot2.
-    ru: Набор функций, упрощающих построение стандартных хороплетных карт Канады, а также альтернативных хороплетных визуализаций
-      в ggplot2.
-    uk: Набір функцій, що спрощують побудову стандартних хороплетних карт Канади, а також альтернатив хороплетним картам у
-      ggplot2.
-    ka: მრავალფეროვანი ფუნქციების ნაკრები, რომელიც ggplot2-ში კანადის სტანდარტული ქოროპლეთური რუქების, აგრეთვე ქოროპლეთური
-      ალტერნატივების დახაზვას ამარტივებს.
-    de: Eine Reihe von Funktionen, die es erleichtern, standardmäßige Choroplethenkarten Kanadas sowie Alternativen zur Choroplethendarstellung
-      in ggplot2 zu erstellen.
+    en: A variety of functions that make it easy to plot standard choropleth Canadian maps as well as
+      choropleth alternatives in ggplot2.
+    fr: Un ensemble de fonctions facilitant la création de cartes choroplèthes standard du Canada ainsi
+      que d'alternatives aux cartes choroplèthes dans ggplot2.
+    es: Una variedad de funciones que facilitan la elaboración de mapas coropléticos estándar de Canadá,
+      así como alternativas a los mapas coropléticos en ggplot2.
+    ru: Набор функций, упрощающих построение стандартных хороплетных карт Канады, а также альтернативных
+      хороплетных визуализаций в ggplot2.
+    uk: Набір функцій, що спрощують побудову стандартних хороплетних карт Канади, а також альтернатив
+      хороплетним картам у ggplot2.
+    ka: მრავალფეროვანი ფუნქციების ნაკრები, რომელიც ggplot2-ში კანადის სტანდარტული ქოროპლეთური რუქების,
+      აგრეთვე ქოროპლეთური ალტერნატივების დახაზვას ამარტივებს.
+    de: Eine Reihe von Funktionen, die es erleichtern, standardmäßige Choroplethenkarten Kanadas sowie
+      Alternativen zur Choroplethendarstellung in ggplot2 zu erstellen.
   coauthors:
   - Andrew McCormack
 professional_evaluations:
@@ -655,12 +674,18 @@ testimony:
     de: Desinformation und Cyberoperationen im Kontext des russischen Krieges gegen die Ukraine
   venue:
     en: Standing Senate Committee on National Security, Defence, and Veterans Affairs, Senate of Canada
-    fr: Comité sénatorial permanent de la sécurité nationale, de la défense et des anciens combattants, Sénat du Canada
-    es: Comité Permanente del Senado sobre Seguridad Nacional, Defensa y Asuntos de Veteranos, Senado de Canadá
-    ru: Постоянный комитет Сената по вопросам национальной безопасности, обороны и делам ветеранов, Сенат Канады
-    uk: Постійний комітет Сенату з питань національної безпеки, оборони та у справах ветеранів, Сенат Канади
-    ka: ეროვნული უსაფრთხოების, თავდაცვისა და ვეტერანთა საქმეების მუდმივმოქმედი სენატის კომიტეტი, Canada-ს სენატი
-    de: Ständiger Senatsausschuss für nationale Sicherheit, Verteidigung und Veteranenangelegenheiten, Senat von Kanada
+    fr: Comité sénatorial permanent de la sécurité nationale, de la défense et des anciens combattants,
+      Sénat du Canada
+    es: Comité Permanente del Senado sobre Seguridad Nacional, Defensa y Asuntos de Veteranos, Senado
+      de Canadá
+    ru: Постоянный комитет Сената по вопросам национальной безопасности, обороны и делам ветеранов, Сенат
+      Канады
+    uk: Постійний комітет Сенату з питань національної безпеки, оборони та у справах ветеранів, Сенат
+      Канади
+    ka: ეროვნული უსაფრთხოების, თავდაცვისა და ვეტერანთა საქმეების მუდმივმოქმედი სენატის კომიტეტი, Canada-ს
+      სენატი
+    de: Ständiger Senatsausschuss für nationale Sicherheit, Verteidigung und Veteranenangelegenheiten,
+      Senat von Kanada
   date: '2024-04-15'
   url: https://senparlvu.parl.gc.ca/Harmony/en/PowerBrowser/PowerBrowserV2?fk=635443&globalStreamId=3
 field_research:
@@ -706,20 +731,20 @@ skills:
     ka: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
     de: emacs, qGIS, ArcGIS, CSPro, LaTeX, Inquisit Millisecond
   languages:
-    en: Proficient in Spanish; Research skills in French, Georgian, German, Russian; Rusty in Slovak; Elementary Turkish,
-      Swahili
-    fr: Maîtrise de l'espagnol ; compétences en recherche en français, géorgien, allemand et russe ; notions rouillées de
-      slovaque ; turc et swahili élémentaires
-    es: Dominio del español; competencia investigadora en francés, georgiano, alemán y ruso; nivel oxidado en eslovaco; turco
-      y suajili elemental
-    ru: Свободное владение испанским; исследовательские навыки на французском, грузинском, немецком, русском языках; утраченные
-      навыки словацкого; начальный уровень турецкого и суахили
-    uk: Вільно іспанська; дослідницькі навички французькою, грузинською, німецькою, російською; певною мірою словацька; базовий
-      рівень турецької, суахілі
-    ka: თავისუფლად ფლობს ესპანურს; სამეცნიერო კვლევის უნარები ფრანგულ, ქართულ, გერმანულ და რუსულ ენებში; გამოსულია პრაქტიკიდან
-      სლოვაკურში; დამწყები დონე თურქულსა და სუაჰილიში
-    de: Fließend in Spanisch; Forschungskenntnisse in Französisch, Georgisch, Deutsch, Russisch; Eingerostet in Slowakisch;
-      Grundkenntnisse in Türkisch und Suaheli
+    en: Proficient in Spanish; Research skills in French, Georgian, German, Russian; Rusty in Slovak;
+      Elementary Turkish, Swahili
+    fr: Maîtrise de l'espagnol ; compétences en recherche en français, géorgien, allemand et russe ; notions
+      rouillées de slovaque ; turc et swahili élémentaires
+    es: Dominio del español; competencia investigadora en francés, georgiano, alemán y ruso; nivel oxidado
+      en eslovaco; turco y suajili elemental
+    ru: Свободное владение испанским; исследовательские навыки на французском, грузинском, немецком, русском
+      языках; утраченные навыки словацкого; начальный уровень турецкого и суахили
+    uk: Вільно іспанська; дослідницькі навички французькою, грузинською, німецькою, російською; певною
+      мірою словацька; базовий рівень турецької, суахілі
+    ka: თავისუფლად ფლობს ესპანურს; სამეცნიერო კვლევის უნარები ფრანგულ, ქართულ, გერმანულ და რუსულ ენებში;
+      გამოსულია პრაქტიკიდან სლოვაკურში; დამწყები დონე თურქულსა და სუაჰილიში
+    de: Fließend in Spanisch; Forschungskenntnisse in Französisch, Georgisch, Deutsch, Russisch; Eingerostet
+      in Slowakisch; Grundkenntnisse in Türkisch und Suaheli
 section_headers:
   contact_information:
     en: Contact Information
@@ -929,6 +954,30 @@ section_headers:
     uk: Наставництво
     ka: მენტორობა
     de: Betreuung
+  departmental_service:
+    en: Departmental Service
+    fr: Service départemental
+    es: Servicio Departamental
+    ru: Служба на кафедре
+    uk: Служіння кафедрі
+    ka: დეპარტამენტული სამსახური
+    de: Fachbereichsdienst
+  university_service:
+    en: University Service
+    fr: Service universitaire
+    es: Servicio Universitario
+    ru: Служба в университете
+    uk: Служіння університету
+    ka: უნივერსიტეტული სამსახური
+    de: Universitätsdienst
+  profession_service:
+    en: Profession
+    fr: Profession
+    es: Profesión
+    ru: Профессиональная деятельность
+    uk: Професійна діяльність
+    ka: პროფესია
+    de: Fachgemeinschaft
   journal_review:
     en: Journal & Press Peer Review
     fr: Évaluation par les pairs pour revues et presses universitaires
@@ -1076,14 +1125,18 @@ labels:
     de: Unter Begutachtung
   pre_print_note:
     en: Many pre-print versions are on my website. Contact me if you need something that is not available!
-    fr: De nombreuses versions préliminaires sont disponibles sur mon site Web. Contactez-moi si vous ne trouvez pas ce dont
-      vous avez besoin !
-    es: Muchas versiones de preimpresión están disponibles en mi sitio web. ¡Contácteme si necesita algo que no esté disponible!
-    ru: Многие препринты размещены на моём сайте. Свяжитесь со мной, если вам нужна работа, которая недоступна на сайте!
-    uk: Чимало препринтів розміщено на моєму веб-сайті. Зв'яжіться зі мною, якщо вам потрібен матеріал, якого там немає!
-    ka: პრეპრინტების უმეტესობა განთავსებულია ჩემს ვებსაიტზე. დამიკავშირდით, თუ გჭირდებათ რაიმე, რაც ხელმისაწვდომი არ არის!
-    de: Viele Vorabdruckversionen sind auf meiner Website verfügbar. Kontaktieren Sie mich, falls Sie etwas benötigen, das
-      nicht verfügbar ist!
+    fr: De nombreuses versions préliminaires sont disponibles sur mon site Web. Contactez-moi si vous
+      ne trouvez pas ce dont vous avez besoin !
+    es: Muchas versiones de preimpresión están disponibles en mi sitio web. ¡Contácteme si necesita algo
+      que no esté disponible!
+    ru: Многие препринты размещены на моём сайте. Свяжитесь со мной, если вам нужна работа, которая недоступна
+      на сайте!
+    uk: Чимало препринтів розміщено на моєму веб-сайті. Зв'яжіться зі мною, якщо вам потрібен матеріал,
+      якого там немає!
+    ka: პრეპრინტების უმეტესობა განთავსებულია ჩემს ვებსაიტზე. დამიკავშირდით, თუ გჭირდებათ რაიმე, რაც ხელმისაწვდომი
+      არ არის!
+    de: Viele Vorabdruckversionen sind auf meiner Website verfügbar. Kontaktieren Sie mich, falls Sie
+      etwas benötigen, das nicht verfügbar ist!
 teaching:
   instructor:
     undergraduate:
@@ -1215,8 +1268,8 @@ mentorship:
     roles: Research Assistant, Lab Member, Independent Research Supervisor (POLI 490)
 presentations:
 - title: 'How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine'
-  venue: Disinformation, Propaganda, and Russia's War on Ukraine, Institute of European, Russian, and Eurasian Studies, Carleton
-    University
+  venue: Disinformation, Propaganda, and Russia's War on Ukraine, Institute of European, Russian, and
+    Eurasian Studies, Carleton University
   date: October 10, 2025
   invited: true
 - title: Debates over Civilian Handgun Ownership in Wartime Ukraine
@@ -1267,7 +1320,8 @@ presentations:
 - title: Media Attention and Bureaucratic Responsiveness
   venue: MPSA Chicago; TextXD Berkeley; SPSA San Juan PR
   date: '2019'
-- title: What Can we Learn From Election Petitions? An Analysis of Kenya's 2013 Election-related Court Cases
+- title: What Can we Learn From Election Petitions? An Analysis of Kenya's 2013 Election-related Court
+    Cases
   venue: APSA Annual Convention, Boston
   date: August 30 - September 2, 2018
 - title: Ethnic Rivalry or Citizen Solidarity?
@@ -1284,14 +1338,15 @@ presentations:
   venue: 'Trends behind the numbers: bridging policies and needs, Tbilisi, Georgia'
   date: January 2017
   invited: true
-- title: Do Pre-Election Polls Changes Citizens' Beliefs or Behavior? Evidence from a Laboratory Experiment in the Country
-    of Georgia
+- title: Do Pre-Election Polls Changes Citizens' Beliefs or Behavior? Evidence from a Laboratory Experiment
+    in the Country of Georgia
   venue: MPSA Annual Convention, Chicago
   date: April 16-19, 2015
 - title: Power of the Panopticon? How Leaders' Images Affect Compliance
   venue: MPSA Annual Convention, Chicago
   date: April 16-19, 2015
-- title: 'The Past, Present, and Future of Public Opinion Survey Research in Ukraine: From Pen and Paper to Agentic AI (2015-2026)'
+- title: 'The Past, Present, and Future of Public Opinion Survey Research in Ukraine: From Pen and Paper
+    to Agentic AI (2015-2026)'
   venue: 'Cornell University, Research for Impact: Academic Expertise and the War in Ukraine '
   date: May 2, 2026
   invited: true
@@ -1305,25 +1360,25 @@ professional_experience:
   role: Consultant
   dates: 2010-2024
   bullets:
-  - Provided strategic design and implementation consultancy for over one million dollars of applied political public opinion
-    and focus group work. Wrote analytic reports.
+  - Provided strategic design and implementation consultancy for over one million dollars of applied political
+    public opinion and focus group work. Wrote analytic reports.
 - employer: National Democratic Institute of International Affairs (NDI)
   role: Senior Program Officer, Research and Data Analysis
   dates: '2010'
   bullets:
   - Ran NDI's USAID program to implement the first polling station level digitalized maps in Africa.
-  - Initiated and oversaw NDI's Norwegian-funded qualitative and quantitative research program to investigate Kenyan citizens'
-    attitudes towards the electoral process.
+  - Initiated and oversaw NDI's Norwegian-funded qualitative and quantitative research program to investigate
+    Kenyan citizens' attitudes towards the electoral process.
 - employer: Caucasus Research Resource Centers (CRRC), Eurasia Foundation
   role: CRRC Deputy Director for Projects
   dates: 2006-2010
   bullets:
-  - Directed and helped implement CRRC assessments and evaluations, including supervision of USAID funded migration assessment
-    in Armenia and a multiyear assessment of Millennium Challenge Corporation's (MCC) efficacy in economic development in
-    Georgia.
-  - Coordinated CRRC Data Initiative (the largest cross-border survey in the Caucasus) and other survey and focus group activities,
-    including questionnaire development, focus group guide development, questionnaire translation, expert meetings and report
-    write-ups.
+  - Directed and helped implement CRRC assessments and evaluations, including supervision of USAID funded
+    migration assessment in Armenia and a multiyear assessment of Millennium Challenge Corporation's (MCC)
+    efficacy in economic development in Georgia.
+  - Coordinated CRRC Data Initiative (the largest cross-border survey in the Caucasus) and other survey
+    and focus group activities, including questionnaire development, focus group guide development, questionnaire
+    translation, expert meetings and report write-ups.
   - Ran a 600,000 dollar election-related research program in cooperation with NDI.
 professional_service:
   departmental:
@@ -1372,8 +1427,8 @@ professional_service:
     roles:
     - Methods Field Co-chair
   university:
-    founder_note: Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems
-      Initiative (CDSI)
+    founder_note: Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational
+      and Data Systems Initiative (CDSI)
     entries:
     - year: 2026-27
       roles:

@@ -648,7 +648,7 @@ format:
 <li>United Arab Emirates, 2015</li>
 </ul></details>
 <details class="cv-section-collapse"><summary>Professional Service</summary><h2><span data-i18n="section_headers.professional_service">Professional Service</span></h2>
-<h3>Departmental Service</h3>
+<h3><span data-i18n="section_headers.departmental_service">Departmental Service</span></h3>
 <p class="cv-service-year"><strong>2026-27</strong> &mdash; Dean's Rep - Sociology Department Job Search (Computational and Political Sociology); Graduate Program/Admissions Committee; Co-chair, Departmental Initiative on Canadian Resilience and AI; Methods Field Co-chair (through October 2026)</p>
 <p class="cv-service-year"><strong>2025-26</strong> &mdash; CERC Chair Search Committee; Graduate Program/Admissions Committee; ad-hoc Committee on AI-related Issues; Methods Field Co-chair</p>
 <p class="cv-service-year"><strong>2023-24</strong> &mdash; Placement Director</p>
@@ -658,7 +658,7 @@ format:
 <p class="cv-service-year"><strong>2019-20</strong> &mdash; Honours and Joint Honours Undergraduate Advisor; Cyclical Review Undergraduate Committee; Quantitative Methods Coordinator</p>
 <p class="cv-service-year"><strong>2018-19</strong> &mdash; Undergraduate Advisor; Comparative Behaviour Search Committee; Quantitative Methods Coordinator</p>
 <p class="cv-service-year"><strong>2017-18</strong> &mdash; Comparative Behaviour Search Committee; Quantitative Methods Coordinator</p>
-<h3>University Service</h3>
+<h3><span data-i18n="section_headers.university_service">University Service</span></h3>
 <p><em>Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems Initiative (CDSI)</em></p>
 <p class="cv-service-year"><strong>2026-27</strong> &mdash; Arts Curriculum Committee; Geographic Information Centre (GIC) Oversight Committee</p>
 <p class="cv-service-year"><strong>2025-26</strong> &mdash; Arts Curriculum Committee; Geographic Information Centre (GIC) Oversight Committee</p>
@@ -669,7 +669,7 @@ format:
 <p class="cv-service-year"><strong>2019-20</strong> &mdash; B.A.&amp;Sc. Program Administration Committee; Geographic Information Centre (GIC) Oversight Committee; Co-director R, Math and Replicable Summer Workshops; Vanier Canada Doctoral Scholarship Review Committee</p>
 <p class="cv-service-year"><strong>2018-19</strong> &mdash; Co-director R, Math and Replicable Summer Workshops</p>
 <p class="cv-service-year"><strong>2017-18</strong> &mdash; Co-director R, Math and Replicable Summer Workshops</p>
-<h3>Profession</h3>
+<h3><span data-i18n="section_headers.profession_service">Profession</span></h3>
 <p class="cv-service-year"><strong>2026-27</strong> &mdash; CSDC Steering Committee</p>
 <p class="cv-service-year"><strong>2025-26</strong> &mdash; APSA Chair; Discussant; ASN Chair; Discussant</p>
 <p class="cv-service-year"><strong>2024-25</strong> &mdash; ASN Discussant; MPSA Chair, Discussant</p>
