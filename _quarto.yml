@@ -74,4 +74,14 @@ format:
       - styles.css
       - https://cdn.jsdelivr.net/npm/academicons@1.9.2/css/academicons.min.css
     toc: false
+    # GoatCounter analytics. No cookies and no personally identifying data, so no
+    # consent banner is needed. Referrers are the point — the only way to tell
+    # LinkedIn from Bluesky from direct. Dashboard: https://erlich-blog.goatcounter.com
+    # A page only starts reporting once it has been re-rendered with this tag, and a
+    # project-wide `quarto render` is destructive here (it clears docs/ and then dies
+    # in the shinylive extension) — so re-render page by page.
+    include-in-header:
+      text: |
+        <script data-goatcounter="https://erlich-blog.goatcounter.com/count"
+                async src="//gc.zgo.at/count.js"></script>
     include-after-body: _generated/i18n-toggle.html
