@@ -1,0 +1,228 @@
+---
+title: "Registered reports are available in political science and used almost nowhere"
+description: "Sixty of political science's most visible journals: eleven have offered results-blind review at some point, five offer it today, and one dropped it and came back nine years later. Why the format keeps failing to stick — and why it matters more now."
+date: "2026-08-28"
+draft: false
+categories: [publishing, open science, registered reports, transparency]
+---
+
+In [July](../2026-07-publication-record/index.qmd) I put my whole publication record online, and the "Registered reports bend the clock" section ended on a claim I had not actually checked: that the length of the two-stage process is a major barrier for junior scholars. In this post, I follow up on this issue. 
+
+The short version: while still a minority of journals, increasingly, the supply of registered reports is not the problem. And my claim about the timeline is probably, at least, partially right, but nobody has ever measured it. Moreover, the format keeps failing to stick in political science for a reason that likely has less to do with enthusiasm than with editorial plumbing.
+
+## Sixty journals, eleven that tried it, five that still offer it
+
+Each row below is one of the sixty most-cited journals in political science according to SCImago.^[Scimago also has no single political science category — it has two, and the second holds *Administrative Science Quarterly* and the *American Sociological Review* alongside the *Journal of Politics* — so what is plotted is the union of both, curated by hand, which makes the boundary a judgement someone else would draw differently.] A solid bar is a standing registered-reports track, running from the month it opened to today. An outlined bar is a one-off — a pilot or a competition that ended. Most rows are empty.
+
+```{=html}
+<style>
+.rr-legend { display: flex; flex-wrap: wrap; gap: 1.1rem; font-size: 0.85rem; align-items: center; margin: 0.6rem 0 0.9rem; }
+.rr-legend span.sw { display: inline-block; width: 26px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+.rr-note { font-size: 0.8rem; color: #6b6b6b; margin-top: 0.6rem; line-height: 1.5; }
+</style>
+<div class="rr-legend">
+  <span><span class="sw" style="background:#6b1b1b"></span>Standing registered-reports track</span>
+  <span><span class="sw" style="background:#fff;border:1.4px solid #6b1b1b"></span>One-off pilot or competition, ended</span>
+  <span><span class="sw" style="background:#6b1b1b;opacity:0.28"></span>Start date bracketed</span>
+  <span><span class="sw" style="background:linear-gradient(to right,#d8d8d8 0 3px,transparent 3px 6px);background-size:6px 1px;background-repeat:repeat-x;background-position:0 50%;height:10px"></span>Never offered</span>
+</div>
+```
+
+```{ojs}
+//| echo: false
+db = FileAttachment("../../_data/rr_adoption.json").json()
+INK = "#6b1b1b"
+asOf = new Date(db.as_of + "T00:00:00Z")
+mdate = s => { const [y, m] = s.split("-").map(Number); return new Date(Date.UTC(y, m - 1, 1)); }
+rows = db.journals.map(j => ({ ...j, label: `${j.rank}. ${j.title}` }))
+// One record per period, so a journal can appear on its own row more than once.
+spans = rows.flatMap(j => j.periods.map(p => ({
+  rank: j.rank,
+  Journal: j.title,
+  kind: p.kind,
+  start: mdate(p.start),
+  uncFrom: p.uncertain_from ? mdate(p.uncertain_from) : null,
+  end: p.end ? mdate(p.end) : asOf,
+  Opened: p.start,
+  Closed: p.end || "still open",
+  Evidence: p.evidence,
+  Confidence: p.confidence,
+  Detail: p.note
+})))
+```
+
+```{ojs}
+//| echo: false
+{
+  const order = rows.map(d => d.rank);
+  const never = rows.filter(d => !d.ever);
+  const tracks = spans.filter(d => d.kind === "track");
+  const oneoffs = spans.filter(d => d.kind !== "track");
+  const unc = spans.filter(d => d.uncFrom);
+  const x0 = Date.UTC(2013, 0, 1);
+  const tipfmt = { format: { x1: false, x2: false, y: false, fill: false, stroke: false, fillOpacity: false } };
+
+  return Plot.plot({
+    width,
+    height: rows.length * 15 + 46,
+    marginLeft: 24,
+    marginRight: 268,
+    marginTop: 8,
+    marginBottom: 30,
+    x: {
+      type: "utc",
+      domain: [x0, +asOf],
+      grid: true,
+      label: null,
+      ticks: d3.utcYear.every(1),
+      tickFormat: d => { const y = d.getUTCFullYear(); return y % 2 === 1 ? String(y) : ""; }
+    },
+    y: { axis: null, domain: order },
+    marks: [
+      // Never offered: a faint dotted line, so an empty row reads as checked rather than missing.
+      Plot.ruleY(never, {
+        y: "rank", x1: x0, x2: +asOf,
+        stroke: "#dcdcdc", strokeWidth: 1, strokeDasharray: "1,4", clip: true
+      }),
+      // Bracketed start: the window adoption fell in, when we cannot say exactly when.
+      Plot.barX(unc, {
+        y: "rank", x1: "uncFrom", x2: "start",
+        fill: INK, fillOpacity: 0.26, insetY: 4.5, rx: 2, clip: true, tip: tipfmt
+      }),
+      // Standing tracks.
+      Plot.barX(tracks, {
+        y: "rank", x1: "start", x2: "end",
+        fill: INK, insetY: 4.5, rx: 2, clip: true, tip: tipfmt
+      }),
+      // One-offs: same hue, outlined, so "tried it and stopped" is a shape not a colour.
+      Plot.barX(oneoffs, {
+        y: "rank", x1: "start", x2: "end",
+        fill: "white", stroke: INK, strokeWidth: 1.2, insetY: 4.5, rx: 2, clip: true, tip: tipfmt
+      }),
+      Plot.text(rows, {
+        y: "rank", text: "label", frameAnchor: "right", textAnchor: "start",
+        dx: 8, fontSize: 9.5,
+        fill: d => d.ever ? "#2a2a2a" : "#8a8a8a"
+      })
+    ]
+  });
+}
+```
+
+```{=html}
+<p class="rr-note">Rank is SCImago Journal Rank (2025). Bars begin the month a journal
+started offering results-blind review and run to when it stopped, or to today. A pale
+extension to the left of a bar means the start is bracketed rather than known. Hover any
+bar for the evidence behind its dates.</p>
+```
+
+
+Across all fields, more than 300 journals now offer registered reports. What that has produced is discouraging: [Lin and colleagues (2023)](https://doi.org/10.1007/s11192-023-04896-y) found adoption ranging from 0 to 7 per cent across major research fields, with psychology the only one reaching 7 and everything else at 1 per cent or below. Availability is not the binding constraint anywhere, and political science is no exception.
+
+## Offering it and using it are different things
+
+The chart measures which journals *offer* results-blind review. It says nothing about how
+often anyone uses it, and that turns out to be a separate question with an awkward
+answer.
+
+*JEPS* is the best case in the discipline — the first standing track, at an
+experimental-methods journal whose readership is exactly the audience for the format. It
+opened the track in August 2016 and **published its first preregistered report in 2021.**
+It took five years for the first article to come out! Though, given how long they take to publish, we do not know when the first successful article was submitted.
+
+What happened next at *JEPS* appears mostly pandemic related. Of the nineteen preregistered reports *JEPS*
+has published, **eleven are explicitly COVID papers**: mask messaging, praying from home
+during lockdown, elite influence on how serious people thought the virus was, childcare
+under closure. Urgent questions, simple survey-experimental designs, and reason to act quickly. The share of peer-reviewed research at
+*JEPS* peaked at 20 per cent in 2022, and has since fallen back to 5.3 per cent in 2024
+and 4.3 per cent in 2025 — one paper a year. (2026 is running higher again, three so far, but the year is not finished and three is not a trend.)
+
+Everywhere else the numbers are smaller still. *APSR* has published one since opening its
+track in August 2025. And *Legislative Studies Quarterly*, which has offered the format
+since November 2020, appears to have published **none at all**, as far as I can tell,
+and I looked six different ways^[Wiley
+publishes no article-type label for *LSQ*, so there is no way to prove the absence; I can
+only report that no search I can construct finds one. Cambridge, by contrast, tags every
+article with its type, which is the only reason the *JEPS* numbers above exist at all. The
+difference between a journal you can count and a journal you cannot is not a small
+methodological detail — it decides whether anyone can ever check whether a policy did
+anything.]
+
+
+## The 2016 wave that vanished
+
+The cluster of short outlined bars in 2016 is not six journals independently deciding to try registered reports. It is one event: the **Election Research Preacceptance Competition (ERPC)**, organised by Arthur Lupia and Brendan Nyhan and funded by the Arnold Foundation. Nine journals agreed to review results-blind submissions built on preregistered analyses of the 2016 ANES. Six of the nine sit in this top sixty, including the three most-cited journals in the discipline.
+
+It was announced in August 2016 and closed to new entrants in March 2017, when the ANES data were released. Not one of the participating journals turned it into standing policy.
+
+So the discipline ran this experiment twice — the ERPC, and the *Comparative Political Studies* pilot, and both times the option disappeared when the initiative did. Whatever is stopping registered reports in political science, it is not that editors at the top have never tried them.
+
+## Two things are hard, and they are different problems
+
+### The scholar's clock
+
+Let's start with the part I claimed in July. The field's flagship review of the format, [Chambers and Tzavella (2022)](https://doi.org/10.1038/s41562-021-01193-7), is unambiguous about it:
+
+> Perhaps the greatest limitation of the RR format is the time taken for submissions to be reviewed at stage 1 and receive IPA, thus delaying the commencement of research.
+
+They add that Stage 1 
+
+> typically adds a period of several months between submitting a stage 1 manuscript and the commencement of the research ... \[this\] "can present a substantial barrier for researchers on short-term contracts or who hold grants that demand immediate data acquisition.
+
+I have two registered reports, and the gap between them is wider than most people's prior about the format.
+
+The fast one was the *Comparative Political Studies* paper, with Sarah Bush, Lauren Prather and Yonatan Zeira. Stage 1 went in on 17 November 2014 and had in-principle acceptance by 8 May 2015 — under six months, one round of revisions. The completed study went back that December, was accepted in January 2016, appeared online in July and in the November issue. About two years start to finish, which is long for one submission, but not outside the normal range of a non-RR paper. However, this process was timebound by the special issue, which hurried the process up. 
+
+The slow one is the Ukraine misinformation paper with Kevin Aslett, Matthew Graham and Joshua Tucker, out in the *JEPS* last year. We first submitted in September 2021 and withdrew in March 2022, for reasons that need no explanation. We resubmitted Stage 1 that July. The first decision came six months later; in-principle acceptance came on 26 November 2023, after three rounds of revision and four reviews.
+
+**Sixteen months from resubmission to in-principle acceptance, before we had surveyed a single respondent.** Then the study, then Stage 2 in February 2025, accepted that May, online in August, in an issue this year. Roughly four and a half years from first submission to version of record.
+
+This is by no means a complaint about either set of reviewers. The *JEPS* reviews made the design better, which is the entire point of the format. The problem is structural. A design locked in place for sixteen months is a design that cannot respond to the world, and in our case the world did not wait: the full-scale invasion happened inside the review process and ended the first version of the project outright. Ask a doctoral student on a three-year clock, or anyone on a fixed-term contract, to absorb that risk and the honest answer is that they likely should not.
+
+Here is what I find genuinely strange. That claim that Chambers and Tzavella make, the one I made in July, and the one every advocate of the format concedes **has never been measured.** There is no published study comparing time-to-publication for registered reports against standard articles. The literature has measured the format's quality ([reviewers rated registered reports higher on all nineteen criteria tested](https://doi.org/10.1038/s41562-021-01142-4)), its rate of null results (about 44 per cent of registered-report hypotheses supported, against roughly 96 per cent of results in standard psychology articles), its citations, and how many journals offer it. Nobody has measured the clock. The nearest work asks researchers what they *think* the cost is: [Sarafoglou and colleagues](https://doi.org/10.1098/rsos.211997) surveyed 355 researchers on preregistration and got "better science but more work"; [Imai and colleagues](https://docs.iza.org/dp17821.pdf) surveyed 519 experimental economists and found that more than 80 per cent know what a registered report is, most approve of them — and adoption is near zero. Neither asked anyone for a date.
+
+Journals will not fill this gap on their own. Chambers and Tzavella recommended in 2022 that journals "regularly publish all data on the number of RR submissions received, rejection rates at the different stages and time spent under review." Four years on, none do. Their other proposal, a public feedback site, did get built at Cardiff — it tracks 348 journals, has enough responses for about twenty, and records a four-point *speed rating* rather than a single date.
+
+### The editorial process
+
+The second problem is the one the chart is actually about, and I think it is underrated. It is not about authors at all.
+
+Look at how results-blind review has usually arrived in political science. The *CPS* pilot was a special issue: an open call, nineteen submissions, guest editors, three papers published together in November 2016. Ours was one of the three. The ERPC was a funded competition with its own organisers, its own website, its own deadline and its own prize money. Both were **projects**: they had a start, a budget, a staff and an end.
+
+The most useful document in that *CPS* issue is not the pilot write-up but the piece next to it. Ben Ansell and David Samuels, then the journal's co-editors, published ["Journal Editors and 'Results-Free' Research: A Cautionary Note"](https://doi.org/10.1177/0010414016669369) in the same issue. The editors set out their reservations about the process they had just overseen, in the very issue that showcased it. *CPS* did not adopt results-free review for general submissions, and the editors said why. Their verdict was blunt: “the most important conclusion we have drawn is that we’re not going to do this again.” They rested this decision mainly on the claim that a paper’s contribution cannot be judged without its results, so reviewers were being asked to accept work while setting aside the question of whether it mattered. They also judged the format suited only a narrow slice of the discipline, since the open call drew almost entirely experimental and quasi-experimental designs and no qualitative work at all, and they doubted it reduced publication bias in any case.
+
+Their last objection lands close to home. They argue that null results are typically uninformative for judging a theory, and the paper they use to make the point is ours: “One paper we accepted – by Bush et al. – ended up with null results. We cannot know whether this paper would have passed muster with reviewers had it been presented with these results.” The underlying worry is fair. A single experiment with real external-validity limits may not tell you much whichever way it comes out, and they say so about ours in terms I would not much dispute. But read the sentence again as a finding rather than a caveat. Two editors of a top journal are saying in print that they cannot say whether a paper would have survived ordinary review had its results been visible, which is the publication bias the pilot was built to detect, observed directly, in the pilot's own pages. It appears there as a reason not to run the experiment again.
+
+Pilot project end. When they do the format goes with them, because nothing has been built into the journal's ordinary machinery. That is why those bars are stubs. *CPS* declined to continue almost immediately after our issue appeared; the ERPC's nine journals simply reverted when the ANES data landed. Now look at the bars that are still open. *JEPS* made registered reports a standing article type in an [editor's editorial in 2016](https://doi.org/10.1017/xps.2016.1) — the first in the discipline, and it has run for a decade. *Research & Politics* added one in 2019, *Legislative Studies Quarterly* in 2020, the *Journal of Politics* as a trial in January 2023 that it then kept, and *APSR* in 2025. What those five have in common is that the format became a normal submission type with normal guidelines, rather than an event that someone had to run. That is necessary but plainly not sufficient — *LSQ* has had normal guidelines for six years and nothing has come through them. Making the format ordinary is what keeps the door open; it does not make anyone walk through it. Indeed varying guidelines have become more common since the Ansell and Samuels piece saying *CPS* would not adopt the format.
+
+The evidence for how little institutional attention this gets is in how hard these dates were to find. Most are not on the journals' own pages; I mainly reconstructed them from archived snapshots of the Center for Open Science's registry with the help of Claude Termina and the Wayback Machine, which turns out to be a better historical record of what journals offer than the journals are. *Legislative Studies Quarterly* is absent from the registry on 11 November 2020 and listed by 15 November — a four-day window — while Wiley's own author guidelines for the journal still did not mention registered reports a year later. The lag runs the other way too: the *Journal of Politics* opened its trial in January 2023 and the registry did not list it until August 2025. The two places a scholar would actually look disagree by years, in both directions.
+
+And the *American Political Science Review* is the case that ties both problems together. It is the only journal on this chart with two bars: it reviewed results-blind papers for the ERPC in 2016, let that lapse when the competition closed, and opened a standing registered-reports track in August 2025. **Nine years between them**, about the length of a junior scholar's entire pre-tenure career. Someone who took the 2016 invitation seriously and built a research agenda around it would have come up for tenure before the option came back.
+
+## Why this matters more now
+
+I ended the July post by saying AI might change all of this and that whether it does remains to be seen. 
+
+Generative models have made it very cheap to produce a fluent, plausible, well-motivated paper. What they have not made cheaper is a credible commitment made before you see the results. A good deal of our informal defence against specification search has rested on effort: constructing a convincing post-hoc theory for whatever the data happened to give you used to take real work, and that work was a tax that limited how often it was worth paying. That tax is now close to zero. The garden of forking paths is wide, it but it is now cheap to walk and cheap to narrate afterwards.
+
+The usual responses to this are detection — spotting the AI text, spotting the p-hacking, spotting the analysis that was obviously chosen after the fact. Detection is an arms race, and it is not clear we win it. Frontier LLMs are excellent and running regression models.  This problem disappears if the design was reviewed and accepted before the data existed, there is nothing to detect. So do pre-registration plans, but they don't solve the file drawer problem!
+
+There is a happier version of the same argument. The tools that raise the value of registered reports also lower their cost. Drafting a Stage 1 protocol, specifying contingent analyses, and writing the code that will run when the data arrive.hese are tasks the current models are genuinely good at, and a real share of the author-side burden I described above is document preparation that is much lighter than it was three years ago.
+
+I should be concrete about that, because it applies to this post. The dates in the chart above were not assembled by hand, and most of them are not published anywhere. Getting them meant writing code to walk the Internet Archive's index, pull dozens of archived copies of the Center for Open Science's registry page, and binary-search them for the first appearance of each journal. The counts earlier in this post came from a second scraper, over Cambridge’s own article-type labels across thirty-five issues and 357 articles — which is where "first preregistered report in 2021" and "eleven of nineteen are COVID papers" come from, neither of which any journal publishes. I did that with Claude over a couple of sittings rather than a week of clicking, and it is the reason this post has a chart and a denominator in it at all. The judgement calls and any errors are mine — including one false positive it took a careful look at the underlying page to catch — but the search itself is exactly the kind of tedious, scriptable work these models are now good at. That cuts both ways, which is the point: the same capability that makes a fabricated analysis cheap to produce makes the checking cheap to do.
+
+The sixteen-month wait is not one of the parts AI can fix. That one is on the journals.
+
+## What I would like to know, and an invitation
+
+The honest position at the end of all this is that the central claim — that registered reports cost scholars too much time — is one I believe, have experienced twice and cannot demonstrate. Neither can anyone else, because the data do not exist.
+
+They could. The frame is unusually tractable: every published Stage 2 article is enumerable from the registry and the journals, and corresponding authors are listed on the papers. What I would want to collect is dates, not opinions: Stage 1 submitted, each Stage 1 decision and how many rounds, in-principle acceptance, ethics approval, data collection start and end, Stage 2 submitted, accepted, online, in an issue. Alongside three things no bibliometric study can see:
+
+- **Abandoned Stage 1s.** The projects that got in-principle acceptance and never came back, and the ones that never reached it. They are invisible in the published record, and if the rate is meaningful it is the strongest evidence about cost there is.
+- **A within-author comparison.** One standard-format paper by the same author from the same period, which differences out field, career stage and personal speed without any matching.
+- **The pre-submission interval.** How long the protocol took to write, before the clock the journal can see ever started.
+
+Add career stage and contract type at Stage 1 submission, whether the funding had a fixed end date, and whether the design was time-sensitive — an election, a policy change, a war — and you could say something real about who this format is actually available to.
+
+**If anyone is interested in trying to collect this data more systematically for political science, please let me know.** I would rather do it with people who have run these papers at other journals and in other subfields than generalise from my own two. Reply on LinkedIn or reach out directly.

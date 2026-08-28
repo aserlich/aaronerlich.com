@@ -10,7 +10,1262 @@
 <atom:link href="https://aaronerlich.com/blog.xml" rel="self" type="application/rss+xml"/>
 <description>Aaron Erlich — political science, post-Soviet politics, survey methodology.</description>
 <generator>quarto-1.8.27</generator>
-<lastBuildDate>Mon, 10 Aug 2026 04:00:00 GMT</lastBuildDate>
+<lastBuildDate>Fri, 28 Aug 2026 04:00:00 GMT</lastBuildDate>
+<item>
+  <title>Registered reports are available in political science and used almost nowhere</title>
+  <dc:creator>Aaron Erlich</dc:creator>
+  <link>https://aaronerlich.com/posts/2026-08-registered-reports/</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>In <a href="../../posts/2026-07-publication-record/index.html">July</a> I put my whole publication record online, and the “Registered reports bend the clock” section ended on a claim I had not actually checked: that the length of the two-stage process is a major barrier for junior scholars. In this post, I follow up on this issue.</p>
+<p>The short version: while still a minority of journals, increasingly, the supply of registered reports is not the problem. And my claim about the timeline is probably, at least, partially right, but nobody has ever measured it. Moreover, the format keeps failing to stick in political science for a reason that likely has less to do with enthusiasm than with editorial plumbing.</p>
+<section id="sixty-journals-eleven-that-tried-it-five-that-still-offer-it" class="level2">
+<h2 class="anchored" data-anchor-id="sixty-journals-eleven-that-tried-it-five-that-still-offer-it">Sixty journals, eleven that tried it, five that still offer it</h2>
+<p>Each row below is one of the sixty most-cited journals in political science according to SCImago.<sup>1</sup> A solid bar is a standing registered-reports track, running from the month it opened to today. An outlined bar is a one-off — a pilot or a competition that ended. Most rows are empty.</p>
+<style>
+.rr-legend { display: flex; flex-wrap: wrap; gap: 1.1rem; font-size: 0.85rem; align-items: center; margin: 0.6rem 0 0.9rem; }
+.rr-legend span.sw { display: inline-block; width: 26px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+.rr-note { font-size: 0.8rem; color: #6b6b6b; margin-top: 0.6rem; line-height: 1.5; }
+</style>
+<div class="rr-legend">
+  <span><span class="sw" style="background:#6b1b1b"></span>Standing registered-reports track</span>
+  <span><span class="sw" style="background:#fff;border:1.4px solid #6b1b1b"></span>One-off pilot or competition, ended</span>
+  <span><span class="sw" style="background:#6b1b1b;opacity:0.28"></span>Start date bracketed</span>
+  <span><span class="sw" style="background:linear-gradient(to right,#d8d8d8 0 3px,transparent 3px 6px);background-size:6px 1px;background-repeat:repeat-x;background-position:0 50%;height:10px"></span>Never offered</span>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb1" data-startfrom="33" data-source-offset="-0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 32;"><span id="cb1-33">db <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">FileAttachment</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"../../_data/rr_adoption.json"</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">json</span>()</span>
+<span id="cb1-34">INK <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#6b1b1b"</span></span>
+<span id="cb1-35">asOf <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">new</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">Date</span>(db<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">as_of</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"T00:00:00Z"</span>)</span>
+<span id="cb1-36">mdate <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> s <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> { <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> [y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> m] <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> s<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">split</span>(<span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"-"</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">Number</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">new</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">Date</span>(<span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">Date</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">UTC</span>(y<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> m <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">-</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>))<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> }</span>
+<span id="cb1-37">rows <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> db<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">journals</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map</span>(j <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> ({ <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">...</span>j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">${</span>j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">rank</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">. </span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">${</span>j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title</span><span class="sc" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">}</span><span class="vs" style="color: #20794D;
+background-color: null;
+font-style: inherit;">`</span> }))</span>
+<span id="cb1-38"><span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// One record per period, so a journal can appear on its own row more than once.</span></span>
+<span id="cb1-39">spans <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> rows<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">flatMap</span>(j <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">periods</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map</span>(p <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> ({</span>
+<span id="cb1-40">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">rank</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">rank</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-41">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">Journal</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> j<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">title</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-42">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">kind</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">kind</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-43">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">start</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mdate</span>(p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">start</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-44">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">uncFrom</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">uncertain_from</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">?</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mdate</span>(p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">uncertain_from</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">null</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-45">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">end</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">end</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">?</span> <span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">mdate</span>(p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">end</span>) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> asOf<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-46">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">Opened</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">start</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-47">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">Closed</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">end</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">||</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"still open"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-48">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">Evidence</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">evidence</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-49">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">Confidence</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">confidence</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb1-50">  <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">Detail</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> p<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">note</span></span>
+<span id="cb1-51">})))</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-1" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-3" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-4" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-5" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-1-6" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code hidden" id="cb2" data-startfrom="55" data-source-offset="0" style="background: #f1f3f5;"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 54;"><span id="cb2-55">{</span>
+<span id="cb2-56">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> order <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> rows<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">map</span>(d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> d<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">rank</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-57">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> never <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> rows<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!</span>d<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">ever</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-58">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> tracks <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> spans<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> d<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">kind</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">===</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"track"</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-59">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> oneoffs <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> spans<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> d<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">kind</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">!==</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"track"</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-60">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> unc <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> spans<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">filter</span>(d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> d<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">uncFrom</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-61">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> x0 <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">Date</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">UTC</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2013</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-62">  <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> tipfmt <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> { <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">format</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> { <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">stroke</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fillOpacity</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">false</span> } }<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-63"></span>
+<span id="cb2-64">  <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> Plot<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">plot</span>({</span>
+<span id="cb2-65">    width<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-66">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">height</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> rows<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">length</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">*</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">15</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">46</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-67">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">marginLeft</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">24</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-68">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">marginRight</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">268</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-69">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">marginTop</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-70">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">marginBottom</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">30</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-71">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> {</span>
+<span id="cb2-72">      <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">type</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"utc"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-73">      <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">domain</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> [x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>asOf]<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-74">      <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">grid</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-75">      <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">label</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">null</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-76">      <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">ticks</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> d3<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">utcYear</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">every</span>(<span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span>)<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-77">      <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">tickFormat</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> { <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">const</span> y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">=</span> d<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">getUTCFullYear</span>()<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> <span class="cf" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">return</span> y <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">%</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">===</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">?</span> <span class="bu" style="color: null;
+background-color: null;
+font-style: inherit;">String</span>(y) <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">""</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span> }</span>
+<span id="cb2-78">    }<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-79">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> { <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">axis</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">null</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">domain</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> order }<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-80">    <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">marks</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> [</span>
+<span id="cb2-81">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// Never offered: a faint dotted line, so an empty row reads as checked rather than missing.</span></span>
+<span id="cb2-82">      Plot<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">ruleY</span>(never<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> {</span>
+<span id="cb2-83">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rank"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> x0<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">+</span>asOf<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-84">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">stroke</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#dcdcdc"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">strokeWidth</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">strokeDasharray</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"1,4"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">clip</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">true</span></span>
+<span id="cb2-85">      })<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-86">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// Bracketed start: the window adoption fell in, when we cannot say exactly when.</span></span>
+<span id="cb2-87">      Plot<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">barX</span>(unc<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> {</span>
+<span id="cb2-88">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rank"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"uncFrom"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"start"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-89">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> INK<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fillOpacity</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">0.26</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">insetY</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4.5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">rx</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">clip</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">tip</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> tipfmt</span>
+<span id="cb2-90">      })<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-91">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// Standing tracks.</span></span>
+<span id="cb2-92">      Plot<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">barX</span>(tracks<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> {</span>
+<span id="cb2-93">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rank"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"start"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"end"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-94">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> INK<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">insetY</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4.5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">rx</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">clip</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">tip</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> tipfmt</span>
+<span id="cb2-95">      })<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-96">      <span class="co" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">// One-offs: same hue, outlined, so "tried it and stopped" is a shape not a colour.</span></span>
+<span id="cb2-97">      Plot<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">barX</span>(oneoffs<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> {</span>
+<span id="cb2-98">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rank"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x1</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"start"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">x2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"end"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-99">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"white"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">stroke</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> INK<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">strokeWidth</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">1.2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">insetY</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">4.5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">rx</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">2</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">clip</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">true</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">tip</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> tipfmt</span>
+<span id="cb2-100">      })<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-101">      Plot<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="fu" style="color: #4758AB;
+background-color: null;
+font-style: inherit;">text</span>(rows<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> {</span>
+<span id="cb2-102">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">y</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"rank"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">text</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"label"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">frameAnchor</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"right"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">textAnchor</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"start"</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-103">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">dx</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="dv" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">8</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span> <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fontSize</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="fl" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">9.5</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">,</span></span>
+<span id="cb2-104">        <span class="dt" style="color: #AD0000;
+background-color: null;
+font-style: inherit;">fill</span><span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> d <span class="kw" style="color: #003B4F;
+background-color: null;
+font-weight: bold;
+font-style: inherit;">=&gt;</span> d<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">.</span><span class="at" style="color: #657422;
+background-color: null;
+font-style: inherit;">ever</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">?</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#2a2a2a"</span> <span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">:</span> <span class="st" style="color: #20794D;
+background-color: null;
+font-style: inherit;">"#8a8a8a"</span></span>
+<span id="cb2-105">      })</span>
+<span id="cb2-106">    ]</span>
+<span id="cb2-107">  })<span class="op" style="color: #5E5E5E;
+background-color: null;
+font-style: inherit;">;</span></span>
+<span id="cb2-108">}</span></code></pre></div></div>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-2" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<p class="rr-note">Rank is SCImago Journal Rank (2025). Bars begin the month a journal
+started offering results-blind review and run to when it stopped, or to today. A pale
+extension to the left of a bar means the start is bracketed rather than known. Hover any
+bar for the evidence behind its dates.</p>
+<p>Across all fields, more than 300 journals now offer registered reports. What that has produced is discouraging: <a href="https://doi.org/10.1007/s11192-023-04896-y">Lin and colleagues (2023)</a> found adoption ranging from 0 to 7 per cent across major research fields, with psychology the only one reaching 7 and everything else at 1 per cent or below. Availability is not the binding constraint anywhere, and political science is no exception.</p>
+</section>
+<section id="offering-it-and-using-it-are-different-things" class="level2">
+<h2 class="anchored" data-anchor-id="offering-it-and-using-it-are-different-things">Offering it and using it are different things</h2>
+<p>The chart measures which journals <em>offer</em> results-blind review. It says nothing about how often anyone uses it, and that turns out to be a separate question with an awkward answer.</p>
+<p><em>JEPS</em> is the best case in the discipline — the first standing track, at an experimental-methods journal whose readership is exactly the audience for the format. It opened the track in August 2016 and <strong>published its first preregistered report in 2021.</strong> It took five years for the first article to come out! Though, given how long they take to publish, we do not know when the first successful article was submitted.</p>
+<p>What happened next at <em>JEPS</em> appears mostly pandemic related. Of the nineteen preregistered reports <em>JEPS</em> has published, <strong>eleven are explicitly COVID papers</strong>: mask messaging, praying from home during lockdown, elite influence on how serious people thought the virus was, childcare under closure. Urgent questions, simple survey-experimental designs, and reason to act quickly. The share of peer-reviewed research at <em>JEPS</em> peaked at 20 per cent in 2022, and has since fallen back to 5.3 per cent in 2024 and 4.3 per cent in 2025 — one paper a year. (2026 is running higher again, three so far, but the year is not finished and three is not a trend.)</p>
+<p>Everywhere else the numbers are smaller still. <em>APSR</em> has published one since opening its track in August 2025. And <em>Legislative Studies Quarterly</em>, which has offered the format since November 2020, appears to have published <strong>none at all</strong>, as far as I can tell, and I looked six different ways<sup>2</sup></p>
+</section>
+<section id="the-2016-wave-that-vanished" class="level2">
+<h2 class="anchored" data-anchor-id="the-2016-wave-that-vanished">The 2016 wave that vanished</h2>
+<p>The cluster of short outlined bars in 2016 is not six journals independently deciding to try registered reports. It is one event: the <strong>Election Research Preacceptance Competition (ERPC)</strong>, organised by Arthur Lupia and Brendan Nyhan and funded by the Arnold Foundation. Nine journals agreed to review results-blind submissions built on preregistered analyses of the 2016 ANES. Six of the nine sit in this top sixty, including the three most-cited journals in the discipline.</p>
+<p>It was announced in August 2016 and closed to new entrants in March 2017, when the ANES data were released. Not one of the participating journals turned it into standing policy.</p>
+<p>So the discipline ran this experiment twice — the ERPC, and the <em>Comparative Political Studies</em> pilot, and both times the option disappeared when the initiative did. Whatever is stopping registered reports in political science, it is not that editors at the top have never tried them.</p>
+</section>
+<section id="two-things-are-hard-and-they-are-different-problems" class="level2">
+<h2 class="anchored" data-anchor-id="two-things-are-hard-and-they-are-different-problems">Two things are hard, and they are different problems</h2>
+<section id="the-scholars-clock" class="level3">
+<h3 class="anchored" data-anchor-id="the-scholars-clock">The scholar’s clock</h3>
+<p>Let’s start with the part I claimed in July. The field’s flagship review of the format, <a href="https://doi.org/10.1038/s41562-021-01193-7">Chambers and Tzavella (2022)</a>, is unambiguous about it:</p>
+<blockquote class="blockquote">
+<p>Perhaps the greatest limitation of the RR format is the time taken for submissions to be reviewed at stage 1 and receive IPA, thus delaying the commencement of research.</p>
+</blockquote>
+<p>They add that Stage 1</p>
+<blockquote class="blockquote">
+<p>typically adds a period of several months between submitting a stage 1 manuscript and the commencement of the research … [this] “can present a substantial barrier for researchers on short-term contracts or who hold grants that demand immediate data acquisition.</p>
+</blockquote>
+<p>I have two registered reports, and the gap between them is wider than most people’s prior about the format.</p>
+<p>The fast one was the <em>Comparative Political Studies</em> paper, with Sarah Bush, Lauren Prather and Yonatan Zeira. Stage 1 went in on 17 November 2014 and had in-principle acceptance by 8 May 2015 — under six months, one round of revisions. The completed study went back that December, was accepted in January 2016, appeared online in July and in the November issue. About two years start to finish, which is long for one submission, but not outside the normal range of a non-RR paper. However, this process was timebound by the special issue, which hurried the process up.</p>
+<p>The slow one is the Ukraine misinformation paper with Kevin Aslett, Matthew Graham and Joshua Tucker, out in the <em>JEPS</em> last year. We first submitted in September 2021 and withdrew in March 2022, for reasons that need no explanation. We resubmitted Stage 1 that July. The first decision came six months later; in-principle acceptance came on 26 November 2023, after three rounds of revision and four reviews.</p>
+<p><strong>Sixteen months from resubmission to in-principle acceptance, before we had surveyed a single respondent.</strong> Then the study, then Stage 2 in February 2025, accepted that May, online in August, in an issue this year. Roughly four and a half years from first submission to version of record.</p>
+<p>This is by no means a complaint about either set of reviewers. The <em>JEPS</em> reviews made the design better, which is the entire point of the format. The problem is structural. A design locked in place for sixteen months is a design that cannot respond to the world, and in our case the world did not wait: the full-scale invasion happened inside the review process and ended the first version of the project outright. Ask a doctoral student on a three-year clock, or anyone on a fixed-term contract, to absorb that risk and the honest answer is that they likely should not.</p>
+<p>Here is what I find genuinely strange. That claim that Chambers and Tzavella make, the one I made in July, and the one every advocate of the format concedes <strong>has never been measured.</strong> There is no published study comparing time-to-publication for registered reports against standard articles. The literature has measured the format’s quality (<a href="https://doi.org/10.1038/s41562-021-01142-4">reviewers rated registered reports higher on all nineteen criteria tested</a>), its rate of null results (about 44 per cent of registered-report hypotheses supported, against roughly 96 per cent of results in standard psychology articles), its citations, and how many journals offer it. Nobody has measured the clock. The nearest work asks researchers what they <em>think</em> the cost is: <a href="https://doi.org/10.1098/rsos.211997">Sarafoglou and colleagues</a> surveyed 355 researchers on preregistration and got “better science but more work”; <a href="https://docs.iza.org/dp17821.pdf">Imai and colleagues</a> surveyed 519 experimental economists and found that more than 80 per cent know what a registered report is, most approve of them — and adoption is near zero. Neither asked anyone for a date.</p>
+<p>Journals will not fill this gap on their own. Chambers and Tzavella recommended in 2022 that journals “regularly publish all data on the number of RR submissions received, rejection rates at the different stages and time spent under review.” Four years on, none do. Their other proposal, a public feedback site, did get built at Cardiff — it tracks 348 journals, has enough responses for about twenty, and records a four-point <em>speed rating</em> rather than a single date.</p>
+</section>
+<section id="the-editorial-process" class="level3">
+<h3 class="anchored" data-anchor-id="the-editorial-process">The editorial process</h3>
+<p>The second problem is the one the chart is actually about, and I think it is underrated. It is not about authors at all.</p>
+<p>Look at how results-blind review has usually arrived in political science. The <em>CPS</em> pilot was a special issue: an open call, nineteen submissions, guest editors, three papers published together in November 2016. Ours was one of the three. The ERPC was a funded competition with its own organisers, its own website, its own deadline and its own prize money. Both were <strong>projects</strong>: they had a start, a budget, a staff and an end.</p>
+<p>The most useful document in that <em>CPS</em> issue is not the pilot write-up but the piece next to it. Ben Ansell and David Samuels, then the journal’s co-editors, published <a href="https://doi.org/10.1177/0010414016669369">“Journal Editors and ‘Results-Free’ Research: A Cautionary Note”</a> in the same issue. The editors set out their reservations about the process they had just overseen, in the very issue that showcased it. <em>CPS</em> did not adopt results-free review for general submissions, and the editors said why. Their verdict was blunt: “the most important conclusion we have drawn is that we’re not going to do this again.” They rested this decision mainly on the claim that a paper’s contribution cannot be judged without its results, so reviewers were being asked to accept work while setting aside the question of whether it mattered. They also judged the format suited only a narrow slice of the discipline, since the open call drew almost entirely experimental and quasi-experimental designs and no qualitative work at all, and they doubted it reduced publication bias in any case.</p>
+<p>Their last objection lands close to home. They argue that null results are typically uninformative for judging a theory, and the paper they use to make the point is ours: “One paper we accepted – by Bush et al.&nbsp;– ended up with null results. We cannot know whether this paper would have passed muster with reviewers had it been presented with these results.” The underlying worry is fair. A single experiment with real external-validity limits may not tell you much whichever way it comes out, and they say so about ours in terms I would not much dispute. But read the sentence again as a finding rather than a caveat. Two editors of a top journal are saying in print that they cannot say whether a paper would have survived ordinary review had its results been visible, which is the publication bias the pilot was built to detect, observed directly, in the pilot’s own pages. It appears there as a reason not to run the experiment again.</p>
+<p>Pilot project end. When they do the format goes with them, because nothing has been built into the journal’s ordinary machinery. That is why those bars are stubs. <em>CPS</em> declined to continue almost immediately after our issue appeared; the ERPC’s nine journals simply reverted when the ANES data landed. Now look at the bars that are still open. <em>JEPS</em> made registered reports a standing article type in an <a href="https://doi.org/10.1017/xps.2016.1">editor’s editorial in 2016</a> — the first in the discipline, and it has run for a decade. <em>Research &amp; Politics</em> added one in 2019, <em>Legislative Studies Quarterly</em> in 2020, the <em>Journal of Politics</em> as a trial in January 2023 that it then kept, and <em>APSR</em> in 2025. What those five have in common is that the format became a normal submission type with normal guidelines, rather than an event that someone had to run. That is necessary but plainly not sufficient — <em>LSQ</em> has had normal guidelines for six years and nothing has come through them. Making the format ordinary is what keeps the door open; it does not make anyone walk through it. Indeed varying guidelines have become more common since the Ansell and Samuels piece saying <em>CPS</em> would not adopt the format.</p>
+<p>The evidence for how little institutional attention this gets is in how hard these dates were to find. Most are not on the journals’ own pages; I mainly reconstructed them from archived snapshots of the Center for Open Science’s registry with the help of Claude Termina and the Wayback Machine, which turns out to be a better historical record of what journals offer than the journals are. <em>Legislative Studies Quarterly</em> is absent from the registry on 11 November 2020 and listed by 15 November — a four-day window — while Wiley’s own author guidelines for the journal still did not mention registered reports a year later. The lag runs the other way too: the <em>Journal of Politics</em> opened its trial in January 2023 and the registry did not list it until August 2025. The two places a scholar would actually look disagree by years, in both directions.</p>
+<p>And the <em>American Political Science Review</em> is the case that ties both problems together. It is the only journal on this chart with two bars: it reviewed results-blind papers for the ERPC in 2016, let that lapse when the competition closed, and opened a standing registered-reports track in August 2025. <strong>Nine years between them</strong>, about the length of a junior scholar’s entire pre-tenure career. Someone who took the 2016 invitation seriously and built a research agenda around it would have come up for tenure before the option came back.</p>
+</section>
+</section>
+<section id="why-this-matters-more-now" class="level2">
+<h2 class="anchored" data-anchor-id="why-this-matters-more-now">Why this matters more now</h2>
+<p>I ended the July post by saying AI might change all of this and that whether it does remains to be seen.</p>
+<p>Generative models have made it very cheap to produce a fluent, plausible, well-motivated paper. What they have not made cheaper is a credible commitment made before you see the results. A good deal of our informal defence against specification search has rested on effort: constructing a convincing post-hoc theory for whatever the data happened to give you used to take real work, and that work was a tax that limited how often it was worth paying. That tax is now close to zero. The garden of forking paths is wide, it but it is now cheap to walk and cheap to narrate afterwards.</p>
+<p>The usual responses to this are detection — spotting the AI text, spotting the p-hacking, spotting the analysis that was obviously chosen after the fact. Detection is an arms race, and it is not clear we win it. Frontier LLMs are excellent and running regression models. This problem disappears if the design was reviewed and accepted before the data existed, there is nothing to detect. So do pre-registration plans, but they don’t solve the file drawer problem!</p>
+<p>There is a happier version of the same argument. The tools that raise the value of registered reports also lower their cost. Drafting a Stage 1 protocol, specifying contingent analyses, and writing the code that will run when the data arrive.hese are tasks the current models are genuinely good at, and a real share of the author-side burden I described above is document preparation that is much lighter than it was three years ago.</p>
+<p>I should be concrete about that, because it applies to this post. The dates in the chart above were not assembled by hand, and most of them are not published anywhere. Getting them meant writing code to walk the Internet Archive’s index, pull dozens of archived copies of the Center for Open Science’s registry page, and binary-search them for the first appearance of each journal. The counts earlier in this post came from a second scraper, over Cambridge’s own article-type labels across thirty-five issues and 357 articles — which is where “first preregistered report in 2021” and “eleven of nineteen are COVID papers” come from, neither of which any journal publishes. I did that with Claude over a couple of sittings rather than a week of clicking, and it is the reason this post has a chart and a denominator in it at all. The judgement calls and any errors are mine — including one false positive it took a careful look at the underlying page to catch — but the search itself is exactly the kind of tedious, scriptable work these models are now good at. That cuts both ways, which is the point: the same capability that makes a fabricated analysis cheap to produce makes the checking cheap to do.</p>
+<p>The sixteen-month wait is not one of the parts AI can fix. That one is on the journals.</p>
+</section>
+<section id="what-i-would-like-to-know-and-an-invitation" class="level2">
+<h2 class="anchored" data-anchor-id="what-i-would-like-to-know-and-an-invitation">What I would like to know, and an invitation</h2>
+<p>The honest position at the end of all this is that the central claim — that registered reports cost scholars too much time — is one I believe, have experienced twice and cannot demonstrate. Neither can anyone else, because the data do not exist.</p>
+<p>They could. The frame is unusually tractable: every published Stage 2 article is enumerable from the registry and the journals, and corresponding authors are listed on the papers. What I would want to collect is dates, not opinions: Stage 1 submitted, each Stage 1 decision and how many rounds, in-principle acceptance, ethics approval, data collection start and end, Stage 2 submitted, accepted, online, in an issue. Alongside three things no bibliometric study can see:</p>
+<ul>
+<li><strong>Abandoned Stage 1s.</strong> The projects that got in-principle acceptance and never came back, and the ones that never reached it. They are invisible in the published record, and if the rate is meaningful it is the strongest evidence about cost there is.</li>
+<li><strong>A within-author comparison.</strong> One standard-format paper by the same author from the same period, which differences out field, career stage and personal speed without any matching.</li>
+<li><strong>The pre-submission interval.</strong> How long the protocol took to write, before the clock the journal can see ever started.</li>
+</ul>
+<p>Add career stage and contract type at Stage 1 submission, whether the funding had a fixed end date, and whether the design was time-sensitive — an election, a policy change, a war — and you could say something real about who this format is actually available to.</p>
+<p><strong>If anyone is interested in trying to collect this data more systematically for political science, please let me know.</strong> I would rather do it with people who have run these papers at other journals and in other subfields than generalise from my own two. Reply on LinkedIn or reach out directly.</p>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section id="footnotes" class="footnotes footnotes-end-of-document"><h2 class="anchored quarto-appendix-heading">Footnotes</h2>
+
+<ol>
+<li id="fn1"><p>Scimago also has no single political science category — it has two, and the second holds <em>Administrative Science Quarterly</em> and the <em>American Sociological Review</em> alongside the <em>Journal of Politics</em> — so what is plotted is the union of both, curated by hand, which makes the boundary a judgement someone else would draw differently.↩︎</p></li>
+<li id="fn2"><p>Wiley publishes no article-type label for <em>LSQ</em>, so there is no way to prove the absence; I can only report that no search I can construct finds one. Cambridge, by contrast, tags every article with its type, which is the only reason the <em>JEPS</em> numbers above exist at all. The difference between a journal you can count and a journal you cannot is not a small methodological detail — it decides whether anyone can ever check whether a policy did anything.↩︎</p></li>
+</ol>
+</section></div> ]]></description>
+  <category>publishing</category>
+  <category>open science</category>
+  <category>registered reports</category>
+  <category>transparency</category>
+  <guid>https://aaronerlich.com/posts/2026-08-registered-reports/</guid>
+  <pubDate>Fri, 28 Aug 2026 04:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Did it matter where the paper landed?</title>
   <dc:creator>Aaron Erlich</dc:creator>
