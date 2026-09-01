@@ -1822,11 +1822,11 @@ items:
   source:
     manual: true
   added: '2026-08-11'
-  status: awaiting-linkedin
+  status: posted
   rounds:
   - n: 1
     opened: '2026-08-11'
-    status: awaiting-linkedin
+    status: posted
     note: launch
     drafts:
       bluesky:
@@ -1859,8 +1859,8 @@ items:
         uri: at://did:plc:pu4k4ebwm2cpi5klhm3ne437/app.bsky.feed.post/3mti6nny45t2j
         at: '2026-08-20T02:19:45+00:00'
       linkedin:
-        pending_manual: true
-        notified: '2026-09-01'
+        url: https://www.linkedin.com/posts/aaron-erlich-4435312_citation-arcs-activity-7496044582086914048--h45
+        at: '2026-09-01T13:42:16+00:00'
 - id: post-2026-08-citation-arcs
   kind: blog
   title: Did it matter where the paper landed?
