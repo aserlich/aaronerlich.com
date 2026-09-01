@@ -7,7 +7,7 @@
 # Not served on aaronerlich.com: Quarto only copies _data files that a page
 # actually references (submissions_public.json, via an OJS FileAttachment).
 meta:
-  last_scan: '2026-08-15'
+  last_scan: '2026-09-01'
 items:
 - id: pub-erlichBookReviewSay2012
   kind: publication
@@ -1822,11 +1822,11 @@ items:
   source:
     manual: true
   added: '2026-08-11'
-  status: scheduled
+  status: awaiting-linkedin
   rounds:
   - n: 1
     opened: '2026-08-11'
-    status: scheduled
+    status: awaiting-linkedin
     note: launch
     drafts:
       bluesky:
@@ -1853,6 +1853,14 @@ items:
 
           https://aaronerlich.com/citation-arcs/
     post_at: '2026-08-19T09:30:00-04:00'
+    posted:
+      bluesky:
+        url: https://bsky.app/profile/aaronerlich.bsky.social/post/3mti6nny45t2j
+        uri: at://did:plc:pu4k4ebwm2cpi5klhm3ne437/app.bsky.feed.post/3mti6nny45t2j
+        at: '2026-08-20T02:19:45+00:00'
+      linkedin:
+        pending_manual: true
+        notified: '2026-09-01'
 - id: post-2026-08-citation-arcs
   kind: blog
   title: Did it matter where the paper landed?
@@ -1911,3 +1919,67 @@ items:
         url: null
         at: '2026-08-12T14:24:30+00:00'
         note: posted by hand; text above is the version of record
+- id: post-2026-08-registered-reports
+  kind: blog
+  title: Registered reports are available in political science and used almost nowhere
+  url: https://aaronerlich.com/posts/2026-08-registered-reports/
+  blurb: 'Sixty of political science''s most visible journals: eleven have offered results-blind
+    review at some point, five offer it today, and one dropped it and came back nine years later.
+    Why the format keeps failing to stick — and why it matters more now.'
+  year: '2026'
+  venue: ''
+  coauthors: []
+  source:
+    path: posts/2026-08-registered-reports/index.qmd
+  added: '2026-08-28'
+  status: posted
+  rounds:
+  - n: 1
+    opened: '2026-08-28'
+    status: posted
+    note: launch
+    drafts:
+      bluesky:
+        text: |-
+          JEPS opened political science's first registered reports track in 2016 and published its first one in 2021.
+
+          I charted the 60 most-cited journals in the field: which have ever offered results-blind review, when, and how little it gets used.
+
+          https://aaronerlich.com/posts/2026-08-registered-reports/
+        embed:
+          uri: https://aaronerlich.com/posts/2026-08-registered-reports/
+          title: Registered reports are available in political science and used almost nowhere
+          description: 'Sixty of political science''s most visible journals: eleven have offered
+            results-blind review at some point, five offer it today, and one dropped it and came
+            back nine years later. Why the format keeps failing to stick — and why it matters more
+            now.'
+      linkedin:
+        text: |-
+          JEPS opened political science's first registered reports track in August 2016. It published its first one in 2021.
+
+          New post — which journals offer results-blind review, when they adopted it, and how little it gets used:
+          https://aaronerlich.com/posts/2026-08-registered-reports/
+
+          I charted the sixty most-cited journals in the field. Eleven have offered the format at some point. Five offer it today.
+
+          A few things I did not expect:
+
+          - JEPS opened the discipline's first standing track in 2016 and published nothing under it for five years. Eleven of its nineteen registered reports are COVID papers.
+          - Legislative Studies Quarterly has offered the format since November 2020 and, as far as I can tell, has never published one.
+          - APSR reviewed results-blind papers for a funded competition in 2016, let it lapse, and reopened a track in 2025. Nine years, which is roughly a pre-tenure career.
+
+          Two things are hard here, and they are different problems. The clock is hard on authors: my own registered report at JEPS took sixteen months from resubmission to in-principle acceptance, before we had surveyed a single respondent. The editorial side is hard in its own way, because results-blind review has usually arrived as a funded project with an end date rather than as ordinary journal machinery. Projects end, and the format goes with them.
+
+          The frustrating part is that the timing evidence does not exist. Nobody has measured how long registered reports take compared with standard articles, and no journal publishes the numbers that would let you check.
+
+          If anyone would like to help collect that data properly for political science, I would genuinely welcome collaborators.
+
+          https://aaronerlich.com/posts/2026-08-registered-reports/
+    posted:
+      bluesky:
+        url: https://bsky.app/profile/aaronerlich.bsky.social/post/3muhk2xk3cf2m
+        uri: at://did:plc:pu4k4ebwm2cpi5klhm3ne437/app.bsky.feed.post/3muhk2xk3cf2m
+        at: '2026-09-01T13:36:34+00:00'
+      linkedin:
+        url: https://www.linkedin.com/posts/aaron-erlich-4435312_new-post-which-journals-offer-results-blind-activity-7500547711700512768-gSIK
+        at: '2026-09-01T13:40:59+00:00'
