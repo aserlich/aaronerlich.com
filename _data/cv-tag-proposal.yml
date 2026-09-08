@@ -373,7 +373,7 @@ sections:
     match_zotero_title: 'Discriminatory Immigration Bans Elicit Anti-Americanism in Targeted Communities: Evidence from Nigerian
       Expatriates'
     match_score: 100
-  - match_citekey: erlichDoesAnalyticThinking
+  - match_citekey: erlich_DoesAnalyticThinking_2023
     latex_title: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence from Ukraine.
     proposed_tags:
     - cv:include

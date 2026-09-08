@@ -62,7 +62,12 @@ def fmt_authors(author_list, drop_last_name: str = "erlich") -> list:
     for a in author_list or []:
         fam = (a.get("family") or "").strip()
         giv = (a.get("given") or "").strip()
-        if drop_last_name and fam.lower() == drop_last_name:
+        # Zotero sometimes stores a name in ONE field ("Erlich, Aaron") instead
+        # of two. That lands in `family` whole, so a bare surname comparison
+        # misses it and Aaron ends up listed as his own coauthor. Compare the
+        # surname component, not the raw field.
+        fam_surname = fam.split(",")[0].strip().lower()
+        if drop_last_name and fam_surname == drop_last_name:
             continue
         if giv and fam:
             names.append(f"{giv} {fam}")
@@ -83,7 +88,8 @@ def normalize(item: dict, citekey: str) -> dict:
     doi = item.get("DOI") or ""
     # Some Zotero DOI fields hold a full https://doi.org/… URL; strip the
     # resolver prefix so we don't double it when building the href.
-    doi = re.sub(r"^\s*https?://(dx\.)?doi\.org/", "", doi).strip()
+    doi = re.sub(r"^\s*(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", "", doi,
+                 flags=re.IGNORECASE).strip()
     return {
         "citekey": citekey,
         "title": (item.get("title") or "").strip(),

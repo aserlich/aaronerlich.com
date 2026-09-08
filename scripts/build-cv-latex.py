@@ -113,13 +113,25 @@ def tex_quotes(s: str) -> str:
 
 # ---------- author formatting ----------
 
+def normalize_doi(doi: str) -> str:
+    """Zotero DOI fields arrive dirty: some hold a full https://doi.org/… URL,
+    some a 'DOI: ' / 'doi:' prefix. Strip either so the href is not doubled."""
+    return re.sub(r"^\s*(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", "", doi,
+                  flags=re.IGNORECASE).strip()
+
+
 def fmt_authors_latex(author_list, drop_last_name="erlich") -> str:
     """Drop Aaron, "Name1, Name2, and Name3" Oxford-comma style."""
     names = []
     for a in author_list or []:
         fam = (a.get("family") or "").strip()
         giv = (a.get("given") or "").strip()
-        if drop_last_name and fam.lower() == drop_last_name:
+        # Zotero sometimes stores a name in ONE field ("Erlich, Aaron") instead
+        # of two. That lands in `family` whole, so a bare surname comparison
+        # misses it and Aaron ends up listed as his own coauthor. Compare the
+        # surname component, not the raw field.
+        fam_surname = fam.split(",")[0].strip().lower()
+        if drop_last_name and fam_surname == drop_last_name:
             continue
         if giv and fam:
             names.append(f"{giv} {fam}")
@@ -187,7 +199,7 @@ def render_publication_latex(item: dict, annotations: list | None,
     issue = item.get("issue") or ""
     pages = item.get("page") or ""
     year = get_year(item)
-    doi = item.get("DOI") or ""
+    doi = normalize_doi(item.get("DOI") or "")
     url = item.get("URL") or (f"https://doi.org/{doi}" if doi else "")
     coauthors_str = fmt_authors_latex(item.get("author") or [])
 

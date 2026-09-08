@@ -179,7 +179,12 @@ def fmt_authors(author_list, drop_last_name="erlich") -> str:
     for a in author_list or []:
         fam = (a.get("family") or "").strip()
         giv = (a.get("given") or "").strip()
-        if drop_last_name and fam.lower() == drop_last_name:
+        # Zotero sometimes stores a name in ONE field ("Erlich, Aaron") instead
+        # of two. That lands in `family` whole, so a bare surname comparison
+        # misses it and Aaron ends up listed as his own coauthor. Compare the
+        # surname component, not the raw field.
+        fam_surname = fam.split(",")[0].strip().lower()
+        if drop_last_name and fam_surname == drop_last_name:
             continue
         if giv and fam:
             names.append(f"{giv} {fam}")
@@ -286,9 +291,11 @@ def render_publication(item: dict, citekey: str, annotations: list, label_with: 
     pages = item.get("page") or ""
     year = get_year(item)
     doi = item.get("DOI") or ""
-    # Normalize: some Zotero DOI fields hold a full https://doi.org/… URL.
-    # Strip the resolver prefix so we don't double it when building the href.
-    doi = re.sub(r"^\s*https?://(dx\.)?doi\.org/", "", doi).strip()
+    # Normalize: some Zotero DOI fields hold a full https://doi.org/… URL,
+    # others a "DOI: " / "doi:" prefix. Strip either so we don't produce
+    # https://doi.org/https://doi.org/… or https://doi.org/DOI: … in the href.
+    doi = re.sub(r"^\s*(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", "", doi,
+                 flags=re.IGNORECASE).strip()
     url = item.get("URL") or (f"https://doi.org/{doi}" if doi else "")
     coauthors_str = fmt_authors(item.get("author") or [])
 
