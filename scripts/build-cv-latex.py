@@ -165,6 +165,73 @@ _ANNOT_PATTERNS = [
                                                                     "Top 10 Most Cited"),
 ]
 
+def _detect_tex_cv_latex(a: str):
+    """Translate a raw Zotero `tex.cv-*` extra line into (label, latex_content).
+
+    Mirrors _detect_tex_cv() in build-cv.py so the LaTeX CV and the web CV
+    render the same annotations. Without this the raw line fell through the
+    pattern table and printed verbatim in the PDF, e.g.
+        ---tex.cv-media: news | The Guardian | https://...
+    """
+    body = a[len("tex.cv-"):]
+    kind, _, rest = body.partition(":")
+    kind, rest = kind.strip(), rest.strip()
+    if kind == "award":
+        sub, _, value = rest.partition("|")
+        sub, value = sub.strip(), value.strip()
+        if sub == "honorable-mention":
+            return "Honourable Mention", value
+        if sub == "top-cited":
+            return "Top 10 Most Cited", value
+        return "Winner", value
+    if kind == "media":
+        fields = [f.strip() for f in rest.split("|")]
+        if len(fields) >= 3 and fields[2]:
+            return "Media coverage", f"\\href{{{fields[2]}}}{{\\textit{{{fields[1]}}}}}"
+        return "Media coverage", fields[-1]
+    if kind == "press-release":
+        content = f"\\href{{{rest}}}{{{rest}}}" if rest.startswith("http") else rest
+        return "Press release", content
+    if kind == "note":
+        return None, rest
+    return None, a
+
+
+def split_annotation_latex(ann: str):
+    """Return (label, content) for an annotation, handling both the legacy
+    human-readable LaTeX form and the raw Zotero `tex.cv-*` form."""
+    a = ann.strip().rstrip(".")
+    if a.startswith("tex.cv-"):
+        return _detect_tex_cv_latex(a)
+    for pat, label in _ANNOT_PATTERNS:
+        m = pat.match(a)
+        if m:
+            content = (m.group(1) or "").strip() if m.lastindex else ""
+            return label, content
+    return None, a
+
+
+def group_annotations_latex(annotations) -> list:
+    """Collapse annotations sharing a label onto one trailer line, so a paper
+    with both a legacy `Media coverage:` line and a `tex.cv-media:` entry
+    yields one line listing every outlet — matching the web CV's grouping."""
+    grouped, pos = [], {}
+    for ann in annotations or []:
+        label, content = split_annotation_latex(ann)
+        if label and label in pos:
+            grouped[pos[label]][1].append(content)
+        else:
+            if label:
+                pos[label] = len(grouped)
+            grouped.append([label, [content]])
+    out = []
+    for label, contents in grouped:
+        joined = ", ".join(c for c in contents if c)
+        out.append(f"---{label}: {joined}" if label and joined
+                   else (f"---{label}" if label else f"---{joined}"))
+    return out
+
+
 def format_annotation_latex(ann: str) -> str:
     """Turn an annotation string into a LaTeX trailer line. The build-cv.py
     HTML version wraps these in <strong>; the Overleaf LaTeX convention is
@@ -230,7 +297,7 @@ def render_publication_latex(item: dict, annotations: list | None,
     body = "".join(parts)
 
     if annotations:
-        trailers = [format_annotation_latex(a) for a in annotations]
+        trailers = group_annotations_latex(annotations)
         # Each annotation on its own line, preceded by \\ to force a line break
         # inside the enumerate item, as in _data/cv_source.tex.
         body += " \\\\\n    " + " \\\\\n    ".join(trailers)
@@ -260,7 +327,7 @@ def render_stub_latex(entry: dict) -> str:
         pieces.append(f" {year}.")
     body = "".join(pieces)
     if entry.get("latex_annotations"):
-        trailers = [format_annotation_latex(a) for a in entry["latex_annotations"]]
+        trailers = group_annotations_latex(entry["latex_annotations"])
         body += " \\\\\n    " + " \\\\\n    ".join(trailers)
     return f"  \\item {body}"
 
@@ -381,13 +448,28 @@ def render_plain_cv_section(entries: list, header: str) -> str:
 # ---------- main ----------
 
 def load_zotero_by_citekey() -> dict:
-    """Index the full Zotero export by Better BibTeX citekey. CSL JSON
-    stores the citekey in the 'id' field."""
+    """Index the full Zotero export by Better BibTeX citekey.
+
+    `id` and `citation-key` usually agree, but not always — BBT can pin a
+    citekey that differs from the CSL id (e.g. id 'erlich_CoverageCandour_2026'
+    vs citekey 'erlichCoverageCandour2026'). cv-tag-proposal.yml pins the
+    CITEKEY, so index on that first and keep `id` as an alias, otherwise the
+    entry silently falls back to the LaTeX stub with a FIXME. build-cv.py
+    keys on citation-key for the same reason."""
     if not ZOTERO_JSON.exists():
         sys.exit(f"Zotero export not found: {ZOTERO_JSON}")
     with ZOTERO_JSON.open("r", encoding="utf-8") as f:
         data = json.load(f)
-    return {item["id"]: item for item in data if "id" in item}
+    out = {}
+    for item in data:
+        alias = item.get("id")
+        if alias and alias not in out:
+            out[alias] = item
+    for item in data:                      # citekey wins on collision
+        ck = item.get("citation-key") or item.get("citekey")
+        if ck:
+            out[ck] = item
+    return out
 
 
 def main() -> int:
