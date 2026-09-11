@@ -106,23 +106,41 @@ def main() -> int:
         # Two passes: totpages/\ref{TotPages} and any \ref need a second run to
         # settle. res.cls issues \nofiles, which main.tex deliberately undoes at
         # the top (\let\nofiles\relax) so the .aux is actually written.
+        # No -halt-on-error: main.tex contains recoverable errors that Overleaf
+        # also hits and rides through (raw & in a couple of href URLs — see the
+        # warning below). Halting would refuse to build a CV that Overleaf
+        # happily produces. We still surface every error rather than hide it.
         for i in (1, 2):
-            r = subprocess.run(
-                ["xelatex", "-interaction=nonstopmode", "-halt-on-error", "main.tex"],
+            subprocess.run(
+                ["xelatex", "-interaction=nonstopmode", "main.tex"],
                 cwd=build, capture_output=True, text=True)
-            if r.returncode != 0:
-                print(f"\nxelatex failed on pass {i}:\n")
-                tail = [l for l in r.stdout.splitlines() if l.startswith("!")][:12]
-                print("\n".join(tail) or r.stdout[-2500:])
-                print(f"\nBuild dir kept for debugging: {build}")
-                keep = True
-                return 1
-            print(f"  pass {i} ok")
+            print(f"  pass {i} done")
 
         pdf = build / "main.pdf"
         if not pdf.is_file():
-            print("xelatex reported success but produced no PDF.")
+            log = (build / "main.log")
+            print("\nNo PDF produced. First errors:\n")
+            if log.is_file():
+                errs = [l for l in log.read_text(errors="ignore").splitlines()
+                        if l.startswith("!")][:10]
+                print("\n".join(errs))
+            print(f"\nBuild dir kept: {build}")
+            keep = True
             return 1
+
+        # Report recoverable errors: they mean the PDF is built but something on
+        # the page is wrong, which is exactly the class of problem that hides in
+        # a CV nobody proofreads line by line.
+        log = (build / "main.log").read_text(errors="ignore")
+        errs = [l for l in log.splitlines() if l.startswith("!")]
+        if errs:
+            uniq = sorted(set(errs))
+            print(f"\n  {len(errs)} recoverable LaTeX error(s) — the PDF was still "
+                  f"produced, but check these spots:")
+            for e in uniq[:5]:
+                print(f"    {e}")
+            print("    (an unescaped & in an href URL is the usual cause; "
+                  "write it as \\& or %26)")
 
         OUT.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(pdf, OUT)
