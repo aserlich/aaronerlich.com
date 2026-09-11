@@ -943,26 +943,26 @@ def main():
 
     label_with = cv["labels"]["with"]["en"]
 
-    pdf_url_active = cv["meta"]["pdf_url"][ACTIVE_LANG]
+    # The download is always the English CV: it is the only one that exists
+    # (it comes out of the Overleaf LaTeX project, which is English-only), and
+    # the language toggle never rewrites this href — it only swaps the button's
+    # label text. Pinned to "en" rather than ACTIVE_LANG so it stays English
+    # even if the active language changes.
+    pdf_url_active = cv["meta"]["pdf_url"]["en"]
     last_updated = cv["meta"]["last_updated"]["en"]
     download_label = cv["labels"]["download_pdf"]["en"]
 
     body_parts = []
-    # Only offer the download when the PDF is actually there. meta.pdf_url
-    # names a per-language file (files/Erlich_CV_<lang>.pdf) built in Overleaf
-    # and copied in by hand; none of the seven existed, so the button 404'd on
-    # every language. Gating on the file means it reappears by itself the next
-    # time a PDF is dropped into files/ — no code change needed.
-    pdf_exists = (REPO / pdf_url_active).is_file()
-    if not pdf_exists:
-        print(f"  ! {pdf_url_active} missing — omitting the download button")
-    download_btn = (
-        f'<a href="{html_escape(pdf_url_active)}" class="btn btn-primary" '
-        f'data-i18n="labels.download_pdf">{html_escape(download_label)}</a> &nbsp; '
-    ) if pdf_exists else ""
+    # The button is always rendered. Warn at build time if the file is absent
+    # so a missing export is noticed here rather than by a visitor hitting a
+    # 404 — but never drop the button, it is the page's primary call to action.
+    if not (REPO / pdf_url_active).is_file():
+        print(f"  ! {pdf_url_active} is missing — the download button will 404 "
+              f"until the PDF is exported from Overleaf into files/")
     body_parts.append(
         f'<div class="cv-toolbar">'
-        f'{download_btn}'
+        f'<a href="{html_escape(pdf_url_active)}" class="btn btn-primary" '
+        f'data-i18n="labels.download_pdf">{html_escape(download_label)}</a> &nbsp; '
         f'<em><span data-i18n="meta.last_updated">{html_escape(last_updated)}</span></em>'
         f'</div>'
     )

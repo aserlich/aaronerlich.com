@@ -9,7 +9,7 @@ format:
     section-divs: false
 ---
 
-<div class="cv-toolbar"><em><span data-i18n="meta.last_updated">Last updated June 25, 2026</span></em></div>
+<div class="cv-toolbar"><a href="files/Erlich_CV_en.pdf" class="btn btn-primary" data-i18n="labels.download_pdf">Download PDF</a> &nbsp; <em><span data-i18n="meta.last_updated">Last updated June 25, 2026</span></em></div>
 <header class="cv-header">
 <h1>Aaron S. Erlich</h1>
 <table class="cv-contact-table">
