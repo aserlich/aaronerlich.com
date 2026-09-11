@@ -948,10 +948,21 @@ def main():
     download_label = cv["labels"]["download_pdf"]["en"]
 
     body_parts = []
-    body_parts.append(
-        f'<div class="cv-toolbar">'
+    # Only offer the download when the PDF is actually there. meta.pdf_url
+    # names a per-language file (files/Erlich_CV_<lang>.pdf) built in Overleaf
+    # and copied in by hand; none of the seven existed, so the button 404'd on
+    # every language. Gating on the file means it reappears by itself the next
+    # time a PDF is dropped into files/ — no code change needed.
+    pdf_exists = (REPO / pdf_url_active).is_file()
+    if not pdf_exists:
+        print(f"  ! {pdf_url_active} missing — omitting the download button")
+    download_btn = (
         f'<a href="{html_escape(pdf_url_active)}" class="btn btn-primary" '
         f'data-i18n="labels.download_pdf">{html_escape(download_label)}</a> &nbsp; '
+    ) if pdf_exists else ""
+    body_parts.append(
+        f'<div class="cv-toolbar">'
+        f'{download_btn}'
         f'<em><span data-i18n="meta.last_updated">{html_escape(last_updated)}</span></em>'
         f'</div>'
     )
