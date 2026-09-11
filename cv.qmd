@@ -69,10 +69,12 @@ format:
  <em class="cv-pub-venue">International Journal of Social Research Methodology</em>
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Zhenxiang Chen and Thomas Soehl)</span>
 </li>
-<li class="cv-pub" id="pub-erlich_WhoShould_">
-<span class="cv-pub-title">&ldquo;Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora.&rdquo;</span>
- <span class="cv-pub-status">Accepted.</span>
+<li class="cv-pub" id="pub-erlich_WhoShould_2026a">
+<a class="cv-pub-title" href="https://doi.org/10.1186/s40878-026-00546-3">&ldquo;Who should vote? Membership and claims to expatriate political participation in the Nigerian diaspora.&rdquo;</a>
+ <span class="cv-pub-year">2026.</span>
  <em class="cv-pub-venue">Comparative Migration Studies</em>
+ <span class="cv-pub-vol">14(1)</span>
+ <span class="cv-pub-pages">47</span>.
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl)</span>
 </li>
 <li class="cv-pub" id="pub-erlich_CanNormbased_2026">

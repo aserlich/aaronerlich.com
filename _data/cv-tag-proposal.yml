@@ -225,13 +225,12 @@ sections:
     match_zotero_title: 'Studying Global Diasporas via Social Media-Driven Sampling: Practical Considerations'
     match_score: 100
     latex_status: Accepted
-  - match_citekey: erlich_WhoShould_
+  - match_citekey: erlich_WhoShould_2026a
     latex_title: Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora
     proposed_tags:
     - cv:include
     - cv:section/peer-reviewed
-    latex_status: Accepted
-    match_zotero_title: Who should vote? Membership and Claims to Expatriate Political Participation in the Nigerian Diaspora
+    match_zotero_title: Who should vote? Membership and claims to expatriate political participation in the Nigerian diaspora
     match_score: 100
   - match_citekey: erlich_CanNormbased_2026
     latex_title: Can Norm-Based Information Campaigns Reduce Corruption?
