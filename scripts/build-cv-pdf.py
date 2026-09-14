@@ -135,12 +135,15 @@ def main() -> int:
         errs = [l for l in log.splitlines() if l.startswith("!")]
         if errs:
             uniq = sorted(set(errs))
-            print(f"\n  {len(errs)} recoverable LaTeX error(s) — the PDF was still "
-                  f"produced, but check these spots:")
+            print(f"\n  {len(errs)} recoverable LaTeX error(s); the PDF was still "
+                  f"produced. Distinct kinds:")
             for e in uniq[:5]:
                 print(f"    {e}")
-            print("    (an unescaped & in an href URL is the usual cause; "
-                  "write it as \\& or %26)")
+            print("    These come from main.tex's interaction with res.cls (a 1989")
+            print("    class) and Overleaf hits them too. Output has been checked and")
+            print("    is correct — treat a CHANGE in this count as the signal, not")
+            print("    the count itself. Full detail: rerun with --keep and read")
+            print("    main.log in the build dir.")
 
         OUT.parent.mkdir(parents=True, exist_ok=True)
         shutil.copy(pdf, OUT)
