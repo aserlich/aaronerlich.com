@@ -39,6 +39,10 @@ from pathlib import Path
 REPO = Path(__file__).resolve().parents[1]
 OVERLEAF = Path.home() / "Dropbox" / "Apps" / "Overleaf" / "Erlich_CV_Version_Control"
 GENERATED = REPO / "_generated" / "cv_publications.tex"
+# Second generated input: \cvlastupdated and \cvservicelists, built from
+# _data/cv.yml by build-cv-latex.py. Taken from _generated/ like the other one,
+# so the PDF and the web CV are always built from the same data in one run.
+GENERATED_META = REPO / "_generated" / "cv_generated.tex"
 CACHE = REPO / "_data"                      # fallback copies of main.tex / res.cls
 OUT = REPO / "files" / "Erlich_CV_en.pdf"
 
@@ -87,8 +91,9 @@ def main() -> int:
 
     if not shutil.which("xelatex"):
         sys.exit("xelatex not found. TinyTeX/MacTeX must be on PATH.")
-    if not GENERATED.is_file():
-        sys.exit(f"{GENERATED} missing — run scripts/build-cv-latex.py first.")
+    for g in (GENERATED, GENERATED_META):
+        if not g.is_file():
+            sys.exit(f"{g} missing — run scripts/build-cv-latex.py first.")
 
     print("Resolving inputs:")
     resolved = {name: resolve(name, db, ca) for name, db, ca in SOURCES}
@@ -102,6 +107,7 @@ def main() -> int:
         for name, src in resolved.items():
             shutil.copy(src, build / name)
         shutil.copy(GENERATED, build / "cv_publications.tex")
+        shutil.copy(GENERATED_META, build / "cv_generated.tex")
 
         # Two passes: totpages/\ref{TotPages} and any \ref need a second run to
         # settle. res.cls issues \nofiles, which main.tex deliberately undoes at
