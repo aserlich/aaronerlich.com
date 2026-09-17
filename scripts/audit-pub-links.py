@@ -144,6 +144,24 @@ def title_match(a: str, b: str, threshold: float = 0.9) -> bool:
 VERSION_RANK = {"publishedVersion": 0, "acceptedVersion": 1, "submittedVersion": 2}
 
 
+def validate_proposed(url: str) -> str:
+    """Return url if it is well-formed and actually reachable, else "".
+
+    OpenAlex location metadata comes from repositories and is sometimes junk —
+    several of Aaron's records carry a landing_page_url of
+    "https://orcid.org/0000-0002-...>," (an ORCID field bleeding into the URL).
+    Proposing that would replace a working paywalled link with a broken one, so
+    every candidate is checked before it reaches the review table.
+    """
+    if not url or lc.malformed_reason(url):
+        return ""
+    if "orcid.org" in url:  # never a copy of the paper
+        return ""
+    res = lc.check_url(url)
+    # botwall is fine: the target works in a browser. dead/login/malformed is not.
+    return url if res["status"] in ("ok", "botwall") else ""
+
+
 def best_oa(work: dict | None) -> dict | None:
     """Pick one OA location. Landing pages beat raw PDFs (they survive longer and
     give the reader the citation); published beats accepted beats submitted."""
@@ -298,12 +316,29 @@ def decide(row: dict, check: dict, work: dict | None) -> dict:
 
     # 4. Working, but paywalled while a free copy exists. Discretionary.
     if oa_is_elsewhere() and status in ("ok", "botwall"):
+        if row.get("section") == "working-paper":
+            # The CV lists these *as* working papers; pointing the line at the
+            # published version would misdescribe it.
+            return _fix(row, "none", "", "ok", oa, "working paper — link left as-is")
         return _fix(row, "set_url", oa["url"], "oa_upgrade", oa, "")
 
     return _fix(row, "none", "", "ok", oa, check.get("note", ""))
 
 
 def _fix(row, action, url, reason, oa, note):
+    if action == "set_url":
+        checked = validate_proposed(url)
+        if not checked:
+            # The replacement is unusable. Fall back to the DOI if there is one,
+            # otherwise leave the item alone rather than break a working link.
+            if row.get("doi") and row.get("zotero_url"):
+                action, url = "clear_url", ""
+                reason, note = f"{reason}_fallback_doi", "OA candidate was unreachable"
+            else:
+                action, url = "none", ""
+                reason, note = f"{reason}_unusable", "OA candidate was unreachable"
+        else:
+            url = checked
     return {"action": action, "proposed_url": url, "reason": reason,
             "oa_status": (oa or {}).get("status") or "closed",
             "oa_host": (oa or {}).get("host") or "", "note": note}

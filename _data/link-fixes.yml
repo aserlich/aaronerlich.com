@@ -73,17 +73,6 @@ fixes:
   note: no URL, DOI or OA copy
   approved: false
   applied_at: null
-- citekey: erlich_CanNormBased_2023
-  title: Can Norm-Based Information Campaigns Reduce Corruption?
-  action: set_url
-  current_url: https://www.ipr.northwestern.edu/documents/working-papers/2023/wp-23-33.pdf
-  proposed_url: https://doi.org/10.1111/ajps.12940
-  reason: oa_upgrade
-  oa_status: hybrid
-  status: ok
-  note: ''
-  approved: false
-  applied_at: null
 - citekey: erlichElderYouRe2021
   title: Elder, you’re right! Age-group differences in social and political interactions in Africa
   action: set_url
@@ -95,18 +84,6 @@ fixes:
   note: Afrobarometer migrated its publications out of /sites/default/files/; the old working-paper PDF
     path 404s. This is the current publication landing page, verified 200 on 2026-09-16. No DOI exists
     for the series.
-  approved: false
-  applied_at: null
-- citekey: erlich_MeasuringHow_2023
-  title: 'Measuring How Information Changes Electoral Uncertainty in a Developing Democracy: Experimental
-    Evidence from '
-  action: set_url
-  current_url: https://osf.io/mwg7u_v1/
-  proposed_url: http://dx.doi.org/10.31219/osf.io/mwg7u
-  reason: oa_upgrade
-  oa_status: gold
-  status: ok
-  note: ''
   approved: false
   applied_at: null
 - citekey: erlich_CanNormbased_2026
@@ -177,13 +154,13 @@ fixes:
   applied_at: null
 - citekey: berlinerPoliticalLogicGovernment2021
   title: 'The Political Logic of Government Disclosure: Evidence from Information Requests in Mexico'
-  action: set_url
+  action: none
   current_url: https://doi.org/10.1086/709148
-  proposed_url: https://orcid.org/0000-0002-0285-0215>,
-  reason: oa_upgrade
+  proposed_url: ''
+  reason: oa_upgrade_unusable
   oa_status: green
   status: botwall
-  note: ''
+  note: OA candidate was unreachable
   approved: false
   applied_at: null
 - citekey: erlichMediaAttentionBureaucratic2021
@@ -199,24 +176,24 @@ fixes:
   applied_at: null
 - citekey: ellingtonMeasuringHumanRights2022
   title: Measuring Human Rights Abuse from Access to Information Requests
-  action: set_url
+  action: clear_url
   current_url: http://journals.sagepub.com/doi/10.1177/00220027211035553
-  proposed_url: https://orcid.org/0000-0002-0285-0215>,
-  reason: oa_upgrade
+  proposed_url: ''
+  reason: oa_upgrade_fallback_doi
   oa_status: green
   status: botwall
-  note: ''
+  note: OA candidate was unreachable
   approved: false
   applied_at: null
 - citekey: erlich_MultiLabelPrediction_2022
   title: Multi-Label Prediction for Political Text-as-Data
-  action: set_url
+  action: clear_url
   current_url: https://www.cambridge.org/core/journals/political-analysis/article/multilabel-prediction-for-political-textasdata/0EC24DBB4E3854EBE0AD247DCB27F828
-  proposed_url: https://orcid.org/0000-0002-0285-0215>
-  reason: oa_upgrade
+  proposed_url: ''
+  reason: oa_upgrade_fallback_doi
   oa_status: green
   status: ok
-  note: ''
+  note: OA candidate was unreachable
   approved: false
   applied_at: null
 - citekey: erlich_ProKremlinDisinformationEffective_2023
@@ -267,13 +244,13 @@ fixes:
   applied_at: null
 - citekey: palmer-rubin_AccountabilityTime_2025
   title: 'Accountability in Time: Evolution and Expertise in Participatory Institutions'
-  action: set_url
+  action: none
   current_url: https://muse.jhu.edu/pub/1/article/964463
-  proposed_url: https://orcid.org/0000-0002-0285-0215>,
-  reason: oa_upgrade
+  proposed_url: ''
+  reason: oa_upgrade_unusable
   oa_status: green
   status: ok
-  note: ''
+  note: OA candidate was unreachable
   approved: false
   applied_at: null
 - citekey: erlich_HowLanguage_2025
