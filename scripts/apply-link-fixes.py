@@ -85,13 +85,15 @@ def zotero_patch(item_key: str, version: int, body: dict, key: str) -> int:
 
 REEXPORT_NOTE = """
 Next: get the change into the CV build.
-  1. Zotero: sync down (so the web-API edit reaches the local library).
-  2. Zotero: File > Export Library > Better BibTeX CSL JSON, overwriting
-     ~/Dropbox/research_projects/My Library.json
-     (there is no auto-export configured for that file).
-  3. python3 scripts/audit-pub-links.py --verify
-  4. python3 scripts/build-cv.py && python3 scripts/build-cv-latex.py \\
-       && quarto render cv.qmd
+  1. Better BibTeX re-exports ~/Dropbox/research_projects/My Library.json on
+     its own once Zotero picks up the edit -- observed within seconds on
+     2026-09-16. Step 2 tells you whether it landed; export by hand (Zotero:
+     File > Export Library > Better BibTeX CSL JSON) only if it reports a
+     mismatch.
+  2. python3 scripts/audit-pub-links.py --verify
+  3. python3 scripts/build-cv.py && python3 scripts/build-cv-latex.py
+     && quarto render cv.qmd
+  4. python3 scripts/check-links.py docs/cv.html
 """
 
 
