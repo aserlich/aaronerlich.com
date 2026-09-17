@@ -1,0 +1,33 @@
+# Hand-curated CV links for publications no API can resolve — newsletters, book
+# chapters, institutional working papers with no DOI. Read by
+# scripts/audit-pub-links.py, which applies an override only where the item's
+# current link is broken or missing, never over a working open-access link.
+#
+# Every entry records how the URL was verified. If you cannot verify a link
+# first-hand, leave the publication unlinked: a bare title is better than a
+# dead one.
+
+overrides:
+  leviAligningRightsInterests2012:
+    url: https://faculty.washington.edu/cadolph/articles/wdr2013rights.pdf
+    source: >-
+      Full text hosted by co-author Christopher Adolph (U. Washington). Verified
+      2026-09-16: title page reads "BACKGROUND PAPER FOR THE WORLD DEVELOPMENT
+      REPORT 2013 / Aligning Rights and Interests" with Erlich in the author
+      list. The World Bank Open Knowledge Repository has no record for this
+      background paper; thedocs.worldbank.org copy 404s.
+
+  erlichElderYouRe2021:
+    url: https://www.afrobarometer.org/publication/wp185-age-group-differences-social-and-political-interactions-africa/
+    source: >-
+      Afrobarometer migrated its publications out of /sites/default/files/; the
+      old working-paper PDF path 404s. This is the current publication landing
+      page, verified 200 on 2026-09-16. No DOI exists for the series.
+
+# Deliberately NOT overridden — searched 2026-09-16, no durable public copy found.
+# Recorded here so the next audit doesn't re-litigate them:
+#   bushLessonsResultsBlindReview2018 — The Political Economist 14(1):10-13, the
+#     APSA Political Economy section newsletter. The umich Google Sites archive
+#     is behind an institutional login; penewsletter.org does not resolve.
+#   gutbrod_OpinionSurvey_2009 — chapter in a Council of Europe/OSCE print volume
+#     (Tbilisi, 2009). No online edition located.
