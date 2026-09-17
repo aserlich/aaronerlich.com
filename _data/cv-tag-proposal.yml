@@ -78,7 +78,7 @@ sections:
     proposed_tags:
     - cv:include
     - cv:section/blog
-    latex_url: //osf.io/nbqus/.
+    latex_url: https://osf.io/nbqus/
     match_zotero_title: Big data y acceso a la información en México
     match_score: 100
   - latex_title: Surveys show Ukrainians don't want 'Kalashnikov society'

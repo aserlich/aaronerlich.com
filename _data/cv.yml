@@ -8,14 +8,10 @@ meta:
     uk: 'Останнє оновлення: 10 лютого 2026 року'
     ka: ბოლოს განახლდა 2026 წლის 10 თებერვალს
     de: Zuletzt aktualisiert am 10. Februar 2026
-  pdf_url:
-    en: files/Erlich_CV_en.pdf
-    fr: files/Erlich_CV_fr.pdf
-    es: files/Erlich_CV_es.pdf
-    ru: files/Erlich_CV_ru.pdf
-    uk: files/Erlich_CV_uk.pdf
-    ka: files/Erlich_CV_ka.pdf
-    de: files/Erlich_CV_de.pdf
+  # Not a language map: the PDF comes out of the English-only Overleaf project,
+  # and the toggle only swaps the button's label, never its href. A scalar keeps
+  # translate-cv.py from treating the path as a translatable string.
+  pdf_url: files/Erlich_CV_en.pdf
 contact:
   title:
     en: Associate Professor

@@ -946,9 +946,9 @@ def main():
     # The download is always the English CV: it is the only one that exists
     # (it comes out of the Overleaf LaTeX project, which is English-only), and
     # the language toggle never rewrites this href — it only swaps the button's
-    # label text. Pinned to "en" rather than ACTIVE_LANG so it stays English
-    # even if the active language changes.
-    pdf_url_active = cv["meta"]["pdf_url"]["en"]
+    # label text. cv.yml stores this as a scalar for that reason; if translated
+    # PDFs ever ship, this needs ACTIVE_LANG *and* href-rewriting in the toggle.
+    pdf_url_active = cv["meta"]["pdf_url"]
     last_updated = cv["meta"]["last_updated"]["en"]
     download_label = cv["labels"]["download_pdf"]["en"]
 
