@@ -23,15 +23,11 @@ Working Papers) with a single line:
 After that every re-run of build-cv-latex.py pushes a fresh version into
 Overleaf with no hand-editing.
 
-Scope: publication sections here, plus a few non-publication pieces emitted
-as macros into cv_generated.tex (the last-updated date, the peer-review
-lists, the grants rows, and departmental + university service). The rest
-(appointments, affiliations, education, software, presentations, teaching,
-mentorship, professional experience, skills, field research, profession
-and other service) stays hand-maintained on Overleaf because it changes
-rarely and full coverage would duplicate ~500 lines of build-cv.py without
-much payoff. Grants and service moved over after 2026 additions reached
-the web CV but never the PDF.
+Scope: the whole PDF body. Publication sections go to cv_publications.tex;
+every other section is a macro in cv_generated.tex, which main.tex calls
+under its \\section headers. main.tex keeps only the preamble, headers and
+layout glue. Hand-maintained sections used to live in main.tex, and 2026
+additions reached the web CV but never the PDF, so all of them moved here.
 
 Sections emitted (in main.tex order):
   1. Peer-Reviewed Publications (etaremune)
@@ -51,6 +47,7 @@ Usage:
 Stdlib + PyYAML.
 """
 from __future__ import annotations
+import datetime
 import json
 import re
 import sys
@@ -530,20 +527,293 @@ def render_service_tabbing(entries: list) -> str:
     for yr, roles in sorted(buckets.items(), key=lambda kv: -year_sort_key(kv[0])):
         for j, role in enumerate(roles):
             lead = f"{tex_escape(yr)} \\= " if j == 0 else "\\> "
-            lines.append(lead + tex_escape(role))
+            lines.append(lead + tex_squotes(tex_escape(role)))
     # No \\ after the last row: in tabbing it would add an empty line.
     return "\\begin{tabbing}\n" + " \\\\\n".join(lines) + "\n\\end{tabbing}"
 
 
-def build_cv_generated(cv: dict) -> str:
-    """Emit cv_generated.tex: \\cvlastupdated, \\cvservicelists, \\cvgrants,
-    \\cvdeptservice, \\cvuniversityservice.
+# ---------- the rest of the PDF body ----------
+#
+# One renderer per remaining main.tex section. Each returns that section's
+# body in the markup main.tex used when it was hand-typed (list1 / list2 are
+# main.tex's own environments), with the fields and sort order of the matching
+# render_* in build-cv.py, so the web CV and the PDF say the same thing.
 
-    main.tex \\input's this in its PREAMBLE, then uses \\cvlastupdated in the
-    footer, \\cvservicelists where the peer-review lists used to be inline,
-    and the other three where their hand-typed rows used to be. Defining macros rather
-    than emitting text directly is what lets one file serve several positions
-    in the document.
+def en(v) -> str:
+    """cv.yml leaves are plain strings or {en: …, fr: …} language maps; the
+    PDF is English-only."""
+    if isinstance(v, dict):
+        return str(v.get("en") or "")
+    return "" if v is None else str(v)
+
+
+def macro_url(u: str) -> str:
+    """tex_url plus &: these hrefs sit inside \\newcommand bodies, where the
+    URL is already tokenized and a bare & is an alignment tab."""
+    return tex_url(u).replace("&", r"\&")
+
+
+_MD_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
+
+
+def md_links_to_tex(s: str) -> str:
+    """Escape s, turning markdown links [text](url) — how cv.yml stores
+    mentee placements — into \\href."""
+    out, pos = [], 0
+    for m in _MD_LINK_RE.finditer(s):
+        out.append(tex_escape(s[pos:m.start()]))
+        out.append(f"\\href{{{macro_url(m.group(2))}}}{{{tex_escape(m.group(1))}}}")
+        pos = m.end()
+    out.append(tex_escape(s[pos:]))
+    return "".join(out)
+
+
+def with_list(names: list) -> str:
+    """'A', 'A and B', 'A, B, and C'."""
+    names = [tex_escape(n) for n in names]
+    if len(names) <= 2:
+        return " and ".join(names)
+    return ", ".join(names[:-1]) + ", and " + names[-1]
+
+
+_SQUOTE_RE = re.compile(r"(?<!\w)'([^']+)'(?!\w)")
+
+
+def tex_squotes(s: str) -> str:
+    """'Shadows of The Gulag' -> `Shadows of The Gulag'. A straight ' prints as a
+    closing quote on both sides in LaTeX. Apostrophes (Kenya's, Ach'aran) are
+    left alone because a letter precedes them."""
+    return _SQUOTE_RE.sub(r"`\1'", s)
+
+
+def dash_ranges(s: str) -> str:
+    """Escape s, making year ranges en dashes: '2006-2010' -> 2006--2010, and an
+    open '2013-' -> 2013-- rather than a stray hyphen."""
+    return re.sub(r"(\d{4})\s*-\s*", r"\1--", tex_escape(s))
+
+
+# Longest first, so "magna cum laude" isn't matched as "cum laude".
+_HONOURS_RE = re.compile(r"\b(summa cum laude|magna cum laude|cum laude|with distinction)\b")
+
+
+def fmt_date(v) -> str:
+    """'2024-04-15' (or a YAML date) -> 'April 15, 2024'; anything else as-is."""
+    if isinstance(v, datetime.date):
+        d = v
+    else:
+        try:
+            d = datetime.date.fromisoformat(str(v))
+        except ValueError:
+            return str(v or "")
+    return f"{d.strftime('%B')} {d.day}, {d.year}"
+
+
+def render_contact(cv: dict) -> str:
+    c = cv.get("contact") or {}
+    left = [tex_escape(en(c.get(k))) for k in
+            ("department", "institution", "address_line1", "address_line2", "country")]
+    right = [
+        f"{{\\it Voice:}} {tex_escape(c.get('phone'))}",
+        f"{{\\it E-mail:}} \\texttt{{{tex_escape(c.get('email'))}}}",
+        f"{{\\it web:}} \\url{{{c.get('web', '')}}}",
+        f"{{\\it Office:}} {tex_escape(c.get('office'))}",
+    ]
+    right += [""] * (len(left) - len(right))
+    rows = [f"{l} & {r} \\\\" for l, r in zip(left, right)]
+    return "\\begin{tabular}{@{}p{3in}p{3in}}\n" + "\n".join(rows) + "\n\\end{tabular}"
+
+
+def render_appointments(cv: dict) -> str:
+    out = []
+    for app in cv.get("academic_appointments") or []:
+        out.append(f"{{\\bf {tex_escape(en(app.get('institution')))}}}, "
+                   f"{tex_escape(en(app.get('department')))}, {tex_escape(en(app.get('location')))}")
+        out.append("\\begin{list1}")
+        for pos in app.get("positions") or []:
+            line = f"\\item[] {tex_escape(en(pos.get('role')))}, {tex_escape(en(pos.get('dates')))}"
+            if pos.get("notes"):
+                line += f" {tex_escape(en(pos['notes']))}"
+            out.append(line)
+        out.append("\\end{list1}")
+    return "\n".join(out)
+
+
+def render_affiliations(cv: dict) -> str:
+    out = ["\\begin{list1}"]
+    for a in cv.get("affiliations") or []:
+        org = tex_escape(en(a.get("org")))
+        if a.get("url"):
+            org = f"\\href{{{macro_url(a['url'])}}}{{{org}}}"
+        out.append(f"\\item[] {tex_escape(en(a.get('role')))}, {org}, {tex_escape(en(a.get('dates')))}")
+    out.append("\\end{list1}")
+    return "\n".join(out)
+
+
+def render_education(cv: dict) -> str:
+    blocks = []
+    for edu in cv.get("education") or []:
+        out = [f"{{\\bf {tex_escape(en(edu.get('institution')))}}}, {tex_escape(en(edu.get('location')))}",
+               "\\begin{list1}"]
+        for d in edu.get("degrees") or []:
+            line = _HONOURS_RE.sub(r"\\emph{\1}", tex_escape(en(d.get("degree"))))
+            if d.get("year"):
+                line += f", {tex_escape(d['year'])}"
+            out.append(f"\\item[] {line}")
+        out.append("\\end{list1}")
+        blocks.append("\n".join(out))
+    return "\n\n".join(blocks)
+
+
+def render_software(cv: dict) -> str:
+    out = []
+    for s in cv.get("software") or []:
+        name = f"\\texttt{{{tex_escape(s.get('name'))}}}"
+        if s.get("url"):
+            name = f"\\href{{{macro_url(s['url'])}}}{{{name}}}"
+        line = f"{name}: {tex_escape(en(s.get('description')))}"
+        if s.get("coauthors"):
+            line += f" (with {with_list(s['coauthors'])})"
+        out.append(line)
+    return "\n\n".join(out)
+
+
+def render_evaluations(cv: dict) -> str:
+    out = []
+    for e in cv.get("professional_evaluations") or []:
+        title = tex_escape(en(e.get("title")))
+        # The period goes inside the quotes unless a (with …) follows them.
+        if e.get("coauthors"):
+            line = f"{tex_quotes(title)} (with {with_list(e['coauthors'])})."
+        else:
+            line = tex_quotes(title if title.endswith(("?", "!", ".")) else title + ".")
+        where = ", ".join(x for x in (tex_escape(en(e.get("submitted_to"))),
+                                      tex_escape(e.get("year") or "")) if x)
+        for seg in (tex_escape(en(e.get("notes"))), where):
+            if seg:
+                line += f" {seg}."
+        out.append(line)
+    return "\n\n".join(out)
+
+
+def render_testimony(cv: dict) -> str:
+    out = []
+    for ti in cv.get("testimony") or []:
+        title = tex_escape(en(ti.get("title")))
+        if ti.get("url"):
+            title = f"\\href{{{macro_url(ti['url'])}}}{{{title}}}"
+        out.append(f"{title}. {tex_escape(en(ti.get('venue')))} ({tex_escape(fmt_date(ti.get('date')))}).")
+    return "\n\n".join(out)
+
+
+def render_presentations(cv: dict) -> str:
+    out = ["* is an invited talk"]
+    for p in sorted(cv.get("presentations") or [], key=lambda p: -year_sort_key(p.get("date"))):
+        title = tex_escape(en(p.get("title")))
+        if not title.endswith(("?", "!", ".")):
+            title += "."
+        mark = "* " if p.get("invited") else ""
+        with_ = f" (with {with_list(p['coauthors'])})" if p.get("coauthors") else ""
+        out.append(f"{mark}{tex_quotes(title)} {tex_squotes(tex_escape(en(p.get('venue'))))}, "
+                   f"{tex_escape(en(p.get('date')))}{with_}.")
+    return "\n\n".join(out)
+
+
+def render_teaching(cv: dict) -> str:
+    tc = cv.get("teaching") or {}
+    out = []
+    for key, label in (("instructor", "Instructor"), ("gsi", "Graduate Student Instructor")):
+        out += [f"{{\\em {label}}}\\\\", "\\vspace{-.1in}", "\\begin{list1}"]
+        for level, level_label in (("undergraduate", "Undergraduate"), ("graduate", "Graduate")):
+            out += [f"\\item[] {level_label} courses:", "\\begin{list2}"]
+            for c in (tc.get(key) or {}).get(level) or []:
+                out.append(f"\\item[] {tex_escape(en(c.get('course')))} [{tex_escape(c.get('code'))}] "
+                           f"({tex_escape(c.get('institution'))})")
+            out.append("\\end{list2}")
+        out += ["\\end{list1}", ""]
+    return "\n".join(out)
+
+
+def render_mentorship(cv: dict) -> str:
+    ms = cv.get("mentorship") or {}
+    out = ["\\begin{list1}"]
+    for level, label in (("phd", "Ph.D. in Political Science (year of graduation)"),
+                         ("ma", "M.A. in Political Science (year of graduation)"),
+                         ("undergraduate", "Undergraduate (year of mentorship)")):
+        # Newest first; TBD (current students) sinks — as on the web.
+        entries = sorted(ms.get(level) or [], key=lambda m: -year_sort_key(m.get("year")))
+        if not entries:
+            continue
+        out += [f"\\item[] \\textbf{{{label}}}", "\\begin{list2}"]
+        for m in entries:
+            line = (f"\\item[{tex_escape(m.get('year', ''))}] {tex_escape(m.get('name'))}, "
+                    f"{tex_escape(en(m.get('roles')))}")
+            if m.get("placement"):
+                line += f"; {md_links_to_tex(en(m['placement']))}"
+            out.append(line)
+        out.append("\\end{list2}")
+    out.append("\\end{list1}")
+    return "\n".join(out)
+
+
+def render_experience(cv: dict) -> str:
+    blocks = []
+    for e in sorted(cv.get("professional_experience") or [],
+                    key=lambda e: -year_sort_key(e.get("dates"))):
+        head = f"{{\\bf {tex_escape(en(e.get('employer')))}}}"
+        if e.get("locations"):
+            head += f", {tex_escape(en(e['locations']))}"
+        out = [head, "", "\\vspace{-.3cm}",
+               f"{{\\em {tex_escape(en(e.get('role')))}}} \\hfill {{\\bf {dash_ranges(en(e.get('dates')))}}}\\\\"]
+        if e.get("bullets"):
+            out.append("\\begin{list1}")
+            out += [f"\\item[]-- {tex_escape(en(b))}" for b in e["bullets"]]
+            out.append("\\end{list1}")
+        blocks.append("\n".join(out))
+    return "\n\n".join(blocks)
+
+
+def render_skills(cv: dict) -> str:
+    sk = cv.get("skills") or {}
+    rows = []
+    for label, key in (("Statistical Packages", "statistical_packages"),
+                       ("Computer Languages", "computer_languages"),
+                       ("Computer Applications", "computer_applications"),
+                       ("Languages", "languages")):
+        if sk.get(key):
+            value = tex_escape(en(sk[key])).replace("LaTeX", "\\LaTeX{}")
+            rows.append(f"\\textbf{{{label}:}} {value}")
+    return " \\\\\n".join(rows)
+
+
+def render_field_research(cv: dict) -> str:
+    return " \\\\\n".join(f"{tex_escape(en(f.get('place')))}, {tex_escape(en(f.get('years')))}"
+                          for f in cv.get("field_research") or [])
+
+
+def render_other_service(cv: dict) -> str:
+    os_data = cv.get("other_service") or {}
+    out = []
+    vols = os_data.get("volunteer") or []
+    if vols:
+        out.append("\\textbf{Volunteer}: \\\\")
+        out.append(" \\\\\n".join(f"{tex_escape(v.get('org'))} ({dash_ranges(v.get('dates'))}): "
+                                  f"{tex_escape(en(v.get('role')))}." for v in vols) + " \\\\")
+    eo = os_data.get("election_observer") or []
+    if eo:
+        out.append("\\textbf{International Election Observer}, "
+                   + ", ".join(tex_escape(en(e)) for e in eo) + ".")
+    return "\n".join(out)
+
+
+def build_cv_generated(cv: dict) -> str:
+    """Emit cv_generated.tex: one macro per main.tex section body, plus
+    \\cvname and \\cvlastupdated.
+
+    main.tex \\input's this in its PREAMBLE, uses \\cvlastupdated in the footer,
+    and calls each section's macro under that section's \\section header.
+    Defining macros rather than emitting text directly is what lets one file
+    serve every position in the document; main.tex keeps only headers and
+    layout glue.
     """
     svc = cv.get("professional_service") or {}
 
@@ -564,16 +834,11 @@ def build_cv_generated(cv: dict) -> str:
         "% Source of truth: _data/cv.yml. Edit there, rebuild, and the web CV",
         "% and this PDF change together.",
         "%",
-        "% main.tex should have, in the PREAMBLE:",
-        "%     \\input{cv_generated}",
-        "%     \\fancyfoot[L]{\\emph{Last updated \\cvlastupdated}}",
-        "% and, where the peer-review lists used to be inline:",
-        "%     \\cvservicelists",
-        "% and, in place of the hand-typed Grants & Scholarships rows:",
-        "%     \\cvgrants",
-        "% and, in place of the Departmental / University Service tabbing blocks:",
-        "%     \\cvdeptservice   \\cvuniversityservice",
+        "% main.tex \\input's this in its PREAMBLE, puts \\cvlastupdated in the",
+        "% footer, and calls each macro below under its \\section header.",
         "% ----------------------------------------------------------",
+        "",
+        "\\newcommand{\\cvname}{" + tex_escape((cv.get("meta") or {}).get("name", "")) + "}",
         "",
         "\\newcommand{\\cvlastupdated}{" + tex_escape(date) + "}",
         "",
@@ -600,7 +865,29 @@ def build_cv_generated(cv: dict) -> str:
         render_service_tabbing((svc.get("university") or {}).get("entries") or []),
         "}",
         "",
+        "\\newcommand{\\cvprofession}{%",
+        render_service_tabbing(svc.get("profession") or []),
+        "}",
+        "",
+        "\\newcommand{\\cvfoundernote}{"
+        + tex_escape((svc.get("university") or {}).get("founder_note") or "") + "}",
+        "",
     ]
+    for name, render in (("cvcontact", render_contact),
+                         ("cvappointments", render_appointments),
+                         ("cvaffiliations", render_affiliations),
+                         ("cveducation", render_education),
+                         ("cvsoftware", render_software),
+                         ("cvevaluations", render_evaluations),
+                         ("cvtestimony", render_testimony),
+                         ("cvpresentations", render_presentations),
+                         ("cvteaching", render_teaching),
+                         ("cvmentorship", render_mentorship),
+                         ("cvexperience", render_experience),
+                         ("cvskills", render_skills),
+                         ("cvfieldresearch", render_field_research),
+                         ("cvotherservice", render_other_service)):
+        parts += [f"\\newcommand{{\\{name}}}{{%", render(cv), "}", ""]
     return "\n".join(parts)
 
 

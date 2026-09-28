@@ -636,7 +636,7 @@ professional_evaluations:
     uk: 'OSI: New York'
     ka: 'OSI: New York'
     de: 'OSI: New York'
-  year: 2011
+  year: January 2011
 - title:
     en: Challenges Facing Effective Governance in Georgia
     fr: Les défis d'une gouvernance efficace en Géorgie
@@ -673,7 +673,7 @@ professional_evaluations:
     uk: Danish Refugee Council, Tbilisi, Georgia
     ka: Danish Refugee Council, Tbilisi, საქართველო
     de: Danish Refugee Council, Tbilisi, Georgien
-  year: 2009
+  year: February 2009
 - title:
     en: 'Labor Migration in Armenia: A Sociological Survey of Six Communities'
     fr: 'La migration de travail en Arménie : une enquête sociologique dans six communautés'
@@ -1323,16 +1323,19 @@ presentations:
   venue: Danlyiw Seminar, University of Ottawa
   date: September 29, 2023
 - title: Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations
-  venue: 'Democracy under Threat: How Education can Save it (DEMED), University of Glasgow'
+  venue: 'Democracy under Threat: How Education can Save it (DEMED), University of Glasgow School of Social
+    and Political Sciences'
   date: April 19, 2023
+  coauthors:
+  - Thomas Soehl
   invited: true
 - title: 'Volunteering Under Invasion: Descriptive and Experimental Evidence on Civilian Mobilization'
   venue: U.S. Dept of State
   date: January 20, 2023
   invited: true
 - title: 'Pro-Kremlin Propaganda''s Failure in Ukraine: Evidence and Lessons Learned'
-  venue: PONARS, George Washington University; follow-up CEPA Roundtable
-  date: January 19, 2023
+  venue: PONARS, George Washington University, January 19, 2023; follow-up talk, CEPA Zoom Roundtable
+  date: April 5, 2023
   invited: true
 - title: Ukrainians' Attitudes towards Pro-Kremlin Disinformation
   venue: DRUMS, S. Rajaratnam School of International Studies, Nanyang Technological University
@@ -1344,27 +1347,30 @@ presentations:
   invited: true
 - title: Weaponizing Election Petitions
   venue: Annual Meeting of the Southern Political Science Association, San Juan PR
-  date: January 9-11, 2022
+  date: January 9-11, 2020
 - title: Russian Disinformation in Ukraine
   venue: Annual Meeting of the Southern Political Science Association, San Juan PR
-  date: January 9-11, 2022
+  date: January 9-11, 2020
 - title: Media Attention and Bureaucratic Responsiveness
-  venue: MPSA Chicago; TextXD Berkeley; SPSA San Juan PR
-  date: '2019'
+  venue: Annual Meeting of the Midwest Political Science Association, Chicago, April 4-7, 2019; TextXD,
+    Berkeley, December 3-6, 2019; Annual Meeting of the Southern Political Science Association, San Juan PR
+  date: January 9-11, 2020
 - title: What Can we Learn From Election Petitions? An Analysis of Kenya's 2013 Election-related Court
     Cases
   venue: APSA Annual Convention, Boston
   date: August 30 - September 2, 2018
 - title: Ethnic Rivalry or Citizen Solidarity?
-  venue: Temple University Comparative Politics Colloquium; University of Toronto CERES
-  date: 2018-2019
+  venue: Temple University Comparative Politics Colloquium, Philadelphia, March 26, 2018; University of
+    Toronto, Centre for European, Russian and Eurasian Studies
+  date: February 8, 2019
   invited: true
 - title: 'Covering the Campaign: The 2014 South African Presidential Election'
   venue: APSA Annual Convention, San Francisco
   date: September 1-4, 2017
 - title: Evaluating Women Candidates in a Corrupt Environment with Low Levels of Women's Representation
-  venue: MPSA Annual Convention, Chicago; CRRC 5th Annual Methodological Conference, Tbilisi
-  date: '2017'
+  venue: Midwest Political Science Association Annual Convention, Chicago, April 16-19, 2017; CRRC 5th
+    Annual Methodological Conference, Tbilisi, Georgia
+  date: July 2017
 - title: 'The future of transparency and experimentation: new ideas and initiatives'
   venue: 'Trends behind the numbers: bridging policies and needs, Tbilisi, Georgia'
   date: January 2017
@@ -1378,11 +1384,11 @@ presentations:
   date: April 16-19, 2015
 - title: 'The Past, Present, and Future of Public Opinion Survey Research in Ukraine: From Pen and Paper
     to Agentic AI (2015-2026)'
-  venue: 'Cornell University, Research for Impact: Academic Expertise and the War in Ukraine '
+  venue: 'Cornell University, Research for Impact: Academic Expertise and the War in Ukraine'
   date: May 2, 2026
   invited: true
 - title: 'Thinking About Europe and Governance Expectations: Evidence from an EU Candidate Country (Montenegro)'
-  venue: New York, Assocaition for the Study of Nationalisties
+  venue: Association for the Study of Nationalities, New York
   date: May 28, 2026
   invited: false
 professional_experience:
@@ -1418,7 +1424,7 @@ professional_service:
     - Dean's Rep - Sociology Department Job Search (Computational and Political Sociology)
     - Graduate Program/Admissions Committee
     - Co-chair, Departmental Initiative on Canadian Resilience and AI
-    - Methods Field Co-chair (through October 2026)
+    - Interim Methods Field Co-chair (until October 15, 2026)
   - year: 2025-26
     roles:
     - CERC Chair Search Committee
@@ -1456,7 +1462,7 @@ professional_service:
     - ad-hoc Committee on AI-related Issues
   - year: 2025-26
     roles:
-    - Methods Field Co-chair
+    - Interim Methods Field Co-chair
   university:
     founder_note: Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational
       and Data Systems Initiative (CDSI)
@@ -1504,9 +1510,8 @@ professional_service:
   profession:
   - year: 2025-26
     roles:
-    - APSA Chair
-    - Discussant; ASN Chair
-    - Discussant
+    - APSA Chair, Discussant
+    - ASN Chair, Discussant
   - year: 2024-25
     roles:
     - ASN Discussant

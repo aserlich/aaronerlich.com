@@ -660,7 +660,7 @@ def render_simple_pubs(cv: dict, key: str, header_key: str, numbered: bool = Fal
     return "\n".join(out)
 
 
-def render_presentations(cv: dict) -> str:
+def render_presentations(cv: dict, label_with: str) -> str:
     out = [f'<h2>{i18n_span("section_headers.presentations", t(cv, "section_headers.presentations"))}</h2>',
            '<p><em>★ denotes invited talk</em></p>',
            '<ul class="cv-pub-list cv-pub-list--dash">']
@@ -673,8 +673,14 @@ def render_presentations(cv: dict) -> str:
         title = html_escape(p.get("title", ""))
         venue = html_escape(p.get("venue", ""))
         date = html_escape(p.get("date", ""))
+        coauthors = ""
+        if p.get("coauthors"):
+            coauthors = (
+                f' (<span data-i18n="labels.with">{html_escape(label_with)}</span> '
+                f'{html_escape(", ".join(p["coauthors"]))})'
+            )
         out.append(
-            f'<li class="cv-pub">{invited_mark}&ldquo;{title}.&rdquo; {venue}, {date}.</li>'
+            f'<li class="cv-pub">{invited_mark}&ldquo;{title}.&rdquo; {venue}, {date}{coauthors}.</li>'
         )
     out.append('</ul>')
     return "\n".join(out)
@@ -1010,7 +1016,7 @@ def main():
             f'{content}'
             f'</details>'
         )
-    body_parts.append(collapsible("Recent Presentations", render_presentations(cv)))
+    body_parts.append(collapsible("Recent Presentations", render_presentations(cv, label_with)))
     body_parts.append(collapsible("Teaching", render_teaching(cv)))
     body_parts.append(collapsible("Mentorship", render_mentorship(cv)))
     body_parts.append(collapsible("Relevant Professional Experience", render_professional_experience(cv)))

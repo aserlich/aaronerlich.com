@@ -3,16 +3,11 @@
 % Source of truth: _data/cv.yml. Edit there, rebuild, and the web CV
 % and this PDF change together.
 %
-% main.tex should have, in the PREAMBLE:
-%     \input{cv_generated}
-%     \fancyfoot[L]{\emph{Last updated \cvlastupdated}}
-% and, where the peer-review lists used to be inline:
-%     \cvservicelists
-% and, in place of the hand-typed Grants & Scholarships rows:
-%     \cvgrants
-% and, in place of the Departmental / University Service tabbing blocks:
-%     \cvdeptservice   \cvuniversityservice
+% main.tex \input's this in its PREAMBLE, puts \cvlastupdated in the
+% footer, and calls each macro below under its \section header.
 % ----------------------------------------------------------
+
+\newcommand{\cvname}{Aaron S. Erlich}
 
 \newcommand{\cvlastupdated}{September 28, 2026}
 
@@ -115,11 +110,11 @@ Japanese International Cooperation Agency Research Institute (JICA-RI)
 2026-27 \= Dean's Rep - Sociology Department Job Search (Computational and Political Sociology) \\
 \> Graduate Program/Admissions Committee \\
 \> Co-chair, Departmental Initiative on Canadian Resilience and AI \\
-\> Methods Field Co-chair (through October 2026) \\
+\> Interim Methods Field Co-chair (until October 15, 2026) \\
 2025-26 \= CERC Chair Search Committee \\
 \> Graduate Program/Admissions Committee \\
 \> ad-hoc Committee on AI-related Issues \\
-\> Methods Field Co-chair \\
+\> Interim Methods Field Co-chair \\
 2023-24 \= Placement Director \\
 2022-23 \= Equity Committee \\
 \> Dean's Rep - Economics Department Job Search \\
@@ -162,4 +157,292 @@ Japanese International Cooperation Agency Research Institute (JICA-RI)
 2018-19 \= Co-director R, Math and Replicable Summer Workshops \\
 2017-18 \= Co-director R, Math and Replicable Summer Workshops
 \end{tabbing}
+}
+
+\newcommand{\cvprofession}{%
+\begin{tabbing}
+2026-27 \= CSDC Steering Committee \\
+2025-26 \= APSA Chair, Discussant \\
+\> ASN Chair, Discussant \\
+2024-25 \= ASN Discussant \\
+\> MPSA Chair, Discussant \\
+2023-24 \= ASN Discussant \\
+\> MPSA Discussant \\
+2022-23 \= SSHRC Insight Development Grant (IDG) Review \\
+\> APSA Discussant \\
+2021-22 \= SSHRC IDG Review Committee \\
+\> Co-organizer Montreal Methods Talk Series \\
+\> International Advisory Board Member ESRC (UK) Grant `Shadows of The Gulag' \\
+\> MPSA Discussant \\
+2020-21 \= CRRC NFRF Review Committee \\
+\> CSDC Conference Committee \\
+\> International Advisory Board Member ESRC (UK) Grant `Shadows of The Gulag' \\
+2019-20 \= SPSA Discussant, Chair \\
+\> SSHRC IDG Review Committee \\
+\> CSDC Conference Committee \\
+\> International Advisory Board Member ESRC (UK) Grant `Shadows of The Gulag' \\
+2018-19 \= SPSA Discussant, Chair \\
+\> MPSA Discussant \\
+\> ASN Chair \\
+\> External Jury Member David Wutchiett (Sociology UdeM) \\
+\> CIPPS Works in Progress Discussant \\
+\> International Advisory Board Member ESRC (UK) Grant `Shadows of The Gulag' \\
+2017-18 \= APSA Discussant, Chair \\
+\> International Advisory Board Member ESRC (UK) Grant `Shadows of The Gulag' \\
+2016-17 \= MPSA Discussant, Chair
+\end{tabbing}
+}
+
+\newcommand{\cvfoundernote}{Founder of R, Math and Replicable Summer Workshops Program, now housed in the Computational and Data Systems Initiative (CDSI)}
+
+\newcommand{\cvcontact}{%
+\begin{tabular}{@{}p{3in}p{3in}}
+Department of Political Science & {\it Voice:} +1 (514)-398-4756 \\
+McGill University & {\it E-mail:} \texttt{aaron.erlich@mcgill.ca} \\
+855 Sherbrooke Street West & {\it web:} \url{www.aaronerlich.com} \\
+Montréal, QC, H3A 2T7 & {\it Office:} McTavish 24-3 \\
+Canada &  \\
+\end{tabular}
+}
+
+\newcommand{\cvappointments}{%
+{\bf McGill University}, Department of Political Science, Montréal, QC
+\begin{list1}
+\item[] Associate Professor, 2023–
+\item[] Assistant Professor, 2016–2023 (Paternity Leave: Autumn 2020, Autumn 2022)
+\end{list1}
+}
+
+\newcommand{\cvaffiliations}{%
+\begin{list1}
+\item[] Member, \href{https://csdc-cecd.ca/}{Centre for the Study of Democratic Citizenship (CSDC)}, 2017–
+\item[] Member, \href{https://www.mcgill.ca/popcentre/}{Centre on Population Dynamics — McGill}, 2019–
+\item[] Faculty Research Affiliate, \href{https://csmapnyu.org/}{Center for Social Media and Politics (CsMaP), NYU}, 2023–
+\item[] Member, Centre for Social and Cultural Data Science (CSCDS), 2016–2020
+\item[] Visiting Professor, Université de Montréal, 2024–25
+\end{list1}
+}
+
+\newcommand{\cveducation}{%
+{\bf University of Washington}, Seattle, WA
+\begin{list1}
+\item[] Ph.D., Political Science, 2016
+\item[] Political Methodology Certificate, Center for Statistics and the Social Sciences, 2012
+\item[] M.A., Political Science, 2012
+\end{list1}
+
+{\bf Georgetown University, School of Foreign Service}, Washington, DC
+\begin{list1}
+\item[] M.A., European Studies, \emph{with distinction}, 2006
+\item[] Certificate in Refugee and Humanitarian Emergencies, 2006
+\end{list1}
+
+{\bf Dartmouth College}, Hanover, NH
+\begin{list1}
+\item[] B.A., \emph{cum laude}, Government, 2002
+\end{list1}
+}
+
+\newcommand{\cvsoftware}{%
+\href{https://CRAN.R-project.org/package=mapcan}{\texttt{mapcan}}: A variety of functions that make it easy to plot standard choropleth Canadian maps as well as choropleth alternatives in ggplot2. (with Andrew McCormack)
+}
+
+\newcommand{\cvevaluations}{%
+``Corruption Perceptions in Armenia: Implications for Anti-Corruption Messaging'' (with Jordan Gans-Morse, Arne Holverscheid, and Simeon Nichter). USAID Armenia Integrity Project.
+
+``Workplace, Labor Rights and Outcomes'' (with Margaret Levi, Dan Berliner, and Jennifer Noveck). World Bank, 2012.
+
+``Final Evaluation of OSI's Central Eurasia Project's Labor Migration Program.'' OSI: New York, January 2011.
+
+``Challenges Facing Effective Governance in Georgia.'' Co-edited with Mzia Mikeladze; USAID-sponsored edited volume. 2010.
+
+``Voices of Migrants from Georgia'' (with Kristina Vacharadze and Giorgi Babunashvili). Danish Refugee Council, Tbilisi, Georgia, February 2009.
+
+``Labor Migration in Armenia: A Sociological Survey of Six Communities'' (with Anush Dulgaryan and Andrew Golda). USAID, Yerevan, Armenia, 2009.
+}
+
+\newcommand{\cvtestimony}{%
+\href{https://senparlvu.parl.gc.ca/Harmony/en/PowerBrowser/PowerBrowserV2?fk=635443\&globalStreamId=3}{Disinformation and cyber operations in the context of Russia's war against Ukraine}. Standing Senate Committee on National Security, Defence, and Veterans Affairs, Senate of Canada (April 15, 2024).
+}
+
+\newcommand{\cvpresentations}{%
+* is an invited talk
+
+* ``The Past, Present, and Future of Public Opinion Survey Research in Ukraine: From Pen and Paper to Agentic AI (2015-2026).'' Cornell University, Research for Impact: Academic Expertise and the War in Ukraine, May 2, 2026.
+
+``Thinking About Europe and Governance Expectations: Evidence from an EU Candidate Country (Montenegro).'' Association for the Study of Nationalities, New York, May 28, 2026.
+
+* ``How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine.'' Disinformation, Propaganda, and Russia's War on Ukraine, Institute of European, Russian, and Eurasian Studies, Carleton University, October 10, 2025.
+
+``Debates over Civilian Handgun Ownership in Wartime Ukraine.'' Danlyiw Seminar, University of Ottawa, September 25, 2025.
+
+``How do citizens view ESG?'' Annual Meetings of the American Political Science Association, Vancouver, September 11, 2025.
+
+``War Fatigue?'' Association for the Study of Nationalities, New York, May 22, 2025.
+
+``Citizen Perspectives of Corruption Harms: Evidence from Armenia.'' Association for the Study of Nationalities, New York, May 16, 2024.
+
+* ``Georgia's Euromaidan? Making Sense of Mass Protests in Georgia.'' Roundtable talk, Association for the Study of Nationalities, New York, May 16, 2024.
+
+``Police Decentralization in Ukraine since 2014 and Collaborative Democracy.'' Danlyiw Seminar, University of Ottawa, September 29, 2023.
+
+* ``Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations.'' Democracy under Threat: How Education can Save it (DEMED), University of Glasgow School of Social and Political Sciences, April 19, 2023 (with Thomas Soehl).
+
+* ``Volunteering Under Invasion: Descriptive and Experimental Evidence on Civilian Mobilization.'' U.S. Dept of State, January 20, 2023.
+
+* ``Pro-Kremlin Propaganda's Failure in Ukraine: Evidence and Lessons Learned.'' PONARS, George Washington University, January 19, 2023; follow-up talk, CEPA Zoom Roundtable, April 5, 2023.
+
+* ``Ukrainians' Attitudes towards Pro-Kremlin Disinformation.'' DRUMS, S. Rajaratnam School of International Studies, Nanyang Technological University, March 23, 2022.
+
+* ``Russia's Attack on Ukraine: An Expert Roundtable.'' Jean Monnet Network `Between the EU and Russia' (BEAR), Montreal, March 9, 2022.
+
+``Weaponizing Election Petitions.'' Annual Meeting of the Southern Political Science Association, San Juan PR, January 9-11, 2020.
+
+``Russian Disinformation in Ukraine.'' Annual Meeting of the Southern Political Science Association, San Juan PR, January 9-11, 2020.
+
+``Media Attention and Bureaucratic Responsiveness.'' Annual Meeting of the Midwest Political Science Association, Chicago, April 4-7, 2019; TextXD, Berkeley, December 3-6, 2019; Annual Meeting of the Southern Political Science Association, San Juan PR, January 9-11, 2020.
+
+* ``Ethnic Rivalry or Citizen Solidarity?'' Temple University Comparative Politics Colloquium, Philadelphia, March 26, 2018; University of Toronto, Centre for European, Russian and Eurasian Studies, February 8, 2019.
+
+``What Can we Learn From Election Petitions? An Analysis of Kenya's 2013 Election-related Court Cases.'' APSA Annual Convention, Boston, August 30 - September 2, 2018.
+
+``Covering the Campaign: The 2014 South African Presidential Election.'' APSA Annual Convention, San Francisco, September 1-4, 2017.
+
+``Evaluating Women Candidates in a Corrupt Environment with Low Levels of Women's Representation.'' Midwest Political Science Association Annual Convention, Chicago, April 16-19, 2017; CRRC 5th Annual Methodological Conference, Tbilisi, Georgia, July 2017.
+
+* ``The future of transparency and experimentation: new ideas and initiatives.'' Trends behind the numbers: bridging policies and needs, Tbilisi, Georgia, January 2017.
+
+``Do Pre-Election Polls Changes Citizens' Beliefs or Behavior? Evidence from a Laboratory Experiment in the Country of Georgia.'' MPSA Annual Convention, Chicago, April 16-19, 2015.
+
+``Power of the Panopticon? How Leaders' Images Affect Compliance.'' MPSA Annual Convention, Chicago, April 16-19, 2015.
+}
+
+\newcommand{\cvteaching}{%
+{\em Instructor}\\
+\vspace{-.1in}
+\begin{list1}
+\item[] Undergraduate courses:
+\begin{list2}
+\item[] Introduction to Quantitative Social Science [POLI 311] (McGill)
+\item[] The Politics of Misinformation [POLI 421] (McGill)
+\item[] The Politics of Information and Transparency in the Developing World [POLI 422] (McGill)
+\item[] Misinformation and Disinformation in the Developing World (honours seminar) [POLI 522] (McGill)
+\end{list2}
+\item[] Graduate courses:
+\begin{list2}
+\item[] Introduction to R [CS\&SS 508] (UW)
+\item[] Quantitative Research I [POLI 618] (McGill)
+\item[] Causal Inference - Quantitative Research II [POLI 666] (McGill)
+\end{list2}
+\end{list1}
+
+{\em Graduate Student Instructor}\\
+\vspace{-.1in}
+\begin{list1}
+\item[] Undergraduate courses:
+\begin{list2}
+\item[] Introduction to Comparative Politics (×3) [POL S 204] (UW)
+\item[] Case-Based Social Statistics [STAT 321] (UW)
+\item[] Religion and World Politics [POL S 307] (UW)
+\item[] American Politics [POL S 202] (UW)
+\end{list2}
+\item[] Graduate courses:
+\begin{list2}
+\item[] Advances in Content Analysis Methods [POL S 559] (UW)
+\item[] Maximum Likelihood Estimation (×2) [CS\&SS/POL S 510] (UW)
+\end{list2}
+\end{list1}
+
+}
+
+\newcommand{\cvmentorship}{%
+\begin{list1}
+\item[] \textbf{Ph.D. in Political Science (year of graduation)}
+\begin{list2}
+\item[2025] Maxime Blanchard, Dissertation Committee; IRCC Canada
+\item[2024] Aengus Bridgman, Co-author, Lab Member, Dissertation Committee; Assistant Prof (Research), McGill University
+\item[2023] Mathieu Lavigne, Co-author, Dissertation Committee; Post-Doc, Dartmouth College
+\item[2022] Costin Ciobanu, Co-author, Lab Member, Dissertation Committee; Post-Doc, Royal Holloway University; Post-doc, University of Aarhus
+\item[TBD] Qinggang Li, Co-Supervisor
+\end{list2}
+\item[] \textbf{M.A. in Political Science (year of graduation)}
+\begin{list2}
+\item[2026] Aung (Koye) Myat, Supervisor
+\item[2025] Rafael Campos-Gottardo, Supervisor, Lab member, Co-author
+\item[2024] Pratik Mahajan, Co-Supervisor; Ph.D student, Yale University
+\item[2023] Christopher Ross, Supervisor; \href{https://meo.ca/}{The Media Ecosystem Observatory}
+\item[2022] Dilse Kaygisiz, Supervisor, Lab Member; \href{https://datasciences.ca/}{Data Sciences}
+\item[2021] Henry Atkins, Supervisor, Lab Member
+\item[2020] Annie Chen, Supervisor, Lab Member, Co-author; \href{http://brightlinewatch.org/}{Bright Line Watch}
+\item[2020] Etienne Gagnon, Supervisor, Lab Manager
+\item[2019] Andrew McCormack, Co-Author, Research Assistant, Lab Member; \href{https://datasciences.ca/}{Data Sciences}
+\item[2019] Saewon Park, Supervisor, Research Assistant, Lab Manager, Co-author; \href{https://www.tracktik.com/}{TrackTik}; \href{https://meo.ca/}{The Media Ecosystem Observatory}
+\item[TBD] Luis Alvarez, Supervisor
+\item[TBD] Katerina McMullen, Supervisor, Lab member
+\item[TBD] Aiden McIlvaney, Supervisor
+\end{list2}
+\item[] \textbf{Undergraduate (year of mentorship)}
+\begin{list2}
+\item[2019] Lucie Goulard, Independent Study Supervisor (POLI 599)
+\item[2019] Tim Roy, Research Assistant, Lab Member, Independent Research Supervisor (POLI 490)
+\item[2018] Henry McKenzie, Honour's Thesis Supervisor (POLI 499)
+\item[2017] Aidan McLaughlin, Internship Independent Study Supervisor (POLI 599)
+\item[2017] Marie Lemieux, Internship Independent Study Supervisor (POLI 599)
+\end{list2}
+\end{list1}
+}
+
+\newcommand{\cvexperience}{%
+{\bf National Democratic Institute of International Affairs (NDI)}, Kenya, Nepal, Ukraine, Montenegro
+
+\vspace{-.3cm}
+{\em Consultant} \hfill {\bf 2010--2024}\\
+\begin{list1}
+\item[]-- Provided strategic design and implementation consultancy for over one million dollars of applied political public opinion and focus group work. Wrote analytic reports.
+\end{list1}
+
+{\bf National Democratic Institute of International Affairs (NDI)}
+
+\vspace{-.3cm}
+{\em Senior Program Officer, Research and Data Analysis} \hfill {\bf 2010}\\
+\begin{list1}
+\item[]-- Ran NDI's USAID program to implement the first polling station level digitalized maps in Africa.
+\item[]-- Initiated and oversaw NDI's Norwegian-funded qualitative and quantitative research program to investigate Kenyan citizens' attitudes towards the electoral process.
+\end{list1}
+
+{\bf Caucasus Research Resource Centers (CRRC), Eurasia Foundation}
+
+\vspace{-.3cm}
+{\em CRRC Deputy Director for Projects} \hfill {\bf 2006--2010}\\
+\begin{list1}
+\item[]-- Directed and helped implement CRRC assessments and evaluations, including supervision of USAID funded migration assessment in Armenia and a multiyear assessment of Millennium Challenge Corporation's (MCC) efficacy in economic development in Georgia.
+\item[]-- Coordinated CRRC Data Initiative (the largest cross-border survey in the Caucasus) and other survey and focus group activities, including questionnaire development, focus group guide development, questionnaire translation, expert meetings and report write-ups.
+\item[]-- Ran a 600,000 dollar election-related research program in cooperation with NDI.
+\end{list1}
+}
+
+\newcommand{\cvskills}{%
+\textbf{Statistical Packages:} Stata, SPSS \\
+\textbf{Computer Languages:} R, Python, bash and Unix shell scripts \\
+\textbf{Computer Applications:} emacs, qGIS, ArcGIS, CSPro, \LaTeX{}, Inquisit Millisecond \\
+\textbf{Languages:} Proficient in Spanish; Research skills in French, Georgian, German, Russian; Rusty in Slovak; Elementary Turkish, Swahili
+}
+
+\newcommand{\cvfieldresearch}{%
+Armenia, 2006–2010 \\
+Azerbaijan, 2006–2010 \\
+Georgia, 2006–2010, 2014–15 \\
+Kenya, 2010–2015 \\
+Montenegro, 2025 \\
+South Africa, 2014 \\
+Ukraine, 2014, 2015, 2018, 2019 \\
+United Arab Emirates, 2015
+}
+
+\newcommand{\cvotherservice}{%
+\textbf{Volunteer}: \\
+Open North (2017--2021): Advisor to applied research lab scientists. \\
+Software Carpentry (2013--): Teach computational skills to scientists. \\
+Transparify (2013--2016): Perform statistical analysis for NGO that promotes financial transparency amongst NGOs. \\
+\textbf{International Election Observer}, Ukrainian 2019 Parliamentary Elections, South African 2014 General Elections, Georgian 2008 Presidential Elections, 2008 Ach'aran Supreme Council Elections.
 }
