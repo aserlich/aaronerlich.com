@@ -553,21 +553,6 @@ def macro_url(u: str) -> str:
     return tex_url(u).replace("&", r"\&")
 
 
-_MD_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
-
-
-def md_links_to_tex(s: str) -> str:
-    """Escape s, turning markdown links [text](url) — how cv.yml stores
-    mentee placements — into \\href."""
-    out, pos = [], 0
-    for m in _MD_LINK_RE.finditer(s):
-        out.append(tex_escape(s[pos:m.start()]))
-        out.append(f"\\href{{{macro_url(m.group(2))}}}{{{tex_escape(m.group(1))}}}")
-        pos = m.end()
-    out.append(tex_escape(s[pos:]))
-    return "".join(out)
-
-
 def with_list(names: list) -> str:
     """'A', 'A and B', 'A, B, and C'."""
     names = [tex_escape(n) for n in names]
@@ -733,23 +718,26 @@ def render_teaching(cv: dict) -> str:
     return "\n".join(out)
 
 
+LAB_PAGE_URL = "https://aaronerlich.com/lab.html"
+
+
 def render_mentorship(cv: dict) -> str:
+    """Year, name and roles only. Placements are web-only (the CV page and the
+    lab page); the PDF points readers to the lab page for them instead."""
     ms = cv.get("mentorship") or {}
+    lab_note = f"see \\href{{{LAB_PAGE_URL}}}{{lab page}} for others and placements"
     out = ["\\begin{list1}"]
-    for level, label in (("phd", "Ph.D. in Political Science (year of graduation)"),
-                         ("ma", "M.A. in Political Science (year of graduation)"),
-                         ("undergraduate", "Undergraduate (year of mentorship)")):
+    for level, label, note in (("phd", "Ph.D. in Political Science", f"year of graduation; {lab_note}"),
+                               ("ma", "M.A. in Political Science", f"year of graduation; {lab_note}"),
+                               ("undergraduate", "Undergraduate", "year of mentorship")):
         # Newest first; TBD (current students) sinks — as on the web.
         entries = sorted(ms.get(level) or [], key=lambda m: -year_sort_key(m.get("year")))
         if not entries:
             continue
-        out += [f"\\item[] \\textbf{{{label}}}", "\\begin{list2}"]
+        out += [f"\\item[] \\textbf{{{label}}} ({note})", "\\begin{list2}"]
         for m in entries:
-            line = (f"\\item[{tex_escape(m.get('year', ''))}] {tex_escape(m.get('name'))}, "
-                    f"{tex_escape(en(m.get('roles')))}")
-            if m.get("placement"):
-                line += f"; {md_links_to_tex(en(m['placement']))}"
-            out.append(line)
+            out.append(f"\\item[{tex_escape(m.get('year', ''))}] {tex_escape(m.get('name'))}, "
+                       f"{tex_escape(en(m.get('roles')))}")
         out.append("\\end{list2}")
     out.append("\\end{list1}")
     return "\n".join(out)
