@@ -9,7 +9,7 @@ Run:
 Features:
 - Add / edit / delete entries in any cv.yml section via web forms
 - Plain-text sections (in-prep, on-hold) — no Zotero needed
-- Rebuild button runs build-cv.py + quarto render and shows result
+- Rebuild button runs build-cv.py + the PDF build + quarto render and shows result
 - Saves directly to _data/cv.yml (preserves header comments)
 
 Requirements:
@@ -42,6 +42,8 @@ PROPOSAL_PATH = REPO / "_data" / "cv-tag-proposal.yml"
 LETTERS_PATH = REPO / "_data" / "letter-requests.yml"
 BUILD_SCRIPT = REPO / "scripts" / "build-cv.py"
 BUILD_LAB_SCRIPT = REPO / "scripts" / "build-lab.py"
+BUILD_LATEX_SCRIPT = REPO / "scripts" / "build-cv-latex.py"
+BUILD_PDF_SCRIPT = REPO / "scripts" / "build-cv-pdf.py"
 CV_QMD = REPO / "cv.qmd"
 
 DOCS = REPO / "docs"
@@ -703,7 +705,7 @@ PAGE_FOOT = """</body></html>"""
 def index():
     return render_template_string(
         PAGE_HEAD + """
-<p>Pick a section from the nav above. The "Rebuild &amp; Preview" button regenerates <code>cv.qmd</code> and runs <code>quarto render cv.qmd</code>.</p>
+<p>Pick a section from the nav above. The "Rebuild &amp; Preview" button regenerates <code>cv.qmd</code> and the PDF CV, then runs <code>quarto render cv.qmd</code>.</p>
 <h2>Currently editable sections</h2>
 <ul>
 {% for key, sec in sections.items() %}
@@ -1140,21 +1142,46 @@ def publications_list():
     )
 
 
-def _rebuild_cv() -> tuple[bool, str]:
-    """Regenerate the CV page (build-cv.py + quarto render cv.qmd). Returns
-    (success, combined_output). Annotations only affect the CV, so this skips
-    the lab page that the full /rebuild route also renders."""
+def _build_pdf() -> tuple[bool, str]:
+    """Regenerate the LaTeX (build-cv-latex.py) and compile the PDF CV
+    (build-cv-pdf.py) from the same cv.yml + Zotero data as the web CV.
+    Must run BEFORE quarto render, which copies files/Erlich_CV_en.pdf into
+    docs/. Fails without harm if Dropbox holds main.tex online-only; the
+    output then says which file to make available offline."""
     p1 = subprocess.run(
-        [sys.executable, str(BUILD_SCRIPT)],
+        [sys.executable, str(BUILD_LATEX_SCRIPT)],
         capture_output=True, text=True, cwd=str(REPO),
     )
     p2 = subprocess.run(
-        ["quarto", "render", "cv.qmd"],
+        [sys.executable, str(BUILD_PDF_SCRIPT)],
         capture_output=True, text=True, cwd=str(REPO),
     )
     ok = p1.returncode == 0 and p2.returncode == 0
     out = (
+        f"$ python3 scripts/build-cv-latex.py\n{p1.stderr[-800:]}\n\n"
+        f"$ python3 scripts/build-cv-pdf.py\n{p2.stdout[-1500:]}\n{p2.stderr[-800:]}"
+    )
+    return ok, out
+
+
+def _rebuild_cv() -> tuple[bool, str]:
+    """Regenerate the CV page and PDF (build-cv.py + _build_pdf + quarto
+    render cv.qmd). Returns (success, combined_output). Annotations only
+    affect the CV, so this skips the lab page that the full /rebuild route
+    also renders."""
+    p1 = subprocess.run(
+        [sys.executable, str(BUILD_SCRIPT)],
+        capture_output=True, text=True, cwd=str(REPO),
+    )
+    pdf_ok, pdf_out = _build_pdf()
+    p2 = subprocess.run(
+        ["quarto", "render", "cv.qmd"],
+        capture_output=True, text=True, cwd=str(REPO),
+    )
+    ok = p1.returncode == 0 and pdf_ok and p2.returncode == 0
+    out = (
         f"$ python3 scripts/build-cv.py\n{p1.stdout}\n{p1.stderr}\n\n"
+        f"{pdf_out}\n\n"
         f"$ quarto render cv.qmd\n{p2.stdout[-1500:]}\n{p2.stderr[-800:]}"
     )
     return ok, out
@@ -1208,16 +1235,16 @@ def annotate_publication(citekey):
                         e.setdefault("latex_annotations", []).append(line)
                         break
             dump_yaml_with_header(PROPOSAL_PATH, ph, proposal)
-            # Auto-rebuild so the new annotation shows up in the preview without
-            # a manual build-cv.py / quarto render step.
+            # Auto-rebuild so the new annotation shows up in the preview and the
+            # PDF without a manual build step.
             ok, build_out = _rebuild_cv()
             if ok:
                 ensure_preview_server()
-                flash(f"Wrote to Zotero and rebuilt CV: {line}", "")
+                flash(f"Wrote to Zotero and rebuilt CV + PDF: {line}", "")
             else:
                 flash(
-                    f"Wrote to Zotero ({line}), but the CV rebuild FAILED — "
-                    f"run build-cv.py manually. Tail: {build_out[-300:]}",
+                    f"Wrote to Zotero ({line}), but the CV/PDF rebuild FAILED — "
+                    f"click Rebuild to see the full output. Tail: {build_out[-300:]}",
                     "error",
                 )
             return redirect(url_for("publications_list"))
@@ -1837,6 +1864,7 @@ def rebuild():
         [sys.executable, str(BUILD_LAB_SCRIPT)],
         capture_output=True, text=True, cwd=str(REPO),
     )
+    pdf_ok, pdf_out = _build_pdf()
     proc2 = subprocess.run(
         ["quarto", "render", "cv.qmd", "lab.qmd"],
         capture_output=True, text=True, cwd=str(REPO),
@@ -1844,9 +1872,11 @@ def rebuild():
     output = (
         f"$ python3 scripts/build-cv.py\n{proc1.stdout}\n{proc1.stderr}\n\n"
         f"$ python3 scripts/build-lab.py\n{proc_lab.stdout}\n{proc_lab.stderr}\n\n"
+        f"{pdf_out}\n\n"
         f"$ quarto render cv.qmd lab.qmd\n{proc2.stdout[-2000:]}\n{proc2.stderr[-1000:]}"
     )
-    success = proc1.returncode == 0 and proc_lab.returncode == 0 and proc2.returncode == 0
+    success = (proc1.returncode == 0 and proc_lab.returncode == 0 and pdf_ok
+               and proc2.returncode == 0)
     # Make sure a preview server is actually up (auto-start if the port is free).
     ensure_preview_server()
     prev_state, prev_msg = preview_status()

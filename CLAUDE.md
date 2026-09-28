@@ -12,9 +12,14 @@ Aaron Erlich's academic website at https://aaronerlich.com. Quarto static site d
 # Rebuild the CV page from YAML + Zotero
 python3 scripts/build-cv.py
 
-# Regenerate the LaTeX publication sections for the Overleaf CV
-# (writes _generated/cv_publications.tex; paste into Overleaf manually)
+# Regenerate the LaTeX for the PDF CV from cv.yml + Zotero
+# (writes _generated/cv_publications.tex + cv_generated.tex and copies both
+# into the Overleaf Dropbox folder)
 python3 scripts/build-cv-latex.py
+
+# Compile the PDF CV locally -> files/Erlich_CV_en.pdf (the Download button);
+# quarto render then copies it to docs/files/
+python3 scripts/build-cv-pdf.py
 
 # Rebuild the lab page from _data/lab.yml
 python3 scripts/build-lab.py
@@ -34,7 +39,7 @@ quarto render && python3 -m http.server -d docs 8765
 python3 scripts/cv_admin.py
 ```
 
-A typical edit-rebuild cycle: launch `cv_admin.py`, edit via the web UI, click **Rebuild & Preview** (runs `build-cv.py` + `build-lab.py` + `quarto render`), refresh the preview at `http://localhost:8765`.
+A typical edit-rebuild cycle: launch `cv_admin.py`, edit via the web UI, click **Rebuild & Preview** (runs `build-cv.py` + `build-lab.py` + `build-cv-latex.py` + `build-cv-pdf.py` + `quarto render`), refresh the preview at `http://localhost:8765`.
 
 ## Architecture: two source-of-truth layers
 
@@ -137,6 +142,16 @@ Mirrors the original LaTeX CV layout:
 - **Title coloring**: maroon (`#6b1b1b`) **only** on `<a class="cv-pub-title">` — plain-text titles use `.cv-pub-title-plain` (no link styling).
 - **Annotation lines under publications**: `<ul class="cv-pub-notes">` with `<li class="cv-pub-award">` or `<li class="cv-pub-media">`. Built by the renderer from `latex_annotations` in the proposal file, which itself comes from the `tex.cv-*` lines in Zotero's `extra` field.
 
+## The PDF CV (Download button)
+
+The PDF is built from the same `cv.yml` + Zotero data as the web CV. **Nothing in it is hand-typed: add content in `cv.yml` (or the admin app), never in `main.tex`.**
+
+- `build-cv-latex.py` writes `cv_publications.tex` (publication sections) and `cv_generated.tex`: one macro per other section (`\cvcontact`, `\cvgrants`, `\cvpresentations`, `\cvdeptservice`, `\cvotherservice`, …), each mirroring the fields and sort order of the matching `render_*` in `build-cv.py`. A change to a web renderer usually needs the matching LaTeX renderer changed too.
+- The Overleaf `main.tex` (`~/Dropbox/Apps/Overleaf/Erlich_CV_Version_Control/`, synced to Overleaf by Dropbox) keeps only the preamble, the `\section` headers and layout glue, and calls those macros.
+- `build-cv-pdf.py` compiles with local XeLaTeX (TinyTeX). `main.tex` must be **available offline** in Dropbox; an online-only placeholder (0 bytes) fails the build with a message saying so. A missing `.sty` means `tlmgr install <package>`.
+- The build reports ~36 recoverable LaTeX errors from res.cls and publication hrefs; that is the baseline. A *change* in the count is the signal.
+- Presentations take an optional `coauthors` list; mentee `placement` may hold markdown links, converted to `\href` in the PDF.
+
 ## Lab ↔ CV mentorship sync
 
 Lab alumni in `_data/lab.yml` and political-science mentees in `_data/cv.yml > mentorship` are two separate lists (lab has more people — not every alumnus is a PoliSci mentee). The Flask admin keeps the `placement` field in sync (lab `post_mcgill` ↔ cv `placement`) via `sync_placement_across_files()` when you edit either side. **Only the placement syncs** — bios, degrees, and years stay independent per file. Run `backfill_all_placements()` (inside `cv_admin.py`) one-time if you ever lose sync.
@@ -150,10 +165,10 @@ Lab alumni in `_data/lab.yml` and political-science mentees in `_data/cv.yml > m
 - `/section/<name>` — generic CRUD for any simple section (presentations, grants, teaching, mentorship, etc.)
 - `/section/under_review/publish/<idx>` — move an under-review entry to a published Zotero-tracked one
 - `/publications` — list all tagged pubs
-- `/publications/<citekey>/annotate` — add a `tex.cv-*` line directly to Zotero via the Web API; also mirrors it into the proposal's `latex_annotations` and auto-runs `build-cv.py` + `quarto render cv.qmd` so it shows in the preview immediately
+- `/publications/<citekey>/annotate` — add a `tex.cv-*` line directly to Zotero via the Web API; also mirrors it into the proposal's `latex_annotations` and auto-runs `build-cv.py` + the PDF build + `quarto render cv.qmd` so it shows in the preview and the PDF immediately
 - `/lab` — lab member management
 - `/lab/<group>/promote/<idx>` — promote current member to alumni (also syncs placement back to cv.yml mentorship)
-- `/rebuild` — runs `build-cv.py` + `build-lab.py` + `quarto render cv.qmd lab.qmd`
+- `/rebuild` — runs `build-cv.py` + `build-lab.py` + `build-cv-latex.py` + `build-cv-pdf.py` + `quarto render cv.qmd lab.qmd`
 
 The Flask app **automatically bumps `meta.last_updated.en` to today's date** on every save to `cv.yml` (via `dump_yaml_with_header`).
 
@@ -211,5 +226,5 @@ Stage specifically (never `git add -A` — risk of committing `scripts/__pycache
 
 - `~/Dropbox/research_projects/My Library.json` — Zotero export
 - `~/.config/zotero/api_key`, `~/.config/anthropic/api_key` — API keys (never in repo)
-- `_data/cv_source.tex` — copy of Overleaf main.tex (reference, parser input)
+- `_data/cv_source.tex` — dated snapshot of the old hand-typed Overleaf main.tex (parser input only; not the live source, and does not compile)
 - `_planning/letters-page-workplan.md` — standalone workplan for the letters page rewrite (blocked on Aaron's answers to 10 open questions)
