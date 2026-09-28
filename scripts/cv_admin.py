@@ -409,6 +409,7 @@ SECTIONS = {
             {"name": "venue", "label": "Venue", "type": "text"},
             {"name": "date", "label": "Date", "type": "text"},
             {"name": "invited", "label": "Invited talk?", "type": "checkbox"},
+            {"name": "coauthors", "label": "Coauthors (comma-separated)", "type": "list"},
         ],
         "summary": lambda e: f"{e.get('title','?')[:60]} ({e.get('date','?')})",
     },
@@ -420,6 +421,7 @@ SECTIONS = {
             {"name": "name", "label": "Name", "type": "text", "required": True},
             {"name": "roles", "label": "Roles", "type": "text"},
             {"name": "placement", "label": "Placement", "type": "text"},
+            {"name": "academic_placement", "label": "Academic placement? (also shown in the PDF CV)", "type": "checkbox"},
         ],
         "summary": lambda e: f"{e.get('name','?')} ({e.get('year','?')})",
     },
@@ -431,6 +433,7 @@ SECTIONS = {
             {"name": "name", "label": "Name", "type": "text", "required": True},
             {"name": "roles", "label": "Roles", "type": "text"},
             {"name": "placement", "label": "Placement (optional)", "type": "text"},
+            {"name": "academic_placement", "label": "Ph.D. program placement? (also shown in the PDF CV)", "type": "checkbox"},
         ],
         "summary": lambda e: f"{e.get('name','?')} ({e.get('year','?')})",
     },
@@ -545,7 +548,7 @@ SECTIONS = {
         "path": ["professional_service", "departmental"],
         "fields": [
             {"name": "year", "label": "Year (e.g., '2025-26')", "type": "text", "required": True},
-            {"name": "roles", "label": "Roles (comma-separated)", "type": "list", "required": True},
+            {"name": "roles", "label": "Roles (one per line)", "type": "lines", "required": True},
         ],
         "summary": lambda e: f"{e.get('year','?')}: {(e.get('roles') or [''])[0][:60]}",
     },
@@ -554,7 +557,7 @@ SECTIONS = {
         "path": ["professional_service", "university", "entries"],
         "fields": [
             {"name": "year", "label": "Year", "type": "text", "required": True},
-            {"name": "roles", "label": "Roles (comma-separated)", "type": "list", "required": True},
+            {"name": "roles", "label": "Roles (one per line)", "type": "lines", "required": True},
         ],
         "summary": lambda e: f"{e.get('year','?')}: {(e.get('roles') or [''])[0][:60]}",
     },
@@ -563,7 +566,7 @@ SECTIONS = {
         "path": ["professional_service", "profession"],
         "fields": [
             {"name": "year", "label": "Year", "type": "text", "required": True},
-            {"name": "roles", "label": "Roles (comma-separated)", "type": "list", "required": True},
+            {"name": "roles", "label": "Roles (one per line)", "type": "lines", "required": True},
         ],
         "summary": lambda e: f"{e.get('year','?')}: {(e.get('roles') or [''])[0][:60]}",
     },
@@ -605,6 +608,12 @@ def parse_form_value(field, raw_value):
         if not raw_value:
             return []
         return [s.strip() for s in raw_value.split(",") if s.strip()]
+    if field["type"] == "lines":
+        # One item per line, for items that themselves contain commas
+        # ("APSA Chair, Discussant"), which a comma-separated list would split.
+        if not raw_value:
+            return []
+        return [s.strip() for s in raw_value.splitlines() if s.strip()]
     return raw_value if raw_value else None
 
 
@@ -772,6 +781,8 @@ def section_view(section):
       <input type="checkbox" name="{{ f.name }}">
     {% elif f.type == 'number' %}
       <input type="number" name="{{ f.name }}">
+    {% elif f.type == 'lines' %}
+      <textarea name="{{ f.name }}" rows="5" {% if f.required %}required{% endif %}></textarea>
     {% else %}
       <input type="text" name="{{ f.name }}" {% if f.required %}required{% endif %}>
     {% endif %}
@@ -850,6 +861,8 @@ def section_edit(section, idx):
     <input type="number" name="{{ f.name }}" value="{{ existing or '' }}">
   {% elif f.type == 'list' %}
     <input type="text" name="{{ f.name }}" value="{{ existing|join(', ') if existing else '' }}">
+  {% elif f.type == 'lines' %}
+    <textarea name="{{ f.name }}" rows="{{ [(existing or [])|length + 1, 4]|max }}" {% if f.required %}required{% endif %}>{{ existing|join('\n') if existing else '' }}</textarea>
   {% else %}
     <input type="text" name="{{ f.name }}" value="{{ existing or '' }}" {% if f.required %}required{% endif %}>
   {% endif %}

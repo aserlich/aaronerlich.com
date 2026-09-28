@@ -720,10 +720,25 @@ def render_teaching(cv: dict) -> str:
 
 LAB_PAGE_URL = "https://aaronerlich.com/lab.html"
 
+_MD_LINK_RE = re.compile(r"\[([^\]]+)\]\(([^)\s]+)\)")
+
+
+def md_links_to_tex(s: str) -> str:
+    """Escape s, turning markdown links [text](url) (how cv.yml stores some
+    placements) into \\href."""
+    out, pos = [], 0
+    for m in _MD_LINK_RE.finditer(s):
+        out.append(tex_escape(s[pos:m.start()]))
+        out.append(f"\\href{{{macro_url(m.group(2))}}}{{{tex_escape(m.group(1))}}}")
+        pos = m.end()
+    out.append(tex_escape(s[pos:]))
+    return "".join(out)
+
 
 def render_mentorship(cv: dict) -> str:
-    """Year, name and roles only. Placements are web-only (the CV page and the
-    lab page); the PDF points readers to the lab page for them instead."""
+    """Year, name and roles. A placement is shown only when flagged
+    `academic_placement: true` (PhD -> academic job, MA -> PhD program); every
+    placement stays on the web, and the PDF points to the lab page for them."""
     ms = cv.get("mentorship") or {}
     lab_note = f"see \\href{{{LAB_PAGE_URL}}}{{lab page}} for others and placements"
     out = ["\\begin{list1}"]
@@ -736,8 +751,11 @@ def render_mentorship(cv: dict) -> str:
             continue
         out += [f"\\item[] \\textbf{{{label}}} ({note})", "\\begin{list2}"]
         for m in entries:
-            out.append(f"\\item[{tex_escape(m.get('year', ''))}] {tex_escape(m.get('name'))}, "
-                       f"{tex_escape(en(m.get('roles')))}")
+            line = (f"\\item[{tex_escape(m.get('year', ''))}] {tex_escape(m.get('name'))}, "
+                    f"{tex_escape(en(m.get('roles')))}")
+            if m.get("academic_placement") and m.get("placement"):
+                line += f"; {md_links_to_tex(en(m['placement']))}"
+            out.append(line)
         out.append("\\end{list2}")
     out.append("\\end{list1}")
     return "\n".join(out)

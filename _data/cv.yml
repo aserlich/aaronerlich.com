@@ -1220,14 +1220,17 @@ mentorship:
     name: Costin Ciobanu
     roles: Co-author, Lab Member, Dissertation Committee
     placement: Post-Doc, Royal Holloway University; Post-doc, University of Aarhus
+    academic_placement: true
   - year: 2023
     name: Mathieu Lavigne
     roles: Co-author, Dissertation Committee
     placement: Post-Doc, Dartmouth College
+    academic_placement: true
   - year: 2024
     name: Aengus Bridgman
     roles: Co-author, Lab Member, Dissertation Committee
     placement: Assistant Prof (Research), McGill University
+    academic_placement: true
   - year: 2025
     name: Maxime Blanchard
     roles: Dissertation Committee
@@ -1266,6 +1269,7 @@ mentorship:
     name: Pratik Mahajan
     roles: Co-Supervisor
     placement: Ph.D student, Yale University
+    academic_placement: true
   - year: 2025
     name: Rafael Campos-Gottardo
     roles: Supervisor, Lab member, Co-author

@@ -150,7 +150,8 @@ The PDF is built from the same `cv.yml` + Zotero data as the web CV. **Nothing i
 - The Overleaf `main.tex` (`~/Dropbox/Apps/Overleaf/Erlich_CV_Version_Control/`, synced to Overleaf by Dropbox) keeps only the preamble, the `\section` headers and layout glue, and calls those macros.
 - `build-cv-pdf.py` compiles with local XeLaTeX (TinyTeX). `main.tex` must be **available offline** in Dropbox; an online-only placeholder (0 bytes) fails the build with a message saying so. A missing `.sty` means `tlmgr install <package>`.
 - The build reports ~36 recoverable LaTeX errors from res.cls and publication hrefs; that is the baseline. A *change* in the count is the signal.
-- Presentations take an optional `coauthors` list. Mentee placements are **web-only**: the PDF lists year, name and roles, with a "see lab page for others and placements" note.
+- Presentations take an optional `coauthors` list. The web shows every mentee placement; the PDF shows one only when the entry has `academic_placement: true` (PhD to an academic job, MA to a PhD program; the checkbox in the admin app), plus a "see lab page for others and placements" note. MA to industry and PhD to government placements stay web-only.
+- Service roles in the admin app are entered **one per line**, because roles contain commas ("APSA Chair, Discussant").
 
 ## Lab ↔ CV mentorship sync
 
