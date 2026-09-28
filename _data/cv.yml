@@ -1,7 +1,7 @@
 meta:
   name: Aaron S. Erlich
   last_updated:
-    en: Last updated September 14, 2026
+    en: Last updated September 28, 2026
     fr: Dernière mise à jour le 10 février 2026
     es: 'Última actualización: 10 de febrero de 2026'
     ru: 'Последнее обновление: 10 февраля 2026 г.'
@@ -218,8 +218,8 @@ grants:
     es: Co-investigador
     ru: Со-исследователь
     uk: Співдослідник
-    ka: თანათანადგინვლი
-    de: Co-Leiterin
+    ka: თანამკვლევარი
+    de: Mitantragsteller
   amount: CAD 70,413
 - year: 2020
   title:
@@ -237,8 +237,8 @@ grants:
     es: Co-solicitante
     ru: Со-заявитель
     uk: Співзаявник
-    ka: თანაამომქმედი
-    de: Co-Antragstellerin
+    ka: თანაგანმცხადებელი
+    de: Mitantragsteller
   amount: CAD 2,500,000
 - year: 2018
   title:
@@ -263,8 +263,8 @@ grants:
     es: Co-investigador
     ru: Со-исследователь
     uk: Співдослідник
-    ka: თანათანადგინვლი
-    de: Co-Leiterin
+    ka: თანამკვლევარი
+    de: Mitantragsteller
   amount: CAD 218,310
 - year: 2018
   title:
@@ -290,7 +290,7 @@ grants:
     ru: Руководитель проекта
     uk: Головний дослідник
     ka: მთავარი მკვლევარი
-    de: Hauptantragstellerin
+    de: Hauptantragsteller
   amount: CAD 56,816
 - year: 2018
   title:
@@ -313,7 +313,7 @@ grants:
     ru: Руководитель проекта
     uk: Головний дослідник
     ka: მთავარი მკვლევარი
-    de: Hauptantragstellerin
+    de: Hauptantragsteller
   amount: CAD 62,089
 - year: 2018
   title:
@@ -326,14 +326,22 @@ grants:
     de: Democracy in disruption? Engaging Canadians to face emerging threats
   agency: SSHRC Connection Grant
   role:
-    en: Co-applicant (Fenwick McKelvey, Lead-PI)
-    fr: Co-demandeur (Fenwick McKelvey, chercheur principal)
-    es: Co-solicitante (Fenwick McKelvey, investigador principal)
-    ru: Со-заявитель (Fenwick McKelvey, ведущий руководитель проекта)
-    uk: Співзаявник (Fenwick McKelvey, головний дослідник)
-    ka: თანაამომქმედი (Fenwick McKelvey, წამყვანი მთავარი მკვლევარი)
-    de: Co-Antragstellerin (Fenwick McKelvey, federführende Hauptantragstellerin)
+    en: Co-applicant
+    fr: Co-demandeur
+    es: Co-solicitante
+    ru: Со-заявитель
+    uk: Співзаявник
+    ka: თანაგანმცხადებელი
+    de: Mitantragsteller
   amount: CAD 49,853
+  notes:
+    en: Fenwick McKelvey, Lead-PI
+    fr: Fenwick McKelvey, chercheur principal
+    es: Fenwick McKelvey, investigador principal
+    ru: Fenwick McKelvey, ведущий руководитель проекта
+    uk: Fenwick McKelvey, головний дослідник
+    ka: Fenwick McKelvey, წამყვანი მთავარი მკვლევარი
+    de: Fenwick McKelvey, federführender Hauptantragsteller
 - year: 2017
   title:
     en: What's in a Tally
@@ -361,7 +369,7 @@ grants:
     es: con S. Bush, L. Prather, Y. Zeira
     ru: с S. Bush, L. Prather, Y. Zeira
     uk: з S. Bush, L. Prather, Y. Zeira
-    ka: S. Bush-თან ერთად, L. Prather-თან ერთად, Y. Zeira-სთან ერთად
+    ka: S. Bush-თან, L. Prather-თან და Y. Zeira-სთან ერთად
     de: mit S. Bush, L. Prather, Y. Zeira
   amount: USD 11,000
 - year: 2015
@@ -476,7 +484,7 @@ grants:
     uk: Стипендія за успішність на оплату навчання, Georgetown University
     ka: დამსახურებაზე დაფუძნებული სწავლების სტიპენდია, Georgetown University
     de: Leistungsbasiertes Stipendium, Georgetown University
-- year: 2026-2033
+- year: 2026–2033
   title:
     en: Digital Tools for Democracy
     fr: Outils numériques pour la démocratie
@@ -487,21 +495,21 @@ grants:
     de: Digitale Werkzeuge für die Demokratie
   agency: SSHRC Partnership Grant (Stage 2)
   role:
-    en: Co-applicant
-    fr: Co-candidat
-    es: Co-solicitante
-    ru: Со-заявитель
-    uk: Співзаявник
-    ka: თანა-განმცხადებელი
+    en: Co-Investigator
+    fr: Co-chercheur
+    es: Co-investigador
+    ru: Со-исследователь
+    uk: Співдослідник
+    ka: თანამკვლევარი
     de: Mitantragsteller
-  amount: CAD $2,498,266
+  amount: CAD 2,498,266
   notes:
     en: Clifton van der Linden, lead PI
     fr: Clifton van der Linden, chercheur principal
     es: Clifton van der Linden, investigador principal
     ru: Clifton van der Linden, ведущий главный исследователь
     uk: Clifton van der Linden, головний керівник проєкту
-    ka: Clifton van der Linden, მთავარი პრინციპალური მკვლევარი
+    ka: Clifton van der Linden, წამყვანი მთავარი მკვლევარი
     de: Clifton van der Linden, leitender Hauptantragsteller
 - year: '2026'
   title:
@@ -521,8 +529,35 @@ grants:
     ru: Руководитель проекта
     uk: Головний дослідник
     ka: მთავარი მკვლევარი
-    de: Hauptantragstellerin
+    de: Hauptantragsteller
   amount: CAD 8,000
+- year: '2026'
+  title:
+    en: Canadian Democratic Resilience Initiative
+    fr: Canadian Democratic Resilience Initiative
+    es: Canadian Democratic Resilience Initiative
+    ru: Canadian Democratic Resilience Initiative
+    uk: Canadian Democratic Resilience Initiative
+    ka: Canadian Democratic Resilience Initiative
+    de: Canadian Democratic Resilience Initiative
+  agency: Euphrosine Foundation
+  role:
+    en: Co-PI
+    fr: Co-chercheur principal
+    es: Co-IP
+    ru: Соруководитель проекта
+    uk: Співголовний дослідник
+    ka: თანა-მთავარი მკვლევარი
+    de: Ko-Projektleiter
+  notes:
+    en: with Juan Pablo Luna
+    fr: avec Juan Pablo Luna
+    es: con Juan Pablo Luna
+    ru: с Juan Pablo Luna
+    uk: з Juan Pablo Luna
+    ka: Juan Pablo Luna-სთან ერთად
+    de: mit Juan Pablo Luna
+  amount: CAD 7,000
 software:
 - name: mapcan
   url: https://CRAN.R-project.org/package=mapcan

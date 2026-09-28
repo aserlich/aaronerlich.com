@@ -23,13 +23,15 @@ Working Papers) with a single line:
 After that every re-run of build-cv-latex.py pushes a fresh version into
 Overleaf with no hand-editing.
 
-Scope v1: publication sections only. Non-publication content
-(appointments, affiliations, education, grants, software, presentations,
-teaching, mentorship, professional experience, skills, field research,
-service) stays hand-maintained on Overleaf because it changes rarely
-and full coverage would duplicate ~500 lines of build-cv.py without
-much payoff. Add more sections here if the manual-edit burden ever
-becomes annoying.
+Scope: publication sections here, plus a few non-publication pieces emitted
+as macros into cv_generated.tex (the last-updated date, the peer-review
+lists, the grants rows, and departmental + university service). The rest
+(appointments, affiliations, education, software, presentations, teaching,
+mentorship, professional experience, skills, field research, profession
+and other service) stays hand-maintained on Overleaf because it changes
+rarely and full coverage would duplicate ~500 lines of build-cv.py without
+much payoff. Grants and service moved over after 2026 additions reached
+the web CV but never the PDF.
 
 Sections emitted (in main.tex order):
   1. Peer-Reviewed Publications (etaremune)
@@ -479,13 +481,69 @@ def load_zotero_by_citekey() -> dict:
     return out
 
 
+_YEAR_SORT_RE = re.compile(r"(\d{4})")
+
+
+def year_sort_key(value) -> int:
+    """First 4-digit year in a free-form string ('2026', '2014–2015'), else 0.
+    Same rule as build-cv.py's, so the PDF lists grants in the web CV's order."""
+    m = _YEAR_SORT_RE.search(str(value or ""))
+    return int(m.group(1)) if m else 0
+
+
+def render_grant_rows(grants: list) -> str:
+    """One `\\textline[t]{year}{description}{amount}` per grant, newest first.
+
+    \\textline is main.tex's own three-parbox row macro, so column widths stay
+    an Overleaf decision. The description follows the hand-typed rows this
+    replaced — ``Title.'' Agency (Role, notes) when there is an agency,
+    otherwise the bare title (fellowships, travel grants, scholarships).
+    """
+    rows = []
+    # sorted() is stable, so same-year grants keep their cv.yml order — as on the web.
+    for g in sorted(grants, key=lambda g: -year_sort_key(g.get("year"))):
+        title = tex_escape((g.get("title") or {}).get("en") or "")
+        if g.get("agency"):
+            if not title.endswith(("?", "!", ".")):
+                title += "."
+            desc = f"{tex_quotes(title)} {tex_escape(g['agency'])}"
+        else:
+            desc = title
+        paren = [x for x in ((g.get("role") or {}).get("en"),
+                             (g.get("notes") or {}).get("en")) if x]
+        if paren:
+            desc += f" ({tex_escape(', '.join(paren))})"
+        rows.append(f"\\textline[t]{{{tex_escape(g.get('year', ''))}}}"
+                    f"{{{desc}}}{{{tex_escape(g.get('amount') or '')}}}")
+    return "\n".join(rows)
+
+
+def render_service_tabbing(entries: list) -> str:
+    """A tabbing block of service roles by academic year, newest first:
+    `year \\= role`, then `\\> role` for the rest of that year, as main.tex
+    had them by hand. Entries sharing a year merge in list order, like
+    build-cv.py's _group_by_year_and_render, so the web and PDF agree."""
+    buckets: dict[str, list] = {}
+    for e in entries:
+        buckets.setdefault(str(e.get("year", "")), []).extend(e.get("roles") or [])
+    lines = []
+    for yr, roles in sorted(buckets.items(), key=lambda kv: -year_sort_key(kv[0])):
+        for j, role in enumerate(roles):
+            lead = f"{tex_escape(yr)} \\= " if j == 0 else "\\> "
+            lines.append(lead + tex_escape(role))
+    # No \\ after the last row: in tabbing it would add an empty line.
+    return "\\begin{tabbing}\n" + " \\\\\n".join(lines) + "\n\\end{tabbing}"
+
+
 def build_cv_generated(cv: dict) -> str:
-    """Emit cv_generated.tex: \\cvlastupdated and \\cvservicelists.
+    """Emit cv_generated.tex: \\cvlastupdated, \\cvservicelists, \\cvgrants,
+    \\cvdeptservice, \\cvuniversityservice.
 
     main.tex \\input's this in its PREAMBLE, then uses \\cvlastupdated in the
-    footer and \\cvservicelists where the peer-review lists used to be inline.
-    Defining macros rather than emitting text directly is what lets one file
-    serve two positions in the document.
+    footer, \\cvservicelists where the peer-review lists used to be inline,
+    and the other three where their hand-typed rows used to be. Defining macros rather
+    than emitting text directly is what lets one file serve several positions
+    in the document.
     """
     svc = cv.get("professional_service") or {}
 
@@ -511,6 +569,10 @@ def build_cv_generated(cv: dict) -> str:
         "%     \\fancyfoot[L]{\\emph{Last updated \\cvlastupdated}}",
         "% and, where the peer-review lists used to be inline:",
         "%     \\cvservicelists",
+        "% and, in place of the hand-typed Grants & Scholarships rows:",
+        "%     \\cvgrants",
+        "% and, in place of the Departmental / University Service tabbing blocks:",
+        "%     \\cvdeptservice   \\cvuniversityservice",
         "% ----------------------------------------------------------",
         "",
         "\\newcommand{\\cvlastupdated}{" + tex_escape(date) + "}",
@@ -524,6 +586,18 @@ def build_cv_generated(cv: dict) -> str:
         "",
         "\\textbf{Government Agency Review}\\\\",
         plain_join(svc.get("government_review") or []),
+        "}",
+        "",
+        "\\newcommand{\\cvgrants}{%",
+        render_grant_rows(cv.get("grants") or []),
+        "}",
+        "",
+        "\\newcommand{\\cvdeptservice}{%",
+        render_service_tabbing(svc.get("departmental") or []),
+        "}",
+        "",
+        "\\newcommand{\\cvuniversityservice}{%",
+        render_service_tabbing((svc.get("university") or {}).get("entries") or []),
         "}",
         "",
     ]

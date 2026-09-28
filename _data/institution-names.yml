@@ -55,6 +55,10 @@ institutions:
     ka: "კავკასიის კვლევითი რესურსების ცენტრი"
     note: "Georgia-based; use Georgian form in KA, English elsewhere"
 
+  - en: "Euphrosine Foundation"
+    fr: "Fondation Euphrosine"
+    note: "Signs as 'Fondation Euphrosine | Euphrosine Foundation'; use the French form in FR, English elsewhere"
+
   # Add more as you discover them. When Aaron flags "this should be in
   # French" or similar, add an entry here and re-run translate-cv.py --force
   # to regenerate.
