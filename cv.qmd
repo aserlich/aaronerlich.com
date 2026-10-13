@@ -9,7 +9,7 @@ format:
     section-divs: false
 ---
 
-<div class="cv-toolbar"><a href="files/Erlich_CV_en.pdf" class="btn btn-primary" data-i18n="labels.download_pdf">Download PDF</a> &nbsp; <em><span data-i18n="meta.last_updated">Last updated September 28, 2026</span></em></div>
+<div class="cv-toolbar"><a href="files/Erlich_CV_en.pdf" class="btn btn-primary" data-i18n="labels.download_pdf">Download PDF</a> &nbsp; <em><span data-i18n="meta.last_updated">Last updated October 13, 2026</span></em></div>
 <header class="cv-header">
 <h1>Aaron S. Erlich</h1>
 <table class="cv-contact-table">
@@ -32,7 +32,7 @@ format:
 <div class="cv-block-institution"><strong>McGill University</strong>, <span data-i18n="academic_appointments.0.department">Department of Political Science</span>, Montréal, QC</div>
 <ul class="cv-block-positions">
 <li><span data-i18n="academic_appointments.0.positions.0.role">Associate Professor</span>, 2023–</li>
-<li><span data-i18n="academic_appointments.0.positions.1.role">Assistant Professor</span>, 2016–2023 <em><span data-i18n="academic_appointments.0.positions.1.notes">(Paternity Leave: Autumn 2020, Autumn 2022)</span></em></li>
+<li><span data-i18n="academic_appointments.0.positions.1.role">Assistant Professor</span>, 2016–2023</li>
 </ul></div>
 <h2><span data-i18n="section_headers.affiliations">Affiliations</span></h2>
 <ul class="cv-affil-list">
@@ -701,3 +701,7 @@ format:
 </ul>
 <h3><span data-i18n="section_headers.election_observer">International Election Observer</span></h3>
 <p>Ukrainian 2019 Parliamentary Elections; South African 2014 General Elections; Georgian 2008 Presidential Elections; 2008 Ach'aran Supreme Council Elections</p></details>
+<details class="cv-section-collapse"><summary>Career Interruptions</summary><h2><span data-i18n="section_headers.career_interruptions">Career Interruptions</span></h2>
+<ul>
+<li><span data-i18n="career_interruptions.0">Parental leave: Autumn 2020, Autumn 2022</span></li>
+</ul></details>

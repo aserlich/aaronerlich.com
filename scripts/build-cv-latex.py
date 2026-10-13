@@ -796,6 +796,10 @@ def render_field_research(cv: dict) -> str:
                           for f in cv.get("field_research") or [])
 
 
+def render_career_interruptions(cv: dict) -> str:
+    return " \\\\\n".join(tex_escape(en(ci)) for ci in cv.get("career_interruptions") or [])
+
+
 def render_other_service(cv: dict) -> str:
     os_data = cv.get("other_service") or {}
     out = []
@@ -892,7 +896,8 @@ def build_cv_generated(cv: dict) -> str:
                          ("cvexperience", render_experience),
                          ("cvskills", render_skills),
                          ("cvfieldresearch", render_field_research),
-                         ("cvotherservice", render_other_service)):
+                         ("cvotherservice", render_other_service),
+                         ("cvcareerinterruptions", render_career_interruptions)):
         parts += [f"\\newcommand{{\\{name}}}{{%", render(cv), "}", ""]
     return "\n".join(parts)
 

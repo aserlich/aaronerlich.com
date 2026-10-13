@@ -600,6 +600,15 @@ def render_field_research(cv: dict) -> str:
     return "\n".join(out)
 
 
+def render_career_interruptions(cv: dict) -> str:
+    out = [f'<h2>{i18n_span("section_headers.career_interruptions", t(cv, "section_headers.career_interruptions"))}</h2>',
+           '<ul>']
+    for i, ci in enumerate(cv.get("career_interruptions", [])):
+        out.append(f'<li>{i18n_span(f"career_interruptions.{i}", ci["en"])}</li>')
+    out.append('</ul>')
+    return "\n".join(out)
+
+
 def render_skills(cv: dict) -> str:
     sk = cv["skills"]
     return f"""<h2>{i18n_span("section_headers.skills", t(cv, "section_headers.skills"))}</h2>
@@ -1024,6 +1033,8 @@ def main():
     body_parts.append(collapsible("Field Research", render_field_research(cv)))
     body_parts.append(collapsible("Professional Service", render_professional_service(cv)))
     body_parts.append(collapsible("Other Service", render_other_service(cv)))
+    if cv.get("career_interruptions"):
+        body_parts.append(collapsible("Career Interruptions", render_career_interruptions(cv)))
 
     # The i18n JSON blob + toggle JS are now loaded globally via
     # _generated/i18n-toggle.html (built by scripts/build-i18n.py and

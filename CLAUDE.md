@@ -138,7 +138,7 @@ Mirrors the original LaTeX CV layout:
 
 - **Numbered (reverse, etaremune-style)**: peer-reviewed, under-review, editor-reviewed — use `.cv-pub-list.cv-pub-list--reverse` with `--cv-pub-start` CSS variable.
 - **Dash bullets (em-dash marker)**: book-reviews, blogs, working papers, in-prep, on-hold, professional evaluations — use `.cv-pub-list.cv-pub-list--dash`.
-- **Collapsible sections (HTML only, closed by default)**: everything after Testimony (presentations, teaching, mentorship, professional experience, skills, field research, professional service, other service). Wrapped in `<details class="cv-section-collapse">`. The PDF render shows them all — `<details>` is browser-only.
+- **Collapsible sections (HTML only, closed by default)**: everything after Testimony (presentations, teaching, mentorship, professional experience, skills, field research, professional service, other service, career interruptions). Career Interruptions (parental leave) is deliberately last, not on the appointment line. Wrapped in `<details class="cv-section-collapse">`. The PDF render shows them all — `<details>` is browser-only.
 - **Title coloring**: maroon (`#6b1b1b`) **only** on `<a class="cv-pub-title">` — plain-text titles use `.cv-pub-title-plain` (no link styling).
 - **Annotation lines under publications**: `<ul class="cv-pub-notes">` with `<li class="cv-pub-award">` or `<li class="cv-pub-media">`. Built by the renderer from `latex_annotations` in the proposal file, which itself comes from the `tex.cv-*` lines in Zotero's `extra` field.
 

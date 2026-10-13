@@ -1,7 +1,7 @@
 meta:
   name: Aaron S. Erlich
   last_updated:
-    en: Last updated September 28, 2026
+    en: Last updated October 13, 2026
     fr: Dernière mise à jour le 10 février 2026
     es: 'Última actualización: 10 de febrero de 2026'
     ru: 'Последнее обновление: 10 февраля 2026 г.'
@@ -74,14 +74,6 @@ academic_appointments:
       ka: ასისტენტ-პროფესორი
       de: Assistenzprofessor
     dates: 2016–2023
-    notes:
-      en: '(Paternity Leave: Autumn 2020, Autumn 2022)'
-      fr: '(Congé de paternité : automne 2020, automne 2022)'
-      es: '(Licencia de paternidad: otoño de 2020, otoño de 2022)'
-      ru: '(Отпуск по уходу за ребёнком: осень 2020, осень 2022)'
-      uk: '(Відпустка у зв''язку з батьківством: осінь 2020 р., осінь 2022 р.)'
-      ka: '(მამობის შვებულება: შემოდგომა 2020, შემოდგომა 2022)'
-      de: '(Vaterschaftsurlaub: Herbst 2020, Herbst 2022)'
 affiliations:
 - role:
     en: Member
@@ -961,6 +953,14 @@ section_headers:
     uk: Інша діяльність
     ka: სხვა სამსახური
     de: Sonstiger Dienst
+  career_interruptions:
+    en: Career Interruptions
+    fr: Interruptions de carrière
+    es: Interrupciones en la Carrera
+    ru: Перерывы в карьере
+    uk: Перерви в кар'єрі
+    ka: კარიერის შეფერხებები
+    de: Karriereunterbrechungen
   courses_taught:
     en: Courses Taught
     fr: Cours enseignés
@@ -1649,6 +1649,14 @@ other_service:
   - South African 2014 General Elections
   - Georgian 2008 Presidential Elections
   - 2008 Ach'aran Supreme Council Elections
+career_interruptions:
+- en: 'Parental leave: Autumn 2020, Autumn 2022'
+  fr: 'Congé parental : automne 2020, automne 2022'
+  es: 'Licencia parental: otoño de 2020, otoño de 2022'
+  ru: 'Отпуск по уходу за ребёнком: осень 2020 г., осень 2022 г.'
+  uk: 'Відпустка у зв''язку з народженням дитини: осінь 2020 р., осінь 2022 р.'
+  ka: 'მშობლის შვებულება: შემოდგომა 2020, შემოდგომა 2022'
+  de: 'Elternzeit: Herbst 2020, Herbst 2022'
 in_prep:
 - title: 'Face-to-face: Average Dosage Response Functions for Measuring Survey Response Pattern Variation'
   year: null
