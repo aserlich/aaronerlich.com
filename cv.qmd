@@ -85,6 +85,14 @@ format:
  <span class="cv-pub-pages">471–490</span>.
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Jordan Gans-Morse)</span>
 </li>
+<li class="cv-pub" id="pub-soehl_PromisesLimits_2024">
+<a class="cv-pub-title" href="https://doi.org/10.1177/00491241241266634">&ldquo;Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.&rdquo;</a>
+ <span class="cv-pub-year">2026.</span>
+ <em class="cv-pub-venue">Sociological Methods &amp; Research</em>
+ <span class="cv-pub-vol">55(1)</span>
+ <span class="cv-pub-pages">268–298</span>.
+ <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl and Zhenxiang Chen)</span>
+</li>
 <li class="cv-pub" id="pub-erlich_HowLanguage_2025">
 <a class="cv-pub-title" href="https://doi.org/10.1017/xps.2025.10011">&ldquo;How Language Shapes Belief in Misinformation: A Study Among Multilinguals in Ukraine.&rdquo;</a>
  <span class="cv-pub-year">2026.</span>
@@ -159,13 +167,6 @@ format:
  <span class="cv-pub-vol">42(6)</span>
  <span class="cv-pub-pages">1313–1337</span>.
  <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Danielle F. Jung and James D. Long)</span>
-</li>
-<li class="cv-pub" id="pub-soehl_PromisesLimits_2024">
-<a class="cv-pub-title" href="https://doi.org/10.1177/00491241241266634">&ldquo;Promises and Limits of Using Targeted Social Media Advertising to Sample Global Migrant Populations: Nigerians at Home and Abroad.&rdquo;</a>
- <span class="cv-pub-year">2024.</span>
- <em class="cv-pub-venue">Sociological Methods &amp; Research</em>
- <span class="cv-pub-vol">nd(nd)</span>
- <span class="cv-pub-coauthors">(<span data-i18n="labels.with">with</span> Thomas Soehl and Zhenxiang Chen)</span>
 </li>
 <li class="cv-pub" id="pub-erlich_ProKremlinDisinformationEffective_2023">
 <a class="cv-pub-title" href="https://doi.org/10.1177/19401612211045221">&ldquo;Is pro-Kremlin Disinformation Effective? Evidence from Ukraine.&rdquo;</a>
