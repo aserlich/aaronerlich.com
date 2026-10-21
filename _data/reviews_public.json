@@ -1,0 +1,866 @@
+{
+  "generated": "2026-10-21",
+  "n_reports": 126,
+  "n_reports_round1": 92,
+  "n_manuscripts": 95,
+  "n_journals": 63,
+  "total_words": 71603,
+  "first_year": 2015,
+  "last_year": 2026,
+  "partial_year": 2026,
+  "n_attempts": 86,
+  "n_attempts_with_review_count": 66,
+  "reviews_per_submission": 2.47,
+  "desk_rejects": 13,
+  "desk_rejects_with_zero_reviews": 8,
+  "n_reports_citing": 31,
+  "total_ref_words": 1913,
+  "pct_words_in_refs": 2.7,
+  "by_year": [
+    {
+      "year": 2015,
+      "n_reports": 1,
+      "n_journals": 1
+    },
+    {
+      "year": 2017,
+      "n_reports": 6,
+      "n_journals": 4
+    },
+    {
+      "year": 2018,
+      "n_reports": 6,
+      "n_journals": 5
+    },
+    {
+      "year": 2019,
+      "n_reports": 7,
+      "n_journals": 7
+    },
+    {
+      "year": 2020,
+      "n_reports": 14,
+      "n_journals": 11
+    },
+    {
+      "year": 2021,
+      "n_reports": 7,
+      "n_journals": 6
+    },
+    {
+      "year": 2022,
+      "n_reports": 8,
+      "n_journals": 7
+    },
+    {
+      "year": 2023,
+      "n_reports": 14,
+      "n_journals": 10
+    },
+    {
+      "year": 2024,
+      "n_reports": 14,
+      "n_journals": 12
+    },
+    {
+      "year": 2025,
+      "n_reports": 29,
+      "n_journals": 23
+    },
+    {
+      "year": 2026,
+      "n_reports": 19,
+      "n_journals": 17
+    }
+  ],
+  "by_journal": [
+    {
+      "journal": "JOP",
+      "group": "top3",
+      "n_reports": 11,
+      "first_year": 2017,
+      "last_year": 2024
+    },
+    {
+      "journal": "AJPS",
+      "group": "top3",
+      "n_reports": 9,
+      "first_year": 2019,
+      "last_year": 2026
+    },
+    {
+      "journal": "ES",
+      "group": "ps_subfield",
+      "n_reports": 6,
+      "first_year": 2019,
+      "last_year": 2026
+    },
+    {
+      "journal": "IJPOR",
+      "group": "interdisc",
+      "n_reports": 5,
+      "first_year": 2020,
+      "last_year": 2025
+    },
+    {
+      "journal": "POP",
+      "group": "general_ps",
+      "n_reports": 4,
+      "first_year": 2020,
+      "last_year": 2026
+    },
+    {
+      "journal": "BDS",
+      "group": "interdisc",
+      "n_reports": 3,
+      "first_year": 2025,
+      "last_year": 2026
+    },
+    {
+      "journal": "CAC",
+      "group": "ps_subfield",
+      "n_reports": 3,
+      "first_year": 2024,
+      "last_year": 2025
+    },
+    {
+      "journal": "CJPS",
+      "group": "general_ps",
+      "n_reports": 3,
+      "first_year": 2017,
+      "last_year": 2021
+    },
+    {
+      "journal": "CPS",
+      "group": "general_ps",
+      "n_reports": 3,
+      "first_year": 2018,
+      "last_year": 2026
+    },
+    {
+      "journal": "IJHPM",
+      "group": "non_ps",
+      "n_reports": 3,
+      "first_year": 2018,
+      "last_year": 2019
+    },
+    {
+      "journal": "IJOC",
+      "group": "non_ps",
+      "n_reports": 3,
+      "first_year": 2025,
+      "last_year": 2026
+    },
+    {
+      "journal": "POQ",
+      "group": "interdisc",
+      "n_reports": 3,
+      "first_year": 2023,
+      "last_year": 2026
+    },
+    {
+      "journal": "PSRM",
+      "group": "general_ps",
+      "n_reports": 3,
+      "first_year": 2017,
+      "last_year": 2024
+    },
+    {
+      "journal": "Policy Studies",
+      "group": "non_ps",
+      "n_reports": 3,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "World Dev",
+      "group": "interdisc",
+      "n_reports": 3,
+      "first_year": 2025,
+      "last_year": 2026
+    },
+    {
+      "journal": "BJPS",
+      "group": "general_ps",
+      "n_reports": 2,
+      "first_year": 2017,
+      "last_year": 2023
+    },
+    {
+      "journal": "EPS",
+      "group": "general_ps",
+      "n_reports": 2,
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "journal": "FPA",
+      "group": "ps_subfield",
+      "n_reports": 2,
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "journal": "IJPP",
+      "group": "ps_subfield",
+      "n_reports": 2,
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "journal": "JMAS",
+      "group": "area_studies",
+      "n_reports": 2,
+      "first_year": 2019,
+      "last_year": 2020
+    },
+    {
+      "journal": "JPART",
+      "group": "non_ps",
+      "n_reports": 2,
+      "first_year": 2021,
+      "last_year": 2023
+    },
+    {
+      "journal": "MWC",
+      "group": "non_ps",
+      "n_reports": 2,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "PMR",
+      "group": "non_ps",
+      "n_reports": 2,
+      "first_year": 2024,
+      "last_year": 2026
+    },
+    {
+      "journal": "PRQ",
+      "group": "ps_subfield",
+      "n_reports": 2,
+      "first_year": 2024,
+      "last_year": 2025
+    },
+    {
+      "journal": "PSA",
+      "group": "area_studies",
+      "n_reports": 2,
+      "first_year": 2025,
+      "last_year": 2026
+    },
+    {
+      "journal": "R&P",
+      "group": "ps_subfield",
+      "n_reports": 2,
+      "first_year": 2022,
+      "last_year": 2026
+    },
+    {
+      "journal": "SMR",
+      "group": "non_ps",
+      "n_reports": 2,
+      "first_year": 2025,
+      "last_year": 2026
+    },
+    {
+      "journal": "SSCR",
+      "group": "interdisc",
+      "n_reports": 2,
+      "first_year": 2024,
+      "last_year": 2025
+    },
+    {
+      "journal": "APSR",
+      "group": "top3",
+      "n_reports": 1,
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "journal": "African Affairs",
+      "group": "area_studies",
+      "n_reports": 1,
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "journal": "CP",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "journal": "Democratization",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "EEP",
+      "group": "area_studies",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "EJPR",
+      "group": "general_ps",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "EUP",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "journal": "EWJUS",
+      "group": "area_studies",
+      "n_reports": 1,
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "journal": "Europe-Asia Studies",
+      "group": "area_studies",
+      "n_reports": 1,
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "journal": "Gov & Opp",
+      "group": "general_ps",
+      "n_reports": 1,
+      "first_year": 2021,
+      "last_year": 2021
+    },
+    {
+      "journal": "Humanities & Social Sciences Communications",
+      "group": "interdisc",
+      "n_reports": 1,
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "journal": "IJSRM",
+      "group": "non_ps",
+      "n_reports": 1,
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "journal": "IPSR",
+      "group": "general_ps",
+      "n_reports": 1,
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "journal": "JEBO",
+      "group": "non_ps",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "JEMS",
+      "group": "interdisc",
+      "n_reports": 1,
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "journal": "JEPOP",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "journal": "JEPS",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2020,
+      "last_year": 2020
+    },
+    {
+      "journal": "JIE",
+      "group": "non_ps",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "JIRD",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2015,
+      "last_year": 2015
+    },
+    {
+      "journal": "JITP",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "journal": "JLC",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "journal": "JPR",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "journal": "JSMS",
+      "group": "area_studies",
+      "n_reports": 1,
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "journal": "JoEAS",
+      "group": "area_studies",
+      "n_reports": 1,
+      "first_year": 2021,
+      "last_year": 2021
+    },
+    {
+      "journal": "MCS",
+      "group": "non_ps",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "Oñati Socio-Legal Series",
+      "group": "interdisc",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "PA",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "journal": "PAR",
+      "group": "non_ps",
+      "n_reports": 1,
+      "first_year": 2025,
+      "last_year": 2025
+    },
+    {
+      "journal": "PNAS Nexus",
+      "group": "interdisc",
+      "n_reports": 1,
+      "first_year": 2023,
+      "last_year": 2023
+    },
+    {
+      "journal": "Pol Psych",
+      "group": "interdisc",
+      "n_reports": 1,
+      "first_year": 2024,
+      "last_year": 2024
+    },
+    {
+      "journal": "PolComm",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2026,
+      "last_year": 2026
+    },
+    {
+      "journal": "RegGov",
+      "group": "ps_subfield",
+      "n_reports": 1,
+      "first_year": 2018,
+      "last_year": 2018
+    },
+    {
+      "journal": "SAGE Open",
+      "group": "interdisc",
+      "n_reports": 1,
+      "first_year": 2019,
+      "last_year": 2019
+    },
+    {
+      "journal": "Social Media + Society",
+      "group": "non_ps",
+      "n_reports": 1,
+      "first_year": 2022,
+      "last_year": 2022
+    },
+    {
+      "journal": "Telematics & Informatics",
+      "group": "non_ps",
+      "n_reports": 1,
+      "first_year": 2026,
+      "last_year": 2026
+    }
+  ],
+  "by_group": [
+    {
+      "group": "top3",
+      "n_journals": 3,
+      "n_reports": 21,
+      "median_words": 810,
+      "median_words_round1": 960,
+      "median_body_round1": 960,
+      "pct_citing_round1": 7,
+      "pct_round1": 67,
+      "pct_of_reports": 17
+    },
+    {
+      "group": "general_ps",
+      "n_journals": 9,
+      "n_reports": 20,
+      "median_words": 648,
+      "median_words_round1": 749,
+      "median_body_round1": 714.5,
+      "pct_citing_round1": 44,
+      "pct_round1": 80,
+      "pct_of_reports": 16
+    },
+    {
+      "group": "ps_subfield",
+      "n_journals": 18,
+      "n_reports": 29,
+      "median_words": 614,
+      "median_words_round1": 627,
+      "median_body_round1": 618,
+      "pct_citing_round1": 21,
+      "pct_round1": 83,
+      "pct_of_reports": 23
+    },
+    {
+      "group": "area_studies",
+      "n_journals": 8,
+      "n_reports": 10,
+      "median_words": 547.5,
+      "median_words_round1": 560,
+      "median_body_round1": 534,
+      "pct_citing_round1": 56,
+      "pct_round1": 90,
+      "pct_of_reports": 8
+    },
+    {
+      "group": "interdisc",
+      "n_journals": 11,
+      "n_reports": 22,
+      "median_words": 466,
+      "median_words_round1": 562.5,
+      "median_body_round1": 526,
+      "pct_citing_round1": 43,
+      "pct_round1": 64,
+      "pct_of_reports": 17
+    },
+    {
+      "group": "non_ps",
+      "n_journals": 14,
+      "n_reports": 24,
+      "median_words": 466.5,
+      "median_words_round1": 528,
+      "median_body_round1": 474,
+      "pct_citing_round1": 33,
+      "pct_round1": 62,
+      "pct_of_reports": 19
+    }
+  ],
+  "by_round": [
+    {
+      "round": 1,
+      "n_reports": 92,
+      "median_words": 656,
+      "median_words_body": 627,
+      "mean_words": 703,
+      "n_citing": 29,
+      "pct_citing": 32,
+      "pct": 73
+    },
+    {
+      "round": 2,
+      "n_reports": 23,
+      "median_words": 216,
+      "median_words_body": 216,
+      "mean_words": 254,
+      "n_citing": 1,
+      "pct_citing": 5,
+      "pct": 18
+    },
+    {
+      "round": 3,
+      "n_reports": 9,
+      "median_words": 98,
+      "median_words_body": 98,
+      "mean_words": 181,
+      "n_citing": 1,
+      "pct_citing": 12,
+      "pct": 7
+    },
+    {
+      "round": 4,
+      "n_reports": 2,
+      "median_words": 78.5,
+      "median_words_body": 78.5,
+      "mean_words": 78,
+      "n_citing": 0,
+      "pct_citing": 0,
+      "pct": 2
+    }
+  ],
+  "by_non_ps_field": [
+    {
+      "field": "public_policy",
+      "n_reports": 11,
+      "n_journals": 5
+    },
+    {
+      "field": "communication",
+      "n_reports": 8,
+      "n_journals": 5
+    },
+    {
+      "field": "sociology_methods",
+      "n_reports": 3,
+      "n_journals": 2
+    },
+    {
+      "field": "economics",
+      "n_reports": 2,
+      "n_journals": 2
+    }
+  ],
+  "lengths": {
+    "round1": [
+      {
+        "bin": "<200",
+        "n": 0
+      },
+      {
+        "bin": "200-399",
+        "n": 11
+      },
+      {
+        "bin": "400-599",
+        "n": 23
+      },
+      {
+        "bin": "600-799",
+        "n": 33
+      },
+      {
+        "bin": "800-999",
+        "n": 13
+      },
+      {
+        "bin": "1000-1499",
+        "n": 10
+      },
+      {
+        "bin": "1500+",
+        "n": 2
+      }
+    ],
+    "revision": [
+      {
+        "bin": "<200",
+        "n": 17
+      },
+      {
+        "bin": "200-399",
+        "n": 10
+      },
+      {
+        "bin": "400-599",
+        "n": 2
+      },
+      {
+        "bin": "600-799",
+        "n": 1
+      },
+      {
+        "bin": "800-999",
+        "n": 1
+      },
+      {
+        "bin": "1000-1499",
+        "n": 0
+      },
+      {
+        "bin": "1500+",
+        "n": 0
+      }
+    ]
+  },
+  "terms": {
+    "all": {
+      "accept": 12,
+      "major": 44,
+      "minor": 13,
+      "none_given": 4,
+      "reject": 43,
+      "unknown": 9,
+      "NA": 1
+    },
+    "round1": {
+      "major": 41,
+      "none_given": 2,
+      "reject": 43,
+      "unknown": 6
+    }
+  },
+  "debt": [
+    {
+      "label": "Reports consumed, undivided",
+      "given": 126,
+      "owed": 163,
+      "assumption": "Counts every report he wrote against every referee his submissions used. Mixes units: his side includes revision rounds, the consuming side counts distinct referees only.",
+      "balance": -37,
+      "primary": false
+    },
+    {
+      "label": "Consumed, divided by coauthors",
+      "given": 126,
+      "owed": 69.1,
+      "assumption": "A report consumed by a four-author paper is a quarter his. Divides by num_authors; rests on the 61 of 86 attempts carrying both fields.",
+      "balance": 56.9,
+      "primary": false
+    },
+    {
+      "label": "Lauderdale 3:1 per submission",
+      "given": 126,
+      "owed": 258,
+      "assumption": "The proposed norm of three reviews per submission, applied flat. Charges him for desk rejects that consumed nothing -- 8 of his 13 used zero referees.",
+      "balance": -132,
+      "primary": false
+    },
+    {
+      "label": "Round 1 both sides, undivided",
+      "given": 92,
+      "owed": 163,
+      "assumption": "Compares like with like -- first reviews only, on both sides -- but still charges him the whole cost of coauthored papers.",
+      "balance": -71,
+      "primary": false
+    },
+    {
+      "label": "Round 1 both sides, divided by coauthors",
+      "given": 92,
+      "owed": 69.1,
+      "assumption": "THE DEFAULT. First reviews only on both sides -- the only grain at which the two sides are commensurable -- priced at what submissions actually consumed rather than at a norm, with the obligation shared among coauthors.",
+      "balance": 22.9,
+      "primary": true
+    }
+  ],
+  "debt_default": "Round 1 both sides, divided by coauthors",
+  "consuming_side_bound": {
+    "attempts_with_rr": 36,
+    "unrecorded_later_rounds": 43,
+    "note": "Consuming side counts first-round referees only. 43 later rounds are unrecorded; at two referees each that is roughly 86 further reports, which would reverse the sign."
+  },
+  "repeat_by_disclosure": [
+    {
+      "flag": "shares_reports",
+      "value": "no",
+      "journals": 20,
+      "returned": 1,
+      "repeat_rate": 0.05
+    },
+    {
+      "flag": "shares_reports",
+      "value": "unknown",
+      "journals": 10,
+      "returned": 3,
+      "repeat_rate": 0.3
+    },
+    {
+      "flag": "shares_reports",
+      "value": "yes",
+      "journals": 28,
+      "returned": 11,
+      "repeat_rate": 0.39
+    },
+    {
+      "flag": "notifies_outcome",
+      "value": "no",
+      "journals": 14,
+      "returned": 1,
+      "repeat_rate": 0.07
+    },
+    {
+      "flag": "notifies_outcome",
+      "value": "unknown",
+      "journals": 11,
+      "returned": 3,
+      "repeat_rate": 0.27
+    },
+    {
+      "flag": "notifies_outcome",
+      "value": "yes",
+      "journals": 33,
+      "returned": 11,
+      "repeat_rate": 0.33
+    }
+  ],
+  "disclosure_by_tier": [
+    {
+      "tier": "top3",
+      "no": 0,
+      "yes": 1,
+      "unknown": 0,
+      "pct_withholding": 0
+    },
+    {
+      "tier": "ps_subfield",
+      "no": 1,
+      "yes": 12,
+      "unknown": 3,
+      "pct_withholding": 8
+    },
+    {
+      "tier": "general_ps",
+      "no": 2,
+      "yes": 6,
+      "unknown": 1,
+      "pct_withholding": 25
+    },
+    {
+      "tier": "interdisc",
+      "no": 4,
+      "yes": 5,
+      "unknown": 2,
+      "pct_withholding": 44
+    },
+    {
+      "tier": "area_studies",
+      "no": 6,
+      "yes": 2,
+      "unknown": 0,
+      "pct_withholding": 75
+    },
+    {
+      "tier": "non_ps",
+      "no": 7,
+      "yes": 2,
+      "unknown": 4,
+      "pct_withholding": 78
+    }
+  ]
+}
