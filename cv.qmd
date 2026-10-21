@@ -604,8 +604,8 @@ format:
 <tr><td>2019</td><td>Andrew McCormack</td><td>Co-Author, Research Assistant, Lab Member</td><td>[Data Sciences](https://datasciences.ca/)</td></tr>
 <tr><td>2019</td><td>Saewon Park</td><td>Supervisor, Research Assistant, Lab Manager, Co-author</td><td>[TrackTik](https://www.tracktik.com/); [The Media Ecosystem Observatory](https://meo.ca/)</td></tr>
 <tr><td>TBD</td><td>Luis Alvarez</td><td>Supervisor</td><td></td></tr>
-<tr><td>TBD</td><td>Katerina McMullen</td><td>Supervisor, Lab member</td><td></td></tr>
-<tr><td>TBD</td><td>Aiden McIlvaney</td><td>Supervisor</td><td></td></tr>
+<tr><td>TBD</td><td>Aiden McIlvaney</td><td>Supervisor, Lab Manager</td><td></td></tr>
+<tr><td>TBD</td><td>Gavriil Fakih</td><td>Supervisor</td><td></td></tr>
 </tbody></table>
 <p><strong>Undergraduate</strong> (year of graduation)</p>
 <table><thead><tr><th>Year</th><th>Name</th><th>Roles</th></tr></thead><tbody>

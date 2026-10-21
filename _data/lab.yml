@@ -15,17 +15,10 @@ current_grad:
     and authoritarian regimes. As a graduate student, David developed a growing interest in using statistical methods for
     causal inference and machine learning (natural language processing & computer vision) for large datasets and complex data
     analysis.
-- name: Katerina McMullen
-  headshot: images/headshot-mcmullen.jpeg
-  degree: MA student
-  bio: is an M.A. student in Political Science at McGill University. Her research focuses on the socio-political analysis
-    of large language models. Her thesis is assessing how LLMs handle and respond to queries about the US election when confronted
-    with misleading or false information. She was awarded funding from the Social Science and Humanities Research Council
-    (SSHRC) for that project.
 - name: Aiden McIlvaney
   degree: MA student
   headshot: images/headshot-mcilvaney-2026.jpeg
-  bio: is an M.A. student in Political Science at McGill University. His research examines political behaviour & public opinion,
+  bio: is the DemoTIP Lab Manager and an M.A. student in Political Science at McGill University. His research examines political behaviour & public opinion,
     political uses of technology, electoral governance, and cyber threats targeting democratic institutions, with a methodological
     focus on survey experiments and causal inference. He holds a SSHRC CGS-M and an FRQ Master’s Research Scholarship, and
     is a 2026–2027 CIGI Digital Policy Hub Fellow. His current work focuses on Canadian public attitudes towards the use of
@@ -38,6 +31,25 @@ current_grad:
     individuals to their social networks. Drawing on an interdisciplinary social sciences background, he approaches these
     questions with a methodological toolkit ranging from computational methods and statistical techniques to interpretive
     approaches.
+- name: Gavriil Fakih
+  degree: MA student
+  headshot: images/headshot-fakih-2026.jpeg
+  bio: is an M.A. student in Political Science at McGill University, supervised by Aaron Erlich. His main interests are quantitative
+    and computational methods. He uses text analysis to study Russian influence operations, disinformation, and political
+    identity in the former Soviet Union. He builds reproducible pipelines for scraping and analysing large social media datasets.
+    He is also interested in how states use persuasion and coercion, and how political narratives shape public attitudes
+    towards defence and security. He holds a B.A. in Philosophy, Politics, and Economics from Jesus College, Oxford. His undergraduate
+    thesis used a neural topic model to study Russian strategic frames during Moldova’s 2024 elections and won the Gibbs Thesis
+    Prize in Politics. He is a member of the Centre for the Study of Democratic Citizenship. [gavriilfakih.com](https://gavriilfakih.com)
+- name: Lauren Avis
+  degree: MA student
+  headshot: images/headshot-avis-2026.jpeg
+  bio: is an M.A. student in Political Science specializing in Development Studies at McGill University’s Institute for the
+    Study of International Development. Her research spans Russian and post-Soviet politics and history, information warfare,
+    political polarization, leftist organizing, women’s issues, and technology’s role in society. She approaches these issues
+    both distinctively and as connected by questions of power, ideology, and how information shapes political life and activity.
+    She is a 2026–2027 CIGI Digital Policy Hub Fellow, a Student Fellow at the Montreal Institute for Global Security (MIGS)
+    and affiliated with the Centre for International Peace and Security Studies (CIPSS).
 current_undergrad:
 - name: Lawrence Plastina
   headshot: ''
