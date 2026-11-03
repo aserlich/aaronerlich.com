@@ -7,7 +7,7 @@
 # Not served on aaronerlich.com: Quarto only copies _data files that a page
 # actually references (submissions_public.json, via an OJS FileAttachment).
 meta:
-  last_scan: '2026-09-01'
+  last_scan: '2026-11-03'
 items:
 - id: pub-erlichBookReviewSay2012
   kind: publication
@@ -1983,3 +1983,210 @@ items:
       linkedin:
         url: https://www.linkedin.com/posts/aaron-erlich-4435312_new-post-which-journals-offer-results-blind-activity-7500547711700512768-gSIK
         at: '2026-09-01T13:40:59+00:00'
+- id: pub-erlich_DoesAnalyticThinking_2023
+  kind: publication
+  title: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  url: https://onlinelibrary.wiley.com/doi/abs/10.1111/pops.12819
+  blurb: ''
+  year: '2023'
+  venue: Political Psychology
+  coauthors: &id007
+  - Calvin Garner
+  - Gordon Pennycook
+  - David G. Rand
+  source:
+    citekey: erlich_DoesAnalyticThinking_2023
+    section: peer-reviewed
+  added: '2026-09-08'
+  status: new
+  rounds: []
+- id: media-erlich_DoesAnalyticThinking_2023-press-release
+  kind: media
+  title: Press Release on “Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence
+    From Ukraine”
+  url: https://www.prnewswire.com/news-releases/ukrainians-who-engage-in-more-analytic-thinking-are-less-susceptible-to-russias-disinformation-campaign-301488184.html
+  blurb: ''
+  year: '2023'
+  venue: Press Release
+  coauthors: *id007
+  source:
+    citekey: erlich_DoesAnalyticThinking_2023
+    outlet: Press Release
+    paper: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  added: '2026-09-08'
+  status: new
+  rounds: []
+- id: media-erlich_DoesAnalyticThinking_2023-oxford-demtech
+  kind: media
+  title: Oxford Demtech on “Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence
+    From Ukraine”
+  url: https://web.archive.org/web/20240624183718/https://demtech.oii.ox.ac.uk/war-in-ukraine-and-disinformation-newsletter-29-march-2022/
+  blurb: ''
+  year: '2023'
+  venue: Oxford Demtech
+  coauthors: *id007
+  source:
+    citekey: erlich_DoesAnalyticThinking_2023
+    outlet: Oxford Demtech
+    paper: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  added: '2026-09-08'
+  status: new
+  rounds: []
+- id: award-erlich_DoesAnalyticThinking_2023-top-cited
+  kind: award
+  title: Top 10 Most cited article award International Society of Political Psychology (ISPP)
+  url: https://onlinelibrary.wiley.com/doi/abs/10.1111/pops.12819
+  blurb: ''
+  year: '2023'
+  venue: Political Psychology
+  coauthors: *id007
+  source:
+    citekey: erlich_DoesAnalyticThinking_2023
+    award_kind: top-cited
+    paper: Does Analytic Thinking Insulate Against Pro-Kremlin Disinformation? Evidence From Ukraine
+  added: '2026-09-08'
+  status: new
+  rounds: []
+- id: pub-erlich_WhoShould_2026a
+  kind: publication
+  title: Who should vote? Membership and claims to expatriate political participation in the Nigerian
+    diaspora
+  url: https://doi.org/10.1186/s40878-026-00546-3
+  blurb: ''
+  year: '2026'
+  venue: Comparative Migration Studies
+  coauthors:
+  - Thomas Soehl
+  source:
+    citekey: erlich_WhoShould_2026a
+    section: peer-reviewed
+  added: '2026-09-11'
+  status: new
+  rounds: []
+- id: grant-digital-tools-for-democracy-2026–2033
+  kind: grant
+  title: Digital Tools for Democracy
+  url: ''
+  blurb: Clifton van der Linden, lead PI
+  year: 2026–2033
+  venue: SSHRC Partnership Grant (Stage 2)
+  coauthors: []
+  source:
+    cv_section: grants
+    role: Co-Investigator
+  added: '2026-09-29'
+  status: new
+  rounds: []
+- id: grant-canadian-democratic-resilience-initiative-2026
+  kind: grant
+  title: Canadian Democratic Resilience Initiative
+  url: ''
+  blurb: with Juan Pablo Luna
+  year: '2026'
+  venue: Euphrosine Foundation
+  coauthors: []
+  source:
+    cv_section: grants
+    role: Co-PI
+  added: '2026-09-29'
+  status: new
+  rounds: []
+- id: talk-pro-kremlin-propaganda-s-failure-in-ukra-2023-04-05
+  kind: talk
+  title: 'Pro-Kremlin Propaganda''s Failure in Ukraine: Evidence and Lessons Learned'
+  url: ''
+  blurb: ''
+  year: '2023'
+  venue: PONARS, George Washington University, January 19, 2023; follow-up talk, CEPA Zoom Roundtable
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: April 5, 2023
+  added: '2026-09-29'
+  status: archived
+  rounds: []
+- id: talk-media-attention-and-bureaucratic-respons-undated
+  kind: talk
+  title: Media Attention and Bureaucratic Responsiveness
+  url: ''
+  blurb: ''
+  year: ''
+  venue: Annual Meeting of the Midwest Political Science Association, Chicago, April 4-7, 2019; TextXD,
+    Berkeley, December 3-6, 2019; Annual Meeting of the Southern Political Science Association, San
+    Juan PR
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: January 9-11, 2020
+  added: '2026-09-29'
+  status: archived
+  rounds: []
+- id: talk-ethnic-rivalry-or-citizen-solidarity-2019-02-08
+  kind: talk
+  title: Ethnic Rivalry or Citizen Solidarity?
+  url: ''
+  blurb: ''
+  year: '2019'
+  venue: Temple University Comparative Politics Colloquium, Philadelphia, March 26, 2018; University
+    of Toronto, Centre for European, Russian and Eurasian Studies
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: February 8, 2019
+  added: '2026-09-29'
+  status: archived
+  rounds: []
+- id: talk-evaluating-women-candidates-in-a-corrupt-2017-07-01
+  kind: talk
+  title: Evaluating Women Candidates in a Corrupt Environment with Low Levels of Women's Representation
+  url: ''
+  blurb: ''
+  year: '2017'
+  venue: Midwest Political Science Association Annual Convention, Chicago, April 16-19, 2017; CRRC
+    5th Annual Methodological Conference, Tbilisi, Georgia
+  coauthors: []
+  source:
+    cv_section: presentations
+    date: July 2017
+  added: '2026-09-29'
+  status: archived
+  rounds: []
+- id: post-2026-10-reviewing-record
+  kind: blog
+  title: I counted every referee report I have written
+  url: https://aaronerlich.com/posts/2026-10-reviewing-record/
+  blurb: 'Ten years of peer review, logged report by report: 126 reports for 63 journals, 71,603
+    words. Whether that leaves me in credit or in debt turns out to depend entirely on an assumption
+    nobody states — and the journals that tell me least are the ones I write least for.'
+  year: '2026'
+  venue: ''
+  coauthors: []
+  source:
+    path: posts/2026-10-reviewing-record/index.qmd
+  added: '2026-10-22'
+  status: posted
+  rounds:
+  - n: 1
+    opened: '2026-11-03'
+    status: posted
+    note: launch
+    drafts:
+      linkedin:
+        text: |-
+          I went back through every portal, decision letter and folder I could find and logged every referee report I have written: 126 reports for 63 journals, 71,603 words, 2015 to 2026.
+
+          A few things I did not expect.
+
+          It is about two and a half times the disciplinary average. Djupe and Walker's 2024 survey puts faculty in PhD-granting programmes at about six reviews a year. My 2021–25 average is 14.4, and 2025 alone was 29. Some of that gap is measurement: I have records, and re-reviews are the first thing recall loses. Surveys should ask separately how many were first reviews.
+
+          More and more of it goes outside political science: 27% of my reports in 2015–21, 69% in 2025. Those journals are also the ones that tell me least. I have gone back to 39% of the journals that show me the other referees' reports, and 5% of the ones that do not. I also write them shorter first reports (528 words, against 960 for the top three) and hand them a reading list far more often.
+
+          Whether I have done my share has no agreed answer. The same record comes out anywhere from −132 to +57 reports, depending on whether you charge three reviews per submission, divide by coauthors, and count re-reviews. The version I think is defensible gives +23 — and I chose the assumptions that produce it, which is exactly the problem.
+
+          The post has the charts, two registered reports (one consumed nine reports across three referees), and how the data were built. Tell me what is wrong with it.
+
+          https://aaronerlich.com/posts/2026-10-reviewing-record/
+    posted:
+      linkedin:
+        url: https://lnkd.in/p/ghqP5dG2
+        at: '2026-11-03T14:25:15+00:00'
