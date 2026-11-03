@@ -7,17 +7,11 @@ image: reviewing-by-tier.png
 image-alt: "Referee reports per year from 2015 to 2026, coloured by journal type, against the disciplinary average of about six a year."
 ---
 
-A while ago I [put my whole publication record online](../2026-07-publication-record/), and then
-[asked whether it mattered where the papers landed](../2026-08-citation-arcs/). Both were about
-what I have *received* from peer review. This one is about what I have *given*.
+A while ago I [put my whole publication record online](../2026-07-publication-record/), and then [asked whether it mattered where the papers landed](../2026-08-citation-arcs/). Both were about what I have *received* from peer review. Now I address what I have *given*.
 
-I went back through every portal, decision letter and folder I could find and logged each report
-individually: which journal, which round, how many words, what I recommended, and what the journal
-told me afterwards. **126 reports, 63 journals, 95 manuscripts, 71,603 words, 2015 to 2026.** It is
-a census rather than an estimate, which turns out to matter — my own prior guess was "about 120 to
-130 reviews for maybe 65 journals", and I was close on the first and wrong about the shape.
+I went back through every portal, decision letter and folder I could find and logged each report individually: which journal, which round, how many words, what I recommended, and what the journal told me afterwards, including whether they shared the other reviewers' reports. My census included **126 reports, 63 journals, 95 manuscripts, 71,603 words, 2015 to 2026.**
 
-This post is the record and how it was built. The arguments it suggests are for later posts.
+This post describes the record with commentary and introduces to how it was built. The arguments the follow and a bunch of other ideas I have I'll save for later posts.
 
 ```{=html}
 <style>
@@ -41,6 +35,16 @@ TIERLAB = ({ top3: "Top 3 (AJPS/APSR/JOP)", general_ps: "General political scien
 TIERCOL = ({ top3: "#2a78d6", general_ps: "#eb6834", ps_subfield: "#1baf7a",
              area_studies: "#eda100", interdisc: "#e87ba4", non_ps: "#008300" })
 INK = "#6b1b1b"
+
+// 2016 has no reports, and a band scale with a gap in it prints a duplicate tick.
+// Fill the sequence so every year has a bar (2016 is a real zero) and the axis is honest.
+YEARS = d3.range(db.first_year, db.last_year + 1)
+byYear = YEARS.map(y => {
+  const r = db.by_year.find(d => d.year === y)
+  return { year: y, n_reports: r ? r.n_reports : 0 }
+})
+PHD = 2016        // Ph.D., University of Washington
+TENURE = 2023     // promoted to Associate Professor
 ```
 
 ## How much, and is that a lot?
@@ -49,15 +53,20 @@ INK = "#6b1b1b"
 //| echo: false
 Plot.plot({
   marginLeft: 44, marginBottom: 34, height: 300, width: 740,
-  x: { label: "", tickFormat: "d" },
-  y: { label: "reports", grid: true, nice: true },
+  x: { label: "", type: "band", domain: YEARS, tickFormat: "d" },
+  y: { label: "reports", grid: true, nice: true, domain: [0, 32] },
   marks: [
+    // career markers, drawn behind the bars
+    Plot.ruleX([PHD],    { stroke: "#52514e", strokeWidth: 1, strokeDasharray: "2,3" }),
+    Plot.ruleX([TENURE], { stroke: "#52514e", strokeWidth: 1, strokeDasharray: "2,3" }),
+    Plot.text([{ x: PHD, t: "Ph.D." }, { x: TENURE, t: "tenure" }],
+      { x: "x", y: 31, text: "t", fill: "#52514e", fontSize: 11, textAnchor: "middle" }),
     Plot.ruleY([6], { stroke: INK, strokeDasharray: "3,3" }),
-    Plot.text([{ y: 6 }], { y: "y", x: 2015.2, text: ["disciplinary average, ~6 a year"],
-      textAnchor: "start", dy: -8, fill: INK, fontSize: 11 }),
-    Plot.barY(db.by_year.filter(d => d.year < db.partial_year),
-      { x: "year", y: "n_reports", fill: INK, fillOpacity: 0.85, r: 2 }),
-    Plot.barY(db.by_year.filter(d => d.year === db.partial_year),
+    Plot.text([{ t: "disciplinary average, ~6 a year" }],
+      { x: YEARS[0], y: 6, text: "t", textAnchor: "start", dy: -8, fill: INK, fontSize: 11 }),
+    Plot.barY(byYear.filter(d => d.year !== db.partial_year),
+      { x: "year", y: "n_reports", fill: INK, fillOpacity: 0.85 }),
+    Plot.barY(byYear.filter(d => d.year === db.partial_year),
       { x: "year", y: "n_reports", fill: "white", stroke: INK, strokeDasharray: "3,2" }),
     Plot.ruleY([0])
   ]
@@ -65,28 +74,22 @@ Plot.plot({
 ```
 
 ```{=html}
-<p class="rev-note"><b>2026 is hollow and dashed because the year is not over.</b> The flat line is
+<p class="rev-note"><b>2026 is hollow and dashed because the year is not over; 2016 is a real zero.</b> The two vertical markers are my Ph.D. (2016) and tenure (2023). The flat line is
 the benchmark: Djupe and Walker's 2024 survey of 637 political scientists finds that faculty in
 PhD-granting programmes average about six reviews a year, and about 5.8 for associate professors
 like me. My mean over 2021–25 is <b>14.4</b>, and 2025 was 29.</p>
 ```
 
-So: roughly two and a half times the disciplinary average, and 2025 alone lands in the far-right
-"20+" bin of their distribution — the tail they describe as *shrinking*. I am in the group that does
-roughly half of all reviewing while being about a fifth of the people.
+So: roughly two and a half times the disciplinary average, and 2025 alone lands in the far-right "20+" bin of their distribution — the tail they describe as *shrinking*. I am in the group that does roughly half of all reviewing while being about a fifth of the people.
 
-One honest deflation. Their question asks you to "check your records to be accurate", and almost
-nobody has records. Re-reviews of a paper you saw before are exactly what recall loses first. **I
-have records, so my number is more complete than theirs** — some of that 2.4× gap is measurement
-rather than labour. Counting only first-round reports I am still at 10.8 a year, about 1.8×, which
-is the floor.
+One honest measurement issue. Djupe and Walker's question asks you to "check your records to be accurate", but almost nobody has records. Re-reviews of a paper you saw before are exactly what recall loses first. **I have records, so my number is more complete than theirs**; therefore, some of that 2.4× gap is likely to be measurement rather than labour. Counting only first-round reports I am still at 10.8 a year, about 1.8×, which is likely a more accurate number.
 
 ## Where it goes, and the long tail
 
 ```{ojs}
 //| echo: false
 Plot.plot({
-  marginLeft: 150, marginRight: 40, height: 230, width: 740,
+  marginLeft: 150, marginRight: 130, height: 230, width: 740,
   x: { label: "reports", grid: true },
   y: { label: "", domain: TIER, tickFormat: d => TIERLAB[d] },
   marks: [
@@ -104,21 +107,13 @@ belongs to another discipline — psychology, communication, economics, public p
 being genuinely cross-field.</p>
 ```
 
-**Only 17% of my reports are for the top three.** The bulk sits in subfield journals and, strikingly,
-*outside* political science: interdisciplinary and non-PS venues together are 46 of 126 reports.
+**17% of my reports are for the top three.** The bulk sit in subfield journals and *outside* political science: interdisciplinary and non-PS venues together are 46 of 126 reports.
 
-The long tail is the real shape. **35 of the 63 journals have exactly one report from me; 48 have one
-or two.** These are not journals I have a relationship with — they are journals that found me for a
-specialism, mostly post-Soviet politics, corruption, survey methods or disinformation. Most of them I
-have never submitted to, which in ledger terms is pure giving.
+My long tail of reviewing once outside of political science probably distinguishes me from a lot of other political science reviewers that tend to focus more squarely in their domain. **I have refereed for 46 of the 63 journals exactly once — and 27 of those 46 sit outside core political science.** These are journals I do not have a relationship with; they are journals that found me for a specialty (and most often because I was cited), mostly post-Soviet politics, corruption, survey methods or disinformation. Most of them I have never submitted to, which in ledger terms is pure giving.
 
-And it has been moving. **In 2015–21, 27% of my reports were for journals outside core political
-science. In 2022–26 it is 52%, and in 2025 it was 69%** — my busiest year was also my least
-disciplinary one. That matters for everything below, because those are the venues that tell me
-least and that I write the shortest reports for.
+I have received a lot more non-PS requests recently. **In 2015–21, 27% of my reports were for journals outside core political science. In 2022–26 it is 52%, and in 2025 it was 69%** — my busiest year was also my least disciplinary one. That matters for everything below, because those are the venues that tell me least, am least likely to re-review for, and for which I write the shortest reports.
 
-Because "outside political science" is a quarter of the work and lumps four disciplines together,
-it is worth breaking open:
+Because "outside political science" is a quarter of the work and lumps four disciplines together, it is worth breaking open:
 
 ```{ojs}
 //| echo: false
@@ -164,35 +159,26 @@ first reviews. The darker bar is the report proper; the gap above it is the refe
 is small because most reports have none — see below.</p>
 ```
 
-This matters more than it looks, because **every survey of reviewing asks for one number.** Djupe and
-Walker's Q17 is "how many article reviews have you conducted… in the past year?", with nothing said
-about whether a re-review of a paper you already saw counts. Someone who did ten first reviews and
-someone who did five firsts plus five re-reviews both answer "ten" and have done very different
-amounts of work.
+This matters more than it looks, because **every survey of reviewing asks for one number.** Djupe and Walker's Q17 is "how many article reviews have you conducted… in the past year?", with nothing said about whether a re-review of a paper you already saw counts. Someone who did ten first reviews and someone who did five firsts plus five re-reviews both answer "ten" and have done very different amounts of work.
 
 I would add one field:
 
-> How many article reviews have you conducted…? Count **every report you submitted**, including
-> repeat reviews of a revised version of a paper you had reviewed before.
+> How many article reviews have you conducted…? Count **every report you submitted**, including repeat reviews of a revised version of a paper you had reviewed before.
 >
 > Of those, how many were **first reviews of a manuscript that was new to you**?
 
-As for what I say: of 84 first-round recommendations with a real term, **43 were reject and 41 were
-major revisions. Not one was accept or minor.** I have never once opened with a positive
-recommendation. I did not know that about myself.
+As for what I recommend to journal editors: of 84 first-round recommendations with a real term, **43 were reject and 41 were major revisions. Not one was accept or minor.** I have never once opened with an "accept" recommendation. I knew that to be true before doing this exercise.
 
 ## Who gets a reading list
 
-I had the parser separate the reference list from the report proper, which turned out to be worth
-doing. **Only 31 of my 123 counted reports cite anything at all, and references are 2.7% of
-everything I have written as a referee.** So "report length" and "report length excluding
-citations" are almost the same number — but *which* reports carry a bibliography is not random.
+I had the parser separate the reference list from the report proper, which turned out to be worth doing. **Only 31 of my 123 counted reports cite anything at all, and references are 2.7% of everything I have written as a referee.** So "report length" and "report length excluding citations" are almost the same number — but *which* reports carry a bibliography is not random.
 
 ```{ojs}
 //| echo: false
 Plot.plot({
   marginLeft: 150, marginRight: 60, height: 230, width: 740,
-  x: { label: "share of first reports that supply citations", grid: true, percent: true },
+  x: { label: "share of first reports that supply citations", grid: true,
+       domain: [0, 0.6], tickFormat: ".0%" },
   y: { label: "", domain: TIER, tickFormat: d => TIERLAB[d] },
   marks: [
     Plot.barX(db.by_group, { y: "group", x: d => d.pct_citing_round1 / 100, r: 2,
@@ -209,18 +195,11 @@ Plot.plot({
 entirely a first-round activity: 32% of first reports, 5% of second ones.</p>
 ```
 
-**It runs opposite to length.** I write the longest reports for the top three and almost never hand
-them a reading list (1 of 14). I write the shortest reports for journals furthest from political
-science and hand *those* a reading list about half the time.
+**It runs opposite to length.** I write the longest reports for the top three and almost never provide a reading list (1 of 14). I write the shortest reports for journals furthest from political science and hand *those* a reading list about half the time.
 
-That is not inconsistent, I think. At a top-3 journal the authors already know the literature and
-what I can add is scrutiny. At an area-studies or interdisciplinary venue I am often there precisely
-because I know a political science literature the paper has not met — so the useful thing I can do is
-name it. Looking through those reports, a striking number supply the same kind of thing: *this
-mechanism already has a name in my field, here are three papers.*
+That is not inconsistent, I think. At a top-3 journal the authors already know the literature and what I can add is scrutiny. At an area-studies or interdisciplinary venue I am often there precisely because I know a political science literature the paper has not met, so the useful thing I can do is name it1*.*
 
-Citing is also almost entirely a first-round act — 32% of first reports against 5% of second ones.
-By round two the argument about what the paper should have read is over.
+Citing is also almost entirely a first-round act — 32% of first reports against 5% of second ones. By round two the argument about what manuscripts' authors should have read is over.
 
 ## I write more for journals closer to home
 
@@ -245,14 +224,29 @@ the <i>other</i> way: the top three have the lowest share of first-round reports
 longest ones.</p>
 ```
 
-**A first report for a top-3 journal runs 960 words; for a journal outside political science, 528.**
-Nearly double. I do not think I decided to do that.
+**A first report for a top-3 journal runs 960 words; for a journal outside political science, 528.** Nearly double. That is not an something I did consciously, but I think it makes sense, given career incentives in the discipline.
 
-## The part I cannot settle
+## Two registered reports, and what they cost
 
-Here is the question the whole exercise was for: have I done my share? I have 126 reports given.
-Against that, my own submissions consumed referee labour — 86 attempts at journals, which used 163
-referees that I know of.
+I have [written about registered reports as an author](../2026-08-registered-reports/) — that political science offers the format at about eleven journals and uses it almost nowhere. The log lets me say something about the other side of the desk, because **two of these 126 reports were for registered reports**: one at the *Journal of Politics* and one at *Research & Politics*.
+
+They are 2 of 95 manuscripts, and they look nothing alike.
+
+**The *R&P* one stopped at Stage 1.** I assessed a design, it got its in-principle acceptance, and that was the last I had to do with it. It was also the rare *observational* registered report — a natural experiment rather than an experiment — which is the kind the format is supposed not to suit and evidently sometimes does.
+
+**The *JoP* one I saw the whole way through**, and my own three reports on it is the most honest picture I can give of what refereeing this format is actually like:
+
+-   **Stage 1, round 1 — 937 words, recommending reject.** The heaviest single report in that journal's column of my record.
+-   **Stage 1, round 2 — 44 words, recommending accept.** Four dozen words. The argument was over, and the article had been a borderline reject. I amended my opinion.
+-   **Stage 2 — 366 words, minor revisions.** The results had arrived and there was not much left to say about them, because the design had already been agreed.
+
+**That is the format working as advertised**, and it is visible in the word counts: the scrutiny is front-loaded into a stage where it can still change the study. Across all three referees the manuscript consumed **nine reports, six of them before the in-principle acceptance.**
+
+One things I had expected. The first is that a registered report can be **more** total refereeing than a standard submission, not less — nine reports is the second-highest count on any manuscript I have touched. The work moves earlier; it does not obviously shrink.
+
+## The ledger
+
+Here is the question the whole exercise was for: have I done my share? I have 126 reports given. Against that, my own submissions consumed referee labour — 86 attempts at journals, which used 163 referees that I know of.
 
 That sounds like a clean subtraction. It is not.
 
@@ -280,33 +274,22 @@ first-round reports on both sides, with the obligation divided among coauthors.<
 
 The spread is **−132 to +57 on one unchanged record**, and every step is arguable:
 
-- **Do you charge a flat three reviews per submission?** That norm comes from a [blog post by Ben
-  Lauderdale](https://benjaminlauderdale.net/blog/archives/2014/04/18/journal-review-debt), not from
-  any study, and when Djupe and Walker actually asked, agreement was lukewarm. It also charges me for
-  desk rejects: **8 of my 13 consumed no referee at all.** My submissions have really cost 2.47
-  reviews each, not three.
-- **Do you divide by coauthors?** A report consumed by a four-author paper is not one report I owe.
-  Dividing flips the sign. But it should probably only count coauthors who are themselves in the
-  reviewer pool, and graduate students largely are not — which I cannot compute, so I have not.
-- **Do you compare like with like?** My giving side counts re-reviews; the consuming side counts
-  distinct referees. Only first-round-against-first-round is honest.
+-   **Do you charge a flat three reviews per submission?** As far as I can tell, that norm comes from a [blog post by Ben Lauderdale](https://benjaminlauderdale.net/blog/archives/2014/04/18/journal-review-debt), not from any study, and when Djupe and Walker actually asked, agreement was lukewarm. It also charges me for desk rejects: **8 of my 13 consumed no referee at all.** My submissions have really cost 2.47 reviews each, not three.
+-   **Do you divide by coauthors?** A report consumed by a four-author paper is not one report I owe. Dividing flips the sign. But it should probably only count coauthors who are themselves in the reviewer pool, and graduate students largely are not — which I cannot easily compute (lots of difficult cases), so I have not.
+-   **Do you compare like with like?** My giving side counts re-reviews; the consuming side counts distinct referees. Only first-round-against-first-round is honest.
 
-So the defensible number is **+23, a modest surplus** — and I want to be clear that I chose the
-assumptions that produce it, which is exactly the problem. **"Am I pulling my weight" has no agreed
-denominator.** I think that is the most useful thing in this post.
+So the defensible number to my mind is **+23, a modest surplus** — and I want to be clear that I chose the assumptions that produce it, which is exactly the problem. **"Am I pulling my weight" has no agreed denominator.** I am going to right a little R-package for a future blog post that will allow people to enter their info and get assumptions back.
 
-One known bound, stated rather than hidden: 36 of my submissions went through at least one round of
-revisions, so roughly 43 later rounds of refereeing happened on my behalf that my ledger does not
-count. At two referees each that is ~86 further reports — enough to reverse the sign. Collecting them
-is the obvious next job.
+One known bound, stated rather than hidden: 36 of my submissions went through at least one round of revisions, so roughly 43 later rounds of refereeing happened on my behalf that my ledger does not count. At two referees each that is \~86 further reports — enough to reverse the sign. Collecting them is an extension to this project.
 
 ## Where I do not go back
 
 ```{ojs}
 //| echo: false
 Plot.plot({
-  marginLeft: 180, marginRight: 60, height: 210, width: 740, marginBottom: 36,
-  x: { label: "share of journals I reviewed for more than once", grid: true, percent: true, domain: [0, 0.5] },
+  marginLeft: 180, marginRight: 90, height: 210, width: 740, marginBottom: 36,
+  x: { label: "share of journals I reviewed for more than once", grid: true,
+       domain: [0, 0.5], tickFormat: ".0%" },
   y: { label: "", domain: ["no","unknown","yes"],
        tickFormat: d => ({no: "sends me nothing", unknown: "not established", yes: "shares the reports"})[d] },
   marks: [
@@ -327,19 +310,14 @@ separate them. This also only covers journals I said yes to once, so it shows wh
 return, not where I never went.</p>
 ```
 
-I have a rule I only half-knew I had: if a journal never shows me the other referees' reports and
-never tells me the outcome, I do not review for it again. The log says I keep it. **I went back to
-39% of the journals that share the reports and 5% of the ones that do not** — one in twenty against
-two in five.
-
-And then the part that surprised me. I assumed the journals that withhold are the prestigious ones,
-throwing their weight around. The opposite:
+I have a rule I only half-knew I had: if a journal never shows me the other referees' reports and never tells me the outcome, I do not review for it again. The log says I keep it. **I have re-reviewed for 39% of the journals that share the reports and 5% of the ones that do not**.
 
 ```{ojs}
 //| echo: false
 Plot.plot({
   marginLeft: 150, marginRight: 50, height: 230, width: 740,
-  x: { label: "share of journals withholding the other referees' reports", grid: true, percent: true },
+  x: { label: "share of journals withholding the other referees' reports", grid: true,
+       domain: [0, 1], tickFormat: ".0%" },
   y: { label: "", domain: db.disclosure_by_tier.map(d => d.tier), tickFormat: d => TIERLAB[d] },
   marks: [
     Plot.barX(db.disclosure_by_tier, { y: "tier", x: d => d.pct_withholding / 100, r: 2,
@@ -357,54 +335,20 @@ Plot.plot({
 rests on a single journal. The ordering survived me rebuilding the classification three times.</p>
 ```
 
-**The gradient is not prestige. It is distance from my own discipline.** Political science journals
-return the other reports; area-studies, interdisciplinary and non-PS journals mostly do not. Which
-has an uncomfortable corollary for anyone whose work crosses fields: **the further your expertise
-takes you from your home discipline, the worse the terms you referee on.** 46 of my 126 reports are
-for exactly those venues.
+**The gradient is not prestige. It is distance from my own discipline.** Political science journals return the other reports; area-studies, interdisciplinary and non-PS journals mostly do not. Which has an uncomfortable corollary for anyone whose work crosses fields: **the further your expertise takes you from your home discipline, the worse the terms you referee on.** 46 of my 126 reports are for exactly those venues.
 
-I rebuilt the journal classification three times while writing this — moving regulation and
-governance into political science, psychology and communication out of it — each time on
-disciplinary grounds without looking at what it would do. The ordering came out the same every time.
+I rebuilt the journal classification three times while writing this — moving *Regulation & Governance* into political science, and a bunch of communication journals out of it — each time on disciplinary grounds without looking at what it would do. The ordering came out the same every time.
 
-Put the three gradients together and they all run along the same axis. As a journal sits further
-from political science, it is **less likely to show me the other reports**, I write it a **shorter
-report**, and I am **more likely to hand it a reading list**. And that is the part of my reviewing
-that has been growing.
+Put the three gradients together and they all run along the same axis. As a journal sits further from political science, it is **less likely to show me the other reports**, I write it a **shorter report**, and I am **more likely to hand it a reading list**. And that is the part of my reviewing that has been growing. I think this exercise will largely curtail my broader reviewing.
 
-## How this was built, and what it cost
+## How this was built
 
-The data is a local R project; what reaches this page is an aggregate file with no manuscript titles,
-no ids, no dates finer than a year, and nothing at all from my co-referees' reports. That separation
-is enforced by a test rather than by my memory of it.
+The data is a local R project based on a data standard I developed that I will post about soon; Claude terminal helped me build out the coding pipeline for it.
 
-Three things I learned building it that I would tell anyone attempting the same:
+Two follow-ups, both of which this post is deliberately not:
 
-**A blank cell is not one thing.** I started with empty cells and ended up needing four codes: *not
-applicable* (I cannot know when a co-referee was invited), *unknown*, *recoverable but not yet
-fetched*, and *withheld* — the journal had it and would not show me. That last one stops being
-bookkeeping the moment you try to count how often you were refused: three of my reports sit at AJPS
-behind a page that returns "You have arrived at this page in an unauthorized manner", because I
-joined that manuscript at a later round and the earlier reports are closed to me.
+**Data standards for a publication record like this.** A blank cell turned out to be doing four different jobs, so it needed four codes — *could not have existed*, *never established*, *recoverable but not yet fetched*, and *withheld*, where the journal had the thing and would not show me. There are thirteen rating scales across these journals and three of them run backwards. And your own labour is less retrievable than you would hope.
 
-**The rating forms do not agree with each other.** Thirteen different response scales across these
-journals, and **three of them run backwards** — on one, a 1 is the best score; on another, a 5 is.
-Two scales change meaning by question: on the same Yes/No form, "Overall Quality: No" is a bad review
-and "Financial Competing Interest: No" is a clean declaration.
+**My reports against my co-referees' on the same manuscript.** The log holds 151 co-referee reports beside my own 126, on the same papers and the same rounds, so the paired comparison — am I harsher, longer, earlier? — is computable.
 
-**Your own labour is not reliably retrievable.** SAGE Open served me a scoresheet from 2019 when I
-asked this month. One journal's system does not store the review at all, and another does not list it
-as having happened. If you want this record, the time to keep it is now.
-
-## What this cannot answer
-
-It only contains journals I said yes to, so it can tell me where not to go back, not where not to go.
-It is thinnest in the early years, where the record is worst. And the consuming side is incomplete in
-the specific way described above.
-
-What I would most like is for this to be unremarkable — for enough people to post their own that the
-denominator question gets settled by something other than one person's assumptions. If you keep this
-kind of record, or want to, I would like to hear from you.
-
-**Tell me what is wrong with it.** [Reply on LinkedIn](https://www.linkedin.com/in/aaronerlich/) or
-[email me](mailto:aaron.erlich@mcgill.ca).
+**Tell me what is wrong with it.** [Reply on LinkedIn](https://www.linkedin.com/in/aaron-erlich-4435312/) or [email me](mailto:aaron.erlich@mcgill.ca).

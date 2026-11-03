@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-21",
+  "generated": "2026-10-22",
   "n_reports": 126,
   "n_reports_round1": 92,
   "n_manuscripts": 95,
@@ -13,6 +13,30 @@
   "reviews_per_submission": 2.47,
   "desk_rejects": 13,
   "desk_rejects_with_zero_reviews": 8,
+  "registered_reports": {
+    "n": 2,
+    "n_reports": 4,
+    "items": [
+      {
+        "journal": "JOP",
+        "stage1_rounds": 2,
+        "stage2_rounds": 1,
+        "saw_stage2": true,
+        "final_decision": "accept",
+        "his_reports": 3,
+        "all_reports": 9
+      },
+      {
+        "journal": "R&P",
+        "stage1_rounds": 1,
+        "stage2_rounds": 0,
+        "saw_stage2": false,
+        "final_decision": "accept",
+        "his_reports": 1,
+        "all_reports": 3
+      }
+    ]
+  },
   "n_reports_citing": 31,
   "total_ref_words": 1913,
   "pct_words_in_refs": 2.7,
@@ -69,7 +93,7 @@
     },
     {
       "year": 2026,
-      "n_reports": 19,
+      "n_reports": 20,
       "n_journals": 17
     }
   ],
